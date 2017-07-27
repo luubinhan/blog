@@ -23,13 +23,13 @@ class About extends Component {
 	render() {    
 		return (
 			<div className="page-about">
-				<Helmet
+					<Helmet
 		          title="About luckyluu | FrontEnd Developer live in Ho Chi Minh City"
 		          meta={[
 		            { name: 'description', content: 'luckyluu FrontEnd Developer live in Ho Chi Minh City' },
 		            { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
 		          ]}
-		        />
+	        />
 		        <div className="about-header">
 					
 					<div className="medium-container">

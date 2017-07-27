@@ -44,12 +44,12 @@ class Template extends React.Component {
     return (     
       <div>     
         <Helmet
-          title="Gatsby Default (Blog) Starter"
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        /> 
+            title="About luckyluu | FrontEnd Developer live in Ho Chi Minh City"
+            meta={[
+              { name: 'description', content: 'luckyluu FrontEnd Developer live in Ho Chi Minh City' },
+              { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
+            ]}
+        />
           
         <Header location={this.props.location} items={PRIMARY_NAVIGATION} logo={logo}  />
            
