@@ -16,10 +16,10 @@ export default function Template({ data, pathContext }) {
       <div className="single-post-container">
         <Helmet title={`FrontEnd Developer - ${post.frontmatter.title}`} />
         <h1 className="single-post-title">
-          {post.frontmatter.title}
+          {post.frontmatter.title}     
         </h1>
         <div className="social-media-bar">
-          <SocialShare />
+          <SocialShare href={window.location.href} title={post.frontmatter.title} excerpt={post.frontmatter.desc}  />
         </div>
         <div className="blog-post">
           <div
@@ -74,6 +74,7 @@ export const pageQuery = graphql`
         path
         tags
         title
+        desc
       }
     }
   }

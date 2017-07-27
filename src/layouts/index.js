@@ -18,7 +18,8 @@ class Template extends React.Component {
     this.checkActive = this.checkActive.bind(this);
   }
 
-  componentDidMount() {        
+  componentDidMount() {    
+        
     this.checkActive(location.pathname);   
   }
   componentWillReceiveProps(nextProps) {

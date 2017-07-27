@@ -19,9 +19,9 @@ export default function SocialShare({ href = '', title ='', excerpt='', img = ''
           <a target="_blank" href={`mailto:?subject=${title}&amp;body=${href}`} className="s-link s-email"><i className="ion-android-mail"></i><span className="s-name">Email</span></a>
             </div>
       </div>
-      <meta itemprop="name" content={title} />
-      <meta itemprop="description" content={excerpt} />
-      <meta itemprop="image" content={img} />
+      <meta itemProp="name" content={title} />
+      <meta itemProp="description" content={excerpt} />
+      <meta itemProp="image" content={img} />
 
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={excerpt} />
