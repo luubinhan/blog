@@ -1,0 +1,50 @@
+// Variables
+@import '../../styles/_variables';
+
+/* COMPONENT: share-social-component
+-------------------------------------------------------------- */
+.share-social-component {
+	border-top: 1px solid $border-color;
+	padding-top: $glutter;
+	margin-bottom: $glutter;
+  .ssc-label {
+    float: left;
+    padding: 5px 15px 0 7px;
+  }
+
+  .ssc-buttons {
+    overflow: hidden;
+  }
+
+  .s-link {
+    display: inline-block;
+    padding: 4px $glutter;
+    color: #fff;
+    border-radius: 15px;
+  }
+
+  .s-link:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .s-facebook {
+    background: #4867AA;
+  }
+
+  .s-email {
+    background: #DC4638;
+  }
+
+  .s-twitter {
+    background: #36B9FF;
+  }
+}
+@media(max-width:$breakpoint-xs){
+  .ssc-label{
+    display: none;
+  }
+}
+
+
+/* COMPONENT: share-social-component -------------------------------------------------------------- */

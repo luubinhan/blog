@@ -1,0 +1,16 @@
+// Variables
+@import '../../styles/_variables';
+
+.page-hero{    
+  background-position: center top;
+  background-size: cover;
+  h3.hero-title {
+    margin-top: 0;
+    font-size: $font-size-large;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 10px;
+  }
+  .hero-description{
+    
+  }
+}

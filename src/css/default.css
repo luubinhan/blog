@@ -1,0 +1,1550 @@
+﻿@charset "UTF-8";
+/*
+Theme Name: My page
+Author: An Luu
+Author URI: luckyluu.tumblr.com
+Description: 
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: 
+*/
+/* 
+  == Table of content =========================================
+  1 : RESET AND GRID
+  2 : BASE
+      2.1 : Headings
+      2.2 : List - Text - Link
+      2.3 : Form
+      2.4 : Table
+      2.5 : Select
+  3 : MISC
+  4 : MAIN
+      4.1 : Common Container / Box / Element ;
+      4.2 : Header ;
+      4.3 : Footer ;
+      4.4 : Page home ;
+      4.5 : Page blog ;
+      4.6 : Page blog detail ;
+      4.7 : Pageer ;
+      4.8 : Relate post ;
+      4.9 : Widget ;
+
+/*-------------------------------------------------------------- 
+1. RESET AND GRID
+-------------------------------------------------------------- */
+
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,dialog,div,dl,dt,em,embed,fieldset,figcaption,figure,font,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,meter,nav,object,ol,output,p,pre,progress,q,rp,rt,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video,xmp{border:0;margin:0;padding:0;font-size:100%}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}b,strong{font-weight:bold}img{color:transparent;font-size:0;vertical-align:middle;-ms-interpolation-mode:bicubic;max-width:100%}li{display:list-item}table{border-collapse:collapse;border-spacing:0}th,td,caption{font-weight:normal;vertical-align:top;text-align:left}q{quotes:none}q:before,q:after{content:'';content:none}sub,sup,small{font-size:90%}sub,sup{line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}svg{overflow:hidden}.alpha{margin-left:0!important}.omega{margin-right:0!important}li ul,li ol{margin:0}ul{list-style-type:disc}ol{list-style-type:decimal}blockquote{margin:1.5em;color:#666;font-style:italic}strong,dfn{font-weight:bold}em,dfn{font-style:italic}sup,sub{line-height:0}abbr,acronym{border-bottom:1px dotted #666}address{margin:0 0 1.5em;font-style:italic}del{color:#666}pre{margin:1.5em 0;white-space:pre}pre,code,tt{font:1em 'andale mono','lucida console',monospace;line-height:1.5}input[type='button'],input[type='submit'],a{cursor:pointer;}input{vertical-align:middle;}
+
+
+/* Grid >> Global
+----------------------------------------------------------------------------------------------------*/
+
+.row {
+    margin-left: -30px;
+    *zoom: 1;
+  }
+  .row:before,
+  .row:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  .row:after {
+    clear: both;
+  }
+  [class*="span"] {
+    float: left;
+    min-height: 1px;
+    margin-left: 30px;
+  }
+  .container {
+    width: 1170px;
+    margin: 0 auto;
+  }
+  .span12 {
+    width: 1170px;
+  }
+  .span11 {
+    width: 1070px;
+  }
+  .span10 {
+    width: 970px;
+  }
+  .span9 {
+    width: 870px;
+  }
+  .span8 {
+    width: 770px;
+  }
+  .span7 {
+    width: 670px;
+  }
+  .span6 {
+    width: 570px;
+  }
+  .span5 {
+    width: 470px;
+  }
+  .span4 {
+    width: 370px;
+  }
+  .span3 {
+    width: 270px;
+  }
+  .span2 {
+    width: 170px;
+  }
+  .span1 {
+    width: 70px;
+  }
+  .offset12 {
+    margin-left: 1230px;
+  }
+  .offset11 {
+    margin-left: 1130px;
+  }
+  .offset10 {
+    margin-left: 1030px;
+  }
+  .offset9 {
+    margin-left: 930px;
+  }
+  .offset8 {
+    margin-left: 830px;
+  }
+  .offset7 {
+    margin-left: 730px;
+  }
+  .offset6 {
+    margin-left: 630px;
+  }
+  .offset5 {
+    margin-left: 530px;
+  }
+  .offset4 {
+    margin-left: 430px;
+  }
+  .offset3 {
+    margin-left: 330px;
+  }
+  .offset2 {
+    margin-left: 230px;
+  }
+  .offset1 {
+    margin-left: 130px;
+  }
+
+/* --------------------------------------------------------------
+3. BASE
+-------------------------------------------------------------- */
+
+@font-face {
+    font-family: 'avo';
+    src: url('https://dl.dropboxusercontent.com/u/33638802/Porfolio/Vf-Avo_n.eot');
+    src: url('https://dl.dropboxusercontent.com/u/33638802/Porfolio/Vf-Avo_n.eot?#iefix') format('embedded-opentype'),
+         url('https://dl.dropboxusercontent.com/u/33638802/Porfolio/Vf-Avo_n.woff') format('woff'),
+         url('https://dl.dropboxusercontent.com/u/33638802/Porfolio/Vf-Avo_n.ttf') format('truetype'),
+         url('https://dl.dropboxusercontent.com/u/33638802/Porfolio/Vf-Avo_n.svg#avo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'avo_bold';
+    src: url('https://dl.dropboxusercontent.com/u/33638802/Porfolio/Vf-Avo_b.eot');
+    src: url('https://dl.dropboxusercontent.com/u/33638802/Porfolio/Vf-Avo_b.eot?#iefix') format('embedded-opentype'),
+         url('https://dl.dropboxusercontent.com/u/33638802/Porfolio/Vf-Avo_b.woff') format('woff'),
+         url('https://dl.dropboxusercontent.com/u/33638802/Porfolio/Vf-Avo_b.ttf') format('truetype'),
+         url('https://dl.dropboxusercontent.com/u/33638802/Porfolio/Vf-Avo_b.svg#avo_bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+html
+{
+    font-size: 100.01%;
+    height: 100%;
+    position: relative;
+}
+body
+{
+    font-size: 16px;
+    color: #a1a1a1;
+    line-height: 1.5;
+    font-family: 'avo', Helvetica, Arial, Tahoma, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+}
+
+/* Headings
+-------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 20px;
+  font-family: inherit;
+  font-weight: normal;
+  line-height: 1;
+  color: inherit;
+  text-rendering: optimizelegibility;
+  font-family: 'avo', Helvetica, Arial, sans-serif;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  font-weight: normal;
+  line-height: 1;
+  color: #999999;
+}
+h1 {
+  font-size: 30px;
+  line-height: 38px;
+  text-transform: uppercase;
+  color: #00a5b6;
+}
+h1 span{
+  color: #cadd09;
+}
+h2 {
+  font-size: 21px;
+  line-height: 30px;
+  color: #7e7e7e;
+}
+h3 {
+  font-size: 17px;
+  line-height: 25px;
+  color: #5d5d5d;
+  font-weight: bold;
+  font-family: 'avo_bold', Helvetica, Arial, sans-serif;
+}
+h4 {
+  font-size: 18px;
+  line-height: 20px;
+}
+h5 {
+  font-size: 14px;
+  line-height: 20px;
+}
+h6 {
+  font-size: 12px;
+  line-height: 20px;
+}
+h1 small {
+  font-size: 24px;
+}
+h2 small {
+  font-size: 18px;
+}
+h3 small {
+  font-size: 14px;
+}
+h4 small {
+  font-size: 14px;
+}
+
+/* List - Text - Link
+-------------------------------------------------------------- */
+p{
+  margin-bottom: 0.8em;
+}
+a{
+    color: #00a5b6;
+    text-decoration: none;
+    outline: none;
+}
+a:hover{
+    color: #cadd09;
+}
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 10px 25px;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+li {
+  
+}
+ul.unstyled,
+ol.unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+dl {
+  margin-bottom: 20px;
+}
+dt,
+dd {
+  line-height: 20px;
+}
+dt{
+  font-weight: bold;
+}
+dd{
+  margin-left: 10px;
+}
+.dl-horizontal {
+  *zoom: 1;
+}
+.dl-horizontal:before,
+.dl-horizontal:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.dl-horizontal:after {
+  clear: both;
+}
+.dl-horizontal dt {
+  float: left;
+  width: 160px;
+  overflow: hidden;
+  clear: left;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dl-horizontal dd {
+  margin-left: 180px;
+}
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff;
+}
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 20px;
+  border-left: 5px solid #eeeeee;
+}
+blockquote p {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 25px;
+}
+blockquote small {
+  display: block;
+  line-height: 20px;
+  color: #999999;
+}
+blockquote small:before {
+  content: '\2014 \00A0';
+}
+blockquote.pull-right {
+  float: right;
+  padding-right: 15px;
+  padding-left: 0;
+  border-right: 5px solid #eeeeee;
+  border-left: 0;
+}
+blockquote.pull-right p,
+blockquote.pull-right small {
+  text-align: right;
+}
+blockquote.pull-right small:before {
+  content: '';
+}
+blockquote.pull-right small:after {
+  content: '\00A0 \2014';
+}
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+address {
+  display: block;
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 20px;
+}
+code,
+pre {
+  padding: 0 3px 2px;
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-size: 12px;
+  color: #333333;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+code {
+  padding: 2px 4px;
+  color: #d14;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+}
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 20px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+pre.prettyprint {
+  margin-bottom: 20px;
+}
+pre code {
+  padding: 0;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+}
+
+/* Form
+-------------------------------------------------------------- */
+
+form {
+  margin: 0 0 20px;
+}
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: 40px;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+legend small {
+  font-size: 15px;
+  color: #999999;
+}
+label,
+input,
+button,
+select,
+textarea {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  outline: medium none;
+}
+input,
+button,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  display: inline-block;
+  height: 20px;
+  padding: 4px 6px;
+  margin-bottom: 9px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555555;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+input,
+textarea,
+.uneditable-input {
+  width: 206px;
+}
+textarea {
+  height: auto;
+}
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+     -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+       -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+          transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  *margin-top: 0;
+  line-height: normal;
+  cursor: pointer;
+}
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+select,
+input[type="file"] {
+  height: 30px;
+  /* In IE7, the height of the select element cannot be changed by height, only font-size */
+
+  *margin-top: 4px;
+  /* For IE7, add top margin to align select with labels */
+
+  line-height: 30px;
+}
+select {
+  width: 220px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+select[multiple],
+select[size] {
+  height: auto;
+}
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.uneditable-input,
+.uneditable-textarea {
+  color: #999999;
+  cursor: not-allowed;
+  background-color: #fcfcfc;
+  border-color: #cccccc;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
+     -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
+}
+.uneditable-input {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.uneditable-textarea {
+  width: auto;
+  height: auto;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #999999;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #999999;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #999999;
+}
+
+/* Table
+-------------------------------------------------------------- */
+
+table{
+    margin-bottom: 0.4em;
+    width: 100%;
+}
+th{
+    font-weight: bold;
+}
+thead th{
+    
+}
+th, td, caption{
+    padding: 4px 10px 4px 4px;
+    vertical-align: middle;
+}
+tbody tr:nth-child(even) td, tbody tr.even td{
+
+}
+tfoot{
+    font-style: italic;
+}
+caption{
+    background: #eee;
+}
+
+/* Select
+-------------------------------------------------------------- */
+
+::selection{
+    background: #00a5b6; /* Safari */
+    color: #fff;
+}
+::-moz-selection{
+    background: #00a5b6; /* Firefox */
+    color: #fff;
+}
+img::selection{
+    background: transparent;
+}
+img::-moz-selection{
+    background: transparent;
+}
+
+
+
+/*-------------------------------------------------------------- 
+2. MISC
+-------------------------------------------------------------- */
+
+.clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}
+.clearfix:before,.cf:before,.clearfix:after,.cf:after,.container:before,.container:after{content:"\0020";display:block;overflow:hidden;visibility:hidden;width:0;height:0}
+.clearfix:after,.cf:after,.container:after{clear:both}
+.clearfix,.cf,.container{*zoom:1}
+.prefix1{padding-left: 5px !important;	}
+.prefix2{padding-left: 10px !important;}
+.prefix3{padding-left: 15px !important;}
+.prefix4{padding-left: 20px !important;}
+.prefix5{padding-left: 25px !important;}
+.prefix6{padding-left: 30px !important;}
+.suffix1{padding-right: 5px !important;}
+.suffix2{padding-right: 10px !important;}
+.suffix3{padding-right: 15px !important;}
+.suffix4{padding-right: 20px !important;}
+.suffix5{padding-right: 25px !important;}
+.suffix6{padding-right: 30px !important;}
+.wrap01{padding: 5px 0;}
+.wrap02{padding: 10px 0;}
+.wrap03{padding: 15px 0;}
+.wrap04{padding: 20px 0;}
+.wrap05{padding: 25px 0;}
+.wrap06{padding: 30px 0;}
+.wrap1{padding: 5px;}
+.wrap2{padding: 10px;}
+.wrap3{padding: 15px;}
+.wrap4{padding: 20px;}
+.wrap5{padding: 25px;}
+.wrap6{padding: 30px;}
+.wrap0{padding: 0;}
+.mb1{margin-bottom: 5px;}
+.mb2{margin-bottom: 10px;}
+.mb3{margin-bottom: 15px;}
+.mb4{margin-bottom: 20px;}
+.mt1{margin-top: 5px}
+.mt2{margin-top: 10px}
+.mt3{margin-top: 15px}
+.mt4{margin-top: 20px}
+.left,.pull-left{float: left !important;}
+.right,.pull-right{float: right !important;}
+.banner img, figure img{display: block;}
+.reset{margin-bottom: 0;}
+.reset td{padding: 0;}
+.inline{width:auto;}
+.relative{position: relative;}
+.figure, figure{ overflow: hidden;}
+.figure img{height: 100%;max-width: none;}
+.figure, figure{text-align: center;display: block;}
+.figure2{display: block;overflow: hidden;}
+.figure2 img{width: 100%;height: auto;min-height: 100%;}
+.figure2 span{display:block;width:100%;height:100%;overflow:hidden;}
+.overhidden{ overflow:hidden;}
+.loud{ color: #000;}
+.muted{color: #999;}
+.color{color: #00a5b6 !important;}
+.link{background: url("http://i429.photobucket.com/albums/qq12/liu_zango_ne/Porfolio/more.png") no-repeat right center; padding-right: 20px;}
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.well blockquote {
+  border-color: #ddd;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+.well-large {
+  padding: 24px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+.well-small {
+  padding: 9px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+     -moz-transition: opacity 0.15s linear;
+       -o-transition: opacity 0.15s linear;
+          transition: opacity 0.15s linear;
+}
+.fade.in {
+  opacity: 1;
+}
+.collapse {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.35s ease;
+     -moz-transition: height 0.35s ease;
+       -o-transition: height 0.35s ease;
+          transition: height 0.35s ease;
+}
+.collapse.in {
+  height: auto;
+}
+.close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+.close:hover {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+
+button.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+ul.style1{
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+ul.style1 li{
+    list-style-type: none;
+    margin: 0;
+  
+    padding-left: 30px;
+}
+ul.style2{
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+ul.style2 li{
+    list-style-type: none;
+    margin: 0;
+  
+    padding: 4px 4px 4px 20px;
+}
+hr.line{border-top: 1px solid #ccc;}
+hr.dashed{ border-top: 1px dashed #ccc;}
+img.align-left{float: left; margin: 8px 20px 10px 0;}
+img.align-right{ float: right; }
+img.align-center{ margin: 0px auto;}
+.align-left{text-align: left !important;}
+.align-right{text-align: right!important;}
+.align-center{text-align: center !important;}
+table.style1 tr td{ vertical-align: top; padding: 0 10px 5px 0;text-align: left;}
+
+
+
+/* --------------------------------------------------------------
+4. MAIN
+-------------------------------------------------------------- */
+
+/* Header
+-------------------------------------------------------------- */
+
+
+.header{
+  background: #f2f2f2;
+
+}
+.row-header{
+  position: relative;
+}
+.site-title{
+  margin-bottom: 0;
+  color: #003050;
+  font-size: 22px;
+  line-height: 40px;
+}
+
+.logo-zone{
+  padding-left: 110px;
+  background: url("http://i429.photobucket.com/albums/qq12/liu_zango_ne/Porfolio/logo.png") no-repeat 15px center;
+  margin-top: 190px;
+}
+
+.site-desc{
+  color: #999;
+  font-size: 17px;
+  width: 460px;
+  line-height: 1.2;
+}
+
+h2.title{
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 0;
+}
+
+h2.title a{
+  color: #666;
+  display: block;
+  background: url("http://i429.photobucket.com/albums/qq12/liu_zango_ne/Porfolio/sprite.png") 474px -248px no-repeat;
+}
+
+h2.title a:hover{
+  background-position: 474px -359px;
+  -webkit-transition: none ;
+-moz-transition: none ;
+-ms-transition: none ;
+-o-transition: none ;
+transition: none ;
+}
+
+a.link:hover,
+a.icon-mail,
+a.icon-skype{
+  -webkit-transition: none ;
+-moz-transition: none ;
+-ms-transition: none ;
+-o-transition: none ;
+transition: none ;
+}
+
+.photo-geek,
+.pre-designer{
+  border-right: 1px solid #ebebeb;
+  float: left;
+  width: 533px;
+}
+
+.wordpress-theme,
+.front-end{
+  float: left;
+  width: 534px;
+}
+
+.about-me{
+  padding: 20px 20px 0;
+}
+
+.tahoma{
+  font-family: Tahoma, Arial,sans-serif;
+  color: #cacaca;
+}
+
+/* Effect 1: Brackets */
+.cl-effect-1::before,
+.cl-effect-1::after {
+  display: inline-block;
+  opacity: 0;
+
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s;
+}
+
+.cl-effect-1::before {
+
+  content: '[';
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  transform: translateX(20px);
+  font-family: Tahoma, sans-serif;
+}
+
+.cl-effect-1::after {
+
+  content: ']';
+  -webkit-transform: translateX(-20px);
+  -moz-transform: translateX(-20px);
+  transform: translateX(-20px);
+  font-family: Tahoma, sans-serif;
+}
+
+.cl-effect-1:hover::before,
+.cl-effect-1:hover::after,
+.cl-effect-1:focus::before,
+.cl-effect-1:focus::after {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  transform: translateX(0px);
+
+}
+
+.img-content{
+  
+  height: 210px;
+  display: block;
+}
+
+.img-wrap{
+  position: relative;
+ 
+  border: 1px solid #ebebeb;
+}
+
+.wordpress-theme .img-wrap{
+  background: url("http://i429.photobucket.com/albums/qq12/liu_zango_ne/Porfolio/wordpress.jpg") no-repeat;
+}
+
+.front-end .img-wrap{
+  background: url("http://i429.photobucket.com/albums/qq12/liu_zango_ne/Porfolio/frontend.jpg") no-repeat;
+}
+
+.photo-geek .img-wrap{
+  background: url("http://i429.photobucket.com/albums/qq12/liu_zango_ne/Porfolio/photo.jpg") no-repeat;
+}
+
+.pre-designer .img-wrap{
+  background: url("http://i429.photobucket.com/albums/qq12/liu_zango_ne/Porfolio/designer.jpg") no-repeat;
+}
+
+.img-content:hover{
+  -webkit-box-shadow: inset 0px 0px 0px 4px #00a5b6,inset 0px 0px 12px 0px rgba(0, 0, 0, .9);
+  box-shadow: inset 0px 0px 0px 4px #00a5b6,inset 0px 0px 12px 0px rgba(0, 0, 0, .9);
+   -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.img-wrap:hover{
+   border: 1px solid #00a5b6;
+}
+
+.take-a-look{
+  display: block;
+  color: #fff;
+  background: #00a5b6;
+  text-transform: uppercase;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 4px 16px;
+  opacity: 0;
+}
+
+.img-wrap:hover .take-a-look{
+  width: 111px;
+  height: 23px;
+  opacity: 1;
+  -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.take-a-look:hover{
+  color: #fff;
+}
+
+.my-service{
+  margin-bottom: 20px;
+}
+
+/* Footer
+-------------------------------------------------------------- */
+
+.footer{
+  font-size: 12px;
+  color: #6c6f70;
+  background-color: #232323;
+  border-top: 4px solid #ebebeb;
+  height: 35px;
+  line-height: 35px;
+}
+
+.copyright{
+  float: left;
+  width: 50%;
+}
+.credit{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+
+/* Sidebar
+-------------------------------------------------------------- */
+
+.wrapper{
+  border-left: 1px solid #ebebeb;
+  border-right: 1px solid #ebebeb;
+}
+
+.about{
+  border-bottom: 4px solid #ebebeb;
+  padding-bottom: 35px;
+}
+
+.about h1{
+  margin-bottom: 5px;
+}
+
+.about h2{
+  margin-bottom: 30px;
+}
+
+.contact aside{
+  height: 110px;
+}
+
+.contact aside p{
+  height: 36px;
+}
+
+.sec-blog{
+  float: left;
+  padding-left: 20px;
+  width: 390px;
+  border-right: 1px solid #ebebeb;
+}
+
+.sec-product{
+  float: left;
+  padding-left: 20px;
+  width: 150px;
+}
+
+.contact{
+  padding-bottom: 40px;
+  font-size: 12px;
+}
+
+.icon-mail{
+  background: url("http://i429.photobucket.com/albums/qq12/liu_zango_ne/Porfolio/sprite.png") no-repeat 0 -607px;
+  padding: 2px 15px 2px 25px;
+}
+
+.icon-skype{
+  background: url("http://i429.photobucket.com/albums/qq12/liu_zango_ne/Porfolio/sprite.png") no-repeat 0 -661px;
+  padding: 3px 15px 3px 25px;
+}
+
+.main-logo{
+  background: url("http://i429.photobucket.com/albums/qq12/liu_zango_ne/Porfolio/logo.png") no-repeat right top;
+  display: block;
+}
+
+.main-logo a{
+  display: block;
+  text-indent: -999em;
+  width: 100%;
+  text-align: left;
+  height: 74px;
+  cursor: pointer;
+}
+
+.sidebar-name{
+  font-size: 19px;
+  border-top: 4px solid #ebebeb;
+  text-transform: none;
+  font-weight: normal;
+  margin-bottom: 0;
+  padding: 10px 0;
+  line-height: 1;
+}
+
+.sidebar{
+  text-align: right;
+}
+
+.main-menu{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu a.active{
+  color: #00a5b6;
+}
+
+.main-menu li a{
+  color: #525252;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.main-menu li{
+  padding-bottom: 5px;
+}
+
+.widget{
+  border-top: 1px solid #ebebeb;
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+
+.widget-title{
+  font-size: 12px;
+  color: #000;
+  margin-bottom: 0px;
+  font-weight: normal;
+  font-family: 'avo', Helvetica, Arial, Tahoma, sans-serif;
+}
+
+.tag-menu{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tag-menu li{
+  font-size: 12px;
+  padding-bottom: 4px;
+}
+
+.show-wrap{
+  margin-top: 95px;
+  position: relative;
+
+}
+
+.product-img{
+  position: relative;
+  height: 205px;
+  overflow: hidden;
+}
+
+.product-item{
+
+}
+
+.pro-title{
+  background-color: #fff;
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,.22);
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,.22);
+  box-shadow: 0 0 5px rgba(0,0,0,.22);
+  position: absolute;
+  right: 140px;
+  top: 0;
+  padding: 20px 10px;
+  height: 170px;
+  width: 120px;
+  text-align: center;
+}
+
+.pro-name{
+  color: #00a5b6;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 5px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.pro-desc{
+  font-size: 12px;
+  color: #a1a1a1;
+}
+
+.line{
+  height: 1px;
+  background: #ebebeb;
+  width: 37px;
+  margin: 5px auto 10px;
+}
+
+.tab-info{
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  padding: 0 25px;
+  height: 60px;
+  line-height: 60px;
+}
+
+.tab-1{
+  float: left;
+  width: 300px;
+  border-right: 1px solid #ebebeb;
+}
+
+.new-tab{
+  display: block;
+  background: url("http://i429.photobucket.com/albums/qq12/liu_zango_ne/Porfolio/sprite.png") no-repeat 265px -813px;
+}
+
+.tab-3{
+  float: right;
+  width: 280px;
+  padding-left: 20px;
+  border-left: 1px solid #ebebeb;
+}
+
+.skill-set{
+  font-size: 12px;
+}
+
+.pop-out{
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  top: 0;
+  z-index: 9999;
+}
+
+.close-btn{
+  display: block;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: -86px;
+  text-indent: -9999em;
+  font-size: 1px;
+  cursor: pointer;
+  right: 20px;
+  background: url("http://i429.photobucket.com/albums/qq12/liu_zango_ne/Porfolio/sprite.png") no-repeat 0 -751px;
+  z-index: 3;
+}
+
+.content{
+  height: 530px;
+}
+
+.hashline{
+  width: 945px;
+  height: 1px;
+  background: #ebebeb;
+}
+
+.scroller{
+  border: 1px solid #ebebeb;
+  border-bottom: none;
+  border-top: none;
+  margin-right: 25px;
+}
+
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+
+
+/* Custom Style */
+
+.jspContainer {
+  overflow: hidden;
+  position: relative;
+}
+
+.jspPane {
+  position: absolute;
+  width: 100% !important;
+  left: 0 !important;
+}
+
+.jspVerticalBar {
+  position: absolute;
+  top: 0px;
+  right: 1%;
+  width: 9px;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s linear;
+}
+
+.jspContainer:hover .jspVerticalBar {
+  opacity: 1;
+}
+
+.jspCap {
+  display: block;
+  background: #fff;
+}
+
+.jspVerticalBar .jspCap {
+  height: 40px;
+}
+
+.jspTrack {
+  background: rgba(242,242,242,0.5);
+  box-shadow: inset 0 0 1px rgba(0,0,0,0.1), inset 1px 0 4px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  position: relative;
+}
+
+.jspDrag {
+  background: #515151;
+  position: relative;
+  box-shadow: inset -1px 0 8px rgba(0,0,0,0.05);
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+.jspCorner {
+  background: #fff;
+  float: left;
+  height: 100%;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner {
+  margin: 0 -3px 0 0;
+}
+
+.skill span {
+  border-bottom: 1px solid #cadd09;
+  display: block;
+  padding-bottom: 2px;
+  float: right;
+}
+
+.skill .photography{
+  width: 20%;
+}
+
+.skill .photoshop{
+  width: 70%;
+}
+
+.skill .illustrator{
+  width: 10%;
+}
+
+.skill .indesign{
+  width: 10%;
+}
+
+.skill .HTML{
+  width: 80%;
+}
+
+.skill .wordpress{
+  width: 30%;
+}
+
+.skill .friendly{
+  width: 100%;
+}
+
+.ul-slider{
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.fake-item{
+  display: block;
+  height: 470px;
+  width: 100%;
+}
+
+.ul-slider li{
+  height: 470px;
+  width: 100%;
+  display: block;
+}
+
+.ul-slider .slide-1{
+  background: url("http://i429.photobucket.com/albums/qq12/liu_zango_ne/Porfolio/banner1.jpg~original") center top no-repeat;
+}
+
+.ul-slider .slide-2{
+  background: url("http://i429.photobucket.com/albums/qq12/liu_zango_ne/Porfolio/banner2.jpg~original") center top no-repeat;
+}
+.ul-slider .slide-3{
+  background: url("http://i429.photobucket.com/albums/qq12/liu_zango_ne/Porfolio/cover3.jpg~original") center top no-repeat;
+}
+
+#home-logo{
+  position: absolute;
+  height: 200px;
+  right: 0;
+  top: 0;
+  left: 0;
+  width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 9999;
+}
+
+.next-slide,
+.prev-slide{
+  display: block;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  bottom: 0;
+  z-index: 999;
+  background: #fff;
+  cursor: pointer;
+}
+
+.slide-page{
+  display: block;
+  width: 90px;
+  height: 45px;
+  position: absolute;
+  bottom: 0;
+  z-index: 999;
+  left: 250px;
+  font-family: 'avo', Helvetica, Arial, Tahoma, sans-serif;
+
+}
+
+.slide-page a{
+  display: block;
+  width: 45px;
+  height: 45px;
+  font-size: 40px;
+  line-height: 1;
+  color: #000;
+  display: none;
+}
+
+.slide-page a.selected{
+  display: block;
+}
+
+.total-num{
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  bottom: 0;
+  left: 278px;
+  color: #000;
+  font-family: 'avo', Helvetica, Arial, Tahoma, sans-serif;
+  z-index: 999;
+}
+
+.next-slide span,
+.prev-slide span{
+  display: block;
+  width: 45px;
+  height: 45px;
+  background: url("http://i429.photobucket.com/albums/qq12/liu_zango_ne/Porfolio/sprite.png") no-repeat;
+}
+
+.next-slide{
+  left: 346px;
+}
+
+.prev-slide{
+  left: 300px;
+}
+
+.next-slide span{
+  background-position: -30px -144px;
+}
+
+.prev-slide span{
+  background-position: 16px -144px;
+}
+
+.next-slide:hover,
+.prev-slide:hover{
+  background: #cadd09;
+}
+
+.next-slide:focus,
+.prev-slide:focus{
+  background: #cadd09;
+}
