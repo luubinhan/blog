@@ -55,21 +55,21 @@ class BlogIndex extends React.Component {
         <div className="container">
           
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-4 col-sm-4">
               <Widget title="Latest blog post" href="/blog">
                 <ul className="style1">
                   {pageLinks}
                 </ul>
               </Widget>    
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 col-sm-4">
               <Widget title="Latest work" href="/portfolio">
                 <ul className="style1">
                   
                 </ul>
               </Widget>    
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 col-sm-4">
               <Widget title="Connect with me" href="/about">
                 <ul className="style1">
                   <li>

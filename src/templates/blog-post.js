@@ -44,8 +44,6 @@ export default function Template({ data, pathContext }) {
                   </section>
               </Link>
               }
-            
-
               
               {prev &&
               <Link className="read-next-story prev" to={prev.frontmatter.path}>

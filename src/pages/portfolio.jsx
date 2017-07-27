@@ -56,12 +56,18 @@ class Portfolio extends Component {
           { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
         ]}
       />	
+      <Header location={this.props.location} items={PRIMARY_NAVIGATION} logo={logo}  />
       <div className="master">
         <div className="master-inner">
     			<div className="container">
             <div className="row">
               <div className="col-md-3 col-sm-3">
                 <PageHero title="Portfolio" desc="My blood-sweat-tears and cheers." />
+                Filter
+                Wordpress
+                HTML-CSS-Javascript
+                Website
+                Mobile App                
               </div>
               <div className="col-md-9 col-sm-9">
                 <div className="row">

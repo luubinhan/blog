@@ -65,12 +65,8 @@ class Header extends React.Component{
 												<img src={this.props.logo} alt={this.props.siteName}/>
 											</Link>
 										</div>
-										{
-											this.state.navigationItems.length !== 0 &&
-											<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-												<Navigation items={this.state.navigationItems} cssClass="navbar-nav primary-menu navbar-right" />
-											</div>
-										}										
+										{this.props.children}
+										
 								</div>
 							</div>
 						</nav>

@@ -51,7 +51,7 @@ class Template extends React.Component {
             ]}
         />
           
-        <Header location={this.props.location} items={PRIMARY_NAVIGATION} logo={logo}  />
+        
            
         {children()}
             

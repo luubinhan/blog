@@ -1,8 +1,15 @@
 // Variables
 @import '../../styles/_variables';
 
+$bottomHeight: 40px;
+
 .card-block {    
+    background: #fff;
     margin-bottom: 40px;
+    border: 1px solid $border-color;
+    padding: 25px;
+    position: relative;
+    padding-bottom: $bottomHeight + 20;
     .card-figure{     
         cursor: pointer;   
         position: relative;
@@ -30,8 +37,13 @@
             }
         }
     }
+    .card-desc {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
     .card-title{
         text-align: center;
+        margin-top: 0;
         a{
             display: block;            
         }        
@@ -40,11 +52,20 @@
         }
     }
 	.card-footer{
-        display: none;
+        position: absolute;
+        height: $bottomHeight;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
         .grid-50 {
             float: left;
             width: 50%;
-        }  
+        } 
+        .post-meta .post-category a {
+            margin-left: 0;
+            margin-right: 7px;
+        } 
     }
       
 }

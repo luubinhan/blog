@@ -2,21 +2,25 @@ import React,{Component} from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 
+import PostMeta from '../PostMeta'
+
 import './Card.scss';
 
 class Card extends Component{
 
 	static propTypes = {
-		name: PropTypes.string,
+		title: PropTypes.string,
 		desc: PropTypes.string,
         imgUrl: PropTypes.string,
-        link: PropTypes.string,
+        href: PropTypes.string,
+        tags: PropTypes.string
 	}
 	static defaultProps = {
-	  name: '',
+	  title: '',
 	  desc: '',
       imgUrl: '',
-      link: '#',
+      tags: '',
+      href: '#',
 	};
 
 	constructor(props) {
@@ -25,24 +29,25 @@ class Card extends Component{
 
 
 	render(){
-		let {name, desc, imgUrl, link} = this.props;
+		let {title, desc, imgUrl, href, tags} = this.props;
+
 		return(			
 			<div className="card-block">
                 <article>
                     <div className="inner">
                         {imgUrl !== '' &&
                             <div className="card-figure">
-                                <Link to={link}>
-                                    <img src={imgUrl} alt={ name + "-" + desc } title={desc} />
+                                <Link to={href}>
+                                    <img src={imgUrl} alt={ title + "-" + desc } title={desc} />
                                 </Link>
                             </div>
                         }
 
                         <div className="card-body">
-                            {name !== '' &&
+                            {title !== '' &&
                                 <header className="card-title">
                                     <h3>
-                                        <Link to={link}>{name}</Link>
+                                        <Link to={href}>{title}</Link>
                                     </h3>
                                 </header>      
                             }
@@ -50,17 +55,15 @@ class Card extends Component{
                                 <div className="card-desc">
                                 {desc}
                                 </div>
-                            }
+                            }                            
+                            {this.props.children}
                         </div>
                         
+						
                         <footer className="card-footer clearfix">
-                            <div className="grid-50">
-                                1 week agos
-                            </div>
-                            <div className="grid-50">
-                                442 comments
-                            </div>
+                            <PostMeta tags={tags} />
                         </footer>
+                        
                     </div>
                 </article>
             </div>

@@ -806,6 +806,7 @@ table.normal tr td {
 /* READ NEXT ---------------------------------------*/
 .nav {
   margin: 0;
+
 }
 .page-about {
   background: #fafafa;
@@ -813,14 +814,17 @@ table.normal tr td {
     background: #fff;
     padding: 20px 0 0;
     box-shadow: 0 4px 2px -2px rgba(0,0,0,.05);    
+    .nav-pills>li+li {
+      margin-left: 0;
+    }
     .nav-pills {
       border-top: 1px solid $border-color;
+
       li {
         a {
           color: $muted;
-          font-size: 16px;
-          padding-left: 0;
-          padding-right: 20px;
+          font-size: 16px;     
+          
           &:hover,
           &:focus{
             background: #fff;
@@ -889,4 +893,15 @@ table.normal tr td {
   -moz-transform: translateX(0px);
   transform: translateX(0px);
 
+}
+.card-list {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  .card-block {
+    width: 32%;
+  }  
 }
