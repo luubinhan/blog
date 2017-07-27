@@ -73,10 +73,10 @@ class BlogIndex extends React.Component {
               <Widget title="Connect with me" href="/about">
                 <ul className="style1">
                   <li>
-                    <a href={SITE_CONFIG.linkedin} target="_blank" title="Linkin luu binh an" class=""><i className="ion-social-linkedin-outline"></i>LinkedIn</a>
+                    <a href={SITE_CONFIG.linkedin} target="_blank"><i className="ion-social-linkedin-outline"></i>LinkedIn</a>
                   </li>
                   <li>
-                    <a href={SITE_CONFIG.twitter} target="_blank" title="Twitter luu binh an" class=""><i className="ion-social-twitter-outline"></i>Twitter</a>
+                    <a href={SITE_CONFIG.twitter} target="_blank"><i className="ion-social-twitter-outline"></i>Twitter</a>
                   </li>
                 </ul>
               </Widget>    

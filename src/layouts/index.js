@@ -19,7 +19,7 @@ class Template extends React.Component {
   }
 
   componentDidMount() {    
-        
+
     this.checkActive(location.pathname);   
   }
   componentWillReceiveProps(nextProps) {
@@ -42,7 +42,7 @@ class Template extends React.Component {
   render() {
     const { location, children } = this.props    
     return (     
-      <div>     
+      <div className="layout-component">     
         <Helmet
             title="About luckyluu | FrontEnd Developer live in Ho Chi Minh City"
             meta={[

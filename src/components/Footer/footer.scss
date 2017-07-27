@@ -5,6 +5,11 @@
 -------------------------------------------------------------- */
 .footer {
   color: $muted;
+  line-height: 20px;
+  height: $footer-height;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   .footer-inner {
     padding: $glutter 0;
     a {

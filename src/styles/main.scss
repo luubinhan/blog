@@ -84,6 +84,8 @@
 -------------------------------------------------------------- */
 html {
   font-size: 100.01%;
+  min-height: 100%;
+  position: relative;
 }
 body {
   font-size: 14px;
@@ -93,6 +95,7 @@ body {
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
+  margin-bottom: 60px;  
 }
 a {
   color: $link-color;
