@@ -10,7 +10,7 @@ import profileImg from '../pages/images/profile.jpg'
 
 export default function Template({ data, pathContext }) {
   const { markdownRemark: post } = data;
-  const { next, prev } = pathContext;
+  const { next, prev } = pathContext;  
   return (
     <div>     
       <div className="single-post-container">
@@ -19,7 +19,7 @@ export default function Template({ data, pathContext }) {
           {post.frontmatter.title}     
         </h1>
         <div className="social-media-bar">
-          <SocialShare href={window.location.href} title={post.frontmatter.title} excerpt={post.frontmatter.desc}  />
+          <SocialShare href={post.frontmatter.path} title={post.frontmatter.title} excerpt={post.frontmatter.desc}  />
         </div>
         <div className="blog-post">
           <div

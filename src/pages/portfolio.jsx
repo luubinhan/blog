@@ -56,7 +56,7 @@ class Portfolio extends Component {
           { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
         ]}
       />	
-      <Header location={this.props.location} items={PRIMARY_NAVIGATION} logo={logo}  />
+      
       <div className="master">
         <div className="master-inner">
     			<div className="container">

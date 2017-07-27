@@ -3,7 +3,7 @@ import Link from 'gatsby-link';
 
 import './SocialShare.scss';
 
-export default function SocialShare({ href = '', title ='', excerpt='', img = '' }) {
+export default function SocialShare({ href = '', title ='', excerpt='', img = '' }) {  
   return (
     <div className="share-social-component">
       <div className="ssc-label">
