@@ -8,7 +8,7 @@ import Footer from "../components/Footer"
 import {SITE_CONFIG} from '../config'
 import {PRIMARY_NAVIGATION} from '../data/data'
 
-import logo from '../images/logo.png'
+import logo from '../pages/images/logo.png'
 
 require('../css/prism.css')
 
