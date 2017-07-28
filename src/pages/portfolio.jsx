@@ -128,7 +128,7 @@ class Portfolio extends Component {
   }
   componentDidMount() {
     /** NOT FOR NOW  **/
-    for (var i = 0, len = scriptToInsert.length; i < len; i++) {
+    /*for (var i = 0, len = scriptToInsert.length; i < len; i++) {
       
       const script = document.createElement("script");
 
@@ -138,17 +138,12 @@ class Portfolio extends Component {
       document.head.insertBefore(script,document.head.firstChild);
       
       //document.head.appendChild(script);
-    }
-    if (window.initGridLoader !== undefined) {
-      console.log(window.initGridLoader);
-      window.initGridLoader();  
-    }
+    }*/    
     
     //const test = __PATH_PREFIX__ + '/main.js';
   }
  
-  _onFilterClick(e, slug){
-    console.log(slug);
+  _onFilterClick(e, slug){    
     let newAllPortfolio = PORTFOLIO.filter( item => {
       // found this
       return item.tags.indexOf(slug) !== -1;
@@ -191,9 +186,10 @@ class Portfolio extends Component {
                 </div>
                         
                 <div className="portfolio-list">
+                  <div className="grid__sizer"></div>
                     { allPortfolio.length !== 0 ?
                       <div className="grid">
-                        <div className="grid__sizer"></div>
+                        
                         {
                           allPortfolio.map( p => {
                             return( 
