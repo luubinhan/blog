@@ -28,4 +28,4 @@ const getAllTags = (posts) => {
     return allTags;
 }
 
-export default {isCurrentPage, getAllTags}
+export default {isCurrentPage, getAllTags }

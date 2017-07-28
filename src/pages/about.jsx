@@ -45,17 +45,15 @@ class About extends Component {
 		            { name: 'description', content: 'luckyluu FrontEnd Developer live in Ho Chi Minh City' },
 		            { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
 		          ]}
-	        	/>
+      	/>
 
 				<Header location={this.props.location} logo={logo}>
 					<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<Navigation items={navigationList} cssClass="navbar-nav primary-menu navbar-right" />
 					</div>
 				</Header>
-	        	
 
-		        <div className="about-header">
-					
+        <div className="about-header">					
 					<div className="medium-container">
 						<ProfileHero name="LuckyLuu" position="FrontEnd Developer living in Ho Chi Minh City" desc="" img={profileImg}>
 							Not yet a successfull man, not try to be, just want to become a value man
@@ -131,7 +129,7 @@ export const aboutQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 3 ) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 6 ) {
       edges {
         node {          
           frontmatter {

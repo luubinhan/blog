@@ -6,17 +6,27 @@ import Helmet from "react-helmet"
 import HomeHero from "../components/HomeHero"
 import Widget from "../components/Widget"
 
-
-import {PRIMARY_NAVIGATION} from '../data/data'
 import {SITE_CONFIG} from '../config'
 import heroImage from "../pages/images/cover3.jpg"
 
+import {PRIMARY_NAVIGATION} from '../data/data'
+import logo from "../pages/images/logo.png"
+import Navigation from '../components/Navigation'
+import Header from '../components/Header'
+
 class BlogIndex extends React.Component {
   render() {
-    // console.log("props", this.props)
+    
     const pageLinks = []
     const siteTitle = get(this, "props.data.site.siteMetadata.title")
     const posts = get(this, "props.data.allMarkdownRemark.edges")
+
+    let navigationList = PRIMARY_NAVIGATION.map(item => {
+      if (item.href === '/home') {
+        item.isActive = true;
+      }
+      return item;
+    }) 
     
     posts.forEach(post => {
       if (post.node.path !== "/404/") {
@@ -35,6 +45,7 @@ class BlogIndex extends React.Component {
 
     return (
       <div className="pageIndex">
+
         <Helmet 
           title={get(this, "props.data.site.siteMetadata.title")} 
           meta={[
@@ -42,6 +53,11 @@ class BlogIndex extends React.Component {
                 { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
               ]}
         />
+        <Header logo={logo}>
+          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <Navigation items={navigationList} cssClass="navbar-nav primary-menu navbar-right" />
+          </div>
+        </Header>  
         <div className="pattern">
           <div className="container">
           <HomeHero title="Home to unique ideas from the world’s smart minds."

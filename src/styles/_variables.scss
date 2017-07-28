@@ -2,7 +2,7 @@
 # [Color codes]
 ----------------------------- */
 $primary-color: #01A1B1;
-$secondary-color: #ACBD01;
+$secondary-color: #acbd01;
 $link-color: #222;
 $link-color-hover: #000;
 $primary-text-color: rgba(0, 0, 0, 0.8);
@@ -39,9 +39,10 @@ $footer-height: 40px;
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 @import url('https://fonts.googleapis.com/css?family=Oxygen:300,400,700&amp;subset=latin-ext');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 $font-size-base: 14px;
 $font-size-large: $font-size-base*2;
 $font-size-small: $font-size-base - 1;
 $san-serif: Oxygen, arial, sans-serif;
 $serif: 'Source Sans Pro', 'Times New Roman', Times, serif;
-$monospace: Inconsolata, monospace;
+$monospace: 'Roboto Mono', Inconsolata, monospace;

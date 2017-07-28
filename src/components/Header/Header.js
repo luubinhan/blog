@@ -8,17 +8,7 @@ import './Header.scss'
 
 class Header extends React.Component{ 
 	
-	static propTypes ={
-
-		/*
-		current location
-		*/
-		location: PropTypes.object.isRequired,  
-
-		/*
-		link items
-		*/
-		items: PropTypes.array,
+	static propTypes ={		
 
 		/*
 		Logo link
@@ -34,10 +24,7 @@ class Header extends React.Component{
 	}
 
 	constructor(props) {
-		super(props);
-		this.state = {
-			navigationItems: this.props.items,
-		}			
+		super(props);		
 	}
 	
 	componentDidMount() {
@@ -65,8 +52,7 @@ class Header extends React.Component{
 												<img src={this.props.logo} alt={this.props.siteName}/>
 											</Link>
 										</div>
-										{this.props.children}
-										
+										{this.props.children}										
 								</div>
 							</div>
 						</nav>

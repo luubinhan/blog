@@ -95,7 +95,7 @@ body {
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
-  margin-bottom: 60px;  
+  margin-bottom: 40px;  
 }
 a {
   color: $link-color;
@@ -901,7 +901,20 @@ table.normal tr td {
   display: -o-flex;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   .card-block {
     width: 32%;
   }  
+} 
+
+.page-portfolio {
+  //  background: #2C2D31;
+  /* background: url("images/damian-zaleski-843.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed; */
+
+  .inner {
+    background: rgba(44,45,49,1);    
+    min-height: calc(100vh - 40px);
+  }
 }

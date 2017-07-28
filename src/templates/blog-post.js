@@ -5,16 +5,35 @@ import Link from '../components/Link'
 import PostTags from '../components/PostTags'
 import SocialShare from '../components/SocialShare'
 import Bio from '../components/Bio'
+
 import {PRIMARY_NAVIGATION} from '../data/data'
 import profileImg from '../pages/images/profile.jpg'
+import Header from '../components/Header'
+import Navigation from '../components/Navigation'
+import logo from "../pages/images/logo.png"
 
 export default function Template({ data, pathContext }) {
   const { markdownRemark: post } = data;
   const { next, prev } = pathContext;  
+  let navigationList = PRIMARY_NAVIGATION.map(item => {
+    if (item.href === '/blog') {
+      item.isActive = true;
+    }
+    return item;
+  })
   return (
-    <div>     
-      <div className="single-post-container">
-        <Helmet title={`FrontEnd Developer - ${post.frontmatter.title}`} />
+    <div className="single-post">   
+      <Helmet
+        title={`Blog - ${post.frontmatter.title}`}           
+      />
+      <Header logo={logo}>
+        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <Navigation items={navigationList} cssClass="navbar-nav primary-menu navbar-right" />
+        </div>
+      </Header>  
+
+      <div className="single-post-container">       
+        
         <h1 className="single-post-title">
           {post.frontmatter.title}     
         </h1>

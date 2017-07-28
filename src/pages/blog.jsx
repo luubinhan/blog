@@ -8,10 +8,13 @@ import Link from "gatsby-link"
 import PageHero from '../components/PageHero'
 import ContentPost from '../components/ContentPost'
 import Widget from '../components/Widget'
-import Navigation from '../components/Navigation'
 import PostTags from '../components/PostTags'
 import {getAllTags} from '../helpers'
 
+import {PRIMARY_NAVIGATION} from '../data/data'
+import logo from "../pages/images/logo.png"
+import Navigation from '../components/Navigation'
+import Header from '../components/Header'
 
 class Blog extends Component {
 
@@ -22,6 +25,13 @@ class Blog extends Component {
 			return tagName;
 		});
 
+		let navigationList = PRIMARY_NAVIGATION.map(item => {
+			if (item.href === '/blog') {
+				item.isActive = true;
+			}
+			return item;
+		})
+
 		return (
 			<div className="page-blog">
 				<Helmet 
@@ -31,6 +41,11 @@ class Blog extends Component {
 			          { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
 			        ]}
 				/>
+				<Header location={this.props.location} logo={logo}>
+					<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<Navigation items={navigationList} cssClass="navbar-nav primary-menu navbar-right" />
+					</div>
+				</Header>
 
 				<div className="container">
 					<PageHero title="Blog"/>				
