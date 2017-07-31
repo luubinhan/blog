@@ -41,10 +41,7 @@ class Blog extends Component {
 			          { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
 			        ]}
 				/>
-				<Header location={this.props.location} logo={logo}>
-					<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<Navigation items={navigationList} cssClass="navbar-nav primary-menu navbar-right" />
-					</div>
+				<Header logo={logo} navigationList={navigationList}>
 				</Header>
 
 				<div className="container">

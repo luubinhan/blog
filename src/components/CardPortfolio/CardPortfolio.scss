@@ -3,15 +3,15 @@
 
 .portfolio-list {	
 	.grid {
-	display: -webkit-flex;
+	/* display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: space-between; */
 		.grid__item {
-			width: 48%;
+			/* width: 48%; */
 		}
 	}
 	.card-portfolio-body {
@@ -44,6 +44,7 @@
 				height: 21px;		
 				border-right: 4px solid $primary-color;
 				padding-right: 10px;
+				margin-bottom: 7px;
 				&:after {
 					display: none;
 				}		
@@ -53,5 +54,16 @@
 	.card-portfolio-footer {
 		padding-top: 15px;
 		padding-bottom: 40px;
+	}
+}
+
+@media (max-width: $breakpoint-xs){
+	.portfolio-list {
+		.grid {
+			display: block;
+			.grid__item {
+				width: auto;
+			}
+		}
 	}
 }

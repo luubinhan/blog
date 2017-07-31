@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "luckyluu <luubinhan1989@gmail.com>",
   "dependencies": {
+    "animate.css": "^3.5.2",
     "gatsby": "~1.0.5",
     "gatsby-link": "~1.0.1",
     "gatsby-plugin-catch-links": "~1.0.1",
@@ -18,7 +19,8 @@
     "react-animations": "^0.1.0",
     "react-bootstrap": "^0.31.1",
     "react-dom": "^15.6.1",
-    "react-icons": "~2.2.5"
+    "react-icons": "~2.2.5",
+    "react-stonecutter": "^0.3.5"
   },
   "devDependencies": {
     "gatsby-plugin-sass": "^1.0.1",

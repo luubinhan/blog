@@ -10,6 +10,11 @@ import ContentPost from '../components/ContentPost';
 import PostTags from '../components/PostTags';
 import Widget from '../components/Widget';
 
+import {PRIMARY_NAVIGATION} from '../data/data'
+import logo from "../pages/images/logo.png"
+import Navigation from '../components/Navigation'
+import Header from '../components/Header'
+
 export default function Tags({ pathContext }) {
   const { posts, post, tag } = pathContext;
   
@@ -17,6 +22,12 @@ export default function Tags({ pathContext }) {
     let tagsArray = Object.keys(posts).map( tagName => {
       return tagName;
     });
+    let navigationList = PRIMARY_NAVIGATION.map(item => {
+      if (item.href === '/home') {
+        item.isActive = true;
+      }
+      return item;
+    }); 
     return (
       <div className="page-tags">
         <Helmet 
@@ -26,10 +37,12 @@ export default function Tags({ pathContext }) {
                 { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
               ]}
         />
+        <Header logo={logo} navigationList={navigationList}>
+          
+        </Header>  
         <div className="master">
           <div className="master-inner">
             <div className="container">
-              <PageHero title={`${post.length} bài viết trong chuyên mục ${tag}`}/>    
               <div className="row">
                 <div className="col-md-8">
                   <ul>

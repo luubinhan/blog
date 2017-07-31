@@ -1,43 +1,31 @@
 const PRIMARY_NAVIGATION = [
 	{
-		name: "Home",
+		name: "Trang chủ",
 		href: '/',
 		isActive: false,
-	},
-	{
-		name: "Portfolio",
-		href: '/portfolio',
-		isActive: false,
-	},
-	{
-		name: "Blog",
-		href: '/blog',
-		isActive: false,
-		children: [
-			{
-				name: 'Javascript',
-				href: '/javascript',
-				isActive: false
-			},
-			{
-				name: 'UX/UI',
-				href: '/ux-ui',
-				isActive: false
-			},
-			{
-				name: 'CSS',
-				href: '/css',
-				isActive: false
-			},
-			{
-				name: 'Wordpress',
-				href: '/wordpress',
-				isActive: false
-			},
-		]
 	},	
 	{
-		name: "About",
+		name: "Javascript",
+		href: '/tags/javascript',
+		isActive: false,	
+	},	
+	{
+		name: 'Wordpress',
+		href: '/tags/wordpress',
+		isActive: false
+	},
+	{
+		name: 'HTML/CSS',
+		href: '/tags/css',
+		isActive: false
+	},
+	{
+		name: "UX/UI",
+		href: '/tags/ux-ui',
+		isActive: false,
+	},
+	{
+		name: "Liên hệ",
 		href: '/about',
 		isActive: false,
 	},		

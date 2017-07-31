@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from "react-helmet"
 
-
 import PageHero from '../components/PageHero'
 import CardPortfolio from '../components/CardPortfolio'
 
@@ -12,6 +11,7 @@ import Navigation from '../components/Navigation'
 import Header from '../components/Header'
 import Badge from '../components/Badge'
 
+import 'animate.css'
 import '../css/portfolio.scss'
 
 const PORTFOLIO = [
@@ -90,6 +90,8 @@ let scriptToInsert = [
     }
 ]
 
+let evt = new CustomEvent('portfolioChange');
+
 class Portfolio extends Component {
   constructor(props) {
     super(props);
@@ -121,14 +123,16 @@ class Portfolio extends Component {
           selected: false,
         }
       ],
-      allPortfolio: PORTFOLIO,      
+      allPortfolio: PORTFOLIO,  
+     
     }
 
     this._onFilterClick = this._onFilterClick.bind(this);
   }
   componentDidMount() {
+
     /** NOT FOR NOW  **/
-    /*for (var i = 0, len = scriptToInsert.length; i < len; i++) {
+    for (var i = 0, len = scriptToInsert.length; i < len; i++) {
       
       const script = document.createElement("script");
 
@@ -138,9 +142,13 @@ class Portfolio extends Component {
       document.head.insertBefore(script,document.head.firstChild);
       
       //document.head.appendChild(script);
-    }*/    
+    }
     
     //const test = __PATH_PREFIX__ + '/main.js';
+    
+  }
+  componentDidUpdate(prevProps, prevState) {    
+    window.dispatchEvent(evt);
   }
  
   _onFilterClick(e, slug){    
@@ -157,7 +165,8 @@ class Portfolio extends Component {
       }
       return item;
     })  
-    let {allFilters, allPortfolio} = this.state
+    let {allFilters, allPortfolio} = this.state;
+  
     return (
 		<div className="page-portfolio">		
       <div className="inner">
@@ -168,10 +177,9 @@ class Portfolio extends Component {
             { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer,javascript,html,css,responsive,design' },
           ]}
         />	
-        <Header logo={logo}>
-          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <Navigation items={navigationList} cssClass="navbar-nav primary-menu navbar-right" />
-          </div>
+        <Header logo={logo} navigationList={navigationList}>
+                      
+          
         </Header>  
         <div className="master">
           <div className="master-inner">
@@ -186,23 +194,25 @@ class Portfolio extends Component {
                 </div>
                         
                 <div className="portfolio-list">
-                  <div className="grid__sizer"></div>
+                  
                     { allPortfolio.length !== 0 ?
-                      <div className="grid">
+                      <div>
                         
-                        {
-                          allPortfolio.map( p => {
-                            return( 
-                             
-                                <CardPortfolio key={p.id} title={p.name} imgUrl={p.imgUrl} href={p.href} tags={p.tags} />
-                             
-                            )
-                          }) 
-                        }
+                        <div className="grid">                          
+                          <div className="grid__sizer"></div>
+                          {
+                            allPortfolio.map( p => {                              
+                              return(                                
+                                <CardPortfolio key={p.id} key={p.id}  title={p.name} imgUrl={p.imgUrl} href={p.href} tags={p.tags} />     
+                              )
+                            })
+                          }                         
+                          
+                        </div>                    
                         <div className="align-center">
                           <span className="btn btn-primary">Load More</span>
                         </div>
-                      </div>                    
+                      </div>
                       :
                       <div className="not-found-container">
                         <div className="not-found-block">
@@ -210,9 +220,7 @@ class Portfolio extends Component {
                           <i className="ion-happy-outline"></i>
                         </div>
                       </div>
-                    }                    
-                 
-                  
+                    }
                 </div>
             </div>
           </div>			
@@ -222,6 +230,5 @@ class Portfolio extends Component {
     )
   }
 }
-
 
 export default Portfolio;

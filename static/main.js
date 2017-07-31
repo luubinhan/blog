@@ -627,8 +627,9 @@
 	function applyFx(ev) {
 		// Simulate loading grid to show the effect.
 		clearTimeout(loadingTimeout);
+		console.log("DEV:grids", grids);
 		grids[currentGrid].classList.add('grid--loading');
-
+		
 		loadingTimeout = setTimeout(function() {
 			grids[currentGrid].classList.remove('grid--loading');
 
@@ -639,10 +640,11 @@
 			loaders[currentGrid]._render(effectName);
 		}, 500);
 	}
-	function initGridLoader(){
-		console.log("helle world");
-	}
-	window.initGridLoader = init;
-	/*init();*/
+	
+	init();
 
+	//Listen to your custom event
+	window.addEventListener('portfolioChange', function () {	    
+	    init()
+	});
 })(window);

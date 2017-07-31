@@ -53,21 +53,10 @@ class BlogIndex extends React.Component {
                 { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
               ]}
         />
-        <Header logo={logo}>
-          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <Navigation items={navigationList} cssClass="navbar-nav primary-menu navbar-right" />
-          </div>
+        <Header logo={logo} navigationList={navigationList}>
+          
         </Header>  
-        <div className="pattern">
-          <div className="container">
-          <HomeHero title="Home to unique ideas from the world’s smart minds."
-                    desc="Hear directly from the people who know it best. From tech to politics to creativity and more — whatever your interest, we’ve got you covered."
-                    linkTo="#about"
-                    linkTitle="Get started"
-                    img={heroImage}
-          />
-          </div>
-        </div>
+       
         <div className="container">
           
           <div className="row">

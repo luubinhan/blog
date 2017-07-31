@@ -12,7 +12,8 @@ class CardPortfolio extends Component{
 		desc: PropTypes.string,
     imgUrl: PropTypes.string,
     href: PropTypes.string,
-    tags: PropTypes.array
+    tags: PropTypes.array,
+    className: PropTypes.string,
 	}
 	static defaultProps = {
 		title: '',
@@ -30,7 +31,7 @@ class CardPortfolio extends Component{
 		let {title, desc, imgUrl, href, tags} = this.props;
 
 		return(			
-			<div className="grid__item">
+			<div className={"grid__item " }>
           <div className="grid__link">
               
                   {imgUrl !== '' &&

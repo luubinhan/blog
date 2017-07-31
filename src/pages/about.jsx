@@ -14,6 +14,7 @@ import Navigation from '../components/Navigation'
 import {PRIMARY_NAVIGATION} from '../data/data'
 import profileImg from "../pages/images/profile.jpg"
 import logo from "../pages/images/logo.png"
+import {SITE_CONFIG} from '../config'
 
 class About extends Component {
 	constructor(props) {
@@ -47,16 +48,26 @@ class About extends Component {
 		          ]}
       	/>
 
-				<Header location={this.props.location} logo={logo}>
-					<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<Navigation items={navigationList} cssClass="navbar-nav primary-menu navbar-right" />
-					</div>
+				<Header logo={logo} navigationList={navigationList}>
 				</Header>
-
+			
         <div className="about-header">					
 					<div className="medium-container">
 						<ProfileHero name="LuckyLuu" position="FrontEnd Developer living in Ho Chi Minh City" desc="" img={profileImg}>
 							Not yet a successfull man, not try to be, just want to become a value man
+								<br/>
+								<br/>
+								<table className="reset">
+									<tr>
+										<td>
+											<div className="pr-30">
+												<a href={SITE_CONFIG.linkedin} target="_blank"><i className="ion-social-linkedin-outline"></i><span className="pl-10 ">LinkedIn</span></a>
+											</div>
+										</td>
+										<td><a href={SITE_CONFIG.twitter} target="_blank"><i className="ion-social-twitter-outline"></i><span className="pl-10 ">Twitter</span></a></td>
+									</tr>
+								</table>
+								
 						</ProfileHero>
 
 						<Nav bsStyle="pills" activeKey={this.state.selectedTab} onSelect={this._handleSelect}>
@@ -109,7 +120,14 @@ class About extends Component {
 						}
 						{this.state.selectedTab === 3 &&
 							<div>
-								Contact
+								<ul className="style1">
+                  <li>
+                    <a href={SITE_CONFIG.linkedin} target="_blank"><i className="ion-social-linkedin-outline"></i>LinkedIn</a>
+                  </li>
+                  <li>
+                    <a href={SITE_CONFIG.twitter} target="_blank"><i className="ion-social-twitter-outline"></i>Twitter</a>
+                  </li>
+                </ul>
 							</div>
 						}
 					</div>
