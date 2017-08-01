@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "page-component---src-pages-about-jsx": [
-      "page-component---src-pages-about-jsx-d68c5d083d0e24f48b0c.js",
-      "page-component---src-pages-about-jsx-d68c5d083d0e24f48b0c.js.map"
+      "page-component---src-pages-about-jsx-ebafc5597d18b0156815.js",
+      "page-component---src-pages-about-jsx-ebafc5597d18b0156815.js.map"
     ],
     "commons": [
       "commons-af37511806f561cf3681.js",
@@ -11,16 +11,16 @@
       "build-js-styles.css.map"
     ],
     "page-component---src-pages-index-js": [
-      "page-component---src-pages-index-js-a442c797cb42b8361067.js",
-      "page-component---src-pages-index-js-a442c797cb42b8361067.js.map"
+      "page-component---src-pages-index-js-6b918f3b5dd6a8552fab.js",
+      "page-component---src-pages-index-js-6b918f3b5dd6a8552fab.js.map"
     ],
     "page-component---src-templates-tags-js": [
-      "page-component---src-templates-tags-js-cb27f58098b0a5d03fe8.js",
-      "page-component---src-templates-tags-js-cb27f58098b0a5d03fe8.js.map"
+      "page-component---src-templates-tags-js-175dcf2e66b87af26d3c.js",
+      "page-component---src-templates-tags-js-175dcf2e66b87af26d3c.js.map"
     ],
     "page-component---src-templates-blog-post-js": [
-      "page-component---src-templates-blog-post-js-22453f4872f6bd7fb586.js",
-      "page-component---src-templates-blog-post-js-22453f4872f6bd7fb586.js.map"
+      "page-component---src-templates-blog-post-js-3e29594ba52584b7abc7.js",
+      "page-component---src-templates-blog-post-js-3e29594ba52584b7abc7.js.map"
     ],
     "page-component---src-pages-portfolio-jsx": [
       "page-component---src-pages-portfolio-jsx-3578d58539d80ff7d8e1.js",
@@ -115,8 +115,8 @@
       "page-component---src-pages-404-jsx-ecea44903cfcf2b7b9ab.js.map"
     ],
     "app": [
-      "app-bac6ab81f7d859dd2ab0.js",
-      "app-bac6ab81f7d859dd2ab0.js.map"
+      "app-0dce30814221374227ac.js",
+      "app-0dce30814221374227ac.js.map"
     ]
   }
 }
