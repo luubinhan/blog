@@ -11,11 +11,14 @@ $innerGlutter: 40px;
     padding-bottom: 20px;
     font-size: 30px;
     line-height: 1.2em;
-    color: #000;
+    color: rgba(0,0,0,.9);
     font-family: "avo_bold", $serif;
-    a:hover {
+    a:hover,
+    a:focus {
       text-decoration: none;
+      color: rgba(0,0,0,.7);
     }
+
   }
   .the-post-thumbnail {
     float: left;  

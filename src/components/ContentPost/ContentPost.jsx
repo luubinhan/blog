@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
+import GatsbyLink from 'gatsby-link'
 
 import PostMeta from '../PostMeta'
 import './ContentPost.scss'
@@ -54,13 +54,13 @@ class ContentPost extends Component{
 		      <article className="item-post clearfix " itemType="http://schema.org/NewsArticle">
 					{img &&
 					<figure className="the-post-thumbnail" aria-label="media" role="group" itemProp="associatedMedia" itemID={img} itemType="http://schema.org/ImageObject">
-						<Link to={href}><img src={img} alt={title} itemProp="thumbnailUrl" /></Link>
+						<GatsbyLink to={href}><img src={img} alt={title} itemProp="thumbnailUrl" /></GatsbyLink>
 					</figure> 
 		          	}
 	          		<section className="the-post-content">
 			          		          
 
-		              	<header className="heading-post" itemProp="headline"><Link to={href}>{title}</Link></header>
+		              	<header className="heading-post" itemProp="headline"><GatsbyLink to={href}>{title}</GatsbyLink></header>
 		              	
 		              	{desc !=='' &&
 		              	<footer className="post-excert" itemProp="description">

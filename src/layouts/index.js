@@ -14,9 +14,6 @@ import logo from '../pages/images/logo.png'
 import bg1 from '../pages/images/bg1.jpg'
 import bg4 from '../pages/images/bg4.jpg'
 
-
-require('../css/prism.css')
-
 class Template extends React.Component {
   constructor(props) {
     super(props);

@@ -6,7 +6,7 @@ desc: "Một vài câu hỏi để kiểm tra mức độ am hiểu react của 
 tags: ["javascript", "react"]
 ---
 
-## Chuyện gì xảy ra khi gọi setSate?
+## Chuyện gì xảy ra khi gọi `setSate` ?
 
 Đầu tiên, object được truyền trong <code>setState</code> sẽ được merge với state hiện tại của component, dựa trên sự thay đổi của object này, UI được update với state mới. Để làm được chuyện này, React sẽ dựng một cây React Element mới, so sánh sự khác nhau của cây element mới và cây element trước đó, React biết được chính xác chỉ cần update phần UI nào đã bị thay đổi.
 
@@ -21,7 +21,7 @@ React component là một function hoặc class có hoặc không có input và 
 
 Nếu component có state và các phương thức của lifecycle, sử dụng **Class Component**, ngược lại dùng **functional component**
 
-## Refs trong React dùng để làm gì
+## `Refs` trong React dùng để làm gì
 
 Refs cho phép access trực tiếp đến DOM element hoặc một instance của component
 
@@ -69,9 +69,9 @@ Controlled component là component React control dữ liệu dựa trên state v
 
 ## Để gọi AJAX, sự dụng sự kiện nào của lifecycle?
 
-<code>componentDidMount</code> , lý do ko sử dụng <code>componentWillMount</code> vì React  có thể gọi componentWillMount nhiều lần nếu cần thiết, thứ 2 không thể chắc chắn AJAX luôn gọi thành công, nếu gơi vào trường hợp đó câu lệnh <code>setState</code> sẽ chạy trên unmounted component.
+`componentDidMount` , lý do ko sử dụng <code>componentWillMount</code> vì React  có thể gọi componentWillMount nhiều lần nếu cần thiết, thứ 2 không thể chắc chắn AJAX luôn gọi thành công, nếu gơi vào trường hợp đó câu lệnh <code>setState</code> sẽ chạy trên unmounted component.
 
-## shouldComponentUpdate dùng để làm gì
+## `shouldComponentUpdate` dùng để làm gì
 
 `shouldComponentUpdate` cho phép can thiệp quá trình update UI của component và các component con của nó.
 
@@ -79,61 +79,52 @@ Controlled component là component React control dữ liệu dựa trên state v
 
 Sử dụng phương thức DefinePlugin của Webpack để set `NODE_ENV = production`. Quá trình build production sẽ bỏ hết những đoạn như validate propType, cảnh báo này nọ, minify code, remove comments.
 
-## Tại sao nên sử dụng React.Children.map() thay vì props.children.map()
+## Tại sao nên sử dụng `React.Children.map()` thay vì `props.children.map()`
 
-props.children chưa chắc lúc nào cũng là array. Ví dụ
-
-```html
-
-<Parent> <h1>Welcome.</h1> </Parent>
-
-```
-
-Nếu sử dụng props.children.map trong Parent sẽ bị lỗi vì props.children là một object không phải array.
+`props.children` chưa chắc lúc nào cũng là array. Ví dụ
 
 ```html
-
 <Parent>
-
-<h1>Welcome.</h1>
-
-<h2>props.children will now be an array</h2>
-
+    <h1>Welcome.</h1>
 </Parent>
-
 ```
 
-React.Children.map cho phép props.children là array hoặc object đều được.
+Nếu sử dụng `props.children.map` trong Parent sẽ bị lỗi vì `props.children` là một object không phải array.
+
+```html
+<Parent>
+    <h1>Welcome.</h1>
+    <h2>props.children will now be an array</h2>
+</Parent>
+```
+
+`React.Children.map` cho phép `props.children` là array hoặc object đều được.
 
 ## Events được xử lý trong React như thế nào?
 
-Các hàm xử lý event trong React sẽ được truyền vào một instance của SyntheticEvent, SyntheticEvent cũng giống như những native event bình thường của Browser trừ việc nó có thể làm việc trên tất cả các trình duyệt.
+Các hàm xử lý event trong React sẽ được truyền vào một instance của `SyntheticEvent`, `SyntheticEvent` cũng giống như những native event bình thường của Browser trừ việc nó có thể làm việc trên tất cả các trình duyệt.
 
 React không attach event vô các child node, mà sẽ lắng nghe tất cả các event sử dụng 1 event listener duy nhất, Với mục đích là để tăng performance và React không cần phải update lại event listener khi update DOM.
 
-## Sự khác nhau giữa createElement và cloneElement
+## Sự khác nhau giữa `createElement` và `cloneElement`
 
 `createElement` là để tạo element, `cloneElement` copy element và đưa vào các props mới.
 
-## Argument thứ 2 của setState dùng để làm gì
+## Argument thứ 2 của `setState` dùng để làm gì
 
 callback function, function sẽ chạy sau khi `component` được `render` lại với state mới.
 
-setState là một phương thức bất đồng bộ (asynchronous)
+`setState` là một phương thức bất đồng bộ (asynchronous)
 
 ## Đoạn code sau sai ở chổ nào
 
 ```js
-
 this.setState((prevState, props) => {
-
  return { streak: prevState.streak + props.count }
-
 })
-
 ```
 
-Không sai gì cả, ít người biết rằng khi setState có thể truyền vào previous state.
+Không sai gì cả, ít người biết rằng khi `setState` có thể truyền vào `previous state`.
 
 Nguồn
 
