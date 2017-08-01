@@ -1,56 +1,62 @@
 {
   "assetsByChunkName": {
     "page-component---src-pages-about-jsx": [
-      "page-component---src-pages-about-jsx-da8018e68a6109bb9c6f.js",
-      "page-component---src-pages-about-jsx-da8018e68a6109bb9c6f.js.map"
+      "page-component---src-pages-about-jsx-c81f4557e34dc363f926.js",
+      "page-component---src-pages-about-jsx-c81f4557e34dc363f926.js.map"
     ],
     "commons": [
-      "commons-a3673196fa2e3bb8f1c0.js",
-      "commons-a3673196fa2e3bb8f1c0.js.map"
-    ],
-    "page-component---src-pages-blog-jsx": [
-      "page-component---src-pages-blog-jsx-8abd15027cb33e3a9e19.js",
-      "page-component---src-pages-blog-jsx-8abd15027cb33e3a9e19.js.map"
+      "commons-858a66e123353f57053d.js",
+      "build-js-styles.css",
+      "commons-858a66e123353f57053d.js.map",
+      "build-js-styles.css.map"
     ],
     "page-component---src-pages-index-js": [
-      "page-component---src-pages-index-js-ed827ab0aea29bd0e5d4.js",
-      "page-component---src-pages-index-js-ed827ab0aea29bd0e5d4.js.map"
+      "page-component---src-pages-index-js-57b9573804b224509294.js",
+      "page-component---src-pages-index-js-57b9573804b224509294.js.map"
     ],
-    "layout-component---index": [
-      "layout-component---index-c73ca3bd666d4127be23.js",
-      "layout-component---index-c73ca3bd666d4127be23.js.map"
+    "page-component---src-pages-blog-jsx": [
+      "page-component---src-pages-blog-jsx-6d42ef478a90b3bea464.js",
+      "page-component---src-pages-blog-jsx-6d42ef478a90b3bea464.js.map"
     ],
     "page-component---src-templates-blog-post-js": [
-      "page-component---src-templates-blog-post-js-cb79def9a546402489b3.js",
-      "page-component---src-templates-blog-post-js-cb79def9a546402489b3.js.map"
-    ],
-    "page-component---src-templates-tags-js": [
-      "page-component---src-templates-tags-js-950d84b8d9733b16d8a0.js",
-      "page-component---src-templates-tags-js-950d84b8d9733b16d8a0.js.map"
+      "page-component---src-templates-blog-post-js-d4247c48683ba302f20c.js",
+      "page-component---src-templates-blog-post-js-d4247c48683ba302f20c.js.map"
     ],
     "page-component---src-pages-portfolio-jsx": [
-      "page-component---src-pages-portfolio-jsx-fb276634d360c6557a91.js",
-      "page-component---src-pages-portfolio-jsx-fb276634d360c6557a91.js.map"
+      "page-component---src-pages-portfolio-jsx-fec8d985724d8ed4082c.js",
+      "page-component---src-pages-portfolio-jsx-fec8d985724d8ed4082c.js.map"
+    ],
+    "layout-component---index": [
+      "layout-component---index-3594bd14fa1f02769dd6.js",
+      "layout-component---index-3594bd14fa1f02769dd6.js.map"
+    ],
+    "page-component---src-templates-tags-js": [
+      "page-component---src-templates-tags-js-f91776f2a0ab7e1842e4.js",
+      "page-component---src-templates-tags-js-f91776f2a0ab7e1842e4.js.map"
     ],
     "path---tags": [
-      "path---tags-3353bc8fc60bc9605092.js",
-      "path---tags-3353bc8fc60bc9605092.js.map"
+      "path---tags-76cf428e589073fa8c2b.js",
+      "path---tags-76cf428e589073fa8c2b.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-2d77388a21b89ff86e42.js",
-      "path---tags-wordpress-2d77388a21b89ff86e42.js.map"
+      "path---tags-wordpress-3587a07a199bd850fe3c.js",
+      "path---tags-wordpress-3587a07a199bd850fe3c.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-34e9917e0ca797a0cd83.js",
-      "path---tags-react-34e9917e0ca797a0cd83.js.map"
+      "path---tags-react-ce5ca58763a8178e565e.js",
+      "path---tags-react-ce5ca58763a8178e565e.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-f140c9f4f10f04c07379.js",
-      "path---tags-javascript-f140c9f4f10f04c07379.js.map"
+      "path---tags-javascript-f8c8a4b84ee83125487d.js",
+      "path---tags-javascript-f8c8a4b84ee83125487d.js.map"
     ],
     "path---tags-google-seo": [
-      "path---tags-google-seo-cc287415606013ed37ae.js",
-      "path---tags-google-seo-cc287415606013ed37ae.js.map"
+      "path---tags-google-seo-b9e002cc458b9d8a9982.js",
+      "path---tags-google-seo-b9e002cc458b9d8a9982.js.map"
+    ],
+    "path---tags-css": [
+      "path---tags-css-4d3222c92c6afcd32681.js",
+      "path---tags-css-4d3222c92c6afcd32681.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -61,16 +67,16 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-c0d9b064d0923423336c.js",
-      "path---index-c0d9b064d0923423336c.js.map"
+      "path---index-bd75ab06c7c6feda9b6b.js",
+      "path---index-bd75ab06c7c6feda9b6b.js.map"
     ],
     "path---blog": [
-      "path---blog-6e082fca4c4fcb8b7768.js",
-      "path---blog-6e082fca4c4fcb8b7768.js.map"
+      "path---blog-2c57ae8ddc35e06ebf8e.js",
+      "path---blog-2c57ae8ddc35e06ebf8e.js.map"
     ],
     "path---about": [
-      "path---about-ae148582e34629e9317d.js",
-      "path---about-ae148582e34629e9317d.js.map"
+      "path---about-666a1aa514a77c50b617.js",
+      "path---about-666a1aa514a77c50b617.js.map"
     ],
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",
@@ -80,25 +86,33 @@
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
     ],
+    "path---2017-07-31-react-router": [
+      "path---2017-07-31-react-router-b080fa2b650fcdff6e8c.js",
+      "path---2017-07-31-react-router-b080fa2b650fcdff6e8c.js.map"
+    ],
     "path---2017-07-17-interview-react-developer-thi-hoi-gi": [
-      "path---2017-07-17-interview-react-developer-thi-hoi-gi-ce4fc23d4a3e1ddf9ad2.js",
-      "path---2017-07-17-interview-react-developer-thi-hoi-gi-ce4fc23d4a3e1ddf9ad2.js.map"
+      "path---2017-07-17-interview-react-developer-thi-hoi-gi-92cdb0ea9ac1a483e415.js",
+      "path---2017-07-17-interview-react-developer-thi-hoi-gi-92cdb0ea9ac1a483e415.js.map"
+    ],
+    "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau": [
+      "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau-91b7ddce58e73de8a560.js",
+      "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau-91b7ddce58e73de8a560.js.map"
     ],
     "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react": [
-      "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react-06552bfd1e18de4f5b36.js",
-      "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react-06552bfd1e18de4f5b36.js.map"
+      "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react-7fe9c18430425191be55.js",
+      "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react-7fe9c18430425191be55.js.map"
     ],
     "path---2016-12-04-front-end-developer-2016-nen-hoc-gi": [
-      "path---2016-12-04-front-end-developer-2016-nen-hoc-gi-b75465322ef2289ad6db.js",
-      "path---2016-12-04-front-end-developer-2016-nen-hoc-gi-b75465322ef2289ad6db.js.map"
+      "path---2016-12-04-front-end-developer-2016-nen-hoc-gi-7f6b63b587dae378778e.js",
+      "path---2016-12-04-front-end-developer-2016-nen-hoc-gi-7f6b63b587dae378778e.js.map"
     ],
     "path---2016-11-15-chuong-1-es-6-can-ban": [
-      "path---2016-11-15-chuong-1-es-6-can-ban-45253c28b2742f560a7e.js",
-      "path---2016-11-15-chuong-1-es-6-can-ban-45253c28b2742f560a7e.js.map"
+      "path---2016-11-15-chuong-1-es-6-can-ban-c0c66c29de5f300a5916.js",
+      "path---2016-11-15-chuong-1-es-6-can-ban-c0c66c29de5f300a5916.js.map"
     ],
     "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet": [
-      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-566b06f82147789e3ae9.js",
-      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-566b06f82147789e3ae9.js.map"
+      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-1ad20b1d691bbe98bb3c.js",
+      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-1ad20b1d691bbe98bb3c.js.map"
     ],
     "page-component---src-pages-sitemap-jsx": [
       "page-component---src-pages-sitemap-jsx-1877161b642d3952256b.js",
@@ -109,8 +123,8 @@
       "page-component---src-pages-404-jsx-ecea44903cfcf2b7b9ab.js.map"
     ],
     "app": [
-      "app-8bdb0b6f40233c1b05f6.js",
-      "app-8bdb0b6f40233c1b05f6.js.map"
+      "app-a7f0a864b08768e45dae.js",
+      "app-a7f0a864b08768e45dae.js.map"
     ]
   }
 }
