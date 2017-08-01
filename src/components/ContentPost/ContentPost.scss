@@ -5,13 +5,17 @@
 -------------------------------------------------------------- */
 $innerGlutter: 40px;
 .item-post {
-  margin-bottom: $innerGlutter;
+  padding: 35px 0;
+  border-bottom: 1px solid $border-color;
   .heading-post { 
-    padding-bottom: 14px;
+    padding-bottom: 20px;
     font-size: 30px;
     line-height: 1.2em;
     color: #000;
-    font-weight: 600;
+    font-family: "avo_bold", $serif;
+    a:hover {
+      text-decoration: none;
+    }
   }
   .the-post-thumbnail {
     float: left;  
@@ -22,7 +26,8 @@ $innerGlutter: 40px;
     overflow: hidden;
   }
   .post-excert {
-    font-size: 16px;
+    font-size: 21px;
+    padding-bottom: 20px;
   }   
 }
 @media (max-width: $breakpoint-xs) {

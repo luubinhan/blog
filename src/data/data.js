@@ -2,27 +2,32 @@ const PRIMARY_NAVIGATION = [
 	{
 		name: "Javascript",
 		href: '/tags/javascript',
-		isActive: false,	
+		isActive: false,
+		icon: "ion-social-javascript"	
 	},	
 	{
 		name: 'Wordpress',
 		href: '/tags/wordpress',
-		isActive: false
+		isActive: false,
+		icon: "ion-social-wordpress"
 	},
 	{
 		name: 'HTML/CSS',
 		href: '/tags/css',
-		isActive: false
+		isActive: false,
+		icon: "ion-social-html5"
 	},
 	{
 		name: "UX/UI",
 		href: '/tags/ux-ui',
 		isActive: false,
+		icon: "ion-paintbrush"
 	},
 	{
 		name: "Liên hệ",
 		href: '/about',
 		isActive: false,
+		icon: "ion-android-contacts"
 	},		
 ]
 

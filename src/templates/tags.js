@@ -10,11 +10,6 @@ import ContentPost from '../components/ContentPost';
 import PostTags from '../components/PostTags';
 import Widget from '../components/Widget';
 
-import {PRIMARY_NAVIGATION} from '../data/data'
-import logo from "../pages/images/logo.png"
-import Navigation from '../components/Navigation'
-import Header from '../components/Header'
-
 export default function Tags({ pathContext }) {
   const { posts, post, tag } = pathContext;
   
@@ -32,33 +27,27 @@ export default function Tags({ pathContext }) {
                 { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
               ]}
         />
-        <Header logo={logo} navigationList={PRIMARY_NAVIGATION}>
-          
-        </Header>  
-        <div className="master">
-          <div className="master-inner">
-            <div className="container">
-    
+      
+        
            
-                  <ul>
-                    {post.map(({ id, frontmatter, excerpt }) => {
-                      return (
-                        <ContentPost key={id} 
-                                  title={frontmatter.title} 
-                                  desc={excerpt} 
-                                  data={frontmatter.date}
-                                  tags={frontmatter.tags}
-                                  href={frontmatter.path}
-                                  
-                                  />                       
-                      );
-                    })}
-                  </ul>
+          <ul>
+            {post.map(({ id, frontmatter, excerpt }) => {
+              return (
+                <ContentPost key={id} 
+                          title={frontmatter.title} 
+                          desc={excerpt} 
+                          data={frontmatter.date}
+                          tags={frontmatter.tags}
+                          href={frontmatter.path}
+                          
+                          />                       
+              );
+            })}
+          </ul>
                
             
-            </div>
-          </div>
-        </div>
+            
+     
         
       </div>
     );

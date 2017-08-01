@@ -1,0 +1,60 @@
+// Variables
+@import '../../styles/_variables';
+
+.primary-menu {
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	li {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		a {
+	    color: $muted;
+	    font-family: "avo_bold", $san-serif;
+	    padding: 9px 0 12px;
+	    line-height: 1;
+	    i {
+	    	padding-right: 7px;	    	
+	    }
+	    .ion-social-javascript {
+	    	color: $yellow;
+	    }
+	    .ion-social-wordpress {
+	    	color: $blue;
+	    }
+	    .ion-social-html5 {
+	    	color: $orange;
+	    }
+	    .ion-paintbrush {
+	    	color: $google;
+	    }
+	    .ion-android-contacts {
+	    	color: $primary-color;
+	    }
+	    &.active {
+	    	color: #fff;
+	    }
+	  }
+	  a:hover,
+	  a:focus{
+	  	background: transparent;
+	  }	  
+	  &.javascript {
+	  	a:hover {
+	  		color: $yellow;
+	  	}
+	  }
+	  &.wordpress {
+	  	a:hover {
+	  		color: $blue;
+	  	}
+	  }
+	  &.htmlCss {
+	  	a:hover {
+	  		color: $orange;
+	  	}
+	  }
+	  &.uxUi {
+	  	a:hover {
+	  		color: $google;
+	  	}
+	  }
+	}
+}

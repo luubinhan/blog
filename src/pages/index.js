@@ -37,10 +37,6 @@ class BlogIndex extends React.Component {
                 { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
               ]}
         />
-        <Header logo={logo} navigationList={PRIMARY_NAVIGATION}>
-          
-        </Header>  
-        <div className="container">
             
           { posts.length && 
             <div className="posts-list">
@@ -61,7 +57,7 @@ class BlogIndex extends React.Component {
               }
             </div>
           }
-        </div>
+        
       </div>
      
     )

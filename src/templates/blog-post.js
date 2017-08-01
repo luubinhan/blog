@@ -21,12 +21,7 @@ export default function Template({ data, pathContext }) {
       <Helmet
         title={`Blog - ${post.frontmatter.title}`}           
       />
-      <Header logo={logo}>
-        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <Navigation items={PRIMARY_NAVIGATION} cssClass="navbar-nav primary-menu navbar-right" />
-        </div>
-      </Header>  
-
+ 
       <div className="single-post-container">       
         
         <h1 className="single-post-title">
@@ -42,18 +37,18 @@ export default function Template({ data, pathContext }) {
           />        
         </div>
         <PostTags list={post.frontmatter.tags || []} />
-        <Bio name="LuckyLuu" desc="Front-End Developer live in Ho Chi Minh City, a photography geek, and a music lover" href="anluu.com" img={profileImg} />
+        <Bio name="luckyluu" desc="Front-End Developer live in Ho Chi Minh City, a photography geek, and a music lover" href="anluu.com" img={profileImg} />
 
       </div>
       <div className="section section-below-post">
         <div className="inner">
-          <div className="container">
+        
             <div className="read-next">       
               
               {next &&
               <Link className="read-next-story" to={next.frontmatter.path}>
                   <section className="post">
-                      <span className="read-this-next">Read this next</span>
+                      <span className="read-this-next">Đọc Tiếp</span>
                       <h2>{next.frontmatter.title}</h2>
                   </section>
               </Link>
@@ -62,14 +57,14 @@ export default function Template({ data, pathContext }) {
               {prev &&
               <Link className="read-next-story prev" to={prev.frontmatter.path}>
                   <section className="post">
-                      <span className="you-might-enjoy">You might enjoy</span>
+                      <span className="you-might-enjoy">Đọc Tiếp</span>
                       <h2>{prev.frontmatter.title}</h2>
                   </section>
               </Link>
               }
                    
             </div> 
-          </div>
+         
         </div>
       </div>
           

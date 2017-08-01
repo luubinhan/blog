@@ -11,9 +11,8 @@ import Card from '../components/Card'
 import Header from '../components/Header'
 import Navigation from '../components/Navigation'
 
-import {PRIMARY_NAVIGATION} from '../data/data'
 import profileImg from "../pages/images/profile.jpg"
-import logo from "../pages/images/logo.png"
+
 import {SITE_CONFIG} from '../config'
 
 class About extends Component {
@@ -43,12 +42,10 @@ class About extends Component {
 		          ]}
       	/>
 
-				<Header logo={logo} navigationList={PRIMARY_NAVIGATION}>
-				</Header>
-			
+				
         <div className="about-header">					
 					<div className="medium-container">
-						<ProfileHero name="LuckyLuu" position="FrontEnd Developer living in Ho Chi Minh City" desc="" img={profileImg}>
+						<ProfileHero name={SITE_CONFIG.companyName} position="FrontEnd Developer living in Ho Chi Minh City" desc="" img={profileImg}>
 							Not yet a successfull man, not try to be, just want to become a value man
 								<br/>
 								<br/>
@@ -80,7 +77,7 @@ class About extends Component {
 				</div>
 				<div className="about-body">
 					
-					<div className="container">
+					<div className="container-fluid">
 						{this.state.selectedTab === 1 &&
 							<div>
 								Profile

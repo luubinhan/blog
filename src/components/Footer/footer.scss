@@ -5,9 +5,10 @@
 -------------------------------------------------------------- */
 .footer {
   color: $muted;
-  line-height: 20px;
-  height: $footer-height;
+  font-family: $monospace;
+  line-height: 20px;  
   position: absolute;
+  font-size: $font-size-small;
   bottom: 0;
   width: 100%;
   .footer-inner {

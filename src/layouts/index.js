@@ -5,44 +5,32 @@ import Helmet from 'react-helmet'
 import "../styles/main.scss"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import Navigation from "../components/Navigation"
 import {SITE_CONFIG} from '../config'
 import {PRIMARY_NAVIGATION} from '../data/data'
 
 import logo from '../pages/images/logo.png'
+const sideBg = "http://demo.stylishthemes.co/graceunderpressure/fashion/wp-content/uploads/sites/5/2015/07/1-UoXkeOANslPv43IXpClomw.jpeg";
 
 require('../css/prism.css')
 
 class Template extends React.Component {
   constructor(props) {
     super(props);
-    this.checkActive = this.checkActive.bind(this);
+  
   }
 
   componentDidMount() {    
-
-    this.checkActive(location.pathname);   
+    
   }
   componentWillReceiveProps(nextProps) {
-    this.checkActive(nextProps.location.pathname);
-  }
-  
-  checkActive(path){
-    // Update primary navigation
-    PRIMARY_NAVIGATION.forEach( function(objectItem){      
-      
-      if (objectItem.href === location.pathname) {
-        
-        objectItem.isActive = true;
-      } else {
-        objectItem.isActive = false;
-      }
-    });
+
   }
 
   render() {
     const { location, children } = this.props    
     return (     
-      <div className="layout-component">     
+      <div className="layout-blog">     
         <Helmet
             title="About luckyluu | FrontEnd Developer live in Ho Chi Minh City"
             meta={[
@@ -51,12 +39,26 @@ class Template extends React.Component {
             ]}
         />
           
-        
-           
-        {children()}
-            
-        
-        <Footer email={SITE_CONFIG.email} phone={SITE_CONFIG.phone} companyName={SITE_CONFIG.companyName} showSiteMap={false} />
+       
+          <div className="sidebar">
+            <div className="inner">
+              <Link to={'/'} className="go-home">
+                <img src={logo} alt={SITE_CONFIG.companyName}/>
+              </Link>
+              <Navigation items={PRIMARY_NAVIGATION} cssClass="primary-menu" />              
+            </div>
+            <Footer email={SITE_CONFIG.email} phone={SITE_CONFIG.phone} companyName={SITE_CONFIG.companyName} showSiteMap={false} />
+          </div>
+          <div className="master">
+            <div className="inner">
+              {children()}
+            </div>
+          </div>
+          <div className="aside" style={{backgroundImage: `url(${sideBg})`}}>
+            <div className="inner">
+              
+            </div>
+          </div>
       </div>
     )
   }

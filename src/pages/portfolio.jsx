@@ -12,7 +12,7 @@ import Header from '../components/Header'
 import Badge from '../components/Badge'
 
 import 'animate.css'
-import '../css/portfolio.scss'
+
 
 const PORTFOLIO = [
   {

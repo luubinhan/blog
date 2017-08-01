@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
+
 import Li from '../Li'
+import './Navigation.scss'
 
 class Navigation extends React.Component{
 	static propTypes ={
@@ -22,8 +24,7 @@ class Navigation extends React.Component{
 			<div className="navigation-component">
 				<ul className={"nav " + cssClass}>					
 					{
-
-						this.props.items.map( (item,index) => <Li key={index} href={item.href} name={item.name} isActive={item.isActive} />)
+						this.props.items.map( (item,index) => <Li key={index} {...item} />)
 					}						
 				</ul>
 			</div>

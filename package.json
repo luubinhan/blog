@@ -15,6 +15,7 @@
     "gatsby-source-filesystem": "~1.0.1",
     "gatsby-transformer-remark": "~1.1.0",
     "gh-pages": "^1.0.0",
+    "lodash": "^4.17.4",
     "react": "^15.6.1",
     "react-animations": "^0.1.0",
     "react-bootstrap": "^0.31.1",

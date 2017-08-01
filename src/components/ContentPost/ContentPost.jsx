@@ -58,7 +58,7 @@ class ContentPost extends Component{
 					</figure> 
 		          	}
 	          		<section className="the-post-content">
-			          	<PostMeta datetime={date} tags={tags} />	          
+			          		          
 
 		              	<header className="heading-post" itemProp="headline"><Link to={href}>{title}</Link></header>
 		              	
@@ -67,7 +67,7 @@ class ContentPost extends Component{
 		                  {desc}
 		              	</footer>
 		              	}
-		              
+		              	<PostMeta datetime={date} tags={tags} />
 	          		</section>
 		      	</article>
 		  	</div>
