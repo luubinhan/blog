@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "page-component---src-pages-about-jsx": [
-      "page-component---src-pages-about-jsx-ebafc5597d18b0156815.js",
-      "page-component---src-pages-about-jsx-ebafc5597d18b0156815.js.map"
+      "page-component---src-pages-about-jsx-6bbdc67f1ff63dea5333.js",
+      "page-component---src-pages-about-jsx-6bbdc67f1ff63dea5333.js.map"
     ],
     "commons": [
       "commons-af37511806f561cf3681.js",
@@ -35,28 +35,28 @@
       "page-component---src-pages-sitemap-jsx-52021a83b716d413e791.js.map"
     ],
     "path---tags": [
-      "path---tags-98e9b8bce33639840f09.js",
-      "path---tags-98e9b8bce33639840f09.js.map"
+      "path---tags-8c614fde8fb06607858c.js",
+      "path---tags-8c614fde8fb06607858c.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-dd2d0db794cd16c71048.js",
-      "path---tags-wordpress-dd2d0db794cd16c71048.js.map"
+      "path---tags-wordpress-3656d47b11978dce745d.js",
+      "path---tags-wordpress-3656d47b11978dce745d.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-c22a6d176b7b9da82f12.js",
-      "path---tags-react-c22a6d176b7b9da82f12.js.map"
+      "path---tags-react-cdcf797433bc0fecb4ba.js",
+      "path---tags-react-cdcf797433bc0fecb4ba.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-7199dddad97371b41927.js",
-      "path---tags-javascript-7199dddad97371b41927.js.map"
+      "path---tags-javascript-987b6f1a1c4e997199a4.js",
+      "path---tags-javascript-987b6f1a1c4e997199a4.js.map"
     ],
     "path---tags-google-seo": [
-      "path---tags-google-seo-4bb86bb5e8077d1ffd34.js",
-      "path---tags-google-seo-4bb86bb5e8077d1ffd34.js.map"
+      "path---tags-google-seo-20a3924bce9008f4cd60.js",
+      "path---tags-google-seo-20a3924bce9008f4cd60.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-87bd2ca393499232506c.js",
-      "path---tags-css-87bd2ca393499232506c.js.map"
+      "path---tags-css-a61e36df686724bfdddb.js",
+      "path---tags-css-a61e36df686724bfdddb.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -67,12 +67,12 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-22edf9679e45b801dd52.js",
-      "path---index-22edf9679e45b801dd52.js.map"
+      "path---index-4e7407bde4896020ea26.js",
+      "path---index-4e7407bde4896020ea26.js.map"
     ],
     "path---about": [
-      "path---about-8f6f2708816f4e873dc4.js",
-      "path---about-8f6f2708816f4e873dc4.js.map"
+      "path---about-a0e39f21c11f6a62c5ab.js",
+      "path---about-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",
@@ -87,8 +87,8 @@
       "path---2017-07-31-react-router-3688aa053696b4c5932a.js.map"
     ],
     "path---2017-07-17-interview-react-developer-thi-hoi-gi": [
-      "path---2017-07-17-interview-react-developer-thi-hoi-gi-712558dfd34c2f498a27.js",
-      "path---2017-07-17-interview-react-developer-thi-hoi-gi-712558dfd34c2f498a27.js.map"
+      "path---2017-07-17-interview-react-developer-thi-hoi-gi-972ff2ed08ca66119e28.js",
+      "path---2017-07-17-interview-react-developer-thi-hoi-gi-972ff2ed08ca66119e28.js.map"
     ],
     "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau": [
       "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau-d8056d50ed46127668d1.js",
@@ -103,8 +103,8 @@
       "path---2016-12-04-front-end-developer-2016-nen-hoc-gi-7e175f603caf5934c30b.js.map"
     ],
     "path---2016-11-15-chuong-1-es-6-can-ban": [
-      "path---2016-11-15-chuong-1-es-6-can-ban-d800c0811590637dc9d8.js",
-      "path---2016-11-15-chuong-1-es-6-can-ban-d800c0811590637dc9d8.js.map"
+      "path---2016-11-15-chuong-1-es-6-can-ban-353cc266a3bcfee21f01.js",
+      "path---2016-11-15-chuong-1-es-6-can-ban-353cc266a3bcfee21f01.js.map"
     ],
     "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet": [
       "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-01eb7c05ed4db17c470d.js",
@@ -115,8 +115,8 @@
       "page-component---src-pages-404-jsx-ecea44903cfcf2b7b9ab.js.map"
     ],
     "app": [
-      "app-ef85c20241bc1231dea1.js",
-      "app-ef85c20241bc1231dea1.js.map"
+      "app-bac6ab81f7d859dd2ab0.js",
+      "app-bac6ab81f7d859dd2ab0.js.map"
     ]
   }
 }
