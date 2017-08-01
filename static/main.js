@@ -644,7 +644,7 @@
 	init();
 
 	//Listen to your custom event
-	window.addEventListener('portfolioChange', function () {	    
+	/*window.addEventListener('portfolioChange', function () {	    
 	    init()
-	});
+	});*/
 })(window);

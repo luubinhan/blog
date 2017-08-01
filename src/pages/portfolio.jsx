@@ -90,7 +90,7 @@ let scriptToInsert = [
     }
 ]
 
-let evt = new CustomEvent('portfolioChange');
+//let evt = new CustomEvent('portfolioChange');
 
 class Portfolio extends Component {
   constructor(props) {
@@ -148,7 +148,7 @@ class Portfolio extends Component {
     
   }
   componentDidUpdate(prevProps, prevState) {    
-    window.dispatchEvent(evt);
+   
   }
  
   _onFilterClick(e, slug){    
