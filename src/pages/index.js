@@ -27,13 +27,7 @@ class BlogIndex extends React.Component {
       return tagName;
     });
 
-    let navigationList = PRIMARY_NAVIGATION.map(item => {
-      if (item.href === '/home') {
-        item.isActive = true;
-      }
-      return item;
-    });
-    
+   
     
     /*posts.forEach(post => {
       if (post.node.path !== "/404/") {
@@ -60,21 +54,30 @@ class BlogIndex extends React.Component {
                 { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
               ]}
         />
-        <Header logo={logo} navigationList={navigationList}>
+        <Header logo={logo} navigationList={PRIMARY_NAVIGATION}>
           
         </Header>  
         <div className="container">
             
-          <div className="row">
-            <div className="col-md-8">
-              
+          { posts.length && 
+            <div className="posts-list">
+              {
+                posts.map( (post, index) => {
+                    if (post.node.path !== "/404/") {
+                      const title = get(post, "node.frontmatter.title") || post.node.path;
+                      
+                      return <ContentPost key={index} 
+                              title={title} 
+                              desc={post.node.frontmatter.desc} 
+                              date={post.node.frontmatter.date} 
+                              href={post.node.frontmatter.path}
+                              tags={post.node.frontmatter.tags}
+                              />
+                    }
+                  })
+              }
             </div>
-            <div className="col-md-4">
-              <Widget title="Chuyên mục">
-                <PostTags list={tagsArray} />
-              </Widget>
-            </div>
-          </div>
+          }
         </div>
       </div>
      

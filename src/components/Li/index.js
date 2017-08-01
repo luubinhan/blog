@@ -31,7 +31,7 @@ class Li extends React.Component{
 						<span className="caret"></span>
 					</a>
 					:
-					<Link to={href}>
+					<Link to={href} activeClassName="active">
 						{name}			
 					</Link>	
 				}

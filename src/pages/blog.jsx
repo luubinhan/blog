@@ -24,14 +24,7 @@ class Blog extends Component {
 		let tagsArray = Object.keys(allTags).map( tagName => {
 			return tagName;
 		});
-
-		let navigationList = PRIMARY_NAVIGATION.map(item => {
-			if (item.href === '/blog') {
-				item.isActive = true;
-			}
-			return item;
-		})
-
+				
 		return (
 			<div className="page-blog">
 				<Helmet 
@@ -41,7 +34,7 @@ class Blog extends Component {
 			          { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
 			        ]}
 				/>
-				<Header logo={logo} navigationList={navigationList}>
+				<Header logo={logo} navigationList={PRIMARY_NAVIGATION}>
 				</Header>
 
 				<div className="container">

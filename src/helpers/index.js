@@ -13,7 +13,7 @@ const isCurrentPage = (location, name) => {
 const getAllTags = (posts) => {
 	let allTags = {};
 
-	posts.forEach(({ node }) => {
+	/*posts.forEach(({ node }) => {
       if (node.frontmatter.tags) {
         node.frontmatter.tags
           .forEach(tag => {
@@ -24,7 +24,10 @@ const getAllTags = (posts) => {
           });
       }
     });
-
+*/
+    allTags = Object.keys(allTags).map( tagName => {
+      return tagName;
+    })
     return allTags;
 }
 

@@ -31,7 +31,7 @@ class PostMeta extends Component{
 				    <div className="post-category">
 					    {
 					    	tags.map( tag =>{
-					    		return <Link key={tag} to={`/tags/${tag}`}>{tag}</Link>   
+					    		return <Link activeClassName="active" key={tag} to={`/tags/${tag}`}>{tag}</Link>   
 					    	})
 					    }
 				    </div>

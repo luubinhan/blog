@@ -15,12 +15,7 @@ import logo from "../pages/images/logo.png"
 export default function Template({ data, pathContext }) {
   const { markdownRemark: post } = data;
   const { next, prev } = pathContext;  
-  let navigationList = PRIMARY_NAVIGATION.map(item => {
-    if (item.href === '/blog') {
-      item.isActive = true;
-    }
-    return item;
-  })
+ 
   return (
     <div className="single-post">   
       <Helmet
@@ -28,7 +23,7 @@ export default function Template({ data, pathContext }) {
       />
       <Header logo={logo}>
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <Navigation items={navigationList} cssClass="navbar-nav primary-menu navbar-right" />
+          <Navigation items={PRIMARY_NAVIGATION} cssClass="navbar-nav primary-menu navbar-right" />
         </div>
       </Header>  
 

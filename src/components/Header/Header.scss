@@ -16,6 +16,10 @@
     .navbar-nav>.current-menu-item>a:hover {      
       color: #000;
     }
+    .navbar-nav a.active {
+      color: #000;
+    }
+
     .navbar-nav {
       > li {       
         > a{

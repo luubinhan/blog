@@ -22,12 +22,7 @@ export default function Tags({ pathContext }) {
     let tagsArray = Object.keys(posts).map( tagName => {
       return tagName;
     });
-    let navigationList = PRIMARY_NAVIGATION.map(item => {
-      if (item.href === '/home') {
-        item.isActive = true;
-      }
-      return item;
-    }); 
+   
     return (
       <div className="page-tags">
         <Helmet 
@@ -37,14 +32,14 @@ export default function Tags({ pathContext }) {
                 { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
               ]}
         />
-        <Header logo={logo} navigationList={navigationList}>
+        <Header logo={logo} navigationList={PRIMARY_NAVIGATION}>
           
         </Header>  
         <div className="master">
           <div className="master-inner">
             <div className="container">
-              <div className="row">
-                <div className="col-md-8">
+    
+           
                   <ul>
                     {post.map(({ id, frontmatter, excerpt }) => {
                       return (
@@ -59,13 +54,8 @@ export default function Tags({ pathContext }) {
                       );
                     })}
                   </ul>
-                </div>
-                <div className="col-md-4">
-                  <Widget title="Chuyên mục">
-                    <PostTags list={tagsArray} />
-                  </Widget>
-                </div>
-              </div>
+               
+            
             </div>
           </div>
         </div>

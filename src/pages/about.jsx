@@ -32,12 +32,7 @@ class About extends Component {
 	}
 	render() {  
 		const posts = get(this, "props.data.allMarkdownRemark.edges");  
-		let navigationList = PRIMARY_NAVIGATION.map(item => {
-			if (item.href === '/about') {
-				item.isActive = true;
-			}
-			return item;
-		})
+		
 		return (
 			<div className="page-about">
 				<Helmet
@@ -48,7 +43,7 @@ class About extends Component {
 		          ]}
       	/>
 
-				<Header logo={logo} navigationList={navigationList}>
+				<Header logo={logo} navigationList={PRIMARY_NAVIGATION}>
 				</Header>
 			
         <div className="about-header">					
