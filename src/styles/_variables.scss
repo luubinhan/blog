@@ -37,15 +37,10 @@ $header-height: 50px;
 /*-----------------------------
 # [Typography]
 ----------------------------- */
-@import url('https://fonts.googleapis.com/css?family=Maitree');
-/* @import url('https://fonts.googleapis.com/css?family=Oxygen:300,400,700&amp;subset=latin-ext'); */
-/* @import url('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'); */
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
-
 
 $font-size-base: 14px;
 $font-size-large: $font-size-base*2;
 $font-size-small: $font-size-base - 1;
 $san-serif: "avo", arial, sans-serif;
-$serif: 'Source Sans Pro', 'Times New Roman', Times, serif;
+$serif: 'Maitree', 'Times New Roman', Times, serif;
 $monospace: 'Roboto Mono', Inconsolata, monospace;

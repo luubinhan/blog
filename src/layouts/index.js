@@ -10,25 +10,40 @@ import {SITE_CONFIG} from '../config'
 import {PRIMARY_NAVIGATION} from '../data/data'
 
 import logo from '../pages/images/logo.png'
-const sideBg = "http://demo.stylishthemes.co/graceunderpressure/fashion/wp-content/uploads/sites/5/2015/07/1-UoXkeOANslPv43IXpClomw.jpeg";
+
+import bg1 from '../pages/images/bg1.jpg'
+import bg4 from '../pages/images/bg4.jpg'
+
 
 require('../css/prism.css')
 
 class Template extends React.Component {
   constructor(props) {
     super(props);
-  
+    this.state = {
+      sideBg: ''
+    }
   }
 
-  componentDidMount() {    
-    
+  getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  componentDidMount() {
+    let checkNumber = this.getRandomArbitrary(0,1);
+    let bgArray = [];
+    let newBg = bgArray[checkNumber];
+
+    this.setState({
+      sideBg: newBg
+    })
   }
   componentWillReceiveProps(nextProps) {
 
   }
 
   render() {
-    const { location, children } = this.props    
+    const { location,children,sideBg } = this.props    
     return (     
       <div className="layout-blog">     
         <Helmet
@@ -54,7 +69,7 @@ class Template extends React.Component {
               {children()}
             </div>
           </div>
-          <div className="aside" style={{backgroundImage: `url(${sideBg})`}}>
+          <div className="aside" style={{backgroundImage: `url(${bg4})`}}>
             <div className="inner">
               
             </div>
@@ -64,8 +79,7 @@ class Template extends React.Component {
   }
 }
 
-Template.propTypes = {
-  children: React.PropTypes.function,
+Template.propTypes = {  
   location: React.PropTypes.object,
   route: React.PropTypes.object,
 }

@@ -12,19 +12,6 @@ const isCurrentPage = (location, name) => {
  */
 const getAllTags = (posts) => {
 	let allTags = {};
-
-	/*posts.forEach(({ node }) => {
-      if (node.frontmatter.tags) {
-        node.frontmatter.tags
-          .forEach(tag => {
-            if (!allTags[tag]) {
-              allTags[tag] = [];
-            }
-            allTags[tag].push(node);
-          });
-      }
-    });
-*/
     allTags = Object.keys(allTags).map( tagName => {
       return tagName;
     })

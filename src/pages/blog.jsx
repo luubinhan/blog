@@ -9,7 +9,6 @@ import PageHero from '../components/PageHero'
 import ContentPost from '../components/ContentPost'
 import Widget from '../components/Widget'
 import PostTags from '../components/PostTags'
-import {getAllTags} from '../helpers'
 
 import {PRIMARY_NAVIGATION} from '../data/data'
 import logo from "../pages/images/logo.png"
@@ -20,15 +19,11 @@ class Blog extends Component {
 
 	render() {    
 		const posts = get(this, "props.data.allMarkdownRemark.edges");
-		const allTags = getAllTags(posts);
-		let tagsArray = Object.keys(allTags).map( tagName => {
-			return tagName;
-		});
-				
+		
 		return (
 			<div className="page-blog">
 				<Helmet 
-					title="Blog | FrontEnd Developer live in Ho Chi Minh City" 
+					title="Blog | Frontend Developer live in Ho Chi Minh City" 
 					meta={[
 			          { name: 'description', content: 'luckyluu FrontEnd Developer live in Ho Chi Minh City' },
 			          { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
