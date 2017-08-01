@@ -26,24 +26,7 @@ class BlogIndex extends React.Component {
     let tagsArray = Object.keys(allTags).map( tagName => {
       return tagName;
     });
-
    
-    
-    /*posts.forEach(post => {
-      if (post.node.path !== "/404/") {
-        const title = get(post, "node.frontmatter.title") || post.node.path
-        pageLinks.push(
-          <li
-            key={post.node.frontmatter.path}            
-          >
-            <Link to={post.node.frontmatter.path}>
-              {post.node.frontmatter.title}
-            </Link>
-          </li>
-        )
-      }
-    })*/
-
     return (
       <div className="pageIndex">
 

@@ -918,4 +918,7 @@ table.normal tr td {
     min-height: calc(100vh - 40px);
   }
 }
-
+.gatsby-highlight {
+  margin-left: -150px;
+  margin-right: -150px;
+}

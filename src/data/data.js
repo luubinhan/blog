@@ -1,10 +1,5 @@
 const PRIMARY_NAVIGATION = [
 	{
-		name: "Trang chủ",
-		href: '/',
-		isActive: false,
-	},	
-	{
 		name: "Javascript",
 		href: '/tags/javascript',
 		isActive: false,	
