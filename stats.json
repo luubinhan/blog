@@ -1,62 +1,62 @@
 {
   "assetsByChunkName": {
     "page-component---src-pages-about-jsx": [
-      "page-component---src-pages-about-jsx-33b4e84b3352ed2cf0d6.js",
-      "page-component---src-pages-about-jsx-33b4e84b3352ed2cf0d6.js.map"
+      "page-component---src-pages-about-jsx-13a16e643f9f05a8a61a.js",
+      "page-component---src-pages-about-jsx-13a16e643f9f05a8a61a.js.map"
     ],
     "commons": [
-      "commons-ce241c8306acb7f28e02.js",
+      "commons-f56d27c65c554f8dca2e.js",
       "build-js-styles.css",
-      "commons-ce241c8306acb7f28e02.js.map",
+      "commons-f56d27c65c554f8dca2e.js.map",
       "build-js-styles.css.map"
     ],
     "page-component---src-pages-index-js": [
-      "page-component---src-pages-index-js-0e69b387431c07d2ae61.js",
-      "page-component---src-pages-index-js-0e69b387431c07d2ae61.js.map"
+      "page-component---src-pages-index-js-538d22418d6a5ef3599c.js",
+      "page-component---src-pages-index-js-538d22418d6a5ef3599c.js.map"
     ],
     "page-component---src-pages-blog-jsx": [
-      "page-component---src-pages-blog-jsx-f27b6ffa62f18c55504c.js",
-      "page-component---src-pages-blog-jsx-f27b6ffa62f18c55504c.js.map"
+      "page-component---src-pages-blog-jsx-2b2d4ef86b7c0e4749a8.js",
+      "page-component---src-pages-blog-jsx-2b2d4ef86b7c0e4749a8.js.map"
     ],
     "page-component---src-templates-blog-post-js": [
-      "page-component---src-templates-blog-post-js-3f1cde0e033c64a3018a.js",
-      "page-component---src-templates-blog-post-js-3f1cde0e033c64a3018a.js.map"
-    ],
-    "page-component---src-pages-portfolio-jsx": [
-      "page-component---src-pages-portfolio-jsx-fec8d985724d8ed4082c.js",
-      "page-component---src-pages-portfolio-jsx-fec8d985724d8ed4082c.js.map"
+      "page-component---src-templates-blog-post-js-3d62d761b161c3ecbdd0.js",
+      "page-component---src-templates-blog-post-js-3d62d761b161c3ecbdd0.js.map"
     ],
     "layout-component---index": [
-      "layout-component---index-3594bd14fa1f02769dd6.js",
-      "layout-component---index-3594bd14fa1f02769dd6.js.map"
+      "layout-component---index-328663ed223a1945cd77.js",
+      "layout-component---index-328663ed223a1945cd77.js.map"
+    ],
+    "page-component---src-pages-portfolio-jsx": [
+      "page-component---src-pages-portfolio-jsx-80e44fed491682f436a5.js",
+      "page-component---src-pages-portfolio-jsx-80e44fed491682f436a5.js.map"
     ],
     "page-component---src-templates-tags-js": [
-      "page-component---src-templates-tags-js-d32951d2267bb0a946e0.js",
-      "page-component---src-templates-tags-js-d32951d2267bb0a946e0.js.map"
+      "page-component---src-templates-tags-js-3087d22d39a5e44cb434.js",
+      "page-component---src-templates-tags-js-3087d22d39a5e44cb434.js.map"
     ],
     "path---tags": [
-      "path---tags-32ef890f329131650bce.js",
-      "path---tags-32ef890f329131650bce.js.map"
+      "path---tags-1eb3b16471adbf4aa76a.js",
+      "path---tags-1eb3b16471adbf4aa76a.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-9aaeac712a52989d40c8.js",
-      "path---tags-wordpress-9aaeac712a52989d40c8.js.map"
+      "path---tags-wordpress-d35f1b6d8483cedf2571.js",
+      "path---tags-wordpress-d35f1b6d8483cedf2571.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-33af4e063e46d1cd267b.js",
-      "path---tags-react-33af4e063e46d1cd267b.js.map"
+      "path---tags-react-9f1d0ddfe328debe76ba.js",
+      "path---tags-react-9f1d0ddfe328debe76ba.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-5ed87ddd0513d8942097.js",
-      "path---tags-javascript-5ed87ddd0513d8942097.js.map"
+      "path---tags-javascript-0b93876d1e485637c746.js",
+      "path---tags-javascript-0b93876d1e485637c746.js.map"
     ],
     "path---tags-google-seo": [
-      "path---tags-google-seo-b71d9f1fd47c2ecd62b7.js",
-      "path---tags-google-seo-b71d9f1fd47c2ecd62b7.js.map"
+      "path---tags-google-seo-8c5cd28394062515476b.js",
+      "path---tags-google-seo-8c5cd28394062515476b.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-10a6a51a503b161cca96.js",
-      "path---tags-css-10a6a51a503b161cca96.js.map"
+      "path---tags-css-ba5210b2475e99d9b9bf.js",
+      "path---tags-css-ba5210b2475e99d9b9bf.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -67,16 +67,16 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-ad415c83b5244f2765fa.js",
-      "path---index-ad415c83b5244f2765fa.js.map"
+      "path---index-446a047ddac73751385f.js",
+      "path---index-446a047ddac73751385f.js.map"
     ],
     "path---blog": [
-      "path---blog-6a2015fa64ef91449aca.js",
-      "path---blog-6a2015fa64ef91449aca.js.map"
+      "path---blog-f34ff7d5c7e3db17c68c.js",
+      "path---blog-f34ff7d5c7e3db17c68c.js.map"
     ],
     "path---about": [
-      "path---about-8f6f2708816f4e873dc4.js",
-      "path---about-8f6f2708816f4e873dc4.js.map"
+      "path---about-126df97548f95d829862.js",
+      "path---about-126df97548f95d829862.js.map"
     ],
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",
@@ -91,28 +91,28 @@
       "path---2017-07-31-react-router-cf07b57f9ed0274136bb.js.map"
     ],
     "path---2017-07-17-interview-react-developer-thi-hoi-gi": [
-      "path---2017-07-17-interview-react-developer-thi-hoi-gi-92cdb0ea9ac1a483e415.js",
-      "path---2017-07-17-interview-react-developer-thi-hoi-gi-92cdb0ea9ac1a483e415.js.map"
+      "path---2017-07-17-interview-react-developer-thi-hoi-gi-7cd4138f2cce8f1d3541.js",
+      "path---2017-07-17-interview-react-developer-thi-hoi-gi-7cd4138f2cce8f1d3541.js.map"
     ],
     "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau": [
       "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau-91b7ddce58e73de8a560.js",
       "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau-91b7ddce58e73de8a560.js.map"
     ],
     "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react": [
-      "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react-7fe9c18430425191be55.js",
-      "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react-7fe9c18430425191be55.js.map"
+      "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react-470a9067eaccbaf652eb.js",
+      "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react-470a9067eaccbaf652eb.js.map"
     ],
     "path---2016-12-04-front-end-developer-2016-nen-hoc-gi": [
-      "path---2016-12-04-front-end-developer-2016-nen-hoc-gi-7f6b63b587dae378778e.js",
-      "path---2016-12-04-front-end-developer-2016-nen-hoc-gi-7f6b63b587dae378778e.js.map"
+      "path---2016-12-04-front-end-developer-2016-nen-hoc-gi-d90c8b044ce900a4aba4.js",
+      "path---2016-12-04-front-end-developer-2016-nen-hoc-gi-d90c8b044ce900a4aba4.js.map"
     ],
     "path---2016-11-15-chuong-1-es-6-can-ban": [
-      "path---2016-11-15-chuong-1-es-6-can-ban-c0c66c29de5f300a5916.js",
-      "path---2016-11-15-chuong-1-es-6-can-ban-c0c66c29de5f300a5916.js.map"
+      "path---2016-11-15-chuong-1-es-6-can-ban-879e46bbf1a1f4c01a66.js",
+      "path---2016-11-15-chuong-1-es-6-can-ban-879e46bbf1a1f4c01a66.js.map"
     ],
     "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet": [
-      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-1ad20b1d691bbe98bb3c.js",
-      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-1ad20b1d691bbe98bb3c.js.map"
+      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-6f4d3c955f126116d431.js",
+      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-6f4d3c955f126116d431.js.map"
     ],
     "page-component---src-pages-sitemap-jsx": [
       "page-component---src-pages-sitemap-jsx-1877161b642d3952256b.js",
@@ -123,8 +123,8 @@
       "page-component---src-pages-404-jsx-ecea44903cfcf2b7b9ab.js.map"
     ],
     "app": [
-      "app-a7f0a864b08768e45dae.js",
-      "app-a7f0a864b08768e45dae.js.map"
+      "app-18c839541417cba7b074.js",
+      "app-18c839541417cba7b074.js.map"
     ]
   }
 }
