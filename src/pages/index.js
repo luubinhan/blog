@@ -5,7 +5,9 @@ import Helmet from "react-helmet"
 
 import HomeHero from "../components/HomeHero"
 import Widget from "../components/Widget"
-
+import ContentPost from "../components/ContentPost"
+import PostTags from "../components/PostTags"
+import {getAllTags} from '../helpers'
 import {SITE_CONFIG} from '../config'
 import heroImage from "../pages/images/cover3.jpg"
 
@@ -17,18 +19,23 @@ import Header from '../components/Header'
 class BlogIndex extends React.Component {
   render() {
     
-    const pageLinks = []
-    const siteTitle = get(this, "props.data.site.siteMetadata.title")
-    const posts = get(this, "props.data.allMarkdownRemark.edges")
+    const pageLinks = [];
+    const siteTitle = get(this, "props.data.site.siteMetadata.title");
+    const posts = get(this, "props.data.allMarkdownRemark.edges");
+    const allTags = getAllTags(posts);
+    let tagsArray = Object.keys(allTags).map( tagName => {
+      return tagName;
+    });
 
     let navigationList = PRIMARY_NAVIGATION.map(item => {
       if (item.href === '/home') {
         item.isActive = true;
       }
       return item;
-    }) 
+    });
     
-    posts.forEach(post => {
+    
+    /*posts.forEach(post => {
       if (post.node.path !== "/404/") {
         const title = get(post, "node.frontmatter.title") || post.node.path
         pageLinks.push(
@@ -41,7 +48,7 @@ class BlogIndex extends React.Component {
           </li>
         )
       }
-    })
+    })*/
 
     return (
       <div className="pageIndex">
@@ -56,39 +63,37 @@ class BlogIndex extends React.Component {
         <Header logo={logo} navigationList={navigationList}>
           
         </Header>  
-       
         <div className="container">
-          
+            
           <div className="row">
-            <div className="col-md-4 col-sm-4">
-              <Widget title="Latest blog post" href="/blog">
-                <ul className="style1">
-                  {pageLinks}
-                </ul>
-              </Widget>    
+            <div className="col-md-8">
+              { posts.length && 
+                <div className="posts-list">
+                  {
+                    posts.map( (post, index) => {
+                        if (post.node.path !== "/404/") {
+                          const title = get(post, "node.frontmatter.title") || post.node.path;
+                          
+                          return <ContentPost key={index} 
+                                  title={title} 
+                                  desc={post.node.frontmatter.desc} 
+                                  date={post.node.frontmatter.date} 
+                                  href={post.node.frontmatter.path}
+                                  tags={post.node.frontmatter.tags}
+                                  />
+                        }
+                      })
+                  }
+
+                </div>
+              }
             </div>
-            <div className="col-md-4 col-sm-4">
-              <Widget title="Latest work" href="/portfolio">
-                <ul className="style1">
-                  
-                </ul>
-              </Widget>    
-            </div>
-            <div className="col-md-4 col-sm-4">
-              <Widget title="Connect with me" href="/about">
-                <ul className="style1">
-                  <li>
-                    <a href={SITE_CONFIG.linkedin} target="_blank"><i className="ion-social-linkedin-outline"></i>LinkedIn</a>
-                  </li>
-                  <li>
-                    <a href={SITE_CONFIG.twitter} target="_blank"><i className="ion-social-twitter-outline"></i>Twitter</a>
-                  </li>
-                </ul>
-              </Widget>    
+            <div className="col-md-4">
+              <Widget title="Chuyên mục">
+                <PostTags list={tagsArray} />
+              </Widget>
             </div>
           </div>
-          
-          
         </div>
       </div>
      
@@ -114,9 +119,10 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             path
-          }
-          frontmatter {
             title
+            date(formatString: "MMMM DD, YYYY")
+            tags
+            desc
           }
         }
       }
