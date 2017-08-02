@@ -104,7 +104,7 @@ class About extends Component {
 						</div>
 					</div>
 				</div>
-				<div className="aside" style={{backgroundImage: `url(${BG_SIDEBAR[1]})`}}>
+				<div className="aside" style={{backgroundImage: `url(${BG_SIDEBAR[7]})`}}>
 					<div className="company-info">
             <div className="company-name">
             	{SITE_CONFIG.companyName}

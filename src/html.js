@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 const BUILD_TIME = new Date().getTime();
 
+import favi32 from './pages/images/favi32.png'
+import favi128 from './pages/images/favi128.png'
+
 export default class HTML extends React.Component {
   static propTypes = {
     body: PropTypes.string,
@@ -29,6 +32,8 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
+          <link rel="icon" sizes="32x32" href={favi32} type="image/png" />
+          <link rel="icon" sizes="180x180" href={favi128} type="image/png" />
           <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
           <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>          
           {this.props.headComponents}
