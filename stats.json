@@ -15,8 +15,8 @@
       "page-component---src-pages-index-js-9771da88b30aa96cf97d.js.map"
     ],
     "page-component---src-templates-tags-js": [
-      "page-component---src-templates-tags-js-efc7baad77ffcd0fd884.js",
-      "page-component---src-templates-tags-js-efc7baad77ffcd0fd884.js.map"
+      "page-component---src-templates-tags-js-ac9cecb483611ef1f632.js",
+      "page-component---src-templates-tags-js-ac9cecb483611ef1f632.js.map"
     ],
     "page-component---src-templates-blog-post-js": [
       "page-component---src-templates-blog-post-js-435f60cfcf38edfd2216.js",
@@ -31,40 +31,40 @@
       "page-component---src-pages-sitemap-jsx-52021a83b716d413e791.js.map"
     ],
     "layout-component---index": [
-      "layout-component---index-11c0b8300ea93cb15f06.js",
-      "layout-component---index-11c0b8300ea93cb15f06.js.map"
+      "layout-component---index-d3dc675b8150a6ad31d5.js",
+      "layout-component---index-d3dc675b8150a6ad31d5.js.map"
     ],
     "path---tags": [
-      "path---tags-ea589efd3a6cbf04672b.js",
-      "path---tags-ea589efd3a6cbf04672b.js.map"
+      "path---tags-ca2350f5fed03ed14a71.js",
+      "path---tags-ca2350f5fed03ed14a71.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-b386d35ca503921e3137.js",
-      "path---tags-wordpress-b386d35ca503921e3137.js.map"
+      "path---tags-wordpress-deeb60996c858430d3fb.js",
+      "path---tags-wordpress-deeb60996c858430d3fb.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-94552b48c78303e3cf14.js",
-      "path---tags-webpack-94552b48c78303e3cf14.js.map"
+      "path---tags-webpack-d9198b502a29f471f23d.js",
+      "path---tags-webpack-d9198b502a29f471f23d.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-3845c868ac4694ed3de3.js",
-      "path---tags-ux-ui-3845c868ac4694ed3de3.js.map"
+      "path---tags-ux-ui-1cd2e3592bb914c2683e.js",
+      "path---tags-ux-ui-1cd2e3592bb914c2683e.js.map"
+    ],
+    "path---tags-seo": [
+      "path---tags-seo-4fe3bf20a3a27a78077e.js",
+      "path---tags-seo-4fe3bf20a3a27a78077e.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-cd61cb2f47497fbb5376.js",
-      "path---tags-react-cd61cb2f47497fbb5376.js.map"
+      "path---tags-react-782aface7f36106ccd90.js",
+      "path---tags-react-782aface7f36106ccd90.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-03c776513baf205a688e.js",
-      "path---tags-javascript-03c776513baf205a688e.js.map"
-    ],
-    "path---tags-google-seo": [
-      "path---tags-google-seo-82735ac871d05037ee3b.js",
-      "path---tags-google-seo-82735ac871d05037ee3b.js.map"
+      "path---tags-javascript-603dcfbedf928c01de6b.js",
+      "path---tags-javascript-603dcfbedf928c01de6b.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-787cfd2b4fa5437b467d.js",
-      "path---tags-css-787cfd2b4fa5437b467d.js.map"
+      "path---tags-css-660ef3ecea2b4c124331.js",
+      "path---tags-css-660ef3ecea2b4c124331.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -75,8 +75,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-86fcb393e5034f1abfec.js",
-      "path---index-86fcb393e5034f1abfec.js.map"
+      "path---index-015c37e5e7f96f51f720.js",
+      "path---index-015c37e5e7f96f51f720.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -123,16 +123,16 @@
       "path---2016-11-15-chuong-1-es-6-can-ban-6fefd00eddd6b47d8c2d.js.map"
     ],
     "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet": [
-      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-1ad20b1d691bbe98bb3c.js",
-      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-1ad20b1d691bbe98bb3c.js.map"
+      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-8ec8c808324b1c33c515.js",
+      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-8ec8c808324b1c33c515.js.map"
     ],
     "page-component---src-pages-404-jsx": [
-      "page-component---src-pages-404-jsx-ecea44903cfcf2b7b9ab.js",
-      "page-component---src-pages-404-jsx-ecea44903cfcf2b7b9ab.js.map"
+      "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js",
+      "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-be5146498c5c0573e7cf.js",
-      "app-be5146498c5c0573e7cf.js.map"
+      "app-7fa29ec8ccd6716eedcf.js",
+      "app-7fa29ec8ccd6716eedcf.js.map"
     ]
   }
 }
