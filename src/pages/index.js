@@ -96,7 +96,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           frontmatter {
