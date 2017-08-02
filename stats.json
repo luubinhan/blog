@@ -35,36 +35,36 @@
       "layout-component---index-d3dc675b8150a6ad31d5.js.map"
     ],
     "path---tags": [
-      "path---tags-ca2350f5fed03ed14a71.js",
-      "path---tags-ca2350f5fed03ed14a71.js.map"
+      "path---tags-2ee4888ce49238df7718.js",
+      "path---tags-2ee4888ce49238df7718.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-deeb60996c858430d3fb.js",
-      "path---tags-wordpress-deeb60996c858430d3fb.js.map"
+      "path---tags-wordpress-46c35e178ee1edeb3293.js",
+      "path---tags-wordpress-46c35e178ee1edeb3293.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-d9198b502a29f471f23d.js",
-      "path---tags-webpack-d9198b502a29f471f23d.js.map"
+      "path---tags-webpack-eb11dd2297d039268308.js",
+      "path---tags-webpack-eb11dd2297d039268308.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-1cd2e3592bb914c2683e.js",
-      "path---tags-ux-ui-1cd2e3592bb914c2683e.js.map"
+      "path---tags-ux-ui-04db78b45d11118d10a2.js",
+      "path---tags-ux-ui-04db78b45d11118d10a2.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-4fe3bf20a3a27a78077e.js",
-      "path---tags-seo-4fe3bf20a3a27a78077e.js.map"
+      "path---tags-seo-044d751e52a47f5a1c5a.js",
+      "path---tags-seo-044d751e52a47f5a1c5a.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-782aface7f36106ccd90.js",
-      "path---tags-react-782aface7f36106ccd90.js.map"
+      "path---tags-react-1c4899fa9ce0344d4256.js",
+      "path---tags-react-1c4899fa9ce0344d4256.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-603dcfbedf928c01de6b.js",
-      "path---tags-javascript-603dcfbedf928c01de6b.js.map"
+      "path---tags-javascript-ed566d56e22b5a7adf90.js",
+      "path---tags-javascript-ed566d56e22b5a7adf90.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-660ef3ecea2b4c124331.js",
-      "path---tags-css-660ef3ecea2b4c124331.js.map"
+      "path---tags-css-07417a452381a8d9d33b.js",
+      "path---tags-css-07417a452381a8d9d33b.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -75,8 +75,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-015c37e5e7f96f51f720.js",
-      "path---index-015c37e5e7f96f51f720.js.map"
+      "path---index-41797f9d6b0dab3642bb.js",
+      "path---index-41797f9d6b0dab3642bb.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -95,44 +95,52 @@
       "path---2017-07-31-react-router-9ae3aeecbcfae5fa94f6.js.map"
     ],
     "path---2017-07-17-interview-react-developer-thi-hoi-gi": [
-      "path---2017-07-17-interview-react-developer-thi-hoi-gi-4067c818e1914f30ef30.js",
-      "path---2017-07-17-interview-react-developer-thi-hoi-gi-4067c818e1914f30ef30.js.map"
+      "path---2017-07-17-interview-react-developer-thi-hoi-gi-68c7688ce080e16f2ae6.js",
+      "path---2017-07-17-interview-react-developer-thi-hoi-gi-68c7688ce080e16f2ae6.js.map"
     ],
     "path---2017-03-13-gioi-thieu-ve-webpack": [
-      "path---2017-03-13-gioi-thieu-ve-webpack-e7535615c5383f88ca30.js",
-      "path---2017-03-13-gioi-thieu-ve-webpack-e7535615c5383f88ca30.js.map"
+      "path---2017-03-13-gioi-thieu-ve-webpack-62e2da9959ca7bbb61ba.js",
+      "path---2017-03-13-gioi-thieu-ve-webpack-62e2da9959ca7bbb61ba.js.map"
+    ],
+    "path---2017-03-08-thoi-dai-cua-pixel-perfect-da-het-phan-3": [
+      "path---2017-03-08-thoi-dai-cua-pixel-perfect-da-het-phan-3-91ee04d21abd00e44dc7.js",
+      "path---2017-03-08-thoi-dai-cua-pixel-perfect-da-het-phan-3-91ee04d21abd00e44dc7.js.map"
     ],
     "path---2017-03-07-thoi-dai-cua-pixel-perfect-da-het-phan-2": [
-      "path---2017-03-07-thoi-dai-cua-pixel-perfect-da-het-phan-2-3d768bbb70f0f8701db8.js",
-      "path---2017-03-07-thoi-dai-cua-pixel-perfect-da-het-phan-2-3d768bbb70f0f8701db8.js.map"
+      "path---2017-03-07-thoi-dai-cua-pixel-perfect-da-het-phan-2-495b0b8e4b0e2590ee2b.js",
+      "path---2017-03-07-thoi-dai-cua-pixel-perfect-da-het-phan-2-495b0b8e4b0e2590ee2b.js.map"
     ],
     "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau": [
-      "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau-cb2d431e078a87099a2a.js",
-      "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau-cb2d431e078a87099a2a.js.map"
+      "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau-212bc69069ed699ac089.js",
+      "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau-212bc69069ed699ac089.js.map"
     ],
     "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react": [
-      "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react-36df03ad123cc80e0f61.js",
-      "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react-36df03ad123cc80e0f61.js.map"
+      "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react-95b9272decccef917611.js",
+      "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react-95b9272decccef917611.js.map"
     ],
-    "path---2016-12-04-front-end-developer-2016-nen-hoc-gi": [
-      "path---2016-12-04-front-end-developer-2016-nen-hoc-gi-737847f5e59842de8ef9.js",
-      "path---2016-12-04-front-end-developer-2016-nen-hoc-gi-737847f5e59842de8ef9.js.map"
+    "path---2016-11-16-chuong-2-es-6-can-ban-arrow-function": [
+      "path---2016-11-16-chuong-2-es-6-can-ban-arrow-function-80f7444751c89c3f6ad7.js",
+      "path---2016-11-16-chuong-2-es-6-can-ban-arrow-function-80f7444751c89c3f6ad7.js.map"
     ],
     "path---2016-11-15-chuong-1-es-6-can-ban": [
-      "path---2016-11-15-chuong-1-es-6-can-ban-6fefd00eddd6b47d8c2d.js",
-      "path---2016-11-15-chuong-1-es-6-can-ban-6fefd00eddd6b47d8c2d.js.map"
+      "path---2016-11-15-chuong-1-es-6-can-ban-a84fde6763d11ed9142e.js",
+      "path---2016-11-15-chuong-1-es-6-can-ban-a84fde6763d11ed9142e.js.map"
     ],
     "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet": [
-      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-8ec8c808324b1c33c515.js",
-      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-8ec8c808324b1c33c515.js.map"
+      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-c042675c2190d88830ba.js",
+      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-c042675c2190d88830ba.js.map"
+    ],
+    "path---2016-04-12-front-end-developer-2016-nen-hoc-gi": [
+      "path---2016-04-12-front-end-developer-2016-nen-hoc-gi-11e313ac63b744e21e8c.js",
+      "path---2016-04-12-front-end-developer-2016-nen-hoc-gi-11e313ac63b744e21e8c.js.map"
     ],
     "page-component---src-pages-404-jsx": [
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js",
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-7fa29ec8ccd6716eedcf.js",
-      "app-7fa29ec8ccd6716eedcf.js.map"
+      "app-90cd25e2d2c3ee8a5159.js",
+      "app-90cd25e2d2c3ee8a5159.js.map"
     ]
   }
 }
