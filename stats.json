@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "page-component---src-pages-about-jsx": [
-      "page-component---src-pages-about-jsx-56ebf11a7cb71949c0a4.js",
-      "page-component---src-pages-about-jsx-56ebf11a7cb71949c0a4.js.map"
+      "page-component---src-pages-about-jsx-9e4fbd8125f944333a24.js",
+      "page-component---src-pages-about-jsx-9e4fbd8125f944333a24.js.map"
     ],
     "commons": [
       "commons-ba837a04f9c14ea5179d.js",
@@ -115,8 +115,8 @@
       "page-component---src-pages-404-jsx-ecea44903cfcf2b7b9ab.js.map"
     ],
     "app": [
-      "app-e85c38f6da12e0dfd8ca.js",
-      "app-e85c38f6da12e0dfd8ca.js.map"
+      "app-c20c281e4ce173488435.js",
+      "app-c20c281e4ce173488435.js.map"
     ]
   }
 }
