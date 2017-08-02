@@ -1,6 +1,6 @@
 ---
-path: "/2016-12-04-front-end-developer-2016-nen-hoc-gi"
-date: "2016-12-04T13:35:13.234Z"
+path: "/2016-04-12-front-end-developer-2016-nen-hoc-gi"
+date: "2016-04-12T13:35:13.234Z"
 title: "FrontEnd Developer 2016 thì nên học cái gì?"
 desc: "Hey mình có dự án mới về web, không code web lâu quá rồi, không biết bây giờ viết web thì nên làm bằng gì? Mình chỉ là frontend developer, nhưng bạn đã tìm đúng người rồi đó, mình làm web cũng đã lâu, mình có thể chỉ bạn biết cần học gì để tạo web apps"
 tags: ["javascript","css"]

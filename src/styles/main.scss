@@ -775,7 +775,11 @@ table.normal tr td {
 
     }
     ul {
+      margin-top: 30px;
       padding-left: 20px;
+      li {
+        padding-bottom: 10px;
+      }
     }
     a {
       color: #000;

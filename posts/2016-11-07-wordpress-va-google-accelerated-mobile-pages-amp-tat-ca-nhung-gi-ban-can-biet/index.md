@@ -6,6 +6,15 @@ desc: "Trong giới làm web ai cũng biết một điều Speed is King. Dân t
 tags: ["wordpress","SEO"]
 ---
 
+<!-- MarkdownTOC -->
+
+- Google Accelerated Mobile Pages - Nó là gì?
+- Ưu điểm của Google AMP
+- Cài đặt Google AMP for Wordpress
+
+<!-- /MarkdownTOC -->
+
+
 Trong giới làm web ai cũng biết một điều "Speed is King". Dân tình thích mưa một gói hàng trên mạng và phải được giao ngay lập tức, ít nhất là trong 24g, chậm trễ vài ngày là thấy hông vui, thích post tấm hình lên facebook có triệu triệu lượt người like ngay lập tức.
 
 Kết quả <a href="https://blogs.akamai.com/2015/06/performance-matters-more-than-ever.html" target="_blank">thống kê</a> cảm nhận người dùng

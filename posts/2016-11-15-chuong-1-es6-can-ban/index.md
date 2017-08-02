@@ -3,7 +3,7 @@ path: "/2016-11-15-chuong-1-es6-can-ban"
 date: "2016-12-04T13:35:13.234Z"
 title: "ES6 Căn bản (phần 1) - Những nâng cấp cho Object"
 desc: "Nếu bạn đã đọc bài FrontEnd Developer 2016 nên học gì? Chắc bạn đã rối không biết bắt đầu từ đâu nếu muốn dấn thân vào cuộc chơi nhiều cám dỗ này. Mình nghĩ cái đầu tiên cần học là ES6."
-tags: ["javascript"]
+tags: ["javascript","2016"]
 ---
 
 Một object trong javascript được khai như sau
@@ -164,5 +164,3 @@ emitter.delete()
 ```
 
 Tức nhiên vẫn khai báo phương thức như bình thường được, cách khai bao mới này có vẻ hơi dễ lẫn lộn giữa phương thức và object, tất nhiên đây chỉ là thêm lựa chọn để viết chứ không khuyến khích viết theo kiểu này vì nhìn code không được tường minh.
-
-Chương sau, <a href="https://luckyluu.wordpress.com/2016/11/16/chuong-1-es6-can-ban-phan-2/">Arrow Function</a>, một trong nhưng phương thức mới siêu cool mà bạn sẽ sử dụng rất nhiều.
