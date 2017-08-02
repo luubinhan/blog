@@ -35,28 +35,32 @@
       "layout-component---index-11c0b8300ea93cb15f06.js.map"
     ],
     "path---tags": [
-      "path---tags-da497981ab1e2159c903.js",
-      "path---tags-da497981ab1e2159c903.js.map"
+      "path---tags-642e4bc1b415358d4945.js",
+      "path---tags-642e4bc1b415358d4945.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-908350fb0b8e581bc813.js",
-      "path---tags-wordpress-908350fb0b8e581bc813.js.map"
+      "path---tags-wordpress-8f8678f57480d9124ed9.js",
+      "path---tags-wordpress-8f8678f57480d9124ed9.js.map"
+    ],
+    "path---tags-webpack": [
+      "path---tags-webpack-d001a13daf7bed9c3d18.js",
+      "path---tags-webpack-d001a13daf7bed9c3d18.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-04ba4e540a9fbf502cd5.js",
-      "path---tags-react-04ba4e540a9fbf502cd5.js.map"
+      "path---tags-react-e12e580babf1913096fc.js",
+      "path---tags-react-e12e580babf1913096fc.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-5e544d22d5f8d8660dba.js",
-      "path---tags-javascript-5e544d22d5f8d8660dba.js.map"
+      "path---tags-javascript-e61e7915ff6da299a603.js",
+      "path---tags-javascript-e61e7915ff6da299a603.js.map"
     ],
     "path---tags-google-seo": [
-      "path---tags-google-seo-38a0cdecc177c2e7363e.js",
-      "path---tags-google-seo-38a0cdecc177c2e7363e.js.map"
+      "path---tags-google-seo-ad26c2b144d55caf4935.js",
+      "path---tags-google-seo-ad26c2b144d55caf4935.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-5a5c62ecd54b07a9fa87.js",
-      "path---tags-css-5a5c62ecd54b07a9fa87.js.map"
+      "path---tags-css-e133422695346dd219c6.js",
+      "path---tags-css-e133422695346dd219c6.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -67,8 +71,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-000fcacbef58fb33a1ef.js",
-      "path---index-000fcacbef58fb33a1ef.js.map"
+      "path---index-2ab2b312b3ccaaa79706.js",
+      "path---index-2ab2b312b3ccaaa79706.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -89,6 +93,10 @@
     "path---2017-07-17-interview-react-developer-thi-hoi-gi": [
       "path---2017-07-17-interview-react-developer-thi-hoi-gi-4067c818e1914f30ef30.js",
       "path---2017-07-17-interview-react-developer-thi-hoi-gi-4067c818e1914f30ef30.js.map"
+    ],
+    "path---2017-03-13-gioi-thieu-ve-webpack": [
+      "path---2017-03-13-gioi-thieu-ve-webpack-9b39ae8d5ee69a15f535.js",
+      "path---2017-03-13-gioi-thieu-ve-webpack-9b39ae8d5ee69a15f535.js.map"
     ],
     "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau": [
       "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau-5f38107c55ea96bdacbf.js",
@@ -115,8 +123,8 @@
       "page-component---src-pages-404-jsx-ecea44903cfcf2b7b9ab.js.map"
     ],
     "app": [
-      "app-c20c281e4ce173488435.js",
-      "app-c20c281e4ce173488435.js.map"
+      "app-a1132bcdec1333a9736a.js",
+      "app-a1132bcdec1333a9736a.js.map"
     ]
   }
 }
