@@ -645,17 +645,25 @@ table.normal tr td {
 .single-post-container {
  
   padding-bottom: 80px;
-  padding-top: 40px;
+  padding-top: 60px;
   position: relative;
   .single-post-title {      
       letter-spacing: -.02em;
       font-weight: 700;
       font-style: normal;
-      font-size: 40px;
-      margin-left: -2.5px;
+      font-size: 2.6rem;      
       line-height: 1.2;
       letter-spacing: -.028em;
       text-align: center;
+      color: #000;
+      margin: 0 30px 0;
+      padding-bottom: 30px;
+  }
+  .post-excert {
+    font-size: 1.2rem;
+    line-height: 1.42;
+    font-family: $san-serif;
+    text-align: center;
   }
   h2 {
     code {
@@ -774,6 +782,10 @@ table.normal tr td {
   background: $bg-gray;
   padding-top: 30px;
   padding-bottom: 40px;
+  padding-left: 75px;
+  padding-right: 75px;
+  margin-left: -75px;
+  margin-right: -75px;
 }
 
 .read-next {
@@ -947,7 +959,7 @@ table.normal tr td {
   background-size: cover;
   background-attachment: fixed; */
 
-  .inner {
+  >.inner {
     background: rgba(44,45,49,1);    
     min-height: calc(100vh - 40px);
   }
@@ -1078,11 +1090,11 @@ $masterWidth: 870px;
     left: 0;
     top: 0;
     bottom: 0;
-    z-index: 2;
+    z-index: 3;
     width: $sidebarWidth;
     background: $backgroundSidebar;
     color: rgba(255, 255, 255, 0.65);
-    .inner {
+    > .inner {
       padding: 50px 30px 30px;
     }
     .footer {
@@ -1106,12 +1118,16 @@ $masterWidth: 870px;
     float: left;
     margin-left: $sidebarWidth;
     background: #fff;
-    min-height: 100vh;
+    
     background: #fff;
     z-index: 2;
     position: relative;
-    .inner {
-      padding: 15px 75px;
+    > .inner {
+      background: #fff;
+      padding: 15px 75px 0;
+      min-height: 100vh;
+      z-index: 2;
+      position: relative;
     }
   }
   .aside {

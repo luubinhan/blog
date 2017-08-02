@@ -11,36 +11,10 @@ import {PRIMARY_NAVIGATION} from '../data/data'
 
 import logo from '../pages/images/logo.png'
 
-import bg1 from '../pages/images/bg1.jpg'
-import bg4 from '../pages/images/bg4.jpg'
-
-class Template extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sideBg: ''
-    }
-  }
-
-  getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-  }
-
-  componentDidMount() {
-    let checkNumber = this.getRandomArbitrary(0,1);
-    let bgArray = [];
-    let newBg = bgArray[checkNumber];
-
-    this.setState({
-      sideBg: newBg
-    })
-  }
-  componentWillReceiveProps(nextProps) {
-
-  }
-
+class Template extends React.Component {  
+  
   render() {
-    const { location,children,sideBg } = this.props    
+    const {location,children} = this.props;
     return (     
       <div className="layout-blog">     
         <Helmet
@@ -61,16 +35,9 @@ class Template extends React.Component {
             </div>
             <Footer email={SITE_CONFIG.email} phone={SITE_CONFIG.phone} companyName={SITE_CONFIG.companyName} showSiteMap={false} />
           </div>
-          <div className="master">
-            <div className="inner">
+          
               {children()}
-            </div>
-          </div>
-          <div className="aside" style={{backgroundImage: `url(${bg4})`}}>
-            <div className="inner">
-              
-            </div>
-          </div>
+            
       </div>
     )
   }

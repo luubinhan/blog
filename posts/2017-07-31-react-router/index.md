@@ -41,7 +41,7 @@ ReactDOM.render( (<Home/>), document.getElementById('root'));
 
 Sử dụng với React-Router
 
-```js
+```html
 ReactDOM.render((
 	<Router>
 		<Route path="/" component={Home} /> 
@@ -57,7 +57,7 @@ Câu khai báo trên có thể diễn giải là với route "/" (tương đươ
 
 Xem xét ví dụ sau
 
-```js
+```html
 ReactDOM.render((
 	<Router>
 		<Route path="/" component={Home}></Route>
@@ -75,7 +75,7 @@ ReactDOM.render((
 
 Khai báo nested Route như sau
 
-```js
+```html
 ReactDOM.render((
   <Router>
     <Route component={MainLayout}>
@@ -91,7 +91,7 @@ Khi user visit đường dẫn */users*, React Router sẽ render component `Use
 
 Nếu muốn trang chủ cũng render `MainLayout` cùng với component `Home`
 
-```js
+```html
 ReactDOM.render((
   <Router>
     <Route component={MainLayout}>
@@ -109,7 +109,7 @@ ReactDOM.render((
 
 Thay vì viết như trên, có thể sử dụng component `IndexRoute` cũng cho cũng kết quả
 
-```js
+```html
 ReactDOM.render((
   <Router>
     <Route path="/" component={MainLayout}>
@@ -127,7 +127,7 @@ ReactDOM.render((
 
 Nếu có một khai báo cho trang *User* như bên dưới
 
-```js
+```html
 <Route path="user/settings" component={UserSettings} />
 <Route path="user/inventory" component={UserInventory} />
 <Route path="user/orders" component={UserOrders} />
@@ -135,7 +135,7 @@ Nếu có một khai báo cho trang *User* như bên dưới
 
 viết lại cho gọn
 
-```js
+```html
 <Route path="user">
   <Route path="settings" component={UserSettings} />
   <Route path="inventory" component={UserInventory} />
@@ -145,12 +145,14 @@ viết lại cho gọn
 
 Cần bổ sung thêm component cho trang `/user`
 
+```html
 <Route path="user">
   <IndexRoute component={UserProfile} />
   <Route path="settings" component={UserSettings} />
   <Route path="inventory" component={UserInventory} />
   <Route path="orders" component={UserOrders} />
 </Route>
+```
 
 # Sử dụng Link, đừng sử dụng tag a
 
@@ -202,7 +204,7 @@ browserHistory.push('/some/path');
 
 # Route với paramater string
 
-```js
+```html
 <Route path="users/:userId" component={UserProfile} />
 ```
 

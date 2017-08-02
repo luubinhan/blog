@@ -15,47 +15,78 @@ import {PRIMARY_NAVIGATION} from '../data/data'
 import logo from "../pages/images/logo.png"
 import Navigation from '../components/Navigation'
 import Header from '../components/Header'
+import bg1 from '../pages/images/bg1.jpg'
+
+const bgArray = [
+  'https://luubinhan.github.io/blog/static/bg1.e2f287dd.jpg',
+  'https://luubinhan.github.io/blog/static/bg2.cc2e32a4.jpg',
+  'https://luubinhan.github.io/blog/static/bg3.6fe2f053.jpg',
+  'https://luubinhan.github.io/blog/static/bg4.37a1ef2b.jpg',
+  'https://luubinhan.github.io/blog/static/bg5.ea05aa74.jpg',
+
+]
 
 class BlogIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sideBg: ''
+    }
+  }
+  getRandomArbitrary(max) {
+    return Math.floor((Math.random() * max) + 1);
+  }
+  componentWillMount() {
+    let checkNumber = this.getRandomArbitrary(4);    
+    let newBg = bgArray[checkNumber];    
+    this.setState({
+      sideBg: newBg
+    })   
+  }
   render() {
     
     const pageLinks = [];
     const siteTitle = get(this, "props.data.site.siteMetadata.title");
     const posts = get(this, "props.data.allMarkdownRemark.edges");
-   
+    
     return (
-      <div className="pageIndex">
 
-        <Helmet 
-          title={get(this, "props.data.site.siteMetadata.title")} 
-          meta={[
-                { name: 'description', content: 'luckyluu FrontEnd Developer live in Ho Chi Minh City' },
-                { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
-              ]}
-        />
+      <div className="master">
+        <div className="inner">  
+          <div className="page page-home">
+            <Helmet 
+              title={get(this, "props.data.site.siteMetadata.title")} 
+              meta={[
+                    { name: 'description', content: 'luckyluu FrontEnd Developer live in Ho Chi Minh City' },
+                    { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
+                  ]}
+            />
             
-          { posts.length && 
-            <div className="posts-list">
-              {
-                posts.map( (post, index) => {
-                    if (post.node.path !== "/404/") {
-                      const title = get(post, "node.frontmatter.title") || post.node.path;
-                      
-                      return <ContentPost key={index} 
-                              title={title} 
-                              desc={post.node.frontmatter.desc} 
-                              date={post.node.frontmatter.date} 
-                              href={post.node.frontmatter.path}
-                              tags={post.node.frontmatter.tags}
-                              />
-                    }
-                  })
-              }
-            </div>
-          }
-        
+            { posts.length && 
+              <div className="posts-list">
+                {
+                  posts.map( (post, index) => {
+                      if (post.node.path !== "/404/") {
+                        const title = get(post, "node.frontmatter.title") || post.node.path;
+                        
+                        return <ContentPost key={index} 
+                                title={title} 
+                                desc={post.node.frontmatter.desc} 
+                                date={post.node.frontmatter.date} 
+                                href={post.node.frontmatter.path}
+                                tags={post.node.frontmatter.tags}
+                                />
+                      }
+                    })
+                }
+              </div>
+            }            
+          </div>
+        </div>
+        <div className="aside" style={{backgroundImage: `url(${this.state.sideBg})`}}>
+            
+        </div>
       </div>
-     
     )
   }
 }
