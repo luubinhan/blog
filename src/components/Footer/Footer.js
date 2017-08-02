@@ -43,7 +43,10 @@ class Footer extends Component{
 								
 								{showSiteMap &&
 								 <span className="sitemap-link"> | <Link to="/sitemap">Sitemap</Link></span>
-								}								
+								}	
+								<div>
+									picture credit <a href="https://unsplash.com" target="_blank">unsplash.com</a>
+								</div>
 							</div>
 						
 					</section>

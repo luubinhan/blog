@@ -47,7 +47,7 @@ export default class Tags extends React.Component {
             
               
                  
-                <ul>
+                
                   {post.map(({ id, frontmatter, excerpt }) => {
                     return (
                       <ContentPost key={id} 
@@ -60,32 +60,55 @@ export default class Tags extends React.Component {
                                 />                       
                     );
                   })}
-                </ul>        
+                
             </div>
             
           </div>
-          <div className="aside" style={{backgroundImage: `url(${this.state.sideBg})`}}></div>
+          <div className="aside" style={{backgroundImage: `url(${this.state.sideBg})`}}>
+            <div className="company-info tag">
+              <div className="company-name ">
+                {tag}
+              </div>             
+            </div>
+          </div>
         </div>
       );
     }
     return (
-      <div>
-        <h1>Tags</h1>
-        <ul className="tags">
-          {Object.keys(posts).map(tagName => {
-            const tags = posts[tagName];
-            return (
-              <li key={tagName}>
-                <GatsbyLink to={`/tags/${tagName}`}>
-                  {tagName}
-                </GatsbyLink>
-              </li>
-            );
-          })}
-        </ul>
-        <Link to="/">
-          <HomeIcon /> All posts
-        </Link>
+      <div className="master">
+        <div className="inner">
+         <Helmet 
+            title="Tags | FrontEnd Developer live in Ho Chi Minh City" 
+            meta={[
+                  { name: 'description', content: 'luckyluu FrontEnd Developer live in Ho Chi Minh City' },
+                  { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
+                ]}
+          />
+          <div className="single-post-container">       
+            <h1 className="single-post-title">Tags</h1>
+            <ul className="tagsUl">
+              {Object.keys(posts).map(tagName => {
+                const tags = posts[tagName];
+                return (
+                  <li key={tagName}>
+                    <GatsbyLink to={`/tags/${tagName}`}>
+                      {tagName}
+                    </GatsbyLink>
+                  </li>
+                );
+              })}
+            </ul>    
+          </div>
+        
+          
+        </div>
+        <div className="aside" style={{backgroundImage: `url(${this.state.sideBg})`}}>
+          <div className="company-info tag">
+            <div className="company-name ">
+              TAGS
+            </div>             
+          </div>
+        </div>
       </div>
     );
   }

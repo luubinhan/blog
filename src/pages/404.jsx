@@ -7,15 +7,15 @@ class NotFound extends Component {
   render() {   
     return (
 			<div className="fourzerofour">
+        <div className="inner">
 			    <h1>404. Whoops!</h1>	    
-			    <p>We could not find the page you were looking for.</p>            
-          <Link to="/" className="btn btn-primary">
-			    	<i className="ion-arrow-left-c"></i> Back to home
+			    <p>Internet quá rộng lớn, đừng để lạc mất nhau!</p>            
+          <Link to="/" className="btn btn-light">
+			    	<i className="ion-arrow-left-c"></i> Quay lại trang chủ
           </Link>          
+        </div>
 			</div>
     )
   }
 }
-
-
 export default NotFound;

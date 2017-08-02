@@ -637,6 +637,10 @@ table.normal tr td {
     border-color: darken($primary-color,5%);    
   }
 }
+.btn-light {
+  border: 1px solid rgba(255,255,255,.7);
+  color: #fff;
+}
 
 /* RESET BOOTSTRAP -------------------------------------------- */
 .page-blog {
@@ -1234,7 +1238,13 @@ $masterWidth: 870px;
     right: 35px;
     width: calc(100% - 1300px); 
     text-align: center;
-    color: #fff;           
+    color: #fff;       
+    &.tag {
+      bottom: auto;
+      top: 50%;
+      margin-right: -30px;
+      text-transform: uppercase;
+    }    
   }
   .company-name {
     font-family: $san-serif;
@@ -1250,15 +1260,59 @@ $masterWidth: 870px;
     font-size: 20px;
   }
 }
-
+.fourzerofour {
+  margin-left: 320px; 
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("images/yoann-boyer-156510.jpg") no-repeat;
+  background-size: cover;
+  color: #fff;
+  h1 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  .btn {
+    font-size: 1.1rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    &:hover {
+      color: #fff;
+    }
+  }
+  > .inner{
+    text-align: center;
+  }
+}
+.tagsUl {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    text-align: center;
+    font-size: 2rem;
+    text-transform: capitalize;
+  } 
+}
 @media (max-width: 1400px){
   .layout-blog {
     .sidebar{
       width: 200px;  
     }
+    .fourzerofour {
+      margin-left: 200px;
+    }
     .master{
       margin-left: 200px;
-      width: 700px;
+      max-width: 700px;
     }
   }
   .aside {
@@ -1309,6 +1363,7 @@ $masterWidth: 870px;
   } 
 }
 @media (max-width: $breakpoint-sm){
+
   .layout-blog {
     .sidebar {
       position: relative;
@@ -1401,6 +1456,9 @@ $masterWidth: 870px;
     .master {
       margin-left: 0;
     }
+    .fourzerofour {
+      margin-left: 0;
+    }
   }
 
   
@@ -1456,3 +1514,4 @@ $masterWidth: 870px;
     margin-right: -30px;
   }
 }
+
