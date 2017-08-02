@@ -1,62 +1,62 @@
 {
   "assetsByChunkName": {
     "page-component---src-pages-about-jsx": [
-      "page-component---src-pages-about-jsx-6bbdc67f1ff63dea5333.js",
-      "page-component---src-pages-about-jsx-6bbdc67f1ff63dea5333.js.map"
+      "page-component---src-pages-about-jsx-1829586ace8c382c3dc3.js",
+      "page-component---src-pages-about-jsx-1829586ace8c382c3dc3.js.map"
     ],
     "commons": [
-      "commons-af37511806f561cf3681.js",
+      "commons-7a3d0645e667eb268b17.js",
       "build-js-styles.css",
-      "commons-af37511806f561cf3681.js.map",
+      "commons-7a3d0645e667eb268b17.js.map",
       "build-js-styles.css.map"
     ],
     "page-component---src-pages-index-js": [
-      "page-component---src-pages-index-js-6b918f3b5dd6a8552fab.js",
-      "page-component---src-pages-index-js-6b918f3b5dd6a8552fab.js.map"
+      "page-component---src-pages-index-js-139518f89c049096f5e1.js",
+      "page-component---src-pages-index-js-139518f89c049096f5e1.js.map"
     ],
     "page-component---src-templates-tags-js": [
-      "page-component---src-templates-tags-js-175dcf2e66b87af26d3c.js",
-      "page-component---src-templates-tags-js-175dcf2e66b87af26d3c.js.map"
+      "page-component---src-templates-tags-js-0d545e04580d4ea9950a.js",
+      "page-component---src-templates-tags-js-0d545e04580d4ea9950a.js.map"
     ],
     "page-component---src-templates-blog-post-js": [
-      "page-component---src-templates-blog-post-js-22453f4872f6bd7fb586.js",
-      "page-component---src-templates-blog-post-js-22453f4872f6bd7fb586.js.map"
+      "page-component---src-templates-blog-post-js-dd4a5aed6ad33a0e5981.js",
+      "page-component---src-templates-blog-post-js-dd4a5aed6ad33a0e5981.js.map"
     ],
     "page-component---src-pages-portfolio-jsx": [
-      "page-component---src-pages-portfolio-jsx-3578d58539d80ff7d8e1.js",
-      "page-component---src-pages-portfolio-jsx-3578d58539d80ff7d8e1.js.map"
-    ],
-    "layout-component---index": [
-      "layout-component---index-d908e28ce6008f12a26d.js",
-      "layout-component---index-d908e28ce6008f12a26d.js.map"
+      "page-component---src-pages-portfolio-jsx-e04f536542c0ca05225e.js",
+      "page-component---src-pages-portfolio-jsx-e04f536542c0ca05225e.js.map"
     ],
     "page-component---src-pages-sitemap-jsx": [
       "page-component---src-pages-sitemap-jsx-52021a83b716d413e791.js",
       "page-component---src-pages-sitemap-jsx-52021a83b716d413e791.js.map"
     ],
+    "layout-component---index": [
+      "layout-component---index-26219f001c77a66fec3d.js",
+      "layout-component---index-26219f001c77a66fec3d.js.map"
+    ],
     "path---tags": [
-      "path---tags-8c614fde8fb06607858c.js",
-      "path---tags-8c614fde8fb06607858c.js.map"
+      "path---tags-da497981ab1e2159c903.js",
+      "path---tags-da497981ab1e2159c903.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-3656d47b11978dce745d.js",
-      "path---tags-wordpress-3656d47b11978dce745d.js.map"
+      "path---tags-wordpress-908350fb0b8e581bc813.js",
+      "path---tags-wordpress-908350fb0b8e581bc813.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-cdcf797433bc0fecb4ba.js",
-      "path---tags-react-cdcf797433bc0fecb4ba.js.map"
+      "path---tags-react-04ba4e540a9fbf502cd5.js",
+      "path---tags-react-04ba4e540a9fbf502cd5.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-987b6f1a1c4e997199a4.js",
-      "path---tags-javascript-987b6f1a1c4e997199a4.js.map"
+      "path---tags-javascript-5e544d22d5f8d8660dba.js",
+      "path---tags-javascript-5e544d22d5f8d8660dba.js.map"
     ],
     "path---tags-google-seo": [
-      "path---tags-google-seo-20a3924bce9008f4cd60.js",
-      "path---tags-google-seo-20a3924bce9008f4cd60.js.map"
+      "path---tags-google-seo-38a0cdecc177c2e7363e.js",
+      "path---tags-google-seo-38a0cdecc177c2e7363e.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-a61e36df686724bfdddb.js",
-      "path---tags-css-a61e36df686724bfdddb.js.map"
+      "path---tags-css-5a5c62ecd54b07a9fa87.js",
+      "path---tags-css-5a5c62ecd54b07a9fa87.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -67,8 +67,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-4e7407bde4896020ea26.js",
-      "path---index-4e7407bde4896020ea26.js.map"
+      "path---index-d6b52e0f09034a0febec.js",
+      "path---index-d6b52e0f09034a0febec.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -83,40 +83,40 @@
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---2017-07-31-react-router": [
-      "path---2017-07-31-react-router-3688aa053696b4c5932a.js",
-      "path---2017-07-31-react-router-3688aa053696b4c5932a.js.map"
+      "path---2017-07-31-react-router-9ae3aeecbcfae5fa94f6.js",
+      "path---2017-07-31-react-router-9ae3aeecbcfae5fa94f6.js.map"
     ],
     "path---2017-07-17-interview-react-developer-thi-hoi-gi": [
-      "path---2017-07-17-interview-react-developer-thi-hoi-gi-972ff2ed08ca66119e28.js",
-      "path---2017-07-17-interview-react-developer-thi-hoi-gi-972ff2ed08ca66119e28.js.map"
+      "path---2017-07-17-interview-react-developer-thi-hoi-gi-4067c818e1914f30ef30.js",
+      "path---2017-07-17-interview-react-developer-thi-hoi-gi-4067c818e1914f30ef30.js.map"
     ],
     "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau": [
-      "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau-d8056d50ed46127668d1.js",
-      "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau-d8056d50ed46127668d1.js.map"
+      "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau-5f38107c55ea96bdacbf.js",
+      "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau-5f38107c55ea96bdacbf.js.map"
     ],
     "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react": [
-      "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react-0c6089050e074b4503a1.js",
-      "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react-0c6089050e074b4503a1.js.map"
+      "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react-36df03ad123cc80e0f61.js",
+      "path---2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react-36df03ad123cc80e0f61.js.map"
     ],
     "path---2016-12-04-front-end-developer-2016-nen-hoc-gi": [
-      "path---2016-12-04-front-end-developer-2016-nen-hoc-gi-7e175f603caf5934c30b.js",
-      "path---2016-12-04-front-end-developer-2016-nen-hoc-gi-7e175f603caf5934c30b.js.map"
+      "path---2016-12-04-front-end-developer-2016-nen-hoc-gi-737847f5e59842de8ef9.js",
+      "path---2016-12-04-front-end-developer-2016-nen-hoc-gi-737847f5e59842de8ef9.js.map"
     ],
     "path---2016-11-15-chuong-1-es-6-can-ban": [
-      "path---2016-11-15-chuong-1-es-6-can-ban-353cc266a3bcfee21f01.js",
-      "path---2016-11-15-chuong-1-es-6-can-ban-353cc266a3bcfee21f01.js.map"
+      "path---2016-11-15-chuong-1-es-6-can-ban-6fefd00eddd6b47d8c2d.js",
+      "path---2016-11-15-chuong-1-es-6-can-ban-6fefd00eddd6b47d8c2d.js.map"
     ],
     "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet": [
-      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-01eb7c05ed4db17c470d.js",
-      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-01eb7c05ed4db17c470d.js.map"
+      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-1ad20b1d691bbe98bb3c.js",
+      "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-1ad20b1d691bbe98bb3c.js.map"
     ],
     "page-component---src-pages-404-jsx": [
       "page-component---src-pages-404-jsx-ecea44903cfcf2b7b9ab.js",
       "page-component---src-pages-404-jsx-ecea44903cfcf2b7b9ab.js.map"
     ],
     "app": [
-      "app-bac6ab81f7d859dd2ab0.js",
-      "app-bac6ab81f7d859dd2ab0.js.map"
+      "app-17f02c72d6b44ffe6d4c.js",
+      "app-17f02c72d6b44ffe6d4c.js.map"
     ]
   }
 }
