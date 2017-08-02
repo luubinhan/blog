@@ -12,8 +12,20 @@ import {PRIMARY_NAVIGATION} from '../data/data'
 import logo from '../pages/images/logo.png'
 
 class Template extends React.Component {  
-  
+  constructor(props) {
+    super(props);
+    this.state = {
+      collapsed: true 
+    } 
+    this._onClickNavbar = this._onClickNavbar.bind(this)
+  }
+  _onClickNavbar(){
+    this.setState({
+      collapsed: !this.state.collapsed
+    })
+  }
   render() {
+    let {collapsed} = this.state;
     const {location,children} = this.props;
     return (     
       <div className="layout-blog">     
@@ -28,10 +40,18 @@ class Template extends React.Component {
        
           <div className="sidebar">
             <div className="inner">
+
               <Link to={'/'} className="go-home">
                 <img src={logo} alt={SITE_CONFIG.companyName}/>
               </Link>
-              <Navigation items={PRIMARY_NAVIGATION} cssClass="primary-menu" />              
+              <button type="button" className={"navbar-toggle " + (collapsed ? "collapsed" : "") } onClick={this._onClickNavbar} aria-expanded="false">
+                <div className="hamburger hamburger-1">
+                  <span className="line"></span>
+                  <span className="line"></span>
+                  <span className="line"></span>
+                </div>
+              </button>
+              <Navigation items={PRIMARY_NAVIGATION} cssClass={"primary-menu " + (collapsed ? "collapsed" : "") } />              
             </div>
             <Footer email={SITE_CONFIG.email} phone={SITE_CONFIG.phone} companyName={SITE_CONFIG.companyName} showSiteMap={false} />
           </div>

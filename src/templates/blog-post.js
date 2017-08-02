@@ -7,19 +7,12 @@ import SocialShare from '../components/SocialShare'
 import Bio from '../components/Bio'
 
 import {SITE_CONFIG} from '../config'
+import {BG_SIDEBAR} from '../data/data'
 import profileImg from '../pages/images/profile.jpg'
 import Header from '../components/Header'
 import Navigation from '../components/Navigation'
 import logo from "../pages/images/logo.png"
 
-const bgArray = [
-  'https://luubinhan.github.io/blog/static/bg1.e2f287dd.jpg',
-  'https://luubinhan.github.io/blog/static/bg2.cc2e32a4.jpg',
-  'https://luubinhan.github.io/blog/static/bg3.6fe2f053.jpg',
-  'https://luubinhan.github.io/blog/static/bg4.37a1ef2b.jpg',
-  'https://luubinhan.github.io/blog/static/bg5.ea05aa74.jpg',
-
-]
 
 export default class Template extends React.Component {
   constructor(props) {
@@ -39,8 +32,8 @@ export default class Template extends React.Component {
   }
   
   componentWillMount(nextProps, nextState) {
-    let checkNumber = this.getRandomArbitrary(4);    
-    let newBg = bgArray[checkNumber];    
+    let checkNumber = this.getRandomArbitrary(BG_SIDEBAR.length-1);    
+    let newBg = BG_SIDEBAR[checkNumber];    
     this.setState({
       sideBg: newBg
     })   

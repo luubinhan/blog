@@ -11,36 +11,12 @@ import PostTags from "../components/PostTags"
 import {SITE_CONFIG} from '../config'
 import heroImage from "../pages/images/cover3.jpg"
 
-import {PRIMARY_NAVIGATION} from '../data/data'
+import {PRIMARY_NAVIGATION, BG_SIDEBAR} from '../data/data'
 import logo from "../pages/images/logo.png"
 import Navigation from '../components/Navigation'
 import Header from '../components/Header'
-import bg6 from '../pages/images/bg6.jpg'
-import bg7 from '../pages/images/bg7.jpg'
-import bg8 from '../pages/images/bg8.jpg'
-import bg9 from '../pages/images/bg9.jpg'
-import bg10 from '../pages/images/bg10.jpg'
-import bg11 from '../pages/images/bg11.jpg'
-import bg12 from '../pages/images/bg12.jpg'
-import bg13 from '../pages/images/bg13.jpg'
-import bg14 from '../pages/images/bg14.jpg'
-import bg15 from '../pages/images/bg15.jpg'
-import bg16 from '../pages/images/bg16.jpg'
-import bg17 from '../pages/images/bg17.jpg'
-import bg18 from '../pages/images/bg18.jpg'
-import bg19 from '../pages/images/bg19.jpg'
-import bg20 from '../pages/images/bg20.jpg'
-import bg21 from '../pages/images/bg21.jpg'
-import bg22 from '../pages/images/bg22.jpg'
 
-const bgArray = [
-  'https://luubinhan.github.io/blog/static/bg1.e2f287dd.jpg',
-  'https://luubinhan.github.io/blog/static/bg2.cc2e32a4.jpg',
-  'https://luubinhan.github.io/blog/static/bg3.6fe2f053.jpg',
-  'https://luubinhan.github.io/blog/static/bg4.37a1ef2b.jpg',
-  'https://luubinhan.github.io/blog/static/bg5.ea05aa74.jpg',
 
-]
 
 class BlogIndex extends React.Component {
   constructor(props) {
@@ -53,8 +29,8 @@ class BlogIndex extends React.Component {
     return Math.floor((Math.random() * max) + 1);
   }
   componentWillMount() {
-    let checkNumber = this.getRandomArbitrary(4);    
-    let newBg = bgArray[checkNumber];    
+    let checkNumber = this.getRandomArbitrary(BG_SIDEBAR.length-1);    
+    let newBg = BG_SIDEBAR[checkNumber];    
     this.setState({
       sideBg: newBg
     })   

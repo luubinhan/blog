@@ -32,7 +32,7 @@ class Footer extends Component{
 			<div id="footer">
 				<footer className="footer">
 					<section className="footer-inner">
-						<div className="container">
+						
 							{showContactInfo &&
 								<div className="copyright">
 									Contact : <a href={"tel:" + phone}>{phone}</a> - Email: <a href={"mailto:" + email}>{email}</a>
@@ -45,7 +45,7 @@ class Footer extends Component{
 								 <span className="sitemap-link"> | <Link to="/sitemap">Sitemap</Link></span>
 								}								
 							</div>
-						</div>
+						
 					</section>
 				</footer>
 			</div>
