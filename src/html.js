@@ -33,6 +33,7 @@ export default class HTML extends React.Component {
           <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>          
           {this.props.headComponents}
           {css}
+         
         </head>
         <body>
           <div
@@ -40,6 +41,7 @@ export default class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
+          
         </body>
       </html>
     );

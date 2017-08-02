@@ -28,6 +28,12 @@ export default class Template extends React.Component {
       sideBg: ''
     }
   }
+  componentDidMount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://luckyluu-blog.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  }
   getRandomArbitrary(max) {
     return Math.floor((Math.random() * max) + 1);
   }
@@ -79,7 +85,7 @@ export default class Template extends React.Component {
             </div>
             <div className="section section-below-post">
               <div className="inner">
-              
+                  <div id="disqus_thread"></div>
                   <div className="read-next">       
                     
                     {next &&
