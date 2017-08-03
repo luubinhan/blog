@@ -13,9 +13,8 @@
   width: 100%;
   .footer-inner {
     padding: $glutter 0;
-    a {
-      font-weight: bold;
-      color: $primary-color;
+    a {      
+      color: $muted;
     }
   }
   .copyright {

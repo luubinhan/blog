@@ -1,9 +1,9 @@
 ---
 path: "/2016-11-15-chuong-1-es6-can-ban"
-date: "2016-12-04T13:35:13.234Z"
+date: "2016-11-15T13:35:13.234Z"
 title: "ES6 Căn bản (phần 1) - Những nâng cấp cho Object"
 desc: "Nếu bạn đã đọc bài FrontEnd Developer 2016 nên học gì? Chắc bạn đã rối không biết bắt đầu từ đâu nếu muốn dấn thân vào cuộc chơi nhiều cám dỗ này. Mình nghĩ cái đầu tiên cần học là ES6."
-tags: ["javascript","2016"]
+tags: ["javascript"]
 ---
 
 Một object trong javascript được khai như sau

@@ -67,4 +67,12 @@
     }
 	}
 }
+@media (max-width: $breakpoint-xs){
+  .post-meta {
+    font-size: 11px;
+    .post-date {
+      margin-bottom: 5px;
+    }
+  }
+}
 /* MYSTYLE: Post meta ---------------------------------------*/

@@ -15,15 +15,33 @@ class Template extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      /*
+      Collapse state of menu for SP
+       */
       collapsed: true 
     } 
     this._onClickNavbar = this._onClickNavbar.bind(this)
+    this._handleNavClick = this._handleNavClick.bind(this)
   }
+  
+  /*
+  Toggle menu for SP
+   */
   _onClickNavbar(){
     this.setState({
       collapsed: !this.state.collapsed
     })
   }
+  
+  /*
+  Hide menu when click on link for SP
+   */
+  _handleNavClick(){
+    this.setState({
+      collapsed: !this.state.collapsed
+    })  
+  }
+
   render() {
     let {collapsed} = this.state;
     const {location,children} = this.props;
@@ -51,7 +69,7 @@ class Template extends React.Component {
                   <span className="line"></span>
                 </div>
               </button>
-              <Navigation items={PRIMARY_NAVIGATION} cssClass={"primary-menu " + (collapsed ? "collapsed" : "") } />              
+              <Navigation handleClick={this._handleNavClick} items={PRIMARY_NAVIGATION} cssClass={"primary-menu " + (collapsed ? "collapsed" : "") } />              
             </div>
             <Footer email={SITE_CONFIG.email} phone={SITE_CONFIG.phone} companyName={SITE_CONFIG.companyName} showSiteMap={false} />
           </div>

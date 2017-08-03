@@ -3,7 +3,7 @@ path: "/2017-03-08-thoi-dai-cua-pixel-perfect-da-het-phan-3"
 date: "2017-03-08T13:35:13.234Z"
 title: "Thời đại của Pixel Perfect Design đã hết từ lâu - Phần 3"
 desc: "UI kit là tất cả những elment bạn đang sử dụng trong project, nếu là dân React có thể gọi là component. Sau này khi muốn maintenance sẽ dễ dàng hơn khi dự án ngày càng phình ra."
-tags: ["css","ux-ui","2017"]
+tags: ["css","ux-ui"]
 ---
 
 <!-- MarkdownTOC -->

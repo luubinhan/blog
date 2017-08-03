@@ -23,16 +23,26 @@ class ProfileHero extends Component {
     let {img,name,position} = this.props;
     return (
       <div className="hero-profile">
-        <div className="hero-avatar">
-          <img src={img} alt="" />
-        </div>
+
+        {img !== '' &&
+          <div className="hero-avatar">
+            <img src={img} alt="" />
+          </div>
+        }
+        
         <header className="profile-block">
-          <div className="profile-name">
-            {name}
-          </div>
-          <div className="profile-position">
-            {position}
-          </div>
+          { name !== '' &&
+            <div className="profile-name">
+              {name}
+            </div>
+          }
+
+          { position !== '' &&
+            <div className="profile-position">
+              {position}
+            </div>
+          }
+
           <div className="profile-desc">
             {this.props.children}
           </div>

@@ -3,7 +3,7 @@ path: "/2016-11-16-chuong-2-es6-can-ban-arrow-function"
 date: "2016-11-16T13:35:13.234Z"
 title: "Hồi 2: ES6 căn bản - Arrow Function"
 desc: "Hồi 2 trong series ES6 căn bản, nói về Arrow Function"
-tags: ["javascript","2016"]
+tags: ["javascript"]
 ---
 
 <!-- MarkdownTOC -->

@@ -24,7 +24,7 @@ class PostMeta extends Component{
 			<div className="post-meta">
 				{datetime !== '' && 
 				    <div className="post-date">        
-				        <time className="dateline" dateTime={datetime} itemProp="dateModified" content={datetime}>{datetime}</time>
+				        <time className="dateline" dateTime={datetime} itemProp="dateModified" pubdate content={datetime}>{datetime}</time>
 				    </div>	
 			    }
 			    { tags.length &&

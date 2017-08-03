@@ -56,25 +56,30 @@ export default class Template extends React.Component {
             />
        
             <div className="single-post-container">       
-              
-              <h1 className="single-post-title">
-                {post.frontmatter.title}     
-              </h1>
-              <div className="post-excert">
-                {post.frontmatter.desc}
-              </div>
-              <div className="social-media-bar">
-                <SocialShare href={post.frontmatter.path} title={post.frontmatter.title} excerpt={post.frontmatter.desc}  />
-              </div>
-              <div className="blog-post">
-                <div
-                  className="post-content"
-                  dangerouslySetInnerHTML={{ __html: post.html }}
-                />        
-              </div>
+              <article>
+                <header>
+                  <h1 className="single-post-title">
+                    {post.frontmatter.title}     
+                  </h1>
+                </header>
+                <div className="post-excert">
+                  {post.frontmatter.desc}
+                </div>
+                <aside>
+                  <div className="social-media-bar">
+                    <SocialShare href={post.frontmatter.path} title={post.frontmatter.title} excerpt={post.frontmatter.desc}  />
+                  </div>
+                </aside>
+                <div className="blog-post">
+                  <div
+                    className="post-content"
+                    dangerouslySetInnerHTML={{ __html: post.html }}
+                  />        
+                </div>
+              </article>
               <PostTags list={post.frontmatter.tags || []} />
               <Bio name={SITE_CONFIG.companyName} desc={SITE_CONFIG.tagLine} href="#" img={profileImg} />
-
+              
             </div>
             <div className="section section-below-post">
               <div className="inner">

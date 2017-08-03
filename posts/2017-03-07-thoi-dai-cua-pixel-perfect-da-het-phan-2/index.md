@@ -3,7 +3,7 @@ path: "/2017-03-07-thoi-dai-cua-pixel-perfect-da-het-phan-2"
 date: "2017-03-07T13:35:13.234Z"
 title: "Thời đại của Pixel Perfect Design đã hết từ lâu - Phần 2"
 desc: "Khi bắt dầu dàn trang cho web, hãy sử dụng những hệ thống grid phổ biến hiện nay như Bootstrap Grid. Nếu bạn là designer mà chưa biết đến CSS framework này thì thiệt thiếu xót trầm trọng..."
-tags: ["css","ux-ui","2017"]
+tags: ["css","ux-ui"]
 ---
 <!-- MarkdownTOC -->
 

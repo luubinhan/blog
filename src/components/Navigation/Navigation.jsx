@@ -10,6 +10,8 @@ class Navigation extends React.Component{
 	static propTypes ={
 		items: PropTypes.array.isRequired,  
 		cssClass: PropTypes.string,
+
+		handleClick: PropTypes.func,
 	}
 	static defaultProps= {
 		cssClass: ''
@@ -20,11 +22,12 @@ class Navigation extends React.Component{
 			
 	render(){
 		const {items,cssClass } = this.props;		
+		
 		return(
 			<div className="navigation-component">
 				<ul className={"nav " + cssClass}>					
 					{
-						this.props.items.map( (item,index) => <Li key={index} {...item} />)
+						this.props.items.map( (item,index) => <Li key={index} {...item} handleClick={this.props.handleClick} />)
 					}						
 				</ul>
 			</div>

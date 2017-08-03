@@ -1493,11 +1493,24 @@ $masterWidth: 870px;
   .single-post-container {
     padding-top: 30px;
     .post-content {
+      font-size: 1rem;
       h2 {
-        font-size: 25px;
+        font-size: 1.3rem;
+        margin-top: 1rem;
       }  
+      p {
+        font-size: 1rem;
+      }
+      ul {
+        margin-top: 15px;
+        padding-left: 10px;
+        li {
+          padding-bottom: 0;
+        }
+      }
     }    
     .blog-post {
+      padding-top: 20px;
       &:before {
         display: none;
       }
@@ -1510,6 +1523,10 @@ $masterWidth: 870px;
     .post-excert {
       font-size: 1rem;
     }
+    blockquote {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
   }
   .section-below-post{
     margin-left: -30px;
@@ -1517,5 +1534,31 @@ $masterWidth: 870px;
     padding-right: 30px;
     margin-right: -30px;
   }
+  .fourzerofour{
+    height: calc(100vh - 50px);
+    background-size: auto 100%;
+    background-position: center top;
+
+    > .inner {
+      background: rgba(0,0,0,.5);
+      height: calc(100vh - 50px);
+    }
+    h1 {
+      font-size: 28px;      
+    }
+    p{
+      font-size: 18px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+  .page-about {
+    .about-header {
+      padding-top: 0;
+      margin-left: -30px;
+      margin-right: -30px;
+    }  
+  }
+  
 }
 

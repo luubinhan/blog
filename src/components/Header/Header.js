@@ -32,7 +32,8 @@ class Header extends React.Component{
 		this.state = {
 			collapsed: true	
 		}		
-		this._onClickNavbar = this._onClickNavbar.bind(this)
+		this._onClickNavbar = this._onClickNavbar.bind(this);
+		this._handleNavClick = this._handleNavClick.bind(this);
 	}
 	
 	componentDidMount() {
@@ -43,11 +44,15 @@ class Header extends React.Component{
 			collapsed: !this.state.collapsed
 		})
 	}
+	_handleNavClick(){
+		this.setState({
+			collapsed: !this.state.collapsed
+		})	
+	}
 
 	render() {
 		let {collapsed} = this.state;
-		let {navigationList} = this.props;
-
+		let {navigationList} = this.props;		
 		return(
 			<div id="header" className="componentHeader">
 				<header className="header">
@@ -71,7 +76,7 @@ class Header extends React.Component{
 
 										{navigationList &&
 											<div className={"collapse navbar-collapse animated " + (collapsed ? "": "in fadeIn") } id="bs-example-navbar-collapse-1" >
-												<Navigation items={navigationList} cssClass="navbar-nav primary-menu navbar-right" />
+												<Navigation handleClick={this._handleNavClick} items={navigationList} cssClass="navbar-nav primary-menu navbar-right" />
 											</div>
 										}
 										{this.props.children}										

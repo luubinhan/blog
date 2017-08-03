@@ -9,12 +9,23 @@ class Li extends React.Component{
 		name: PropTypes.string.isRequired,
 		hasChildren: PropTypes.bool,
 		isActive: PropTypes.bool,		
+		
+		handleClick: PropTypes.func,
 	}
 	static defaultProps = {
-		hasChildren: false
+		hasChildren: false,
+		handleClick: null
 	}
 	constructor(props) {
 		super(props);
+		this._onClick = this._onClick.bind(this);
+	}
+
+	_onClick(e){
+		
+		if (this.props.handleClick !== null) {
+			this.props.handleClick();	
+		}
 	}
 		
 	render(){
@@ -32,7 +43,7 @@ class Li extends React.Component{
 						<span className="caret"></span>
 					</a>
 					:
-					<Link to={href} activeClassName="active" >
+					<Link to={href} activeClassName="active" onClick={this._onClick} >
 						{	icon !== '' &&
 							<i className={icon}></i>
 						}
