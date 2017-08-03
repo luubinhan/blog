@@ -670,16 +670,41 @@ table.normal tr td {
     text-align: center;
   }
   h2 {
-    code {
-    
+    code {    
       font-size: inherit;
       border-radius: 0;
+      font-size: 0.7em;
       line-height: 0.7;      
       border: none;
       padding: 0 4px;
       color: #fff;
-      background: $secondary-color;
+      background: #252525;
       font-family: $monospace;
+      font-weight: normal;
+      transform: rotate(-5deg) skew(-5deg);
+      -webkit-transform: rotate(-5deg) skew(-5deg);
+      -moz-transform: rotate(-5deg) skew(-5deg);
+      position: relative;
+      &:after {      
+        position: absolute;
+        left: .0875em;
+        top: .0875em;        
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        z-index: -1;
+        
+        background: repeating-linear-gradient(
+          -55deg,
+          #fff,
+          #fff 1px,
+          rgba(0,0,0,.2) 2px,
+          rgba(0,0,0,.2) 3px
+        );
+        background-size: 100% 100%;        
+      }  
     }
   }
   .social-media-bar {
@@ -698,6 +723,7 @@ table.normal tr td {
         padding: 0;
         margin-bottom: 7px;
         text-transform: uppercase;
+        color: #fff;
       }
       .ssc-buttons {
 
@@ -714,9 +740,9 @@ table.normal tr td {
         height: 30px;
         margin-left: auto;
         margin-right: auto;
-        border: 1px solid #000;
+        border: 1px solid #fff;
         background: transparent;
-        color: #000;
+        
       }
       .s-name {
         display: none;
@@ -1235,6 +1261,40 @@ $masterWidth: 870px;
     background: -webkit-linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.65) 100%);
     background: -o-linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.65) 100%);
     background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.65) 100%);  
+  }
+  .beatiful-post-name {
+    position: absolute;
+    bottom: 15%;
+    right: 35px;
+    width: calc(100% - 1300px); 
+    text-align: center;
+    font-family: "avo_bold",$san-serif;
+    font-size: 3rem;
+    line-height: 1.2;    
+    color: #fff; 
+    transform: rotate(-5deg) skew(-5deg);
+     
+    text-shadow: .04em .04em 0 rgba(0, 0, 0, 0.8);
+    z-index:1;
+    margin: 0;
+    letter-spacing: .1em;
+  
+    &:after {      
+      position: absolute;
+      left: .0875em;
+      top: .0875em;
+
+      letter-spacing: .1em;      
+      content: attr(data-text-shadow);
+      color: transparent;
+      text-shadow: none;
+      
+      z-index: -1;
+      background: linear-gradient(45deg, transparent 25%, white 25%, white 50%, transparent 50%, transparent 75%, white 75%, white);
+      background-size: 3px 3px;
+      -webkit-background-clip: text;  
+      background-clip: text;  
+    }    
   }
   .company-info{
     position: absolute;

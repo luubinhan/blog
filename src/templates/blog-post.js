@@ -111,7 +111,11 @@ export default class Template extends React.Component {
                 
           </div>
         </div>
-        <div className="aside" style={{backgroundImage: `url(${this.state.sideBg})`}}></div>
+        <div className="aside" style={{backgroundImage: `url(${this.state.sideBg})`}}>
+          <div className="beatiful-post-name" data-text-shadow={post.frontmatter.title}>
+            {post.frontmatter.title}     
+          </div>
+        </div>
       </div>
     );
   }

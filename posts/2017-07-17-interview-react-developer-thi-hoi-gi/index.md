@@ -6,6 +6,30 @@ desc: "Một vài câu hỏi để kiểm tra mức độ am hiểu react của 
 tags: ["javascript", "react"]
 ---
 
+Mục Lục
+
+<!-- MarkdownTOC -->
+
+- Chuyện gì xảy ra khi gọi `setSate` ?
+- Sự khác nhau giữa Element và Component trong React?
+- Khi nào thì sử dụng Class Component và Functional Component
+- `Refs` trong React dùng để làm gì
+- Keys trong React là gì
+- Sự khác nhau giữa controlled component và uncontrolled component
+    - Controlled Component
+    - Uncontrolled Component
+- Để gọi AJAX, sự dụng sự kiện nào của lifecycle?
+- `shouldComponentUpdate` dùng để làm gì
+- Build Product bằng cách nào?
+- Tại sao nên sử dụng `React.Children.map\(\)` thay vì `props.children.map\(\)`
+- Events được xử lý trong React như thế nào?
+- Sự khác nhau giữa `createElement` và `cloneElement`
+- Argument thứ 2 của `setState` dùng để làm gì
+- Đoạn code sau sai ở chổ nào
+
+<!-- /MarkdownTOC -->
+
+
 ## Chuyện gì xảy ra khi gọi `setSate` ?
 
 Đầu tiên, object được truyền trong <code>setState</code> sẽ được merge với state hiện tại của component, dựa trên sự thay đổi của object này, UI được update với state mới. Để làm được chuyện này, React sẽ dựng một cây React Element mới, so sánh sự khác nhau của cây element mới và cây element trước đó, React biết được chính xác chỉ cần update phần UI nào đã bị thay đổi.
@@ -128,4 +152,4 @@ Không sai gì cả, ít người biết rằng khi `setState` có thể truyề
 
 Nguồn
 
->> https://tylermcginnis.com/react-interview-questions/
+https://tylermcginnis.com/react-interview-questions/
