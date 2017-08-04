@@ -5,9 +5,9 @@
       "page-component---src-pages-about-jsx-83c786c1c289b5db7dd0.js.map"
     ],
     "commons": [
-      "commons-e42c26dce55bc9932d18.js",
+      "commons-8d3bd393752940c8a227.js",
       "build-js-styles.css",
-      "commons-e42c26dce55bc9932d18.js.map",
+      "commons-8d3bd393752940c8a227.js.map",
       "build-js-styles.css.map"
     ],
     "page-component---src-pages-index-js": [
@@ -139,8 +139,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-fedcba3c355307195199.js",
-      "app-fedcba3c355307195199.js.map"
+      "app-e206b0c0e21dff252f1c.js",
+      "app-e206b0c0e21dff252f1c.js.map"
     ]
   }
 }
