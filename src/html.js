@@ -34,6 +34,7 @@ export default class HTML extends React.Component {
           />
           <link rel="icon" sizes="32x32" href={favi32} type="image/png" />
           <link rel="icon" sizes="180x180" href={favi128} type="image/png" />
+          <link rel="author" type="text/plain"  href="https://luubinhan.github.io/blog/humans.txt" />
           <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
           <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>          
           {this.props.headComponents}
