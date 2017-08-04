@@ -2,7 +2,7 @@
 path: "/2017-03-03-module-trong-javascript"
 date: "2017-07-14T03:49:16.408Z"
 title: "Module trong Javascript"
-desc: "Với những người quen với cách viết hướng đối tượng, module trong javascript có thể gọi là class, đống gói toàn bộ đoạn code lại trong một "cục", state, biến và các phương thức bên trong module sẽ không bị ảnh hưởng bởi module khác, nếu muốn sử dụng các hàm bên trong module, return hàm đó về một public object thay vì một function."
+desc: "Với những người quen với cách viết hướng đối tượng, module trong javascript có thể gọi là class, đống gói toàn bộ đoạn code lại trong một cục, state, biến và các phương thức bên trong module sẽ không bị ảnh hưởng bởi module khác, nếu muốn sử dụng các hàm bên trong module, return hàm đó về một public object thay vì một function."
 tags: ["javascript"]
 ---
 
