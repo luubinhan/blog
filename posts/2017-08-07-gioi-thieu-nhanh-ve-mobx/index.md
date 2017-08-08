@@ -50,7 +50,7 @@ class TodoStore{
 const todoStore = new TodoStore();
 ```
 
-Giờ thêm một data cho todoStore, mỗi lần thêm mình gọi hàm `report` để thấy được kết quả sau khai thay đổi.
+Giờ thêm một data cho **TodoStore**, mỗi lần thêm mình gọi hàm `report` để thấy được kết quả sau khai thay đổi.
 
 ```js
 todoStore.addTodo("read MobX tutorial");
@@ -107,7 +107,7 @@ const observableTodoStore = new ObservableTodoStore();
 
 ```
 
-Với những giá trị tính toán dựa trên `state` đăng ký nó bằng `@computed` và collection TodoStore `@observable`
+Với những giá trị tính toán dựa trên `state` đăng ký nó bằng `@computed` và collection **TodoStore** `@observable`
 
 Bên trong hàm `constructor` chúng ta cho gọi hàm `report` bằng `mobx.autorun`. Thằng này sẽ chạy (gọi là *reaction*) mỗi khi observable data có thay đổi bởi vì bên trong hàm `report` chúng ta có gọi một *observable object* là `this.todos`
 
@@ -179,5 +179,12 @@ ReactDOM.render(
 );
 ```
 
+Khi đó, khi ta tương tác với object `Store`, phần việc còn lại sẽ do MobX đảm nhiệm sau cho DOM hiển thị đúng với `Store` này
 
-
+```js
+const store = observableTodoStore;
+store.todos[0].completed = !store.todos[0].completed;
+store.todos[1].task = "Random todo " + Math.random();
+store.todos.push({ task: "Find a fine cheese", completed: true });
+// etc etc.. add your own statements here...
+```
