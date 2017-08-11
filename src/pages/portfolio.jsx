@@ -5,7 +5,7 @@ import Helmet from "react-helmet"
 import PageHero from '../components/PageHero'
 import CardPortfolio from '../components/CardPortfolio'
 
-import {PRIMARY_NAVIGATION} from '../data/data'
+import {PRIMARY_NAVIGATION} from '../data'
 import logo from "../pages/images/logo.png"
 import Navigation from '../components/Navigation'
 import Header from '../components/Header'

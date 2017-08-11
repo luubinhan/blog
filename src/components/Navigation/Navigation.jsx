@@ -27,6 +27,7 @@ class Navigation extends React.Component{
 			<div className="navigation-component">
 				<ul className={"nav " + cssClass}>					
 					{
+						
 						this.props.items.map( (item,index) => <Li key={index} {...item} handleClick={this.props.handleClick} />)
 					}						
 				</ul>

@@ -6,8 +6,8 @@ import "../styles/main.scss"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Navigation from "../components/Navigation"
-import {SITE_CONFIG} from '../config'
-import {PRIMARY_NAVIGATION} from '../data/data'
+
+import {PRIMARY_NAVIGATION, SITE_CONFIG} from '../data'
 
 import logo from '../pages/images/logo.png'
 
@@ -43,14 +43,14 @@ class Template extends React.Component {
   }
 
   render() {
-    let {collapsed} = this.state;
+    let {collapsed} = this.state;    
     const {location,children} = this.props;
     return (     
       <div className="layout-blog">     
         <Helmet
-            title="About luckyluu | FrontEnd Developer live in Ho Chi Minh City"
+            title={`About ${SITE_CONFIG.companyName} | ${SITE_CONFIG.tagLine}`}
             meta={[
-              { name: 'description', content: 'luckyluu FrontEnd Developer live in Ho Chi Minh City' },
+              { name: 'description', content: `${SITE_CONFIG.companyName} ${SITE_CONFIG.tagLine}` },
               { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
             ]}
         />

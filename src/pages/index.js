@@ -8,10 +8,9 @@ import Widget from "../components/Widget"
 import ContentPost from "../components/ContentPost"
 import PostTags from "../components/PostTags"
 
-import {SITE_CONFIG} from '../config'
 import heroImage from "../pages/images/cover3.jpg"
 
-import {PRIMARY_NAVIGATION, BG_SIDEBAR} from '../data/data'
+import {PRIMARY_NAVIGATION, BG_SIDEBAR, SITE_CONFIG} from '../data'
 import logo from "../pages/images/logo.png"
 import Navigation from '../components/Navigation'
 import Header from '../components/Header'
@@ -47,9 +46,9 @@ class BlogIndex extends React.Component {
         <div className="inner">  
           <div className="page page-home">
             <Helmet 
-              title={get(this, "props.data.site.siteMetadata.title")} 
+              title={`Home ${SITE_CONFIG.companyName} | ${SITE_CONFIG.tagLine}`}
               meta={[
-                    { name: 'description', content: 'luckyluu FrontEnd Developer live in Ho Chi Minh City' },
+                    { name: 'description', content: `${SITE_CONFIG.companyName} ${SITE_CONFIG.tagLine}` },
                     { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
                   ]}
             />

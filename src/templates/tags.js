@@ -4,8 +4,7 @@ import HomeIcon from 'react-icons/lib/fa/home';
 import TagsIcon from 'react-icons/lib/fa/tags';
 import Helmet from "react-helmet"
 
-import {SITE_CONFIG} from '../config'
-import {BG_SIDEBAR} from '../data/data'
+import {BG_SIDEBAR,SITE_CONFIG} from '../data'
 import PageHero from '../components/PageHero'
 import Link from '../components/Link';
 import ContentPost from '../components/ContentPost';

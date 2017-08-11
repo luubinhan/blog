@@ -13,8 +13,7 @@ import Navigation from '../components/Navigation'
 
 import profileImg from "../pages/images/profile.jpg"
 
-import {SITE_CONFIG} from '../config'
-import {BG_SIDEBAR} from '../data/data'
+import {BG_SIDEBAR,SITE_CONFIG} from '../data'
 
 class About extends Component {
 	constructor(props) {
@@ -36,9 +35,9 @@ class About extends Component {
 				<div className="inner">
 					<div className="page-about">
 						<Helmet
-				          title="About luckyluu | FrontEnd Developer live in Ho Chi Minh City"
+				          title={`About ${SITE_CONFIG.companyName} | ${SITE_CONFIG.tagLine}`}
 				          meta={[
-				            { name: 'description', content: 'luckyluu FrontEnd Developer live in Ho Chi Minh City' },
+				            { name: 'description', content: `${SITE_CONFIG.companyName} ${SITE_CONFIG.tagLine}` },
 				            { name: 'keywords', content: 'frontend,developer,wordpress,react,hochiminh,web-developer' },
 				          ]}
 		      			/>

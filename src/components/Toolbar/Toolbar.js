@@ -4,7 +4,7 @@ import Link from 'gatsby-link';
 
 import Navigation from '../Navigation';
 import './Toolbar.scss'
-import {SITE_CONFIG} from '../../config'
+import {SITE_CONFIG} from '../../data'
 
 class Toolbar extends React.Component{
 	render(){
