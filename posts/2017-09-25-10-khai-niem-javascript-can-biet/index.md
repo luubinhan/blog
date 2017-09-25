@@ -176,3 +176,38 @@ showAge(); // 90
 
 console.log(age) // 90
 ```
+
+# Closures
+
+Closure là một function bên trong một function khác truy cập tới các biến của function ngoài
+
+```js
+function showName (firstName, lastName) {
+    ​var nameIntro = "Your name is ";        
+    ​function makeFullName () {        
+        ​return nameIntro + firstName + " " + lastName;    
+    }
+    ​
+    ​return makeFullName ();
+}
+​
+showName ("Michael", "Jackson"); // Your name is Michael Jackson 
+```
+
+Function bên trong vẫn có thể truy cập đến giá trị của biến nằm ở function ngoài ngay cả khí function ngoài đã return giá trị.
+
+
+```js
+function celebrityName(firstName) {
+    var nameIntro = "This celebrity is ";
+    // this inner function has access to the outer function's variables, including the parameter​
+   function lastName(theLastName) {
+        return nameIntro + firstName + " " + theLastName;
+    }
+    return lastName;
+}
+​
+​var mjName = celebrityName("Michael"); 
+​
+var result = mjName("Jackson"); // This celebrity is Michael Jackson
+```
