@@ -1,7 +1,7 @@
 ---
 path: "/2016-11-20-phan-6-es6-can-ban-khai-bao-let-const"
 date: "2016-11-20T13:35:13.234Z"
-title: "Hồi 6: ES6 căn bản - Template literals"
+title: "Hồi 6: ES6 căn bản - Khai báo biến với let và const"
 desc: "Hồi 6 trong series ES6 căn bản, nói về khai báo biến với let và const"
 tags: ["javascript"]
 ---

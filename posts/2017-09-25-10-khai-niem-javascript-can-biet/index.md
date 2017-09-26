@@ -1,8 +1,8 @@
 ---
 path: "/2017-09-25-10-khai-niem-javascript-can-biet"
 date: "2017-09-25T13:35:13.234Z"
-title: "10 khía niệm JavaScript cần biết"
-desc: "Tổng hợp những khái niệm thường được đề cập trong phát triển web"
+title: "7 khái niệm JavaScript cần biết"
+desc: "Một vài khái niệm căn bản trong javascript cần nắm nếu là frontend developer"
 tags: ["javascript", "react"]
 ---
 
@@ -12,7 +12,7 @@ tags: ["javascript", "react"]
 
 3 kiểu dữ liệu được lưu trữ ở dạng **reference**: `Array`, `Function`, `Object`, có thể gọi chung là kiểu *Object*
 
-## Primitive
+### Primitive
 
 Kiểu primitive được lưu giữ cho một biến, khi copy value của biến này cho biến khác, 2 value này hoàn toàn độc lập không có liên hệ gì với nhau
 
@@ -27,7 +27,7 @@ console.log(a)
 console.log(x)
 ```
 
-## Object
+### Object
 
 Khi một biến được gán cho một kiểu Object, nó không mang giá trị của object mà chỉ **reference** đến dùng lưu trữ của object đó trong bộ nhớ.
 
@@ -42,7 +42,7 @@ refArr.push(2);
 console.log(arr, refArrr)
 ```
 
-## So sảnh `==` và `===`
+### So sảnh `==` và `===`
 
 Khi thực hiện so sánh `=` trên biến kiểu reference, trả về `true` khi cả 2 biến số cùng trỏ về một dùng nhớ chứ không phải so sảnh giá trị của 2 biến.
 
@@ -60,7 +60,7 @@ console.log(arr1 === arr2); // -> false
 
 # Scope
 
-## Global Scope
+### Global Scope
 
 Biến toàn cục, trong javascript khi khai báo một biến không nằm trong một function nào cả, biến đó sẽ là biến toàn cục
 
@@ -75,7 +75,7 @@ function logName(){
 logName(); // binh an
 ```
 
-## Local scope
+### Local scope
 
 Biến khai báo bên trong function chỉ có hiệu lực trong function đó
 
@@ -95,7 +95,7 @@ function anotherFunction() {
 // Global Scope
 ```
 
-## Block Statement
+### Block Statement
 
 Những câu khai báo như `if`, `switch`, `for`, `while` không giống như function, biến bên trong các câu khai báo này có phạm vi hoạt động trong function chứa nó.
 
@@ -211,3 +211,25 @@ function celebrityName(firstName) {
 ​
 var result = mjName("Jackson"); // This celebrity is Michael Jackson
 ```
+
+Tận dụng đặc điểm này của closure function chỉ lưu tham chiếu đến biến của function ngoài mà không lưu giá trị, ta có thể viết một function như class thế này
+
+```js
+function celebrityID(){
+    var celebrityID = 999;
+    return{
+        getID: function(){
+            return celebrityID;
+        },
+        setID: function(theNewID){
+            celebrityID = theNewID;
+        }
+    }
+}
+
+var myID = celebrityID();
+myID.getID(); // return 999
+myID.setID(567);
+myID.getID(); // return 567
+```
+
