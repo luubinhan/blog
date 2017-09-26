@@ -1,70 +1,70 @@
 {
   "assetsByChunkName": {
     "page-component---src-pages-about-jsx": [
-      "page-component---src-pages-about-jsx-83c786c1c289b5db7dd0.js",
-      "page-component---src-pages-about-jsx-83c786c1c289b5db7dd0.js.map"
+      "page-component---src-pages-about-jsx-af1671a9cdd6b80e1631.js",
+      "page-component---src-pages-about-jsx-af1671a9cdd6b80e1631.js.map"
     ],
     "commons": [
-      "commons-8d3bd393752940c8a227.js",
+      "commons-1b5c5c88b3bc117419e6.js",
       "build-js-styles.css",
-      "commons-8d3bd393752940c8a227.js.map",
+      "commons-1b5c5c88b3bc117419e6.js.map",
       "build-js-styles.css.map"
     ],
     "page-component---src-pages-index-js": [
-      "page-component---src-pages-index-js-9771da88b30aa96cf97d.js",
-      "page-component---src-pages-index-js-9771da88b30aa96cf97d.js.map"
+      "page-component---src-pages-index-js-dd6b9cdc40b9dc6158a0.js",
+      "page-component---src-pages-index-js-dd6b9cdc40b9dc6158a0.js.map"
     ],
     "page-component---src-templates-tags-js": [
-      "page-component---src-templates-tags-js-ac9cecb483611ef1f632.js",
-      "page-component---src-templates-tags-js-ac9cecb483611ef1f632.js.map"
+      "page-component---src-templates-tags-js-671b59fbd33ad66a9acd.js",
+      "page-component---src-templates-tags-js-671b59fbd33ad66a9acd.js.map"
     ],
     "page-component---src-templates-blog-post-js": [
-      "page-component---src-templates-blog-post-js-d3fc6e814f5ce6a1b2ac.js",
-      "page-component---src-templates-blog-post-js-d3fc6e814f5ce6a1b2ac.js.map"
+      "page-component---src-templates-blog-post-js-bd5931ffa09b6ffa4105.js",
+      "page-component---src-templates-blog-post-js-bd5931ffa09b6ffa4105.js.map"
     ],
     "page-component---src-pages-portfolio-jsx": [
-      "page-component---src-pages-portfolio-jsx-3578d58539d80ff7d8e1.js",
-      "page-component---src-pages-portfolio-jsx-3578d58539d80ff7d8e1.js.map"
+      "page-component---src-pages-portfolio-jsx-ce9ec2663dede0d32b11.js",
+      "page-component---src-pages-portfolio-jsx-ce9ec2663dede0d32b11.js.map"
     ],
     "page-component---src-pages-sitemap-jsx": [
       "page-component---src-pages-sitemap-jsx-52021a83b716d413e791.js",
       "page-component---src-pages-sitemap-jsx-52021a83b716d413e791.js.map"
     ],
     "layout-component---index": [
-      "layout-component---index-1152a5682526bcf36d21.js",
-      "layout-component---index-1152a5682526bcf36d21.js.map"
+      "layout-component---index-c26953a5aaf209347906.js",
+      "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-4e9996e00ccca74629ce.js",
-      "path---tags-4e9996e00ccca74629ce.js.map"
+      "path---tags-50e364a48ca2b4c3239d.js",
+      "path---tags-50e364a48ca2b4c3239d.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-e4c1c6e1cf269a39a9f8.js",
-      "path---tags-wordpress-e4c1c6e1cf269a39a9f8.js.map"
+      "path---tags-wordpress-33296cd5ad03665be09e.js",
+      "path---tags-wordpress-33296cd5ad03665be09e.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-a9a69078679882b8ba3e.js",
-      "path---tags-webpack-a9a69078679882b8ba3e.js.map"
+      "path---tags-webpack-728002d6e7ea90f366ae.js",
+      "path---tags-webpack-728002d6e7ea90f366ae.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-c05bce7e8028e1b2013a.js",
-      "path---tags-ux-ui-c05bce7e8028e1b2013a.js.map"
+      "path---tags-ux-ui-26b1c71ab9e8d091be72.js",
+      "path---tags-ux-ui-26b1c71ab9e8d091be72.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-4affeacc8229da54ce6f.js",
-      "path---tags-seo-4affeacc8229da54ce6f.js.map"
+      "path---tags-seo-a2feff77954a60201d63.js",
+      "path---tags-seo-a2feff77954a60201d63.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-9a81ffb3ac62bba80837.js",
-      "path---tags-react-9a81ffb3ac62bba80837.js.map"
+      "path---tags-react-2cd834526e98bd16af50.js",
+      "path---tags-react-2cd834526e98bd16af50.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-5070e19535e0c25c318d.js",
-      "path---tags-javascript-5070e19535e0c25c318d.js.map"
+      "path---tags-javascript-1b79c40c2662eef4bdf5.js",
+      "path---tags-javascript-1b79c40c2662eef4bdf5.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-efeec1742144e0a43785.js",
-      "path---tags-css-efeec1742144e0a43785.js.map"
+      "path---tags-css-3964534386c5ffbfb408.js",
+      "path---tags-css-3964534386c5ffbfb408.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -75,8 +75,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-335a0350fea26f8cd66b.js",
-      "path---index-335a0350fea26f8cd66b.js.map"
+      "path---index-d43295ccbb3c7a01b76a.js",
+      "path---index-d43295ccbb3c7a01b76a.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -89,6 +89,14 @@
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---2017-09-25-10-khai-niem-javascript-can-biet": [
+      "path---2017-09-25-10-khai-niem-javascript-can-biet-f92c587c7039bcefef57.js",
+      "path---2017-09-25-10-khai-niem-javascript-can-biet-f92c587c7039bcefef57.js.map"
+    ],
+    "path---2017-08-07-gioi-thieu-nhanh-ve-mobx": [
+      "path---2017-08-07-gioi-thieu-nhanh-ve-mobx-c71cfbf3cb7c9055460f.js",
+      "path---2017-08-07-gioi-thieu-nhanh-ve-mobx-c71cfbf3cb7c9055460f.js.map"
     ],
     "path---2017-07-31-react-router": [
       "path---2017-07-31-react-router-814c0c75e7f2dc5dfe0e.js",
@@ -123,8 +131,8 @@
       "path---2016-11-21-phan-7-es-6-can-ban-classes-ed17f3b8fc3f6c00bfbe.js.map"
     ],
     "path---2016-11-20-phan-6-es-6-can-ban-khai-bao-let-const": [
-      "path---2016-11-20-phan-6-es-6-can-ban-khai-bao-let-const-d62bde888d74acd80c7f.js",
-      "path---2016-11-20-phan-6-es-6-can-ban-khai-bao-let-const-d62bde888d74acd80c7f.js.map"
+      "path---2016-11-20-phan-6-es-6-can-ban-khai-bao-let-const-0f282d9c9d794b84ebe0.js",
+      "path---2016-11-20-phan-6-es-6-can-ban-khai-bao-let-const-0f282d9c9d794b84ebe0.js.map"
     ],
     "path---2016-11-19-phan-5-es-6-can-ban-template-literals": [
       "path---2016-11-19-phan-5-es-6-can-ban-template-literals-5df035022ccf41dcdca8.js",
@@ -159,8 +167,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-4ae2ee95b9406f6e7b1b.js",
-      "app-4ae2ee95b9406f6e7b1b.js.map"
+      "app-b30096d070c9aa8ea0da.js",
+      "app-b30096d070c9aa8ea0da.js.map"
     ]
   }
 }
