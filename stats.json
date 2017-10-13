@@ -35,44 +35,44 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-b486cc7edf3ec9e7c3c9.js",
-      "path---tags-b486cc7edf3ec9e7c3c9.js.map"
+      "path---tags-e172d8210aaf3ebc0fef.js",
+      "path---tags-e172d8210aaf3ebc0fef.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-cfba3afece12b228ddf6.js",
-      "path---tags-wordpress-cfba3afece12b228ddf6.js.map"
+      "path---tags-wordpress-db4c75bf9e7ec122fccb.js",
+      "path---tags-wordpress-db4c75bf9e7ec122fccb.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-ebf68c98107ab1c46070.js",
-      "path---tags-webpack-ebf68c98107ab1c46070.js.map"
+      "path---tags-webpack-6e505da7f00eac537b1a.js",
+      "path---tags-webpack-6e505da7f00eac537b1a.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-4fe020c29f271a8d3183.js",
-      "path---tags-web-4fe020c29f271a8d3183.js.map"
+      "path---tags-web-15c217675342f5f1bf47.js",
+      "path---tags-web-15c217675342f5f1bf47.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-72b45d563c231e3d50c1.js",
-      "path---tags-ux-ui-72b45d563c231e3d50c1.js.map"
+      "path---tags-ux-ui-a2672d1da6fc4a6f0dfb.js",
+      "path---tags-ux-ui-a2672d1da6fc4a6f0dfb.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-6ef54114f179bbe33b12.js",
-      "path---tags-seo-6ef54114f179bbe33b12.js.map"
+      "path---tags-seo-8dbc6beee48c7625509c.js",
+      "path---tags-seo-8dbc6beee48c7625509c.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-e758f6e51f9da1bdb26f.js",
-      "path---tags-react-e758f6e51f9da1bdb26f.js.map"
+      "path---tags-react-e575987f90da138d4acc.js",
+      "path---tags-react-e575987f90da138d4acc.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-3d1bb11d3931d1ac9579.js",
-      "path---tags-javascript-3d1bb11d3931d1ac9579.js.map"
+      "path---tags-javascript-509b81db0483b64a1883.js",
+      "path---tags-javascript-509b81db0483b64a1883.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-fe73a6e0639a23d373ec.js",
-      "path---tags-design-fe73a6e0639a23d373ec.js.map"
+      "path---tags-design-f9c6f4a3db5b4fbb32c1.js",
+      "path---tags-design-f9c6f4a3db5b4fbb32c1.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-7df5fc390c683c412cdb.js",
-      "path---tags-css-7df5fc390c683c412cdb.js.map"
+      "path---tags-css-c3323b7eaf691a1d37d6.js",
+      "path---tags-css-c3323b7eaf691a1d37d6.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -99,8 +99,8 @@
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---2017-10-12-javascript-promise": [
-      "path---2017-10-12-javascript-promise-077c0e2da72daf75a140.js",
-      "path---2017-10-12-javascript-promise-077c0e2da72daf75a140.js.map"
+      "path---2017-10-12-javascript-promise-db97e26780d6712595d9.js",
+      "path---2017-10-12-javascript-promise-db97e26780d6712595d9.js.map"
     ],
     "path---2017-10-11-react-bind-pattern-5-cach-tham-chieu-this": [
       "path---2017-10-11-react-bind-pattern-5-cach-tham-chieu-this-a71008a38ac0e8386859.js",
@@ -187,8 +187,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-03e9a38e32bacf813536.js",
-      "app-03e9a38e32bacf813536.js.map"
+      "app-7cc42abad3a4385c5d4b.js",
+      "app-7cc42abad3a4385c5d4b.js.map"
     ]
   }
 }
