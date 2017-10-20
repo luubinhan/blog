@@ -35,44 +35,44 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-eecf19af3b8e808aa5b2.js",
-      "path---tags-eecf19af3b8e808aa5b2.js.map"
+      "path---tags-820988141d9b127057c7.js",
+      "path---tags-820988141d9b127057c7.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-fbaa04d2abacad523493.js",
-      "path---tags-wordpress-fbaa04d2abacad523493.js.map"
+      "path---tags-wordpress-71a5e233c671ddca2774.js",
+      "path---tags-wordpress-71a5e233c671ddca2774.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-8dd89565525dd229e91f.js",
-      "path---tags-webpack-8dd89565525dd229e91f.js.map"
+      "path---tags-webpack-5287e76f8afca08e1388.js",
+      "path---tags-webpack-5287e76f8afca08e1388.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-c760103d146bda9a2cee.js",
-      "path---tags-web-c760103d146bda9a2cee.js.map"
+      "path---tags-web-27c07c2884e62f9dfb22.js",
+      "path---tags-web-27c07c2884e62f9dfb22.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-42cf5a3e3164b971fe69.js",
-      "path---tags-ux-ui-42cf5a3e3164b971fe69.js.map"
+      "path---tags-ux-ui-91d7bb9f61ca487cdf88.js",
+      "path---tags-ux-ui-91d7bb9f61ca487cdf88.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-e75b8f1c99334013326f.js",
-      "path---tags-seo-e75b8f1c99334013326f.js.map"
+      "path---tags-seo-4496e55bb00a2d381e72.js",
+      "path---tags-seo-4496e55bb00a2d381e72.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-6875e766455702e0ff3a.js",
-      "path---tags-react-6875e766455702e0ff3a.js.map"
+      "path---tags-react-f18390af1297802ee898.js",
+      "path---tags-react-f18390af1297802ee898.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-b02bd2928020a4d338eb.js",
-      "path---tags-javascript-b02bd2928020a4d338eb.js.map"
+      "path---tags-javascript-77399af85cb8c65ab697.js",
+      "path---tags-javascript-77399af85cb8c65ab697.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-8b02b3264b5e53f9abb8.js",
-      "path---tags-design-8b02b3264b5e53f9abb8.js.map"
+      "path---tags-design-96acc1398b6e163a816e.js",
+      "path---tags-design-96acc1398b6e163a816e.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-7b8ecff51ca16ab64f93.js",
-      "path---tags-css-7b8ecff51ca16ab64f93.js.map"
+      "path---tags-css-53555d528b7701e1d2af.js",
+      "path---tags-css-53555d528b7701e1d2af.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -83,8 +83,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-f2f59e4d78b8f42effdd.js",
-      "path---index-f2f59e4d78b8f42effdd.js.map"
+      "path---index-797499d32edf890a5895.js",
+      "path---index-797499d32edf890a5895.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -97,6 +97,10 @@
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---2017-10-20-react-lifecycle-la-gi": [
+      "path---2017-10-20-react-lifecycle-la-gi-e3d71d6d3b52ab850cdd.js",
+      "path---2017-10-20-react-lifecycle-la-gi-e3d71d6d3b52ab850cdd.js.map"
     ],
     "path---2017-10-19-sort-trong-javascript": [
       "path---2017-10-19-sort-trong-javascript-6f3974ef42a4731c0e5d.js",
@@ -195,8 +199,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-01b6aeaaf3d95a7e84a3.js",
-      "app-01b6aeaaf3d95a7e84a3.js.map"
+      "app-0ce3dec2e833be9cf88d.js",
+      "app-0ce3dec2e833be9cf88d.js.map"
     ]
   }
 }
