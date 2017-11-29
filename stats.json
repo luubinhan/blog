@@ -35,44 +35,44 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-fb93aab9821bcf91620e.js",
-      "path---tags-fb93aab9821bcf91620e.js.map"
+      "path---tags-10a3645960dcbb6c2a90.js",
+      "path---tags-10a3645960dcbb6c2a90.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-78dadc000546f711f581.js",
-      "path---tags-wordpress-78dadc000546f711f581.js.map"
+      "path---tags-wordpress-2f56efed4f7a72c542ee.js",
+      "path---tags-wordpress-2f56efed4f7a72c542ee.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-bd76b1ce5f6135d0d743.js",
-      "path---tags-webpack-bd76b1ce5f6135d0d743.js.map"
+      "path---tags-webpack-dabb9f8d605d31d1382f.js",
+      "path---tags-webpack-dabb9f8d605d31d1382f.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-d92a4b4846750e232a95.js",
-      "path---tags-web-d92a4b4846750e232a95.js.map"
+      "path---tags-web-7959796548f76a0db741.js",
+      "path---tags-web-7959796548f76a0db741.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-0cc9fed6699bff4d551e.js",
-      "path---tags-ux-ui-0cc9fed6699bff4d551e.js.map"
+      "path---tags-ux-ui-311dac371a756e36e80d.js",
+      "path---tags-ux-ui-311dac371a756e36e80d.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-f49255423868e5770afd.js",
-      "path---tags-seo-f49255423868e5770afd.js.map"
+      "path---tags-seo-bf5ad40190c7c20f68f5.js",
+      "path---tags-seo-bf5ad40190c7c20f68f5.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-c6c765f678d6a6e5fb09.js",
-      "path---tags-react-c6c765f678d6a6e5fb09.js.map"
+      "path---tags-react-02db38b07f57b4ed2d7e.js",
+      "path---tags-react-02db38b07f57b4ed2d7e.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-d39d29e0ca31b0cdd618.js",
-      "path---tags-javascript-d39d29e0ca31b0cdd618.js.map"
+      "path---tags-javascript-5436fa9627a159a88d40.js",
+      "path---tags-javascript-5436fa9627a159a88d40.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-c9adda447beb069f5f4b.js",
-      "path---tags-design-c9adda447beb069f5f4b.js.map"
+      "path---tags-design-50c728b987e418b185db.js",
+      "path---tags-design-50c728b987e418b185db.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-7095d28e0eaf7bf1b645.js",
-      "path---tags-css-7095d28e0eaf7bf1b645.js.map"
+      "path---tags-css-ae3484c053a62c237621.js",
+      "path---tags-css-ae3484c053a62c237621.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -83,8 +83,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-ce6653403fc6beef4c6a.js",
-      "path---index-ce6653403fc6beef4c6a.js.map"
+      "path---index-53c11769c8edb04af212.js",
+      "path---index-53c11769c8edb04af212.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -97,6 +97,10 @@
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---2017-11-29-goc-nhin-ve-accessible-ui-web": [
+      "path---2017-11-29-goc-nhin-ve-accessible-ui-web-bafe2c7b07346893c6c1.js",
+      "path---2017-11-29-goc-nhin-ve-accessible-ui-web-bafe2c7b07346893c6c1.js.map"
     ],
     "path---2017-11-09-higher-order-function-trong-javascript": [
       "path---2017-11-09-higher-order-function-trong-javascript-c52f6ecb18613bb4676d.js",
@@ -211,8 +215,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-672c7ae55eaa6a61cb61.js",
-      "app-672c7ae55eaa6a61cb61.js.map"
+      "app-88d668290f72d9c7d45c.js",
+      "app-88d668290f72d9c7d45c.js.map"
     ]
   }
 }
