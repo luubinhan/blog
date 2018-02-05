@@ -868,6 +868,10 @@ table.normal tr td {
       line-height: 1;
       -webkit-font-smoothing: antialiased;
     }
+    p {
+      font-size: 1.5rem;
+      line-height: 1.2;
+    }
   }
 }
 
@@ -1621,4 +1625,3 @@ $masterWidth: 870px;
   }
   
 }
-

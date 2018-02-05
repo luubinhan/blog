@@ -154,7 +154,7 @@ showCelebrityName (); // Michael Jackson​​
 ​
 showOrdinaryPersonName (); // Johnny Evers​
 ​
-// biến toàn cục name giờ đây sẽ bị change gí trị thành Johnny Evers ​
+// biến toàn cục name giờ đây sẽ bị change giá trị thành Johnny Evers ​
 showCelebrityName (); // Johnny Evers​
 ​
 ​// luôn nhớ khai báo biến bằng var,let,const
