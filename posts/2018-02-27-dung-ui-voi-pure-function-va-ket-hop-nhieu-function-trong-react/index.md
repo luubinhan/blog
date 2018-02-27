@@ -1,5 +1,5 @@
 ---
-path: "/2018-02-27-dung-ui-voi-pure-function-va-ket-hop-nhieu-function-trong-react"
+path: "/2018-02-27-dung-ui-voi-pure-function-va-ket-hop-nhieu-function"
 date: "2018-02-27T13:35:13.234Z"
 title: "Dựng UI với pure function và kết hợp nhiều function trong React"
 desc: "Khi tạo một React Component, nó có thể là một function, nhận vào tham số, thay vì trả về giá trị, function này trả về UI"

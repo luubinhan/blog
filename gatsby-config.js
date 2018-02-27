@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: '/blog/',
   siteMetadata: {
-    author: 'luckyluuu',
+    author: 'luckyluu',
     title: `luckyluu | FrontEnd Developer live in Ho Chi Minh City`,
   },
   plugins: [
