@@ -35,48 +35,44 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-f6ef650b423af958138f.js",
-      "path---tags-f6ef650b423af958138f.js.map"
+      "path---tags-9ecb6431290c597e4a72.js",
+      "path---tags-9ecb6431290c597e4a72.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-44e9d1381a8b15280fc8.js",
-      "path---tags-wordpress-44e9d1381a8b15280fc8.js.map"
+      "path---tags-wordpress-c7f9a964c5cf7d777c9c.js",
+      "path---tags-wordpress-c7f9a964c5cf7d777c9c.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-8e5db3091e25d10f080b.js",
-      "path---tags-webpack-8e5db3091e25d10f080b.js.map"
+      "path---tags-webpack-8e9efceb01fcaf29857a.js",
+      "path---tags-webpack-8e9efceb01fcaf29857a.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-0d601e2a9e30222fe2eb.js",
-      "path---tags-web-0d601e2a9e30222fe2eb.js.map"
+      "path---tags-web-9969191259182244ada0.js",
+      "path---tags-web-9969191259182244ada0.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-24e7bcf9a80956db4443.js",
-      "path---tags-ux-ui-24e7bcf9a80956db4443.js.map"
+      "path---tags-ux-ui-d3b32a1beca14eaaa57b.js",
+      "path---tags-ux-ui-d3b32a1beca14eaaa57b.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-5eccc15aaf5630ddb31d.js",
-      "path---tags-seo-5eccc15aaf5630ddb31d.js.map"
+      "path---tags-seo-61c0d0e498c082241614.js",
+      "path---tags-seo-61c0d0e498c082241614.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-a934cb1c3ce906bad942.js",
-      "path---tags-react-a934cb1c3ce906bad942.js.map"
-    ],
-    "path---tags-react-native": [
-      "path---tags-react-native-c8d69a6414d91bb46196.js",
-      "path---tags-react-native-c8d69a6414d91bb46196.js.map"
+      "path---tags-react-48874427ccd2a1d9b5b1.js",
+      "path---tags-react-48874427ccd2a1d9b5b1.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-d2be72c9d475dca415e4.js",
-      "path---tags-javascript-d2be72c9d475dca415e4.js.map"
+      "path---tags-javascript-8307f030aaf159f057d6.js",
+      "path---tags-javascript-8307f030aaf159f057d6.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-f702f547b0dee2699248.js",
-      "path---tags-design-f702f547b0dee2699248.js.map"
+      "path---tags-design-d1ba48b27aecf5fb22d3.js",
+      "path---tags-design-d1ba48b27aecf5fb22d3.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-ad7e968be2266d2dc203.js",
-      "path---tags-css-ad7e968be2266d2dc203.js.map"
+      "path---tags-css-4c33fffbf3f0bb38e5ff.js",
+      "path---tags-css-4c33fffbf3f0bb38e5ff.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -87,8 +83,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-35f06aea019678367c03.js",
-      "path---index-35f06aea019678367c03.js.map"
+      "path---index-e04e2ca0e1d1162ab158.js",
+      "path---index-e04e2ca0e1d1162ab158.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -105,10 +101,6 @@
     "path---2018-02-27-dung-ui-voi-pure-function-va-ket-hop-nhieu-function": [
       "path---2018-02-27-dung-ui-voi-pure-function-va-ket-hop-nhieu-function-37db108d8dd03e1b3b66.js",
       "path---2018-02-27-dung-ui-voi-pure-function-va-ket-hop-nhieu-function-37db108d8dd03e1b3b66.js.map"
-    ],
-    "path---2018-02-22-nhap-mon-react-native": [
-      "path---2018-02-22-nhap-mon-react-native-723495243863c11fd1ec.js",
-      "path---2018-02-22-nhap-mon-react-native-723495243863c11fd1ec.js.map"
     ],
     "path---2018-01-12-react-router-dom-gioi-thieu-react-router-4": [
       "path---2018-01-12-react-router-dom-gioi-thieu-react-router-4-a2080708deb4f26a163a.js",
@@ -239,8 +231,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-0e935dc7039db99a6796.js",
-      "app-0e935dc7039db99a6796.js.map"
+      "app-7d1dc1a5aeb4b6018ea6.js",
+      "app-7d1dc1a5aeb4b6018ea6.js.map"
     ]
   }
 }
