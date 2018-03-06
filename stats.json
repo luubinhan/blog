@@ -35,44 +35,48 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-f52e05659a04a76d24f8.js",
-      "path---tags-f52e05659a04a76d24f8.js.map"
+      "path---tags-1c671742021a4c66e2c0.js",
+      "path---tags-1c671742021a4c66e2c0.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-0550edd0b47caeab0703.js",
-      "path---tags-wordpress-0550edd0b47caeab0703.js.map"
+      "path---tags-wordpress-7ed2dea1cc54ac80b731.js",
+      "path---tags-wordpress-7ed2dea1cc54ac80b731.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-a1d0f7dac8266a0208dd.js",
-      "path---tags-webpack-a1d0f7dac8266a0208dd.js.map"
+      "path---tags-webpack-6cde4fed28d48a6bcf0d.js",
+      "path---tags-webpack-6cde4fed28d48a6bcf0d.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-e20bdfdef4e88779375b.js",
-      "path---tags-web-e20bdfdef4e88779375b.js.map"
+      "path---tags-web-4f82fd0f08fcf3af8f4c.js",
+      "path---tags-web-4f82fd0f08fcf3af8f4c.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-5c6d48c7179f56648f55.js",
-      "path---tags-ux-ui-5c6d48c7179f56648f55.js.map"
+      "path---tags-ux-ui-5f81b5db2994a8b81951.js",
+      "path---tags-ux-ui-5f81b5db2994a8b81951.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-2207688cef85f82b155b.js",
-      "path---tags-seo-2207688cef85f82b155b.js.map"
+      "path---tags-seo-64d87c64b54e47fdb91b.js",
+      "path---tags-seo-64d87c64b54e47fdb91b.js.map"
+    ],
+    "path---tags-redux": [
+      "path---tags-redux-6e3bf18ea8f3505de42b.js",
+      "path---tags-redux-6e3bf18ea8f3505de42b.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-6c19f0df615b4e87274d.js",
-      "path---tags-react-6c19f0df615b4e87274d.js.map"
+      "path---tags-react-1164490ac5f7485e9a14.js",
+      "path---tags-react-1164490ac5f7485e9a14.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-8e5a508f73030de611e5.js",
-      "path---tags-javascript-8e5a508f73030de611e5.js.map"
+      "path---tags-javascript-e2c203ce325fd5ecd055.js",
+      "path---tags-javascript-e2c203ce325fd5ecd055.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-d44833db1fc4177ec3db.js",
-      "path---tags-design-d44833db1fc4177ec3db.js.map"
+      "path---tags-design-0e2bffb364f949c42265.js",
+      "path---tags-design-0e2bffb364f949c42265.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-222a8613fe0200be2425.js",
-      "path---tags-css-222a8613fe0200be2425.js.map"
+      "path---tags-css-e5c6b68b8158d117262b.js",
+      "path---tags-css-e5c6b68b8158d117262b.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -83,8 +87,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-208523477f60191b6d2a.js",
-      "path---index-208523477f60191b6d2a.js.map"
+      "path---index-8c310cad8a3013e0ef25.js",
+      "path---index-8c310cad8a3013e0ef25.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -98,6 +102,10 @@
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
     ],
+    "path---2018-03-06-redux-van-hanh-nhu-the-nao-kem-vi-du": [
+      "path---2018-03-06-redux-van-hanh-nhu-the-nao-kem-vi-du-fa5e1ef18b0b479727a5.js",
+      "path---2018-03-06-redux-van-hanh-nhu-the-nao-kem-vi-du-fa5e1ef18b0b479727a5.js.map"
+    ],
     "path---2018-03-05-8-cach-render-component-trong-react": [
       "path---2018-03-05-8-cach-render-component-trong-react-b175b19da4a85f704792.js",
       "path---2018-03-05-8-cach-render-component-trong-react-b175b19da4a85f704792.js.map"
@@ -109,6 +117,10 @@
     "path---2018-02-27-dung-ui-voi-pure-function-va-ket-hop-nhieu-function": [
       "path---2018-02-27-dung-ui-voi-pure-function-va-ket-hop-nhieu-function-3e6f7a4091a4567425d7.js",
       "path---2018-02-27-dung-ui-voi-pure-function-va-ket-hop-nhieu-function-3e6f7a4091a4567425d7.js.map"
+    ],
+    "path---2018-02-14-redux-la-gi-tai-sao-phai-dung": [
+      "path---2018-02-14-redux-la-gi-tai-sao-phai-dung-aea1d7a47431848c2eae.js",
+      "path---2018-02-14-redux-la-gi-tai-sao-phai-dung-aea1d7a47431848c2eae.js.map"
     ],
     "path---2018-01-12-react-router-dom-gioi-thieu-react-router-4": [
       "path---2018-01-12-react-router-dom-gioi-thieu-react-router-4-9132a9dddcc849f972da.js",
@@ -239,8 +251,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-6b8d74426ef22004a88e.js",
-      "app-6b8d74426ef22004a88e.js.map"
+      "app-ba49e53d4c84b8963a30.js",
+      "app-ba49e53d4c84b8963a30.js.map"
     ]
   }
 }
