@@ -14,7 +14,7 @@ Javascript xem một function như một dạng object, function có thể trở
 Javscript là ngôn ngữ single-threaded, nghĩa là một lần nó chỉ chạy một tính toán tuần tự. Nếu đã từng viết javascript nhiều bạn sẽ thấy việc sử dụng `callback` trong javascript rất nhiều, function A được truyền vào cho function B, sau khi thực hiện các đoạn code trong function B, nó sẽ gọi lại function A và chạy các đoạn code trong function A
 
 
-```js
+```jsx
 <button id="clicker">Click Here</button>
 
 document.getElementById('clicker').addEventListener('click', function() {

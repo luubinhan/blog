@@ -16,12 +16,12 @@ Mục Lục
 - `Refs` trong React dùng để làm gì
 - Keys trong React là gì
 - Sự khác nhau giữa controlled component và uncontrolled component
-    - Controlled Component
-    - Uncontrolled Component
+  - Controlled Component
+  - Uncontrolled Component
 - Để gọi AJAX, sự dụng sự kiện nào của lifecycle?
 - `shouldComponentUpdate` dùng để làm gì
 - Build Product bằng cách nào?
-- Tại sao nên sử dụng `React.Children.map\(\)` thay vì `props.children.map\(\)`
+- Tại sao nên sử dụng `React.Children.map()` thay vì `props.children.map()`
 - Events được xử lý trong React như thế nào?
 - Sự khác nhau giữa `createElement` và `cloneElement`
 - Argument thứ 2 của `setState` dùng để làm gì
@@ -59,7 +59,7 @@ Refs cho phép access trực tiếp đến DOM element hoặc một instance c�
 
 Keys giúp React theo dõi sự thay đổi của một item trong list
 
-```js
+```jsx
 {this.state.todoItems.map( (task, uid) => {
   return
     <ul>
@@ -77,7 +77,7 @@ Controlled component là component React control dữ liệu dựa trên state v
 
 #### Controlled Component
 
-```html
+```jsx
 
 <input type='text' value={this.state.username} onChange={this.updateUsername} />
 
@@ -85,7 +85,7 @@ Controlled component là component React control dữ liệu dựa trên state v
 
 #### Uncontrolled Component
 
-```html
+```jsx
 
 <input type='text' ref={(input) => this.input = input} />
 
@@ -107,7 +107,7 @@ Sử dụng phương thức DefinePlugin của Webpack để set `NODE_ENV = pro
 
 `props.children` chưa chắc lúc nào cũng là array. Ví dụ
 
-```html
+```jsx
 <Parent>
     <h1>Welcome.</h1>
 </Parent>
@@ -115,7 +115,7 @@ Sử dụng phương thức DefinePlugin của Webpack để set `NODE_ENV = pro
 
 Nếu sử dụng `props.children.map` trong Parent sẽ bị lỗi vì `props.children` là một object không phải array.
 
-```html
+```jsx
 <Parent>
     <h1>Welcome.</h1>
     <h2>props.children will now be an array</h2>

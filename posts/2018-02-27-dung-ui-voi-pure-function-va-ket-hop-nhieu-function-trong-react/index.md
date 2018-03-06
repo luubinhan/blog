@@ -8,7 +8,7 @@ tags: ["react", "javascript"]
 
 Khai báo component `ProfilePic`, `ProfileLink`, `Avatar` bằng cách bình thường
 
-```js
+```jsx
 const ProfilePic = React.createClass({
   render: function() {
     return (
@@ -18,7 +18,7 @@ const ProfilePic = React.createClass({
 })
 ```
 
-```js
+```jsx
 const ProfileLink = React.createClass({
   render: function() {
    return (
@@ -30,7 +30,7 @@ const ProfileLink = React.createClass({
 })
 ```
 
-```js
+```jsx
 const Avatar = React.createClass({
   render: function() {
     return (
@@ -51,7 +51,7 @@ Từ React 0.14, trong trường hợp một compoment không có state, có th�
 
 ProfilePic
 
-```js
+```jsx
 const ProfilePic = (props) => {
     return <img src={'https://photo.fb.com/' + props.username'} />
 }
@@ -59,7 +59,7 @@ const ProfilePic = (props) => {
 
 ProfileLink
 
-```js
+```jsx
 var ProfileLink = (props) => (
     <a href={'https://www.fb.com/' + props.username}>
       {props.username}
@@ -69,7 +69,7 @@ var ProfileLink = (props) => (
 
 Avatar
 
-```js
+```jsx
 const Avatar = (props) => {
   return (
     <div>

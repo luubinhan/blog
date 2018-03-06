@@ -10,7 +10,7 @@ tags: ["react", "javascript"]
 
 Nếu sử dụng `React.createClass` react tự động bind toàn bộ từ khóa `this`
 
-```js
+```jsx
 const Contacts = React.createClass({
   render() {
     return (
@@ -27,7 +27,7 @@ Tuy nhiên từ khi ES6 có hổ trợ `class`, React.createClass có thể bị
 
 Nếu khai báo một component React bằng cách extends React.Component, `this` sẽ không được tự động bind như đã nói ở trên, thay vào đó bind lúc render
 
-```js
+```jsx
 class Contacts extends React.Component{
   render() {
     return (
@@ -43,8 +43,7 @@ Cách này tuy là sạch sẽ gọn ràng dễ hiểu, tuy nhiên lại ảnh h
 
 Tương tự như cách trên, sử dụng arrow function để không thay đổi giá trị của `this` lúc render
 
-```js
-```js
+```jsx
 class Contacts extends React.Component{
   render() {
     return (
@@ -58,7 +57,7 @@ Cách này cũng không nên làm vì ảnh hương tới performance luôn
 
 # Bind trong cunstructor
 
-```js
+```jsx
 constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
@@ -71,7 +70,7 @@ constructor(props) {
 
 Muốn sử dụng cách này, phải bật tính năng *transform-class-properties* trong Babel, xem thêm package này tại http://babeljs.io/docs/plugins/transform-class-properties
 
-```js
+```jsx
 handleChange = () => {
   // call this function from render 
   // and this.whatever in here works fine.

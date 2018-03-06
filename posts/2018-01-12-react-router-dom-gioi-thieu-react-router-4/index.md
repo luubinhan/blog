@@ -10,7 +10,7 @@ Lúc đầu Michael and Ryan (2 tác giả của React Router) vốn là ngườ
 
 Chìa khóa để nắm rõ React Router v4, gọi react router dom đi hé, vì package giờ cũng đổi tên react-router-dom, là quên hết những gì về React Router từng biết, **React Router là một component với hàm render ra một component khi đường dẫn thõa điều kiện trong path.**
 
-```js
+```jsx
 import React, { Component } from 'react'
 
 class App extends Component {
@@ -28,7 +28,7 @@ export default App
 
 Giờ import `BrowserRouter` rồi đổi tên lại thành `Router`, cái này ko bắt buộc mà đa phần người ta làm vậy quen rồi.
 
-```js
+```jsx
 import {
   BrowserRouter as Router,
   Route,
@@ -38,7 +38,7 @@ import {
 
 Thằng `BrowserRouter` này sẽ đưa tất cả thông tin *route* xuống cho tất cả các component con thông quan `context`. Giờ bọc nguyên cái app trong Router này
 
-```js
+```jsx
 import React, { Component } from 'react'
 import {
   BrowserRouter as Router,
@@ -63,7 +63,7 @@ export default App
 
 Tiếp theo, ta sẽ sử dụng component `Route`, khi đường dẫn trình duyệt khớp với props `path` của thằng `Route` thì nó sẽ render ra component không thì trả về null
 
-```js
+```jsx
 import React, { Component } from 'react'
 import {
   BrowserRouter as Router,
@@ -106,13 +106,13 @@ export default App
 
 Cứ vậy, nếu muốn có thêm routes thì cứ add thêm các component `Route` này, khi user truy cập `/hello-viet-nam` thì chỉ component Home được render ra, 2 Route about và topics sẽ trả về null. Ở đây khi truy cập /about hay /topics thì component Home vẫn được render ra, nếu ko muốn render Home, thêm vào nó props là exact
 
-```js
+```jsx
 <Route exact path='/' component={Home} />
 ```
 
 Giờ thêm một thanh navigation để user có thể click chuyển qua lại giữa các 'trang', Link trong react-router-dom thì ko khác phiên bản trước
 
-```js
+```jsx
 render() {
   return (
     <Router>
@@ -134,7 +134,7 @@ render() {
 
 Bây giờ bên trong component `Topics`, cứ vô từ lồng thêm Route vào như lồng div trong div thôi
 
-```js
+```jsx
 const Topic = () => {
   <div>
     <h3>TOPIC</h3>
@@ -173,7 +173,7 @@ Khi user truy cập vào /topics sẽ có một thanh navigation và một compo
 
 Mà hardcode cái path thế này không hay, khi React Router render ra một component nó sẽ truyền vào 3 props cho component là: `match`, `loaction`, `history`. Trong ví dụ này nếu gọi `match.url` nó sẽ cho ta giá trị là `/topics`. Sửa lại component Topics một cách thông minh hơn
 
-```js
+```jsx
 const Topic = () => {
   <div>
     <h3>TOPIC</h3>
@@ -210,7 +210,7 @@ const Topics = ({ match }) => (
 
 Ngoài url ra, thằng match còn có các params dường truyền vào
 
-```js
+```jsx
 const Topics = ({ match }) => (
   <div>
     ...
@@ -228,7 +228,7 @@ const Topic = ({ match }) => (
 
 Ví dụ muốn có một component hiển thị text là "Ê chọn topic đi" khi nó đang ở trang /topics, hãy nhớ Route cũng là component render một component khác theo điều kiện thôi mà
 
-```js
+```jsx
 <Route exact path={match.url} render={() => (
   <h3>Please select a topic.</h3>
 )}/>
@@ -236,7 +236,7 @@ Ví dụ muốn có một component hiển thị text là "Ê chọn topic đi" 
 
 Full Code
 
-```js
+```jsx
 import React, { Component } from 'react'
 import {
   BrowserRouter as Router,

@@ -14,7 +14,7 @@ Các phương thức của lifecycle là một dạng `hook` (giống như khái
 
 Những phương thức bắt đầu với `componentWill` tức là cái `hook` này được đặt trước những xử lý của React, còn bắt đầu với `componentDid` thì chạy sau khi thực hiện các đoạn code xử lý của React.
 
-```js
+```jsx
 componentEvent() {
     componentWill...(); // hook
 
@@ -29,7 +29,7 @@ componentEvent() {
 
 Phương thức này sẽ được gọi khi component được khởi tạo, trước khi nó được *mount*
 
-```js
+```jsx
 class Clicker extends React.Component {
   constructor(props) {
     super(props);
@@ -57,7 +57,7 @@ Lưu ý không nên gọi bất kỳ hàm nào có gọi `setState` trong `compo
 
 Component đã hiện hình, là lúc mà ta gọi AJAX, thêm sự kiện có tương tác với DOM, gọi `setState` ở đây sẽ trigger sự kiện re-render.
 
-```js
+```jsx
 componetDidMount() {
   fetch('https://gitconnected.com')
     .then((res) => {
@@ -72,7 +72,7 @@ componetDidMount() {
 
 Chạy khi component nhận được `props` mới từ component cha. Thời điểm thích hợp để kiểm tra và reset lại `state` có phụ thuộc vào giá trị `props`
 
-```js
+```jsx
 componentWillReceiveProps(nextProps) {
   if (this.props.id !== nextProps.id) {
     this.setState({
@@ -86,7 +86,7 @@ componentWillReceiveProps(nextProps) {
 
 Có phương thức này để cải thiện performance của React, vì đôi lúc có những sự thay đổi `state` hoặc `props` nếu không muốn cập nhập lại UI có thể cho hàm này return và `false` (mặc định là return `true`), khi return `false` các hàm `componentWillUpdate`, `render`, `componentDidUpdate` sẽ không được gọi.
 
-```js
+```jsx
 shouldComponentUpdate(nextProps, nextState) {
    return this.props.clicks !== nextProps.clicks;
 }
@@ -105,7 +105,7 @@ Sau khi React cập nhập lại UI, hook này sẽ được gọi, nếu muốn
 
 Có thể sử dụng để remove các listener đã được add cho DOM
 
-```js
+```jsx
 componentWillUnmount() {
   window.removeEventListener('resize', this.resizeEventHandler);
 }
@@ -115,7 +115,7 @@ componentWillUnmount() {
 
 Cái này mới được add vào từ React 16, nếu một component nào đó bị lỗi nó sẽ không chết nguyên cái app nữa mà sẽ quăn lỗi ở đây, sử dụng để hiển thị lỗi lên UI
 
-```js
+```jsx
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);

@@ -16,7 +16,7 @@ Trong tương lai không xa `context` sẽ được gỡ bỏ khỏi React, trê
 
 Ví dụ có 3 component: OngNoi, Cha, Con
 
-```js
+```jsx
 class Con extends React.Component {
   render() {
     return (
@@ -50,7 +50,7 @@ class OngNoi extends React.Component {
 
 Props *color* được truyền từ OngNoi > Cha > Con, nếu sử dụng context có thể truyền thẳng từ OngNoi > Con
 
-```js
+```jsx
 
 class Con extends React.Component {
   render() {

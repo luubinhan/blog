@@ -28,7 +28,7 @@ Cách tiếp cận của React Router không khác mấy so với các thư vi�
 
 Ví dụ với 1 component `Home`
 
-```js
+```jsx
 class Home extends React.Component{
     render(){
         return(
@@ -41,7 +41,7 @@ ReactDOM.render( (<Home/>), document.getElementById('root'));
 
 Sử dụng với React-Router
 
-```html
+```jsx
 ReactDOM.render((
 	<Router>
 		<Route path="/" component={Home} /> 
@@ -57,7 +57,7 @@ Câu khai báo trên có thể diễn giải là với route "/" (tương đươ
 
 Xem xét ví dụ sau
 
-```html
+```jsx
 ReactDOM.render((
 	<Router>
 		<Route path="/" component={Home}></Route>
@@ -75,7 +75,7 @@ ReactDOM.render((
 
 Khai báo nested Route như sau
 
-```html
+```jsx
 ReactDOM.render((
   <Router>
     <Route component={MainLayout}>
@@ -91,7 +91,7 @@ Khi user visit đường dẫn */users*, React Router sẽ render component `Use
 
 Nếu muốn trang chủ cũng render `MainLayout` cùng với component `Home`
 
-```html
+```jsx
 ReactDOM.render((
   <Router>
     <Route component={MainLayout}>
@@ -109,7 +109,7 @@ ReactDOM.render((
 
 Thay vì viết như trên, có thể sử dụng component `IndexRoute` cũng cho cũng kết quả
 
-```html
+```jsx
 ReactDOM.render((
   <Router>
     <Route path="/" component={MainLayout}>
@@ -127,7 +127,7 @@ ReactDOM.render((
 
 Nếu có một khai báo cho trang *User* như bên dưới
 
-```html
+```jsx
 <Route path="user/settings" component={UserSettings} />
 <Route path="user/inventory" component={UserInventory} />
 <Route path="user/orders" component={UserOrders} />
@@ -135,7 +135,7 @@ Nếu có một khai báo cho trang *User* như bên dưới
 
 viết lại cho gọn
 
-```html
+```jsx
 <Route path="user">
   <Route path="settings" component={UserSettings} />
   <Route path="inventory" component={UserInventory} />
@@ -145,7 +145,7 @@ viết lại cho gọn
 
 Cần bổ sung thêm component cho trang `/user`
 
-```html
+```jsx
 <Route path="user">
   <IndexRoute component={UserProfile} />
   <Route path="settings" component={UserSettings} />
@@ -158,7 +158,7 @@ Cần bổ sung thêm component cho trang `/user`
 
 Khi đã định nghĩa với Route, nếu muốn gán một đường dẫn đến một route nào đó, sử dụng component `<Link to="" />` thay cho tag `<a/>`
 
-```html
+```jsx
 <div className="app">
   <header className="primary-header"></header>
   <aside className="primary-aside">
@@ -176,7 +176,7 @@ Khi đã định nghĩa với Route, nếu muốn gán một đường dẫn đ�
 
 Một tính năng cực cool của `<Link>` nữa là nó hiểu khi nào đang active
 
-```html
+```jsx
 <Link to="/users" activeClassName="active">Users</Link>
 ```
 
@@ -184,7 +184,7 @@ Một tính năng cực cool của `<Link>` nữa là nó hiểu khi nào đang 
 
 `<Router>` muốn hoạt động được phải được khai báo với `ReactRouter.browserHistory`
 
-```js
+```jsx
 var browserHistory = ReactRouter.browserHistory;
 
 ReactDOM.render((
@@ -198,7 +198,7 @@ Những version trước đây của React Router, attribute `history` có giá 
 
 Nếu muốn redirect user đến một route nào đó
 
-```js
+```jsx
 browserHistory.push('/some/path');
 ```
 
