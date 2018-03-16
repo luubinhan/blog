@@ -19,7 +19,7 @@ Trong demo chúng ta sẽ sử dụng
 
 Khởi tạo project và các thư viện sẽ sử dụng
 
-```
+```powershell
 create-react-app react-auth
 cd react-auth
 
@@ -28,25 +28,25 @@ npm i react-router-dom glamor --save
 
 Cài AWSMobile CLI
 
-```
+```powershell
 npm i -g awsmobile-cli
 ```
 
 Khởi tạo config AWS IAM
 
-```
+```powershell
 awsmobile configure
 awsmobile init
 ```
 
 Nó sẽ tạo project Mobile Hub và file aws-exports.js trong thư mục src. Tiếp theo, thêm user-signin và deploy các config mới
 
-```
+```powershell
 awsmobile user-signin enable
 awsmobile push
 ```
 
-`awsmobile user-signin enable` sex bật Amazon Congito trong project với các thiết đặt mặc định, bao gồm 2 factor authentication với SMS (sẽ thêm TOTP sau). Nếu muôn can thiệp các thiệt đặt, vào trực tiếp [Amazon Cognito](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fcognito%2Fhome%3Fregion%3Dus-east-1%26state%3DhashArgs%2523%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fcognito&forceMobileApp=0) để chỉnh
+`awsmobile user-signin enable` sẽ bật Amazon Congito trong project với các thiết đặt mặc định, bao gồm 2 factor authentication với SMS (sẽ thêm TOTP sau). Nếu muôn can thiệp các thiệt đặt, vào trực tiếp [Amazon Cognito](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fcognito%2Fhome%3Fregion%3Dus-east-1%26state%3DhashArgs%2523%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fcognito&forceMobileApp=0) để chỉnh
 
 # Màn hình đăng ký
 
