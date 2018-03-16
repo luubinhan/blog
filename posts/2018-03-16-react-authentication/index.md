@@ -122,3 +122,202 @@ const styles = {
   }
 }
 ```
+
+Flow sẽ như thế này, sau khi user cung cấp các thông tin trong form signup, chúng ta gọi đến phương thức `signUp`, user sẽ nhận được một mã code để verify quá SMS, user điền mã code này vào form verify, chúng ta verify cái mã code này bằng phương thức 'confirmSignUp'
+
+![](https://cdn-images-1.medium.com/max/1000/1*Z1sFmf-KG7iiHG_-VMieQw.jpeg)
+
+```jsx
+import React from 'react'
+import { css } from 'glamor'
+
+class SignUp extends React.Component {
+  state = {
+    username: '',
+    password: '',
+    email: '',
+    phone_number: '',
+    authCode: ''
+  }
+  onChange = (key, value) => {
+    this.setState({ [key]: value })
+  }
+  render() {
+    return (
+      <div {...css(styles.container)}>
+        <h2>Sign Up</h2>
+        <input
+          {...css(styles.input)}
+          placeholder='Username'
+          onChange={evt => this.onChange('username', evt.target.value)}
+        />
+        <input
+          {...css(styles.input)}
+          placeholder='Password'
+          type='password'
+          onChange={evt => this.onChange('password', evt.target.value)}
+        />
+        <input
+          {...css(styles.input)}
+          placeholder='Email'
+          onChange={evt => this.onChange('email', evt.target.value)}
+        />
+        <input
+          {...css(styles.input)}
+          placeholder='Phone Number'
+          onChange={evt => this.onChange('phone_number', evt.target.value)}
+        />
+        <div {...css(styles.button)}>
+          <span>Sign Up</span>
+        </div>
+        
+        <input
+          {...css(styles.input)}
+          placeholder='Authentication Code'
+          onChange={evt => this.onChange('authCode', evt.target.value)}
+        />
+        <div {...css(styles.button)}>
+          <span>Confirm Sign Up</span>
+        </div>
+        
+      </div>
+    )
+  }
+}
+
+let styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  button: {
+    width: '170px',
+    padding: '10px 0px',
+    backgroundColor: '#ddd',
+    cursor: 'pointer',
+    borderRadius: '3px',
+    ':hover': {
+      backgroundColor: '#ededed'
+    }
+  },
+  input: {
+    height: 40,
+    marginBottom: '10px',
+    border: 'none',
+    outline: 'none',
+    borderBottom: '2px solid #4CAF50',
+    fontSize: '16px',
+    '::placeholder': {
+      color: 'rgba(0, 0, 0, .3)'
+    }
+  }
+}
+
+export default SignUp
+```
+
+Xong cái UI, giờ ta sử dụng 2 phương thức class `Auth`
+
+
+```jsx
+// previous imports omitted
+
+  import { Auth } from 'aws-amplify'
+
+  // previously shown code omitted
+  signUp = () => {
+    const { username, password, email, phone_number } = this.state
+    Auth.signUp({
+      username,
+      password,
+      attributes: {
+        email,
+        phone_number
+      }
+    })
+    .then(() => console.log('successful sign up!'))
+    .catch(err => console.log('error signing up: ', err))
+  }
+  confirmSignUp = () => {
+    Auth.confirmSignUp(this.state.username, this.state.authCode)
+    .then(console.log('successful confirm sign up!'))
+    .catch(err => console.log('error confirming signing up: ', err))
+  }
+  render() {
+    // 
+    // here we need to update the buttons to attach class methods to onClick event
+    <div {...css(styles.button)} onClick={this.signUp}>
+      <span>Sign Up</span>
+    </div>
+
+    <input
+      {...css(styles.input)}
+      placeholder='Authentication Code'
+      onChange={evt => this.onChange('authCode', evt.target.value)}
+    />
+    <div {...css(styles.button)} onClick={this.confirmSignUp}>
+      <span>Confirm Sign Up</span>
+    </div>
+  }
+```
+
+Cuối cùng import và sử dụng component trong `App.js`
+
+```jsx
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+import SignUp from './SignUp'
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <SignUp />
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+
+Các thông tin của user sẽ được lại trong 'Manage your User Pools', vào Amazon Coginito dashboard, chọn ứng dụng đã setup, chọn mục 'Users and Settings'
+
+![](https://cdn-images-1.medium.com/max/1000/1*XQfNfYhaGlkD0wxEPtr8bQ.jpeg)
+
+# Sign In
+
+Sign in thì cũng tương tự như signup, chúng ta sử dụng `Auth.signIn(username, password)`, trả về object nếu thành công, sau đó nó sẽ gởi SMS tới user với code xác nhận lần nữa, verify bằng `confirmSignIn`
+
+```jsx
+signIn() {
+  Auth.signIn(this.state.username, this.state.password)
+    .then(user => this.setState({ user }))
+    .catch(err => console.log('error signing in! :', err))
+}
+confirmSignIn() {
+  Auth.confirmSignIn(this.state.user, this.state.authCode)
+    .then(userData => {
+      console.log('userdata: ', userData)
+    })
+    .catch(err => console.log('error confirming sign in!: ', err))
+}
+```
+
+User data nằm trong cục dữ liệu trả về sau khi gọi hàm `confirmSignIn`
+
+![](https://cdn-images-1.medium.com/max/800/1*yBT-_MdRPCIj5KN3PnyFmw.png)
+
+Có rất nhiều cách để lấy thông tin user đang đăng nhập, có thể dùng `Auth.currentAuthenticatedUser()` là dễ nhất, toàn bộ API có thể tham khảo [ở đây](https://aws.github.io/aws-amplify/api/classes/authclass.html)
+
+Kết thúc phần 1 ở đây, phần 2 tiếp tục với Routing và TOTP để có thể làm Google Authenticator.
+
+-----
+Bài dịch từ tác giả Nader Dabit trên HackerNoon
