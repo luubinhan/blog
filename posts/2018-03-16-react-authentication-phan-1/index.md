@@ -1,7 +1,7 @@
 ---
-path: "/2018-03-16-react-authentication"
+path: "/2018-03-16-react-authentication-phan-1"
 date: "2018-03-16T13:35:13.234Z"
-title: "Sync extensions của VSCode"
+title: "React Authentication với Amazon Cognito - Phần 1"
 desc: "Implement authentication 2 factor sử dụng React, React Router, Amazone Cognito"
 tags: ["javascript", "react"]
 ---
