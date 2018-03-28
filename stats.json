@@ -35,48 +35,48 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-62eea29bc270512a00de.js",
-      "path---tags-62eea29bc270512a00de.js.map"
+      "path---tags-d7d0bffa86917b6ebc4b.js",
+      "path---tags-d7d0bffa86917b6ebc4b.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-57fcd34b9600b970580f.js",
-      "path---tags-wordpress-57fcd34b9600b970580f.js.map"
+      "path---tags-wordpress-a9f80dedf80982002a98.js",
+      "path---tags-wordpress-a9f80dedf80982002a98.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-b7217d1943aa95eb6c14.js",
-      "path---tags-webpack-b7217d1943aa95eb6c14.js.map"
+      "path---tags-webpack-c596bf855ebcd7feaff8.js",
+      "path---tags-webpack-c596bf855ebcd7feaff8.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-210ffb8ea94a7e6c2c54.js",
-      "path---tags-web-210ffb8ea94a7e6c2c54.js.map"
+      "path---tags-web-d28afda8e42e588189fa.js",
+      "path---tags-web-d28afda8e42e588189fa.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-4982141de1cf03585e4f.js",
-      "path---tags-ux-ui-4982141de1cf03585e4f.js.map"
+      "path---tags-ux-ui-d47755aa48e9faf81142.js",
+      "path---tags-ux-ui-d47755aa48e9faf81142.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-8346b576354dd1e3f813.js",
-      "path---tags-seo-8346b576354dd1e3f813.js.map"
+      "path---tags-seo-dfe38c8e0ac87d4f58ef.js",
+      "path---tags-seo-dfe38c8e0ac87d4f58ef.js.map"
     ],
     "path---tags-redux": [
-      "path---tags-redux-fbc03256497e46f406b4.js",
-      "path---tags-redux-fbc03256497e46f406b4.js.map"
+      "path---tags-redux-5a2fc8322891d2d6ee71.js",
+      "path---tags-redux-5a2fc8322891d2d6ee71.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-6dfbe7594ccd0d0fbdc8.js",
-      "path---tags-react-6dfbe7594ccd0d0fbdc8.js.map"
+      "path---tags-react-c8d9e7fd9b509ec3da01.js",
+      "path---tags-react-c8d9e7fd9b509ec3da01.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-856dcfb2a38c1cb3a17a.js",
-      "path---tags-javascript-856dcfb2a38c1cb3a17a.js.map"
+      "path---tags-javascript-fbdbaca1498ca5bb905e.js",
+      "path---tags-javascript-fbdbaca1498ca5bb905e.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-e97d245fdadd98aaa324.js",
-      "path---tags-design-e97d245fdadd98aaa324.js.map"
+      "path---tags-design-f4cb6ea3aa648fb76815.js",
+      "path---tags-design-f4cb6ea3aa648fb76815.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-27510f0e9b1f52e6bfc0.js",
-      "path---tags-css-27510f0e9b1f52e6bfc0.js.map"
+      "path---tags-css-110a68cde45f3c9d26a7.js",
+      "path---tags-css-110a68cde45f3c9d26a7.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -87,8 +87,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-012867eeedb70f5b8b7d.js",
-      "path---index-012867eeedb70f5b8b7d.js.map"
+      "path---index-de8d9cb9dba13ffdb594.js",
+      "path---index-de8d9cb9dba13ffdb594.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -101,6 +101,10 @@
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---2018-03-28-mot-vai-tip-su-dung-chrome-dev-tools": [
+      "path---2018-03-28-mot-vai-tip-su-dung-chrome-dev-tools-367a2946ffc380ded7e5.js",
+      "path---2018-03-28-mot-vai-tip-su-dung-chrome-dev-tools-367a2946ffc380ded7e5.js.map"
     ],
     "path---2018-03-27-css-sticky-de-fixed-element": [
       "path---2018-03-27-css-sticky-de-fixed-element-9da0e5552853ae670cba.js",
@@ -275,8 +279,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-b3227df46a7e65712147.js",
-      "app-b3227df46a7e65712147.js.map"
+      "app-48794457bbb7e2cfce5f.js",
+      "app-48794457bbb7e2cfce5f.js.map"
     ]
   }
 }
