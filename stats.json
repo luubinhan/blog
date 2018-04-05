@@ -35,52 +35,56 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-2e974ea1fe569ea694b3.js",
-      "path---tags-2e974ea1fe569ea694b3.js.map"
+      "path---tags-e95372e79e132058faad.js",
+      "path---tags-e95372e79e132058faad.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-81da1ea99f793276a93a.js",
-      "path---tags-wordpress-81da1ea99f793276a93a.js.map"
+      "path---tags-wordpress-ea75b435c798c7444826.js",
+      "path---tags-wordpress-ea75b435c798c7444826.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-66fd0d1b9a7a1e6baf56.js",
-      "path---tags-webpack-66fd0d1b9a7a1e6baf56.js.map"
+      "path---tags-webpack-9b1b6e94f4fc1bc0233d.js",
+      "path---tags-webpack-9b1b6e94f4fc1bc0233d.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-611982a7b6483b10b015.js",
-      "path---tags-web-611982a7b6483b10b015.js.map"
+      "path---tags-web-80fdbc094280f1e78292.js",
+      "path---tags-web-80fdbc094280f1e78292.js.map"
+    ],
+    "path---tags-ux": [
+      "path---tags-ux-0d36b4e39d01696156d1.js",
+      "path---tags-ux-0d36b4e39d01696156d1.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-f1ce97386cdc9d690adb.js",
-      "path---tags-ux-ui-f1ce97386cdc9d690adb.js.map"
+      "path---tags-ux-ui-c88c987a86997100eaac.js",
+      "path---tags-ux-ui-c88c987a86997100eaac.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-f0d22be55a77ca77259c.js",
-      "path---tags-seo-f0d22be55a77ca77259c.js.map"
+      "path---tags-seo-4ebb2b0cea046a7de2bb.js",
+      "path---tags-seo-4ebb2b0cea046a7de2bb.js.map"
     ],
     "path---tags-redux": [
-      "path---tags-redux-a35b13bc2a963ce32f2b.js",
-      "path---tags-redux-a35b13bc2a963ce32f2b.js.map"
+      "path---tags-redux-8fa11a28fd3a37ad806b.js",
+      "path---tags-redux-8fa11a28fd3a37ad806b.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-219ff19525d805da83a7.js",
-      "path---tags-react-219ff19525d805da83a7.js.map"
+      "path---tags-react-109ee75037ecbee05e8e.js",
+      "path---tags-react-109ee75037ecbee05e8e.js.map"
     ],
     "path---tags-react-native": [
-      "path---tags-react-native-1f16a45b885f077ea889.js",
-      "path---tags-react-native-1f16a45b885f077ea889.js.map"
+      "path---tags-react-native-ac743c32901fe787f56d.js",
+      "path---tags-react-native-ac743c32901fe787f56d.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-3e820b5acbba9fd1533d.js",
-      "path---tags-javascript-3e820b5acbba9fd1533d.js.map"
+      "path---tags-javascript-5927a0d5e82fb2ae660d.js",
+      "path---tags-javascript-5927a0d5e82fb2ae660d.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-e72638460f08752179e0.js",
-      "path---tags-design-e72638460f08752179e0.js.map"
+      "path---tags-design-179e8cd1274d49061a63.js",
+      "path---tags-design-179e8cd1274d49061a63.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-5fd2542d044805d8c0bb.js",
-      "path---tags-css-5fd2542d044805d8c0bb.js.map"
+      "path---tags-css-a063baadc5d7293fec83.js",
+      "path---tags-css-a063baadc5d7293fec83.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -91,8 +95,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-649e87f12000e7ef5a74.js",
-      "path---index-649e87f12000e7ef5a74.js.map"
+      "path---index-aff9165ffa6b0aff02d6.js",
+      "path---index-aff9165ffa6b0aff02d6.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -105,6 +109,10 @@
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---2018-04-05-tai-sao-tui-van-thich-firefox": [
+      "path---2018-04-05-tai-sao-tui-van-thich-firefox-616f182dcaf32be456e6.js",
+      "path---2018-04-05-tai-sao-tui-van-thich-firefox-616f182dcaf32be456e6.js.map"
     ],
     "path---2018-04-04-danh-sach-doi-choi-voi-react-native": [
       "path---2018-04-04-danh-sach-doi-choi-voi-react-native-15cad08e503efa098bfe.js",
@@ -295,8 +303,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-814ff516e9977a3093b5.js",
-      "app-814ff516e9977a3093b5.js.map"
+      "app-80035efccbee2a0ab98e.js",
+      "app-80035efccbee2a0ab98e.js.map"
     ]
   }
 }
