@@ -35,52 +35,52 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-78758da96d977c86a363.js",
-      "path---tags-78758da96d977c86a363.js.map"
+      "path---tags-92b90842c9539a38b179.js",
+      "path---tags-92b90842c9539a38b179.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-b1a8cc1c2232cc0d79af.js",
-      "path---tags-wordpress-b1a8cc1c2232cc0d79af.js.map"
+      "path---tags-wordpress-0702624c5c5bdb2535e6.js",
+      "path---tags-wordpress-0702624c5c5bdb2535e6.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-3b91dc5c88dc0448dca4.js",
-      "path---tags-webpack-3b91dc5c88dc0448dca4.js.map"
+      "path---tags-webpack-1a1b368e85b49501a313.js",
+      "path---tags-webpack-1a1b368e85b49501a313.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-b26ce0823d045d4241ea.js",
-      "path---tags-web-b26ce0823d045d4241ea.js.map"
+      "path---tags-web-52e15936a17fb69fec65.js",
+      "path---tags-web-52e15936a17fb69fec65.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-3013c0dcae0223adcd9f.js",
-      "path---tags-ux-ui-3013c0dcae0223adcd9f.js.map"
+      "path---tags-ux-ui-539714223a40b1d21ee7.js",
+      "path---tags-ux-ui-539714223a40b1d21ee7.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-b167303eecf213c4eb45.js",
-      "path---tags-seo-b167303eecf213c4eb45.js.map"
+      "path---tags-seo-063c20b8aa65d6b0dd3c.js",
+      "path---tags-seo-063c20b8aa65d6b0dd3c.js.map"
     ],
     "path---tags-redux": [
-      "path---tags-redux-4228c28623a91a28ded8.js",
-      "path---tags-redux-4228c28623a91a28ded8.js.map"
+      "path---tags-redux-63b2d15bbaa4666c48e7.js",
+      "path---tags-redux-63b2d15bbaa4666c48e7.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-83f5fb11f3406126c786.js",
-      "path---tags-react-83f5fb11f3406126c786.js.map"
+      "path---tags-react-15c61407135374300cc1.js",
+      "path---tags-react-15c61407135374300cc1.js.map"
     ],
     "path---tags-react-native": [
-      "path---tags-react-native-f9000e596a168031b177.js",
-      "path---tags-react-native-f9000e596a168031b177.js.map"
+      "path---tags-react-native-d4412b23330791ffc9e8.js",
+      "path---tags-react-native-d4412b23330791ffc9e8.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-2182a504ded254501c09.js",
-      "path---tags-javascript-2182a504ded254501c09.js.map"
+      "path---tags-javascript-33a5913f8b84a11ae56f.js",
+      "path---tags-javascript-33a5913f8b84a11ae56f.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-afefc1deb121023a74cb.js",
-      "path---tags-design-afefc1deb121023a74cb.js.map"
+      "path---tags-design-46ac366499438388e75d.js",
+      "path---tags-design-46ac366499438388e75d.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-abefd7ecb23246471a87.js",
-      "path---tags-css-abefd7ecb23246471a87.js.map"
+      "path---tags-css-becfa5e7a8871f98bb15.js",
+      "path---tags-css-becfa5e7a8871f98bb15.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -131,8 +131,8 @@
       "path---2018-03-27-css-sticky-de-fixed-element-3cab0da277fe23f018ae.js.map"
     ],
     "path---2018-03-19-react-patterns-can-ban": [
-      "path---2018-03-19-react-patterns-can-ban-a88cebf54f07e2c273b7.js",
-      "path---2018-03-19-react-patterns-can-ban-a88cebf54f07e2c273b7.js.map"
+      "path---2018-03-19-react-patterns-can-ban-3b566152f8f85aaca313.js",
+      "path---2018-03-19-react-patterns-can-ban-3b566152f8f85aaca313.js.map"
     ],
     "path---2018-03-16-react-authentication-phan-1": [
       "path---2018-03-16-react-authentication-phan-1-45f1fe3c47083e93ce4d.js",
@@ -299,8 +299,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-dc6886187c30c0815bd1.js",
-      "app-dc6886187c30c0815bd1.js.map"
+      "app-3a5a134308274050de64.js",
+      "app-3a5a134308274050de64.js.map"
     ]
   }
 }
