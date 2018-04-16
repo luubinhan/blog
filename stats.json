@@ -35,52 +35,52 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-92b90842c9539a38b179.js",
-      "path---tags-92b90842c9539a38b179.js.map"
+      "path---tags-f6387733bea06e4c38e2.js",
+      "path---tags-f6387733bea06e4c38e2.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-0702624c5c5bdb2535e6.js",
-      "path---tags-wordpress-0702624c5c5bdb2535e6.js.map"
+      "path---tags-wordpress-53654765a61d3ebf6e5c.js",
+      "path---tags-wordpress-53654765a61d3ebf6e5c.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-1a1b368e85b49501a313.js",
-      "path---tags-webpack-1a1b368e85b49501a313.js.map"
+      "path---tags-webpack-26ca6670bdaa6384f560.js",
+      "path---tags-webpack-26ca6670bdaa6384f560.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-52e15936a17fb69fec65.js",
-      "path---tags-web-52e15936a17fb69fec65.js.map"
+      "path---tags-web-80c40efa7e4a04b377ca.js",
+      "path---tags-web-80c40efa7e4a04b377ca.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-539714223a40b1d21ee7.js",
-      "path---tags-ux-ui-539714223a40b1d21ee7.js.map"
+      "path---tags-ux-ui-cdca2c6550b8d8208027.js",
+      "path---tags-ux-ui-cdca2c6550b8d8208027.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-063c20b8aa65d6b0dd3c.js",
-      "path---tags-seo-063c20b8aa65d6b0dd3c.js.map"
+      "path---tags-seo-e8c0b2698693340f86f3.js",
+      "path---tags-seo-e8c0b2698693340f86f3.js.map"
     ],
     "path---tags-redux": [
-      "path---tags-redux-63b2d15bbaa4666c48e7.js",
-      "path---tags-redux-63b2d15bbaa4666c48e7.js.map"
+      "path---tags-redux-5e2eb37bbe25a9e7c9b3.js",
+      "path---tags-redux-5e2eb37bbe25a9e7c9b3.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-15c61407135374300cc1.js",
-      "path---tags-react-15c61407135374300cc1.js.map"
+      "path---tags-react-d244dce9eb7414b42ae7.js",
+      "path---tags-react-d244dce9eb7414b42ae7.js.map"
     ],
     "path---tags-react-native": [
-      "path---tags-react-native-d4412b23330791ffc9e8.js",
-      "path---tags-react-native-d4412b23330791ffc9e8.js.map"
+      "path---tags-react-native-aef93a7b7da0623ea2cd.js",
+      "path---tags-react-native-aef93a7b7da0623ea2cd.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-33a5913f8b84a11ae56f.js",
-      "path---tags-javascript-33a5913f8b84a11ae56f.js.map"
+      "path---tags-javascript-41de0d5fec6c29579084.js",
+      "path---tags-javascript-41de0d5fec6c29579084.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-46ac366499438388e75d.js",
-      "path---tags-design-46ac366499438388e75d.js.map"
+      "path---tags-design-cc177ae56b8ace5c9389.js",
+      "path---tags-design-cc177ae56b8ace5c9389.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-becfa5e7a8871f98bb15.js",
-      "path---tags-css-becfa5e7a8871f98bb15.js.map"
+      "path---tags-css-06da27be74aba06c913a.js",
+      "path---tags-css-06da27be74aba06c913a.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -91,8 +91,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-485f95c68d0e602e0911.js",
-      "path---index-485f95c68d0e602e0911.js.map"
+      "path---index-0538da6f02d4a6d048e5.js",
+      "path---index-0538da6f02d4a6d048e5.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -105,6 +105,10 @@
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---2018-04-16-react-native-bat-dau-voi-expo": [
+      "path---2018-04-16-react-native-bat-dau-voi-expo-e52cf797b7d3b62e8e03.js",
+      "path---2018-04-16-react-native-bat-dau-voi-expo-e52cf797b7d3b62e8e03.js.map"
     ],
     "path---2018-04-05-tai-sao-tui-van-thich-firefox": [
       "path---2018-04-05-tai-sao-tui-van-thich-firefox-bf21be88fcb7bc0e5043.js",
@@ -299,8 +303,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-3a5a134308274050de64.js",
-      "app-3a5a134308274050de64.js.map"
+      "app-c2e69936e15076a36384.js",
+      "app-c2e69936e15076a36384.js.map"
     ]
   }
 }
