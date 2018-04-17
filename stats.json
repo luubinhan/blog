@@ -35,52 +35,52 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-55cb6851404a275df2eb.js",
-      "path---tags-55cb6851404a275df2eb.js.map"
+      "path---tags-5bf7713c7237f756df25.js",
+      "path---tags-5bf7713c7237f756df25.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-8c34f6e78bf9c9d6d1de.js",
-      "path---tags-wordpress-8c34f6e78bf9c9d6d1de.js.map"
+      "path---tags-wordpress-79aebcabae17832ede94.js",
+      "path---tags-wordpress-79aebcabae17832ede94.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-c8055fa852c12ddacaea.js",
-      "path---tags-webpack-c8055fa852c12ddacaea.js.map"
+      "path---tags-webpack-f7f99507be6e8dabf23f.js",
+      "path---tags-webpack-f7f99507be6e8dabf23f.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-bbd497b430651ad91cbf.js",
-      "path---tags-web-bbd497b430651ad91cbf.js.map"
+      "path---tags-web-65ac87b9828e21153ac7.js",
+      "path---tags-web-65ac87b9828e21153ac7.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-b4327324ef531522ee1c.js",
-      "path---tags-ux-ui-b4327324ef531522ee1c.js.map"
+      "path---tags-ux-ui-3d13fee4e2fe67783d1e.js",
+      "path---tags-ux-ui-3d13fee4e2fe67783d1e.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-8e25b3249d8ae53d7f31.js",
-      "path---tags-seo-8e25b3249d8ae53d7f31.js.map"
+      "path---tags-seo-de9a6581e89c0918ba14.js",
+      "path---tags-seo-de9a6581e89c0918ba14.js.map"
     ],
     "path---tags-redux": [
-      "path---tags-redux-8be8f80979aeb207214d.js",
-      "path---tags-redux-8be8f80979aeb207214d.js.map"
+      "path---tags-redux-37ab0ea4cb708e7311b2.js",
+      "path---tags-redux-37ab0ea4cb708e7311b2.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-62957c841bac9e14bdde.js",
-      "path---tags-react-62957c841bac9e14bdde.js.map"
+      "path---tags-react-491c3bcff04775d4e515.js",
+      "path---tags-react-491c3bcff04775d4e515.js.map"
     ],
     "path---tags-react-native": [
-      "path---tags-react-native-46c5b2b1ed4c2ec8aea2.js",
-      "path---tags-react-native-46c5b2b1ed4c2ec8aea2.js.map"
+      "path---tags-react-native-71b97660f9c9c9458b5d.js",
+      "path---tags-react-native-71b97660f9c9c9458b5d.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-7a2437d543b8f217c83c.js",
-      "path---tags-javascript-7a2437d543b8f217c83c.js.map"
+      "path---tags-javascript-e939cd9cd6e8c4ee6df8.js",
+      "path---tags-javascript-e939cd9cd6e8c4ee6df8.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-4fabeb97ec05400963de.js",
-      "path---tags-design-4fabeb97ec05400963de.js.map"
+      "path---tags-design-26c3625b66bd3798120f.js",
+      "path---tags-design-26c3625b66bd3798120f.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-7c4203d2d3ff83905e91.js",
-      "path---tags-css-7c4203d2d3ff83905e91.js.map"
+      "path---tags-css-b2868a25a245356c0d25.js",
+      "path---tags-css-b2868a25a245356c0d25.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -91,8 +91,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-dcfe7326abe6f7e83e7a.js",
-      "path---index-dcfe7326abe6f7e83e7a.js.map"
+      "path---index-22bfd0d35dd682925e49.js",
+      "path---index-22bfd0d35dd682925e49.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -141,6 +141,10 @@
     "path---2018-03-19-react-patterns-can-ban": [
       "path---2018-03-19-react-patterns-can-ban-3b566152f8f85aaca313.js",
       "path---2018-03-19-react-patterns-can-ban-3b566152f8f85aaca313.js.map"
+    ],
+    "path---2018-03-17-react-native-authentication-voi-amazone-cognito-phan-2": [
+      "path---2018-03-17-react-native-authentication-voi-amazone-cognito-phan-2-0f9d934114f33882a084.js",
+      "path---2018-03-17-react-native-authentication-voi-amazone-cognito-phan-2-0f9d934114f33882a084.js.map"
     ],
     "path---2018-03-16-react-authentication-phan-1": [
       "path---2018-03-16-react-authentication-phan-1-45f1fe3c47083e93ce4d.js",
@@ -307,8 +311,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-d77ad83556e67d92e7e7.js",
-      "app-d77ad83556e67d92e7e7.js.map"
+      "app-7f31b0078bd76f14ec8a.js",
+      "app-7f31b0078bd76f14ec8a.js.map"
     ]
   }
 }
