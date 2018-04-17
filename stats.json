@@ -35,52 +35,52 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-f6387733bea06e4c38e2.js",
-      "path---tags-f6387733bea06e4c38e2.js.map"
+      "path---tags-d71d667f2eb68c4888a7.js",
+      "path---tags-d71d667f2eb68c4888a7.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-53654765a61d3ebf6e5c.js",
-      "path---tags-wordpress-53654765a61d3ebf6e5c.js.map"
+      "path---tags-wordpress-7914b8323a8a5866518a.js",
+      "path---tags-wordpress-7914b8323a8a5866518a.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-26ca6670bdaa6384f560.js",
-      "path---tags-webpack-26ca6670bdaa6384f560.js.map"
+      "path---tags-webpack-70ad572cf493c7403827.js",
+      "path---tags-webpack-70ad572cf493c7403827.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-80c40efa7e4a04b377ca.js",
-      "path---tags-web-80c40efa7e4a04b377ca.js.map"
+      "path---tags-web-b21da46a7ca3f75a0fdc.js",
+      "path---tags-web-b21da46a7ca3f75a0fdc.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-cdca2c6550b8d8208027.js",
-      "path---tags-ux-ui-cdca2c6550b8d8208027.js.map"
+      "path---tags-ux-ui-ac29feff3f32993e2086.js",
+      "path---tags-ux-ui-ac29feff3f32993e2086.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-e8c0b2698693340f86f3.js",
-      "path---tags-seo-e8c0b2698693340f86f3.js.map"
+      "path---tags-seo-b0c09c0eda6175d3e0eb.js",
+      "path---tags-seo-b0c09c0eda6175d3e0eb.js.map"
     ],
     "path---tags-redux": [
-      "path---tags-redux-5e2eb37bbe25a9e7c9b3.js",
-      "path---tags-redux-5e2eb37bbe25a9e7c9b3.js.map"
+      "path---tags-redux-fc752293fbc2195d5661.js",
+      "path---tags-redux-fc752293fbc2195d5661.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-d244dce9eb7414b42ae7.js",
-      "path---tags-react-d244dce9eb7414b42ae7.js.map"
+      "path---tags-react-c2f7c77cc5f46c8aba8d.js",
+      "path---tags-react-c2f7c77cc5f46c8aba8d.js.map"
     ],
     "path---tags-react-native": [
-      "path---tags-react-native-aef93a7b7da0623ea2cd.js",
-      "path---tags-react-native-aef93a7b7da0623ea2cd.js.map"
+      "path---tags-react-native-73c36fd2a9cb15d9ead3.js",
+      "path---tags-react-native-73c36fd2a9cb15d9ead3.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-41de0d5fec6c29579084.js",
-      "path---tags-javascript-41de0d5fec6c29579084.js.map"
+      "path---tags-javascript-64752bdb794ae000f9bf.js",
+      "path---tags-javascript-64752bdb794ae000f9bf.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-cc177ae56b8ace5c9389.js",
-      "path---tags-design-cc177ae56b8ace5c9389.js.map"
+      "path---tags-design-3c001bbfa777ebc36c34.js",
+      "path---tags-design-3c001bbfa777ebc36c34.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-06da27be74aba06c913a.js",
-      "path---tags-css-06da27be74aba06c913a.js.map"
+      "path---tags-css-fd38aefdbeafa9caa24c.js",
+      "path---tags-css-fd38aefdbeafa9caa24c.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -91,8 +91,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-0538da6f02d4a6d048e5.js",
-      "path---index-0538da6f02d4a6d048e5.js.map"
+      "path---index-dcfe7326abe6f7e83e7a.js",
+      "path---index-dcfe7326abe6f7e83e7a.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -105,6 +105,10 @@
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---2018-04-17-giai-thich-observer-pattern-trong-javascript": [
+      "path---2018-04-17-giai-thich-observer-pattern-trong-javascript-b4accdc3a7669a69b08d.js",
+      "path---2018-04-17-giai-thich-observer-pattern-trong-javascript-b4accdc3a7669a69b08d.js.map"
     ],
     "path---2018-04-16-react-native-bat-dau-voi-expo": [
       "path---2018-04-16-react-native-bat-dau-voi-expo-e52cf797b7d3b62e8e03.js",
@@ -303,8 +307,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-c2e69936e15076a36384.js",
-      "app-c2e69936e15076a36384.js.map"
+      "app-d77ad83556e67d92e7e7.js",
+      "app-d77ad83556e67d92e7e7.js.map"
     ]
   }
 }
