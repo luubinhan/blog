@@ -102,4 +102,4 @@ publish( "inbox/newMessage", [{
 // unsubscribe( subscriber2 );
 ```
 
-Tức là ở đây thằng Observer ta móc nó vào sự kiện xảy ra trên đối tượng (ví dụ trên là input), còn Pub/Sub thì sẽ có thằng đừng giữa 2 đứa, làm nhiệm vụ cung cấp 2 hàm là `publish` để tạo sự kiện, `subscribe` để lắng nghe sự kiện.
+Tức là ở đây thằng Observer ta móc nó vào sự kiện xảy ra trên đối tượng (ví dụ trên là input), còn Pub/Sub thì sẽ có thằng đứng giữa 2 đứa, làm nhiệm vụ cung cấp 2 hàm là `publish` để tạo sự kiện, `subscribe` để lắng nghe sự kiện.
