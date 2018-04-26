@@ -4,7 +4,13 @@ const PRIMARY_NAVIGATION = [
 		href: '/tags/javascript',
 		isActive: false,
 		icon: "ion-social-javascript"	
-	},	
+	},
+  {
+    name: 'React',
+    href: '/tags/react',
+    isActive: false,
+    icon: "ion-social-nodejs"
+  },
 	{
 		name: 'Wordpress',
 		href: '/tags/wordpress',
