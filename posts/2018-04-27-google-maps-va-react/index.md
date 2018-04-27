@@ -9,7 +9,7 @@ tags: ["javascript", "react"]
 
 Nhúng Google Maps vào web site bình thường thì quá sức đơn giản, để sử dụng với React Js thì hơi vụng công một chút.
 
-Để sử dụng Google Maps API, ta chỉ cần load đoạn js từ googleapis, chèn thêm một cái `div` với id là gì *map* chằng hạn.
+Để sử dụng Google Maps API, ta chỉ cần load đoạn js từ googleapis, chèn thêm một cái `div` với id là *map* chằng hạn.
 
 ```html
 <!DOCTYPE html>
@@ -53,7 +53,7 @@ Cả hai đoạn script React và Google maps đều phải tốn thời gian đ
         async defer></script>
 ```
 
-Chúng ta thêm `asyn` và `defer` để load đoạn googleapis này sau cùng, đồng thời thêm hàm callback sau khi load xong. Nếu `initMap` là một global function thì ta có thể gọi nó bên trong React Component
+Chúng ta thêm `asyn` và `defer` để load đoạn googleapis này sau cùng, đồng thời thêm hàm *callback* sau khi load xong. Nếu `initMap` là một *global function* thì ta có thể gọi nó bên trong React Component
 
 ```jsx
 function initMap() {
@@ -61,9 +61,11 @@ function initMap() {
 }
 ```
 
-Buồn thay! Không chạy đâu các bạn ạ. Ngay cả khi Google Maps chỉ được load sau khi React được load, không có nghĩa là toàn bộ cây DOM đã được mount và render khi thực thi hàm callback.
+Buồn thay! Không chạy đâu các bạn ạ. Ngay cả khi Google Maps chỉ được load sau khi React được load, không có nghĩa là toàn bộ cây DOM đã được *mount* và *render* khi thực thi hàm *callback*.
 
-Ok, chúng ta cần giải pháp tốt hơn. Về cơ bản chúng ta muốn load đoạn script của google ngay khi component có sử dụng đến google api được **mounted**
+Ok, chúng ta cần giải pháp tốt hơn. Về cơ bản 
+
+> chúng ta muốn load đoạn script của google ngay khi *component* có sử dụng đến google api được **mounted**
 
 
 ```jsx
