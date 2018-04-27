@@ -1,4 +1,5 @@
 import React from "react"
+import GatsbyLink from 'gatsby-link';
 
 
 import './Bio.scss'
@@ -7,7 +8,7 @@ export default function Bio({img = '',href ='', name='', desc=''}){
  
     return (
       <div className="bio">
-        <a href={href} className="bio-wrapper">
+        <GatsbyLink to={href} className="bio-wrapper">
           <div className="bio-img">
             <img src={img} alt={name} />
           </div>
@@ -19,7 +20,7 @@ export default function Bio({img = '',href ='', name='', desc=''}){
               {desc}
             </div>
           </div>
-        </a>
+        </GatsbyLink>
       </div>
     )
  

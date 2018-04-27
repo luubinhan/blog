@@ -77,7 +77,7 @@ export default class Template extends React.Component {
                 </div>
               </article>
               <PostTags list={post.frontmatter.tags || []} />
-              <Bio name={SITE_CONFIG.companyName} desc={SITE_CONFIG.tagLine} href="#" img={profileImg} />
+              <Bio name={SITE_CONFIG.companyName} desc={SITE_CONFIG.tagLine} href="about" img={profileImg} />
               
             </div>
             <div className="section section-below-post">
