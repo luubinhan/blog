@@ -19,7 +19,7 @@ Nếu bạn chỉ quan tâm đến thể thì có thể ko cần đọc tiếp p
 - Mở rộng tốt, phù hợp team bự
 - Kiên định, data flow một chiều duy nhất
 
-## Nhược điểm
+### Nhược
 
 - Quá cứng nhắc, chúng ta phải tuân thủ các pattern của nó, quá trình code sẽ mất nhiều thời gian hơn cho một chuyện hết sức đơn giản
 - Học hơi khó khăn, cần nắm rõ kỹ thuật của Flux, thuần thục ES6, ES7 để sử dụng hiệu quả nhất.
@@ -27,13 +27,13 @@ Nếu bạn chỉ quan tâm đến thể thì có thể ko cần đọc tiếp p
 
 ## MobX
 
-## Ưu
+### Ưu
 
 - Code nhanh, tự đọng bind dữ liệu 2 chiều luôn
 - Không cần quan tâm đến Flux
 - Linh động trong việc cho phép tự quản lý state
 
-## Nhược
+### Nhược
 
 - Khi team phình ra, dự án bự lên **CHỈ** có thể maintain nổi nếu từ đầu tổ chức tốt, ý là thằng code trước mà để lại sh*t thì coi như ăn cho hết
 - Quá tự do cũng mệt, dễ dẫn đến chuyện viết theo kiểu hơi chuối, muốn thích viết sau viết mà
