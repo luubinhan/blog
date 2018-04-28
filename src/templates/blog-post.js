@@ -78,7 +78,7 @@ export default class Template extends React.Component {
               </article>
               <PostTags list={post.frontmatter.tags || []} />
               <Bio name={SITE_CONFIG.companyName} desc={SITE_CONFIG.tagLine} href="about" img={profileImg} />
-              
+              <div className="fb-comments" data-href={`${SITE_CONFIG.siteUrl}${post.frontmatter.path}`} data-width="720" data-numposts="10"></div>
             </div>
             <div className="section section-below-post">
               <div className="inner">
