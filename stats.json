@@ -35,52 +35,52 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-a9fc2806e19056765c29.js",
-      "path---tags-a9fc2806e19056765c29.js.map"
+      "path---tags-53972bfec8c0ed408888.js",
+      "path---tags-53972bfec8c0ed408888.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-b1f99fd91e5c1d46b6cc.js",
-      "path---tags-wordpress-b1f99fd91e5c1d46b6cc.js.map"
+      "path---tags-wordpress-a3dbb2d587ae9d7c0ce1.js",
+      "path---tags-wordpress-a3dbb2d587ae9d7c0ce1.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-db4a70194f34b695a7f6.js",
-      "path---tags-webpack-db4a70194f34b695a7f6.js.map"
+      "path---tags-webpack-d636e866f76a5e62e0d1.js",
+      "path---tags-webpack-d636e866f76a5e62e0d1.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-3c50e51b7bf04749bbf2.js",
-      "path---tags-web-3c50e51b7bf04749bbf2.js.map"
+      "path---tags-web-a88e6121c206096f1ca1.js",
+      "path---tags-web-a88e6121c206096f1ca1.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-7336a09f4a34587bf513.js",
-      "path---tags-ux-ui-7336a09f4a34587bf513.js.map"
+      "path---tags-ux-ui-312693327251351c8f19.js",
+      "path---tags-ux-ui-312693327251351c8f19.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-9c75996701391a125472.js",
-      "path---tags-seo-9c75996701391a125472.js.map"
+      "path---tags-seo-98fb1d88e6cdc6a36058.js",
+      "path---tags-seo-98fb1d88e6cdc6a36058.js.map"
     ],
     "path---tags-redux": [
-      "path---tags-redux-1ed293883b405579485f.js",
-      "path---tags-redux-1ed293883b405579485f.js.map"
+      "path---tags-redux-e3521599b329f7b7b7c5.js",
+      "path---tags-redux-e3521599b329f7b7b7c5.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-3d7b1114315cb9710191.js",
-      "path---tags-react-3d7b1114315cb9710191.js.map"
+      "path---tags-react-c782842d581eeb27a0cf.js",
+      "path---tags-react-c782842d581eeb27a0cf.js.map"
     ],
     "path---tags-react-native": [
-      "path---tags-react-native-ad2fbf4f0afdc85a0de9.js",
-      "path---tags-react-native-ad2fbf4f0afdc85a0de9.js.map"
+      "path---tags-react-native-d6b62d78e454f636523d.js",
+      "path---tags-react-native-d6b62d78e454f636523d.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-b47bbcd7469b2d6c5111.js",
-      "path---tags-javascript-b47bbcd7469b2d6c5111.js.map"
+      "path---tags-javascript-93e178c9341fc749c7a5.js",
+      "path---tags-javascript-93e178c9341fc749c7a5.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-29bb7dbf4dcf3c3f8ebe.js",
-      "path---tags-design-29bb7dbf4dcf3c3f8ebe.js.map"
+      "path---tags-design-9fba2b4ad0a40d8a7378.js",
+      "path---tags-design-9fba2b4ad0a40d8a7378.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-8e7279909d328416f307.js",
-      "path---tags-css-8e7279909d328416f307.js.map"
+      "path---tags-css-3bc1266f5d3e99c56685.js",
+      "path---tags-css-3bc1266f5d3e99c56685.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -91,8 +91,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-ced68450c8cf624310e9.js",
-      "path---index-ced68450c8cf624310e9.js.map"
+      "path---index-19bf2ad2340925f15836.js",
+      "path---index-19bf2ad2340925f15836.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -109,6 +109,10 @@
     "path---2018-05-02-transition-voi-react-navigation": [
       "path---2018-05-02-transition-voi-react-navigation-07eeda99e230bdef3544.js",
       "path---2018-05-02-transition-voi-react-navigation-07eeda99e230bdef3544.js.map"
+    ],
+    "path---2018-05-01-cai-thien-performance-react-app": [
+      "path---2018-05-01-cai-thien-performance-react-app-2087924888372eeb1195.js",
+      "path---2018-05-01-cai-thien-performance-react-app-2087924888372eeb1195.js.map"
     ],
     "path---2018-04-28-redux-vs-mobx-chon-cai-nao-day": [
       "path---2018-04-28-redux-vs-mobx-chon-cai-nao-day-cd49e00f3ea9f3f542a8.js",
@@ -327,8 +331,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-3dbacdaa92068bbe3bfa.js",
-      "app-3dbacdaa92068bbe3bfa.js.map"
+      "app-82965128ddd4625fc34a.js",
+      "app-82965128ddd4625fc34a.js.map"
     ]
   }
 }
