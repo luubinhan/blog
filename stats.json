@@ -5,9 +5,9 @@
       "page-component---src-pages-about-jsx-af1671a9cdd6b80e1631.js.map"
     ],
     "commons": [
-      "commons-f2302f302b626d14dac1.js",
+      "commons-77cd061058f20126d01a.js",
       "build-js-styles.css",
-      "commons-f2302f302b626d14dac1.js.map",
+      "commons-77cd061058f20126d01a.js.map",
       "build-js-styles.css.map"
     ],
     "page-component---src-pages-index-js": [
@@ -19,8 +19,8 @@
       "page-component---src-templates-tags-js-671b59fbd33ad66a9acd.js.map"
     ],
     "page-component---src-templates-blog-post-js": [
-      "page-component---src-templates-blog-post-js-f7d64f55c8060a84e345.js",
-      "page-component---src-templates-blog-post-js-f7d64f55c8060a84e345.js.map"
+      "page-component---src-templates-blog-post-js-67c2c1576e740075f71e.js",
+      "page-component---src-templates-blog-post-js-67c2c1576e740075f71e.js.map"
     ],
     "page-component---src-pages-portfolio-jsx": [
       "page-component---src-pages-portfolio-jsx-ce9ec2663dede0d32b11.js",
@@ -35,52 +35,52 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-8ff575a808e596b1ee87.js",
-      "path---tags-8ff575a808e596b1ee87.js.map"
+      "path---tags-85f44cd80c80a0fc94da.js",
+      "path---tags-85f44cd80c80a0fc94da.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-d64eb15a5782be0137e9.js",
-      "path---tags-wordpress-d64eb15a5782be0137e9.js.map"
+      "path---tags-wordpress-72ca14aebe4f4e3d32b5.js",
+      "path---tags-wordpress-72ca14aebe4f4e3d32b5.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-621e4c5ece042487f139.js",
-      "path---tags-webpack-621e4c5ece042487f139.js.map"
+      "path---tags-webpack-fb642dd10e67295f6f71.js",
+      "path---tags-webpack-fb642dd10e67295f6f71.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-9b72acdf5ae6c591d92b.js",
-      "path---tags-web-9b72acdf5ae6c591d92b.js.map"
+      "path---tags-web-d28942fc135b8b4dbce8.js",
+      "path---tags-web-d28942fc135b8b4dbce8.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-08fe8cdae1fca0ae7d39.js",
-      "path---tags-ux-ui-08fe8cdae1fca0ae7d39.js.map"
+      "path---tags-ux-ui-51d2dc9c170199cb8286.js",
+      "path---tags-ux-ui-51d2dc9c170199cb8286.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-04982d662fa6957e0863.js",
-      "path---tags-seo-04982d662fa6957e0863.js.map"
+      "path---tags-seo-c284c3e9de2b31468811.js",
+      "path---tags-seo-c284c3e9de2b31468811.js.map"
     ],
     "path---tags-redux": [
-      "path---tags-redux-ce413d8ee6ea892d7a57.js",
-      "path---tags-redux-ce413d8ee6ea892d7a57.js.map"
+      "path---tags-redux-7b1e8b5371c8bd5d1aec.js",
+      "path---tags-redux-7b1e8b5371c8bd5d1aec.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-91a258022ae5d12d5cf9.js",
-      "path---tags-react-91a258022ae5d12d5cf9.js.map"
+      "path---tags-react-b54c295b265566e5f820.js",
+      "path---tags-react-b54c295b265566e5f820.js.map"
     ],
     "path---tags-react-native": [
-      "path---tags-react-native-711152c209c72d684ae4.js",
-      "path---tags-react-native-711152c209c72d684ae4.js.map"
+      "path---tags-react-native-80126a589ac1a2b730d2.js",
+      "path---tags-react-native-80126a589ac1a2b730d2.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-637bfe8321c8f9e30e9d.js",
-      "path---tags-javascript-637bfe8321c8f9e30e9d.js.map"
+      "path---tags-javascript-0da1c8ad71b083b8a225.js",
+      "path---tags-javascript-0da1c8ad71b083b8a225.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-0902fc431e4ed3d82bfd.js",
-      "path---tags-design-0902fc431e4ed3d82bfd.js.map"
+      "path---tags-design-4d060fd5c1cd82915cb7.js",
+      "path---tags-design-4d060fd5c1cd82915cb7.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-caa0168d5b7a593afa7d.js",
-      "path---tags-css-caa0168d5b7a593afa7d.js.map"
+      "path---tags-css-ae093f11492e8172ba98.js",
+      "path---tags-css-ae093f11492e8172ba98.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -91,8 +91,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-4066ef4c820967552978.js",
-      "path---index-4066ef4c820967552978.js.map"
+      "path---index-ced68450c8cf624310e9.js",
+      "path---index-ced68450c8cf624310e9.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -105,6 +105,10 @@
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---2018-05-02-transition-voi-react-navigation": [
+      "path---2018-05-02-transition-voi-react-navigation-c6721753cb820411c4a6.js",
+      "path---2018-05-02-transition-voi-react-navigation-c6721753cb820411c4a6.js.map"
     ],
     "path---2018-04-28-redux-vs-mobx-chon-cai-nao-day": [
       "path---2018-04-28-redux-vs-mobx-chon-cai-nao-day-cd49e00f3ea9f3f542a8.js",
@@ -323,8 +327,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-e7786531eee15d93f7e1.js",
-      "app-e7786531eee15d93f7e1.js.map"
+      "app-d04aee1e3b2b46615e60.js",
+      "app-d04aee1e3b2b46615e60.js.map"
     ]
   }
 }
