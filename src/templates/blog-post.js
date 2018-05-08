@@ -68,7 +68,7 @@ export default class Template extends React.Component {
                 </div>
                 <aside>
                   <div className="social-media-bar">
-                    <SocialShare href={post.frontmatter.path} title={post.frontmatter.title} excerpt={post.frontmatter.desc}  />
+                    <SocialShare href={`${SITE_CONFIG.siteUrl}${post.frontmatter.path}`} title={post.frontmatter.title} excerpt={post.frontmatter.desc}  />
                   </div>
                 </aside>
                 <div className="blog-post">
