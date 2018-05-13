@@ -189,3 +189,6 @@ export default class LeashedOne extends React.Component {
 Đợi user nhập xong đi rồi xử lý sự kiện, ở đây sử dụng `_.debounce`, `_.throttle` từ thư viện **lodash**, sự khác nhau của 2 thằng này thì đọc thểm trên docs của nó.
 
 Nếu bị nghiện performance, bạn có thể chia sẽ thêm một số tip với mình. Thanks You
+
+Tác Giả: Noam Elboim
+Link bài gốc: https://medium.com/myheritage-engineering/how-to-greatly-improve-your-react-app-performance-e70f7cbbb5f6

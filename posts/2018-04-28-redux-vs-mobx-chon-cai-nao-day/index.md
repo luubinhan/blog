@@ -46,3 +46,6 @@ Phần lớn người nào học và sử dụng Redux điều cảm thấy, ôi
 MobX là một sự lựa chọn khác, một option để quản lý state cho dự án nhỏ. Nó sang mang đến những lợi ích thấy rõ khi kick off các dự án không quá bự. Thực sự mình chưa xài MobX nhiều nên việc lợi ích thấy rõ thì mình mong bạn nào đã dùng nhiều chỉ giáo.
 
 DHTML -> JQuery -> Backbone vs. Knockout vs. Ember -> Meteor -> Angular vs React. Quá trình *thăng tiến* của front-end dev là thế. MobX là một công cụ tốt ở thời điểm hiện tại, hy vọng nó không như Knockout JS và các thư viện MVVM trước đây, mọi thứ mới bắt đầu vận hành mượt mà như một phép màu, 6-12 tháng sau, phép màu và tự do trở thành thảm họa cho những người dev kế thừa
+
+Tác Giả: Sooraj Chandran
+Link bài gốc: https://codeburst.io/mobx-vs-redux-with-react-a-noobs-comparison-and-questions-382ba340be09

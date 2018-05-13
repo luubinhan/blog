@@ -1,7 +1,7 @@
 ---
 path: "/2018-05-02-transition-voi-react-navigation"
 date: "2018-05-02T13:35:13.234Z"
-title: "Transition với React navigation"
+title: "Transition trong React Native với React Navigation"
 desc: "Hướng dẫn làm transition trong React Native với react navigation"
 tags: ["javascript", "react", "react-native"]
 ---
@@ -142,3 +142,6 @@ Nếu để ý ta sẽ thấy phần text sẽ không có áp dụng transition 
 ![](https://cdn-images-1.medium.com/max/800/1*Da1RpwEKtsKL4fwp0oZ8Iw.gif)
 
 Thư viện React Navigation Fluid Transition hổ trợ sẵn một số transition có thể dùng mì-ăn-liền như `appear` ở trên, một số hiệu ứng có sẵn khác, đọc thêm tại [document ở đây](https://github.com/fram-x/FluidTransitions/blob/develop/README.md)
+
+Tác Giả: Christian Falch
+Link Bài Gốc: https://medium.com/@christian.falch/fluid-transitions-with-react-navigation-a049d2f71494

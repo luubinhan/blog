@@ -101,3 +101,6 @@ f().
 ```
 
 Như vậy `async/await` không hẳn là kẻ thay thế cho `promise`, nó chỉ là bổ sung thêm cho `promise` một tính năng đồng bộ cho nhiều tao tác bất đồng bộ! Chúng ta sẽ vẫn viết `promise` thuần cho những tác vụ chỉ cần những đặc tính của `promise`
+
+Tác Giả: IKOLAY GROZEV
+Link Bài Gốc: http://nikgrozev.com/2017/10/01/async-await/
