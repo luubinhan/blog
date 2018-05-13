@@ -72,3 +72,6 @@ Rút điện thoại ra, mở app Expo lên, quét đoạn QR code này và xong
 ### Ví dụ
 
 Toàn bộ code ví dụ có thể download [ở đây](https://github.com/tutsplus/easier-react-native-development-with-expo), bạn có thể down về chạy thử. Mình không phân tích toàn bộ code ở đây vì, mình chỉ tập trung giới thiệu về Expo, mình mặc định các bạn đã biết React, React Native căn bản nhé.
+
+Tác giả: Wern Ancheta
+Link bài gốc: https://code.tutsplus.com/tutorials/easier-react-native-development-with-expo--cms-30546

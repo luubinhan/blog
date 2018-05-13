@@ -102,3 +102,6 @@ function loadJS(src) {
 Để ý là ta thêm `ref='map'` để trỏ tới đúng cái `div` sử dụng để đưa vào cho Google Map constructor bằng hàm `this.refs.map.getDOMNode()` ngay khi DOM đã render.
 
 Vậy là xong. Google Map đã có thể hoạt động trơn tru với React Component, đúng hơn là với Virtual DOM.
+
+Tác giả: klaasnotfound
+Link bài gốc: http://www.klaasnotfound.com/2016/11/06/making-google-maps-work-with-react/

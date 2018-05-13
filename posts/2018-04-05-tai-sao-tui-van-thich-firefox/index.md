@@ -37,3 +37,5 @@ Lấy ví dụ như Apple Keynote chỉ có thể sử dụng với Safari, iMes
 Bonus: từ hàng triệu yêu cầu từ user, Firefox đã có tính năng tắt hết cái [Push-Notify](https://bugzilla.mozilla.org/show_bug.cgi?id=1368744), một trong những yêu cầu hết sực bực mình khi các trang web bây giờ đều đòi cấp phép cho nó quăng thông báo quảng cáo qua trình duyệt dù mình không đang truy cập nó.
 
 Fanboy Firefox cho hay :D
+
+Dịch từ đâu quên nguồn
