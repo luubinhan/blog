@@ -35,52 +35,52 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-45a1f5f9ec37227514ec.js",
-      "path---tags-45a1f5f9ec37227514ec.js.map"
+      "path---tags-6294d24d8fff16ec81cb.js",
+      "path---tags-6294d24d8fff16ec81cb.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-1683c07e0123ae4001a0.js",
-      "path---tags-wordpress-1683c07e0123ae4001a0.js.map"
+      "path---tags-wordpress-78aa02eb213a3ea6bcbb.js",
+      "path---tags-wordpress-78aa02eb213a3ea6bcbb.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-d66b367026551193879c.js",
-      "path---tags-webpack-d66b367026551193879c.js.map"
+      "path---tags-webpack-3e7d2f77c990f9aff683.js",
+      "path---tags-webpack-3e7d2f77c990f9aff683.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-6684552782b4601abdf8.js",
-      "path---tags-web-6684552782b4601abdf8.js.map"
+      "path---tags-web-813cf19edae62a0c3f31.js",
+      "path---tags-web-813cf19edae62a0c3f31.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-7a06e4c3d806c0634ae3.js",
-      "path---tags-ux-ui-7a06e4c3d806c0634ae3.js.map"
+      "path---tags-ux-ui-e8050c2820170319e37f.js",
+      "path---tags-ux-ui-e8050c2820170319e37f.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-912aedb5a845369405d9.js",
-      "path---tags-seo-912aedb5a845369405d9.js.map"
+      "path---tags-seo-dc2c381b2f5378129fb0.js",
+      "path---tags-seo-dc2c381b2f5378129fb0.js.map"
     ],
     "path---tags-redux": [
-      "path---tags-redux-8c1a4e26a03ca325205a.js",
-      "path---tags-redux-8c1a4e26a03ca325205a.js.map"
+      "path---tags-redux-9d5700c919dae0f58c13.js",
+      "path---tags-redux-9d5700c919dae0f58c13.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-ad3cfe7976d7ed626a64.js",
-      "path---tags-react-ad3cfe7976d7ed626a64.js.map"
+      "path---tags-react-1d7cdc6f51e9d7601f89.js",
+      "path---tags-react-1d7cdc6f51e9d7601f89.js.map"
     ],
     "path---tags-react-native": [
-      "path---tags-react-native-8d191376fa227748b22c.js",
-      "path---tags-react-native-8d191376fa227748b22c.js.map"
+      "path---tags-react-native-2b55fae809da8a0fb052.js",
+      "path---tags-react-native-2b55fae809da8a0fb052.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-ed488ef721a7b40c353b.js",
-      "path---tags-javascript-ed488ef721a7b40c353b.js.map"
+      "path---tags-javascript-18a111385c27e654b2b5.js",
+      "path---tags-javascript-18a111385c27e654b2b5.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-4614136800fb59469496.js",
-      "path---tags-design-4614136800fb59469496.js.map"
+      "path---tags-design-d895b054cee9ad672481.js",
+      "path---tags-design-d895b054cee9ad672481.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-f4c01ecaa240fe834a5c.js",
-      "path---tags-css-f4c01ecaa240fe834a5c.js.map"
+      "path---tags-css-a5cfe215f0ddc0091c0f.js",
+      "path---tags-css-a5cfe215f0ddc0091c0f.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -91,8 +91,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-7b5f193a30bd1f05eddc.js",
-      "path---index-7b5f193a30bd1f05eddc.js.map"
+      "path---index-34945af4781929d17977.js",
+      "path---index-34945af4781929d17977.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -105,6 +105,10 @@
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---2018-05-16-react-context-api-ke-thay-the-redux": [
+      "path---2018-05-16-react-context-api-ke-thay-the-redux-e505e2c0a2e8fb08f431.js",
+      "path---2018-05-16-react-context-api-ke-thay-the-redux-e505e2c0a2e8fb08f431.js.map"
     ],
     "path---2018-05-07-asyn-await-giai-thich-vi-du": [
       "path---2018-05-07-asyn-await-giai-thich-vi-du-1c6a9f458437d9401e00.js",
@@ -335,8 +339,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-e17cdec736b771cd477f.js",
-      "app-e17cdec736b771cd477f.js.map"
+      "app-6f0da725e06f569a3785.js",
+      "app-6f0da725e06f569a3785.js.map"
     ]
   }
 }
