@@ -137,6 +137,9 @@ Giờ chúng ta có thể chạy bằng lệnh `npm run build`, ở trên chúng
 
 Bạn đã chạm được vào cánh cửa đầu tiên của webpack, webpack còn nhiều khả năng nữa, tuy nhiên module bundle là core feature, bài tiếp theo chúng ta sẽ khám phá nhiều hơn như loaders, plugins, development server.
 
+[Tìm hiểu thêm về import và export](https://luubinhan.github.io/blog/2017-10-18-import-va-export-trong-javascript)
+
+
 [Link bài gốc](https://forestry.io/blog/write-better-javascript-with-webpack/)
 
 Tác giả: DJ Walker

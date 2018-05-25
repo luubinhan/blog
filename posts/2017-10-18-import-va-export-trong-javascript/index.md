@@ -2,8 +2,8 @@
 path: "/2017-10-18-import-va-export-trong-javascript"
 date: "2017-10-18T13:35:13.234Z"
 title: "Import và Export trong Javascript"
-desc: "Khai báo export và import trong ES6"
-tags: ["javascript"]
+desc: "Bàn về các kiểu import và export module trong javscript"
+tags: ["javascript", "webpack"]
 ---
 
 Một **giá trị**, **hàm**, **object** có thể được `export` từ một file này và dùng câu lệnh `import` để sử dụng bên trong file khác.

@@ -3,7 +3,7 @@ path: "/2018-03-09-su-dung-bien-enviroment-nhu-the-nao"
 date: "2018-03-09T13:35:13.234Z"
 title: "Sử dụng biến Node Environment"
 desc: "Biến environment là một phần cơ bản cần biết khi làm việc với Node"
-tags: ["javascript"]
+tags: ["javascript", "webpack"]
 ---
 
 Khi nhắc đến thuật ngữ "Environment Variable" là nghĩ ngay tới việc thiết đặt biến này cho thư mục Java Home trong windows
