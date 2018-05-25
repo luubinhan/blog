@@ -6,6 +6,16 @@ desc: "Nếu bạn đã đọc bài FrontEnd Developer 2016 nên học gì? Ch�
 tags: ["javascript"]
 ---
 
+Trong Series này
+
+1. [Nâng cấp cho Object](https://luubinhan.github.io/blog/2016-11-15-chuong-1-es6-can-ban)
+2. [Arrow function](https://luubinhan.github.io/blog/2016-11-16-chuong-2-es6-can-ban-arrow-function/)
+3. [Assignment Destruction](https://luubinhan.github.io/blog/2016-11-17-phan-3-es6-can-ban-assignment-destructuring)
+4. [Rest parameters và spread operator](https://luubinhan.github.io/blog/2016-11-18-phan-4-es6-can-ban-rest-parameters-va-spread-operator)
+5. [Template literals](https://luubinhan.github.io/blog/2016-11-19-phan-5-es6-can-ban-template-literals)
+6. [Khai báo biến với let và const](https://luubinhan.github.io/blog/2016-11-20-phan-6-es6-can-ban-khai-bao-let-const)
+7. [Căn bản class](https://luubinhan.github.io/blog/2016-11-21-phan-7-es6-can-ban-classes)
+
 Một object trong javascript được khai như sau
 
 ```js
