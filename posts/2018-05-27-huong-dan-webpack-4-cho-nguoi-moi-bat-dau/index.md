@@ -1,14 +1,16 @@
 ---
 path: "/2018-05-27-huong-dan-webpack-4-cho-nguoi-moi-bat-dau"
 date: "2018-05-27T13:35:13.234Z"
-title: "Webpack là gì và tại sao ta phải xài nó"
-desc: "Bài này sẽ nói rõ tại sao Webpack là sự lựa chọn sáng suốt cho bundle javascript"
+title: "Hướng dẫn webpack 4 cho người mới bắt đầu - Phần 2"
+desc: "Phần 2 trong series về webpack, mình sẽ nói về code slitting, loaders"
 tags: ["javascript", "webpack"]
 ---
 
 Trong Series này
 1.  [Webpack là gì và tại sao ta phải xài nó](https://luubinhan.github.io/blog/2018-05-25-viet-code-javascript-tot-hon-voi-webpack)
-2. [Dùng Loaders, plugins trong webpack](https://luubinhan.github.io/blog/2018-05-27-huong-dan-webpack-4-cho-nguoi-moi-bat-dau)
+2. [Dùng Loaders, code slitting trong webpack](https://luubinhan.github.io/blog/2018-05-27-huong-dan-webpack-4-cho-nguoi-moi-bat-dau)
+3. [Plugins, Development](https://luubinhan.github.io/blog/2018-05-28-huong-dan-webpack-4-cho-nguoi-moi-bat-dau-phan-3)
+4. Optimize - working on it
 
 Chúng ta mở lại file package.json, sửa lại chút
 
@@ -135,7 +137,7 @@ import people from './people'
   ...
 ```
 
-Tại sao chúng ta lại đi import CSS vào trong file js? Nếu bạn thời kỳ trước việc chèn hầm bà lằng kiểu này là cực kỳ bị lên án, nhưng bây giờ thời thế khác, một số lý do
+Tại sao chúng ta lại đi import CSS vào trong file js? Nếu bạn thời kỳ trước việc chèn hầm bà lằng kiểu này là cực kỳ bị lên án, nhưng bây giờ thời thế khác, một số lý do để trọn CSS vào trong js trong development
 
 - Một component javascript sẽ có thể phụ thuộc vào CSS, images, SVG. Nếu được đóng gói thành 1 cục, chúng ta dễ mang nó sử dụng ở nơi khác hơn
 - Nếu chúng ta không sử dụng component, đoạn css import trong component cũng sẽ không được import luôn, tránh những việc load css ở tất cả

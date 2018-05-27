@@ -6,6 +6,13 @@ desc: "Bài này sẽ nói rõ tại sao Webpack là sự lựa chọn sáng su�
 tags: ["javascript", "webpack"]
 ---
 
+Trong Series này
+1.  [Webpack là gì và tại sao ta phải xài nó](https://luubinhan.github.io/blog/2018-05-25-viet-code-javascript-tot-hon-voi-webpack)
+2. [Dùng Loaders, code slitting trong webpack](https://luubinhan.github.io/blog/2018-05-27-huong-dan-webpack-4-cho-nguoi-moi-bat-dau)
+3. [Plugins, Development](https://luubinhan.github.io/blog/2018-05-28-huong-dan-webpack-4-cho-nguoi-moi-bat-dau-phan-3)
+4. Optimize - working on it
+
+
 ## Vấn đề
 
 Viết code client-side nếu không có các công cụ hỗ trợ thì trước sau vì cũng giống như đống hỗn độn trên desktop, để maintain và người khác có thể vào đọc hiểu được thì việc code được tổ chức tốt là điều ai cũng biết, lý thuyết là thế, nhưng nếu cứ làm việc theo kiểu cũ cứ quăng script tràng lan bằng thẻ `<script>` sẽ chẳng dễ gì sắp xếp và nhớ nổi cái nào là cái nào nếu, add thêm cỡ chục files, *best practice* khuyên rằng hạn chế số lượng file script càng ít càng tốt, tốt nhất là 1 file duy nhất.
