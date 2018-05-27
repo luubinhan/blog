@@ -137,7 +137,94 @@ import people from './people'
 
 Tại sao chúng ta lại đi import CSS vào trong file js? Nếu bạn thời kỳ trước việc chèn hầm bà lằng kiểu này là cực kỳ bị lên án, nhưng bây giờ thời thế khác, một số lý do
 
-- 
+- Một component javascript sẽ có thể phụ thuộc vào CSS, images, SVG. Nếu được đóng gói thành 1 cục, chúng ta dễ mang nó sử dụng ở nơi khác hơn
+- Nếu chúng ta không sử dụng component, đoạn css import trong component cũng sẽ không được import luôn, tránh những việc load css ở tất cả
+- Trước đây nếu dùng OOP trong CSS, việc chỉnh sửa một đoạn css sẽ dễ bị side effect, ảnh hướng đến những chổ ta không mong muốn. CSS module để CSS chỉ hoạt động local thôi
+- Giảm số lượng HTTP request xuống
 
+### Image
+
+Dùng `file-loader` để đọc file image. Với HTML chuẩn, image được sử dụng bằng 2 cách là dùng tag `img` hoặc thuộc tính `background-image`. Với Webpack, chúng ta có thể optimize cho trường hợp dung lượng image với kích thước nhỏ thành dạng `string` bên trong javascript luôn. Lúc này trình duyệt không cần load riêng file image nữa
+
+Cài cái loader
+
+```
+nmp install --save-dev file-loader
+```
+
+webpack.config.js
+
+```diff
+ module.exports = {
+    ...
+    module: {
+      rules: [
+        ...
++       {
++         test: /\.(png|svg|jpg|gif)$/,
++         use: [
++           {
++             loader: 'file-loader'
++           }
++         ]
++       }
+      ]
+    }
+  }
+```
+
+Trong lúc code chúng ta vẫn viết bình thường
+
+```jsx
+import codeURL from './code.png';
+
+...
+render() {
+  return(
+    <img src={codeURL} alt="" />
+  )
+}
+...
+```
+
+Kết quả bundle
+
+```html
+<img src="data:image/png;base64,iVBO..." />
+```
+
+Có thể đọc thêm trên docs của `file-loader` để xem cách chỉnh kích thước nào thì chuyển nội dung ảnh thành data URI. File loader còn thể thể xử lý trên một số dạng file khác nữa, chứ không chỉ là hình thôi không.
+
+## Code splitting
+
+Trích từ trang chủ webpack
+
+> Code splitting là một trong những tính năng hấp dẫn nhất của Webpack. Tính năng này cho phép bạn tách code ra thành nhiều file bundle để load khi cần thiết hoặc load xong xong. Cái này có thể dùng để giảm kích thước file bundle và kiểm soát được load resource hợp lý hơn, nếu sử dụng đúng cách, sẽ giảm đảng kể thời gian load trang
+
+Trước giờ chúng ta chỉ setup để bundle ra 1 file duy nhất từ `src/index.js` ra file `dist/bundle.js`. Khi ứng dúng phình ra, chúng ta cần tách code ra thành nhiều file, toàn bộ code đầu cần phải load hết ngay từ đầu đâu nhỉ? Dùng [Code Slitting](https://webpack.js.org/guides/code-splitting/) và [Lazy Loading](https://webpack.js.org/guides/lazy-loading/) để chỉ load khi cần.
+
+```diff
+   const path = require('path')
+
+  module.exports = {
+-   entry: './src/index.js',
++   entry: {
++     app: './src/app.js'
++   },
+    output: {
+-     filename: 'bundle.js',
++     filename: '[name].bundle.js',
+      path: path.resolve(__dirname, 'dist')
+    },
+    ...
+  }
+```
+
+Với setup như thế này, nếu chúng ta có 2 file trong thư mục `src` là `app.js` và `chat.js`, webpack sẽ bundle ra 2 file `chat.bundle.js`, `app.bundle.js`
+
+Bài sau nói tiếp plugins nhé, kết thúc với loaders ở đây
 
 [Link bài gốc](https://www.sitepoint.com/beginners-guide-webpack-module-bundling/)
+Tác giả: Mark Brown
+
+Chỉnh sửa theo sự hiểu của mình một tí
