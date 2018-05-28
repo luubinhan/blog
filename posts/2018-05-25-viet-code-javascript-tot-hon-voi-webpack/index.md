@@ -39,7 +39,7 @@ Ngắn gọn là: với Gulp dependency bị giới hạn vì nó yêu cầu mì
 
 Để Webpack hoạt động như phép màu như vậy, chúng ta chỉ cần viết javascript của mình dạng *module*. Viết module trong javascript là tách các file ra thành nhiều file, việc sử dụng code giữa các file sẽ thực hiện bằng **export** và **import**
 
-Webpack hổ trỡ 2 chuẩn module hóa hiện giờ là **EcmaScript** và  **CommonJS**. Ví dụ bên dưới để hình dung cách viết module trong file `hello.js` rồi **import** vào trong file `app.js` bằng cả 2 kiểu viết EcmaScript và CommonJS
+Webpack hổ trợ 2 chuẩn module hóa hiện giờ là **EcmaScript** và  **CommonJS**. Ví dụ bên dưới để hình dung cách viết module trong file `hello.js` rồi **import** vào trong file `app.js` bằng cả 2 kiểu viết EcmaScript và CommonJS
 
 Viết kiểu **EcmaScript**
 
