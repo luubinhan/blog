@@ -10,7 +10,7 @@ tags: ["javascript", "webpack"]
 1.  [Webpack là gì và tại sao ta phải xài nó](https://luubinhan.github.io/blog/2018-05-25-viet-code-javascript-tot-hon-voi-webpack)
 2. [Dùng Loaders, code slitting trong webpack](https://luubinhan.github.io/blog/2018-05-27-huong-dan-webpack-4-cho-nguoi-moi-bat-dau)
 3. [Plugins, Development](https://luubinhan.github.io/blog/2018-05-28-huong-dan-webpack-4-cho-nguoi-moi-bat-dau-phan-3)
-4. Optimize - working on it
+
 
 Chúng ta mở lại file **package.json**, sửa lại chút
 
