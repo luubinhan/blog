@@ -31,7 +31,7 @@ Gulp là công cụ tự động hóa tốt, cho phép chúng ta setup một m�
 
 ![](https://res.cloudinary.com/forestry-demo/image/fetch/c_limit,dpr_auto,f_auto,q_80,w_674/https://forestry.io/uploads/2018/03/webpack_fighter_of_the_gulpstack_champion_of_the_bundle.png)
 
-Bài toàn dependency này đã được Webpack giải quyết triệt để. Những gì bạn cần làm là báo với Webpack file **entry** point mình cần bundle là gì, chuyện bạn *import module* lúc code sẽ do webpack đảm nhiệm chuyện dựng lên dependency graph, webpack sẽ bundle cho bạn 1 file duy nhất bạn cần. Chúng ta khỏi phải báo cáo với webpack thứ tự các file nào cần trước hay sau, để đó Webpack lo!
+Bài toán dependency này đã được Webpack giải quyết triệt để. Những gì bạn cần làm là báo với Webpack file **entry** point mình cần bundle là gì, chuyện bạn *import module* lúc code sẽ do webpack đảm nhiệm chuyện dựng lên dependency graph, webpack sẽ bundle cho bạn 1 file duy nhất bạn cần. Chúng ta khỏi phải báo cáo với webpack thứ tự các file nào cần trước hay sau, để đó Webpack lo!
 
 Ngắn gọn là: với Gulp dependency bị giới hạn vì nó yêu cầu mình tự chỉ định sự phụ thuộc, Webpack thì nó dùng logic để tính toán rồi bundle đúng thứ tự.
 
