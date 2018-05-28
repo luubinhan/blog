@@ -1,8 +1,8 @@
 ---
 path: "/2018-05-28-huong-dan-webpack-4-cho-nguoi-moi-bat-dau-phan-3"
 date: "2018-05-28T13:35:13.234Z"
-title: "Webpack là gì và tại sao ta phải xài nó"
-desc: "Bài này sẽ nói rõ tại sao Webpack là sự lựa chọn sáng suốt cho bundle javascript"
+title: "Hướng dẫn webpack 4 cho người mới bắt đầu - Phần 2"
+desc: "Bài này sẽ nói Plugins, Development, HotModuleReplacement trong Webpack"
 tags: ["javascript", "webpack"]
 ---
 
