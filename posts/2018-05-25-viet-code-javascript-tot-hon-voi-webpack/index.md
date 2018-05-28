@@ -7,9 +7,9 @@ tags: ["javascript", "webpack"]
 ---
 
 # Trong Series này
-1.  [Webpack là gì và tại sao ta phải xài nó](https://luubinhan.github.io/blog/2018-05-25-viet-code-javascript-tot-hon-voi-webpack)
-2. [Dùng Loaders, code slitting trong webpack](https://luubinhan.github.io/blog/2018-05-27-huong-dan-webpack-4-cho-nguoi-moi-bat-dau)
-3. [Plugins, Development](https://luubinhan.github.io/blog/2018-05-28-huong-dan-webpack-4-cho-nguoi-moi-bat-dau-phan-3)
+1.  [Webpack là gì và tại sao ta phải xài nó](2018-05-25-viet-code-javascript-tot-hon-voi-webpack)
+2. [Dùng Loaders, code slitting trong webpack](2018-05-27-huong-dan-webpack-4-cho-nguoi-moi-bat-dau)
+3. [Plugins, Development Server](2018-05-28-huong-dan-webpack-4-cho-nguoi-moi-bat-dau-phan-3)
 
 
 
@@ -148,7 +148,7 @@ Giờ chúng ta có thể chạy bằng lệnh `npm run build`, ở trên chúng
 
 Bạn đã chạm được vào cánh cửa đầu tiên của webpack, webpack còn nhiều khả năng nữa, tuy nhiên module bundle là core feature, bài tiếp theo chúng ta sẽ khám phá nhiều hơn như loaders, plugins, development server.
 
-[Tìm hiểu thêm về import và export](https://luubinhan.github.io/blog/2017-10-18-import-va-export-trong-javascript)
+[Tìm hiểu thêm về import và export](2017-10-18-import-va-export-trong-javascript)
 
 
 [Link bài gốc](https://forestry.io/blog/write-better-javascript-with-webpack/)
