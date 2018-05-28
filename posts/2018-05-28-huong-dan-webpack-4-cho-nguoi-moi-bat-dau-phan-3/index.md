@@ -1,12 +1,12 @@
 ---
 path: "/2018-05-28-huong-dan-webpack-4-cho-nguoi-moi-bat-dau-phan-3"
 date: "2018-05-28T13:35:13.234Z"
-title: "Hướng dẫn webpack 4 cho người mới bắt đầu - Phần 2"
+title: "Hướng dẫn webpack 4 cho người mới bắt đầu - Phần 3"
 desc: "Bài này sẽ nói Plugins, Development, HotModuleReplacement trong Webpack"
 tags: ["javascript", "webpack"]
 ---
 
-Trong Series này
+# Trong Series này
 1.  [Webpack là gì và tại sao ta phải xài nó](https://luubinhan.github.io/blog/2018-05-25-viet-code-javascript-tot-hon-voi-webpack)
 2. [Dùng Loaders, code slitting trong webpack](https://luubinhan.github.io/blog/2018-05-27-huong-dan-webpack-4-cho-nguoi-moi-bat-dau)
 3. [Plugins, Development](https://luubinhan.github.io/blog/2018-05-28-huong-dan-webpack-4-cho-nguoi-moi-bat-dau-phan-3)
@@ -31,19 +31,19 @@ Thật ra ma nói, khi sử dụng `mode` development/production trong webpack c
 Trước khi thêm một số plugin khác, chúng ta sẽ tách file config ra thành 2, để sau này chúng ta apply các plugin khác nhau cho các mode chạy khác nhau
 
 ```diff
-- |- webpack.config.js
-+ |- webpack.common.js
-+ |- webpack.dev.js
-+ |- webpack.prod.js
+- webpack.config.js
++ webpack.common.js
++ webpack.dev.js
++ webpack.prod.js
 ```
 
-Cài thêm plugin là `webpack-merge` để combine file config common với các file khác
+Cài thêm plugin là `webpack-merge` để trộn file *webpack.common.js* với một trong 2 file webpack.dev.js hoặc webpack.prod.js
 
-```
+```bash
 npm install --save-dev webpack-merge
 ```
 
-webpack.dev.js
+**webpack.dev.js**
 
 ```js
 const merge = require('webpack-merge')
@@ -54,7 +54,7 @@ module.exports = merge(common, {
 })
 ```
 
-webpack.prod.js
+**webpack.prod.js**
 
 ```js
 const merge = require('webpack-merge')
@@ -65,7 +65,7 @@ module.exports = merge(common, {
 })
 ```
 
-package.json
+**package.json**
 
 ```diff
   "scripts": {
@@ -76,17 +76,17 @@ package.json
    },
 ```
 
-### Tách CSS
+## Tách CSS
 
 Chúng ta sẽ tách ra CSS khi chạy production bằng plugin là `ExtractTextWebpackPlugin`
 
-```
+```bash
 npm install --save-dev extract-text-webpack-plugin
 ```
 
 Setup loader cho file .scss giữ nguyên cho development mode, chỉ thêm ExtractTextWebpackPlugin cho production
 
-webpack.common.js
+**webpack.common.js**
 
 ```diff
  ...
@@ -113,7 +113,7 @@ webpack.common.js
   }
 ```
 
-webpack.dev.js
+**webpack.dev.js**
 
 ```diff
 const merge = require('webpack-merge')
@@ -141,7 +141,7 @@ const merge = require('webpack-merge')
 
 ```
 
-webpack.prod.js
+**webpack.prod.js**
 
 ```diff
   const merge = require('webpack-merge')
@@ -168,21 +168,21 @@ webpack.prod.js
 
 ```
 
-Nếu chạy `npm run build`, chúng ta có
+Nếu chạy `npm run build`, chúng ta có 3 file
 
-chat.bundle.js
-app.bundle.js
-style.css
+- chat.bundle.js
+- app.bundle.js
+- style.css
 
-### Cập nhập HTML tự động
+## Cập nhập HTML tự động
 
-Mỗi lần thay đổi chúng ta cứ phải tự tay chỉnh sửa file `index.html` thì hơi lười. Dùng `html-webpack-plugin` để làm cho tự động, đồng thời cần thêm `clean-webpack-plugin` để clear hết thư mục dist
+Mỗi lần thay đổi chúng ta cứ phải tự tay chỉnh sửa file `index.html` thì hơi lười. Dùng `html-webpack-plugin` để tự động hóa quá trình này, đồng thời cần thêm `clean-webpack-plugin` để clear hết thư mục `dist`
 
-```
+```bash
 npm instal --save-dev html-webpack-plugin clean-webpack-plugin
 ```
 
-webpack.common.js
+**webpack.common.js**
 
 ```diff
 const path = require('path')
@@ -202,15 +202,15 @@ const path = require('path')
 
 Giờ mỗi lần build, chúng ta xóa hết thư mục dist luôn
 
-## Development
+## Development Server
 
 Với `webpack-dev-server` cung cấp cho chúng ta một web server đơn giản với tính năng live reload rất rất là hữu ích luôn mấy man
 
-```
+```bash
 npm install --save-dev webpack-dev-server
 ```
 
-package.json
+**package.json**
 
 ```diff
   {
@@ -230,7 +230,7 @@ Giờ mà chạy `npm run develop` chúng ta sẽ có ngay server http://localho
 
 Plugin `HotModuleReplacement` sẽ nhỉnh hơn Live Reload một chút, thay vì live reload trình duyệt sẽ tự động refresh, chúng ta sẽ thấy nó load lại toàn bộ trang khi có thay đổi, còn HotModuleReplacement là nó swap nguyên cái module trong lúc đang chạy mà không cần refresh luôn. Nhanh như cái chớp mắt vậy. Nếu mà cấu hình đúng, chúng ta tiết kiệm được khối thời gian ngồi đợi load lại trang.
 
-webpack.dev.js
+**webpack.dev.js**
 
 ```diff
 + const webpack = require('webpack')
@@ -249,9 +249,9 @@ webpack.dev.js
   }
 ```
 
-Chúng ta cần cho phép module được khởi chạy lại
+Cho phép swap module trong app
 
-src/app.js
+**src/app.js**
 
 ```diff
 + if (module.hot) {
@@ -261,7 +261,7 @@ src/app.js
   ...
 ```
 
-`module.hot` sẽ có giá trị là true trong mode development và false trong production.
+`module.hot` sẽ có giá trị là `true` trong mode development và `false` trong production.
 
 [Link bài gốc](https://www.sitepoint.com/beginners-guide-webpack-module-bundling/)
 Tác giả: Mark Brown

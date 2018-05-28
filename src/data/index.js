@@ -62,7 +62,7 @@ const SITE_CONFIG = {
 	email: 'luubinhan1990@gmail.com',
 	phone: '0943 870 301',
 	twitter: 'https://twitter.com/luubinhan',
-	siteUrl: 'luubinhan.github.io/blog',
+	siteUrl: 'luubinhan.github.io/blog/',
 	linkedin: 'https://www.linkedin.com/in/l%C6%B0u-b%C3%ACnh-an-03556553/',
 }
 

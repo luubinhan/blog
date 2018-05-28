@@ -6,7 +6,7 @@ desc: "Bài này sẽ nói rõ tại sao Webpack là sự lựa chọn sáng su�
 tags: ["javascript", "webpack"]
 ---
 
-Trong Series này
+# Trong Series này
 1.  [Webpack là gì và tại sao ta phải xài nó](https://luubinhan.github.io/blog/2018-05-25-viet-code-javascript-tot-hon-voi-webpack)
 2. [Dùng Loaders, code slitting trong webpack](https://luubinhan.github.io/blog/2018-05-27-huong-dan-webpack-4-cho-nguoi-moi-bat-dau)
 3. [Plugins, Development](https://luubinhan.github.io/blog/2018-05-28-huong-dan-webpack-4-cho-nguoi-moi-bat-dau-phan-3)
@@ -43,14 +43,16 @@ Webpack hổ trỡ 2 chuẩn module hóa hiện giờ là **EcmaScript** và  **
 
 Viết kiểu **EcmaScript**
 
-file hello.js
+**hello.js**
+
 ```js
 export function hello() {
     console.log('Hello Binh An!');
 };
 ```
 
-file app.js
+**app.js**
+
 ```js
 import {hello} from './hello'
 helle();
@@ -58,14 +60,16 @@ helle();
 
 Viết kiểu **CommonJS**
 
-file hello.js
+**hello.js**
+
 ```js
 module.exports = function() {
     console.log('Hello Bình An!');
 }
 ```
 
-file app.js
+**app.js**
+
 ```js
 const hello = require('./hello');
 hello();
@@ -79,20 +83,20 @@ Giờ thử config đơn giản nhất để hiểu một số thành phần qua
 
 Tổ chức project như vầy
 
-```
+```basic
 src/
     app.js
 webpack.config.js
 ```
 
-Mặt định Webpack sẽ tìm file config với tên là `webpack.config.js`. Tiếp chúng ta cần cài webpack và webpack-cli
+Mặt định Webpack sẽ tìm file config với tên là **webpack.config.js**. Tiếp chúng ta cần cài **webpack** và **webpack-cli**
 
-```
+```bash
 npm init -y
 npm install --save-dev webpack webpack-cli
 ```
 
-Trong file `webpack.config.js`
+Trong file **webpack.config.js**
 
 ```js
 var path = require('path');
@@ -109,13 +113,13 @@ module.exports = {
 
 Chạy CLI để bundle
 
-```
+```bash
 ./node_modules/webpack-cli/bin/webpack.js
 ```
 
 Nó sẽ đọc source trong file `src/app.js` rồi compile vào `dist/bundle.js`. Thư mục sau khi chạy xong sẽ có
 
-```
+```basic
 dist/
     bundle.js
 src/
@@ -124,9 +128,9 @@ package.json
 webpack.config.js
 ```
 
-Để rút chạy đoạn CLI dài ngoằn `./node_modules/webpack-cli/bin/webpack.js` có thể thêm một custom script trong file `package.json`. Bạn có thể chạy nó bằng `npm run SCRIPT_NAME`
+Để rút chạy đoạn CLI dài ngoằn `./node_modules/webpack-cli/bin/webpack.js` có thể thêm một custom script trong file **package.json**. Bạn có thể chạy nó bằng `npm run SCRIPT_NAME`
 
-Thêm vào trong package.json
+Thêm vào trong **package.json**
 
 ```json
 {    
