@@ -35,52 +35,52 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-5300b647717b1d28bb1a.js",
-      "path---tags-5300b647717b1d28bb1a.js.map"
+      "path---tags-130382502c19bed412a7.js",
+      "path---tags-130382502c19bed412a7.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-aa3005956760b94c4577.js",
-      "path---tags-wordpress-aa3005956760b94c4577.js.map"
+      "path---tags-wordpress-198c467e694c7843e059.js",
+      "path---tags-wordpress-198c467e694c7843e059.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-85dfd2b27f3353c4b939.js",
-      "path---tags-webpack-85dfd2b27f3353c4b939.js.map"
+      "path---tags-webpack-e9723a0f5b05d2dfdf8b.js",
+      "path---tags-webpack-e9723a0f5b05d2dfdf8b.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-242787bd594c5277b86d.js",
-      "path---tags-web-242787bd594c5277b86d.js.map"
+      "path---tags-web-e01c713f22f24a16fa09.js",
+      "path---tags-web-e01c713f22f24a16fa09.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-96d8df84a5078d79a2fa.js",
-      "path---tags-ux-ui-96d8df84a5078d79a2fa.js.map"
+      "path---tags-ux-ui-e6d5eae90bf3c95a0d43.js",
+      "path---tags-ux-ui-e6d5eae90bf3c95a0d43.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-28c4d204c4ab5514cfe6.js",
-      "path---tags-seo-28c4d204c4ab5514cfe6.js.map"
+      "path---tags-seo-45ff24ff1855abf328c8.js",
+      "path---tags-seo-45ff24ff1855abf328c8.js.map"
     ],
     "path---tags-redux": [
-      "path---tags-redux-96ade62c57418cfede16.js",
-      "path---tags-redux-96ade62c57418cfede16.js.map"
+      "path---tags-redux-9451da73b8ccecd17d77.js",
+      "path---tags-redux-9451da73b8ccecd17d77.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-d0df3a70e1b8f3d36aa4.js",
-      "path---tags-react-d0df3a70e1b8f3d36aa4.js.map"
+      "path---tags-react-93874ada7b1ae1c89cf7.js",
+      "path---tags-react-93874ada7b1ae1c89cf7.js.map"
     ],
     "path---tags-react-native": [
-      "path---tags-react-native-d5ac490f66b22c8f37b1.js",
-      "path---tags-react-native-d5ac490f66b22c8f37b1.js.map"
+      "path---tags-react-native-fb11a220f949c08dcef2.js",
+      "path---tags-react-native-fb11a220f949c08dcef2.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-d37ffb20b6f52aa800ce.js",
-      "path---tags-javascript-d37ffb20b6f52aa800ce.js.map"
+      "path---tags-javascript-85e756c1eed7f484f991.js",
+      "path---tags-javascript-85e756c1eed7f484f991.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-89dd7fca64f772bc2b4d.js",
-      "path---tags-design-89dd7fca64f772bc2b4d.js.map"
+      "path---tags-design-6d5a18c39e16d085cbbe.js",
+      "path---tags-design-6d5a18c39e16d085cbbe.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-29697959ab94e64b0968.js",
-      "path---tags-css-29697959ab94e64b0968.js.map"
+      "path---tags-css-dde25eb1e6765d3a4445.js",
+      "path---tags-css-dde25eb1e6765d3a4445.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -91,8 +91,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-4d8b3d2834e86de211ab.js",
-      "path---index-4d8b3d2834e86de211ab.js.map"
+      "path---index-309d8109811e8fcc04cb.js",
+      "path---index-309d8109811e8fcc04cb.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -105,6 +105,10 @@
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---2018-05-31-gioi-thieu-react-portal": [
+      "path---2018-05-31-gioi-thieu-react-portal-e547cb6cebda3395dddb.js",
+      "path---2018-05-31-gioi-thieu-react-portal-e547cb6cebda3395dddb.js.map"
     ],
     "path---2018-05-28-huong-dan-webpack-4-cho-nguoi-moi-bat-dau-phan-3": [
       "path---2018-05-28-huong-dan-webpack-4-cho-nguoi-moi-bat-dau-phan-3-d7d3fbce0b215ba54188.js",
@@ -355,8 +359,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-a92414e1dd154debaaff.js",
-      "app-a92414e1dd154debaaff.js.map"
+      "app-63b5610002fb4aee9f8d.js",
+      "app-63b5610002fb4aee9f8d.js.map"
     ]
   }
 }
