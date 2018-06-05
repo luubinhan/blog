@@ -171,7 +171,7 @@ const Topics = () => (
 
 Khi user truy cập vào /topics sẽ có một thanh navigation và một component `động` tùy thuộc vào routes (~ đường dẫn trên trình duyệt, gọi routes cho sang).
 
-Mà hardcode cái path thế này không hay, khi React Router render ra một component nó sẽ truyền vào 3 props cho component là: `match`, `loaction`, `history`. Trong ví dụ này nếu gọi `match.url` nó sẽ cho ta giá trị là `/topics`. Sửa lại component Topics một cách thông minh hơn
+Mà hardcode cái path thế này không hay, khi React Router render ra một component nó sẽ truyền vào 3 props cho component là: `match`, `location`, `history`. Trong ví dụ này nếu gọi `match.url` nó sẽ cho ta giá trị là `/topics`. Sửa lại component Topics một cách thông minh hơn
 
 ```jsx
 const Topic = () => {
