@@ -1,7 +1,7 @@
 ---
 path: "/2018-06-08-kinh-nghiem-lam-viec-voi-du-an-lon"
 date: "2018-06-08T13:35:13.234Z"
-title: "Kinh nghiệm làm việc với dự án lớn"
+title: "Kinh nghiệm tổ chức React project lớn"
 desc: "Có bao giờ cảm thấy lạc lối trong đóng code ngày càng lúc bự ra, một vài tip từ người có kinh nghiệm"
 tags: ["react"]
 ---
