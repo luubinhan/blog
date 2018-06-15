@@ -32,6 +32,18 @@ Làm được chuyện đó là nhờ những Javascript frameworks như Angular
 
 ## MPA
 
+Chuyên trị những ứng dụng bự, quá trình phát triển cũng đòi hỏi nhiều hơn SPA
+
+### Ưu
+
+- Cách tiếp cận tốt nhất nếu muốn user có sự hình dung rõ ràng về họ sẽ có những trang nào, cấu trúc site sẽ bao gồm những trang nào.
+
+- Cực kỳ dễ khi muốn tối ưu SEO
+
+### Nhược
+
+- Phát triển phần frontend và backend tương đối sẽ phụ thuộc lẫn nhâu rất nhiều, nếu so với SPA.
+- Có nhiều UX không làm được
 
 https://www.amberbit.com/blog/2017/9/20/why-you-should-not-build-your-startup-as-spa/
 
