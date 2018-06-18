@@ -22,7 +22,7 @@ và khi áp dụng middleware
 
 Trong thế giới của Rect, Redux là lựa chọn được ưa chuộng để có một container chứa chỉ chứa state. Ý tưởng chính của redux là tất cả những logic của app thì đưa vào **reducers**, là những function nhận vào 1 `state`, 1 `action` và trả về `state` mới. **Reducers** buộc phải là *pure function* không phụ thuộc và chỉnh sửa global state, để mà dễ test, dể refactor, performance tốt hơn.
 
-Thí dụ 1 redux store lwua giá trị counter
+Thí dụ 1 redux store lưu giá trị counter
 
 ```js
 import redux from 'redux';
@@ -40,10 +40,10 @@ const store = redux.createStore(counter);
 
 Nếu để ý chúng ta có thể thấy redux có 2 ràng buộc
 
-1. **Reducers** PHẢI là hàm tuần tự, trả về `state` mới
+1. **Reducers** PHẢI là hàm sync, trả về `state` mới
 2. Do không được thay đổi global state, reducers không được sử dụng những hàm như `setInterval()`
 
-Thí dụ chúng ta làm một cái app để bấm thời gian, sau khi user bấm stop hiển thị giá trị thời gian đã chạy và sau đó lưu lại trên server bằng HTTP request. Chuyện gì sẽ xảy ra khi ta đang muốn quăng một hàm chạy bất tuần tự như vậy?
+Thí dụ chúng ta làm một cái app để bấm thời gian, sau khi user bấm stop hiển thị giá trị thời gian đã chạy và sau đó lưu lại trên server bằng HTTP request. Chuyện gì sẽ xảy ra khi ta đang muốn quăng một hàm chạy async?
 
 Reducer của chúng ta cần listen 3 actions:
 
@@ -100,7 +100,7 @@ const middleware = redux.applyMiddleware(timerMiddleware);
 const store = redux.createStore(stopWatch, middleware);
 ```
 
-Syntax của redux middleware là điều cần phải bàn tới: 1 middleware function là 1 function return 1 function return 1 function. Nhất đầu ghê chưa. Thật ra đang dùng currying function trong javascript ([đọc cà-ri function ở đây](https://luubinhan.github.io/blog/2018-03-02-gioi-thieu-higher-order-component-trong-react)). Function đầu tiên nhận vào `store` làm parameter, function thứ 2 sẽ nhận function `next` làm parameter, và function thứ 3 nhận dispatch `action` làm parameter. `store` và `action` là giá trị store và dispatch action hiện tại. Chiếc đũa thuần kỳ ở đây chính là function `next`, bạn có thể gọi nó là "sau khi middleware chạy xong, truyền cái cái action này cho middleware kế tiếp". Nói cách khác, middleware có thể là hàm bất tuần tự.
+Syntax của redux middleware là điều cần phải bàn tới: 1 middleware function là 1 function return 1 function return 1 function. Nhất đầu ghê chưa. Thật ra đang dùng currying function trong javascript ([đọc cà-ri function ở đây](https://luubinhan.github.io/blog/2018-03-02-gioi-thieu-higher-order-component-trong-react)). Function đầu tiên nhận vào `store` làm parameter, function thứ 2 sẽ nhận function `next` làm parameter, và function thứ 3 nhận dispatch `action` làm parameter. `store` và `action` là giá trị store và dispatch action hiện tại. Chiếc đũa thuần kỳ ở đây chính là function `next`, bạn có thể gọi nó là "sau khi middleware chạy xong, truyền cái cái action này cho middleware kế tiếp". Nói cách khác, middleware có thể là hàm async.
 
 Tiếp theo chúng ta sẽ lưu giá trị sau khi user click stop lên server.
 
