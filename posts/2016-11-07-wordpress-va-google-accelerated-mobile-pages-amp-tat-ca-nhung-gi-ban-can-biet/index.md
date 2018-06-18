@@ -2,7 +2,7 @@
 path: "/2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet"
 date: "2016-11-07T13:35:13.234Z"
 title: "Wordpress và Google Accelerated Mobile Pages (AMP): Tất cả những gì bạn cần biết"
-desc: "Trong giới làm web ai cũng biết một điều Speed is King. Dân tình thích mưa một gói hàng trên mạng và phải được giao ngay lập tức, ít nhất là trong 24g, chậm trễ vài ngày là thấy hông vui, thích post tấm hình lên facebook có triệu triệu lượt người like ngay lập tức."
+desc: "Trong giới làm web ai cũng biết một điều Speed is King. Dân tình thích mua một gói hàng trên mạng và phải được giao ngay lập tức, ít nhất là trong 24g, chậm trễ vài ngày là thấy hông vui, thích post tấm hình lên facebook có triệu triệu lượt người like ngay lập tức."
 tags: ["wordpress","SEO"]
 ---
 
