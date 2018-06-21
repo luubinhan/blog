@@ -35,56 +35,56 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-c0365ae9806023ddd6e3.js",
-      "path---tags-c0365ae9806023ddd6e3.js.map"
+      "path---tags-25989a1e640a024a584c.js",
+      "path---tags-25989a1e640a024a584c.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-3ff1c33a0c7560bc4159.js",
-      "path---tags-wordpress-3ff1c33a0c7560bc4159.js.map"
+      "path---tags-wordpress-85ce391a5413d33b411c.js",
+      "path---tags-wordpress-85ce391a5413d33b411c.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-dab10a628d35b47782ae.js",
-      "path---tags-webpack-dab10a628d35b47782ae.js.map"
+      "path---tags-webpack-e3f9fe4d392b5da8aabb.js",
+      "path---tags-webpack-e3f9fe4d392b5da8aabb.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-fb205cc7336f2af92af4.js",
-      "path---tags-web-fb205cc7336f2af92af4.js.map"
+      "path---tags-web-e2b80acb6ea73f8c96c7.js",
+      "path---tags-web-e2b80acb6ea73f8c96c7.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-a90fa97fbfd5e5669921.js",
-      "path---tags-ux-ui-a90fa97fbfd5e5669921.js.map"
+      "path---tags-ux-ui-750df61db208cdeb0aaa.js",
+      "path---tags-ux-ui-750df61db208cdeb0aaa.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-d0b05cfbf902853cddb5.js",
-      "path---tags-seo-d0b05cfbf902853cddb5.js.map"
+      "path---tags-seo-7c1bf604f2f937585ddc.js",
+      "path---tags-seo-7c1bf604f2f937585ddc.js.map"
     ],
     "path---tags-redux": [
-      "path---tags-redux-43262c0836cb0079e35d.js",
-      "path---tags-redux-43262c0836cb0079e35d.js.map"
+      "path---tags-redux-49ae9e5068b498f0ef1d.js",
+      "path---tags-redux-49ae9e5068b498f0ef1d.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-2fb485c0000da13478f9.js",
-      "path---tags-react-2fb485c0000da13478f9.js.map"
+      "path---tags-react-7cee316c78b04405c71f.js",
+      "path---tags-react-7cee316c78b04405c71f.js.map"
     ],
     "path---tags-react-native": [
-      "path---tags-react-native-1ba1021d466ac5521537.js",
-      "path---tags-react-native-1ba1021d466ac5521537.js.map"
+      "path---tags-react-native-0cffd8ecd89272b1b352.js",
+      "path---tags-react-native-0cffd8ecd89272b1b352.js.map"
     ],
     "path---tags-middleware": [
-      "path---tags-middleware-d1a5960f019dce8b47f2.js",
-      "path---tags-middleware-d1a5960f019dce8b47f2.js.map"
+      "path---tags-middleware-f96a3c0723bedaffa42d.js",
+      "path---tags-middleware-f96a3c0723bedaffa42d.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-9208551944eddc0b3b56.js",
-      "path---tags-javascript-9208551944eddc0b3b56.js.map"
+      "path---tags-javascript-4d400afe7238b1de7bc9.js",
+      "path---tags-javascript-4d400afe7238b1de7bc9.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-8afd3100884ebf1638d0.js",
-      "path---tags-design-8afd3100884ebf1638d0.js.map"
+      "path---tags-design-e996e594ae96dc00bfc5.js",
+      "path---tags-design-e996e594ae96dc00bfc5.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-cfef18871bce7aa55279.js",
-      "path---tags-css-cfef18871bce7aa55279.js.map"
+      "path---tags-css-f3be939aeca490172a62.js",
+      "path---tags-css-f3be939aeca490172a62.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -95,8 +95,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-af89fa26e32b08956ba3.js",
-      "path---index-af89fa26e32b08956ba3.js.map"
+      "path---index-8d5058f844d4cfdcf513.js",
+      "path---index-8d5058f844d4cfdcf513.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -109,6 +109,10 @@
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---2018-06-21-mot-so-ung-dung-cua-middleware": [
+      "path---2018-06-21-mot-so-ung-dung-cua-middleware-aefc43f35a5a37914264.js",
+      "path---2018-06-21-mot-so-ung-dung-cua-middleware-aefc43f35a5a37914264.js.map"
     ],
     "path---2018-06-18-tim-hieu-middleware-va-redux": [
       "path---2018-06-18-tim-hieu-middleware-va-redux-043dff706aa6ea991f3c.js",
@@ -375,8 +379,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-95ad9aef5401133bd483.js",
-      "app-95ad9aef5401133bd483.js.map"
+      "app-21cf29f84fea8597eeac.js",
+      "app-21cf29f84fea8597eeac.js.map"
     ]
   }
 }
