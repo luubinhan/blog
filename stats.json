@@ -35,56 +35,56 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-6a164102abd6390dda7a.js",
-      "path---tags-6a164102abd6390dda7a.js.map"
+      "path---tags-4326f4c9010149cb2ca0.js",
+      "path---tags-4326f4c9010149cb2ca0.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-fbcdb83762fa5919b7c5.js",
-      "path---tags-wordpress-fbcdb83762fa5919b7c5.js.map"
+      "path---tags-wordpress-cc5e25b561c47dd2749f.js",
+      "path---tags-wordpress-cc5e25b561c47dd2749f.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-6637ef59a220e160e667.js",
-      "path---tags-webpack-6637ef59a220e160e667.js.map"
+      "path---tags-webpack-c9b50162ec5643daf03d.js",
+      "path---tags-webpack-c9b50162ec5643daf03d.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-025796092438dec2aac0.js",
-      "path---tags-web-025796092438dec2aac0.js.map"
+      "path---tags-web-f1091c134f6a853a4434.js",
+      "path---tags-web-f1091c134f6a853a4434.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-4ba85a25042dd52c2dc5.js",
-      "path---tags-ux-ui-4ba85a25042dd52c2dc5.js.map"
+      "path---tags-ux-ui-2c94f8af90b9863b0231.js",
+      "path---tags-ux-ui-2c94f8af90b9863b0231.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-4ad65520783d16021dbf.js",
-      "path---tags-seo-4ad65520783d16021dbf.js.map"
+      "path---tags-seo-585bac4e6c4499dbb051.js",
+      "path---tags-seo-585bac4e6c4499dbb051.js.map"
     ],
     "path---tags-redux": [
-      "path---tags-redux-b6e0969096479ca95390.js",
-      "path---tags-redux-b6e0969096479ca95390.js.map"
+      "path---tags-redux-e1b2f84ceefd6f3f9b43.js",
+      "path---tags-redux-e1b2f84ceefd6f3f9b43.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-7c01998ee14925e1c679.js",
-      "path---tags-react-7c01998ee14925e1c679.js.map"
+      "path---tags-react-794b5e2e5a95aac11960.js",
+      "path---tags-react-794b5e2e5a95aac11960.js.map"
     ],
     "path---tags-react-native": [
-      "path---tags-react-native-0fa28f1b2561ce82cb4d.js",
-      "path---tags-react-native-0fa28f1b2561ce82cb4d.js.map"
+      "path---tags-react-native-39b85f2b66c9fb6b4288.js",
+      "path---tags-react-native-39b85f2b66c9fb6b4288.js.map"
     ],
     "path---tags-middleware": [
-      "path---tags-middleware-56e4cb3d135d8bf96f0e.js",
-      "path---tags-middleware-56e4cb3d135d8bf96f0e.js.map"
+      "path---tags-middleware-fb93d1b820bdce515c9e.js",
+      "path---tags-middleware-fb93d1b820bdce515c9e.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-0582c45c498ed5d11ec3.js",
-      "path---tags-javascript-0582c45c498ed5d11ec3.js.map"
+      "path---tags-javascript-87e05e7cc7a48df1a2e9.js",
+      "path---tags-javascript-87e05e7cc7a48df1a2e9.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-7db386ee201c91d9ccf6.js",
-      "path---tags-design-7db386ee201c91d9ccf6.js.map"
+      "path---tags-design-001d3d784ab1b14c537c.js",
+      "path---tags-design-001d3d784ab1b14c537c.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-eb91bea632d5a7765d63.js",
-      "path---tags-css-eb91bea632d5a7765d63.js.map"
+      "path---tags-css-7be63f335e7e2d2500b6.js",
+      "path---tags-css-7be63f335e7e2d2500b6.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -95,8 +95,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-7239fa26e34117c8c491.js",
-      "path---index-7239fa26e34117c8c491.js.map"
+      "path---index-d3dc1ae4e616a3e3e0d4.js",
+      "path---index-d3dc1ae4e616a3e3e0d4.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -121,6 +121,10 @@
     "path---2018-06-18-tim-hieu-middleware-va-redux": [
       "path---2018-06-18-tim-hieu-middleware-va-redux-043dff706aa6ea991f3c.js",
       "path---2018-06-18-tim-hieu-middleware-va-redux-043dff706aa6ea991f3c.js.map"
+    ],
+    "path---2018-06-18-luan-ban-ve-cach-to-chuc-thu-muc-dat-ten": [
+      "path---2018-06-18-luan-ban-ve-cach-to-chuc-thu-muc-dat-ten-a250c63a62cada0ddaea.js",
+      "path---2018-06-18-luan-ban-ve-cach-to-chuc-thu-muc-dat-ten-a250c63a62cada0ddaea.js.map"
     ],
     "path---2018-06-15-lam-viec-voi-css-module": [
       "path---2018-06-15-lam-viec-voi-css-module-762a1a43ed4c823a2dd6.js",
@@ -383,8 +387,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-6ffc4bd9206d367f6f92.js",
-      "app-6ffc4bd9206d367f6f92.js.map"
+      "app-9b2153061049835f3d8d.js",
+      "app-9b2153061049835f3d8d.js.map"
     ]
   }
 }
