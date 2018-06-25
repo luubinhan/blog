@@ -87,9 +87,9 @@ Kết quả
 
 ![](https://cdn-images-1.medium.com/max/1600/1*Fc8jI1oaCE57aB-baawGaw.png)
 
-# console.trace vaf console.assert
+# console.trace và console.assert
 
-Cả hai hàm này sẽ in ra một đoạn thông báo kèm với dòng code thứ mấy trong file. Tưởng tượng chúng ta tạo một thư viện js và muốn thông báo đến user lỗi xuất hiện ở đâu. Khác biệt của `console.assert` khác với `console.trace` là nó chỉ in kết quả nếu điều kiển để kiểm tra trả về `false`
+Cả hai hàm này sẽ in ra một đoạn thông báo kèm với dòng code thứ mấy trong file. Tưởng tượng chúng ta tạo một thư viện js và muốn thông báo đến user lỗi xuất hiện ở đâu. Khác biệt của `console.assert` khác với `console.trace` là nó chỉ in kết quả nếu điều kiện để kiểm tra trả về `false`
 
 ```js
 function lesserThan(a, b) {

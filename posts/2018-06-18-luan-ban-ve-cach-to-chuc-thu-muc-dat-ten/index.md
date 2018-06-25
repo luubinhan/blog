@@ -10,7 +10,7 @@ tags: ["react", "javascript"]
 
 Nếu init project bằng **create-react-app**, chúng ta sẽ có sẵn những thư mục và file cơ bản nhất: *.gitinore*, *package.json*, *README.md*, *yarn.lock*, thư mục **public** và **src**
 
-![](https://d33ypg4xwx0n86.cloudfront.net/direct?url=https%3A%2F%2Fcdn-images-1.medium.com%2Fmax%2F1600%2F1*eXN1LlNnuZmosJ7n7EsJ-Q.png&resize=w704)
+![](https://cdn-images-1.medium.com/max/1600/1*eXN1LlNnuZmosJ7n7EsJ-Q.png)
 
 Chúng ta sẽ chỉ tập trung vào thư mục **src** và khoog quan tâm tới những file và thư mục ở khác.
 
@@ -87,7 +87,7 @@ Nếu `components/User/Form/Form.jsx` thì không cần đặt là `UserFormForm
 
 Lợi ích của việc đặt tên như vậy là giúp chúng ta navigate đến file đó rất nhanh, đa phần các editor 'xịn' đều có thể dùng fuzzy search
 
-![](https://d33ypg4xwx0n86.cloudfront.net/direct?url=https%3A%2F%2Fcdn-images-1.medium.com%2Fmax%2F1600%2F1*vZO9Ci9a_lrfi2yTP9OiMA.png&resize=w704)
+![](https://cdn-images-1.medium.com/max/1600/1*vZO9Ci9a_lrfi2yTP9OiMA.png)
 
 Tránh lặp lại tên, ngày xưa khi mới bắt đầu chúng ta thường đặt tên file rất là đầy đủ chuẩn không cần chỉnh, tuy nhiên việc này làm cho lúc `import` rất dài dòng, đường dẫn dài cả cây số. Trong trường hợp ở trên do `Form` đang nằm trong `User` thì ta biết ngay là `FormUser` rồi, không nên đặt tên file là `FormUser`
 
