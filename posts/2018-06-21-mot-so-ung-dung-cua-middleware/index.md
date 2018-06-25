@@ -8,10 +8,10 @@ tags: ["react", "redux", "javascript", "middleware"]
 
 Tổng hợp lại để nhớ về middleware, nó là 1 function nhận vào
 
-> storeInstance 
-> => functionToCallWithAnActionThatWillSendItToTheNextMiddleware 
-> => actionThatDispatchWasCalledWith 
-> => valueToUseAsTheReturnValueOfTheDispatchCall
+storeInstance 
+=> functionToCallWithAnActionThatWillSendItToTheNextMiddleware 
+=> actionThatDispatchWasCalledWith 
+=> valueToUseAsTheReturnValueOfTheDispatchCall
 
 Được viết với dạng syntax
 
