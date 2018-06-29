@@ -35,56 +35,56 @@
       "layout-component---index-c26953a5aaf209347906.js.map"
     ],
     "path---tags": [
-      "path---tags-6d1e77fc30d9997b1ddd.js",
-      "path---tags-6d1e77fc30d9997b1ddd.js.map"
+      "path---tags-2c2fb1be4d7fe142ca5b.js",
+      "path---tags-2c2fb1be4d7fe142ca5b.js.map"
     ],
     "path---tags-wordpress": [
-      "path---tags-wordpress-0eaf633269e6a59c299e.js",
-      "path---tags-wordpress-0eaf633269e6a59c299e.js.map"
+      "path---tags-wordpress-38e7f35f0af01555890d.js",
+      "path---tags-wordpress-38e7f35f0af01555890d.js.map"
     ],
     "path---tags-webpack": [
-      "path---tags-webpack-7655adefc973931ba2b2.js",
-      "path---tags-webpack-7655adefc973931ba2b2.js.map"
+      "path---tags-webpack-340f512b680f6c4b02ad.js",
+      "path---tags-webpack-340f512b680f6c4b02ad.js.map"
     ],
     "path---tags-web": [
-      "path---tags-web-184c6f2d7bcaa5dfbc37.js",
-      "path---tags-web-184c6f2d7bcaa5dfbc37.js.map"
+      "path---tags-web-f27201f01c5d6f8ca8fd.js",
+      "path---tags-web-f27201f01c5d6f8ca8fd.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-52797306a83d405685b2.js",
-      "path---tags-ux-ui-52797306a83d405685b2.js.map"
+      "path---tags-ux-ui-9da4c8b695d77672c9bf.js",
+      "path---tags-ux-ui-9da4c8b695d77672c9bf.js.map"
     ],
     "path---tags-seo": [
-      "path---tags-seo-e5d1cc1850b87177aa71.js",
-      "path---tags-seo-e5d1cc1850b87177aa71.js.map"
+      "path---tags-seo-0531a5684675afaf73e1.js",
+      "path---tags-seo-0531a5684675afaf73e1.js.map"
     ],
     "path---tags-redux": [
-      "path---tags-redux-b89bb03f59b66317feeb.js",
-      "path---tags-redux-b89bb03f59b66317feeb.js.map"
+      "path---tags-redux-823199539df551b8cc96.js",
+      "path---tags-redux-823199539df551b8cc96.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-e969c40aa7b07c461be4.js",
-      "path---tags-react-e969c40aa7b07c461be4.js.map"
+      "path---tags-react-5c0fb4ff83fe290a7b5a.js",
+      "path---tags-react-5c0fb4ff83fe290a7b5a.js.map"
     ],
     "path---tags-react-native": [
-      "path---tags-react-native-cf632bd53eac36bf9604.js",
-      "path---tags-react-native-cf632bd53eac36bf9604.js.map"
+      "path---tags-react-native-b94dd56b0aa0c30f81df.js",
+      "path---tags-react-native-b94dd56b0aa0c30f81df.js.map"
     ],
     "path---tags-middleware": [
-      "path---tags-middleware-34bc33c0374d5a9c0bb5.js",
-      "path---tags-middleware-34bc33c0374d5a9c0bb5.js.map"
+      "path---tags-middleware-d7afb9ea518854fc1181.js",
+      "path---tags-middleware-d7afb9ea518854fc1181.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-cd32ca02dcc49f0b0ed9.js",
-      "path---tags-javascript-cd32ca02dcc49f0b0ed9.js.map"
+      "path---tags-javascript-006e29532fd1539b34b9.js",
+      "path---tags-javascript-006e29532fd1539b34b9.js.map"
     ],
     "path---tags-design": [
-      "path---tags-design-ef876ce98755126b509f.js",
-      "path---tags-design-ef876ce98755126b509f.js.map"
+      "path---tags-design-43cde6fe2822157b9759.js",
+      "path---tags-design-43cde6fe2822157b9759.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-d678ba22b0ef7d3ccb22.js",
-      "path---tags-css-d678ba22b0ef7d3ccb22.js.map"
+      "path---tags-css-538e9ae5d5a663fc170b.js",
+      "path---tags-css-538e9ae5d5a663fc170b.js.map"
     ],
     "path---sitemap": [
       "path---sitemap-a0e39f21c11f6a62c5ab.js",
@@ -95,8 +95,8 @@
       "path---portfolio-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---index": [
-      "path---index-d3dc1ae4e616a3e3e0d4.js",
-      "path---index-d3dc1ae4e616a3e3e0d4.js.map"
+      "path---index-63e41002e79837b40ba0.js",
+      "path---index-63e41002e79837b40ba0.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
@@ -109,6 +109,10 @@
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---2018-06-28-thay-component-will-receive-props": [
+      "path---2018-06-28-thay-component-will-receive-props-760815a9870d1ad6e9e4.js",
+      "path---2018-06-28-thay-component-will-receive-props-760815a9870d1ad6e9e4.js.map"
     ],
     "path---2018-06-24-lam-viec-voi-console-trong-javascript": [
       "path---2018-06-24-lam-viec-voi-console-trong-javascript-063cdbb81dd501c2fc9b.js",
@@ -387,8 +391,8 @@
       "page-component---src-pages-404-jsx-776839b43ac2aa21924f.js.map"
     ],
     "app": [
-      "app-ef2a7d23f7f0ac850b2f.js",
-      "app-ef2a7d23f7f0ac850b2f.js.map"
+      "app-09148f51a7f578fb3007.js",
+      "app-09148f51a7f578fb3007.js.map"
     ]
   }
 }
