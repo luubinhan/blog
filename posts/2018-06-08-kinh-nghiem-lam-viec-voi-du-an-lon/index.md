@@ -228,7 +228,21 @@ export default ({ negative = false, name, surname }) => (
 
 Để tìm hiểu thêm về CSS Module trong React, [đọc bài này](https://blog.pusher.com/css-modules-react/)
 
+## Một số thư viện thường sử dụng
 
+- Luôn sử dụng **react**, **react-dom** mới nhất
+- `classnames` để join `className` theo điều kiện
+- `i18n-js` để làm đa ngôn ngữ
+- `lodash`, một số utility function sử lý chuổi, object này nọ
+- `ramda` thay cho `lodash` nếu bạn khoái pure function, và `recompose` nếu đã thích `ramda`
+- `dinero.js` để hiện thị và sử lý tiền
+- `moment` để làm việc với date time
+- `react-helmet` để thay đổi tag `<head>` cho từng component
+- `react-table` và `react-virtualized` cho hiển thị dữ liệu kiểu table
+- `react-redux` `redux` `redux-saga` và `redux-logger` để quản lý state tập trung
+- `react=router=dom` nếu làm web, và `react-navigation` nếu là react native
+
+Cảm ơn bạn đã đọc hết bài viết
 
 [Link bài gốc: Tips on React for large scale projects](https://hackernoon.com/tips-on-react-for-large-scale-projects-3f9ece85983d)
 Tác giả: Luis Felipe Zaguini

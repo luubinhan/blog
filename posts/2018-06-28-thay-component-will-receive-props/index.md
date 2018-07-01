@@ -45,5 +45,6 @@ componentDidUpdate(prevProps, prevState) {
 
 Hàm `getDerivedStateFromProps` sẽ nhận vào 2 params `nextProps` và `prevState`. Chúng ta cần lưu giá trị của *props* `path` vào *state* là `path`, thực hiện kiểm tra ở đây nếu thấy khác nhau thì return lại object `{path: nextProps.path}`, khi đó ở `componentDidUpdate` giá trị của `prevState.path` sẽ khác với giá trị `this.state.path` ví `this.state.path` đã được set lại ở `getDerivedStateFromProps` trước đó
 
+Cảm ơn bạn đã đọc hết bài viết
 
 [Link bài viết của tác giả Amanshu Kataria](https://hackernoon.com/replacing-componentwillreceiveprops-with-getderivedstatefromprops-c3956f7ce607)

@@ -127,4 +127,6 @@ optimization: {
 }
 ```
 
+Cảm ơn bạn đã đọc hết bài viết
+
 [Link bài viết gốc của tác giả Riccardo Canella](https://medium.freecodecamp.org/how-you-can-improve-your-workflow-using-the-javascript-console-bdd7823a9472)
