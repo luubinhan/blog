@@ -1,13 +1,12 @@
 ---
-path: "2018-07-02-javascript-modules-tren-web"
-date: "2018-07-00T13:35:13.234Z"
+path: "/2018-07-02-javascript-modules-tren-web"
+date: "2018-07-02T13:35:13.234Z"
 title: "Sử dụng javascript modules trên web"
-desc: "Hướng dẫn cầu hình tên miền trên GoDaddy để sử dụng với Github page"
+desc: "Giới thiệu module trong ECMAcript"
 tags: ["javascript"]
 ---
 
-
-> Lưu ý quan trọng JS modules được hổ trợ bởi các trình duyệt XỊN, hàng cùi mía của Microsoft thì chưa support
+Lưu ý quan trọng JS modules được hổ trợ bởi các trình duyệt XỊN, hàng cùi mía của Microsoft thì chưa support
 
 ## JS Modules là gì
 
