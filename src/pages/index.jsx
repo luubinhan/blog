@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import {random, get, isEmpty} from 'lodash'
+import {random, isEmpty} from 'lodash'
 
 import PostListing from '../components/PostListing/PostListing'
 import SEO from '../components/SEO'

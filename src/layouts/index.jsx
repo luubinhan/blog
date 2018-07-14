@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Link from "gatsby-link"
 import {camelCase} from 'lodash'
+import {IoSocialNodejs, IoSocialJavascript, IoSocialWordpress, IoSocialHtml5, IoAndroidCompass, IoAndroidSend} from 'react-icons/lib/io'
 
 import config from '../../data/SiteConfig'
 import {PrimaryNav} from '../../data'
@@ -24,6 +25,7 @@ export default class MainLayout extends React.Component {
     this.onClickNavbar = this.onClickNavbar.bind(this)
     this.handleNavClick = this.handleNavClick.bind(this)
   }
+  
   /*
   Toggle menu for SP
    */
@@ -74,6 +76,24 @@ export default class MainLayout extends React.Component {
       collapsed: !this.state.collapsed
     })  
   }
+  renderIcon = (name) => {
+    switch (name) {
+      case 'nodejs':
+        return <IoSocialNodejs />;
+      case 'javascript':
+        return <IoSocialJavascript />;
+      case 'wordpress':
+        return <IoSocialWordpress />
+      case 'html5':
+        return <IoSocialHtml5 />
+      case 'compass':
+        return <IoAndroidCompass />
+      case 'send':
+        return <IoAndroidSend />
+      default:
+        return null;
+    }
+  }
   render() {
     const { children } = this.props;
     const {collapsed} = this.state;
@@ -81,7 +101,7 @@ export default class MainLayout extends React.Component {
       <li key={item.name} className={camelCase(item.name)}>
         <Link to={item.href} activeClassName="active">
           {item.icon !== '' &&
-            <i className={item.icon} />
+            this.renderIcon(item.icon)
           }
           {item.name}
         </Link>	

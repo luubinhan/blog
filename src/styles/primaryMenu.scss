@@ -33,37 +33,38 @@
 			}
 		}
 		&.javascript {
-			i { color: $yellow; }
+			svg { color: $yellow; }
 			a:hover {
 	  		color: $yellow;
 	  	}
 		}
 		&.react {
-			i { color: $cyan; }
+			svg { color: $cyan; }
 			a:hover {
 	  		color: $cyan;
 	  	}
 		}
 		&.wordpress {
-			i { color: $blue; }
+			svg { color: $blue; }
 			a:hover {
 	  		color: $blue;
 	  	}
 		}
 		&.htmlCss {
-			i { color: $orange; }
+			svg { color: $orange; }
 			a:hover {
 	  		color: $orange;
 	  	}
 		}
 		&.uxUi {
-			i { color: $google; }
+			svg { color: $google; }
 			a:hover {
 	  		color: $google;
 	  	}
 		}
 		a {
-			display: block;
+			display: flex;
+			align-items: center;
 	    color: $muted;
 	    font-family: "avo_bold", $san-serif;
 	    padding: 9px 0 12px;
@@ -71,12 +72,12 @@
 			font-size: $font-size-base;
 			position: relative;
 			z-index: 1;
-			-webkit-transition: all 0.2s ease-in-out;
-			-moz-transition: all 0.2s ease-in-out;
-			-ms-transition: all 0.2s ease-in-out;
-			-o-transition: all 0.2s ease-in-out;
-			transition: all 0.2s ease-in-out;
-	    i {
+			-webkit-transition: all 0.1s ease-in-out;
+			-moz-transition: all 0.1s ease-in-out;
+			-ms-transition: all 0.1s ease-in-out;
+			-o-transition: all 0.1s ease-in-out;
+			transition: all 0.1s ease-in-out;
+	    svg {
 	    	padding-right: 7px;	    	
 	    }
 	    &.active {

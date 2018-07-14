@@ -883,11 +883,12 @@ table.normal tr td {
     letter-spacing: -.028em;
     position: relative;
     &:before {
-      content: "\f35f";
+      content: "''";
       display: block;
-      font-family: "Ionicons";
       color: $muted;
       speak: none;
+      font-family: $serif;
+      font-size: 2em;
       margin-bottom: 15px;
       font-style: normal;
       font-weight: normal;

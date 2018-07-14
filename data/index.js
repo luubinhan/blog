@@ -22,36 +22,36 @@ export const PrimaryNav = [
 		name: "Javascript",
 		href: '/tags/javascript',
 		isActive: false,
-		icon: "ion ion-logo-javascript"	
+		icon: "javascript"	
 	},
   {
     name: 'React',
     href: '/tags/react',
     isActive: false,
-    icon: "ion ion-logo-nodejs"
+    icon: "nodejs"
   },
 	{
 		name: 'Wordpress',
 		href: '/tags/wordpress',
 		isActive: false,
-		icon: "ion ion-logo-wordpress"
+		icon: "wordpress"
 	},
 	{
 		name: 'HTML/CSS',
 		href: '/tags/css',
 		isActive: false,
-		icon: "ion ion-logo-html5"
+		icon: "html5"
 	},
 	{
 		name: "UX/UI",
 		href: '/tags/ux-ui',
 		isActive: false,
-		icon: "ion ion-md-compass"
+		icon: "compass"
 	},
 	{
 		name: "Liên hệ",
 		href: '/about',
 		isActive: false,
-		icon: "ion ion-md-send"
+		icon: "send"
 	},		
 ]
