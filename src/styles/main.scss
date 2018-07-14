@@ -992,7 +992,6 @@ table.normal tr td {
 
 }
 .page-about {
-  
   .about-header {
     background: #fff;
     padding: 20px 0 0;
@@ -1023,9 +1022,6 @@ table.normal tr td {
       }
     }
   }
-  .about-body {
-    
-  }  
 }
 
 .master-inner {
@@ -1088,18 +1084,6 @@ table.normal tr td {
   .card-block {
     width: 32%;
   }  
-} 
-
-.page-portfolio {
-  //  background: #2C2D31;
-  /* background: url("images/damian-zaleski-843.jpg") no-repeat;
-  background-size: cover;
-  background-attachment: fixed; */
-
-  >.inner {
-    background: rgba(44,45,49,1);    
-    min-height: calc(100vh - 40px);
-  }
 }
 .gatsby-highlight {
   margin-left: -75px;
