@@ -23,7 +23,59 @@
     font-style: normal;
 
 }
-
+@media (min-width: 768px){
+  .navbar-toggle {
+    display: none;
+  }
+}
+@media(max-width: $breakpoint-sm){
+  .layout-component {
+    padding-top: $header-height;
+  }
+  .header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 89;
+    height: $header-height;
+    top: 0;
+    box-shadow: 0 3px 5px rgba(150,157,174,0.2), 0 1px 0 #fff;
+    border-bottom: none;
+    .navbar-form.search-box {
+      position: relative;
+      .form-group{
+        margin-right: 36px;
+      }
+      .btn{
+        position: absolute;
+        right: 15px;
+        top: 10px;
+      }
+    }
+  }
+  .navbar-default .navbar-collapse {
+    position: fixed;
+    z-index: 78;
+    background: #fff;
+    left: 0;
+    right: 0;
+  }
+}
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  &.nav-pills {
+    display: flex;
+    li {
+      a {
+        padding: 10px 15px;
+        display: block;
+        cursor: pointer;
+      }
+    }
+  }
+}
 .title-section {
   font-weight: bold;
   text-align: center;
@@ -111,6 +163,8 @@ html {
   position: relative;
 }
 body {
+  margin: 0;
+  padding: 0;
   font-size: 14px;
   color: $primary-text-color;
   line-height: 1.6;
@@ -259,8 +313,7 @@ address {
 code,
 pre {
   padding: 0 3px 2px;
-  font-family: $monospace;
-  font-size: 12px;
+  font-family: $monospace;  
   color: $primary-text-color;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -268,7 +321,8 @@ pre {
 }
 code {
   padding: 2px 4px;
-  color: #d14;
+  color: $red;
+  font-size: $font-size-small;
   background-color: $bg-gray;
   border: 1px solid $border-color;
 }
@@ -284,7 +338,7 @@ pre {
   white-space: pre-wrap;
   background-color: $bg-gray;
   border: 1px solid $border-color;  
-  
+  font-size: 16px;
 }
 pre code {
   padding: 0;
@@ -525,9 +579,6 @@ figure {
 .muted {
   color: $muted;
 }
-.color {
-  color: #ff3333 !important;
-}
 .link {
   color: $link-color;
 }
@@ -592,28 +643,11 @@ table.normal tr td {
   padding: 0 10px 5px 0;
   text-align: left;
 }
-.mystyle-dropcaps {
-  color: $primary-text-color;
-  display: inline-block;
-  float: left;
-  font-size: 40px;
-  font-weight: 700;
-  height: 45px;
-  line-height: 45px;
-  margin: 5px 20px 0 0;
-  position: relative;
-  text-align: center;
-  width: 45px;
-}
 .mystyle-highlight {
   color: #ffffff;
   background-color: $yellow;
 }
 /* MISC --------------------------------------------- */
-
-.master {
-  
-}
 .pattern {
   background: url("images/pixel-pattern.png");
   background-position: 0 1px;
@@ -643,9 +677,6 @@ table.normal tr td {
 }
 
 /* RESET BOOTSTRAP -------------------------------------------- */
-.page-blog {
-  
-}
 .single-post-container {
  
   padding-bottom: 80px;
@@ -725,9 +756,6 @@ table.normal tr td {
         text-transform: uppercase;
         color: #fff;
       }
-      .ssc-buttons {
-
-      }
       .s-link {
         display: block;
         margin-bottom: 10px;
@@ -784,6 +812,7 @@ table.normal tr td {
     font-size: 21px;
     line-height: 1.58;
     letter-spacing: -.003em;
+    
     h2, h1 {
       margin-top: 56px;
       --x-height-multiplier: 0.363;
@@ -854,7 +883,7 @@ table.normal tr td {
     letter-spacing: -.028em;
     position: relative;
     &:before {
-      content: "\f347";
+      content: "\f35f";
       display: block;
       font-family: "Ionicons";
       color: $muted;
@@ -1179,6 +1208,26 @@ table.normal tr td {
 $backgroundSidebar: #252525;
 $sidebarWidth: 320px;
 $masterWidth: 870px;
+.post-content {
+  > ul:first-child {
+    background: $bg-gray;
+    margin: 0;
+    padding: 15px;
+    > li {
+      list-style: none;
+      padding-left: 15px;
+      ul {
+        margin-bottom: 10px;
+      }
+      a {
+        &:before,
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
 
 .layout-blog {
   position: relative;
@@ -1460,12 +1509,13 @@ $masterWidth: 870px;
       }
       .navbar-toggle{
         position: absolute;
-        top: 0px;
+        top: 11px;
         right: 20px;
-        z-index: 99;        
+        z-index: 999;        
         padding: 2px 0;
         background: transparent;
         border: none;
+        cursor: pointer;
         &:hover {
           background: transparent;
         }
@@ -1511,8 +1561,11 @@ $masterWidth: 870px;
         padding-right: 30px;
       }
       .go-home {
-        width: 30px;
+        width: 34px;
         padding-bottom: 0;
+        img {
+          display: block;
+        }
       }
       > .inner {
         padding: 10px 30px;
