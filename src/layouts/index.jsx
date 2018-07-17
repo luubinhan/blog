@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Link from "gatsby-link"
-import {camelCase} from 'lodash'
+import {camelCase, isEmpty} from 'lodash'
 import {IoSocialNodejs, IoSocialJavascript, IoSocialWordpress, IoSocialHtml5, IoAndroidCompass, IoAndroidSend} from 'react-icons/lib/io'
 
 import config from '../../data/SiteConfig'
@@ -25,7 +25,11 @@ export default class MainLayout extends React.Component {
     this.onClickNavbar = this.onClickNavbar.bind(this)
     this.handleNavClick = this.handleNavClick.bind(this)
   }
-  
+  componentWillReceiveProps(nextProps) {
+    if (!isEmpty(nextProps)) {
+      this.setState({collapsed: true})
+    }
+  }
   /*
   Toggle menu for SP
    */

@@ -1425,6 +1425,7 @@ $masterWidth: 870px;
 }
 @media (max-width: 980px){
   .layout-blog {
+    
     .master {
       width: auto;
     }
@@ -1576,7 +1577,13 @@ $masterWidth: 870px;
 }
 @media (max-width: $breakpoint-xs){
   .layout-blog {
+    .sidebar {
+      position: fixed;
+      left: 0;
+      right: 0;
+    }
     .master {
+      padding-top: 54px;
       float: none;
       > .inner {
         padding-left: 30px;
