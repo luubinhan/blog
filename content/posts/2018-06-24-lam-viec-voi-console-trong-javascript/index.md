@@ -11,6 +11,17 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [console.log, console.error, console.warn và console.info](#consolelog-consoleerror-consolewarn-và-consoleinfo)
+- [console.group](#consolegroup)
+- [console.table](#consoletable)
+- [console.count, console.time, console.timeEnd](#consolecount-consoletime-consoletimeend)
+- [console.trace và console.assert](#consoletrace-và-consoleassert)
+- [Xóa hết console](#xóa-hết-console)
+
+<!-- /TOC -->
+
 # console.log, console.error, console.warn và console.info
 
 Đây là những phương thức được sử dụng nhiều nhất. Có thể truyền vào 1 hoặc nhiều parameter, mỗi parameter trường vào sẽ được hiển thị về kết quả ở dạng string và cách nhau bằng khoảng trắng, trong trường hợp là object hay array thì nó hiện thị dạng cây
