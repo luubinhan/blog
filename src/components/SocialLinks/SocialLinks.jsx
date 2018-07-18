@@ -5,7 +5,9 @@ import {
   TwitterShareButton,
   FacebookShareCount,
   GooglePlusShareCount,
-  generateShareIcon 
+  TwitterIcon,
+  FacebookIcon,
+  GooglePlusIcon
 } from 'react-share'
 import config from '../../../data/SiteConfig'
 import './SocialLinks.css'
@@ -16,9 +18,6 @@ class SocialLinks extends Component {
     const post = postNode.frontmatter
     const url = config.siteUrl + config.pathPrefix + postPath
 
-    const FacebookIcon = generateShareIcon('facebook')
-    const TwitterIcon = generateShareIcon('twitter')
-    const GooglePlusIcon = generateShareIcon('google')
     const iconSize = mobile ? 36 : 48
     const filter = count => (count > 0 ? count : '')
 
@@ -36,7 +35,6 @@ class SocialLinks extends Component {
         <FacebookShareButton
           url={url}
           quote={post.title}
-          description={postNode.excerpt}
         >
           <FacebookIcon round size={iconSize} />
           <FacebookShareCount url={url}>
