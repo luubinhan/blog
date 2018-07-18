@@ -127,6 +127,7 @@ export default class MainLayout extends React.Component {
               aria-expanded="false"
               className={`navbar-toggle ${collapsed ? "collapsed" : ''}`}
               onClick={this.handleNavClick}
+              ariaLabel='nav'
             >
               <div className="hamburger hamburger-1">
                 <span className="line" />
