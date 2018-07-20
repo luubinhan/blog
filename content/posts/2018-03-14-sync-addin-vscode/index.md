@@ -10,6 +10,16 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [Tạo access token trên Github](#tạo-access-token-trên-github)
+- [Upload những thiết đặt, extensions đã cài cho VSCode](#upload-những-thiết-đặt-extensions-đã-cài-cho-vscode)
+- [Download các thiết từ gist về](#download-các-thiết-từ-gist-về)
+
+<!-- /TOC -->
+
+Cần có
+
 - Tài khoản Github, danh sách extension sẽ được lưu lên gist
 - Cài thêm extentions tên là Settings Sync - tác giả Shan Khan.
 

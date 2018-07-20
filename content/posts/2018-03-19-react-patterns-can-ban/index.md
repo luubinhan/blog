@@ -10,6 +10,19 @@ chapter: 0
 tags: ["javascript", "react"]
 ---
 
+<!-- TOC -->
+
+- [Container/View](#containerview)
+- [Container / Branch / View](#container--branch--view)
+- [Higher Order Components](#higher-order-components)
+- [Stateless function](#stateless-function)
+- [JSX spread attributes](#jsx-spread-attributes)
+- [render theo điều kiện đúng sai](#render-theo-điều-kiện-đúng-sai)
+- [Style component](#style-component)
+- [Event switch](#event-switch)
+
+<!-- /TOC -->
+
 ## Container/View
 
 ```jsx

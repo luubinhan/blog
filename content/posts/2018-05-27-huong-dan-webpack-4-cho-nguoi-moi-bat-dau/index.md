@@ -16,6 +16,16 @@ tags: ["javascript", "webpack"]
 2. [Dùng Loaders, code slitting trong webpack](2018-05-27-huong-dan-webpack-4-cho-nguoi-moi-bat-dau)
 3. [Plugins, Development Server](2018-05-28-huong-dan-webpack-4-cho-nguoi-moi-bat-dau-phan-3)
 
+<!-- TOC -->
+
+- [Trong Series này](#trong-series-này)
+  - [Loaders](#loaders)
+    - [Babel Loader](#babel-loader)
+  - [SASS Loader](#sass-loader)
+    - [Image](#image)
+  - [Code splitting](#code-splitting)
+
+<!-- /TOC -->
 
 Chúng ta mở lại file **package.json**, sửa lại chút
 

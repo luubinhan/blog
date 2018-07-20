@@ -10,6 +10,23 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [Kéo thả các Element](#kéo-thả-các-element)
+- [Reference đến element đang chọn trong console](#reference-đến-element-đang-chọn-trong-console)
+- [Gọi lại giá trị tính toán lần trước trong console](#gọi-lại-giá-trị-tính-toán-lần-trước-trong-console)
+- [Xác định đoạn CSS được định nghĩa ở đâu](#xác-định-đoạn-css-được-định-nghĩa-ở-đâu)
+- [screenshot một element](#screenshot-một-element)
+- [Tìm element sử dụng CSS selectors](#tìm-element-sử-dụng-css-selectors)
+- [Shift-Enter trong console](#shift-enter-trong-console)
+- [Clear console](#clear-console)
+- [`Go to` như trong sumblime text hay VSCode](#go-to-như-trong-sumblime-text-hay-vscode)
+- [Watch Expression](#watch-expression)
+- [XHR/Fetch debugging](#xhrfetch-debugging)
+- [Debug khi DOM bị thay đổi](#debug-khi-dom-bị-thay-đổi)
+
+<!-- /TOC -->
+
 ## Kéo thả các Element
 
 Bên trong tab Elements có thể kéo các element HTML và thả nó vào vị trí mới

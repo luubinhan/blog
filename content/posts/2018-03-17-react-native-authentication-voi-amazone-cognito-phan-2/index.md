@@ -10,6 +10,20 @@ chapter: 0
 tags: ["javascript", "react"]
 ---
 
+<!-- TOC -->
+
+- [`Authenticator.js`](#authenticatorjs)
+- [`Header.js`](#headerjs)
+- [`Home.js`](#homejs)
+- [`SignIn.js`](#signinjs)
+- [`SignUp.js`](#signupjs)
+- [`Router.js`](#routerjs)
+- [`App.js`](#appjs)
+- [Về vấn đề TOTP (time-based one-time passwords)](#về-vấn-đề-totp-time-based-one-time-passwords)
+- [`SignIn.js`](#signinjs-1)
+
+<!-- /TOC -->
+
 Xem [phần 1 ở đây](https://luubinhan.github.io/blog/2018-03-16-react-authentication-phan-1)
 
 Phần này chúng ta tiếp tục với React Router, chúng ta chỉ cho phép những user đã login xem ứng dụng, redirect đến trang signup/sign in khi chưa đăng nhập.
@@ -669,7 +683,7 @@ render() {
 ```
 
 
-### `SignIn.js`
+## `SignIn.js`
 
 Update lại phương thức `signin` để sử dụng MFA, các thông tin cần thiết của user nằm trong object `user.challengename`, chúng ta sử dụng để truyền vào cho `Auth.confirmSignIn`
 

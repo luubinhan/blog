@@ -10,7 +10,6 @@ chapter: 0
 tags: ["javascript", "react"]
 ---
 
-
 Nhúng Google Maps vào web site bình thường thì quá sức đơn giản, để sử dụng với React Js thì hơi vụng công một chút.
 
 Để sử dụng Google Maps API, ta chỉ cần load đoạn js từ googleapis, chèn thêm một cái `div` với id là *map* chằng hạn.

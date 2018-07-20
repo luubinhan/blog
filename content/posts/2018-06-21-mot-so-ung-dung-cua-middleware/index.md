@@ -11,6 +11,15 @@ chapter: 0
 tags: ["react", "redux", "javascript", "middleware"]
 ---
 
+<!-- TOC -->
+
+- [Đóng gói các phương thức gọi API](#đóng-gói-các-phương-thức-gọi-api)
+- [localStorage và Cookies](#localstorage-và-cookies)
+- [Theo dõi file](#theo-dõi-file)
+- [Trình nghe nhạc](#trình-nghe-nhạc)
+
+<!-- /TOC -->
+
 Tổng hợp lại để nhớ về middleware, nó là 1 function nhận vào
 
 storeInstance 

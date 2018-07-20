@@ -10,6 +10,27 @@ chapter: 0
 tags: ["javascript", "react"]
 ---
 
+<!-- TOC -->
+
+  - [CSS animation dựa trên component state](#css-animation-dựa-trên-component-state)
+    - [Nhược](#nhược)
+    - [Ưu](#ưu)
+  - [JS Style animation dựa trên component state](#js-style-animation-dựa-trên-component-state)
+    - [Nhược](#nhược-1)
+    - [Ưu](#ưu-1)
+  - [React Motion của tác giả [Cheng Lou](https://medium.com/@chenglou)](#react-motion-của-tác-giả-cheng-louhttpsmediumcomchenglou)
+    - [Nhược](#nhược-2)
+    - [Ưu](#ưu-2)
+  - [Thư viện Animated](#thư-viện-animated)
+    - [Nhược](#nhược-3)
+    - [Ưu](#ưu-3)
+  - [Thư viện Velocity React](#thư-viện-velocity-react)
+    - [Nhược](#nhược-4)
+    - [Ưu](#ưu-4)
+- [Kết luận](#kết-luận)
+
+<!-- /TOC -->
+
 Chúng ta sẽ điểm qua 5 cách làm sau
 
 1. CSS animation dựa trên component `state`

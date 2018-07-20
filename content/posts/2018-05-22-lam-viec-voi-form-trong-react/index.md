@@ -10,6 +10,13 @@ chapter: 0
 tags: ["javascript", "react"]
 ---
 
+<!-- TOC -->
+
+- [controlled component vs. uncontrolled component](#controlled-component-vs-uncontrolled-component)
+- [Dựng Form](#dựng-form)
+
+<!-- /TOC -->
+
 ![][https://process.filestackapi.com/cache=expiry:max/resize=width:700/compress/GLrbSyTSyGrIccNEhIDF]
 
 ## controlled component vs. uncontrolled component

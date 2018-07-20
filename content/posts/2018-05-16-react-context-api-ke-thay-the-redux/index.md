@@ -10,6 +10,13 @@ chapter: 0
 tags: ["javascript", "react"]
 ---
 
+<!-- TOC -->
+
+- [Context API là cái gì](#context-api-là-cái-gì)
+- [Sử dụng React Context API như thế nào](#sử-dụng-react-context-api-như-thế-nào)
+- [Khi nào thì nên sử dụng Context API](#khi-nào-thì-nên-sử-dụng-context-api)
+
+<!-- /TOC -->
 
 Bản React 16.3.0 được giới thiệu với khá nhiều khái niệm và tính năng mới của React, trong đó được nhiều quan tâm hơn cả là Context API. Chúng ta sẽ cùng tìm hiểu
 

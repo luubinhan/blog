@@ -10,6 +10,16 @@ chapter: 0
 tags: ["javascript", "react", "react-native"]
 ---
 
+<!-- TOC -->
+
+- [Expo là cái gì](#expo-là-cái-gì)
+- [Hạn chế của Expo](#hạn-chế-của-expo)
+- [App sẽ viét](#app-sẽ-viét)
+- [Cài Expo](#cài-expo)
+  - [Tạo một dự án Expo mới](#tạo-một-dự-án-expo-mới)
+  - [Ví dụ](#ví-dụ)
+
+<!-- /TOC -->
 
 ## Expo là cái gì
 

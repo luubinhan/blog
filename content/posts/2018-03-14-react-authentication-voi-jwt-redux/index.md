@@ -10,6 +10,14 @@ chapter: 0
 tags: ["javascript", "react"]
 ---
 
+<!-- TOC -->
+
+- [JWT là gì](#jwt-là-gì)
+- [JWT vận hành thế nào](#jwt-vận-hành-thế-nào)
+- [Authentication sử dụng kết hợp với Redux](#authentication-sử-dụng-kết-hợp-với-redux)
+
+<!-- /TOC -->
+
 # JWT là gì
 
 JWT là một đoạn string dạng JSON đã được mã hóa và truyền qua header để làm nhiệm vụ authenticate. Bên cạnh secret key, cục JWT còn chứa một số thông tin khác được hash kèm trong JSON.

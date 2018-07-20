@@ -10,6 +10,14 @@ chapter: 0
 tags: ["javascript", "react"]
 ---
 
+<!-- TOC -->
+
+- [Gọi một hàm A hàm A trả về Promise, thì hàm A là dạng hàm blocking](#gọi-một-hàm-a-hàm-a-trả-về-promise-thì-hàm-a-là-dạng-hàm-blocking)
+- [`Promise` là một container để cưu mang giá trị trả về từ một `asynchronously`](#promise-là-một-container-để-cưu-mang-giá-trị-trả-về-từ-một-asynchronously)
+- [`Promise` là một đối tượng tạo ra sự kiện](#promise-là-một-đối-tượng-tạo-ra-sự-kiện)
+
+<!-- /TOC -->
+
 Xéeeeeeeeeet cái hàm sau
 
 ```js

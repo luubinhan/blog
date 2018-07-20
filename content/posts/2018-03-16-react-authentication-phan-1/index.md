@@ -10,6 +10,14 @@ chapter: 0
 tags: ["javascript", "react"]
 ---
 
+<!-- TOC -->
+
+- [Setup](#setup)
+- [Màn hình đăng ký](#màn-hình-đăng-ký)
+- [Sign In](#sign-in)
+
+<!-- /TOC -->
+
 Trong demo chúng ta sẽ sử dụng
 
 - Create React App
@@ -19,7 +27,7 @@ Trong demo chúng ta sẽ sử dụng
 - AWS amplify để tương tác với AWS Services
 
 
-## Setup
+# Setup
 
 Khởi tạo project và các thư viện sẽ sử dụng
 

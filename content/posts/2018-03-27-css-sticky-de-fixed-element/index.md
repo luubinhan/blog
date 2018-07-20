@@ -10,6 +10,13 @@ chapter: 0
 tags: ["css"]
 ---
 
+<!-- TOC -->
+
+- [Bài toán cần giải quyết](#bài-toán-cần-giải-quyết)
+- [Giải pháp](#giải-pháp)
+
+<!-- /TOC -->
+
 ## Bài toán cần giải quyết
 
 Cái Popup Modal chúng ta có cái nút `close`, cái modal chắc chắn là ta phải set `position: fixed` để cố định nó với window, cái nội dung bên trong cái modal có thể scroll được

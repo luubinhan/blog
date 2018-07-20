@@ -10,6 +10,18 @@ chapter: 0
 tags: ["javascript", "react"]
 ---
 
+<!-- TOC -->
+
+- [Redux](#redux)
+  - [Ưu](#ưu)
+  - [Nhược](#nhược)
+- [MobX](#mobx)
+  - [Ưu](#ưu-1)
+  - [Nhược](#nhược-1)
+- [Một vài nhận định từ các đồng môn](#một-vài-nhận-định-từ-các-đồng-môn)
+
+<!-- /TOC -->
+
 Nói một cách ngắn gọn: MobX dành project tầm 1 - 3 người làm, các app nhỏ. Redux dành cho tất cả những yêu cầu cao hơn.
 
 Nếu bạn chỉ quan tâm đến thể thì có thể ko cần đọc tiếp phần sau, còn nếu tò mó thì cứ đọc tiếp.

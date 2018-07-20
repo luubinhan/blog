@@ -14,13 +14,13 @@ tags: ["javascript", "react"]
 <!-- TOC -->
 
 - [Value vs. Reference](#value-vs-reference)
-    - [Primitive](#primitive)
-    - [Object](#object)
-    - [So sảnh `==` và `===`](#so-sảnh--và-)
+- [Primitive](#primitive)
+- [Object](#object)
+- [So sảnh `==` và `===`](#so-sảnh--và-)
 - [Scope](#scope)
-    - [Global Scope](#global-scope)
-    - [Local scope](#local-scope)
-    - [Block Statement](#block-statement)
+  - [Global Scope](#global-scope)
+  - [Local scope](#local-scope)
+- [Block Statement](#block-statement)
 - [Hoisting](#hoisting)
 - [Closures](#closures)
 
@@ -32,9 +32,9 @@ tags: ["javascript", "react"]
 
 3 kiểu dữ liệu được lưu trữ ở dạng **reference**: `Array`, `Function`, `Object`, có thể gọi chung là kiểu *Object*
 
-### Primitive
+# Primitive
 
-Kiểu primitive được lưu giữ cho một biến, khi copy value của biến này cho biến khác, 2 value này hoàn toàn độc lập không có liên hệ gì với nhau
+Kiểu **primitive** được lưu giữ cho một biến, khi copy value của biến này cho biến khác, 2 value này hoàn toàn độc lập không có liên hệ gì với nhau
 
 ```js
 var x = 10;
@@ -47,7 +47,7 @@ console.log(a)
 console.log(x)
 ```
 
-### Object
+# Object
 
 Khi một biến được gán cho một kiểu Object, nó không mang giá trị của object mà chỉ **reference** đến dùng lưu trữ của object đó trong bộ nhớ.
 
@@ -62,7 +62,7 @@ refArr.push(2);
 console.log(arr, refArrr)
 ```
 
-### So sảnh `==` và `===`
+# So sảnh `==` và `===`
 
 Khi thực hiện so sánh `=` trên biến kiểu reference, trả về `true` khi cả 2 biến số cùng trỏ về một dùng nhớ chứ không phải so sảnh giá trị của 2 biến.
 
@@ -80,7 +80,7 @@ console.log(arr1 === arr2); // -> false
 
 # Scope
 
-### Global Scope
+## Global Scope
 
 Biến toàn cục, trong javascript khi khai báo một biến không nằm trong một function nào cả, biến đó sẽ là biến toàn cục
 
@@ -95,7 +95,7 @@ function logName(){
 logName(); // binh an
 ```
 
-### Local scope
+## Local scope
 
 Biến khai báo bên trong function chỉ có hiệu lực trong function đó
 
@@ -115,7 +115,7 @@ function anotherFunction() {
 // Global Scope
 ```
 
-### Block Statement
+# Block Statement
 
 Những câu khai báo như `if`, `switch`, `for`, `while` không giống như function, biến bên trong các câu khai báo này có phạm vi hoạt động trong function chứa nó.
 

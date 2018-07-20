@@ -11,6 +11,14 @@ chapter: 0
 tags: ["javascript", "react"]
 ---
 
+<!-- TOC -->
+
+- [`React.Children.forEach`](#reactchildrenforeach)
+- [`React.Children.count`](#reactchildrencount)
+- [`React.Children.toArray(children)`](#reactchildrentoarraychildren)
+- [`React.Children.only`](#reactchildrenonly)
+
+<!-- /TOC -->
 
 Hãy nghĩ ngay tới cặp đôi `React.Children.map` và `React.cloneElement` khi cần truyền `props` từ component cha xuống các component con mà **KHÔNG cần gọi render component bên trong component cha**
 

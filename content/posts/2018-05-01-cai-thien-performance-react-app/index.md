@@ -10,6 +10,20 @@ chapter: 0
 tags: ["javascript", "react"]
 ---
 
+<!-- TOC -->
+
+- [`shouldComponentUpdate` và PureComponent](#shouldcomponentupdate-và-purecomponent)
+  - [Vấn đề](#vấn-đề)
+  - [Giải pháp](#giải-pháp)
+- [Thay đổi DOM quá nhiều lần](#thay-đổi-dom-quá-nhiều-lần)
+  - [Vấn đề](#vấn-đề-1)
+  - [Giải pháp](#giải-pháp-1)
+- [Callback](#callback)
+  - [Vấn đề](#vấn-đề-2)
+  - [Giải pháp](#giải-pháp-2)
+
+<!-- /TOC -->
+
 Chúng ta sẽ lượt qua các vấn đề sau
 
 1. Cách viết `shouldComponentUpdate` không hợp lý và tại sao `PureComponent` không phải vị cứu tinh

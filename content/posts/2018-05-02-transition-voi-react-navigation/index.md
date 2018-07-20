@@ -10,7 +10,6 @@ chapter: 0
 tags: ["javascript", "react", "react-native"]
 ---
 
-
 Chúng ta sẽ build những màn hình đầu tiên khi mới vào app: on-boarding screen, mấy cái màn hình kiểu chào hỏi khi mới vừa cài app xong, mở app lên, giới thiệu đôi ba nét rồi kêu người ta sign in/sign up.
 
 Chúng ta sẽ setup 2 screen, `Screen1`, `Screen2`, nhét 2 screens này vào trong `StackNavigator` component
