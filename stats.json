@@ -105,8 +105,8 @@
       "path---2018-03-16-react-authentication-phan-1-356621a54bf682664a68.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-69b704e7e3eb4098701c.js",
-      "path---tags-javascript-69b704e7e3eb4098701c.js.map"
+      "path---tags-javascript-770c3e547bd0643bc0b3.js",
+      "path---tags-javascript-770c3e547bd0643bc0b3.js.map"
     ],
     "path---2018-05-22-lam-viec-voi-form-trong-react": [
       "path---2018-05-22-lam-viec-voi-form-trong-react-ae3d205b5e0777a1e444.js",
@@ -137,8 +137,8 @@
       "component---src-layouts-index-jsx-a0c13e24c7de44d1afed.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-0c0c17a5e209747b4dcf.js",
-      "path---tags-react-0c0c17a5e209747b4dcf.js.map"
+      "path---tags-react-f300b0ff9723cb98aa7a.js",
+      "path---tags-react-f300b0ff9723cb98aa7a.js.map"
     ],
     "path---2018-03-19-react-patterns-can-ban": [
       "path---2018-03-19-react-patterns-can-ban-086aab3020617234f9e5.js",
@@ -217,8 +217,8 @@
       "path---tags-html-css-e178458c692d1a46939f.js.map"
     ],
     "path---index": [
-      "path---index-c4171652e7ec697bab50.js",
-      "path---index-c4171652e7ec697bab50.js.map"
+      "path---index-727471e9efd8c020416b.js",
+      "path---index-727471e9efd8c020416b.js.map"
     ],
     "component---src-pages-about-jsx": [
       "component---src-pages-about-jsx-c87621020212300a9c6c.js",
@@ -314,6 +314,10 @@
       "path---2018-03-27-css-sticky-de-fixed-element-0762f5d78cd64debee01.js",
       "path---2018-03-27-css-sticky-de-fixed-element-0762f5d78cd64debee01.js.map"
     ],
+    "path---2018-07-18-gioi-thieu-ve-redux-observer": [
+      "path---2018-07-18-gioi-thieu-ve-redux-observer-43ba194e6b7cface5ee8.js",
+      "path---2018-07-18-gioi-thieu-ve-redux-observer-43ba194e6b7cface5ee8.js.map"
+    ],
     "path---2018-07-20-tao-animation-cho-component-voi-react": [
       "path---2018-07-20-tao-animation-cho-component-voi-react-a6b0a6096b02b4e870be.js",
       "path---2018-07-20-tao-animation-cho-component-voi-react-a6b0a6096b02b4e870be.js.map"
@@ -375,9 +379,9 @@
       "path---2018-03-28-mot-vai-tip-su-dung-chrome-dev-tools-c1c00dae0012865eacfa.js.map"
     ],
     "app": [
-      "app-46e3e263421cde5f7ad9.js",
+      "app-8e4c8780037e102f7336.js",
       "build-js-styles.css",
-      "app-46e3e263421cde5f7ad9.js.map",
+      "app-8e4c8780037e102f7336.js.map",
       "build-js-styles.css.map"
     ],
     "path---2017-10-03-thiet-ke-an-tuong-vs-thiet-ke-thuc-te-bai-hoc-thuc-te": [
