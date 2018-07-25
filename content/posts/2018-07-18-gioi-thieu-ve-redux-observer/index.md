@@ -5,10 +5,22 @@ title: "Giới thiệu RxJS và Redux Observer"
 desc: "Một middleware mạnh hơn redux-thunk, ít phức tạp hơn redux-saga. Chúng ta sẽ điểm qua những khái niệm chính để bắt đầu với middleware này"
 cover: ""
 type: "post"
-lesson: 2
-chapter: 1
+lesson: 0
+chapter: 0
 tags: ["react", "javascript"]
 ---
+
+<!-- TOC -->
+
+- [Những khái niệm chính cần hiểu khi làm việc với RxJS](#những-khái-niệm-chính-cần-hiểu-khi-làm-việc-với-rxjs)
+- [Khởi tạo `Observable`](#khởi-tạo-observable)
+  - [một hoặc nhiều giá trị](#một-hoặc-nhiều-giá-trị)
+  - [Từ một sự kiện](#từ-một-sự-kiện)
+  - [Từ một promise](#từ-một-promise)
+- [mergeMap ( alias là flatMap)](#mergemap--alias-là-flatmap)
+- [Redux-Observable](#redux-observable)
+
+<!-- /TOC -->
 
 ## Những khái niệm chính cần hiểu khi làm việc với RxJS
 

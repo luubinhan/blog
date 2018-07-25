@@ -60,3 +60,4 @@ bundle-stats.json
 
 .idea/*
 .idea
+package-lock.json
