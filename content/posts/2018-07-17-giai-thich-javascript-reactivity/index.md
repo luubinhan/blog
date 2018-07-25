@@ -2,7 +2,7 @@
 slug: "/2018-07-17-giai-thich-javascript-reactivity"
 date: "2018-07-17"
 title: "Giải thích Javascript Reactivity"
-desc: "Rất nhiều thư viện Javascript như Angular, React, Vue sử dụng Reactivity, hiểu được reactivity là gì và cách nó chạy xe giúp nâng cao kỹ năng lập trình"
+desc: "Rất nhiều thư viện Javascript như Angular, React, Vue sử dụng Reactivity, hiểu được reactivity là gì và cách nó chạy sẽ giúp nâng cao kỹ năng lập trình"
 cover: ""
 type: "post"
 lesson: 0
@@ -86,7 +86,7 @@ record(); // lưu lại đâu đó để re-run sau này
 target(); // 
 ```
 
-Hàm record chúng ta sẽ implement nó như sau để đạt được mục đích ban đầu
+Hàm record chúng ta sẽ implement nó như sau
 
 ```js
 let storage = []; // đưa toàn bộ các hàm muốn re-run vào mảng này
@@ -107,7 +107,8 @@ Nếu đã nắm được ý tưởng chính để giải quyết bài toán ban
 ```js
 class Dep {
   constructor() {
-    this.subscribers = []; // thay vì là starage, thiên hạ đã thống nhất lấy cái tên subscribers
+    // thay vì là starage, thiên hạ đã thống nhất lấy cái tên subscribers
+    this.subscribers = []; 
   }
   depend() {
     if (target && !this.subscribers.includes(target)) {
@@ -116,7 +117,8 @@ class Dep {
     }
   }
   notify() {
-    this.subscribers.forEach(sub => sub()); // run tất cả target, tên gọi khác là observer
+    // run tất cả target, tên gọi khác là observer
+    this.subscribers.forEach(sub => sub()); 
   }
 }
 ```
@@ -209,7 +211,7 @@ Chúng ta muốn khi giá trị `price` bị thay đổi, hàm `dep.notify` củ
 40
 ```
 
-Đọc thêm tài liệu về [Object.defineProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) nếu chưa biết, một ví dụ đơn giản của nó
+Đọc thêm tài liệu về [Object.defineProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) nếu chưa biết. Áp dụng nó trong ví dụ này
 
 ```js
 let data = {price: 5, quantity: 2}
@@ -233,7 +235,7 @@ total = data.price * data.quantity;
 data.price = 20;
 ```
  
-Với cách này, chúng ta có cách để notify khi giá trị price thay đổi hoặc được `get`. Với idea là như thế chúng ta tổng quát quá lên cho nhiều biến
+Với cách này, chúng ta có thể chạy kèm một hàm nào đó khi giá trị `price` được **get** hoặc **set**. Với idea là như thế chúng ta tổng quát quá lên cho nhiều biến
 
 ```js
 let data = {price: 5, quantity: 2}
@@ -264,8 +266,8 @@ total = data.price * data.quantity
 
 Khi một đoạn code như vậy được chạy, nó sẽ `get` giá trị của `price`, chúng ta muốn thẳng `price` khi bị thay đổi hoặc gọi, nó sẽ re-run một function
 
-- **Get** nhớ dùm cái function này, bọn tao sẽ nhờ mày chạy lại
-- **Set** chạy cái function mày đã giữ hộ ấy, thay đổi giá trị luôn nhé
+- Ở **Get**: nhớ dùm cái function này, bọn tao sẽ nhờ mày chạy lại
+- Ở **Set**: chạy cái function mày đã giữ hộ ấy, thay đổi giá trị luôn nhé
 
 Và đây là toàn bộ code
 
@@ -273,10 +275,11 @@ Và đây là toàn bộ code
 let data = {price: 5, quantity: 2};
 let target = null;
 
-// Dep
+// Dep không thay đổi gì so với ở trên
 class Dep {
   constructor() {
-    this.subscribers = []; // thay vì là starage, thiên hạ đã thống nhất lấy cái tên subscribers
+    // thay vì là starage, thiên hạ đã thống nhất lấy cái tên subscribers
+    this.subscribers = []; 
   }
   depend() {
     if (target && !this.subscribers.includes(target)) {
@@ -285,7 +288,8 @@ class Dep {
     }
   }
   notify() {
-    this.subscribers.forEach(sub => sub()); // run tất cả target, tên gọi khác là observer
+    // run tất cả target, tên gọi khác là observer
+    this.subscribers.forEach(sub => sub()); 
   }
 }
 
