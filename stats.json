@@ -213,12 +213,12 @@
       "path---2017-10-18-import-va-export-trong-javascript-5ab4f03d4cabcef7d122.js.map"
     ],
     "path---tags-html-css": [
-      "path---tags-html-css-e178458c692d1a46939f.js",
-      "path---tags-html-css-e178458c692d1a46939f.js.map"
+      "path---tags-html-css-86eaaff09b23efac8eaf.js",
+      "path---tags-html-css-86eaaff09b23efac8eaf.js.map"
     ],
     "path---index": [
-      "path---index-c649712a1ada8ca7866d.js",
-      "path---index-c649712a1ada8ca7866d.js.map"
+      "path---index-eac786fbeda538b4e87b.js",
+      "path---index-eac786fbeda538b4e87b.js.map"
     ],
     "component---src-pages-about-jsx": [
       "component---src-pages-about-jsx-c87621020212300a9c6c.js",
@@ -342,6 +342,10 @@
       "path---tags-web-60fc723915ce3daf1d1c.js",
       "path---tags-web-60fc723915ce3daf1d1c.js.map"
     ],
+    "path---2018-07-25-tao-animate-voi-flip-technique": [
+      "path---2018-07-25-tao-animate-voi-flip-technique-465ab91f34a8fb74e079.js",
+      "path---2018-07-25-tao-animate-voi-flip-technique-465ab91f34a8fb74e079.js.map"
+    ],
     "path---tags-css": [
       "path---tags-css-460156869d804579bb09.js",
       "path---tags-css-460156869d804579bb09.js.map"
@@ -383,9 +387,9 @@
       "path---2018-03-28-mot-vai-tip-su-dung-chrome-dev-tools-c1c00dae0012865eacfa.js.map"
     ],
     "app": [
-      "app-7508a87dfd5ce7e28e14.js",
+      "app-a0394395b8c235d83c19.js",
       "build-js-styles.css",
-      "app-7508a87dfd5ce7e28e14.js.map",
+      "app-a0394395b8c235d83c19.js.map",
       "build-js-styles.css.map"
     ],
     "path---2017-10-03-thiet-ke-an-tuong-vs-thiet-ke-thuc-te-bai-hoc-thuc-te": [
