@@ -15,7 +15,7 @@ module.exports = {
   userName: "luckyluu", // Username to display in the author segment.
   userTwitter: "luubinhan", // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: "Hồ Chí Minh, Việt Nam", // User location to display in the author segment.
-  userAvatar: "https://media.licdn.com/dms/image/C5103AQGApBy_aLEcjA/profile-displayphoto-shrink_100_100/0?e=1536796800&v=beta&t=ideXITyUnysPa6U5Ab97QFH20SpupsmX0Fku-fpNCLo", // User avatar to display in the author segment.
+  userAvatar: "https://media.licdn.com/dms/image/C4E03AQFQg5eGuqMWkA/profile-displayphoto-shrink_200_200/0?e=1538006400&v=beta&t=j5YqgXZgxARNV9pIUEoBEpV_ozI8WfqSMnLn62O_658", // User avatar to display in the author segment.
   userDescription: "Front-End Developer live in Ho Chi Minh City, a photography geek, and a music lover", // User description to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   userLinks: [

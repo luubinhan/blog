@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 2
 chapter: 1
-tags: ["react", "javascript", "html-css"]
+tags: ["react", "javascript", "css"]
 ---
 
 

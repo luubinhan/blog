@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import {random} from 'lodash'
 
 import Bio from '../components/Bio'
+import Link from '../components/Link'
 import Disqus from '../components/Disqus/Disqus'
 import PostTags from '../components/PostTags/PostTags'
 import SocialLinks from '../components/SocialLinks/SocialLinks'
@@ -18,9 +19,9 @@ export default class PostTemplate extends React.Component {
     }
   }
   render() {
-    const { slug} = this.props.pathContext
+    const { slug, next, prev } = this.props.pathContext;
     const postNode = this.props.data.markdownRemark
-    const post = postNode.frontmatter
+    const post = postNode.frontmatter;
     if (!post.id) {
       post.id = slug
     }
@@ -31,6 +32,9 @@ export default class PostTemplate extends React.Component {
       <div className="master">
         <Helmet>
           <title>{`${post.title} | ${config.siteTitle}`}</title>
+          <meta name="description" content={`Blog - ${post.title}`} />
+          <meta name="keywords" content='frontend,developer,javascript,wordpress,react,hochiminh,web-developer' />
+          <script src="https://luubinhan.github.io/blog/facebookcomment.js" defer="true" />
         </Helmet>
         <div className="inner">
           <SEO postPath={slug} postNode={postNode} postSEO />
@@ -49,12 +53,43 @@ export default class PostTemplate extends React.Component {
                 
               </article>
               <PostTags list={post.tags || []} />
+              
               <Bio name={config.siteTitle} desc={config.siteTitleAlt} href="about" img={config.userAvatar} />
+              <div
+                className="fb-comments"
+                data-href={`${config.siteUrl}/blog${slug}`}
+                data-width="720"
+                data-numposts="10"
+              />
               <div className="post-meta">
                 <SocialLinks postPath={slug} postNode={postNode} />
               </div>
             </div>
             <Disqus postNode={postNode} />
+            <div className="section section-below-post">
+              <div className="inner">
+                <div id="disqus_thread" />
+                <div className="read-next">
+                  {next &&
+                  <Link className="read-next-story" to={next.fields.slug}>
+                    <section className="post">
+                      <span className="read-this-next">Đọc Tiếp</span>
+                      <h2>{next.frontmatter.title}</h2>
+                    </section>
+                  </Link>
+                  }
+                  
+                  {prev &&
+                  <Link className="read-next-story prev" to={prev.fields.slug}>
+                    <section className="post">
+                      <span className="you-might-enjoy">Đọc Tiếp</span>
+                      <h2>{prev.frontmatter.title}</h2>
+                    </section>
+                  </Link>
+                  }                        
+                </div>                
+              </div>
+            </div>
           </div>
         </div>
         <div className="aside" style={{backgroundImage: `url(${this.state.sideBg})`}}>

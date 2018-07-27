@@ -14,13 +14,12 @@ import './SocialLinks.css'
 
 class SocialLinks extends Component {
   render() {
-    const { postNode, postPath, mobile } = this.props
-    const post = postNode.frontmatter
-    const url = config.siteUrl + config.pathPrefix + postPath
+    const { postNode, postPath, mobile } = this.props;
+    const post = postNode.frontmatter;
+    const url = config.siteUrl + config.pathPrefix + postPath;
 
-    const iconSize = mobile ? 36 : 48
-    const filter = count => (count > 0 ? count : '')
-
+    const iconSize = mobile ? 36 : 48;
+    const filter = count => (count > 0 ? count : '');
     return (
       <div className="social-links">
         <TwitterShareButton url={url} title={post.title}>

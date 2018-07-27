@@ -25,14 +25,15 @@ class PostListing extends React.Component {
       <div className="posts-list">
         {
         postList.map(post => (
-          <ContentPost
-            key={post.slug} 
-            title={post.title} 
-            desc={post.desc} 
-            date={post.date} 
-            href={post.path}
-            tags={post.tags}
-          />
+          <div key={post.slug}>
+            <ContentPost
+              title={post.title} 
+              desc={post.desc} 
+              date={post.date} 
+              href={post.path}
+              tags={post.tags}
+            />
+          </div>
         ))}
       </div>
     )
