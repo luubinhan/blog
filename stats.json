@@ -217,8 +217,8 @@
       "path---index-283f754b20ef1b1eb614.js.map"
     ],
     "component---src-pages-about-jsx": [
-      "component---src-pages-about-jsx-c87621020212300a9c6c.js",
-      "component---src-pages-about-jsx-c87621020212300a9c6c.js.map"
+      "component---src-pages-about-jsx-ffa90e6bff028140ee05.js",
+      "component---src-pages-about-jsx-ffa90e6bff028140ee05.js.map"
     ],
     "path---2018-07-17-giai-thich-javascript-reactivity": [
       "path---2018-07-17-giai-thich-javascript-reactivity-4d890e3cceb94f5ec8cf.js",
@@ -257,9 +257,9 @@
       "path---tags-react-native-1e0d5175ad7b05e48d94.js.map"
     ],
     "commons": [
-      "commons-a3524bc38481998a51cd.js",
+      "commons-9eb51b22cb30defcb0c9.js",
       "build-js-styles.css",
-      "commons-a3524bc38481998a51cd.js.map",
+      "commons-9eb51b22cb30defcb0c9.js.map",
       "build-js-styles.css.map"
     ],
     "path---2018-06-28-thay-component-will-receive-props": [
