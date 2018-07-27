@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import {IoSocialTwitter, IoSocialLinkedin, IoSocialGithub} from 'react-icons/lib/io';
 import config from '../../data/SiteConfig'
 import {bgSidebar} from '../../data'
 
@@ -15,7 +16,19 @@ class AboutPage extends React.Component {
 		this.setState({
 			selectedTab: selectedKey
 		})	  
-	}
+  }
+  renderIcon = (name) => {
+    switch (name) {
+      case 'github':
+        return <IoSocialGithub />
+      case 'linkedin':
+        return <IoSocialLinkedin />
+      case 'twitter':
+        return <IoSocialTwitter />;
+      default:
+        return null;
+    }
+  }
   render() {
     return (
       <div className="master">
@@ -40,7 +53,8 @@ class AboutPage extends React.Component {
                               <td key={item.label}>
                                 <div className="pr-30">
                                   <a href={item.url}>
-                                    <i className={item.iconClassName} /><span className="pl-10 ">{item.label}</span>
+                                    {this.renderIcon(item.iconClassName)}
+                                    <span className="pl-10 ">{item.label}</span>
                                   </a>
                                 </div>
                               </td>

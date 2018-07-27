@@ -14,7 +14,7 @@ tags: ["css"]
 
 Đã bao lần bạn cần làm animate cho các property `height`, `width`, `top`, `left`? Bạn có để ý là những animate như vậy thường sẽ hơi khực khực. Lý do? những property này trigger **layout change**, trình duyệt sẽ xem xét các element khác có cần thay đổi gì không, việc này sẽ tiêu tốn công sức của trình duyệt khá nhiều trong đa số các trường hợp. Trong bài viết [Pixel are Expensive](https://aerotwist.com/blog/pixels-are-expensive/) tác giả Paul Lewis sẽ nói rõ hơn.
 
-Nói một cách khác, chúng ta muỗn việc tính toán này hạn chế ở mức tối đa, nhanh nhất có thể. Mục tiêu là chúng ta chỉ animate trên `transform` và `opacity`. FLIP giải thích làm sao để chúng ta có thể đạt được layout change với chỉ property `transform`
+Nói một cách khác, chúng ta muốn việc tính toán này hạn chế ở mức tối đa, nhanh nhất có thể. Mục tiêu là chúng ta chỉ animate trên `transform` và `opacity`. FLIP giải thích làm sao để chúng ta có thể đạt được layout change với chỉ property `transform`
 
 # FLIP là gì
 

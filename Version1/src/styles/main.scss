@@ -937,7 +937,7 @@ table.normal tr td {
   font-size: $font-size-small;
 }
 @media (max-width: $breakpoint-xs) {
-  $san-serif: "Maitree", arial, sans-serif;
+  $san-serif: "Lora", arial, sans-serif;
   .read-next {
     flex-direction: column;
     .link {

@@ -1,6 +1,6 @@
 // Variables
 @import '_variables';
-@import url('https://fonts.googleapis.com/css?family=Maitree|Roboto+Mono&subset=vietnamese');
+@import url('https://fonts.googleapis.com/css?family=Lora&subset=vietnamese');
 @font-face {
     font-family: 'avo';
     src: url('fonts/Vf-Avo_n.eot');
@@ -967,7 +967,7 @@ table.normal tr td {
   font-size: $font-size-small;
 }
 @media (max-width: $breakpoint-xs) {
-  $san-serif: "Maitree", arial, sans-serif;
+  $san-serif: "Lora", arial, sans-serif;
   .read-next {
     flex-direction: column;
     .link {

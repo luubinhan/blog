@@ -22,17 +22,17 @@ module.exports = {
     {
       label: "GitHub",
       url: "https://github.com/luubinhan",
-      iconClassName: "ion ion-logo-github"
+      iconClassName: "github"
     },
     {
       label: "LinkedIn",
       url: "https://www.linkedin.com/in/l%C6%B0u-b%C3%ACnh-an-03556553/",
-      iconClassName: "ion ion-logo-linkedin"
+      iconClassName: "linkedin"
     },
     {
       label: "Twitter",
       url: "https://twitter.com/ericwindmill",
-      iconClassName: "ion ion-logo-twitter"
+      iconClassName: "twitter"
     },
   ],
   copyright: "Copyright © 2018. luckyluu", // Copyright string for the footer of the website and RSS feed.
