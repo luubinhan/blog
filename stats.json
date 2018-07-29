@@ -213,8 +213,8 @@
       "path---2017-10-18-import-va-export-trong-javascript-5f13cfaa8cafdf8a8988.js.map"
     ],
     "path---index": [
-      "path---index-edc3ffd4551efa8ebc53.js",
-      "path---index-edc3ffd4551efa8ebc53.js.map"
+      "path---index-eeefe9fa4a621793981a.js",
+      "path---index-eeefe9fa4a621793981a.js.map"
     ],
     "component---src-pages-about-jsx": [
       "component---src-pages-about-jsx-ffa90e6bff028140ee05.js",
@@ -334,6 +334,10 @@
       "path---2018-01-01-mot-so-resource-de-hoc-javascript-78bdd8e87da1fbca34e1.js",
       "path---2018-01-01-mot-so-resource-de-hoc-javascript-78bdd8e87da1fbca34e1.js.map"
     ],
+    "path---2018-07-30-tam-quan-trong-cua-thuoc-tinh-sizes-trong-the-img": [
+      "path---2018-07-30-tam-quan-trong-cua-thuoc-tinh-sizes-trong-the-img-7b3608f93243739bd0d1.js",
+      "path---2018-07-30-tam-quan-trong-cua-thuoc-tinh-sizes-trong-the-img-7b3608f93243739bd0d1.js.map"
+    ],
     "path---tags-web": [
       "path---tags-web-60fc723915ce3daf1d1c.js",
       "path---tags-web-60fc723915ce3daf1d1c.js.map"
@@ -343,8 +347,8 @@
       "path---2018-07-25-tao-animate-voi-flip-technique-d00ea5acf33daf9871ce.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-dc9d46c75c2064024a44.js",
-      "path---tags-css-dc9d46c75c2064024a44.js.map"
+      "path---tags-css-04c3e6d93b0035b74f10.js",
+      "path---tags-css-04c3e6d93b0035b74f10.js.map"
     ],
     "path---2018-03-14-sync-addin-vscode": [
       "path---2018-03-14-sync-addin-vscode-525aa6e2e8c537e64fc5.js",
@@ -387,9 +391,9 @@
       "path---2018-03-28-mot-vai-tip-su-dung-chrome-dev-tools-4110ecd1ea657a116c1b.js.map"
     ],
     "app": [
-      "app-fc8a6c602147d5fb447a.js",
+      "app-7fb71dd2f1c3f8341a50.js",
       "build-js-styles.css",
-      "app-fc8a6c602147d5fb447a.js.map",
+      "app-7fb71dd2f1c3f8341a50.js.map",
       "build-js-styles.css.map"
     ],
     "path---2017-10-03-thiet-ke-an-tuong-vs-thiet-ke-thuc-te-bai-hoc-thuc-te": [
