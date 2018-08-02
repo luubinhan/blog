@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Link from "gatsby-link"
 import {camelCase, isEmpty} from 'lodash'
-import {IoSocialNodejs, IoSocialJavascript, IoSocialWordpress, IoSocialHtml5, IoAndroidCompass, IoAndroidSend} from 'react-icons/lib/io'
+import {IoSocialNodejs, IoSocialJavascript, IoSocialWordpress, IoSocialHtml5, IoAndroidCompass, IoAndroidSend, IoAndroidPhonePortrait} from 'react-icons/lib/io'
 
 import config from '../../data/SiteConfig'
 import {PrimaryNav} from '../../data'
@@ -92,6 +92,8 @@ export default class MainLayout extends React.Component {
         return <IoSocialHtml5 />
       case 'compass':
         return <IoAndroidCompass />
+      case 'native':
+        return <IoAndroidPhonePortrait />
       case 'send':
         return <IoAndroidSend />
       default:

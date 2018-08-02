@@ -29,6 +29,12 @@ export const PrimaryNav = [
     href: '/tags/react',
     isActive: false,
     icon: "nodejs"
+	},
+	{
+    name: 'React native',
+    href: '/tags/react-native',
+    isActive: false,
+    icon: "native"
   },
 	{
 		name: 'Wordpress',
