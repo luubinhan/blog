@@ -34,7 +34,7 @@ export const PrimaryNav = [
     name: 'React native',
     href: '/tags/react-native',
     isActive: false,
-    icon: "native"
+    icon: "react-native"
   },
 	{
 		name: 'Wordpress',
