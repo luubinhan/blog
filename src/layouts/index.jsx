@@ -92,7 +92,7 @@ export default class MainLayout extends React.Component {
         return <IoSocialHtml5 />
       case 'compass':
         return <IoAndroidCompass />
-      case 'native':
+      case 'react-native':
         return <IoAndroidPhonePortrait />
       case 'send':
         return <IoAndroidSend />

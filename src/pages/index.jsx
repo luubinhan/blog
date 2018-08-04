@@ -41,6 +41,7 @@ export const pageQuery = graphql`
     allMarkdown: allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { type: { eq: "post" } } }
     ) {
       edges {
         node {
@@ -53,6 +54,7 @@ export const pageQuery = graphql`
             title
             tags
             cover
+            type
             date
             desc
           }
