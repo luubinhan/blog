@@ -44,6 +44,10 @@
       "path---2018-03-06-redux-van-hanh-nhu-the-nao-kem-vi-du-8b4e5e24e6c333461979.js",
       "path---2018-03-06-redux-van-hanh-nhu-the-nao-kem-vi-du-8b4e5e24e6c333461979.js.map"
     ],
+    "path---2018-08-01-pointer-events-nhung-dieu-ban-co-the-lam": [
+      "path---2018-08-01-pointer-events-nhung-dieu-ban-co-the-lam-9a40b2eabff1b145db57.js",
+      "path---2018-08-01-pointer-events-nhung-dieu-ban-co-the-lam-9a40b2eabff1b145db57.js.map"
+    ],
     "path---2017-03-08-thoi-dai-cua-pixel-perfect-da-het-phan-3": [
       "path---2017-03-08-thoi-dai-cua-pixel-perfect-da-het-phan-3-ecf6a7e20ef11071e27e.js",
       "path---2017-03-08-thoi-dai-cua-pixel-perfect-da-het-phan-3-ecf6a7e20ef11071e27e.js.map"
@@ -221,8 +225,8 @@
       "path---2017-10-18-import-va-export-trong-javascript-8fe2c002ba0fb9f27ff6.js.map"
     ],
     "path---index": [
-      "path---index-3107f09c87a625f82da5.js",
-      "path---index-3107f09c87a625f82da5.js.map"
+      "path---index-fa3ffdbe8cf99f0e3430.js",
+      "path---index-fa3ffdbe8cf99f0e3430.js.map"
     ],
     "component---src-pages-about-jsx": [
       "component---src-pages-about-jsx-ffa90e6bff028140ee05.js",
@@ -355,8 +359,8 @@
       "path---2018-07-25-tao-animate-voi-flip-technique-3fd835bb64af518943df.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-cb967ed0da9aa8092d48.js",
-      "path---tags-css-cb967ed0da9aa8092d48.js.map"
+      "path---tags-css-05f4debfb51b62e85935.js",
+      "path---tags-css-05f4debfb51b62e85935.js.map"
     ],
     "path---2018-03-14-sync-addin-vscode": [
       "path---2018-03-14-sync-addin-vscode-d5e9ec5e9582e14e4d37.js",
@@ -399,9 +403,9 @@
       "path---2018-03-28-mot-vai-tip-su-dung-chrome-dev-tools-c91a80d7d45ae20ab6ec.js.map"
     ],
     "app": [
-      "app-06a6d52b057b364bb8d5.js",
+      "app-04a6b0be0a65c3552dfe.js",
       "build-js-styles.css",
-      "app-06a6d52b057b364bb8d5.js.map",
+      "app-04a6b0be0a65c3552dfe.js.map",
       "build-js-styles.css.map"
     ],
     "path---2017-10-03-thiet-ke-an-tuong-vs-thiet-ke-thuc-te-bai-hoc-thuc-te": [
