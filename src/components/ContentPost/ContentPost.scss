@@ -18,12 +18,6 @@ $innerGlutter: 40px;
       text-decoration: none;
       color: $primary-color;
     }
-
-  }
-  .the-post-thumbnail {
-    float: left;  
-    margin-right: $innerGlutter;
-    text-align: center;
   }
   .the-post-thumbnail + .the-post-content {
     overflow: hidden;
@@ -38,18 +32,12 @@ $innerGlutter: 40px;
     margin-bottom: 15px;
     padding-bottom: 15px;
     padding-top: 0;
-
-    .the-post-thumbnail {
-        width: 100px;
-        margin-right: 15px;      
-    }    
     .post-excert {
       display: none;
     }
     .heading-post {
       font-size: 18px;
     }
-  }
-    
+  } 
 }
 /* content-post.php -------------------------------------------- */

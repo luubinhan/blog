@@ -47,6 +47,11 @@ export default class PostTemplate extends React.Component {
                 <div className="post-excert">
                   {post.desc}
                 </div>
+                {post.cover &&
+                  <figure className="the-post-thumbnail" aria-label="media" role="group" itemProp="associatedMedia" itemID={post.cover} itemType="http://schema.org/ImageObject">
+                    <img src={post.cover} alt={post.title} itemProp="thumbnailUrl" />
+                  </figure> 
+                  }
                 <div className="blog-post">
                   <div className="post-content" dangerouslySetInnerHTML={{ __html: postNode.html }} />
                 </div>

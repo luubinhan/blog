@@ -32,6 +32,7 @@ class PostListing extends React.Component {
               date={post.date} 
               href={post.path}
               tags={post.tags}
+              img={post.cover}
             />
           </div>
         ))}

@@ -56,7 +56,7 @@ class ContentPost extends Component{
 					<figure className="the-post-thumbnail" aria-label="media" role="group" itemProp="associatedMedia" itemID={img} itemType="http://schema.org/ImageObject">
 						<GatsbyLink to={href}><img src={img} alt={title} itemProp="thumbnailUrl" /></GatsbyLink>
 					</figure> 
-		          	}
+		      }
 	          		<section className="the-post-content">
 			          		          
 
