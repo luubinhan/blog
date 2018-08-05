@@ -319,6 +319,9 @@ pre {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
+pre code {
+  font-size: 17px;
+}
 code {
   padding: 2px 4px;
   color: $red;
