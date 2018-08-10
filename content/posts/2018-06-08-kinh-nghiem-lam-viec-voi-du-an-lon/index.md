@@ -261,7 +261,7 @@ export default ({ negative = false, name, surname }) => (
 - `react-helmet` để thay đổi tag `<head>` cho từng component
 - `react-table` và `react-virtualized` cho hiển thị dữ liệu kiểu table
 - `react-redux` `redux` `redux-saga` và `redux-logger` để quản lý state tập trung
-- `react=router=dom` nếu làm web, và `react-navigation` nếu là react native
+- `react-router-dom` nếu làm web, và `react-navigation` nếu là react native
 
 Cảm ơn bạn đã đọc hết bài viết
 
