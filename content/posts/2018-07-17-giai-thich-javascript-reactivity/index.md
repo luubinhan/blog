@@ -1,5 +1,5 @@
 ---
-slug: "/2018-07-17-giai-thich-javascript-reactivity"
+slug: "/2018-07-17-huong-dan-giai-thich-javascript-reactivity"
 date: "2018-07-17"
 title: "Giải thích Javascript Reactivity"
 desc: "Rất nhiều thư viện Javascript như Angular, React, Vue sử dụng Reactivity, hiểu được reactivity là gì và cách nó chạy sẽ giúp nâng cao kỹ năng lập trình"

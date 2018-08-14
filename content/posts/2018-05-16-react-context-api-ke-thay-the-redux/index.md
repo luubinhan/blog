@@ -1,5 +1,5 @@
 ---
-slug: "/2018-05-16-react-context-api-ke-thay-the-redux"
+slug: "/2018-05-16-huong-dan-react-context-api-ke-thay-the-redux"
 date: "2018-05-16"
 title: "React Context API - có phải sẽ thay thế Redux"
 desc: "Thử sử dụng React Context API để thay thể Redux cho State Management"

@@ -1,5 +1,5 @@
 ---
-slug: "/2018-03-27-css-sticky-de-fixed-element"
+slug: "/2018-03-27-huong-dan-css-sticky-de-fixed-element"
 date: "2018-03-27"
 title: "Trick Sử dụng Sticky trong CSS"
 desc: "Một cái trick hay để giải quyết vấn đề thường mắt phải"

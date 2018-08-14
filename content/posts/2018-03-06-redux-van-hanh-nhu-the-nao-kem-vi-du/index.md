@@ -1,5 +1,5 @@
 ---
-slug: "/2018-03-06-redux-van-hanh-nhu-the-nao-kem-vi-du"
+slug: "/2018-03-06-huong-dan-redux-van-hanh-nhu-the-nao-kem-vi-du"
 date: "2018-03-06"
 title: "Redux vận hành như thế nào"
 desc: "Actions, reducers, action creators, middleware, pure functions, immutability,... những ngoại ngữ làm rối bất kỳ ai nếu chưa biết redux"

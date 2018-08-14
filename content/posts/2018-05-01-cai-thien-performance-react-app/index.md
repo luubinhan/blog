@@ -1,5 +1,5 @@
 ---
-slug: "/2018-05-01-cai-thien-performance-react-app"
+slug: "/2018-05-01-huong-dan-cai-thien-performance-react-app"
 date: "2018-05-01"
 title: "Cải thiện performance của React App"
 desc: "Series này mình sẽ đề cập các cách làm để cải thiện performance của React App"

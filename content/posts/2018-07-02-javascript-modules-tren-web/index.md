@@ -1,5 +1,5 @@
 ---
-slug: "/2018-07-02-javascript-modules-tren-web"
+slug: "/2018-07-02-huong-dan-javascript-modules-tren-web"
 date: "2018-07-02"
 title: "Sử dụng javascript modules trên web"
 desc: "Giới thiệu module trong ECMAcript"

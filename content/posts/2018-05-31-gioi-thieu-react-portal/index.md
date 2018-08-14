@@ -1,5 +1,5 @@
 ---
-slug: "/2018-05-31-gioi-thieu-react-portal"
+slug: "/2018-05-31-huong-dan-gioi-thieu-react-portal"
 date: "2018-05-31"
 title: "Giới thiệu React Portal"
 desc: "Tìm hiểu về Portals, bản hổ trợ chính thức của react-dom"

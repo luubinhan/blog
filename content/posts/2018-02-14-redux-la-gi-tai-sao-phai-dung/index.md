@@ -1,5 +1,5 @@
 ---
-slug: "/2018-02-14-redux-la-gi-tai-sao-phai-dung"
+slug: "/2018-02-14-huong-dan-redux-la-gi-tai-sao-phai-dung"
 date: "2018-02-14"
 title: "Redux là gì và tại sao phải dùng?"
 desc: "Nếu đã đụng tới React thì sớm muộn gì bạn cũng sẽ nghe đến Redux"

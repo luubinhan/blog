@@ -1,5 +1,5 @@
 ---
-slug: "/2018-08-06-bat-dau-voi-firebase"
+slug: "/2018-08-06-huong-dan-bat-dau-voi-firebase"
 date: "2018-08-06"
 title: "Những tính năng cở bản của Firebase"
 desc: "Năm 2016 google giới thiệu Firebase. Khi bắt đầu phát triển ứng dụng điện thoại, bạn sẽ cần đến server và một developer để làm việc với server"

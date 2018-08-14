@@ -1,5 +1,5 @@
 ---
-slug: "/2018-03-14-react-authentication-voi-jwt-redux"
+slug: "/2018-03-14-huong-dan-react-authentication-voi-jwt-redux"
 date: "2018-03-14"
 title: "Authentication với JWT"
 desc: "Giới thiệu JSON Web Tokens (JWT) và cách hiện thực"

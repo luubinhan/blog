@@ -1,5 +1,5 @@
 ---
-slug: "/2018-07-09-optimize-toc-do-website-voi-chrome-devtools"
+slug: "/2018-07-09-huong-dan-optimize-toc-do-website-voi-chrome-devtools"
 date: "2018-07-09"
 title: "Nâng cao tốc độ website với Chrome DevTools"
 desc: "Hướng dẫn sử dụng Chrome DevTools để phân tích và tối ưu hóa tốc độ website"

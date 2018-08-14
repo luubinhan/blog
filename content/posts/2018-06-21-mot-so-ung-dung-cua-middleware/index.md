@@ -1,5 +1,5 @@
 ---
-slug: "/2018-06-21-mot-so-ung-dung-cua-middleware"
+slug: "/2018-06-21-huong-dan-mot-so-ung-dung-cua-middleware"
 date: "2018-06-21"
 title: "Một số ứng dụng của middleware"
 desc: "Tiếp theo bài trước về middleware, ứng dụng với các trường hợp thực tế"

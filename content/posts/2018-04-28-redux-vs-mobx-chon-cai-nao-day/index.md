@@ -1,5 +1,5 @@
 ---
-slug: "/2018-04-28-redux-vs-mobx-chon-cai-nao-day"
+slug: "/2018-04-28-huong-dan-redux-vs-mobx-chon-cai-nao-day"
 date: "2018-04-28"
 title: "Redux vs Mobx chọn cái nào đây"
 desc: "Khi nhắc tới thư viện để quản lý state cho một app js, thì chúng sẽ hay rất phân vân giữa 2 lựa chọn Redux hay Mobx"

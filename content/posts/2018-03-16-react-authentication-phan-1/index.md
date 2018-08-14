@@ -1,5 +1,5 @@
 ---
-slug: "/2018-03-16-react-authentication-phan-1"
+slug: "/2018-03-16-huong-dan-react-authentication-phan-1"
 date: "2018-03-16"
 title: "React Authentication với Amazon Cognito - Phần 1"
 desc: "Implement authentication 2 factor sử dụng React, React Router, Amazone Cognito"

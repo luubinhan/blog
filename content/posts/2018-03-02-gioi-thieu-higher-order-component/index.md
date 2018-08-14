@@ -1,5 +1,5 @@
 ---
-slug: "/2018-03-02-gioi-thieu-higher-order-component-trong-react"
+slug: "/2018-03-02-huong-dan-gioi-thieu-higher-order-component-trong-react"
 date: "2018-03-02"
 title: "Giới thiệu Higher-Order Components trong React"
 desc: "Higher-Order Component(HOCs) là kỹ thuật khá vui trong react để refactor các component tương tự nhau về mặt logic."

@@ -1,5 +1,5 @@
 ---
-slug: "/2018-03-17-react-native-authentication-voi-amazone-cognito-phan-2"
+slug: "/2018-03-17-huong-dan-react-native-authentication-voi-amazone-cognito-phan-2"
 date: "2018-03-17"
 title: "React Authentication với Amazon Cognito - Phần 2"
 desc: "Implement authentication 2 factor sử dụng React, React Router, Amazone Cognito, phần 2 tiếp tục với Routing và TOTP để có thể làm Google Authenticator."

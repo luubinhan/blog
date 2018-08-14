@@ -1,5 +1,5 @@
 ---
-slug: "/2018-05-07-asyn-await-giai-thich-vi-du"
+slug: "/2018-05-07-huong-dan-async-await-giai-thich-vi-du"
 date: "2018-05-07"
 title: "Async Await giải thích và ví dụ"
 desc: "Hướng dẫn các bạn nắm vững asyn await trong javascript, kèm ví dụ cụ thể"

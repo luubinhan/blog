@@ -1,5 +1,5 @@
 ---
-slug: "/2018-07-29-javascript-date-lam-viet-voi-javascript-date"
+slug: "/2018-07-29-huong-dan-javascript-date-lam-viet-voi-javascript-date"
 date: "2018-07-29"
 title: "Làm việc với date trong javascript"
 desc: "Làm việc với kiểu ngày tháng trong javascript không phức tạp lắm, nhưng rất thường xài"

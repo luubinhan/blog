@@ -1,5 +1,5 @@
 ---
-slug: "/2018-06-24-lam-viec-voi-console-trong-javascript"
+slug: "/2018-06-24-huong-dan-lam-viec-voi-console-trong-javascript"
 date: "2018-06-24"
 title: "Làm việc với console trong javascript"
 desc: "Một web developer chân chính là người biết sử dụng console.log :D. Tuy nhiên cũng nên biết rằng console nó còn rất nhiều phương thức khác nữa"

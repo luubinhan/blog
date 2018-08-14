@@ -1,5 +1,5 @@
 ---
-slug: "/2018-06-08-kinh-nghiem-lam-viec-voi-du-an-lon"
+slug: "/2018-06-08-huong-dan-kinh-nghiem-lam-viec-voi-du-an-lon"
 date: "2018-06-08"
 title: "Kinh nghiệm tổ chức file và thư mục React project"
 desc: "Có bao giờ cảm thấy lạc lối trong đóng code ngày càng lúc bự ra, một vài tip từ người có kinh nghiệm"

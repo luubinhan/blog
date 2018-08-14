@@ -1,8 +1,8 @@
 ---
-slug: "/2018-08-12-con-duong-tro-thanh-developer-2018"
+slug: "/2018-08-12-huong-dan-con-duong-tro-thanh-developer-2018"
 date: "2018-08-12"
 title: "Con đường để trở thành React developer ( phiên bản 2018)"
-desc: "Nếu đã chọn FrontEnd làm nghiệp, React làm món ăn mỗi sáng, mà chưa biết cần học cái gì, hy vọng bài viết này sẽ có ích"
+desc: "Hướng dẫn, soi sáng cho các bạn muốn trở thành FrontEnd Developer. Nếu đã chọn FrontEnd làm nghiệp, React làm món ăn mỗi sáng, mà chưa biết cần học cái gì, hy vọng bài viết này sẽ có ích cho các bạn còn đang ko biết học cái gì"
 cover: ""
 type: "post"
 lesson: 0

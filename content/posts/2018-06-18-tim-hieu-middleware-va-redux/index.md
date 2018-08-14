@@ -1,5 +1,5 @@
 ---
-slug: "/2018-06-18-tim-hieu-middleware-va-redux"
+slug: "/2018-06-18-huong-dan-tim-hieu-middleware-va-redux"
 date: "2018-06-18"
 title: "Sử dụng Middleware với Redux dành cho người mới bắt đầu"
 desc: "Nếu đã nắm rõ redux, bước tiếp theo phải tìm hiểu là middleware"

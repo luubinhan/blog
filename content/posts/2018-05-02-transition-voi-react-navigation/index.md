@@ -1,5 +1,5 @@
 ---
-slug: "/2018-05-02-transition-voi-react-navigation"
+slug: "/2018-05-02-huong-dan-transition-voi-react-navigation"
 date: "2018-05-02"
 title: "Transition trong React Native với React Navigation"
 desc: "Hướng dẫn làm transition trong React Native với react navigation"

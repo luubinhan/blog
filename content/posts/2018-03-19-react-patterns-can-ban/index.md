@@ -1,5 +1,5 @@
 ---
-slug: "/2018-03-19-react-patterns-can-ban"
+slug: "/2018-03-19-huong-dan-react-patterns-can-ban"
 date: "2018-03-19"
 title: "React Pattern căn bản"
 desc: "Một số Pattern hay sử dụng trong React"

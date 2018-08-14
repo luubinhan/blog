@@ -1,5 +1,5 @@
 ---
-slug: "/2018-04-17-giai-thich-observer-pattern-trong-javascript"
+slug: "/2018-04-17-huong-dan-giai-thich-observer-pattern-trong-javascript"
 date: "2018-04-17"
 title: "Giải thích Observer Pattern trong javascript"
 desc: "Observer là một pattern khá phổ biến trong javascript, bài giải thích ngắn gọn về pattern này"

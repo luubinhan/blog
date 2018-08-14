@@ -1,5 +1,5 @@
 ---
-slug: "/2018-04-03-ba-cach-de-hieu-promise"
+slug: "/2018-04-03-huong-dan-ba-cach-de-hieu-promise"
 date: "2018-04-03"
 title: "Ba cách để hiểu Promise"
 desc: "3 cách để thẩm thấu được Promise trong javascript"

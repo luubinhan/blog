@@ -1,5 +1,5 @@
 ---
-slug: "/2018-08-07-su-dung-firebase-realtime-voi-react-native"
+slug: "/2018-08-07-huong-dan-su-dung-firebase-realtime-voi-react-native"
 date: "2018-08-07"
 title: "Sử dụng Firebase Realtime với React Native"
 desc: "Những tính năng của Firebase có thể đáp ứng nhu cầu của ứng dụng nhỏ, đơn giản, không cần đến server."

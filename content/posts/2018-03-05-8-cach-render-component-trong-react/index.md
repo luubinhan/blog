@@ -1,5 +1,5 @@
 ---
-slug: "/2018-03-05-8-cach-render-component-trong-react"
+slug: "/2018-03-05-8-huong-dan-cach-render-component-trong-react"
 date: "2018-03-05"
 title: "8 câu điều kiện khi render trong React"
 desc: "Tutorial này sẽ cover những câu điều kiện dùng để render component phổ biến nhất"

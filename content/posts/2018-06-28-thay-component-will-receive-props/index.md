@@ -1,5 +1,5 @@
 ---
-slug: "/2018-06-28-thay-component-will-receive-props"
+slug: "/2018-06-28-huong-dan-thay-component-will-receive-props"
 date: "2018-06-28"
 title: "Thay componentWillReceiveProps với getDerivedStateFromProps"
 desc: "Từ bản release React 16.3, các phương thức lifecycle có thay chút ít, một số không còn được khuyến khích sử dụng và thay thế bằng một phương thức khác"

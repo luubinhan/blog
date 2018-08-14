@@ -1,5 +1,5 @@
 ---
-slug: "/2018-07-30-tam-quan-trong-cua-thuoc-tinh-sizes-trong-the-img"
+slug: "/2018-07-30-huong-dan-tam-quan-trong-cua-thuoc-tinh-sizes-trong-the-img"
 date: "2018-07-30"
 title: "Tầm quan trọng của thuộc tính sizes trong thẻ img"
 desc: "Một tình huống cơ bản product slider images, trên điện thoại, chúng ta có mỗi slide một ảnh với chiều ngang 320px, trên desktop chúng ta có 6 ảnh/slide, ảnh rộng 160px, tức là kích thước ảnh trên desktop nhỏ hơn trên di động, dùng srcset giải quyết vấn đề này như thế nào"

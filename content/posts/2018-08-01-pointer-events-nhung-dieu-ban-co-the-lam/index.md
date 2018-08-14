@@ -1,5 +1,5 @@
 ---
-slug: "/2018-08-01-pointer-events-nhung-dieu-ban-co-the-lam"
+slug: "/2018-08-01-huong-dan-pointer-events-nhung-dieu-ban-co-the-lam"
 date: "2018-08-01"
 title: "Những điều có thể làm với pointer-events"
 desc: "Một vài ứng dụng khác của pointer-events"

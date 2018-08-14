@@ -1,5 +1,5 @@
 ---
-slug: "/2018-04-24-lam-animation-voi-react"
+slug: "/2018-04-24-huong-dan-huong-dan-lam-animation-voi-react"
 date: "2018-04-24"
 title: "Một số cách làm Animation trong React"
 desc: "Tổng hợp một số phương pháp làm animation với React"

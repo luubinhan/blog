@@ -1,5 +1,5 @@
 ---
-slug: "/2018-05-22-lam-viec-voi-form-trong-react"
+slug: "/2018-05-22-huong-dan-lam-viec-voi-form-trong-react"
 date: "2018-05-22"
 title: "Làm việc với Form trong React"
 desc: "Xử lý form trong React, căn bản nhất"

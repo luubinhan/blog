@@ -1,5 +1,5 @@
 ---
-slug: "/2018-06-18-luan-ban-ve-cach-to-chuc-thu-muc-dat-ten"
+slug: "/2018-06-18-huong-dan-luan-ban-ve-cach-to-chuc-thu-muc-dat-ten"
 date: "2018-06-18"
 title: "Tiếp tục luận bàn về cách tổ chức thư mục, đặt tên component trong React"
 desc: "Hổm đã viết về vấn đề này rồi, giờ lại viết tiếp, vì bản thân React cũng không ra bất cứ rule nào về việc này, bạn tự do tổ chức sao mà mình thấy hợp lý, bài trước là của tác giả đó thấy vậy là hay, bài này thì tác giả thích tổ chức thế này"

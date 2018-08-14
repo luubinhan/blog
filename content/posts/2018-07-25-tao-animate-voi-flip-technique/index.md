@@ -1,5 +1,5 @@
 ---
-slug: "/2018-07-25-tao-animate-voi-flip-technique"
+slug: "/2018-07-25-huong-dan-tao-animate-voi-flip-technique"
 date: "2018-07-25"
 title: "Tạo animation với flip technique"
 desc: "Trong bài này chúng ta sẽ tìm hiểu kỹ thuật FLIP có thể sử dụng để animate position và kích thước của bất kỳ DOM element nào"

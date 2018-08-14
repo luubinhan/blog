@@ -1,5 +1,5 @@
 ---
-slug: "/2018-03-29-query-string-voi-react-router"
+slug: "/2018-03-29-huong-dan-query-string-voi-react-router"
 date: "2018-03-29"
 title: "Query String với React Router"
 desc: "Cách sử dụng query string với React Router siêu căn bản"

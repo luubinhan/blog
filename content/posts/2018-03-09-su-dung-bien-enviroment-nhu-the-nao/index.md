@@ -1,5 +1,5 @@
 ---
-slug: "/2018-03-09-su-dung-bien-enviroment-nhu-the-nao"
+slug: "/2018-03-09-huong-dan-su-dung-bien-enviroment-nhu-the-nao"
 date: "2018-03-09"
 title: "Sử dụng biến Node Environment"
 desc: "Biến environment là một phần cơ bản cần biết khi làm việc với Node"

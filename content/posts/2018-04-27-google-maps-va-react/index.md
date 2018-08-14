@@ -1,5 +1,5 @@
 ---
-slug: "/2018-04-27-google-maps-va-react"
+slug: "/2018-04-27-huong-dan-google-maps-va-react"
 date: "2018-04-27"
 title: "Google Maps và React"
 desc: "Hướng Sử dụng google maps api trong React"

@@ -1,5 +1,5 @@
 ---
-slug: "/2018-07-04-tong-hop-canh-le-voi-flexbox-alignment"
+slug: "/2018-07-04-huong-dan-tong-hop-canh-le-voi-flexbox-alignment"
 date: "2018-07-04"
 title: "Tổng quát về canh lề với Flexbox display"
 desc: "Nếu giờ chưa nắm vững về flexbox và cách canh lề trong flexbox thì thật là thiếu xót trong thời đại 2018, chúng ta đã qua thời xài float, clearfix vốn được giới thiệu từ 2004"

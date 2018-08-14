@@ -1,5 +1,5 @@
 ---
-slug: "/2018-03-14-sync-addin-vscode"
+slug: "/2018-03-14-huong-dan-sync-addin-vscode"
 date: "2018-03-14"
 title: "Sync extensions của VSCode"
 desc: "Khi sử dụng VSCode chắc ai cũng cài thêm một mớ extensions, lỡ ngày nào cài lại máy, hay sử dùng máy công ty, máy ở nhà muốn VSCode sync mấy cái extentions hay sử dụng"

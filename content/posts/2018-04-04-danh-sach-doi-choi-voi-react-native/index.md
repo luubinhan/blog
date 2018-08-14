@@ -1,5 +1,5 @@
 ---
-slug: "/2018-04-04-danh-sach-doi-choi-voi-react-native"
+slug: "/2018-04-04-huong-dan-danh-sach-doi-choi-voi-react-native"
 date: "2018-04-04"
 title: "Danh sách đồ chơi để bắt đầu với React Native"
 desc: "Để bắt đầu và đào sâu vọc vạch với React Native, bạn sẽ cần đụng tới những món đồ chơi sau"

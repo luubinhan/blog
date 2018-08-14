@@ -1,5 +1,5 @@
 ---
-slug: "/2018-04-05-tai-sao-tui-van-thich-firefox"
+slug: "/2018-04-05-huong-dan-tai-sao-tui-van-thich-firefox"
 date: "2018-04-05"
 title: "Chém gió: Tại sao tui vẫn thích Firefox"
 desc: "Không biết bạn sinh ra từ thuở nào, nhưng tui là thế hệ 8x, thời điểm mà Firefox nổi lên - rồi chìm xuống"

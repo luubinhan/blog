@@ -1,5 +1,5 @@
 ---
-slug: "/2018-07-20-tao-animation-cho-component-voi-react"
+slug: "/2018-07-20-huong-dan-tao-animation-cho-component-voi-react"
 date: "2018-07-20"
 title: "Tạo một animation cho component trong React"
 desc: "Sử dụng React, styled-components, react-flip-toolkit để tạo animation giống như mên trên trang chủ của Stripe"

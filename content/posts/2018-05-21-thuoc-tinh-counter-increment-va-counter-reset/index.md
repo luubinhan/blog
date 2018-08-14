@@ -1,5 +1,5 @@
 ---
-slug: "/2018-05-21-thuoc-tinh-counter-increment-va-counter-reset"
+slug: "/2018-05-21-huong-dan-thuoc-tinh-counter-increment-va-counter-reset"
 date: "2018-05-21"
 title: "Hướng dẫn sử dụng thuộc tính counter-reset và counter-increment"
 desc: "Nếu muốn đánh số tự động trong css, ta thường sử dụng đến kiểu display list-style, bài này giới thiệu một thuộc tính khác ít ai biết tới"

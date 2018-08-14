@@ -1,5 +1,5 @@
 ---
-slug: "/2018-01-01-mot-so-resource-de-hoc-javascript"
+slug: "/2018-01-01-huong-dan-mot-so-resource-de-hoc-javascript"
 date: "2018-01-01"
 title: "Một số nguồn để luyện công phu"
 desc: "Tổng hợp một số nguồn để đọc và nghiên cứu javascript từ căn bản đến chuyên sâu"

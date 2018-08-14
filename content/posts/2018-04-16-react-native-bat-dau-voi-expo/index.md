@@ -1,5 +1,5 @@
 ---
-slug: "/2018-04-16-react-native-bat-dau-voi-expo"
+slug: "/2018-04-16-huong-dan-react-native-bat-dau-voi-expo"
 date: "2018-04-16"
 title: "Giới thiệu Expo, nhập môn React Native"
 desc: "Để bắt đầu với React Native, cách nhanh nhất không cần cài Android Studio, Xcode hay những công cụ khác để có thể một trường để chạy test React Native thì Expo chính là thứ phải biết"

@@ -1,5 +1,5 @@
 ---
-slug: "/2018-07-18-gioi-thieu-ve-redux-observer"
+slug: "/2018-07-18-huong-dan-gioi-thieu-ve-redux-observer"
 date: "2018-07-18"
 title: "Giới thiệu RxJS và Redux Observer"
 desc: "Một middleware mạnh hơn redux-thunk, ít phức tạp hơn redux-saga. Chúng ta sẽ điểm qua những khái niệm chính để bắt đầu với middleware này"

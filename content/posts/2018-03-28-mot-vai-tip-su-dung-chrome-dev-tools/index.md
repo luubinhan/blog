@@ -1,5 +1,5 @@
 ---
-slug: "/2018-03-28-mot-vai-tip-su-dung-chrome-dev-tools"
+slug: "/2018-03-28-huong-dan-mot-vai-tip-su-dung-chrome-dev-tools"
 date: "2018-03-28"
 title: "Một vài tip sử dụng Chrome Dev Tools"
 desc: "Chrome DevTools càng ngày càng mạnh mấy bạn, bạn nào làm frontend cũng phải biết xài, một vài tip cóp nhặt có thể bạn chưa biết"

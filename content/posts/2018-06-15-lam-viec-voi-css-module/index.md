@@ -1,5 +1,5 @@
 ---
-slug: "/2018-06-15-lam-viec-voi-css-module"
+slug: "/2018-06-15-huong-dan-lam-viec-voi-css-module"
 date: "2018-06-15"
 title: "Làm việc với CSS Modules trong React"
 desc: "Sau rất nhiều năm kiếm cơm với CSS, và hiện tại vẫn thế, CSS vẫn luôn là niềm hứng thú của cá nhân mình. Ngày nảy ngày nay để làm việc với Component của React, chúng ta sẽ có nhiều lựa chọn hơn khi 'CSS trong JS' đang là lựa chọn hàng đầu. Trong thời đại của component phủ sóng khắp các mặt trận, CSS Modules hứa hiện là món ngon"

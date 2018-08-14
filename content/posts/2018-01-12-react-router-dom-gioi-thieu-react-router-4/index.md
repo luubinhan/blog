@@ -1,5 +1,5 @@
 ---
-slug: "/2018-01-12-react-router-dom-gioi-thieu-react-router-4"
+slug: "/2018-01-12-huong-dan-react-router-dom-gioi-thieu-react-router-4"
 date: "2018-01-12"
 title: "Giới thiệu React Router v4 (react router dom)"
 desc: "Trước đây có bài giới thiệu về React Router rồi, nhưng giờ React Router 4 ra, gần như đập đi làm lại chứ ko kế thừa nhiều."

@@ -1,5 +1,5 @@
 ---
-slug: "/2018-05-25-viet-code-javascript-tot-hon-voi-webpack"
+slug: "/2018-05-25-huong-dan-viet-code-javascript-tot-hon-voi-webpack"
 date: "2018-05-25"
 title: "Webpack là gì và tại sao ta phải xài nó"
 desc: "Bài này sẽ nói rõ tại sao Webpack là sự lựa chọn sáng suốt cho bundle javascript"
