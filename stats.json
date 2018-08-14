@@ -188,6 +188,10 @@
       "path---2018-05-07-asyn-await-giai-thich-vi-du-b0150c131053ded1ca60.js",
       "path---2018-05-07-asyn-await-giai-thich-vi-du-b0150c131053ded1ca60.js.map"
     ],
+    "path---2018-08-14-flow-xy-ly-trong-modern-js-callback-promise-async-await": [
+      "path---2018-08-14-flow-xy-ly-trong-modern-js-callback-promise-async-await-3beddfee4ea107068aa2.js",
+      "path---2018-08-14-flow-xy-ly-trong-modern-js-callback-promise-async-await-3beddfee4ea107068aa2.js.map"
+    ],
     "path---2018-06-15-lam-viec-voi-css-module": [
       "path---2018-06-15-lam-viec-voi-css-module-c2f5138c5088ea9f42a6.js",
       "path---2018-06-15-lam-viec-voi-css-module-c2f5138c5088ea9f42a6.js.map"
@@ -233,8 +237,8 @@
       "path---2017-10-18-import-va-export-trong-javascript-8fe2c002ba0fb9f27ff6.js.map"
     ],
     "path---index": [
-      "path---index-e855d1417fd202a46509.js",
-      "path---index-e855d1417fd202a46509.js.map"
+      "path---index-8708e4362276882b0600.js",
+      "path---index-8708e4362276882b0600.js.map"
     ],
     "component---src-pages-about-jsx": [
       "component---src-pages-about-jsx-ffa90e6bff028140ee05.js",
@@ -273,8 +277,8 @@
       "path---tags-website-46750a3e1082c1dbadaf.js.map"
     ],
     "path---tags-react-native": [
-      "path---tags-react-native-b2829a481e433892d1bd.js",
-      "path---tags-react-native-b2829a481e433892d1bd.js.map"
+      "path---tags-react-native-3395bb4973e908b7b62b.js",
+      "path---tags-react-native-3395bb4973e908b7b62b.js.map"
     ],
     "commons": [
       "commons-0bc07e757d73468fb167.js",
@@ -411,9 +415,9 @@
       "path---2018-03-28-mot-vai-tip-su-dung-chrome-dev-tools-c91a80d7d45ae20ab6ec.js.map"
     ],
     "app": [
-      "app-d3a1e1de98d9e4478c77.js",
+      "app-deacae077ef5cc50e4e8.js",
       "build-js-styles.css",
-      "app-d3a1e1de98d9e4478c77.js.map",
+      "app-deacae077ef5cc50e4e8.js.map",
       "build-js-styles.css.map"
     ],
     "path---2017-10-03-thiet-ke-an-tuong-vs-thiet-ke-thuc-te-bai-hoc-thuc-te": [
