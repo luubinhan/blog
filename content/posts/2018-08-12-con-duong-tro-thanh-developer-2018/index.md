@@ -17,6 +17,9 @@ Cái nào **in đậm** là bắt buộc, *để nghiêng* biết thì tốt, <d
 - **HTML**: căn bản html, cách viết semantic html, cách structure DOM, tập trung nhiều vào cách structure
 - **CSS**: học CSS căn bản, Flexbox, Responsive Web Design, Media Queries
 - **JS căn bản**: Hoisting, Event Bubbling, Prototyping, AJAX (XHR), thao tác trên DOM, ECMA 6
+  - [learn-js.org](http://www.learn-js.org/)
+  - [Mozilla developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+  - [Microsoft’s Virtual Academy](https://channel9.msdn.com/Series/Javascript-Fundamentals-Development-for-Absolute-Beginners)
 - <del>jQuery</del>: có thể bỏ qua không cần học
 
 # Kỹ năng Development
