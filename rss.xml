@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[luckyluu]]></title><description><![CDATA[Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End]]></description><link>https://luubinhan.github.io/blog</link><image><url>https://luubinhan.github.io/blog/logos/logo-512.png</url><title>luckyluu</title><link>https://luubinhan.github.io/blog</link></image><generator>Front End Developer An.Luu</generator><lastBuildDate>Fri, 17 Aug 2018 08:38:59 GMT</lastBuildDate><atom:link href="https://luubinhan.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[luckyluu]]></author><copyright><![CDATA[Copyright © 2018. luckyluu]]></copyright><item><title><![CDATA[Hướng dẫn cách cài đặt security rules cho Cloud Firestore]]></title><description><![CDATA[Khai báo Rules read/write Chia nhỏ thao tác ra Kế thừa Cloud FireStore Security Rules cho phép chúng ta tùy chỉnh việc cấp quyền truy cập…]]></description><link>https://luubinhan.github.io/blog/2018-08-17-huong-dan-set-security-rules-cho-cloud-firetore</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-08-17-huong-dan-set-security-rules-cho-cloud-firetore</guid><category><![CDATA[firestore]]></category><category><![CDATA[firebase]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Fri, 17 Aug 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[luckyluu]]></title><description><![CDATA[Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End]]></description><link>https://luubinhan.github.io/blog</link><image><url>https://luubinhan.github.io/blog/logos/logo-512.png</url><title>luckyluu</title><link>https://luubinhan.github.io/blog</link></image><generator>Front End Developer An.Luu</generator><lastBuildDate>Fri, 17 Aug 2018 09:02:13 GMT</lastBuildDate><atom:link href="https://luubinhan.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[luckyluu]]></author><copyright><![CDATA[Copyright © 2018. luckyluu]]></copyright><item><title><![CDATA[Hướng dẫn cách cài đặt security rules cho Cloud Firestore]]></title><description><![CDATA[Khai báo Rules read/write Chia nhỏ thao tác ra Kế thừa Cloud FireStore Security Rules cho phép chúng ta tùy chỉnh việc cấp quyền truy cập…]]></description><link>https://luubinhan.github.io/blog/2018-08-17-huong-dan-set-security-rules-cho-cloud-firetore</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-08-17-huong-dan-set-security-rules-cho-cloud-firetore</guid><category><![CDATA[firestore]]></category><category><![CDATA[firebase]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Fri, 17 Aug 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#khai-b%C3%A1o&quot;&gt;Khai báo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#rules-readwrite&quot;&gt;Rules read/write&lt;/a&gt;&lt;/li&gt;
@@ -10,118 +10,118 @@
 &lt;h1 id=&quot;khai-báo&quot;&gt;&lt;a href=&quot;#khai-b%C3%A1o&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Khai báo&lt;/h1&gt;
 &lt;p&gt;Câu lệnh khai báo của Firestore Security Rules &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;service cloud.firestore {
-  match /databases/{database}/documents {
-    // ...
-  }
-}&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-powershell&quot;&gt;&lt;code class=&quot;language-powershell&quot;&gt;service cloud&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;databases&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;service cloud.firestore&lt;/code&gt; để giới hạn chúng ta chỉ áp rule này xuống Cloud Firestore, tránh xung đột với các service khác của Firebase&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;match /databases/{database}/documents&lt;/code&gt; chỉ định rule này chỉ áp dụng cho các database trong project. Hiện tại mỗi project trên Firebase sẽ chỉ hổ trợ một database Firestore&lt;/p&gt;
 &lt;h1 id=&quot;rules-readwrite&quot;&gt;&lt;a href=&quot;#rules-readwrite&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Rules read/write&lt;/h1&gt;
 &lt;p&gt;Câu lệnh &lt;code class=&quot;language-text&quot;&gt;match&lt;/code&gt; sẽ chỉ định đường dẫn của &lt;em&gt;document&lt;/em&gt; bị ảnh hưởng, bên trong đó ta dùng lệnh &lt;code class=&quot;language-text&quot;&gt;allow&lt;/code&gt; để diễn giải chi tiết về rule&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;service cloud.firestore {
-  match /databases/{database}/documents {
-    // tất cả document trong collection cities
-    match /cities/{city} {
-      allow read: if &amp;lt;condition&amp;gt;;
-      allow write: if &amp;lt;condition&amp;gt;;
-    }
-  }
-}&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-powershell&quot;&gt;&lt;code class=&quot;language-powershell&quot;&gt;service cloud&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;databases&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; tất cả document trong collection cities
+    match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;cities&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      allow read: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &amp;lt;condition&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      allow &lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &amp;lt;condition&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Tất cả câu &lt;code class=&quot;language-text&quot;&gt;match&lt;/code&gt; phải chỉ đến &lt;strong&gt;documents&lt;/strong&gt;, không trỏ tới &lt;strong&gt;collections&lt;/strong&gt;, có thể dùng &lt;code class=&quot;language-text&quot;&gt;match /cities/HCM&lt;/code&gt; hoặc sử dụng ký tự đại diện bất kỳ document nào bên trong &lt;code class=&quot;language-text&quot;&gt;cities&lt;/code&gt; như ví dụ &lt;code class=&quot;language-text&quot;&gt;match /cities/{city}&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&quot;chia-nhỏ-thao-tác-ra&quot;&gt;&lt;a href=&quot;#chia-nh%E1%BB%8F-thao-t%C3%A1c-ra&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Chia nhỏ thao tác ra&lt;/h1&gt;
 &lt;p&gt;Tình huống: chúng ta muốn lúc tạo có những điều khác với lúc xóa document, hoặc cho phép read 1 document nhưng không cho phép đọc toàn bộ&lt;/p&gt;
 &lt;p&gt;Câu điều kiện &lt;code class=&quot;language-text&quot;&gt;read&lt;/code&gt; có thể chia nhỏ ra thành &lt;code class=&quot;language-text&quot;&gt;get&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;list&lt;/code&gt;, trong khi &lt;code class=&quot;language-text&quot;&gt;write&lt;/code&gt; có thể chia nhỏ thành &lt;code class=&quot;language-text&quot;&gt;create&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;update&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;delete&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;service cloud.firestore {
-  match /databases/{database}/documents {
-    match /cities/{city} {
-      // điều kiện trên 1 document
-      allow get: if &amp;lt;condition&amp;gt;;
+      &lt;pre class=&quot;language-powershell&quot;&gt;&lt;code class=&quot;language-powershell&quot;&gt;service cloud&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;databases&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;cities&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; điều kiện trên 1 document
+      allow get: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &amp;lt;condition&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-      // điều kiện khi queries nhiều document, hoặc gọi hết collection
-      allow list: if &amp;lt;condition&amp;gt;;
-    }
+      &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; điều kiện khi queries nhiều document&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; hoặc gọi hết collection
+      allow list: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &amp;lt;condition&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-    match /cities/{city} {
-      // lúc tạo
-      allow create: if &amp;lt;condition&amp;gt;;
+    match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;cities&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; lúc tạo
+      allow create: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &amp;lt;condition&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-      // lúc update
-      allow update: if &amp;lt;condition&amp;gt;;
+      &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; lúc update
+      allow update: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &amp;lt;condition&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-      // lúc delete
-      allow delete: if &amp;lt;condition&amp;gt;;
-    }
-  }
-}&lt;/code&gt;&lt;/pre&gt;
+      &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; lúc delete
+      allow delete: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &amp;lt;condition&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;h1 id=&quot;kế-thừa&quot;&gt;&lt;a href=&quot;#k%E1%BA%BF-th%E1%BB%ABa&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Kế thừa&lt;/h1&gt;
 &lt;p&gt;Như đã biết, nếu chưa biết thì giờ mình giải thích nhanh, database trên Firebase lưu dạng collections(giống như array), trong các collection là document (một object). Trên mỗi document nó có thể chứa các collection khác nữa. Vậy thì các rules trên document nó sẽ ảnh hưởng thế nào đến các sub collection này.&lt;/p&gt;
 &lt;p&gt;Với ví dụ ở trên, trong &lt;code class=&quot;language-text&quot;&gt;cities&lt;/code&gt; chúng ta chứa một sub collection là &lt;code class=&quot;language-text&quot;&gt;landmarks&lt;/code&gt;. Rule trên &lt;code class=&quot;language-text&quot;&gt;cities&lt;/code&gt; sẽ không ảnh hưởng đến &lt;code class=&quot;language-text&quot;&gt;landmarks&lt;/code&gt;, trừ khi chúng ta cố tình set nó như sau&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;service cloud.firestore {
-  match /databases/{database}/documents {
-    match /cities/{city} {
-      allow read, write: if &amp;lt;condition&amp;gt;;
-        // áp dụng luôn cho collections con
-        match /landmarks/{landmark} {
-          allow read, write: if &amp;lt;condition&amp;gt;;
-        }
-    }
-  }
-}&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-powershell&quot;&gt;&lt;code class=&quot;language-powershell&quot;&gt;service cloud&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;databases&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;cities&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      allow read&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &amp;lt;condition&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; áp dụng luôn cho collections con
+        match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;landmarks&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;landmark&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          allow read&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &amp;lt;condition&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Khi viết lồng câu &lt;code class=&quot;language-text&quot;&gt;match&lt;/code&gt; như vậy, câu &lt;code class=&quot;language-text&quot;&gt;match&lt;/code&gt; bên dưới sẽ &lt;strong&gt;luôn relative&lt;/strong&gt; với thằng trên. Và chúng ta cũng có thể viết như sau, kết quả tương tự với cách viết ở trên&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;service cloud.firestore {
-  match /databases/{database}/documents {
-    match /cities/{city} {
-      match /landmarks/{landmark} {
-        allow read, write: if &amp;lt;condition&amp;gt;;
-      }
-    }
-  }
-}&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-powershell&quot;&gt;&lt;code class=&quot;language-powershell&quot;&gt;service cloud&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;databases&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;cities&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;landmarks&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;landmark&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        allow read&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &amp;lt;condition&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;service cloud.firestore {
-  match /databases/{database}/documents {
-    match /cities/{city}/landmarks/{landmark} {
-      allow read, write: if &amp;lt;condition&amp;gt;;
-    }
-  }
-}&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-powershell&quot;&gt;&lt;code class=&quot;language-powershell&quot;&gt;service cloud&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;databases&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;cities&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;landmarks&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;landmark&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      allow read&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &amp;lt;condition&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Nếu không chỉ áp dụng rule cho đúng thằng &lt;code class=&quot;language-text&quot;&gt;landmarks&lt;/code&gt;, sử dụng cú pháp đại diện cho toàn bộ collection nằm dưới &lt;code class=&quot;language-text&quot;&gt;cities&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;{name=**}&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;service cloud.firestore {
-  match /database/{database}/documents {
-    match /cities/{document=**} {
-      allow read, write: if &amp;lt;condition&amp;gt;;
-    }
-  }
-}&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-powershell&quot;&gt;&lt;code class=&quot;language-powershell&quot;&gt;service cloud&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;database&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;cities&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;document=&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      allow read&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &amp;lt;condition&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Với cách viết trên toàn bộ document nằm ở &lt;code class=&quot;language-text&quot;&gt;/cities/hochiminh/landmarks/landmark81&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;/cities/hochiminh/landmarks/bitexco&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;cities/hochiminh&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Nếu chúng ta viết lại &lt;code class=&quot;language-text&quot;&gt;match /cities/{city}/{document=**} thì nó chỉ ảnh hưởng đến sub collection, thằng&lt;/code&gt;cities/hochiminh` sẽ không bị ảnh hưởng.&lt;/p&gt;
 &lt;p&gt;Nếu có nhiều câu &lt;code class=&quot;language-text&quot;&gt;allow&lt;/code&gt; khớp với &lt;code class=&quot;language-text&quot;&gt;match&lt;/code&gt;, thì kết quả sẽ là một phép &lt;code class=&quot;language-text&quot;&gt;hoặc&lt;/code&gt;, bất kỳ thằng nào thõa điều kiện thì &lt;code class=&quot;language-text&quot;&gt;allow&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;service cloud.firestore {
-  match /databases/{database}/documents {
-    // &amp;#39;cities&amp;#39; collection.
-    match /cities/{city} {
-      allow read, write: if false;
-    }
-    // &amp;#39;cities&amp;#39; collection hoặc subcollections.
-    match /cities/{document=**} {
-      allow read, write: if true;
-    }
-  }
-}&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-powershell&quot;&gt;&lt;code class=&quot;language-powershell&quot;&gt;service cloud&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;databases&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;cities&apos;&lt;/span&gt; collection&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+    match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;cities&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      allow read&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; false&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;cities&apos;&lt;/span&gt; collection hoặc subcollections&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+    match &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;cities&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;document=&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      allow read&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt;: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; true&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Ví dụ ở trên toàn bộ collection cities sẽ cho phép read, write vì điều kiện thứ 2 luôn &lt;code class=&quot;language-text&quot;&gt;true&lt;/code&gt;, mặc dù thằng trước nó luôn &lt;code class=&quot;language-text&quot;&gt;false&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://firebase.google.com/docs/firestore/security/rules-structure&quot;&gt;Link bài gốc của Google&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Flow sử lý trong modern JS - từ callback đến promise, đến Async/Await]]></title><description><![CDATA[Single-threat processing Asynchronous với Callbacks Promises finally() all() race() Async/Await Single-threat processing Xét thử đoạn code…]]></description><link>https://luubinhan.github.io/blog/2018-08-14-huong-dan-flow-xy-ly-trong-modern-js-callback-promise-async-await</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-08-14-huong-dan-flow-xy-ly-trong-modern-js-callback-promise-async-await</guid><category><![CDATA[react-native]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Tue, 14 Aug 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
