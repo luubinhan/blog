@@ -17,7 +17,8 @@ Một trong những tình huống phổ biến nhất là cho phép truy cập d
 ```powershell
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Cho phép user truy cập document trong collection cities nếu đã đăng nhập
+    // Cho phép user truy cập document
+    // trong collection cities nếu đã đăng nhập
     match /cities/{city} {
       allow read, write: if request.auth.uid != null;
     }
@@ -30,7 +31,8 @@ Hoặc một tình huống phổ biến thứ 2 là cho phép user read và writ
 ```powershell
 services cloud.firestore {
   match /databases/{database}/documents {
-    // chỉ cho phép uid khớp với userId trong document. Dùng ký tự đại diện {userId} như một biến bên trong câu điều kiện
+    // chỉ cho phép uid khớp với userId trong document.
+    // Dùng ký tự đại diện {userId} như một biến bên trong câu điều kiện
     match /users/{userId} {
       allow read, update, delete: if request.auth.uid == userId;
       allow create: if request.auth.uid != null;
@@ -78,7 +80,9 @@ Sử dụng `get()` và `exists()` chúng ta có thể đánh giá các request 
 service cloud.firestore {
   match /databases/{database}/documents {
     match /cities/{city} {
-      // kiểm tra user hiện tại có tồn tại bên trong collections users trước khi cho phép tạo thêm city mới
+      // kiểm tra user hiện tại
+      // có tồn tại bên trong collections users
+      // trước khi cho phép tạo thêm city mới
       allow create: if exists(/databases/$(database)/documents/users/$(request.auth.uid))
 
       // cho phép user xóa city nếu user này là admin
