@@ -1,8 +1,8 @@
 ---
-slug: "/2018-08-17-huong-dan-set-security-rules-cho-cloud-firétore"
+slug: "/2018-08-17-huong-dan-set-security-rules-cho-cloud-firestore"
 date: "2018-08-17"
 title: "Hướng dẫn cách cài đặt security rules cho Cloud Firestore"
-desc: "Cùng nhìn lại quá trình tiến hóa của javascript trong cách sử lý flow"
+desc: "Series hướng dẫn sử dụng các service Firebase"
 cover: ""
 type: "post"
 lesson: 0
