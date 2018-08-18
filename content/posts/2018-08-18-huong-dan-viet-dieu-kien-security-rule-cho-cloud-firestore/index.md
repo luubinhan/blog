@@ -90,4 +90,32 @@ service cloud.firestore {
 
 Đối với thao tác write, chúng ta có thể sử dụng `getAfter()` để truy cập dữ liệu của document sau khi thực hiện, thằng này cũng giống như `get` phải dùng đường dẫn đầy đủ.
 
+# Hàm tùy biến
+
+Một khi các rule security này trở nên phức tạp, chúng ta sẽ muốn gom các điều kiện này vào trong một hàm để tái sử dụng. Firestore hổ trợ luôn. Nó sẽ như Javascript, tuy nhiên không hẳn là javascript đâu, nó có một số hạn chế
+
+- Hàm này luôn chỉ chứa 1 return, không chạy loop, gọi service bên ngoài
+- Hàm có thể access được các hàm và biến có cùng scope.
+- Hàm có thể gọi đến hàm khác nhưng không được recurse, tối đa là sâu đến 10 thôi.
+
+Ví dụ kết hợp cả 2 điều kiện ở trên thành một hàm
+
+```powershell
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedInOrPublic() {
+      return request.auth.uid !== null || resource.data.visibility == 'public';
+    }
+
+    match /cities/{city} {
+      allow read, write: if signedInOrPublic();
+    }
+
+    match /users/{user} {
+      allow read, write: if signedInOrPublic();
+    }
+  }
+}
+```
+
 [Link bài gốc](https://firebase.google.com/docs/firestore/security/rules-conditions)
