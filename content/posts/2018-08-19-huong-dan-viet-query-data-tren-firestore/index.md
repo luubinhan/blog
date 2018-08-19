@@ -10,6 +10,14 @@ chapter: 0
 tags: ["firestore", "firebase"]
 ---
 
+<!-- TOC -->
+
+- [Query doucment dựa trên `auth.uid`](#query-doucment-dựa-trên-authuid)
+- [Query document dựa trên field](#query-document-dựa-trên-field)
+- [Tính toán ràng buộc lúc query](#tính-toán-ràng-buộc-lúc-query)
+
+<!-- /TOC -->
+
 Chúng ta sẽ tiếp tục series về Firestore, nếu 2 bài trước thì chúng ta đã biết cách set security rule, giờ để xem ảnh hưởng của rule này lên lúc query data
 
 Khi write và read documents, để tiết kiệm thời gian và resource, Cloud Firestore đánh giá các kết quả có thể xảy ra chứ không chạy qua tất cả giá trị. Nếu câu query có document mà user không có quyền truy cập, toàn bộ cái request sẽ fail
@@ -33,7 +41,7 @@ Ví dụ bên dưới mô ta cách viết câu query để lấy documents. Hìn
 
 Security rule trên story
 
-```
+```powershell
 service cloud.firestore {
   match /databases/{database}/documents {
     match /stories/{storyid} {
@@ -59,6 +67,56 @@ db.collection('stories').where('author', '==', user.uid).get()
 
 # Query document dựa trên field
 
+Để hình dung tương quan giữa rule và lúc query, xét ví dụ rule bên dưới, collection *stories* cho phép bất kỳ user nào truy cập vào **story** documents khi giá trị của field *published* là `true`
+
+```powershell
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /stories/{storyid} {
+      allow read: if resource.data.published == true || request.auth.uid == resource.data.author
+
+      allow write: if request.auth.uid == resource.data.author;
+    }
+  }
+}
+```
+
+Để query data ở trên
+
+```js
+db.collection('stories').where('published', '==', true).get()
+```
+
+# Tính toán ràng buộc lúc query
+
+Trong biến `request.query` bao gồm `limit`, `offset`, và `orderBy`, ví dụ chúng ta đặt ra rule là không trả về dữ liệu nếu câu query không chứa limit hoặc limit lớn hơn quy định
+
+```powershell
+allow list: if request.query.limit <= 10
+```
+
+Một cách đầy đủ hơn, gom các điều kiện về author và publish vào trong hàm `authorOrPublished()` để tránh lập lại
+
+```powershell
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /stories/{storyid} {
+      // `true` nếu story đang 'published'
+      // hoặc authored = người đang request
+      function authorOrPublished() {
+        return resource.data.published == true || request.auth.uid == resource.data.author;
+      }
+
+      allow list: if request.query.limit <= 10 &&
+                     authorOrPublished();
+
+      allow get: if authorOrPublished();
+      
+      allow write: if request.auth.uid == resource.data.author;
+    }
+  }
+}
+```
 
 
 [Link bài gốc](https://www.youtube.com/watch?v=d8qvN52Z-VU)
