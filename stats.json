@@ -209,16 +209,16 @@
       "path---2017-10-18-import-va-export-trong-javascript-8fe2c002ba0fb9f27ff6.js.map"
     ],
     "path---tags-firestore": [
-      "path---tags-firestore-f5ba77e1723d25bc1a6a.js",
-      "path---tags-firestore-f5ba77e1723d25bc1a6a.js.map"
+      "path---tags-firestore-df4c831208b2422a6dbc.js",
+      "path---tags-firestore-df4c831208b2422a6dbc.js.map"
     ],
     "path---2018-07-02-huong-dan-javascript-modules-tren-web": [
       "path---2018-07-02-huong-dan-javascript-modules-tren-web-2e9c8da17a2b341365b0.js",
       "path---2018-07-02-huong-dan-javascript-modules-tren-web-2e9c8da17a2b341365b0.js.map"
     ],
     "path---index": [
-      "path---index-29cd09872dbde00160e1.js",
-      "path---index-29cd09872dbde00160e1.js.map"
+      "path---index-3e4513d23ee424bc6bad.js",
+      "path---index-3e4513d23ee424bc6bad.js.map"
     ],
     "component---src-pages-about-jsx": [
       "component---src-pages-about-jsx-ffa90e6bff028140ee05.js",
@@ -362,6 +362,10 @@
       "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js",
       "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js.map"
     ],
+    "path---2018-08-19-huong-dan-viet-query-data-tren-firestore": [
+      "path---2018-08-19-huong-dan-viet-query-data-tren-firestore-670463ed5463b187ac51.js",
+      "path---2018-08-19-huong-dan-viet-query-data-tren-firestore-670463ed5463b187ac51.js.map"
+    ],
     "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau": [
       "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau-446d509d51a00d491a0e.js",
       "path---2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau-446d509d51a00d491a0e.js.map"
@@ -403,9 +407,9 @@
       "path---2018-08-12-huong-dan-con-duong-tro-thanh-developer-2018-6da831edc752a2262574.js.map"
     ],
     "app": [
-      "app-b7037d7e315259cee775.js",
+      "app-3a6cdeb95bc59aae17d4.js",
       "build-js-styles.css",
-      "app-b7037d7e315259cee775.js.map",
+      "app-3a6cdeb95bc59aae17d4.js.map",
       "build-js-styles.css.map"
     ],
     "path---2018-05-31-huong-dan-gioi-thieu-react-portal": [
@@ -469,8 +473,8 @@
       "path---2018-06-08-huong-dan-kinh-nghiem-lam-viec-voi-du-an-lon-da5ada45195a4601de6e.js.map"
     ],
     "path---tags-firebase": [
-      "path---tags-firebase-6e155bdadb19495e129b.js",
-      "path---tags-firebase-6e155bdadb19495e129b.js.map"
+      "path---tags-firebase-e4474d68e996844bd69c.js",
+      "path---tags-firebase-e4474d68e996844bd69c.js.map"
     ],
     "path---2018-05-28-huong-dan-webpack-4-cho-nguoi-moi-bat-dau-phan-3": [
       "path---2018-05-28-huong-dan-webpack-4-cho-nguoi-moi-bat-dau-phan-3-79c89ea7390468226818.js",
