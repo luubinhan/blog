@@ -1,6 +1,7 @@
 const path = require("path");
 const _ = require("lodash");
 const webpackLodashPlugin = require("lodash-webpack-plugin");
+const createPaginatedPages = require("gatsby-paginate");
 
 exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   const { createNodeField } = boundActionCreators;
@@ -43,7 +44,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       graphql(
         `
           {
-            allMarkdownRemark {
+            allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
               edges {
                 node {
                   frontmatter {
@@ -71,7 +72,14 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
         const postsTag = {};
         const allPosts = result.data.allMarkdownRemark.edges;
-        
+        createPaginatedPages({
+          edges: result.data.allMarkdownRemark.edges,
+          createPage: createPage,
+          pageTemplate: "src/templates/index.js",
+          pageLength: 20, // This is optional and defaults to 10 if not used
+          pathPrefix: "", // This is optional and defaults to an empty string if not used
+          context: {} // This is optional and defaults to an empty object if not used
+        });
         allPosts.forEach((edge, index) => {
           if (edge.node.frontmatter.tags) {
             edge.node.frontmatter.tags.forEach(tag => {

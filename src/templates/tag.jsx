@@ -6,23 +6,17 @@ import config from '../../data/SiteConfig'
 import {bgSidebar} from '../../data'
 
 export default class TagTemplate extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sideBg: bgSidebar[random(bgSidebar.length-1)]
-    }
-  }
-  
   render() {
     const {tag} = this.props.pathContext;
     const postEdges = this.props.data.allMarkdownRemark.edges;
+    const sideBg = bgSidebar[random(bgSidebar.length-1)];
     return (
       <div className="master">
         <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
         <div className="inner">
           <PostListing postEdges={postEdges} />
         </div>
-        <div className="aside" style={{backgroundImage: `url(${this.state.sideBg})`}}>
+        <div className="aside" style={{backgroundImage: `url(${sideBg})`}}>
           <div className="company-info tag">
             <div className="company-name">
               TAGS

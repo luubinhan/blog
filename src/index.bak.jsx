@@ -2,9 +2,9 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import {random, isEmpty} from 'lodash'
 
-import PostListing from '../components/PostListing/PostListing'
-import SEO from '../components/SEO'
-import config from '../../data/SiteConfig'
+import PostListing from 'components/PostListing/PostListing'
+import SEO from 'components/SEO'
+import config from '../data/SiteConfig'
 
 import {bgSidebar} from '../../data'
 

@@ -661,9 +661,9 @@ table.normal tr td {
 -------------------------------------------------------------- */
 .btn {
   border-radius: 999em;  
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 1em 3em;
   line-height: 18px;
+  display: inline-block;
 }
 .btn-primary {
   background-color: $primary-color;
@@ -675,8 +675,26 @@ table.normal tr td {
   }
 }
 .btn-light {
-  border: 1px solid rgba(255,255,255,.7);
-  color: #fff;
+  border: 1px solid $primary-color;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: $san-serif;
+  color: $primary-color;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: $secondary-color;
+    color: #fff;
+    border-color: $secondary-color;
+  }
+  &.disabled {
+    border-color: #eee;
+    background-color: #eee;
+    color: #999;
+  }
 }
 
 /* RESET BOOTSTRAP -------------------------------------------- */
@@ -1686,4 +1704,10 @@ $masterWidth: 870px;
     }  
   }
   
+}
+.pagination {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
 }

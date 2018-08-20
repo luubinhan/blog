@@ -12,12 +12,6 @@ import config from '../../data/SiteConfig'
 import {bgSidebar} from '../../data'
 
 export default class PostTemplate extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sideBg: bgSidebar[random(bgSidebar.length-1)]
-    }
-  }
   render() {
     const { slug, next, prev } = this.props.pathContext;
     const postNode = this.props.data.markdownRemark
@@ -28,6 +22,7 @@ export default class PostTemplate extends React.Component {
     if (!post.id) {
       post.category_id = config.postDefaultCategoryID
     }
+    const sideBg = bgSidebar[random(bgSidebar.length-1)]
     return (
       <div className="master">
         <Helmet>
@@ -97,7 +92,7 @@ export default class PostTemplate extends React.Component {
             </div>
           </div>
         </div>
-        <div className="aside" style={{backgroundImage: `url(${this.state.sideBg})`}}>
+        <div className="aside" style={{backgroundImage: `url(${sideBg})`}}>
           <div className="beatiful-post-name" data-text-shadow={post.title}>
             {post.title}     
           </div>
