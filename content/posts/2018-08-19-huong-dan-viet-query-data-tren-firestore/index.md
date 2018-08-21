@@ -119,4 +119,4 @@ service cloud.firestore {
 ```
 
 
-[Link bài gốc](https://www.youtube.com/watch?v=d8qvN52Z-VU)
+[Link bài gốc](https://firebase.google.com/docs/firestore/security/rules-query)
