@@ -37,8 +37,8 @@
       "path---2017-03-08-thoi-dai-cua-pixel-perfect-da-het-phan-3-3b288c56f3aa5c6e28a1.js.map"
     ],
     "path---4": [
-      "path---4-3fe4d9fa74fc4dda6099.js",
-      "path---4-3fe4d9fa74fc4dda6099.js.map"
+      "path---4-8c8b8a16c0e4be986c29.js",
+      "path---4-8c8b8a16c0e4be986c29.js.map"
     ],
     "path---2017-11-02-mot-vai-cai-tien-google-calendar": [
       "path---2017-11-02-mot-vai-cai-tien-google-calendar-5fc968825a5f83300e65.js",
@@ -93,8 +93,8 @@
       "path---2018-03-28-huong-dan-mot-vai-tip-su-dung-chrome-dev-tools-b8fd34a4c30181d68248.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-f8fabda4f0c3d4dec5ea.js",
-      "path---tags-javascript-f8fabda4f0c3d4dec5ea.js.map"
+      "path---tags-javascript-252c211e2f8177bc7ade.js",
+      "path---tags-javascript-252c211e2f8177bc7ade.js.map"
     ],
     "path---2018-04-24-huong-dan-huong-dan-lam-animation-voi-react": [
       "path---2018-04-24-huong-dan-huong-dan-lam-animation-voi-react-35b69f9d12f211a602ec.js",
@@ -129,16 +129,16 @@
       "path---2018-05-01-huong-dan-cai-thien-performance-react-app-d2712580ba15768c9804.js.map"
     ],
     "path---5": [
-      "path---5-6cfde1d33fefbda7a2e8.js",
-      "path---5-6cfde1d33fefbda7a2e8.js.map"
+      "path---5-3a56520b2a54d028d5e9.js",
+      "path---5-3a56520b2a54d028d5e9.js.map"
     ],
     "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react": [
       "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react-16d7103cf1ce75372313.js",
       "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react-16d7103cf1ce75372313.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-895f51fcba679d3af851.js",
-      "path---tags-react-895f51fcba679d3af851.js.map"
+      "path---tags-react-0feace96d0046399bdf6.js",
+      "path---tags-react-0feace96d0046399bdf6.js.map"
     ],
     "path---2018-05-21-huong-dan-thuoc-tinh-counter-increment-va-counter-reset": [
       "path---2018-05-21-huong-dan-thuoc-tinh-counter-increment-va-counter-reset-df8ba4e8e687195e70d1.js",
@@ -229,8 +229,8 @@
       "path---2018-07-02-huong-dan-javascript-modules-tren-web-40bd50660c6e152f70fa.js.map"
     ],
     "path---index": [
-      "path---index-6668bd2ae417aff1994f.js",
-      "path---index-6668bd2ae417aff1994f.js.map"
+      "path---index-6283214f2559d67d059d.js",
+      "path---index-6283214f2559d67d059d.js.map"
     ],
     "component---src-pages-about-jsx": [
       "component---src-pages-about-jsx-ffa90e6bff028140ee05.js",
@@ -257,8 +257,8 @@
       "path---2018-04-28-huong-dan-redux-vs-mobx-chon-cai-nao-day-e59d7d725f084ea7656f.js.map"
     ],
     "path---2": [
-      "path---2-373ac10d88c373814053.js",
-      "path---2-373ac10d88c373814053.js.map"
+      "path---2-c827ea9bb80105fe83eb.js",
+      "path---2-c827ea9bb80105fe83eb.js.map"
     ],
     "path---2018-03-29-huong-dan-query-string-voi-react-router": [
       "path---2018-03-29-huong-dan-query-string-voi-react-router-d7fe192face77128f6b0.js",
@@ -331,8 +331,8 @@
       "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-6b7f6128b8cd99ca314a.js.map"
     ],
     "path---3": [
-      "path---3-118f484849f1822b16f9.js",
-      "path---3-118f484849f1822b16f9.js.map"
+      "path---3-e1f07f47ad4b1baff7b0.js",
+      "path---3-e1f07f47ad4b1baff7b0.js.map"
     ],
     "component---src-pages-404-jsx": [
       "component---src-pages-404-jsx-713f07a0074f497d9225.js",
@@ -345,6 +345,10 @@
     "path---2017-10-12-javascript-promise": [
       "path---2017-10-12-javascript-promise-c385779e1c25f367ad44.js",
       "path---2017-10-12-javascript-promise-c385779e1c25f367ad44.js.map"
+    ],
+    "path---2018-08-24-huong-dan-su-dung-refs-trong-react": [
+      "path---2018-08-24-huong-dan-su-dung-refs-trong-react-f63c64c218da8023fa0f.js",
+      "path---2018-08-24-huong-dan-su-dung-refs-trong-react-f63c64c218da8023fa0f.js.map"
     ],
     "path---2017-03-07-thoi-dai-cua-pixel-perfect-da-het-phan-2": [
       "path---2017-03-07-thoi-dai-cua-pixel-perfect-da-het-phan-2-e71f107a1d0277dca8be.js",
@@ -423,9 +427,9 @@
       "path---2018-08-12-huong-dan-con-duong-tro-thanh-developer-2018-761055d4d09988ef5f45.js.map"
     ],
     "app": [
-      "app-b54d7895e160c6504d3a.js",
+      "app-3a16dc6c20885cb460e1.js",
       "build-js-styles.css",
-      "app-b54d7895e160c6504d3a.js.map",
+      "app-3a16dc6c20885cb460e1.js.map",
       "build-js-styles.css.map"
     ],
     "path---2018-08-21-huong-dan-su-dung-checkbox-va-toggle-switch": [
