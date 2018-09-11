@@ -5,6 +5,8 @@
 <url> <loc>https://luubinhan.github.io/blog/blog/3</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/4</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/5</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luubinhan.github.io/blog/blog/2018-09-11-huong-dan-giai-thich-dependency-injection-cho-nguoi-moi-bat-dau-khong-biet-gi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luubinhan.github.io/blog/blog/2018-09-10-huong-dan-lam-viec-voi-flow-react-type-checking</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-08-24-huong-dan-su-dung-refs-trong-react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-08-21-huong-dan-su-dung-checkbox-va-toggle-switch</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-08-19-huong-dan-viet-query-data-tren-firestore</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -58,8 +60,8 @@
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-19-huong-dan-react-patterns-can-ban</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-17-huong-dan-react-native-authentication-voi-amazone-cognito-phan-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-16-huong-dan-react-authentication-phan-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://luubinhan.github.io/blog/blog/2018-03-14-huong-dan-sync-addin-vscode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-14-huong-dan-react-authentication-voi-jwt-redux</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luubinhan.github.io/blog/blog/2018-03-14-huong-dan-sync-addin-vscode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-09-huong-dan-su-dung-bien-enviroment-nhu-the-nao</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-06-huong-dan-redux-van-hanh-nhu-the-nao-kem-vi-du</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-05-8-huong-dan-cach-render-component-trong-react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -96,8 +98,8 @@
 <url> <loc>https://luubinhan.github.io/blog/blog/2016-11-15-chuong-1-es-6-can-ban</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2016-04-12-front-end-developer-2016-nen-hoc-gi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://luubinhan.github.io/blog/blog/tags/react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luubinhan.github.io/blog/blog/tags/react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/ux-ui</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/firestore</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/firebase</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
