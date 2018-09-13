@@ -2,7 +2,7 @@
 slug: "/2018-09-12-huong-dan-build-notify-system-voi-react-redux"
 date: "2018-09-12"
 title: "Làm toast notification system trong React/Redux"
-desc: "Có lẽ ko có ứng dụng trang web này lại ko cần một cách để thông báo kết quả của một thao tác nào đó tới user, một notification system như thế là hết sức cần thiết"
+desc: "Có lẽ ko có ứng dụng web nào lại ko cần thông báo đến user kết quả của một thao tác nào đó, xây một notification system để sử dụng là hết sức cần thiết"
 cover: ""
 type: "post"
 lesson: 0
@@ -12,7 +12,7 @@ tags: ["react", "javascript"]
 
 # Actions & Reducer
 
-Bắt đầu với *reducer*, nếu ko có state, chúng ta sẽ trả về một mảng rỗng
+Bắt đầu với *reducer*, mặc định là một mảng rỗng, toàn bộ nội dung thông báo sẽ add vào mảng này
 
 ```js
 // scr/reducers/toast.js
@@ -27,7 +27,7 @@ export default function toasts(state = [], action) {
 }
 ```
 
-Đừng quên thêm vào trong combinReducers nhé
+Đừng quên thêm vào trong `combineReducers` nhé
 
 ```js
 // src/reducers/index.js
@@ -40,7 +40,7 @@ export default combineReducers({
 });
 ```
 
-Chúng ta sẽ viết 1 function `createToast` nhận vào options và trả về một object với id tự động tăng khi gọi, có sẵn một số default options sẽ merge với giá trị options truyền vào
+Chúng ta sẽ cần 1 function `createToast` nhận vào options và trả về một object với id tự động tăng khi gọi, có sẵn một số default options sẽ merge với giá trị options truyền vào
 
 ```js
 // src/factories/createToast.js
@@ -87,7 +87,7 @@ export function removeToast(id) {
 }
 ```
 
-Giờ đến nhiệm vụ của reducer là phải xử lý khi 2 action được gọi
+Giờ đến nhiệm vụ của reducer là phải xử lý khi 2 action trên
 
 ```js
 // src/reducers/toasts.js
@@ -109,11 +109,11 @@ export default function toasts(state = [], action) {
 }
 ```
 
-Xong với việc xử lý trong Redux, giờ đến cái Component
+Xong việc xử lý trong Redux, giờ đến cái Component
 
 # Components
 
-```js
+```jsx
 import PropTypes from "prop-types";
 import React from "react";
 import { bindActionCreators } from "redux";
@@ -154,11 +154,11 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps, mapDispatchToProps)(Toasts);
 ```
 
-Ở component `Toasts` này chúng ta render tất cả notification nhận được từ store, đưa vào function xử lý nút close trêe mỗi component.
+Ở component `Toasts` này chúng ta render tất cả notification có trong **store**, đưa vào function xử lý nút close trêe mỗi component.
 
 Đến Component `Toast`
 
-```js
+```jsx
 // src/components/Toast.jsx
 
 import PropTypes from "prop-types";
