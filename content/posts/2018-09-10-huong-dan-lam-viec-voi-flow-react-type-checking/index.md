@@ -50,6 +50,10 @@ console.log(typeof myNumber); // boolean
 
 Flow là thư viện của Facebook, hỗ trợ tốt nhất cho React, đứng trên góc độ của người làm sell, nếu nói chúng ta sử dụng Flow từ Facebook sẽ ngon hơn, Typescript là superset của javascript, việc dùng Typescript cũng thay đổi khá nhiều thứ khác trong project, mình cảm thấy nó tiêu tốn khá nhiều thời gian hơn trong lúc dev, PropTpyes đã ko còn được quan tâm nhiều như trước nữa từ sau khi có Flow
 
+Còn theo như phát biểu từ những người tạo ra Flow (những developer trong Facebook)
+
+"Chúng tôi built Flow vì thấy TypeScript đang đi không theo hướng mà công động mong đợi. Ví dụ, TypeScript cố tính không muốn đi theo hướng tập trung vào vấn đề type checking như một type system, không cung cấp việc generate ra document cho API với type đã định nghĩa. Nếu bạn muốn TypeScript làm cái gì bạn cũng phải bảo nó hết, ko hoàn toàn tự động. Mặc dù từ TypeScript 2.0 họ bắt đầu để ý chuyện này, tuy nhiên còn phải rất lâu mới bắt kịp Flow nhé"
+
 # Setup Flow với React
 
 Theo hướng dẫn trên tài liệu chính thức https://flow.org/en/docs/react/
