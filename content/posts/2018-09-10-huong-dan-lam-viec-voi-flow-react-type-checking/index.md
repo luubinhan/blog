@@ -10,6 +10,15 @@ chapter: 0
 tags: ["react", "javascript"]
 ---
 
+<!-- TOC -->
+
+- [Static vs Dynamic Typing](#static-vs-dynamic-typing)
+- [Tại sao chọn Flow](#tại-sao-chọn-flow)
+- [Setup Flow với React](#setup-flow-với-react)
+- [Define type check cho Prop và State của cho React Component](#define-type-check-cho-prop-và-state-của-cho-react-component)
+
+<!-- /TOC -->
+
 # Static vs Dynamic Typing
 
 Để bắt đầu chúng ta phải hiểu cách javascript handle type

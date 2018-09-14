@@ -10,6 +10,18 @@ chapter: 0
 tags: ["ux-ui"]
 ---
 
+<!-- TOC -->
+
+- [1: Thực hiện thay đổi của user ngay lập tức](#1-thực-hiện-thay-đổi-của-user-ngay-lập-tức)
+- [2: Màn hình settings](#2-màn-hình-settings)
+- [3: Nhiều lựa chọn](#3-nhiều-lựa-chọn)
+- [4: Khi thay đổi lựa chọn ảnh hưởng đến các lựa chọn khác](#4-khi-thay-đổi-lựa-chọn-ảnh-hưởng-đến-các-lựa-chọn-khác)
+- [5: Kết quả on/off có thể dễ dàng nhận thấy](#5-kết-quả-onoff-có-thể-dễ-dàng-nhận-thấy)
+- [6: Các phần tử liên quan với nhau](#6-các-phần-tử-liên-quan-với-nhau)
+- [7: Một lựa chọn](#7-một-lựa-chọn)
+
+<!-- /TOC -->
+
 # 1: Thực hiện thay đổi của user ngay lập tức
 
 Sử dụng Toggle switch khi

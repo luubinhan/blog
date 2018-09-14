@@ -17,10 +17,8 @@ tags: ["javascript", "react"]
 - [Sự khác nhau giữa Element và Component trong React?](#sự-khác-nhau-giữa-element-và-component-trong-react)
 - [Khi nào thì sử dụng Class Component và Functional Component](#khi-nào-thì-sử-dụng-class-component-và-functional-component)
 - [`Refs` trong React dùng để làm gì](#refs-trong-react-dùng-để-làm-gì)
-- [Keys trong React là gì](#keys-trong-react-là-gì)
+- [Key trong React là gì](#key-trong-react-là-gì)
 - [Sự khác nhau giữa controlled component và uncontrolled component](#sự-khác-nhau-giữa-controlled-component-và-uncontrolled-component)
-  - [Controlled Component](#controlled-component)
-  - [Uncontrolled Component](#uncontrolled-component)
 - [Để gọi AJAX, sự dụng sự kiện nào của lifecycle?](#để-gọi-ajax-sự-dụng-sự-kiện-nào-của-lifecycle)
 - [`shouldComponentUpdate` dùng để làm gì](#shouldcomponentupdate-dùng-để-làm-gì)
 - [Build Product bằng cách nào?](#build-product-bằng-cách-nào)
@@ -49,57 +47,47 @@ Nếu component có state và các phương thức của lifecycle, sử dụng 
 
 # `Refs` trong React dùng để làm gì
 
-Refs cho phép access trực tiếp đến DOM element hoặc một instance của component
-
-```html
-
-<input type="text" /> this.input = input} />
-
-```
-
-# Keys trong React là gì
-
-Keys giúp React theo dõi sự thay đổi của một item trong list, tại sao thêm key? để tối ưu performance, giúp React tìm nhanh tới element đó khi cần.
+Refs để access trực tiếp đến DOM node/hoặc một instance của component sau khi render
 
 ```jsx
-{this.state.todoItems.map( (task, uid) => {
-  return
-    <ul>
-      <li>{task}</li>
-    </ul>
-  }
-)}
-
+<input type="text" ref={this.input = input} />
 ```
 
+# Key trong React là gì
+
+Key giúp React theo dõi sự thay đổi của một item trong list. Tại sao thêm key? để **tối ưu performance**, giúp React tìm nhanh tới element đó khi cần.
+
+```jsx
+{this.state.todoItems.map((task, uid) => {
+  return
+    <li key={uid}>{task}</li>
+  }
+)}
+```
 
 # Sự khác nhau giữa controlled component và uncontrolled component
 
-Controlled component là component React control dữ liệu dựa trên state và props, uncontrolled component là component mà dữ liệu được handle bởi DOM
-
-## Controlled Component
+Controlled Component: prop hoặc state của component được gán cho giá trị DOM
 
 ```jsx
-
 <input type='text' value={this.state.username} onChange={this.updateUsername} />
-
 ```
 
-## Uncontrolled Component
+Uncontrolled Component: giá trị của DOM thì do DOM quản
 
 ```jsx
-
 <input type='text' ref={(input) => this.input = input} />
-
 ```
 
 # Để gọi AJAX, sự dụng sự kiện nào của lifecycle?
 
-`componentDidMount` , lý do ko sử dụng <code>componentWillMount</code> vì React  có thể gọi componentWillMount nhiều lần nếu cần thiết, thứ 2 không thể chắc chắn AJAX luôn gọi thành công, nếu gơi vào trường hợp đó câu lệnh <code>setState</code> sẽ chạy trên unmounted component.
+`componentDidMount`, lý do ko sử dụng <code>componentWillMount</code> vì React  có thể gọi componentWillMount nhiều lần nếu cần thiết, thứ 2 không thể chắc chắn AJAX luôn gọi thành công, nếu gơi vào trường hợp đó câu lệnh <code>setState</code> sẽ chạy trên unmounted component.
+
+** Cập nhập componentWillMount bị bỏ rồi**
 
 # `shouldComponentUpdate` dùng để làm gì
 
-`shouldComponentUpdate` cho phép can thiệp quá trình update UI của component và các component con của nó.
+`shouldComponentUpdate` cho phép can thiệp quá trình update UI của component và các component con của nó. Nếu return `true` thì update, ngược lại `false`
 
 # Build Product bằng cách nào?
 
@@ -107,7 +95,7 @@ Sử dụng phương thức DefinePlugin của Webpack để set `NODE_ENV = pro
 
 # Tại sao nên sử dụng `React.Children.map()` thay vì `props.children.map()`
 
-`props.children` chưa chắc lúc nào cũng là array. Ví dụ
+`props.children` chưa chắc lúc nào cũng là `array`. Ví dụ
 
 ```jsx
 <Parent>
@@ -124,7 +112,7 @@ Nếu sử dụng `props.children.map` trong Parent sẽ bị lỗi vì `props.c
 </Parent>
 ```
 
-`React.Children.map` cho phép `props.children` là array hoặc object đều được.
+`React.Children.map` cho phép `props.children` là `array` hoặc `object` đều được.
 
 # Events được xử lý trong React như thế nào?
 
@@ -144,7 +132,7 @@ callback function, function sẽ chạy sau khi `component` được `render` l�
 
 # Đoạn code sau sai ở chổ nào
 
-```js
+```jsx
 this.setState((prevState, props) => {
  return { streak: prevState.streak + props.count }
 })
@@ -152,6 +140,6 @@ this.setState((prevState, props) => {
 
 Không sai gì cả, ít người biết rằng khi `setState` có thể truyền vào `previous state`.
 
-Nguồn
 
-https://tylermcginnis.com/react-interview-questions/
+[Link bài gốc](https://tylermcginnis.com/react-interview-questions/)
+

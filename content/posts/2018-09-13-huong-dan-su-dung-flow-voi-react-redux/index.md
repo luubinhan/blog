@@ -10,8 +10,15 @@ chapter: 0
 tags: ["react", "javascript", "redux"]
 ---
 
-# Constants
+<!-- TOC -->
 
+- [Constants](#constants)
+- [Actions](#actions)
+- [Reducer](#reducer)
+
+<!-- /TOC -->
+
+# Constants
 
 constants/actionTypes.js
 
