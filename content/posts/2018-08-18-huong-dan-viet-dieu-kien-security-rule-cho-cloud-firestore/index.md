@@ -10,6 +10,15 @@ chapter: 0
 tags: ["firestore", "firebase"]
 ---
 
+<!-- TOC -->
+
+- [Xác thực](#xác-thực)
+- [Kiểm tra dữ liệu](#kiểm-tra-dữ-liệu)
+- [Truy cập đến các documents khác](#truy-cập-đến-các-documents-khác)
+- [Hàm tùy biến](#hàm-tùy-biến)
+
+<!-- /TOC -->
+
 # Xác thực
 
 Một trong những tình huống phổ biến nhất là cho phép truy cập dữ liệu nếu user đã đăng nhập (còn gọi là xác thực, authentication).

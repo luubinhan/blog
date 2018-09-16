@@ -10,6 +10,14 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [Tại sao](#tại-sao)
+- [Cách giải quyết của requires/AMD](#cách-giải-quyết-của-requiresamd)
+- [Kiểu Reflection](#kiểu-reflection)
+
+<!-- /TOC -->
+
 # Tại sao
 
 Giờ hãy tưởng tượng chúng ta có 2 module, cái đầu tiên để gọi ajax và cái thứ 2 để route

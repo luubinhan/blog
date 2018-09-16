@@ -10,6 +10,25 @@ chapter: 0
 tags: ["react", "javascript"]
 ---
 
+<!-- TOC -->
+
+- [Bắt buộc phải học](#bắt-buộc-phải-học)
+- [Kỹ năng Development](#kỹ-năng-development)
+- [React và hệ sinh thái (nghe kêu ghê chưa)](#react-và-hệ-sinh-thái-nghe-kêu-ghê-chưa)
+  - [CSS](#css)
+  - [Build tools](#build-tools)
+  - [State management](#state-management)
+  - [Type Checkers](#type-checkers)
+  - [Routing](#routing)
+  - [API clients](#api-clients)
+  - [Thư viện tiện ích](#thư-viện-tiện-ích)
+  - [Testing](#testing)
+  - [Static Site Generator](#static-site-generator)
+  - [i18n](#i18n)
+  - [Server Side Rendering](#server-side-rendering)
+
+<!-- /TOC -->
+
 Cái nào **in đậm** là bắt buộc, *để nghiêng* biết thì tốt, <del>gạch ngang</del> là ko cần học luôn
 
 # Bắt buộc phải học

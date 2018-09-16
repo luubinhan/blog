@@ -10,6 +10,13 @@ chapter: 0
 tags: ["react", "javascript"]
 ---
 
+<!-- TOC -->
+
+- [Actions & Reducer](#actions--reducer)
+- [Components](#components)
+
+<!-- /TOC -->
+
 # Actions & Reducer
 
 Bắt đầu với *reducer*, mặc định là một mảng rỗng, toàn bộ nội dung thông báo sẽ add vào mảng này
