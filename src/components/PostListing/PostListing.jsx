@@ -17,10 +17,11 @@ class PostListing extends React.Component {
         timeToRead: postEdge.node.timeToRead
       })
     })
-    return postList
-  }
+    return postList;
+  }  
   render() {
-    const postList = this.getPostList()
+    const postList = this.getPostList();
+    console.log(postList);
     return (
       <div className="posts-list">
         {

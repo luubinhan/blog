@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === 'production') {
     inlinedStyles = require('!raw-loader!../public/styles.css')
   } catch (e) {
     /* eslint no-console: "off" */
-    console.log(e)
+    console.warn(e)
   }
 }
 

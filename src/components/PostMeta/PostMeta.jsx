@@ -5,18 +5,10 @@ import {isEmpty} from 'lodash'
 
 import './PostMeta.scss';
 
-class PostMeta extends Component{
-
-	static propTypes = {
-		datetime: PropTypes.string,
-		tags: PropTypes.array,
-	}
-	static defaultProps = {
-	  datetime: '',	  
-	};
+class PostMeta extends Component {
 	render(){
 		let {datetime, tags} = this.props;
-		return(			
+		return (			
 			<div className="post-meta">
 				{datetime !== '' && 
 				    <div className="post-date">        
@@ -26,7 +18,7 @@ class PostMeta extends Component{
 			    {!isEmpty(tags) &&
 				    <div className="post-category">
 					    {
-					    	tags.map( tag =>{
+					    	tags.map( tag => {
 					    		return <Link activeClassName="active" key={tag} to={`/tags/${tag}`}>{tag}</Link>   
 					    	})
 					    }
@@ -36,5 +28,12 @@ class PostMeta extends Component{
 		);
 	}
 }
-
+PostMeta.propTypes = {
+	datetime: PropTypes.string,
+	tags: PropTypes.any
+}
+PostMeta.defaultProps = {
+	datetime: '',
+	tags: []
+}
 export default PostMeta;

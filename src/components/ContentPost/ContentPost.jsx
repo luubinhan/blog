@@ -42,13 +42,9 @@ class ContentPost extends Component{
 		date: '',
 		img: ''
 	};
-
-	constructor(props) {
-		super(props);
-	}
-
 	render(){
 		let {id,title,desc,href,img, date,tags} = this.props;		
+		console.log('dev', date);
 		return(
 		    <div className="mystyle-item-post">
 		      <article className="item-post clearfix " itemType="http://schema.org/NewsArticle">
@@ -58,8 +54,6 @@ class ContentPost extends Component{
 					</figure> 
 		      }
 	          		<section className="the-post-content">
-			          		          
-
 		              	<header className="heading-post" itemProp="headline"><GatsbyLink to={href}>{title}</GatsbyLink></header>
 		              	
 		              	{desc !=='' &&
@@ -71,7 +65,6 @@ class ContentPost extends Component{
 	          		</section>
 		      	</article>
 		  	</div>
-			
 		)
 	}
 }

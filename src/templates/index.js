@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import {random, isEmpty, reverse} from 'lodash'
+import {random, isEmpty} from 'lodash'
 import Link from "gatsby-link";
 
 import PostListing from '../components/PostListing/PostListing'
@@ -22,7 +22,6 @@ class Index extends React.Component {
     const previousUrl = index - 1 == 1 ? "" : (index - 1).toString();
     const nextUrl = (index + 1).toString();
     const sideBg = bgSidebar[random(bgSidebar.length-1)];
-    console.log(group);
     return (
       <div className="master">
         <Helmet title={config.siteTitle} />

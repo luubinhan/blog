@@ -53,6 +53,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     type
                     category
                     tags
+                    date
+                    cover
                   }
                   fields {
                     slug
