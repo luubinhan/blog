@@ -22,6 +22,10 @@ Sau khi đăng nhập thành công, chúng ta sẽ nhận được một Access 
 - Web storage có thể được truy cập bằng javascript, có thể bị lợi dụng để tấn công cross-site scripting (XSS)
 - Lập trình viên phải luôn đảm bảo gởi đi JWT bằng HTTPS, không bao giờ được dùng HTTP
 
+**Ưu điểm**
+
+- Truy cập được bằng Javascript
+
 # Cookies
 
 Chúng ta cũng có thể lưu JWT bằng cookie
@@ -37,4 +41,8 @@ Vòng đời có một cookie có thể tùy biến theo chúng ta lựa chọn
 
 - Kích thước lớn nhất của cookie là 4kb, nếu muốn thêm một số thông tin vào trong token thì sẽ không được.
 - Có thể bị dùng để tấn công bằng cross-site request forgery (CSRF hay XSRF). Có thể chặn một phần CSRF nếu kiểm tra HTTP `Referer` và `Origin`
-- Khi hiện thực cho ứng dụng cần truy cập cross-domain
+- Không thể truy cập bằng javascript
+
+**Ưu điểm**
+
+- Client không thể chỉnh sửa và xem
