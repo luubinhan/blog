@@ -10,6 +10,18 @@ chapter: 0
 tags: ["javascript", "react"]
 ---
 
+<!-- TOC -->
+
+- [Thu thập](#thu-thập)
+- [Đọc hiểu kết quả](#đọc-hiểu-kết-quả)
+- [Lọc commit](#lọc-commit)
+- [Flame chart](#flame-chart)
+- [Ranked chart](#ranked-chart)
+- [Component Chart](#component-chart)
+- [Tương tác](#tương-tác)
+
+<!-- /TOC -->
+
 ## Thu thập
 
 Trên bộ DevTools sẽ có thêm tab **Profiler**
@@ -22,13 +34,13 @@ Trên màn hình vừa mở, click nút record để bắt đầu thu thập d�
 
 ![record để bắt đầu thu thập dữ liệu](https://reactjs.org/static/start-profiling-bae8d10e17f06eeb8c512c91c0153cff-acf85.png)
 
-Lúc này, khi một component React chạy render, thông tin sẽ được thu thập. Sử dụng app như bình thường, khi không muốn thu thập dữ liệu nữa, click nút **stop**
+Lúc này, khi một component react chạy `render`, thông tin sẽ được thu thập. Sử dụng app như bình thường, khi không muốn thu thập dữ liệu nữa, click nút **stop**
 
 ![stop record](https://reactjs.org/static/start-profiling-bae8d10e17f06eeb8c512c91c0153cff-acf85.png)
 
 ## Đọc hiểu kết quả
 
-Như chúng ta đã biết, chúng ta quan tâm đến quá trình **commit** React component, là khi component được insert, update, hoặc remove khỏi DOM.
+Chúng ta quan tâm đến quá trình **commit** React component - là khi component được **insert**, **update**, hoặc **remove** khỏi DOM.
 
 Ở trên cùng, bên phải, để ý cái bar chart
 
@@ -44,7 +56,7 @@ Thời gian thu thập dữ liệu càng lâu, ứng dụng render càng nhiều
 
 ## Flame chart
 
-Flame chart đại diện cho trạng thái của ứng trong một thời điểm commit cụ thể. Mỗi cột đại diện cho một component, kích thước và màu sắc thể hiện thời gian render component và các component con bên trong. Màu xanh thì tốn ít thời gian, màu vàng là nhiều thời gian và màu xám là không render
+**Flame chart** đại diện cho trạng thái của ứng trong một thời điểm commit cụ thể. Mỗi cột đại diện cho một component, kích thước và màu sắc thể hiện thời gian render component và các component con bên trong. Màu xanh thì tốn ít thời gian, màu vàng là nhiều thời gian và màu xám là không render
 
 ![Flame chart](https://reactjs.org/static/flame-chart-3046f500b9bfc052bde8b7b3b3cfc243-acf85.png)
 
@@ -58,13 +70,13 @@ Bên cột phải chúng ta có các thông tin như props, state, tổng số l
 
 ![](https://reactjs.org/props-and-state-1f4d023f1a0f281386625f28df87c78f.gif)
 
-Trong một số trường hợp, chọn vào component, chuyển qua lại giữa commit, sẽ có thông tin bổ sung tại sao component được rendered
+Trong một số trường hợp, chọn vào component, chuyển qua lại giữa commit, sẽ có thông tin bổ sung tại sao component được render lại
 
 ![](https://reactjs.org/see-which-props-changed-cc2a8b37bbce52c49a11c2f8e55dccbc.gif)
 
 ## Ranked chart
 
-Ranked chart đại diện cho 1 commit. Mỗi cột trong chart là một component, các cột này được sếp theo thứ tự component nào tốn nhiều thời gian render nhất sẽ lên trên.
+**Ranked chart** đại diện cho 1 commit. Mỗi cột trong chart là một component, các cột này được sếp theo thứ tự component nào tốn nhiều thời gian render nhất sẽ lên trên.
 
 ![](https://reactjs.org/static/ranked-chart-0c81347535e28c9cdef0e94fab887b89-acf85.png)
 
@@ -86,18 +98,12 @@ Hiện tại đây đang trong quá trình thử nghiệm cho tính năng này, 
 
 Mỗi dòng là một tương tác đã được track. Nút màu xanh bên cạnh là commit liên quan tới tương tác này.
 
-Kiểm trả một tương tác trong commit cụ thể từ flame chart và ranked chart
+Kiểm tra một tương tác trong commit cụ thể từ **flame chart** và **ranked chart**
 
 ![](https://reactjs.org/static/interactions-for-commit-9847e78f930cb7cf2b0f9682853a5dbc-acf85.png)
 
-Source code ví dụ 
+[Source code ví dụ](https://github.com/facebook/react-devtools/tree/master/test/example)
 
-https://github.com/facebook/react-devtools/tree/master/test/example
-
-Demo
-
-https://react-devtools-profiler-demo.now.sh/
-
-
+[Demo](https://react-devtools-profiler-demo.now.sh/)
 
 [Link bài gốc](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html)

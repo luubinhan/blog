@@ -1,14 +1,24 @@
 ---
 slug: "/2018-09-18-merging-va-rebase-trong-git"
 date: "2018-09-18"
-title: "Merging vs Rebasing"
-desc: "Trong bài viết này, chúng ta sẽ so sanh giữa lệnh git rebase với git merge, những trường hợp ta có thể áp dụng rebase trong quá trình làm việc với git"
+title: "Merge vs Rebase trong Git"
+desc: "Trong bài viết này, chúng ta sẽ so sánh giữa lệnh git rebase với git merge, những trường hợp ta có thể áp dụng rebase trong quá trình làm việc với git"
 cover: "https://wac-cdn.atlassian.com/dam/jcr:15447956-9d33-4817-9dc6-fd6c86f24240/hero.svg"
 type: "post"
 lesson: 0
 chapter: 0
 tags: ["javascript"]
 ---
+
+<!-- TOC -->
+
+- [Ý tưởng chính](#ý-tưởng-chính)
+  - [Merge](#merge)
+  - [Rebase](#rebase)
+- [Nguyên tắc vàng của Rebase](#nguyên-tắc-vàng-của-rebase)
+- [Quy trình làm việc](#quy-trình-làm-việc)
+
+<!-- /TOC -->
 
 # Ý tưởng chính
 
