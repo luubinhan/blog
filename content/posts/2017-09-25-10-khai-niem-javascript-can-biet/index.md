@@ -13,26 +13,26 @@ tags: ["javascript", "react"]
 
 <!-- TOC -->
 
-- [Value vs. Reference](#value-vs-reference)
-- [Primitive](#primitive)
-- [Object](#object)
-- [So sảnh `==` và `===`](#so-sảnh--và-)
+- [Giá trị vs. Tham chiếu](#giá-trị-vs-tham-chiếu)
+  - [Primitive type](#primitive-type)
+  - [Object type](#object-type)
+- [So sánh `==` và `===`](#so-sánh--và-)
 - [Scope](#scope)
   - [Global Scope](#global-scope)
   - [Local scope](#local-scope)
-- [Block Statement](#block-statement)
+- [Block scope](#block-scope)
 - [Hoisting](#hoisting)
-- [Closures](#closures)
+- [Closure](#closure)
 
 <!-- /TOC -->
 
-# Value vs. Reference
+# Giá trị vs. Tham chiếu
 
-5 kiểu dữ liệu được lưu trữ ở dạng **value**: `Boolean`, `null`, `undefined`, `String`, `Number`, còn được gọi với tên khác là *primitive types*
+5 kiểu dữ liệu được lưu trữ ở dạng **value** - giá trị: `Boolean`, `null`, `undefined`, `String`, `Number`, còn được gọi với tên khác là *primitive type*
 
-3 kiểu dữ liệu được lưu trữ ở dạng **reference**: `Array`, `Function`, `Object`, có thể gọi chung là kiểu *Object*
+3 kiểu dữ liệu được lưu trữ ở dạng **reference** - tham chiếu: `Array`, `Function`, `Object`, có thể gọi chung là kiểu *Object type*
 
-# Primitive
+## Primitive type
 
 Kiểu **primitive** được lưu giữ cho một biến, khi copy value của biến này cho biến khác, 2 value này hoàn toàn độc lập không có liên hệ gì với nhau
 
@@ -47,9 +47,9 @@ console.log(a)
 console.log(x)
 ```
 
-# Object
+## Object type
 
-Khi một biến được gán cho một kiểu Object, nó không mang giá trị của object mà chỉ **reference** đến dùng lưu trữ của object đó trong bộ nhớ.
+Khi một biến được gán cho một kiểu Object, nó không mang giá trị mà chỉ **tham chiếu** đến vùng lưu trữ của object đó trong bộ nhớ.
 
 ```js
 var arr = [];
@@ -62,9 +62,9 @@ refArr.push(2);
 console.log(arr, refArrr)
 ```
 
-# So sảnh `==` và `===`
+# So sánh `==` và `===`
 
-Khi thực hiện so sánh `=` trên biến kiểu reference, trả về `true` khi cả 2 biến số cùng trỏ về một dùng nhớ chứ không phải so sảnh giá trị của 2 biến.
+Khi thực hiện so sánh `=` trên biến kiểu tham chiếu, trả về `true` khi cả 2 biến số **cùng trỏ về một dùng nhớ** chứ không phải so sánh giá trị của 2 biến.
 
 ```js
 var arrRef = ['Hi!'];
@@ -115,20 +115,21 @@ function anotherFunction() {
 // Global Scope
 ```
 
-# Block Statement
+# Block scope
 
 Những câu khai báo như `if`, `switch`, `for`, `while` không giống như function, biến bên trong các câu khai báo này có phạm vi hoạt động trong function chứa nó.
 
 ```js
 if (true) {
     // câu lệnh điều kiện 'if' không tạo ra một scope mới
-    var name = 'Hammad'; // name vẫn là global scope
+    var name = 'Hammad'; 
+    // name vẫn là global scope
 }
 
 console.log(name); // logs 'Hammad'
 ```
 
-Trong ES6, để tránh sự nhầm nhằn này, có thể sự dụng khai báo biến bằng `let`,`const` để biến chỉ được hiểu bên trong các câu lệnh như `if`,`switch`,...
+Trong ES6, để tránh sự nhập nhằn này, khai báo biến bằng `let`,`const` để biến chỉ được hiểu bên trong các khối `{}`
 
 ```js
 if (true) {
@@ -141,13 +142,15 @@ if (true) {
 }
 
 console.log(name); // 'Hammad'
-console.log(likes); // Uncaught ReferenceError: likes is not defined
-console.log(skills); // Uncaught ReferenceError: skills is not defined
+console.log(likes); 
+// Uncaught ReferenceError: likes is not defined
+console.log(skills); 
+// Uncaught ReferenceError: skills is not defined
 ```
 
 # Hoisting
 
-Cách javascript hoạt động đôi khi hơi điên điên, luôn đưa khai báo lên đầu. Đưa lên đầu nghĩa là sau, nghĩa là biến có thể được sử dụng trước khi khai báo! Viết như sau là hoàn toàn hợp lệ trong javascript
+Cách javascript hoạt động đôi khi hơi điên điên, luôn đưa khai báo lên đầu, nghĩa là biến có thể được **sử dụng trước, khai báo sau**! Viết như sau là hoàn toàn hợp lệ trong javascript
 
 ```js
 x = 5; // gán giá trị 5 cho biến x chưa được khai báo
@@ -184,7 +187,7 @@ showCelebrityName (); // Johnny Evers​
 }
 ```
 
-Thậm chí khi khai báo biến kèm giá trị cho nó mà không dùng từ khóa var, biến đó sẽ trở thành biến toàn cục
+Thậm chí khi khai báo biến kèm giá trị cho nó mà không dùng từ khóa `var`, biến đó sẽ trở thành biến toàn cục
 
 ```js
 function showAge(){
@@ -197,7 +200,7 @@ showAge(); // 90
 console.log(age) // 90
 ```
 
-# Closures
+# Closure
 
 Closure là một function bên trong một function khác truy cập tới các biến của function ngoài
 
@@ -211,7 +214,8 @@ function showName (firstName, lastName) {
     ​return makeFullName ();
 }
 ​
-showName ("Michael", "Jackson"); // Your name is Michael Jackson 
+showName ("Michael", "Jackson");
+// Your name is Michael Jackson 
 ```
 
 Function bên trong vẫn có thể truy cập đến giá trị của biến nằm ở function ngoài ngay cả khí function ngoài đã return giá trị.
@@ -229,7 +233,8 @@ function celebrityName(firstName) {
 ​
 ​var mjName = celebrityName("Michael"); 
 ​
-var result = mjName("Jackson"); // This celebrity is Michael Jackson
+var result = mjName("Jackson"); 
+// This celebrity is Michael Jackson
 ```
 
 Tận dụng đặc điểm này của closure function chỉ lưu tham chiếu đến biến của function ngoài mà không lưu giá trị, ta có thể viết một function như class thế này
@@ -253,3 +258,4 @@ myID.setID(567);
 myID.getID(); // return 567
 ```
 
+Đọc thêm chi tiết về bài viết clusure của mình trên mozilla.org  https://developer.mozilla.org/vi/docs/Web/JavaScript/Closures

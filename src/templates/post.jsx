@@ -1,60 +1,82 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import {random} from 'lodash'
+import React from "react";
+import Helmet from "react-helmet";
+import { random } from "lodash";
 
-import Bio from '../components/Bio'
-import Link from '../components/Link'
-import Disqus from '../components/Disqus/Disqus'
-import PostTags from '../components/PostTags/PostTags'
-import SocialLinks from '../components/SocialLinks/SocialLinks'
-import SEO from '../components/SEO'
-import config from '../../data/SiteConfig'
-import {bgSidebar} from '../../data'
+import Bio from "../components/Bio";
+import Link from "../components/Link";
+import Disqus from "../components/Disqus/Disqus";
+import PostTags from "../components/PostTags/PostTags";
+import SocialLinks from "../components/SocialLinks/SocialLinks";
+import SEO from "../components/SEO";
+import config from "../../data/SiteConfig";
+import { bgSidebar } from "../../data";
 
 export default class PostTemplate extends React.Component {
   render() {
     const { slug, next, prev } = this.props.pathContext;
-    const postNode = this.props.data.markdownRemark
+    const postNode = this.props.data.markdownRemark;
     const post = postNode.frontmatter;
     if (!post.id) {
-      post.id = slug
+      post.id = slug;
     }
     if (!post.id) {
-      post.category_id = config.postDefaultCategoryID
+      post.category_id = config.postDefaultCategoryID;
     }
-    const sideBg = bgSidebar[random(bgSidebar.length-1)]
+    const sideBg = bgSidebar[random(bgSidebar.length - 1)];
     return (
       <div className="master">
         <Helmet>
           <title>{`${post.title} | ${config.siteTitle}`}</title>
           <meta name="description" content={`Blog - ${post.title}`} />
-          <meta name="keywords" content='frontend,developer,javascript,wordpress,react,hochiminh,web-developer' />
-          <script src="https://luubinhan.github.io/blog/facebookcomment.js" defer="true" />
+          <meta
+            name="keywords"
+            content="frontend,developer,javascript,wordpress,react,hochiminh,web-developer"
+          />
+          <script
+            src="https://luubinhan.github.io/blog/facebookcomment.js"
+            defer="true"
+          />
         </Helmet>
         <div className="inner">
           <SEO postPath={slug} postNode={postNode} postSEO />
           <div className="single-post">
-            <div className="single-post-container">    
+            <div className="single-post-container">
               <article>
                 <header>
                   <h1 className="single-post-title">{post.title}</h1>
                 </header>
-                <div className="post-excert">
-                  {post.desc}
-                </div>
-                {post.cover &&
-                  <figure className="the-post-thumbnail" aria-label="media" role="group" itemProp="associatedMedia" itemID={post.cover} itemType="http://schema.org/ImageObject">
-                    <img src={post.cover} alt={post.title} itemProp="thumbnailUrl" />
-                  </figure> 
-                  }
+                <div className="post-excert">{post.desc}</div>
+                {post.cover && (
+                  <figure
+                    className="the-post-thumbnail"
+                    aria-label="media"
+                    role="group"
+                    itemProp="associatedMedia"
+                    itemID={post.cover}
+                    itemType="http://schema.org/ImageObject"
+                  >
+                    <img
+                      src={post.cover}
+                      alt={post.title}
+                      itemProp="thumbnailUrl"
+                    />
+                  </figure>
+                )}
                 <div className="blog-post">
-                  <div className="post-content" dangerouslySetInnerHTML={{ __html: postNode.html }} />
+                  <div
+                    className="post-content"
+                    dangerouslySetInnerHTML={{ __html: postNode.html }}
+                  />
                 </div>
-                
               </article>
               <PostTags list={post.tags || []} />
-              
-              <Bio name={config.siteTitle} desc={config.siteTitleAlt} href="about" img={config.userAvatar} />
+
+              <Bio
+                name={config.siteTitle}
+                desc={config.siteTitleAlt}
+                href="about"
+                img={config.userAvatar}
+              />
               <div
                 className="fb-comments"
                 data-href={`${config.siteUrl}/blog${slug}`}
@@ -70,35 +92,38 @@ export default class PostTemplate extends React.Component {
               <div className="inner">
                 <div id="disqus_thread" />
                 <div className="read-next">
-                  {next &&
-                  <Link className="read-next-story" to={next.fields.slug}>
-                    <section className="post">
-                      <span className="read-this-next">Đọc Tiếp</span>
-                      <h2>{next.frontmatter.title}</h2>
-                    </section>
-                  </Link>
-                  }
-                  
-                  {prev &&
-                  <Link className="read-next-story prev" to={prev.fields.slug}>
-                    <section className="post">
-                      <span className="you-might-enjoy">Đọc Tiếp</span>
-                      <h2>{prev.frontmatter.title}</h2>
-                    </section>
-                  </Link>
-                  }                        
-                </div>                
+                  {next && (
+                    <Link className="read-next-story" to={next.fields.slug}>
+                      <section className="post">
+                        <span className="read-this-next">Đọc Tiếp</span>
+                        <h2>{next.frontmatter.title}</h2>
+                      </section>
+                    </Link>
+                  )}
+
+                  {prev && (
+                    <Link
+                      className="read-next-story prev"
+                      to={prev.fields.slug}
+                    >
+                      <section className="post">
+                        <span className="you-might-enjoy">Đọc Tiếp</span>
+                        <h2>{prev.frontmatter.title}</h2>
+                      </section>
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="aside" style={{backgroundImage: `url(${sideBg})`}}>
+        <div className="aside" style={{ backgroundImage: `url(${sideBg})` }}>
           <div className="beatiful-post-name" data-text-shadow={post.title}>
-            {post.title}     
+            {post.title}
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -122,4 +147,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

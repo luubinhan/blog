@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import {
   FacebookShareButton,
   GooglePlusShareButton,
@@ -8,9 +8,9 @@ import {
   TwitterIcon,
   FacebookIcon,
   GooglePlusIcon
-} from 'react-share'
-import config from '../../../data/SiteConfig'
-import './SocialLinks.css'
+} from "react-share";
+import config from "../../../data/SiteConfig";
+import "./SocialLinks.css";
 
 class SocialLinks extends Component {
   render() {
@@ -19,7 +19,7 @@ class SocialLinks extends Component {
     const url = config.siteUrl + config.pathPrefix + postPath;
 
     const iconSize = mobile ? 36 : 48;
-    const filter = count => (count > 0 ? count : '');
+    const filter = count => (count > 0 ? count : "");
     return (
       <div className="social-links">
         <TwitterShareButton url={url} title={post.title}>
@@ -31,18 +31,15 @@ class SocialLinks extends Component {
             {count => <div className="share-count">{filter(count)}</div>}
           </GooglePlusShareCount>
         </GooglePlusShareButton>
-        <FacebookShareButton
-          url={url}
-          quote={post.title}
-        >
+        <FacebookShareButton url={url} quote={post.title}>
           <FacebookIcon round size={iconSize} />
           <FacebookShareCount url={url}>
             {count => <div className="share-count">{filter(count)}</div>}
           </FacebookShareCount>
         </FacebookShareButton>
       </div>
-    )
+    );
   }
 }
 
-export default SocialLinks
+export default SocialLinks;

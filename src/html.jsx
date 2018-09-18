@@ -1,31 +1,31 @@
 /* eslint import/no-unresolved:"off" */
 /* eslint import/extensions:"off" */
 /* eslint global-require:"off" */
-import React from 'react'
-import favi32 from './images/favi32.png'
-import favi128 from './images/favi128.png'
+import React from "react";
+import favi32 from "./images/favi32.png";
+import favi128 from "./images/favi128.png";
 
-let inlinedStyles = ''
-if (process.env.NODE_ENV === 'production') {
+let inlinedStyles = "";
+if (process.env.NODE_ENV === "production") {
   try {
     /* eslint import/no-webpack-loader-syntax: off */
-    inlinedStyles = require('!raw-loader!../public/styles.css')
+    inlinedStyles = require("!raw-loader!../public/styles.css");
   } catch (e) {
     /* eslint no-console: "off" */
-    console.warn(e)
+    console.warn(e);
   }
 }
 
 export default class HTML extends React.Component {
   render() {
-    let css
-    if (process.env.NODE_ENV === 'production') {
+    let css;
+    if (process.env.NODE_ENV === "production") {
       css = (
         <style
           id="gatsby-inlined-css"
           dangerouslySetInnerHTML={{ __html: inlinedStyles }}
         />
-      )
+      );
     }
     return (
       <html lang="en">
@@ -38,7 +38,11 @@ export default class HTML extends React.Component {
             content="width=device-width, initial-scale=1.0"
           />
           {this.props.headComponents}
-          <link rel="author" type="text/plain"  href="https://luubinhan.github.io/blog/humans.txt" />
+          <link
+            rel="author"
+            type="text/plain"
+            href="https://luubinhan.github.io/blog/humans.txt"
+          />
           <link rel="icon" sizes="32x32" href={favi32} type="image/png" />
           <link rel="icon" sizes="180x180" href={favi128} type="image/png" />
           {css}
@@ -51,6 +55,6 @@ export default class HTML extends React.Component {
           {this.props.postBodyComponents}
         </body>
       </html>
-    )
+    );
   }
 }

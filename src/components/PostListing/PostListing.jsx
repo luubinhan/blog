@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 
-import ContentPost from '../ContentPost'
+import ContentPost from "../ContentPost";
 
 class PostListing extends React.Component {
   getPostList() {
-    const postList = []
+    const postList = [];
     this.props.postEdges.forEach(postEdge => {
       postList.push({
         path: postEdge.node.fields.slug,
@@ -15,22 +15,20 @@ class PostListing extends React.Component {
         desc: postEdge.node.frontmatter.desc,
         excerpt: postEdge.node.excerpt,
         timeToRead: postEdge.node.timeToRead
-      })
-    })
+      });
+    });
     return postList;
-  }  
+  }
   render() {
     const postList = this.getPostList();
-    console.log(postList);
     return (
       <div className="posts-list">
-        {
-        postList.map(post => (
+        {postList.map(post => (
           <div key={post.slug}>
             <ContentPost
-              title={post.title} 
-              desc={post.desc} 
-              date={post.date} 
+              title={post.title}
+              desc={post.desc}
+              date={post.date}
               href={post.path}
               tags={post.tags}
               img={post.cover}
@@ -38,8 +36,8 @@ class PostListing extends React.Component {
           </div>
         ))}
       </div>
-    )
+    );
   }
 }
 
-export default PostListing
+export default PostListing;

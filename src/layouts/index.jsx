@@ -1,17 +1,24 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Link from "gatsby-link"
-import {camelCase, isEmpty} from 'lodash'
-import {IoSocialNodejs, IoSocialJavascript, IoSocialWordpress, IoSocialHtml5, IoAndroidCompass, IoAndroidSend, IoAndroidPhonePortrait} from 'react-icons/lib/io'
+import React from "react";
+import Helmet from "react-helmet";
+import Link from "gatsby-link";
+import { camelCase, isEmpty } from "lodash";
+import {
+  IoSocialNodejs,
+  IoSocialJavascript,
+  IoSocialWordpress,
+  IoSocialHtml5,
+  IoAndroidCompass,
+  IoAndroidSend,
+  IoAndroidPhonePortrait
+} from "react-icons/lib/io";
 
-import config from '../../data/SiteConfig'
-import {PrimaryNav} from '../../data'
-import '../styles/main.scss'
-import '../styles/primaryMenu.scss'
-import './css/footer.scss'
+import config from "../../data/SiteConfig";
+import { PrimaryNav } from "../../data";
+import "../styles/main.scss";
+import "../styles/primaryMenu.scss";
+import "./css/footer.scss";
 
-import logo from '../../static/logos/logo.png'
-
+import logo from "../../static/logos/logo.png";
 
 export default class MainLayout extends React.Component {
   constructor(props) {
@@ -20,97 +27,95 @@ export default class MainLayout extends React.Component {
       /*
       Collapse state of menu for SP
        */
-      collapsed: true 
-    }
-    this.onClickNavbar = this.onClickNavbar.bind(this)
-    this.handleNavClick = this.handleNavClick.bind(this)
+      collapsed: true
+    };
+    this.onClickNavbar = this.onClickNavbar.bind(this);
+    this.handleNavClick = this.handleNavClick.bind(this);
   }
   componentWillReceiveProps(nextProps) {
     if (!isEmpty(nextProps)) {
-      this.setState({collapsed: true})
+      this.setState({ collapsed: true });
     }
   }
   /*
   Toggle menu for SP
    */
-  onClickNavbar(){
+  onClickNavbar() {
     this.setState({
       collapsed: !this.state.collapsed
-    })
+    });
   }
   getLocalTitle() {
     function capitalize(string) {
-      return string.charAt(0).toUpperCase() + string.slice(1)
+      return string.charAt(0).toUpperCase() + string.slice(1);
     }
-    const pathPrefix = config.pathPrefix ? config.pathPrefix : '/'
+    const pathPrefix = config.pathPrefix ? config.pathPrefix : "/";
     const currentPath = this.props.location.pathname
-      .replace(pathPrefix, '')
-      .replace('/', '')
-    let title = ''
-    if (currentPath === '') {
-      title = 'Trang Chủ'
-    } else if (currentPath === 'tags/') {
-      title = 'Thẻ'
-    } else if (currentPath === 'categories/') {
-      title = 'Danh mục'
-    } else if (currentPath === 'about/') {
-      title = 'Giới thiệu'
-    } else if (currentPath.includes('posts')) {
-      title = 'Bài viết'
-    } else if (currentPath.includes('tags/')) {
+      .replace(pathPrefix, "")
+      .replace("/", "");
+    let title = "";
+    if (currentPath === "") {
+      title = "Trang Chủ";
+    } else if (currentPath === "tags/") {
+      title = "Thẻ";
+    } else if (currentPath === "categories/") {
+      title = "Danh mục";
+    } else if (currentPath === "about/") {
+      title = "Giới thiệu";
+    } else if (currentPath.includes("posts")) {
+      title = "Bài viết";
+    } else if (currentPath.includes("tags/")) {
       const tag = currentPath
-        .replace('tags/', '')
-        .replace('/', '')
-        .replace('-', ' ')
-      title = `Được gắn thẻ ${capitalize(tag)}`
-    } else if (currentPath.includes('categories/')) {
+        .replace("tags/", "")
+        .replace("/", "")
+        .replace("-", " ");
+      title = `Được gắn thẻ ${capitalize(tag)}`;
+    } else if (currentPath.includes("categories/")) {
       const category = currentPath
-        .replace('categories/', '')
-        .replace('/', '')
-        .replace('-', ' ')
-      title = `${capitalize(category)}`
+        .replace("categories/", "")
+        .replace("/", "")
+        .replace("-", " ");
+      title = `${capitalize(category)}`;
     }
-    return title
+    return title;
   }
   /*
   Hide menu when click on link for SP
    */
-  handleNavClick(){
+  handleNavClick() {
     this.setState({
       collapsed: !this.state.collapsed
-    })  
+    });
   }
-  renderIcon = (name) => {
+  renderIcon = name => {
     switch (name) {
-      case 'nodejs':
+      case "nodejs":
         return <IoSocialNodejs />;
-      case 'javascript':
+      case "javascript":
         return <IoSocialJavascript />;
-      case 'wordpress':
-        return <IoSocialWordpress />
-      case 'html5':
-        return <IoSocialHtml5 />
-      case 'compass':
-        return <IoAndroidCompass />
-      case 'react-native':
-        return <IoAndroidPhonePortrait />
-      case 'send':
-        return <IoAndroidSend />
+      case "wordpress":
+        return <IoSocialWordpress />;
+      case "html5":
+        return <IoSocialHtml5 />;
+      case "compass":
+        return <IoAndroidCompass />;
+      case "react-native":
+        return <IoAndroidPhonePortrait />;
+      case "send":
+        return <IoAndroidSend />;
       default:
         return null;
     }
-  }
+  };
   render() {
     const { children } = this.props;
-    const {collapsed} = this.state;
-    const primaryNav = PrimaryNav.map((item) => (
+    const { collapsed } = this.state;
+    const primaryNav = PrimaryNav.map(item => (
       <li key={item.name} className={camelCase(item.name)}>
         <Link to={item.href} activeClassName="active">
-          {item.icon !== '' &&
-            this.renderIcon(item.icon)
-          }
+          {item.icon !== "" && this.renderIcon(item.icon)}
           {item.name}
-        </Link>	
+        </Link>
       </li>
     ));
     return (
@@ -121,15 +126,15 @@ export default class MainLayout extends React.Component {
         </Helmet>
         <div className="sidebar">
           <div className="inner">
-            <Link to={'/'} className="go-home">
+            <Link to={"/"} className="go-home">
               <img src={logo} alt={config.siteTitleAlt} />
             </Link>
             <button
               type="button"
               aria-expanded="false"
-              className={`navbar-toggle ${collapsed ? "collapsed" : ''}`}
+              className={`navbar-toggle ${collapsed ? "collapsed" : ""}`}
               onClick={this.handleNavClick}
-              aria-label='nav'
+              aria-label="nav"
             >
               <div className="hamburger hamburger-1">
                 <span className="line" />
@@ -138,7 +143,9 @@ export default class MainLayout extends React.Component {
               </div>
             </button>
             <div className="navigation-component">
-              <ul className={`nav primary-menu ${collapsed ? "collapsed" : ''}`}>
+              <ul
+                className={`nav primary-menu ${collapsed ? "collapsed" : ""}`}
+              >
                 {primaryNav}
               </ul>
             </div>
@@ -149,7 +156,14 @@ export default class MainLayout extends React.Component {
                 <div className="credit">
                   {config.copyright}
                   <div>
-                    picture credit <a href="https://unsplash.com" rel='noopener noreferrer' target="_blank">unsplash.com</a>
+                    picture credit{" "}
+                    <a
+                      href="https://unsplash.com"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      unsplash.com
+                    </a>
                   </div>
                 </div>
               </section>
@@ -158,6 +172,6 @@ export default class MainLayout extends React.Component {
         </div>
         {children()}
       </div>
-    )
+    );
   }
 }

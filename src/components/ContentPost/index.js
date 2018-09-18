@@ -1,3 +1,3 @@
-import ContentPost from './ContentPost';
+import ContentPost from "./ContentPost.jsx";
 
 export default ContentPost;
