@@ -31,7 +31,7 @@ module.exports = {
     },
     {
       label: "Twitter",
-      url: "https://twitter.com/ericwindmill",
+      url: "https://twitter.com/luubinhan",
       iconClassName: "twitter"
     },
   ],

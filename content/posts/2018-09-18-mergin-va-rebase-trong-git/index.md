@@ -99,3 +99,5 @@ Nếu muốn viết lại toạn bộ cái feature sử dụng cách này, dùng
 ```git
 git merge-base feature master
 ```
+
+[Link bài gốc](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)

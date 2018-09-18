@@ -4,6 +4,7 @@
   "version": "2.0.1",
   "author": "An Luu <luubinhan1989@gmail.com>",
   "dependencies": {
+    "babel-eslint": "^9.0.0",
     "babel-plugin-lodash": "^3.3.4",
     "gatsby": "^1.9.273",
     "gatsby-link": "^1.6.45",
