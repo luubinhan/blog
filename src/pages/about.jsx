@@ -113,13 +113,8 @@ class AboutPage extends React.Component {
                         Sau khi tốt nghiệp đại học Hoa Sen năm 2017, bước chân
                         vào những lần phỏng vấn thất bại liên tiếp. Xin vào ví
                         trí thiết kế web cho một công ty bán nữ trang, với vốn
-                        liếng HTML/CSS góp nhặt từ{" "}
-                        <a target="_blank" href="http://www.izwebz.com">
-                          izwebz.com
-                        </a>{" "}
-                        và một vài dự án nhỏ làm trong trường, "mai mắn" được
-                        nhận trong ngày phỏng vấn và bị từ chối ngay hôm sau vì
-                        "anh cần người biết vẽ tay".
+                        liếng HTML/CSS góp nhặt từ izwebz.com và một vài dự án nhỏ làm trong trường, "mai mắn" được
+                        nhận trong ngày phỏng vấn và bị từ chối ngay hôm sau vì "anh cần người biết vẽ tay".
                       </p>
                       <p>
                         Luôn bị mắc lỗi phát âm tiếng anh, mình đâm đơn vào các
