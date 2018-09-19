@@ -192,3 +192,5 @@ Set-Cookie: session=15d38683-a98f-402d-a373-4f81a5549536; path=/; expires=Fri, 0
   { id: 456346436, ... }
 ]
 ```
+
+Bài viết đầy đủ http://www.redotheweb.com/2015/11/09/api-security.html
