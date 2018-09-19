@@ -51,7 +51,7 @@
     "prettier": "^1.13.7",
     "remark-cli": "^4.0.0",
     "remark-preset-lint-recommended": "^3.0.2",
-    "stylefmt": "^6.0.0",
+    "stylefmt": "^6.0.2",
     "write-good": "^0.11.3"
   },
   "keywords": [

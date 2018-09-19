@@ -48,6 +48,18 @@ export default class HTML extends React.Component {
           {css}
         </head>
         <body>
+          <script>
+            (function() {
+              var cx = '017629239150274950238:jsasqb7gaza';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+            })();
+          </script>
+          <gcse:search></gcse:search>
           <div
             id="___gatsby"
             dangerouslySetInnerHTML={{ __html: this.props.body }}
