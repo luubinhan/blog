@@ -132,7 +132,7 @@ class AboutPage extends React.Component {
                         định nghĩa nổi.
                       </p>
                       <h2>Và kết thúc....</h2>
-                      <p>Mình định viết đến đây để các bạn đọc tức chơi, một phần giới thiệu bị bỏ lửng, không có kết thúc. Vì thực sự mình vẫn đang típ tục vá lại những kiến thức mình chưa biết, mình sẽ còn tiếp tục phỏng vấn rớt dài dài vì không đủ đáp ứng yêu cầu cho công việc các bạn ạ.</p>
+                      <p>Mình định viết đến đây để các bạn đọc tức chơi, một phần giới thiệu bị bỏ lửng, không có kết thúc. Vì thực sự mình vẫn đang tiếp tục vá lại những kiến thức mình còn lủng, mình sẽ còn tiếp tục phỏng vấn rớt dài dài vì không đủ đáp ứng yêu cầu cho công việc.</p>
                     </article>
                   </div>
                 )}
