@@ -122,3 +122,73 @@ Có thể thấy là việc tạo ra một token giả là vô cùng khó, vì c
 Chúng ta nghe rất nhiều bàn luận xung quanh session cookie và access token. Mình đã từng lẫn lộn các khái niệm này. **Session cookie** là một đoạn thông tin của user lưu ở **cookie** trình duyệt, sẽ được gởi kèm teo request lên server, `cookie` là nơi chứa cái *session cookie*, **cookie** cũng có thể chứa được **access token**
 
 Như vậy, để an toàn đừng dùng cookie của http, dùng cookie của **https**, đừng lưu access token trong `localStorage`, nó có thể được sử dụng để tấng công XSS
+
+Nếu không muốn javascript được đụng vô cookie, trình duyệt cung cấp thêm một chổ gọi là HttpOnly cookie, ủa vậy sao nhét vào trong cookie này? Lúc này khi gọi lên server, ví dụ `POST /authenticate` nó sẽ trả về token bên trong header `Set-Cookie`, ví dụ như bên dưới
+
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Methods: GET,POST,PUT
+Access-Control-Allow-Origin: https://www.bobank.com
+Set-Cookie: session=15d38683-a98f-402d-a373-4f81a5549536; path=/; expires=Fri, 06 Nov 2015 08:30:15 GMT; httponly
+```
+
+Bên trong Set-Cookie bạn sẽ thấy có giá trị `httponly`, nó sẽ khiến javascript ở client không thể nào lấy được thông tin này. Khi gọi AJAX bình thường nó sẽ không có dùng đến cookie này, muốn có mình phải chỉ định thêm `credentials: include`
+
+```js
+/**
+ * @return {Promise}
+ */
+function getAccounts() {
+    return fetch('https://api.bobank.com/accounts', {
+        headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+            'Accept': 'application/json',
+        },
+        credentials: 'include' // <= Thay đổi ở đây
+    }).then(function(response) {
+        return response.json();
+    })
+}
+```
+
+Nếu không sử dụng `fetch` mà dùng `XmlHttpRequest`, thì thuộc này có tên là `withCredentials`
+
+```js
+function getAccounts() {
+  return new Promise(function(fulfill, reject) {
+    var req = new XMLHttpRequest();
+    req.open('GET', 'https://api.bobank.com/accounts', true); // force XMLHttpRequest2
+    req.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+    req.setRequestHeader('Accept', 'application/json');
+    req.withCredentials = true; // đưa cookies vào nhé
+    req.onload = function()  {
+        // lưu token rồi redirect
+        let json;
+        try {
+          json = JSON.parse(req.responseText);
+        } catch (error) {
+          return reject(error);
+        }
+        resolve(json);
+    };
+    req.onerror = reject;
+  });
+}
+```
+
+Vẫn còn thiếu! Khi browser mà gởi đi `XmlHtpRequests` với thông tin `credentials` thì API cũng phải có `Access-Control-Allow-Credentials` trong response. Ví dụ `GET /accounts` trả về từ server
+
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Headers: Content-Type,Authorization
+Access-Control-Allow-Methods: GET,POST,PUT
+Access-Control-Allow-Origin: https://www.bobank.com
+Set-Cookie: session=15d38683-a98f-402d-a373-4f81a5549536; path=/; expires=Fri, 06 Nov 2015 09:30:15 GMT; httponly
+[
+  { id: 456346436, ... }
+]
+```
