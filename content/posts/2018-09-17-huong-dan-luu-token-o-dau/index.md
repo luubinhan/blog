@@ -2,7 +2,7 @@
 slug: "/2018-09-17-huong-dan-luu-token-o-dau"
 date: "2018-09-17"
 title: "Lưu token ở đâu?"
-desc: "Với ứng dụng xác thực bằng token, hướng dẫn này sẽ giải thích việc lưu token ở đâu cho an toàn"
+desc: "Một ngày đẹp trời mình tự hỏi, nếu token là một string được lưu ở localStorage, liệu có an toàn không khi việc copy đoạn token này từ trình duyệt là vô cùng đơn giản? Liệu lưu trữ cái token ở đâu sẽ hợp lý?"
 cover: ""
 type: "post"
 lesson: 0
@@ -10,11 +10,11 @@ chapter: 0
 tags: ["javascript"]
 ---
 
-Để lựa chọn lưu token ở đâu, mình cũng phân biệt sự khác nhau giữa `cookie`, `localStorage`, `sessionStorage`
+# Sự khác nhau giữa cookie - localStorage - sessionStorage
+
+Trước hết, cùng phân biệt sự khác nhau giữa `cookie`, `localStorage`, `sessionStorage`
 
 Cả 3 thằng điều là để lưu lại một ít thông tin trên trình duyệt để sử dụng sau này.
-
-# Sự khác nhau giữa
 
 <table class="table table-striped">
   <thead class="thead-inverse">
@@ -65,12 +65,14 @@ Cả 3 thằng điều là để lưu lại một ít thông tin trên trình du
   </tbody>
 </table>
 
-Phần quan trọng nhất để phân biệt giữa 3 thằng là nơi chúng được lưu và việc có được gởi đi cùng request không.
+Khác biệt lớn nhất giữa 3 thằng là *nơi* chúng được lưu và việc có được gởi đi cùng request không.
 
-Nếu đảm bảo được trình duyệt truy cập trang web, ứng dụng web hổ trợ `localStorage` và `sessionStorage` thì gần như ai cũng thích xài 2 thằng localStorage và sessionStorage hơn.
+Nếu đảm bảo được trình duyệt truy cập trang web, ứng dụng web hổ trợ `localStorage` và `sessionStorage` thì gần như ai cũng thích xài 2 thằng `localStorage` và `sessionStorage` hơn.
 
 Video giải thích
 https://www.youtube.com/watch?v=AwicscsvGLg
+
+Mình từng nghĩ việc lưu ở đâu cho an toàn, thật ra việc lưu ở đâu phía client không ảnh hưởng nhiều đến việc gởi đi bằng cách nào. Tại sao? Thử tìm hiểu kiểu token đang được sử dụng phổ biến hiện này JSON Web token.
 
 # JSON Web Token
 
@@ -108,4 +110,15 @@ Về phía client để sử dụng JWT này, chèn vào header của request
 Authorization: Bearer DoanJSONWebToken
 ```
 
-Có thể thấy là việc tạo ra một token giả là vô cùng khó, vì có được cái signature khớp với phía server ko dễ, cái `secret` chỉ có server biết
+Có thể thấy là việc tạo ra một token giả là vô cùng khó, vì có được cái signature khớp với phía server ko dễ, cái `secret` chỉ có server biết.
+
+# Giải pháp để sử dụng JWT an toàn?
+
+- `secret` phải thật mạnh
+- Nếu có những thông tin nhạy cảm trong token, chúng ta cần encrypt cái token bằng JSON Web Encryption
+- Không nên gởi đi token bằng HTTP, luôn dùng HTTPS nếu có gởi đi token
+- Xác định thời gian expire của token chứ không để nó tồn tại vô thời hạn
+
+Chúng ta nghe rất nhiều bàn luận xung quanh session cookie và access token. Mình đã từng lẫn lộn các khái niệm này. **Session cookie** là một đoạn thông tin của user lưu ở **cookie** trình duyệt, sẽ được gởi kèm teo request lên server, `cookie` là nơi chứa cái *session cookie*, **cookie** cũng có thể chứa được **access token**
+
+Như vậy, để an toàn đừng dùng cookie của http, dùng cookie của **https**, đừng lưu access token trong `localStorage`, nó có thể được sử dụng để tấng công XSS
