@@ -12,7 +12,7 @@ export default class TagTemplate extends React.Component {
     const sideBg = bgSidebar[random(bgSidebar.length - 1)];
     return (
       <div className="master">
-        <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
+        <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle} | ${config.siteDescription}`} />
         <div className="inner">
           <PostListing postEdges={postEdges} />
         </div>
