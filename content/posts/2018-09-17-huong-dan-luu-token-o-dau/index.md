@@ -80,10 +80,15 @@ Nếu không muốn javascript được đụng vô cookie, trình duyệt cung 
 
 
 HTTP/1.1 200 OK
+
 Content-Type: application/json; charset=utf-8
+
 Access-Control-Allow-Headers: Content-Type
+
 Access-Control-Allow-Methods: GET,POST,PUT
+
 Access-Control-Allow-Origin: https://www.bobank.com
+
 Set-Cookie: session=15d38683-a98f-402d-a373-4f81a5549536; path=/; expires=Fri, 06 Nov 2015 08:30:15 GMT; httponly
 
 
@@ -135,11 +140,17 @@ Vẫn còn thiếu! Khi browser mà gởi đi `XmlHtpRequests` với thông tin 
 
 
 HTTP/1.1 200 OK
+
 Content-Type: application/json; charset=utf-8
+
 Access-Control-Allow-Credentials: true
+
 Access-Control-Allow-Headers: Content-Type,Authorization
+
 Access-Control-Allow-Methods: GET,POST,PUT
+
 Access-Control-Allow-Origin: https://www.bobank.com
+
 Set-Cookie: session=15d38683-a98f-402d-a373-4f81a5549536; path=/; expires=Fri, 06 Nov 2015 09:30:15 GMT; httponly
 [
   { id: 456346436, ... }
