@@ -28,7 +28,7 @@ class Index extends React.Component {
     const sideBg = bgSidebar[random(bgSidebar.length - 1)];
     return (
       <div className="master">
-        <Helmet title={config.siteTitle + config.siteDescription} />
+        <Helmet title={config.siteTitle + ' - ' + config.siteDescription} />
         <main className="inner">
           {!isEmpty(group) && <PostListing postEdges={group} />}
           <div className="pagination">
