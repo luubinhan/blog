@@ -72,7 +72,7 @@ Có thể thấy là việc tạo ra một token giả là vô cùng khó, vì c
 - Không nên gởi đi token bằng HTTP, luôn dùng HTTPS nếu có gởi đi token
 - Xác định thời gian expire của token chứ không để nó tồn tại vô thời hạn
 
-Chúng ta nghe rất nhiều bàn luận xung quanh session cookie và access token. Mình đã từng lẫn lộn các khái niệm này. **Session cookie** là một đoạn thông tin của user lưu ở **cookie** trình duyệt, sẽ được gởi kèm teo request lên server, `cookie` là nơi chứa cái *session cookie*, **cookie** cũng có thể chứa được **access token**
+Chúng ta nghe rất nhiều bàn luận xung quanh session cookie và access token. Mình đã từng lẫn lộn các khái niệm này. **Session cookie** là một đoạn thông tin của user lưu ở **cookie** trình duyệt, sẽ được gởi kèm theo request lên server, `cookie` là nơi chứa cái *session cookie*, **cookie** cũng có thể chứa được **access token**
 
 Như vậy, để an toàn đừng dùng cookie của http, dùng cookie của **https**, đừng lưu access token trong `localStorage`, nó có thể được sử dụng để tấng công XSS
 
