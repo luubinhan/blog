@@ -14,9 +14,7 @@ tags: ["javascript", "react"]
 <!-- TOC -->
 
 - [constructor](#constructor-function Object() { [native code] }1)
-- [componentWillMount](#componentwillmount)
 - [componentDidMount](#componentdidmount)
-- [componentWillReceiveProps](#componentwillreceiveprops)
 - [shouldComponentUpdate](#shouldcomponentupdate)
 - [componentWillUpdate](#componentwillupdate)
 - [componentDidUpdate](#componentdidupdate)
@@ -44,7 +42,7 @@ componentEvent() {
 
 ```
 
-## constructor
+# constructor
 
 Phương thức này sẽ được gọi khi component được khởi tạo, trước khi nó được *mount*
 
@@ -66,13 +64,7 @@ class Clicker extends React.Component {
 }
 ```
 
-## componentWillMount
-
-Chạy sau `constructor` trước khi component mount vô DOM bằng hàm `render`
-
-Lưu ý không nên gọi bất kỳ hàm nào có gọi `setState` trong `componentWillMount` vì chưa có DOM nào để tương tác.
-
-## componentDidMount
+# componentDidMount
 
 Component đã hiện hình, là lúc mà ta gọi AJAX, thêm sự kiện có tương tác với DOM, gọi `setState` ở đây sẽ trigger sự kiện re-render.
 
@@ -87,21 +79,7 @@ componetDidMount() {
 }
 ```
 
-## componentWillReceiveProps
-
-Chạy khi component nhận được `props` mới từ component cha. Thời điểm thích hợp để kiểm tra và reset lại `state` có phụ thuộc vào giá trị `props`
-
-```jsx
-componentWillReceiveProps(nextProps) {
-  if (this.props.id !== nextProps.id) {
-    this.setState({
-      feedContent: []
-    });
-  }
-}
-```
-
-## shouldComponentUpdate
+# shouldComponentUpdate
 
 Có phương thức này để cải thiện performance của React, vì đôi lúc có những sự thay đổi `state` hoặc `props` nếu không muốn cập nhập lại UI có thể cho hàm này return và `false` (mặc định là return `true`), khi return `false` các hàm `componentWillUpdate`, `render`, `componentDidUpdate` sẽ không được gọi.
 
@@ -111,16 +89,15 @@ shouldComponentUpdate(nextProps, nextState) {
 }
 ```
 
-
-## componentWillUpdate
+# componentWillUpdate
 
 Không có nhiều trường hợp sử dụng hook này, **KHÔNG** gọi `setState` ở đây, phần lớn các trường hợp điều có thể handle ở `componentWillReceiveProps`
 
-## componentDidUpdate
+# componentDidUpdate
 
 Sau khi React cập nhập lại UI, hook này sẽ được gọi, nếu muốn chạy một animation gì đó cần tương tác với DOM thì đây chính là lúc thực thi
 
-## componentWillUnmount
+# componentWillUnmount
 
 Có thể sử dụng để remove các listener đã được add cho DOM
 
@@ -130,7 +107,7 @@ componentWillUnmount() {
 }
 ```
 
-## componentDidCatch
+# componentDidCatch
 
 Cái này mới được add vào từ React 16, nếu một component nào đó bị lỗi nó sẽ không chết nguyên cái app nữa mà sẽ quăn lỗi ở đây, sử dụng để hiển thị lỗi lên UI
 

@@ -19,7 +19,7 @@ tags: ["javascript"]
 <!-- /TOC -->
 
 
-Dù cho đang ở level nào của javascript thì trước sau, ít nhiều cũng đụng tới vấn để sort một mảng trong javascript, tài liệu trên mozila có câu này hết sức nguy hiểm **sort is not necessarily stable.**, giờ thử xem tại sao gọi là không **stable**
+Dù cho đang ở level nào của javascript thì trước sau, ít nhiều cũng đụng tới vấn để **sort** một mảng trong javascript, tài liệu trên mozila có câu này hết sức nguy hiểm **sort is not necessarily stable.**, giờ thử xem tại sao gọi là không **stable**
 
 ```js
 const myArray = [33, 2, 98, 25, 4]
@@ -28,9 +28,9 @@ myArray.sort() // [ 2, 25, 33, 4, 98 ]
 
 Vâng, **25 > 33 > 4** 
 
-Mảng số ngày sẽ được javascript sort theo thứ tự alphabet, mỗi giá trị số được đưa về `string` để so sánh.
+Mảng số này sẽ được javascript sort theo thứ tự alphabet, mỗi giá trị số được đưa về `string` để so sánh.
 
-Hàm `sort` có thể số truyền vào là `function` dùng để so sánh, nếu bạn không đưa hàm này vào, mặc định nó sẽ convert giá trị cần so sánh về `string` và so sánh mã unicode của này
+Hàm `sort` có thể số truyền vào là `function` dùng để so sánh, nếu bạn không đưa hàm này vào, mặc định nó sẽ convert giá trị cần so sánh về `string` và **so sánh mã unicode** của này
 
 ```js
 const numbers = [80, 9]
@@ -66,6 +66,6 @@ myArray.sort((a, b) => a - b) // [ 2, 4, 25, 33, 98 ]
 
 ## Và hơn thế nữa
 
-ECMAScript không đưa ra chuẩn mực nào về thuật toán cho cách `sort`, nghĩa là Javascript engine muốn apply thuật toán nào thì tùy nó, Google's V8 (Javascript engine của Chrome) và NodeJS sử dụng thuật toán `quick sort` và kết quả thì không hẳn là chính xác 100%. Do đó nên nhớ là `sort` trên những trình duyệt khác nhau cũng có khả năng cho kết quả khác nhau nếu nó dùng khác Javascript Engine.
+ECMAScript không đưa ra chuẩn mực nào về thuật toán cho cách `sort`, nghĩa là Javascript engine muốn áp dụng thuật toán nào thì tùy nó, Google's V8 (Javascript engine của Chrome) và NodeJS sử dụng thuật toán `quick sort` và kết quả thì không hẳn là chính xác 100%. Do đó nên nhớ là `sort` trên những trình duyệt khác nhau cũng có khả năng cho kết quả khác nhau nếu nó dùng khác Javascript Engine.
 
 Nếu rảnh, và có trình, thì nên tự implement một sort function để xài, một số thuật toán sort có thể nghiên cứu như `InsertionSort`, `MergeSort`, `QuickSort`
