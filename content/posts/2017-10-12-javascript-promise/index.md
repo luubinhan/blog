@@ -1,8 +1,8 @@
 ---
 slug: "/2017-10-12-javascript-promise"
 date: "2017-10-12"
-title: "Promise trong javascript"
-desc: "Để hiểu rõ hơn promise, thử build một promise từ scratch"
+title: "Nắm vững Promise trong javascript"
+desc: "Để hiểu rõ hơn Promise của javascript, tạo một Promise make-by-me xem sao"
 category: "javascript"
 cover: ""
 type: "post"
@@ -20,7 +20,7 @@ fetch('/user/1')
     })
 ```
 
-Đoạn code nằm bên trong `.then` sẽ chạy sau khi nhận dữ liệu trả về từ server trước khi chạy tiếp. `Promise` thực chất là một *object* cũ xì trong javascript, điều khác biệt là nó có những phương thức cho phép chạy đồng bộ (synchronously)
+Đoạn code nằm bên trong `.then` sẽ chạy **sau khi** nhận dữ liệu trả về từ server trước khi chạy tiếp. `Promise` một kiểu **abstraction** cho phép các đoạn code chạy bất tuần tự
 
 Nếu không tin bạn thử check kiểu của Promise sẽ thấy
 
@@ -35,16 +35,17 @@ cost fetch = function(url) {
     return new Promise((resolve, reject) => {
         request((error, apiResponse) => {
             if (error) {
+                // lỗi rồi
                 reject(error)
             }
-
+            // success
             resolve(apiResponse)
         })
     })
 }
 ```
 
-Giờ tới phần quan trọng, viết lại khai báo Promise (gọi là SimplePromise để tránh trùng tên) để xem cách làm của Promise
+Giờ tới phần quan trọng, viết lại khai báo Promise (gọi là `SimplePromise` để tránh trùng tên) để xem cách làm của Promise
 
 ```js
 class SimplePromise {
@@ -95,4 +96,6 @@ Bên trong constructor đồng thời khởi tạo mảng `promiseChain` và hà
 
 > Lưu ý, cái này là ví dụ, Promise thực tế thì 2 hàm `then` và `catch` sẽ trả về new Promise, cái này làm cho đơn giản trả về `this` thôi.
 
-Khi một hàm bất đồng bộ (async) được gọi `resolve(apiResponse)`, object promise bắt đầu chạy `onResolve(apiResponse)` nó sẽ loop qua *tuần tự* mảng *promiseChain*, thực thi các xử lý trong hàm từ đầu tiên trong mảng, đến hàm thứ 2, 3, 4..., mỗi lần như vậy nó sẽ nhận giá trị `storedValue` đồng thời cập nhập lại `storedValue` này. 
+Khi một hàm bất tuần tự (async) được gọi `resolve(apiResponse)`, object promise bắt đầu chạy `onResolve(apiResponse)` nó sẽ loop qua *tuần tự* mảng *promiseChain*, thực thi các xử lý trong hàm từ đầu tiên trong mảng, đến hàm thứ 2, 3, 4..., mỗi lần như vậy nó sẽ nhận giá trị `storedValue` đồng thời cập nhập lại `storedValue` này. 
+
+Bạn nên đọc thêm [bài viết Async/Await](https://luubinhan.github.io/blog/2018-05-07-huong-dan-async-await-giai-thich-vi-du/)
