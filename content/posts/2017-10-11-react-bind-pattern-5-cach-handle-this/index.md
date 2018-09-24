@@ -2,7 +2,7 @@
 slug: "/2017-10-11-react-bind-pattern-5-cach-tham-chieu-this"
 date: "2017-10-11"
 title: "React Bind Pattern: 5 cách chỉ định tham chiếu this"
-desc: "Để thay đổi ngữ cảnh cho từ khóa this trong javascript, sử dụng ở đâu và như thế nào cho hợp lý nhất"
+desc: "Để thay đổi ngữ cảnh của chữ this trong javascript, sử dụng ở đâu và như thế nào cho hợp lý nhất"
 category: "react"
 cover: ""
 type: "post"
@@ -14,7 +14,7 @@ tags: ["react", "javascript"]
 <!-- TOC -->
 
 - [Sử dụng `React.createClass`](#sử-dụng-reactcreateclass)
-- [Bind trong lúc Render](#bind-trong-lúc-render)
+- [Bind trong lúc render](#bind-trong-lúc-render)
 - [Sử dụng Arrow function](#sử-dụng-arrow-function)
 - [Bind trong cunstructor](#bind-trong-cunstructor)
 - [Sử  dụng `Arrow Function` trong thuộc tính của class](#sử--dụng-arrow-function-trong-thuộc-tính-của-class)
@@ -23,7 +23,7 @@ tags: ["react", "javascript"]
 
 # Sử dụng `React.createClass`
 
-Nếu sử dụng `React.createClass` react tự động bind toàn bộ từ khóa `this`
+Nếu sử dụng `React.createClass` react tự động **bind toàn bộ** từ khóa `this`
 
 ```jsx
 const Contacts = React.createClass({
@@ -38,9 +38,9 @@ const Contacts = React.createClass({
 
 Tuy nhiên từ khi ES6 có hổ trợ `class`, React.createClass có thể bị tách ra các release trong tương lai.
 
-# Bind trong lúc Render
+# Bind trong lúc render
 
-Nếu khai báo một component React bằng cách extends React.Component, `this` sẽ không được tự động bind như đã nói ở trên, thay vào đó bind lúc render
+Nếu khai báo một component React bằng cách `extends React.Component`, `this` sẽ không được tự động bind như đã nói ở trên
 
 ```jsx
 class Contacts extends React.Component{
@@ -52,11 +52,11 @@ class Contacts extends React.Component{
 };
 ```
 
-Cách này tuy là sạch sẽ gọn ràng dễ hiểu, tuy nhiên lại ảnh hưởng nhiều tới performance vì mỗi function sẽ reallocated lúc render. **Kinh nghiệm không bind bằng cách này**
+Cách này tuy là sạch sẽ gọn ràng dễ hiểu, tuy nhiên lại ảnh hưởng nhiều tới performance vì mỗi function sẽ *reallocated* lúc render. **Kinh nghiệm không bind bằng cách này**
 
 # Sử dụng Arrow function
 
-Tương tự như cách trên, sử dụng arrow function để không thay đổi giá trị của `this` lúc render
+Tương tự như cách trên, sử dụng **arrow function** để không thay đổi giá trị của `this` lúc render
 
 ```jsx
 class Contacts extends React.Component{

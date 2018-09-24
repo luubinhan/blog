@@ -21,7 +21,7 @@ tags: ["javascript", "react"]
 
 ## Tư tưởng chính của MobX
 
-MobX đảm bảo vấn để sau: không cho phép tạo ra một state không thống nhất
+MobX đảm bảo vấn đề sau: không cho phép tạo ra một state không thống nhất
 
 ![](https://mobx.js.org/getting-started-assets/overview.png)
 

@@ -2,7 +2,7 @@
 slug: "/2017-07-31-react-router"
 date: "2017-07-31"
 title: "Giới thiệu React Router"
-desc: "React không phải một framework, nó chỉ là một thư viện javascript, bởi vì vậy nó không thể giải quyết tất cả các yêu cầu một application. Việc mà React làm rất tốt là tạo component và cách thức quản lý state của component, nhưng để tạo một Single Page App (sẽ viết tắt là SPA) phức tạp, nó cần những thư viện khác nữa, đầu tiền cần nhắc đến là React Router"
+desc: "React không phải một framework, nó chỉ là một thư viện javascript, bởi vì vậy nó không thể giải quyết tất cả các yêu cầu một ứng dụng. Việc mà React làm rất tốt là tạo component và cách thức quản lý state của component, nhưng để tạo một Single Page App (sẽ viết tắt là SPA) phức tạp, nó cần những thư viện khác nữa, đầu tiền cần nhắc đến là React Router"
 category: "react"
 cover: ""
 type: "post"
@@ -15,10 +15,10 @@ tags: ["javascript", "react"]
 
 - [Giới thiệu về React Router](#giới-thiệu-về-react-router)
 - [Nhiều Route](#nhiều-route)
-- [Tái sự dụng component với Nested Route](#tái-sự-dụng-component-với-nested-route)
+- [Tái sử dụng component với Nested Route](#tái-sử-dụng-component-với-nested-route)
 - [IndexRoute](#indexroute)
 - [Một số cách khai báo với Route](#một-số-cách-khai-báo-với-route)
-- [Sử dụng Link, đừng sử dụng tag a](#sử-dụng-link-đừng-sử-dụng-tag-a)
+- [Sử dụng Link component, đừng sử dụng tag a](#sử-dụng-link-component-đừng-sử-dụng-tag-a)
 - [Browser History](#browser-history)
 - [Route với paramater string](#route-với-paramater-string)
 
@@ -27,19 +27,17 @@ tags: ["javascript", "react"]
 
 # Giới thiệu về React Router
 
-React không phải một framework, nó chỉ là một thư viện javascript, bởi vì vậy nó không thể giải quyết tất cả các yêu cầu một application. Việc mà React làm rất tốt là tạo component và cách thức quản lý state của component, nhưng để tạo một Single Page App (sẽ viết tắt là SPA) phức tạp, nó cần những thư viện khác nữa, đầu tiền cần nhắc đến là React Router
-
-Cách tiếp cận của React Router không khác mấy so với các thư viện Router trước đây, có chăng chỉ khác ở chổ React-Router thì dùng JSX.
+Cách tiếp cận của React Router không khác mấy so với các thư viện Router trước đây
 
 Ví dụ với 1 component `Home`
 
 ```jsx
 class Home extends React.Component{
-    render(){
-        return(
-                <h1>Welcome Home</h1>;
-            )
-    }
+  render(){
+    return(
+      <h1>Welcome Home</h1>;
+    )
+  }
 }
 ReactDOM.render( (<Home/>), document.getElementById('root'));
 ```
@@ -54,13 +52,13 @@ ReactDOM.render((
 ), document.getElementById('root'));
 ```
 
-2 component <Router> và <Route> là những component React không render trong DOM, nó xác định app sẽ sử dụng component nào với những route khác nhau, chúng ta sẽ gặp lại khái niệm này thường xuyên: ** Một component bản thân không render thành DOM mà chỉ đỉnh cho component khác **
+Câu khai báo trên có thể diễn giải là với route "/" (tương đương với trang chủ), thì gọi `render` component `Home`
 
-Câu khai báo trên có thể diễn giải là với route "/" (tương đương với trang chủ), hiển thị component `Home` vào #root
+2 component `<Router>` và `<Route>` là những component React không render trong DOM, nếu `path` khớp với uri, nó render ra component chúng ta truyền vào cho nó (qua props component), chúng ta sẽ gặp lại khái niệm này thường xuyên: **Một component bản thân không render trong DOM, mà render một component khác**
 
 # Nhiều Route
 
-Xem xét ví dụ sau
+Xét ví dụ
 
 ```jsx
 ReactDOM.render((
@@ -76,9 +74,9 @@ ReactDOM.render((
 - Với URL yourpage.com/tags -> render component `TagsPage`
 - Với URL yourpage.com/post/12 -> render component `Post`
 
-# Tái sự dụng component với Nested Route
+# Tái sử dụng component với Nested Route
 
-Khai báo nested Route như sau
+Khai báo nested Route
 
 ```jsx
 ReactDOM.render((
@@ -92,9 +90,9 @@ ReactDOM.render((
 ), document.getElementById('root'));
 ```
 
-Khi user visit đường dẫn */users*, React Router sẽ render component `UserList` bên trong component `SearchLayout`, cả 2 component này lại đặt trong component `MainLayout`
+Khi user truy cập đường dẫn */users*, React Router sẽ render component `<UserList />` bên trong component `<SearchLayout/>`, cả 2 component này lại đặt trong component `<MainLayout/>`
 
-Nếu muốn trang chủ cũng render `MainLayout` cùng với component `Home`
+Nếu muốn trang chủ cũng render `<MainLayout/>` cùng với component `<Home/>`
 
 ```jsx
 ReactDOM.render((
@@ -138,7 +136,7 @@ Nếu có một khai báo cho trang *User* như bên dưới
 <Route path="user/orders" component={UserOrders} />
 ```
 
-viết lại cho gọn
+Viết lại cho gọn
 
 ```jsx
 <Route path="user">
@@ -159,9 +157,9 @@ Cần bổ sung thêm component cho trang `/user`
 </Route>
 ```
 
-# Sử dụng Link, đừng sử dụng tag a
+# Sử dụng Link component, đừng sử dụng tag a
 
-Khi đã định nghĩa với Route, nếu muốn gán một đường dẫn đến một route nào đó, sử dụng component `<Link to="" />` thay cho tag `<a/>`
+Khi đã định nghĩa với Route, nếu muốn dẫn đến một route nào đó, sử dụng component `<Link to="" />` thay cho tag `<a/>`
 
 ```jsx
 <div className="app">
@@ -179,7 +177,7 @@ Khi đã định nghĩa với Route, nếu muốn gán một đường dẫn đ�
 </div>
 ```
 
-Một tính năng cực cool của `<Link>` nữa là nó hiểu khi nào đang active
+Với `<Link>` nó biết khi nào đang active
 
 ```jsx
 <Link to="/users" activeClassName="active">Users</Link>
@@ -187,7 +185,7 @@ Một tính năng cực cool của `<Link>` nữa là nó hiểu khi nào đang 
 
 # Browser History
 
-`<Router>` muốn hoạt động được phải được khai báo với `ReactRouter.browserHistory`
+`<Router>` muốn hoạt động được, phải khai báo với `ReactRouter.browserHistory`
 
 ```jsx
 var browserHistory = ReactRouter.browserHistory;

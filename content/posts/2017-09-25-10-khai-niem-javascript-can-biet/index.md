@@ -14,8 +14,6 @@ tags: ["javascript", "react"]
 <!-- TOC -->
 
 - [Giá trị vs. Tham chiếu](#giá-trị-vs-tham-chiếu)
-  - [Primitive type](#primitive-type)
-  - [Object type](#object-type)
 - [So sánh `==` và `===`](#so-sánh--và-)
 - [Scope](#scope)
   - [Global Scope](#global-scope)
@@ -28,13 +26,15 @@ tags: ["javascript", "react"]
 
 # Giá trị vs. Tham chiếu
 
-5 kiểu dữ liệu được lưu trữ ở dạng **value** - giá trị: `Boolean`, `null`, `undefined`, `String`, `Number`, còn được gọi với tên khác là *primitive type*
+5 kiểu dữ liệu được lưu trữ ở dạng **value** - giá trị: 
 
-3 kiểu dữ liệu được lưu trữ ở dạng **reference** - tham chiếu: `Array`, `Function`, `Object`, có thể gọi chung là kiểu *Object type*
+- **Boolean**
+- **null**
+- **undefined**
+- **String**
+- **Number**
 
-## Primitive type
-
-Kiểu **primitive** được lưu giữ cho một biến, khi copy value của biến này cho biến khác, 2 value này hoàn toàn độc lập không có liên hệ gì với nhau
+Còn được gọi với tên khác là **primitive type**, khi copy giá trị của biến này cho biến khác, 2 giá trị này hoàn toàn độc lập không có liên hệ gì với nhau
 
 ```js
 var x = 10;
@@ -47,9 +47,14 @@ console.log(a)
 console.log(x)
 ```
 
-## Object type
 
-Khi một biến được gán cho một kiểu Object, nó không mang giá trị mà chỉ **tham chiếu** đến vùng lưu trữ của object đó trong bộ nhớ.
+3 kiểu dữ liệu được lưu trữ ở dạng **reference** - tham chiếu:
+
+- **Array**
+- **Function**
+- **Object**
+
+Gọi chung là kiểu *Object type*, nó không mang giá trị mà chỉ **tham chiếu** đến **vùng lưu trữ** của object đó trong bộ nhớ.
 
 ```js
 var arr = [];
@@ -150,7 +155,7 @@ console.log(skills);
 
 # Hoisting
 
-Cách javascript hoạt động đôi khi hơi điên điên, luôn đưa khai báo lên đầu, nghĩa là biến có thể được **sử dụng trước, khai báo sau**! Viết như sau là hoàn toàn hợp lệ trong javascript
+Một đặc điểm của Javascript, biến có thể được **sử dụng trước, khai báo sau**! Viết như sau là hoàn toàn hợp lệ trong javascript
 
 ```js
 x = 5; // gán giá trị 5 cho biến x chưa được khai báo

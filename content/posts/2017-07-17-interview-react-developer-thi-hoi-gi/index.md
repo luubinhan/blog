@@ -16,7 +16,7 @@ tags: ["javascript", "react"]
 - [Chuyện gì xảy ra khi gọi `setSate` ?](#chuyện-gì-xảy-ra-khi-gọi-setsate-)
 - [Sự khác nhau giữa Element và Component trong React?](#sự-khác-nhau-giữa-element-và-component-trong-react)
 - [Khi nào thì sử dụng Class Component và Functional Component](#khi-nào-thì-sử-dụng-class-component-và-functional-component)
-- [`Refs` trong React dùng để làm gì](#refs-trong-react-dùng-để-làm-gì)
+- [`Ref` trong React dùng để làm gì](#ref-trong-react-dùng-để-làm-gì)
 - [Key trong React là gì](#key-trong-react-là-gì)
 - [Sự khác nhau giữa controlled component và uncontrolled component](#sự-khác-nhau-giữa-controlled-component-và-uncontrolled-component)
 - [Để gọi AJAX, sự dụng sự kiện nào của lifecycle?](#để-gọi-ajax-sự-dụng-sự-kiện-nào-của-lifecycle)
@@ -34,7 +34,6 @@ tags: ["javascript", "react"]
 
 Đầu tiên, object được truyền trong <code>setState</code> sẽ được merge với state hiện tại của component, dựa trên sự thay đổi của object này, UI được update với state mới. Để làm được chuyện này, React sẽ dựng một cây React Element mới, so sánh sự khác nhau của cây element mới và cây element trước đó, React biết được chính xác chỉ cần update phần UI nào đã bị thay đổi.
 
-
 # Sự khác nhau giữa Element và Component trong React?
 
 React Element ám chỉ những gì thấy trên màn hình.
@@ -45,9 +44,9 @@ React component là một function hoặc class có hoặc không có input và 
 
 Nếu component có state và các phương thức của lifecycle, sử dụng **Class Component**, ngược lại dùng **functional component**
 
-# `Refs` trong React dùng để làm gì
+# `Ref` trong React dùng để làm gì
 
-Refs để access trực tiếp đến DOM node/hoặc một instance của component sau khi render
+Ref để truy cập trực tiếp đến DOM node/hoặc một instance của component sau khi render
 
 ```jsx
 <input type="text" ref={this.input = input} />
@@ -67,13 +66,13 @@ Key giúp React theo dõi sự thay đổi của một item trong list. Tại sa
 
 # Sự khác nhau giữa controlled component và uncontrolled component
 
-Controlled Component: prop hoặc state của component được gán cho giá trị DOM
+**Controlled Component**: `prop` hoặc `state` của component được gán cho giá trị DOM
 
 ```jsx
 <input type='text' value={this.state.username} onChange={this.updateUsername} />
 ```
 
-Uncontrolled Component: giá trị của DOM thì do DOM quản
+**Uncontrolled Component**: giá trị của DOM thì do DOM quản
 
 ```jsx
 <input type='text' ref={(input) => this.input = input} />
@@ -81,9 +80,7 @@ Uncontrolled Component: giá trị của DOM thì do DOM quản
 
 # Để gọi AJAX, sự dụng sự kiện nào của lifecycle?
 
-`componentDidMount`, lý do ko sử dụng <code>componentWillMount</code> vì React  có thể gọi componentWillMount nhiều lần nếu cần thiết, thứ 2 không thể chắc chắn AJAX luôn gọi thành công, nếu gơi vào trường hợp đó câu lệnh <code>setState</code> sẽ chạy trên unmounted component.
-
-** Cập nhập componentWillMount bị bỏ rồi**
+`componentDidMount`
 
 # `shouldComponentUpdate` dùng để làm gì
 
@@ -91,7 +88,7 @@ Uncontrolled Component: giá trị của DOM thì do DOM quản
 
 # Build Product bằng cách nào?
 
-Sử dụng phương thức DefinePlugin của Webpack để set `NODE_ENV = production`. Quá trình build production sẽ bỏ hết những đoạn như validate propType, cảnh báo này nọ, minify code, remove comments.
+Sử dụng phương thức DefinePlugin của Webpack để set `NODE_ENV = production`. Quá trình build production sẽ bỏ hết những đoạn như validate propType, cảnh báo này nọ, minify code, xóa comments.
 
 # Tại sao nên sử dụng `React.Children.map()` thay vì `props.children.map()`
 
