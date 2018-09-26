@@ -76,7 +76,7 @@ Bất kể lỗi ở đâu trong component, nó sẽ gọi đến phương thứ
 - String and numbers
 - Booleans or null
 
-> Hàm nãy sẽ không được gọi nếu `shouldComponentUpdate()` return false
+**Hàm này sẽ không được gọi nếu `shouldComponentUpdate()` return false**
 
 # constructor(props)
 
