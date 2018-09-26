@@ -51,10 +51,10 @@ Có 2 kiểu `export`
 1. Export 1 function đã được được khai báo hoặc một giá trị: export có định danh
 
 ```js
-// exports a function declared earlier
+// exports hàm đã khai báo trước đó
 export { myFunction }; 
 
-// exports a constant
+// exports một hằng số
 export const foo = Math.sqrt(2);
 ```
 

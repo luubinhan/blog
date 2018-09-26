@@ -16,8 +16,8 @@ tags: ["javascript", "react", "react-native"]
 - [Hạn chế của Expo](#hạn-chế-của-expo)
 - [App sẽ viết](#app-sẽ-viết)
 - [Cài Expo](#cài-expo)
-  - [Tạo một dự án Expo mới](#tạo-một-dự-án-expo-mới)
-  - [Ví dụ](#ví-dụ)
+- [Tạo một dự án Expo mới](#tạo-một-dự-án-expo-mới)
+- [Chạy code ví dụ](#chạy-code-ví-dụ)
 
 <!-- /TOC -->
 
@@ -69,7 +69,7 @@ cd luckyluu-project
 expo start
 ```
 
-### Tạo một dự án Expo mới
+## Tạo một dự án Expo mới
 
 Một khi hoàn tất 3 thứ công việc đơn giản trên, giờ chúng ta tạo một app mới
 
@@ -91,7 +91,7 @@ Rút điện thoại ra, mở app Expo lên, quét đoạn QR code này và xong
 
 Với bạn nào đang xài Iphone, gần đây Expo phải mở cái quét mã QR ra khỏi app vì bị Apple chửi bới, trên bộ cung cụ debug mới (lúc chạy expo start nó sẽ mở lên trình duyệt), bạn chỉ cần chọn gởi link qua email
 
-### Ví dụ
+## Chạy code ví dụ
 
 Toàn bộ code ví dụ có thể download [ở đây](https://github.com/tutsplus/easier-react-native-development-with-expo), bạn có thể down về chạy thử. Mình không phân tích toàn bộ code vì mình chỉ tập trung giới thiệu về Expo, mình mặc định các bạn đã biết React, React Native căn bản nhé.
 

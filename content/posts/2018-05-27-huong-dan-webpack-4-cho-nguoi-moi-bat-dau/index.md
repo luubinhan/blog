@@ -11,19 +11,19 @@ chapter: 0
 tags: ["javascript", "webpack"]
 ---
 
-# Trong Series này
-1.  [Webpack là gì và tại sao ta phải xài nó](2018-05-25-viet-code-javascript-tot-hon-voi-webpack)
+Trong Series này
+
+1. [Webpack là gì và tại sao ta phải xài nó](2018-05-25-viet-code-javascript-tot-hon-voi-webpack)
 2. [Dùng Loaders, code slitting trong webpack](2018-05-27-huong-dan-webpack-4-cho-nguoi-moi-bat-dau)
 3. [Plugins, Development Server](2018-05-28-huong-dan-webpack-4-cho-nguoi-moi-bat-dau-phan-3)
 
 <!-- TOC -->
 
-- [Trong Series này](#trong-series-này)
-  - [Loaders](#loaders)
-    - [Babel Loader](#babel-loader)
-  - [SASS Loader](#sass-loader)
-    - [Image](#image)
-  - [Code splitting](#code-splitting)
+- [Loaders](#loaders)
+- [Babel Loader](#babel-loader)
+- [SASS Loader](#sass-loader)
+- [Image](#image)
+- [Code splitting](#code-splitting)
 
 <!-- /TOC -->
 
@@ -44,11 +44,11 @@ Với cách setup này, chỉ cần chạy `npm run develop` chúng ta sẽ ch�
 
 Khi chạy `npm run build` chúng ta sẽ chạy webpack ở mode production, khi chạy ở mode này code sẽ được minified lại bằng Uglify JS, size nhỏ hơn khi chạy dev mode.
 
-## Loaders
+# Loaders
 
 Loaders là gì? loaders là những thư viện sẽ can thiệp trước lúc chúng ta import file, nó cho phép webpack mở rộng khả năng không chỉ còn là bundle javascript thôi, mà cả những static resource khác, như css, image, svg, ...
 
-### Babel Loader
+# Babel Loader
 
 Thời điểm hiện tại chắc ai cũng viết JS kiểu mới, để transpile cái ES6 mà ta viết, chúng ta sẽ cần `babel-loader`
 
@@ -98,7 +98,7 @@ const path = require('path')
 
 Giờ thì cứ vô tư viết ES6 nhé, vì khi bundle, webpack sẽ transpile code của chúng về thành ES5
 
-## SASS Loader
+# SASS Loader
 
 Trước tiên cài một số package để làm việc với SASS
 
@@ -159,7 +159,7 @@ Tại sao chúng ta lại đi import CSS vào trong file js? Nếu bạn thời 
 - Trước đây nếu dùng OOP trong CSS, việc chỉnh sửa một đoạn css sẽ dễ bị side effect, ảnh hướng đến những chổ ta không mong muốn. CSS module để CSS chỉ hoạt động local thôi
 - Giảm số lượng HTTP request xuống
 
-### Image
+# Image
 
 Dùng `file-loader` để đọc file image. Với HTML chuẩn, image được sử dụng bằng 2 cách là dùng tag `img` hoặc thuộc tính `background-image`. Với Webpack, chúng ta có thể optimize cho trường hợp dung lượng image với kích thước nhỏ thành dạng `string` bên trong javascript luôn. Lúc này trình duyệt không cần load riêng file image nữa
 
@@ -212,11 +212,11 @@ Kết quả bundle
 
 Có thể đọc thêm trên docs của `file-loader` để xem cách chỉnh kích thước nào thì chuyển nội dung ảnh thành data URI. File loader còn thể thể xử lý trên một số dạng file khác nữa, chứ không chỉ là hình thôi không.
 
-## Code splitting
+# Code splitting
 
 Trích từ trang chủ webpack
 
-> Code splitting là một trong những tính năng hấp dẫn nhất của Webpack. Tính năng này cho phép bạn tách code ra thành nhiều file bundle để load khi cần thiết hoặc load xong xong. Cái này có thể dùng để giảm kích thước file bundle và kiểm soát được load resource hợp lý hơn, nếu sử dụng đúng cách, sẽ giảm đảng kể thời gian load trang
+> Code splitting là một trong những tính năng hấp dẫn nhất của Webpack. Tính năng này cho phép bạn tách code ra thành nhiều file bundle để load khi cần thiết hoặc load song song. Cái này có thể dùng để giảm kích thước file bundle và kiểm soát được load resource hợp lý hơn, nếu sử dụng đúng cách, sẽ giảm đảng kể thời gian load trang
 
 Trước giờ chúng ta chỉ setup để bundle ra 1 file duy nhất từ `src/index.js` ra file `dist/bundle.js`. Khi ứng dúng phình ra, chúng ta cần tách code ra thành nhiều file, toàn bộ code đầu cần phải load hết ngay từ đầu đâu nhỉ? Dùng [Code Slitting](https://webpack.js.org/guides/code-splitting/) và [Lazy Loading](https://webpack.js.org/guides/lazy-loading/) để chỉ load khi cần.
 
