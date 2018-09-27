@@ -23,7 +23,7 @@ tags: ["firestore", "firebase"]
 
 Một trong những tình huống phổ biến nhất là cho phép truy cập dữ liệu nếu user đã đăng nhập (còn gọi là xác thực, authentication).
 
-```powershell
+```shell
 service cloud.firestore {
   match /databases/{database}/documents {
     // Cho phép user truy cập document
@@ -37,7 +37,7 @@ service cloud.firestore {
 
 Hoặc một tình huống phổ biến thứ 2 là cho phép user read và write lên dữ liệu của chính user đó
 
-```powershell
+```shell
 services cloud.firestore {
   match /databases/{database}/documents {
     // chỉ cho phép uid khớp với userId trong document.
@@ -56,7 +56,7 @@ Nếu đang sử dụng Firebase Authentication, biến `request.auth` sẽ chư
 
 Nếu muốn can thiệp việc cho phép hoặc từ chối truy cập theo dữ liệu trong document
 
-```powershell
+```shell
 service cloud.firestore {
   match /databases/{database}/documents {
     // cho phép truy cập nếu giá trị của visibility bằng public
@@ -70,7 +70,7 @@ Biến `resource` tương ứng với dữ liệu của document đang request, 
 
 Trước khi write dữ liệu xuống, chúng ta sẽ muốn kiểm tra dữ liệu đang có và dữ liệu mới. Nếu chúng ta đang set rule pending write (không write dữ liệu ngay lập tức mà đợi xí), biến `request.resource` lúc này sẽ chứa dữ liệu mới.
 
-```powershell
+```shell
 service cloud.firestore {
   match /databases/{database}/documents {
     match /cities/{city} {
@@ -85,7 +85,7 @@ service cloud.firestore {
 
 Sử dụng `get()` và `exists()` chúng ta có thể đánh giá các request với các documents trong database. Cả hai hàm này đều yêu cầu chỉ định đường dẫn đầy đủ, và phải đưa biến theo cú pháp `$(biến)` trong đường dẫn
 
-```powershell
+```shell
 service cloud.firestore {
   match /databases/{database}/documents {
     match /cities/{city} {
@@ -113,7 +113,7 @@ Một khi các rule security này trở nên phức tạp, chúng ta sẽ muốn
 
 Ví dụ kết hợp cả 2 điều kiện ở trên thành một hàm
 
-```powershell
+```shell
 service cloud.firestore {
   match /databases/{database}/documents {
     function signedInOrPublic() {

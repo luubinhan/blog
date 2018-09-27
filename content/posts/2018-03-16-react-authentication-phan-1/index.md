@@ -31,7 +31,7 @@ Trong demo chúng ta sẽ sử dụng
 
 Khởi tạo project và các thư viện sẽ sử dụng
 
-```powershell
+```shell
 create-react-app react-auth
 cd react-auth
 
@@ -40,20 +40,20 @@ npm i react-router-dom glamor --save
 
 Cài AWSMobile CLI
 
-```powershell
+```shell
 npm i -g awsmobile-cli
 ```
 
 Khởi tạo config AWS IAM
 
-```powershell
+```shell
 awsmobile configure
 awsmobile init
 ```
 
 Nó sẽ tạo project Mobile Hub và file aws-exports.js trong thư mục src. Tiếp theo, thêm user-signin và deploy các config mới
 
-```powershell
+```shell
 awsmobile user-signin enable
 awsmobile push
 ```

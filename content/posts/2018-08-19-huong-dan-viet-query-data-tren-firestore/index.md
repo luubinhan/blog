@@ -41,7 +41,7 @@ Ví dụ bên dưới mô ta cách viết câu query để lấy documents. Hìn
 
 Security rule trên story
 
-```powershell
+```shell
 service cloud.firestore {
   match /databases/{database}/documents {
     match /stories/{storyid} {
@@ -69,7 +69,7 @@ db.collection('stories').where('author', '==', user.uid).get()
 
 Để hình dung tương quan giữa rule và lúc query, xét ví dụ rule bên dưới, collection *stories* cho phép bất kỳ user nào truy cập vào **story** documents khi giá trị của field *published* là `true`
 
-```powershell
+```shell
 service cloud.firestore {
   match /databases/{database}/documents {
     match /stories/{storyid} {
@@ -91,13 +91,13 @@ db.collection('stories').where('published', '==', true).get()
 
 Trong biến `request.query` bao gồm `limit`, `offset`, và `orderBy`, ví dụ chúng ta đặt ra rule là không trả về dữ liệu nếu câu query không chứa limit hoặc limit lớn hơn quy định
 
-```powershell
+```shell
 allow list: if request.query.limit <= 10
 ```
 
 Một cách đầy đủ hơn, gom các điều kiện về author và publish vào trong hàm `authorOrPublished()` để tránh lập lại
 
-```powershell
+```shell
 service cloud.firestore {
   match /databases/{database}/documents {
     match /stories/{storyid} {

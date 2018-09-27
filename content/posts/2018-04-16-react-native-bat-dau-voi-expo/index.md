@@ -60,7 +60,7 @@ Không giống với việc viết React Native thuần, chúng ta phải cài v
 2. Cài Expo Client trên thiết bị iOS hoặc Android, cái này để preview app. Lên App Store, Google Play tải về
 3. Cài bộ CLI tool của Expo, để mà khởi chạy một dự án Expo mới, chạy build,... dễ lắm như sau
 
-```powershell
+```shell
 npm install expo --global
 
 // init một project mới
@@ -73,7 +73,7 @@ expo start
 
 Một khi hoàn tất 3 thứ công việc đơn giản trên, giờ chúng ta tạo một app mới
 
-```powershell
+```shell
 exp init MemoryGame
 
 // trỏ vô thư mục mới tạo

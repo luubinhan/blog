@@ -36,7 +36,7 @@ console.log(myObject.prop1());
 
 `prop1` được định nghĩ là một **string** nhưng chúng ta lại gọi `myObject.prop1()` như một **function**. Nếu chúng ta chạy đoạn code này chúng ta sẽ nhận được lỗi trên trình duyệt
 
-```powershell
+```shell
 TypeError: myObject.prop1 is not a function
 ```
 
@@ -69,7 +69,7 @@ Theo hướng dẫn trên tài liệu chính thức https://flow.org/en/docs/rea
 
 Nếu khởi tạo project bằng Create-React-App thì chỉ việc instal Flow và tạo file `.flowconfig`
 
-```powershell
+```shell
 npm i flow-bin --save-dev
 ```
 
@@ -83,7 +83,7 @@ Bên trong file package.json, add thêm đoạn script để chạy flow
 
 Để init file `.flowconfig`
 
-```powershell
+```shell
 npm run flow init
 ```
 
