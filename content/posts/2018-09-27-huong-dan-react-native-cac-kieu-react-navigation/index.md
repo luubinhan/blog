@@ -3,7 +3,7 @@ slug: "/2018-09-27-huong-dan-react-native-cac-kieu-react-navigation"
 date: "2018-09-27"
 title: "Điểm qua các kiểu navigator của thư viện react-navigation"
 desc: "Chúng ta cùng liệt kê qua các dạng navigator, khi nào, dùng ở đâu là hợp lý"
-cover: "https://cdn-images-1.medium.com/max/400/1*Vy457uhyPK_Mg_nVaY0XXg.png"
+cover: ""
 type: "post"
 lesson: 0
 chapter: 0
