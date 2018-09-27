@@ -110,7 +110,7 @@ class AboutPage extends React.Component {
                       </blockquote>
                       <h2>Phòng vấn toàn thất bại</h2>
                       <p>
-                        Sau khi tốt nghiệp đại học Hoa Sen năm 2017, bước chân
+                        Sau khi tốt nghiệp đại học Hoa Sen năm 2011, bước chân
                         vào những lần phỏng vấn thất bại liên tiếp. Xin vào ví
                         trí thiết kế web cho một công ty bán nữ trang, với vốn
                         liếng HTML/CSS góp nhặt từ izwebz.com và một vài dự án nhỏ làm trong trường, "mai mắn" được
