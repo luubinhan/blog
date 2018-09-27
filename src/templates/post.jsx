@@ -74,7 +74,7 @@ export default class PostTemplate extends React.Component {
               <Bio
                 name={config.siteTitle}
                 desc={config.siteTitleAlt}
-                href="about"
+                href="https://luubinhan.github.io/blog/about"
                 img={config.userAvatar}
               />
               <div
