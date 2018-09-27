@@ -21,7 +21,7 @@ Phân tích một chút, chúng ta có thể chọn 1 trong 2 cách
 
 Với các marker như hình trên, chúng ta chỉ cần dùng React-Native Gesture Responder là đủ.
 
-Nếu muôn dùng thư viện, bạn có thể tìm hiểu [React Native Gesture Handler](https://kmagiera.github.io/react-native-gesture-handler/)
+Nếu muốn dùng thư viện, bạn có thể tìm hiểu [React Native Gesture Handler](https://kmagiera.github.io/react-native-gesture-handler/)
 
 # Dựng static UI
 
