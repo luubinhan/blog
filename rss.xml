@@ -1,4 +1,268 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[luckyluu]]></title><description><![CDATA[Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End]]></description><link>https://luubinhan.github.io/blog</link><image><url>https://luubinhan.github.io/blog/logos/logo-512.png</url><title>luckyluu</title><link>https://luubinhan.github.io/blog</link></image><generator>Front End Developer An.Luu</generator><lastBuildDate>Thu, 27 Sep 2018 14:17:44 GMT</lastBuildDate><atom:link href="https://luubinhan.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[luckyluu]]></author><copyright><![CDATA[Copyright © 2018. luckyluu]]></copyright><item><title><![CDATA[Điểm qua các kiểu navigator của thư viện react-navigation]]></title><description><![CDATA[Stack Switch Drawer Bottom Tab Material Top Tab Có rất nhiều thư viện khác nhau để làm navigation với React native, mình khuyến khích các…]]></description><link>https://luubinhan.github.io/blog/2018-09-27-huong-dan-react-native-cac-kieu-react-navigation</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-09-27-huong-dan-react-native-cac-kieu-react-navigation</guid><category><![CDATA[javascript]]></category><category><![CDATA[react]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Thu, 27 Sep 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[luckyluu]]></title><description><![CDATA[Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End]]></description><link>https://luubinhan.github.io/blog</link><image><url>https://luubinhan.github.io/blog/logos/logo-512.png</url><title>luckyluu</title><link>https://luubinhan.github.io/blog</link></image><generator>Front End Developer An.Luu</generator><lastBuildDate>Tue, 02 Oct 2018 07:00:03 GMT</lastBuildDate><atom:link href="https://luubinhan.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[luckyluu]]></author><copyright><![CDATA[Copyright © 2018. luckyluu]]></copyright><item><title><![CDATA[Giới thiệu fetch() của javascript]]></title><description><![CDATA[ cho phép tạo một network request tương tự như XMLHttpRequest(XHR). Sự khác nhau chủ yếu là Fetch hoạt động theo  Promises , cho phép viết…]]></description><link>https://luubinhan.github.io/blog/2018-10-01-huong-dan-gioi-thieu-fetch-javascript</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-01-huong-dan-gioi-thieu-fetch-javascript</guid><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Mon, 01 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;fetch()&lt;/code&gt; cho phép tạo một network request tương tự như XMLHttpRequest(XHR). Sự khác nhau chủ yếu là Fetch hoạt động theo &lt;strong&gt;Promises&lt;/strong&gt;, cho phép viết gọn ràng, dễ nhớ hơn là XHR. API Fetch có trong &lt;code class=&quot;language-text&quot;&gt;window.fetch()&lt;/code&gt; từ Chrome 42, để sử dụng &lt;code class=&quot;language-text&quot;&gt;fetch()&lt;/code&gt; cho các version browser cũ hơn thì dùng &lt;a href=&quot;https://github.com/github/fetch&quot;&gt;polyfill của Github&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;viết-một-câu-request-network-đơn-giản-với-fetch&quot;&gt;&lt;a href=&quot;#vi%E1%BA%BFt-m%E1%BB%99t-c%C3%A2u-request-network-%C4%91%C6%A1n-gi%E1%BA%A3n-v%E1%BB%9Bi-fetch&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Viết một câu request network đơn giản với fetch&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token function&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;/api/some-url&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;status &lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Lỗi, mã lỗi &apos;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;status&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token comment&quot;&gt;// parse response data&lt;/span&gt;
+      response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Error :-S&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Response của câu &lt;code class=&quot;language-text&quot;&gt;fetch()&lt;/code&gt; là một đối tượng &lt;strong&gt;Stream&lt;/strong&gt;, nghĩa là khi chúng ta gọi phương thức &lt;code class=&quot;language-text&quot;&gt;json()&lt;/code&gt;, một Promise được trả về, vì quá trình đọc stream sẽ diễn ra bất đồng bộ.&lt;/p&gt;
+&lt;h1 id=&quot;response-metadata&quot;&gt;&lt;a href=&quot;#response-metadata&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Response Metadata&lt;/h1&gt;
+&lt;p&gt;Bên cạnh các dữ liệu chúng ta có thể truy cập như trong ví dụ trên, chúng ta có thể truy cập đến các meta data khác&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;/api/some-url&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;headers&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Content-Type&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;headers&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Date&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;status&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;statusText&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;type&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;url&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h1 id=&quot;response-types&quot;&gt;&lt;a href=&quot;#response-types&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Response Types&lt;/h1&gt;
+&lt;p&gt;Khi chúng ta tạo một fetch request, response trả về sẽ chứa &lt;strong&gt;response.type&lt;/strong&gt;, với một trong các giá trị &lt;strong&gt;basic&lt;/strong&gt;, &lt;strong&gt;cors&lt;/strong&gt;, &lt;strong&gt;opaque&lt;/strong&gt;. Nó cho biết resource này đến từ đâu, cho chúng ta biết cách chúng ta nên &lt;em&gt;đối xử&lt;/em&gt; với object trả về&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://rootsec.info/wp-content/uploads/2017/07/same-origin-policy.jpg&quot; alt=&quot;same origin&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Nếu request lên cùng một &lt;strong&gt;nguồn&lt;/strong&gt; (ứng dụng host trên server A gởi request lên API trên server A), response.type sẽ là &lt;code class=&quot;language-text&quot;&gt;basic&lt;/code&gt;, không có bất kỳ giới hạn việc xem các thông tin trên response.&lt;/p&gt;
+&lt;p&gt;Nếu request dạng &lt;strong&gt;CORS&lt;/strong&gt;, type trả về &lt;code class=&quot;language-text&quot;&gt;cors.cors&lt;/code&gt;, lúc đó bên trong &lt;code class=&quot;language-text&quot;&gt;header&lt;/code&gt; chúng ta chỉ được phép truy cập đến &lt;code class=&quot;language-text&quot;&gt;Cache-Control&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Content-Language&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Content-Type&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Expires&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;Last-Modified&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;Pragma&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Type &lt;code class=&quot;language-text&quot;&gt;opaque&lt;/code&gt; cho các request tạo ra khác &lt;strong&gt;nguồn&lt;/strong&gt;, và thằng API nó không chấp nhận dạng request &lt;strong&gt;CORS&lt;/strong&gt;, nghĩa là không trả về dữ liệu, không xem được status của request.&lt;/p&gt;
+&lt;p&gt;Để khai báo 1 fetch request chỉ &lt;code class=&quot;language-text&quot;&gt;resolve&lt;/code&gt; khi thõa điều kiện &lt;strong&gt;mode&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;same-origin&lt;/code&gt;: các request khác nguồn sẽ trả về &lt;code class=&quot;language-text&quot;&gt;reject&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;cors&lt;/code&gt;: cho phép khác nguồn nếu header trả về cũng là CORs&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;cors-with-forced-preflight&lt;/code&gt; luôn thực hiện kiểm tra &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Preflighted_requests&quot;&gt;preflight&lt;/a&gt;. Trước khi gởi đi, để đảm bảo có an toàn trước, tạo một request dùng phương thức OPTIONS để kiểm tra độ an toàn&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;no-cors&lt;/code&gt; tạo một request không cùng nguồn, không trả về CORS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Để khai báo mode&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;http://some-site.com/cors-enabled/some.json&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;mode&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;cors&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;text&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Request successful&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; text&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Request failed&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h1 id=&quot;chuỗi-promise&quot;&gt;&lt;a href=&quot;#chu%E1%BB%97i-promise&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Chuỗi Promise&lt;/h1&gt;
+&lt;p&gt;Một trong những tính năng hay (&lt;strong&gt;và sinh ra rắc rối&lt;/strong&gt;) của Promise là cho phép mốc các Promise theo dạng chuỗi.&lt;/p&gt;
+&lt;p&gt;Khi làm việc với JSON API, chúng ta quan tâm đến &lt;code class=&quot;language-text&quot;&gt;status&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;parse&lt;/code&gt; JSON trả về trên mỗi kết quả trả về, để đơn giản hóa, đưa phần xử lý kiểm tra status và parse này ra hàm riêng. Chúng ta chỉ lo xử lý kết quả cuối cùng và trường hợp có lỗi&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;status &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;200&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;status &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; Promise&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; Promise&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;statusText&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;response&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;status&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;json&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Request succeeded with JSON response&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; data&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Request failed&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h1 id=&quot;post-request&quot;&gt;&lt;a href=&quot;#post-request&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;POST Request&lt;/h1&gt;
+&lt;p&gt;Set giá trị &lt;code class=&quot;language-text&quot;&gt;method&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;body&lt;/code&gt; để tạo một POST request&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;url&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  method&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;POST&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  headers&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;Content-Type&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &quot;application&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;x&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;www&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;form&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;urlencoded&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; charset&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;UTF&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  body&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;foo=bar&amp;amp;lorem=ipsum&apos;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;json&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Request succeeded with JSON response&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; data&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;error &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Request failed&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h1 id=&quot;gởi-thông-tin-xác-thực-với-fetch&quot;&gt;&lt;a href=&quot;#g%E1%BB%9Fi-th%C3%B4ng-tin-x%C3%A1c-th%E1%BB%B1c-v%E1%BB%9Bi-fetch&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Gởi thông tin xác thực với Fetch&lt;/h1&gt;
+&lt;p&gt;Để gởi kèm thông tin xác thực (user là ai), như cookie, chúng ta truyền tham số &lt;code class=&quot;language-text&quot;&gt;credentials: include&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;url&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  credentials&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;include&apos;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/web/updates/2015/03/introduction-to-fetch&quot;&gt;Link bài viết gốc&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Bộ kiến thức của google để được gọi là chuẩn Web Mobile Developer]]></title><description><![CDATA[Website layout and styling Cần nắm Chỉ sử dụng javascript để truy cập và thao tác trên DOM mà không dùng thư viện jQuery Khai báo document…]]></description><link>https://luubinhan.github.io/blog/2018-09-30-huong-dan-tro-thanh-web-moblie-specialist</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-09-30-huong-dan-tro-thanh-web-moblie-specialist</guid><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Sun, 30 Sep 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;website-layout-and-styling&quot;&gt;&lt;a href=&quot;#website-layout-and-styling&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Website layout and styling&lt;/h1&gt;
+&lt;p&gt;Cần nắm&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Chỉ sử dụng javascript để truy cập và thao tác trên DOM mà không dùng thư viện jQuery&lt;/li&gt;
+&lt;li&gt;Khai báo document type, viewport tag phù hợp&lt;/li&gt;
+&lt;li&gt;Responsive grid-base sử dụng CSS&lt;/li&gt;
+&lt;li&gt;Media queries để tạo break point trên các kích thước màn hình&lt;/li&gt;
+&lt;li&gt;Multimedia tag để hiển thị video và audio&lt;/li&gt;
+&lt;li&gt;Responsive image theo từng resolution và hướng màn hình (ngang hay đứng) trên bất kỳ thiết bị mobile nào&lt;/li&gt;
+&lt;li&gt;Cách bắt Sự kiện Touch và mouse&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nguồn tham khảo ( mình sẽ viết từ từ )&lt;/p&gt;
+&lt;p&gt;● Responsive Web Design
+● A Complete Guide to Flexbox
+● Using media queries
+● Video and audio content
+● Responsive Images by Google
+● Supporting both TouchEvent and MouseEvent
+● Touch events&lt;/p&gt;
+&lt;h1 id=&quot;network&quot;&gt;&lt;a href=&quot;#network&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Network&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Request data sử dụng &lt;code class=&quot;language-text&quot;&gt;fetch()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Kiểm trả response status, sau đó &lt;code class=&quot;language-text&quot;&gt;parse&lt;/code&gt; dữ liệu này về thành data có thể sử dụng&lt;/li&gt;
+&lt;li&gt;Render dữ liệu lên trang&lt;/li&gt;
+&lt;li&gt;Cấu hình POST request với tham số &lt;code class=&quot;language-text&quot;&gt;method&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;body&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Sử dụng đúng cách cấu hình CORS ( cross-origin resource sharing protocol ) với fetch request, tùy thuộc vào header trả về từ server&lt;/li&gt;
+&lt;li&gt;Xử lý error bằng promise trong fetch request&lt;/li&gt;
+&lt;li&gt;Phân tích lỗi network sử dụng các công cụ debug&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nguồn tham khảo ( mình sẽ viết từ từ )&lt;/p&gt;
+&lt;p&gt;● Introduction to fetch()
+● Using fetch
+● David Walsh&apos;s blog on fetch
+● Jake Archibald&apos;s blog on fetch
+● JavaScript Promises: an Introduction
+● HTTP access control (CORS)&lt;/p&gt;
+&lt;h1 id=&quot;accessibility&quot;&gt;&lt;a href=&quot;#accessibility&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Accessibility&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Cách đặt tab order để di chuyển bằng tab&lt;/li&gt;
+&lt;li&gt;Sử dụng skip navigation link để bypass&lt;/li&gt;
+&lt;li&gt;Tránh sử dụng nội dung ẩn làm cản trở việc di chuyển bằng tab&lt;/li&gt;
+&lt;li&gt;Sử dụng thẻ head phù hợp để dựng cấu trúc trang&lt;/li&gt;
+&lt;li&gt;Sử dụng các thẻ &lt;code class=&quot;language-text&quot;&gt;alt&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;label&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;aria-label&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;aria-labelledby&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Áp dụng độ tương phản thích hợp tuân theo quy ước chung&lt;/li&gt;
+&lt;li&gt;Gởi thông báo khẩn cấp sử dụng &lt;code class=&quot;language-text&quot;&gt;aria-live&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Sử dụng semantic markup để giữ nội dung chính và các element khác riêng biệt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nguồn tham khảo ( mình sẽ viết từ từ )&lt;/p&gt;
+&lt;p&gt;● Web Fundamentals – Accessibility
+● Web Accessibility
+● Mobile Accessibility
+● Using tabindex
+● Focus
+● Skip Navigation Links
+● ARIA&lt;/p&gt;
+&lt;h1 id=&quot;progressive-web-apps&quot;&gt;&lt;a href=&quot;#progressive-web-apps&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Progressive Web Apps&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Tạo web app có thể sử dụng offline, cache các element bằng cách đưa request về service worker&lt;/li&gt;
+&lt;li&gt;Lưu những giá trị hiện thị mặc định như màu sắc, icon (nút thêm vào màn hình chính trên điện thoại) và splash screen trong web application manifest ( hoặc dùng meta tag )&lt;/li&gt;
+&lt;li&gt;Tách các tính năng quan trọng và UI để có thể load độc lập nội dung&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nguồn tham khảo ( mình sẽ viết từ từ )&lt;/p&gt;
+&lt;p&gt;● Progressive Web Apps
+● Progressive Web Apps Training
+● Web Fundamentals - The App Shell Model
+● Your First Progressive Web App
+● Using Service Workers&lt;/p&gt;
+&lt;h1 id=&quot;performance-optimization-và-caching&quot;&gt;&lt;a href=&quot;#performance-optimization-v%C3%A0-caching&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Performance Optimization và Caching&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Tránh khóa thread chính (web app chạy trên một single threat thôi) bằng web worker phù hợp&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tối ưu render bằng cách sử dụng hợp lý&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Compressed và minified javascript, HTML, CSS&lt;/li&gt;
+&lt;li&gt;Inline CSS cho một số trang nhất định, load bất đồng bộ một số stylesheet khác nếu cần&lt;/li&gt;
+&lt;li&gt;Inline javascript trong lúc khởi chạy render  những chổ cần thiết (hoặc đánh dấu deferred, async)&lt;/li&gt;
+&lt;li&gt;Đặt thứ tự load phù hợp, các phần nào bắt buộc thì cho load trước, những resource khác cho nằm sau cùng&lt;/li&gt;
+&lt;li&gt;Hạn chế tạo DOM nhiều tầng lớp&lt;/li&gt;
+&lt;li&gt;Sử dụng trình duyệt để phân tích lỗi trên mobile&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Load lại file khi nó available&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lưu lại dữ liệu xuống client&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Quản lý session&lt;/li&gt;
+&lt;li&gt;Cache asset nào tốn thời gian để load&lt;/li&gt;
+&lt;li&gt;Sử dụng IndexedDB để lưu dữ liệu động trong lúc chạy offline&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nguồn tham khảo ( mình sẽ viết từ từ )&lt;/p&gt;
+&lt;p&gt;● Using Web Workers
+● Offline Web Applications by Google
+● Web Fundamentals - Performance
+● The Offline Cookbook
+● Cache - MDN
+● Storage
+● Local Storage And How To Use It On Websites
+● IndexedDB API
+● Get Started with Analyzing Network Performance in Chrome DevTools&lt;/p&gt;
+&lt;h1 id=&quot;testing-và-debugging&quot;&gt;&lt;a href=&quot;#testing-v%C3%A0-debugging&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Testing và Debugging&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Viết unit test để kiểm tra function&lt;/li&gt;
+&lt;li&gt;Đặt breakpoint bên trong các function phức tạp để xác định chính xác luồn chạy có đúng không&lt;/li&gt;
+&lt;li&gt;Sử dụng &lt;code class=&quot;language-text&quot;&gt;console&lt;/code&gt; để log thông tin&lt;/li&gt;
+&lt;li&gt;Re-produce và fix bug dựa trên report của user&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nguồn tham khảo ( mình sẽ viết từ từ )&lt;/p&gt;
+&lt;p&gt;● Get Started with Debugging JavaScript in Chrome DevTools
+● Diagnose and Log to Console
+● Debugging Service Workers&lt;/p&gt;
+&lt;h1 id=&quot;khái-niệm-es2015-và-cú-pháp&quot;&gt;&lt;a href=&quot;#kh%C3%A1i-ni%E1%BB%87m-es2015-v%C3%A0-c%C3%BA-ph%C3%A1p&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Khái niệm ES2015 và cú pháp&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Cú pháp Promise để tạo hàm bất tuần tự và xử lý lỗi&lt;/li&gt;
+&lt;li&gt;Biến có thể sử dụng với block scope, function scope, và cách làm cho nó không thay đổi theo &lt;strong&gt;context&lt;/strong&gt; sử dụng &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;var&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;String literal&lt;/li&gt;
+&lt;li&gt;Arrow function&lt;/li&gt;
+&lt;li&gt;Default parameter cho function&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;for...of&lt;/code&gt; để loop và object và chạy một custom function&lt;/li&gt;
+&lt;li&gt;Map&lt;/li&gt;
+&lt;li&gt;Set&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nguồn tham khảo ( mình sẽ viết từ từ )&lt;/p&gt;
+&lt;p&gt;● &lt;a href=&quot;https://luubinhan.github.io/blog/2017-10-12-javascript-promise/&quot;&gt;JavaScript Promises&lt;/a&gt;
+● Promise
+● Template literals
+● Arrow Functions
+● Default parameters
+● For...of
+● Map
+● Set&lt;/p&gt;
+&lt;h1 id=&quot;mobile-web-forms&quot;&gt;&lt;a href=&quot;#mobile-web-forms&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Mobile Web Forms&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Sử dụng thẻ &lt;code class=&quot;language-text&quot;&gt;label&lt;/code&gt; cho input&lt;/li&gt;
+&lt;li&gt;Input với giá trị &lt;code class=&quot;language-text&quot;&gt;type&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;name&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;autocomplete&lt;/code&gt; phù hợp&lt;/li&gt;
+&lt;li&gt;Sử dụng input có kích thước phù hợp cho việc touch&lt;/li&gt;
+&lt;li&gt;Suggestion cho user bằng &lt;code class=&quot;language-text&quot;&gt;datalist&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Validate các input ở FrontEnd ( ví dụ pattern, maxlength, required)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kiểm tra validate ngay lặp tức bằng &lt;strong&gt;pseudo-classes&lt;/strong&gt; trên input&lt;/li&gt;
+&lt;li&gt;Thực hiện validate khi submit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nguồn tham khảo ( mình sẽ viết từ từ )&lt;/p&gt;
+&lt;p&gt;● Create Amazing Forms
+● Constraint Validation
+● Client-Side Form Validation with HTML5
+● Data form validation
+● HTML Forms&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/training/certification/mobile-web-specialist/&quot;&gt;Tham khảo cách lấy chứng chỉ Web Mobile Specialist&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Điểm qua các kiểu navigator của thư viện react-navigation]]></title><description><![CDATA[Stack Switch Drawer Bottom Tab Material Top Tab Có rất nhiều thư viện khác nhau để làm navigation với React native, mình khuyến khích các…]]></description><link>https://luubinhan.github.io/blog/2018-09-27-huong-dan-react-native-cac-kieu-react-navigation</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-09-27-huong-dan-react-native-cac-kieu-react-navigation</guid><category><![CDATA[javascript]]></category><category><![CDATA[react]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Thu, 27 Sep 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#stack&quot;&gt;Stack&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#switch&quot;&gt;Switch&lt;/a&gt;&lt;/li&gt;
