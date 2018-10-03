@@ -50,6 +50,14 @@ console.log(text)
 // result: Hello, AnLuu
 ```
 
+
+Biến sử dụng trong expression phải được khai báo trước
+
+```js
+`The time and date is ${ new Date().toLocalString() }`
+`The result of 2+3 equals ${ 2 + 3 }`
+```
+
 # Lưu ý về dấu backslash `\`
 
 ```js
@@ -60,13 +68,6 @@ Bình thường sau ký tự `\` là một ký tự đặc biệt nào đó, ví
 
 ```js
 var text = String.raw`The "\n" new line won't result in a new line. It'll be escapted`
-```
-
-Biến sử dụng trong expression phải được khai báo trước. Thêm một ví dụ khác
-
-```js
-`The time and date is ${ new Date().toLocalString() }`
-`The result of 2+3 equals ${ 2 + 3 }`
 ```
 
 # Lồng nhau
@@ -140,7 +141,6 @@ book.tags.map( tag => <code>
 
 # Tagged templates
 
-
 Với một template literal như... 
 
 ```js
@@ -150,6 +150,34 @@ Với một template literal như...
 
 ```js
     tag(['Hello,','. I am', 'to meet you!'], 'Maurice','thrilled')
+```
+
+Tagged template là một dạng **cao siêu** của template literal, tham số đầu tiên của nó là một mảng các string, các tham số sau đó, lần lượt được chèn vào giữa các phần tử của mảng.
+
+`tag` ở đây có thể là một hàm tự mình viết luôn
+
+```js
+var person = 'Mike';
+var age = 28;
+
+function myTag(strings, personExp, ageExp) {
+  var str0 = strings[0]; // "That "
+  var str1 = strings[1]; // " is a "
+
+  var ageStr;
+  if (ageExp > 99){
+    ageStr = 'centenarian';
+  } else {
+    ageStr = 'youngster';
+  }
+
+  return `${str0}${personExp}${str1}${ageStr}`;
+}
+
+var output = myTag`That ${ person } is a ${ age }`;
+
+console.log(output);
+// That Mike is a youngster
 ```
 
 [Tham khảo](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
