@@ -21,15 +21,27 @@ Trong Series này
 6. [Khai báo biến với let và const](2016-11-20-phan-6-es6-can-ban-khai-bao-let-const)
 7. [Căn bản class](2016-11-21-phan-7-es6-can-ban-classes)
 
+<!-- TOC -->
 
-Khai báo một kiểu `template literal`, đặt giữa dấu <code>``</code>
+- [Cú pháp](#cú-pháp)
+- [Lưu ý về dấu backslash `\`](#lưu-ý-về-dấu-backslash-\)
+- [Lồng nhau](#lồng-nhau)
+- [Multi-line String](#multi-line-string)
+- [Tagged templates](#tagged-templates)
+
+<!-- /TOC -->
+
+Template literal là một `string` **đặc biệt**, mình có thể nhúng **expression** vào trong đó.
+
+# Cú pháp
+
+Đặt `string` giữa dấu <code>``</code>
 
 ```js
 var text  = `First template literal`
 ```
 
-
-Với template literals, mình có thể chèn giữa chuỗi đó một đoạn *code javascript*
+Chèn giữa `string` đó một đoạn *code javascript* (expression)
 
 ```js
 var name  = `AnLuu`
@@ -38,20 +50,39 @@ console.log(text)
 // result: Hello, AnLuu
 ```
 
-Các biến số sử dụng trong phải template literal phải được khai báo trước template literal. Thêm một ví dụ khác
+# Lưu ý về dấu backslash `\`
+
+```js
+`\`` === '`' // --> true
+```
+
+Bình thường sau ký tự `\` là một ký tự đặc biệt nào đó, ví dụ \n để thêm dòng mới, nếu không muốn có kết quả này, mà chỉ muốn render ra đúng ký tự \n, dùng hàm `String.raw`
+
+```js
+var text = String.raw`The "\n" new line won't result in a new line. It'll be escapted`
+```
+
+Biến sử dụng trong expression phải được khai báo trước. Thêm một ví dụ khác
 
 ```js
 `The time and date is ${ new Date().toLocalString() }`
 `The result of 2+3 equals ${ 2 + 3 }`
 ```
 
+# Lồng nhau
+
 Mình có thể lồng code trong code
 
 ```js
 `This a template literal ${ `with another %{ 'one' } embeded inside it`}`
+
+// Ví dụ khác
+
+const classes = `header ${ isLargeScreen() ? '' :
+ `icon-${item.isCollapsed ? 'expander' : 'collapser'}` }`;
 ```
 
-Multiline Srring
+# Multi-line String
 
 Để có nhiều dòng trong javascript string, trước ES6 có mấy cách làm như sau
 
@@ -107,16 +138,18 @@ book.tags.map( tag => <code>
 </article>`
 ```
 
-Tagged templates
+# Tagged templates
 
-Bình thường sau ký tự `\` là một ký tự đặc biệt nào đó, ví dụ \n để thêm dòng mới, nếu không muốn có giá kết quả này mà chỉ muốn xuất ra đúng ký tự \n, dùng hàm String.raw
+
+Với một template literal như... 
 
 ```js
-var text = String.raw`The "\n" new line won't result in a new line. It'll be escapted`
+`Hello, ${ name }. I am ${ emotion } to meet you!`
 ```
-
-Với một template literal như Hello, ${ name }. I am ${ emotion } to meet you! ,  tương tự như khi viết bằng tagged template
+...viết bằng tagged template
 
 ```js
     tag(['Hello,','. I am', 'to meet you!'], 'Maurice','thrilled')
 ```
+
+[Tham khảo](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)

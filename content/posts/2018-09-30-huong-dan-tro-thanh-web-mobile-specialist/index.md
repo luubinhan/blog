@@ -155,7 +155,7 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
 
 - [JavaScript Promises](2017-10-12-javascript-promise/)
 - Promise
-- Template literals
+- [Template literals](2016-11-19-phan-5-es6-can-ban-template-literals)
 - Arrow Functions
 - Default parameters
 - For...of
