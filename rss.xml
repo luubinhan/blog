@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[luckyluu]]></title><description><![CDATA[Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End]]></description><link>https://luubinhan.github.io/blog</link><image><url>https://luubinhan.github.io/blog/logos/logo-512.png</url><title>luckyluu</title><link>https://luubinhan.github.io/blog</link></image><generator>Front End Developer An.Luu</generator><lastBuildDate>Wed, 03 Oct 2018 04:44:01 GMT</lastBuildDate><atom:link href="https://luubinhan.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[luckyluu]]></author><copyright><![CDATA[Copyright © 2018. luckyluu]]></copyright><item><title><![CDATA[Sử dụng tabindex]]></title><description><![CDATA[ có thể sử dụng trong bất kỳ thẻ html nào : element sẽ có thứ tự tab theo mặc định (theo vị trí DOM), nó có thể được focus bằng cách ấn phím…]]></description><link>https://luubinhan.github.io/blog/2018-10-02-huong-dan-su-dung-tabindex-de-di-chuyen</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-02-huong-dan-su-dung-tabindex-de-di-chuyen</guid><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Tue, 02 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;tabindex&lt;/code&gt; có thể sử dụng trong bất kỳ thẻ html nào&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[luckyluu]]></title><description><![CDATA[Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End]]></description><link>https://luubinhan.github.io/blog</link><image><url>https://luubinhan.github.io/blog/logos/logo-512.png</url><title>luckyluu</title><link>https://luubinhan.github.io/blog</link></image><generator>Front End Developer An.Luu</generator><lastBuildDate>Wed, 03 Oct 2018 04:58:01 GMT</lastBuildDate><atom:link href="https://luubinhan.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[luckyluu]]></author><copyright><![CDATA[Copyright © 2018. luckyluu]]></copyright><item><title><![CDATA[Sử dụng tabindex]]></title><description><![CDATA[ có thể sử dụng trong bất kỳ thẻ html nào : element sẽ có thứ tự tab theo mặc định (theo vị trí DOM), nó có thể được focus bằng cách ấn phím…]]></description><link>https://luubinhan.github.io/blog/2018-10-02-huong-dan-su-dung-tabindex-de-di-chuyen</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-02-huong-dan-su-dung-tabindex-de-di-chuyen</guid><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Tue, 02 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;tabindex&lt;/code&gt; có thể sử dụng trong bất kỳ thẻ html nào&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;tabindex=&amp;quot;0&amp;quot;&lt;/code&gt;&lt;/strong&gt;: element sẽ có thứ tự tab theo mặc định (theo vị trí DOM), nó có thể được focus bằng cách ấn phím &lt;strong&gt;Tab&lt;/strong&gt;, hoặc gọi phương thức &lt;code class=&quot;language-text&quot;&gt;focus()&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
       &lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;tabindex&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;0&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Press Tab to Focus Me!&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
@@ -202,7 +202,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Nguồn tham khảo ( mình sẽ viết từ từ )&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://luubinhan.github.io/blog/2018-10-01-huong-dan-gioi-thieu-fetch-javascript&quot;&gt;Giới thiệu fetch() của javascript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;2018-10-01-huong-dan-gioi-thieu-fetch-javascript&quot;&gt;Giới thiệu fetch() của javascript&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Using fetch&lt;/li&gt;
 &lt;li&gt;David Walsh&apos;s blog on fetch&lt;/li&gt;
 &lt;li&gt;Jake Archibald&apos;s blog on fetch&lt;/li&gt;
@@ -225,7 +225,7 @@
 &lt;li&gt;Web Fundamentals – Accessibility&lt;/li&gt;
 &lt;li&gt;Web Accessibility&lt;/li&gt;
 &lt;li&gt;Mobile Accessibility&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://luubinhan.github.io/blog/2018-10-02-huong-dan-su-dung-tabindex-de-di-chuyen&quot;&gt;Sử dụng tabindex&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;2018-10-02-huong-dan-su-dung-tabindex-de-di-chuyen/&quot;&gt;Sử dụng tabindex&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Focus&lt;/li&gt;
 &lt;li&gt;Skip Navigation Links&lt;/li&gt;
 &lt;li&gt;ARIA&lt;/li&gt;
@@ -290,7 +290,7 @@
 &lt;p&gt;Nguồn tham khảo ( mình sẽ viết từ từ )&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Get Started with Debugging JavaScript in Chrome DevTools&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://luubinhan.github.io/blog/2018-06-24-huong-dan-lam-viec-voi-console-trong-javascript/&quot;&gt;Làm việc với console trong javascript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;2018-06-24-huong-dan-lam-viec-voi-console-trong-javascript/&quot;&gt;Làm việc với console trong javascript&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Debugging Service Workers&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;khái-niệm-es2015-và-cú-pháp&quot;&gt;&lt;a href=&quot;#kh%C3%A1i-ni%E1%BB%87m-es2015-v%C3%A0-c%C3%BA-ph%C3%A1p&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Khái niệm ES2015 và cú pháp&lt;/h1&gt;
@@ -306,7 +306,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Nguồn tham khảo ( mình sẽ viết từ từ )&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://luubinhan.github.io/blog/2017-10-12-javascript-promise/&quot;&gt;JavaScript Promises&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;2017-10-12-javascript-promise/&quot;&gt;JavaScript Promises&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Promise&lt;/li&gt;
 &lt;li&gt;Template literals&lt;/li&gt;
 &lt;li&gt;Arrow Functions&lt;/li&gt;
