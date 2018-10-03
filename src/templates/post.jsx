@@ -1,13 +1,14 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { random } from "lodash";
+import FacebookProvider, { Comments } from "react-facebook";
 
 import Bio from "../components/Bio";
 import Link from "../components/Link";
 import Disqus from "../components/Disqus/Disqus";
 import PostTags from "../components/PostTags/PostTags";
-import SocialLinks from "../components/SocialLinks/SocialLinks";
-import SEO from "../components/SEO";
+import SocialLinks from "../components/SocialLinks/SocialLinks.jsx";
+import SEO from "../components/SEO.jsx";
 import config from "../../data/SiteConfig";
 import { bgSidebar } from "../../data";
 
@@ -77,15 +78,17 @@ export default class PostTemplate extends React.Component {
                 href="https://luubinhan.github.io/blog/about"
                 img={config.userAvatar}
               />
-              <div
-                className="fb-comments"
-                data-href={`${config.siteUrl}/blog${slug}`}
-                data-width="720"
-                data-numposts="10"
-              />
               <div className="post-meta">
                 <SocialLinks postPath={slug} postNode={postNode} />
               </div>
+            </div>
+            <div id="post-comments" className='fb-comments'>
+              <FacebookProvider appId={config.siteFBAppID}>
+                <Comments
+                  href={`${config.siteUrl}/blog${slug}`}
+                  width="100%"
+                />
+              </FacebookProvider>
             </div>
             <Disqus postNode={postNode} />
             <div className="section section-below-post">

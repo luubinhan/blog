@@ -52,9 +52,7 @@ export default class Template extends React.Component {
                     { name: 'keywords', content: 'frontend,developer,javascript,wordpress,react,hochiminh,web-developer' },
                   ]}        
             
-            >
-              <script src="https://luubinhan.github.io/blog/facebookcomment.js" defer="true" />
-            </Helmet>
+            />
             <div id="fb-root"></div>
             <div className="single-post-container">       
               <article>

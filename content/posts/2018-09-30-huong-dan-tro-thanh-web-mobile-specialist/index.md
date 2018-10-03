@@ -57,7 +57,7 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
 
 Nguồn tham khảo ( mình sẽ viết từ từ )
 
-- [Giới thiệu fetch() của javascript](https://luubinhan.github.io/blog/2018-10-01-huong-dan-gioi-thieu-fetch-javascript)
+- [Giới thiệu fetch() của javascript](2018-10-01-huong-dan-gioi-thieu-fetch-javascript)
 - Using fetch
 - David Walsh's blog on fetch
 - Jake Archibald's blog on fetch
@@ -80,7 +80,7 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
 - Web Fundamentals – Accessibility
 - Web Accessibility
 - Mobile Accessibility
-- Using tabindex
+- [Sử dụng tabindex](2018-10-02-huong-dan-su-dung-tabindex-de-di-chuyen/)
 - Focus
 - Skip Navigation Links
 - ARIA
@@ -137,7 +137,7 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
 Nguồn tham khảo ( mình sẽ viết từ từ )
 
 - Get Started with Debugging JavaScript in Chrome DevTools
-- Diagnose and Log to Console
+- [Làm việc với console trong javascript](2018-06-24-huong-dan-lam-viec-voi-console-trong-javascript/)
 - Debugging Service Workers
 
 # Khái niệm ES2015 và cú pháp
@@ -153,7 +153,7 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
 
 Nguồn tham khảo ( mình sẽ viết từ từ )
 
-- [JavaScript Promises](https://luubinhan.github.io/blog/2017-10-12-javascript-promise/)
+- [JavaScript Promises](2017-10-12-javascript-promise/)
 - Promise
 - Template literals
 - Arrow Functions

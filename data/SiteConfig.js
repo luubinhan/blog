@@ -10,7 +10,7 @@ module.exports = {
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "445556375516928", // FB Application ID for using app insights
   googleAnalyticsID: "UA-29685098-2", // GA tracking ID.
-  disqusShortname: "", // Disqus shortname.
+  disqusShortname: "luckyluu", // Disqus shortname.
   postDefaultCategoryID: "React", // Default category for posts.
   userName: "luckyluu", // Username to display in the author segment.
   userTwitter: "luubinhan", // Optionally renders "Follow Me" in the UserInfo segment.
@@ -33,7 +33,7 @@ module.exports = {
       label: "Twitter",
       url: "https://twitter.com/luubinhan",
       iconClassName: "twitter"
-    },
+    }
   ],
   copyright: "Copyright © 2018. luckyluu", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#01A1B1", // Used for setting manifest and progress theme colors.

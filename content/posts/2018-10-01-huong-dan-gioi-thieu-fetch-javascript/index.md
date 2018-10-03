@@ -18,6 +18,8 @@ tags: ["javascript"]
 - [Chuỗi Promise](#chuỗi-promise)
 - [POST Request](#post-request)
 - [Gởi thông tin xác thực với Fetch](#gởi-thông-tin-xác-thực-với-fetch)
+- [Upload file](#upload-file)
+- [Upload nhiều file](#upload-nhiều-file)
 
 <!-- /TOC -->
 
@@ -134,7 +136,7 @@ Set giá trị `method` và `body` để tạo một POST request
 fetch(url, {
   method: 'POST',
   headers: {
-    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8
+    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
   },
   body: 'foo=bar&lorem=ipsum'
 })
@@ -148,6 +150,23 @@ fetch(url, {
 })
 ```
 
+Gởi lên dữ liệu dạng JSON
+
+```js
+var data = {username: 'example'};
+
+fetch(url, {
+  method: 'POST', 
+  body: JSON.stringify(data), 
+  headers:{
+    'Content-Type': 'application/json'
+  }
+})
+.then(res => res.json())
+.then(response => console.log('Success:', JSON.stringify(response)))
+.catch(error => console.error('Error:', error))
+```
+
 # Gởi thông tin xác thực với Fetch
 
 Để gởi kèm thông tin xác thực (user là ai), như cookie, chúng ta truyền tham số `credentials: include`
@@ -158,4 +177,60 @@ fetch(url, {
 })
 ```
 
+Nếu muốn gởi credentials khi request URL là cùng nguồn, truyền giá trị `same-origin`
+
+```js
+fetch(url, {
+  crendentials: 'same-origin'
+})
+```
+
+Không cho trình duyệt gởi thông tin xác thực, dùng `omit`
+
+```js
+fetch(url, {
+  crendentials: 'omit'
+})
+```
+
+# Upload file
+
+Sử dụng cùng `<input type='file' />`, `FormData()`
+
+```js
+var formData = new FormData();
+var fileField = document.querySelector("input[type='file']");
+
+formData.append('username', 'abc123');
+formData.append('avatar', fileField.files[0]);
+
+fetch('https://example.com/profile/avatar', {
+  method: 'PUT',
+  body: formData
+})
+.then(response => response.json())
+.then(response => console.log('Success:', JSON.stringify(response)));
+.catch(error => console.error('Error:', error))
+```
+
+# Upload nhiều file
+
+```js
+var formData = new FormData();
+var photos = document.querySelector("input[type='file'][multiple]");
+
+formData.append('title', 'My Vegas Vacation');
+formData.append('photos', photos.files);
+
+fetch('https://example.com/posts', {
+  method: 'POST',
+  body: formData
+})
+.then(response => response.json())
+.then(response => console.log('Success:', JSON.stringify(response)))
+.catch(error => console.error('Error:', error));
+```
+
 [Link bài viết gốc](https://developers.google.com/web/updates/2015/03/introduction-to-fetch)
+
+[Ví dụ tham khảo, chi tiết hơn về header, body, response object](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
