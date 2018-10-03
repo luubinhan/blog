@@ -111,7 +111,7 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
   - Sử dụng trình duyệt để phân tích lỗi trên mobile
 - Load lại file khi nó available
 - Lưu lại dữ liệu xuống client
-  - Quản lý session
+  - [Quản lý session](2018-09-17-huong-dan-luu-token-o-dau)
   - Cache asset nào tốn thời gian để load
   - Sử dụng IndexedDB để lưu dữ liệu động trong lúc chạy offline
 
@@ -154,7 +154,6 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
 Nguồn tham khảo ( mình sẽ viết từ từ )
 
 - [JavaScript Promises](2017-10-12-javascript-promise/)
-- Promise
 - [Template literals](2016-11-19-phan-5-es6-can-ban-template-literals)
 - Arrow Functions
 - Default parameters
