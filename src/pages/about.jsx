@@ -105,14 +105,13 @@ class AboutPage extends React.Component {
                   <div className="post-content">
                     <article>
                       <blockquote>
-                        Không phải mẫu người thành công, đơn giản chỉ muốn làm
-                        gì đó để thấy mình có ích
+                        Mình không quá giỏi bất cứ thứ gì, không thông minh, chỉ là đứa chịu khó và có trách nhiệm với những gì mình làm
                       </blockquote>
                       <h2>Phòng vấn toàn thất bại</h2>
                       <p>
                         Sau khi tốt nghiệp đại học Hoa Sen năm 2011, bước chân
                         vào những lần phỏng vấn thất bại liên tiếp. Xin vào ví
-                        trí thiết kế web cho một công ty bán nữ trang, với vốn
+                        trí **thiết kế web** cho một công ty bán nữ trang, với vốn
                         liếng HTML/CSS góp nhặt từ izwebz.com và một vài dự án nhỏ làm trong trường, "mai mắn" được
                         nhận trong ngày phỏng vấn và bị từ chối ngay hôm sau vì "anh cần người biết vẽ tay".
                       </p>
@@ -125,13 +124,13 @@ class AboutPage extends React.Component {
                         để chị hỏi tiếng Việt"
                       </p>
                       <p>
-                        Mới gần đây, cùng với cơn sốt React trong ngành, mình
+                        Cùng với cơn sốt React trong ngành, mình
                         cũng "đua đòi" đi xin vào vị trí React mà trong đầu
                         chẳng có tí ti gì là component, state, props, đến nói
                         lúc được Single Page App là gì mình cũng không thể nào
                         định nghĩa nổi.
                       </p>
-                      <h2>Và kết thúc....</h2>
+                      <h2>Và...</h2>
                       <p>Mình định viết đến đây để các bạn đọc tức chơi, một phần giới thiệu bị bỏ lửng, không có kết thúc. Vì thực sự mình vẫn đang tiếp tục vá lại những kiến thức mình còn lủng, mình sẽ còn tiếp tục phỏng vấn rớt dài dài vì không đủ đáp ứng yêu cầu cho công việc.</p>
                     </article>
                   </div>
@@ -140,8 +139,7 @@ class AboutPage extends React.Component {
                   <div className="post-content">
                     <article>
                       <blockquote>
-                        Not yet a successfull man, not try to be, just want to
-                        become a value man
+                        Nothing of me is special, just a hard-working person
                       </blockquote>
                       <p>
                         I moved to the largest city in vietnam, formerly named
@@ -151,6 +149,7 @@ class AboutPage extends React.Component {
                         immediate understanding, original content and easily
                         traceable information.
                       </p>
+                      <p>I created this blog to update my knowledge, also I aim to help other developers who interest in Frontend, javascript, stylesheet but found themselves difficult with reading english.</p>
                     </article>
                   </div>
                 )}
