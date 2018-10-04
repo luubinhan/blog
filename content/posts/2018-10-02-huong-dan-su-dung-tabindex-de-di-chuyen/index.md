@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript"]
+tags: ["javascript", "ux-ui"]
 ---
 
 `tabindex` có thể sử dụng trong bất kỳ thẻ html nào
