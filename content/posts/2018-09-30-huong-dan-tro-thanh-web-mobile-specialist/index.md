@@ -61,7 +61,7 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
 - Using fetch
 - David Walsh's blog on fetch
 - Jake Archibald's blog on fetch
-- JavaScript Promises: an Introduction
+- [Nắm vững Promise trong javascript](2017-10-12-javascript-promise)
 - HTTP access control (CORS)
 
 # Accessibility

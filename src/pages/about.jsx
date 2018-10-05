@@ -111,7 +111,7 @@ class AboutPage extends React.Component {
                       <p>
                         Sau khi tốt nghiệp đại học Hoa Sen năm 2011, bước chân
                         vào những lần phỏng vấn thất bại liên tiếp. Xin vào ví
-                        trí **thiết kế web** cho một công ty bán nữ trang, với vốn
+                        trí <i>thiết kế web</i> cho một công ty bán nữ trang, với vốn
                         liếng HTML/CSS góp nhặt từ izwebz.com và một vài dự án nhỏ làm trong trường, "mai mắn" được
                         nhận trong ngày phỏng vấn và bị từ chối ngay hôm sau vì "anh cần người biết vẽ tay".
                       </p>

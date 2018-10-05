@@ -10,7 +10,7 @@
          url('fonts/Vf-Avo_n.svg#avo') format('svg');
     font-weight: normal;
     font-style: normal;
-
+    font-display: swap;
 }
 @font-face {
     font-family: 'avo_bold';
@@ -21,7 +21,7 @@
          url('fonts/Vf-Avo_b.svg#avo_bold') format('svg');
     font-weight: bold;
     font-style: normal;
-
+    font-display: swap;
 }
 @media (min-width: 768px){
   .navbar-toggle {
