@@ -40,6 +40,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     const lessonPage = path.resolve("src/templates/category.jsx");
     const categoryPage = path.resolve("src/templates/category.jsx");
     const tagTemplate = path.resolve(`src/templates/tag.jsx`);
+    const archivesTemplate = path.resolve(`src/templates/archives.jsx`);
     resolve(
       graphql(
         `
