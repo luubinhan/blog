@@ -7,6 +7,7 @@ import PostListing from "../components/PostListing/PostListing";
 import config from "../../data/SiteConfig";
 
 import { bgSidebar } from "../../data";
+const sideBg = bgSidebar[random(bgSidebar.length - 1)];
 
 const NavLink = props => {
   if (!props.test) {
@@ -23,9 +24,8 @@ class Index extends React.Component {
   render() {
     const { data, pathContext } = this.props;
     const { group, index, first, last, pageCount } = pathContext;
-    const previousUrl = index - 1 == 1 ? "" : (index - 1).toString();
+    const previousUrl = (index - 1 === 1) ? "" : (index - 1).toString();
     const nextUrl = (index + 1).toString();
-    const sideBg = bgSidebar[random(bgSidebar.length - 1)];
     return (
       <div className="master">
         <Helmet title={config.siteTitle + ' - ' + config.siteDescription} />

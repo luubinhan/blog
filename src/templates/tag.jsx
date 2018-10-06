@@ -4,12 +4,12 @@ import { random } from "lodash";
 import PostListing from "../components/PostListing/PostListing";
 import config from "../../data/SiteConfig";
 import { bgSidebar } from "../../data";
+const sideBg = bgSidebar[random(bgSidebar.length - 1)];
 
 export default class TagTemplate extends React.Component {
   render() {
     const { tag } = this.props.pathContext;
     const postEdges = this.props.data.allMarkdownRemark.edges;
-    const sideBg = bgSidebar[random(bgSidebar.length - 1)];
     return (
       <div className="master">
         <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle} | ${config.siteDescription}`} />

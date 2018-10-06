@@ -11,6 +11,7 @@ import SocialLinks from "../components/SocialLinks/SocialLinks.jsx";
 import SEO from "../components/SEO.jsx";
 import config from "../../data/SiteConfig";
 import { bgSidebar } from "../../data";
+const sideBg = bgSidebar[random(bgSidebar.length - 1)];
 
 export default class PostTemplate extends React.Component {
   render() {
@@ -23,7 +24,6 @@ export default class PostTemplate extends React.Component {
     if (!post.id) {
       post.category_id = config.postDefaultCategoryID;
     }
-    const sideBg = bgSidebar[random(bgSidebar.length - 1)];
     return (
       <div className="master">
         <Helmet>
