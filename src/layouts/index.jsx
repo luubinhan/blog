@@ -108,7 +108,6 @@ export default class MainLayout extends React.Component {
     }
   };
   render() {
-    const { children } = this.props;
     const { collapsed } = this.state;
     const primaryNav = PrimaryNav.map(item => (
       <li key={item.name} className={camelCase(item.name)}>
@@ -170,7 +169,7 @@ export default class MainLayout extends React.Component {
             </footer>
           </div>
         </div>
-        {children()}
+        {this.props.children()}
       </div>
     );
   }
