@@ -13,13 +13,13 @@ tags: ["javascript"]
 
 Trong Series này
 
-1. [Nâng cấp cho Object](2016-11-15-chuong-1-es6-can-ban)
-2. [Arrow function](2016-11-16-chuong-2-es6-can-ban-arrow-function/)
-3. [Assignment Destruction](2016-11-17-phan-3-es6-can-ban-assignment-destructuring)
-4. [Rest parameters và spread operator](2016-11-18-phan-4-es6-can-ban-rest-parameters-va-spread-operator)
-5. [Template literals](2016-11-19-phan-5-es6-can-ban-template-literals)
-6. [Khai báo biến với let và const](2016-11-20-phan-6-es6-can-ban-khai-bao-let-const)
-7. [Căn bản class](2016-11-21-phan-7-es6-can-ban-classes)
+1. [Nâng cấp cho Object](/2016-11-15-chuong-1-es6-can-ban)
+2. [Arrow function](/2016-11-16-chuong-2-es6-can-ban-arrow-function/)
+3. [Assignment Destruction](/2016-11-17-phan-3-es6-can-ban-assignment-destructuring)
+4. [Rest parameters và spread operator](/2016-11-18-phan-4-es6-can-ban-rest-parameters-va-spread-operator)
+5. [Template literals](/2016-11-19-phan-5-es6-can-ban-template-literals)
+6. [Khai báo biến với let và const](/2016-11-20-phan-6-es6-can-ban-khai-bao-let-const)
+7. [Căn bản class](/2016-11-21-phan-7-es6-can-ban-classes)
 
 
 Javascript vốn là ngôn ngữ `prototype`, `class` không phải là cái gì đó mới mẻ trong javascript, chỉ là trước đây có cách khai báo và tên gọi khác prototype thì giờ có cách khai báo mới cho những ai đã quen với những ngôn ngữ khác có thể tiếp cận dễ dàng.

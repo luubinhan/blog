@@ -1,5 +1,5 @@
 ---
-slug: "/2018-10-08-huong-dan-aria-va-su-dung-voi-ecommerce-site/"
+slug: "/2018-10-08-huong-dan-aria-va-su-dung-voi-ecommerce-site"
 date: "2018-10-08"
 title: "Sử dụng aria trên site eCommerce, vấn đề accessibility cần quan tâm"
 desc: "Accessible là một thuật ngữ ít bạn làm web quan tâm, không có nghĩa là nó không tồn tại, cùng tham khảo những aria nào cần bổ sung cho trang ecommerce"

@@ -38,7 +38,7 @@ Cần nắm
 Nguồn tham khảo ( mình sẽ viết từ từ )
 
 - Responsive Web Design
-- A Complete Guide to Flexbox
+- [Tổng quát về canh lề với Flexbox display](/2018-07-04-huong-dan-tong-hop-canh-le-voi-flexbox-alignment)
 - Using media queries
 - [Video and audio content](https://developer.mozilla.org/vi/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content), bài này mình dịch nếu sai chổ nào các bạn sữa giúp
 - Responsive Images by Google
@@ -57,11 +57,11 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
 
 Nguồn tham khảo ( mình sẽ viết từ từ )
 
-- [Giới thiệu fetch() của javascript](2018-10-01-huong-dan-gioi-thieu-fetch-javascript)
+- [Giới thiệu fetch() của javascript](/2018-10-01-huong-dan-gioi-thieu-fetch-javascript)
 - Using fetch
 - David Walsh's blog on fetch
 - Jake Archibald's blog on fetch
-- [Nắm vững Promise trong javascript](2017-10-12-javascript-promise)
+- [Nắm vững Promise trong javascript](/2017-10-12-javascript-promise)
 - HTTP access control (CORS)
 
 # Accessibility
@@ -80,10 +80,10 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
 - Web Fundamentals – Accessibility
 - Web Accessibility
 - Mobile Accessibility
-- [Sử dụng tabindex](2018-10-02-huong-dan-su-dung-tabindex-de-di-chuyen/)
-- Focus
+- [Sử dụng tabindex](/2018-10-02-huong-dan-su-dung-tabindex-de-di-chuyen/)
+- [Focus](/2018-10-05-gioi-thieu-focus)
 - Skip Navigation Links
-- ARIA
+- [ARIA](/2018-10-08-huong-dan-aria-va-su-dung-voi-ecommerce-site)
 
 # Progressive Web Apps
 
@@ -111,7 +111,7 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
   - Sử dụng trình duyệt để phân tích lỗi trên mobile
 - Load lại file khi nó available
 - Lưu lại dữ liệu xuống client
-  - [Quản lý session](2018-09-17-huong-dan-luu-token-o-dau)
+  - [Quản lý session](/2018-09-17-huong-dan-luu-token-o-dau)
   - Cache asset nào tốn thời gian để load
   - Sử dụng IndexedDB để lưu dữ liệu động trong lúc chạy offline
 
@@ -137,7 +137,7 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
 Nguồn tham khảo ( mình sẽ viết từ từ )
 
 - Get Started with Debugging JavaScript in Chrome DevTools
-- [Làm việc với console trong javascript](2018-06-24-huong-dan-lam-viec-voi-console-trong-javascript/)
+- [Làm việc với console trong javascript](/2018-06-24-huong-dan-lam-viec-voi-console-trong-javascript)
 - Debugging Service Workers
 
 # Khái niệm ES2015 và cú pháp
@@ -153,9 +153,9 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
 
 Nguồn tham khảo ( mình sẽ viết từ từ )
 
-- [JavaScript Promises](2017-10-12-javascript-promise/)
-- [Template literals](2016-11-19-phan-5-es6-can-ban-template-literals)
-- Arrow Functions
+- [JavaScript Promises](/2017-10-12-javascript-promise)
+- [Template literals](/2016-11-19-phan-5-es6-can-ban-template-literals)
+- [Arrow Function](/2016-11-16-chuong-2-es-6-can-ban-arrow-function)
 - Default parameters
 - For...of
 - Map
