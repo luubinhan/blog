@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { random } from "lodash";
-import FacebookProvider, { Comments } from "react-facebook";
+import { Comments, FacebookProvider } from "react-facebook";
 
 import Bio from "../components/Bio";
 import Link from "../components/Link";
