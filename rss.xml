@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[luckyluu]]></title><description><![CDATA[Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End]]></description><link>https://luubinhan.github.io/blog</link><image><url>https://luubinhan.github.io/blog/logos/logo-512.png</url><title>luckyluu</title><link>https://luubinhan.github.io/blog</link></image><generator>Front End Developer An.Luu</generator><lastBuildDate>Tue, 09 Oct 2018 09:29:20 GMT</lastBuildDate><atom:link href="https://luubinhan.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[luckyluu]]></author><copyright><![CDATA[Copyright © 2018. luckyluu]]></copyright><item><title><![CDATA[Sử dụng Aria trên site eCommerce, vấn đề accessibility cần quan tâm]]></title><description><![CDATA[ là gì Một vài   phổ biến aria-label và aria-labelledby role Thêm   cần thiết cho trang ecommerce  là gì ARIA (Accessible Rich Internet…]]></description><link>https://luubinhan.github.io/blog/2018-10-08-huong-dan-aria-va-su-dung-voi-ecommerce-site</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-08-huong-dan-aria-va-su-dung-voi-ecommerce-site</guid><category><![CDATA[ux-ui]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Mon, 08 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[luckyluu]]></title><description><![CDATA[Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End]]></description><link>https://luubinhan.github.io/blog</link><image><url>https://luubinhan.github.io/blog/logos/logo-512.png</url><title>luckyluu</title><link>https://luubinhan.github.io/blog</link></image><generator>Front End Developer An.Luu</generator><lastBuildDate>Tue, 09 Oct 2018 09:37:00 GMT</lastBuildDate><atom:link href="https://luubinhan.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[luckyluu]]></author><copyright><![CDATA[Copyright © 2018. luckyluu]]></copyright><item><title><![CDATA[Sử dụng Aria trên site eCommerce, vấn đề accessibility cần quan tâm]]></title><description><![CDATA[ là gì Một vài   phổ biến aria-label và aria-labelledby role Thêm   cần thiết cho trang ecommerce  là gì ARIA (Accessible Rich Internet…]]></description><link>https://luubinhan.github.io/blog/2018-10-08-huong-dan-aria-va-su-dung-voi-ecommerce-site</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-08-huong-dan-aria-va-su-dung-voi-ecommerce-site</guid><category><![CDATA[ux-ui]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Mon, 08 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#aria-l%C3%A0-g%C3%AC&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;aria&lt;/code&gt; là gì&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;
@@ -5333,7 +5333,160 @@ optimization&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;s
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Miễn là làm đúng cái middleware này, chúng ta sẽ không bao giờ dính mấy con bug kiểu như nút Play thì đang cho thấy ở trạng thái Pause trong khi đang phát rầm rầm.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@jacobp100/you-arent-using-redux-middleware-enough-94ffe991e6&quot;&gt;Link bài gốc của tác giả Jacob Parker&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sử dụng Middleware với Redux dành cho người mới bắt đầu]]></title><description><![CDATA[Middleware là gì Tại sao và tại sao Một số ứng dụng của Middleware Loging Đợi user confirm Một số lựa chọn Middleware là gì Nghe tên thì hơi…]]></description><link>https://luubinhan.github.io/blog/2018-06-18-huong-dan-tim-hieu-middleware-va-redux</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-06-18-huong-dan-tim-hieu-middleware-va-redux</guid><category><![CDATA[react]]></category><category><![CDATA[redux]]></category><category><![CDATA[javascript]]></category><category><![CDATA[middleware]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Mon, 18 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@jacobp100/you-arent-using-redux-middleware-enough-94ffe991e6&quot;&gt;Link bài gốc của tác giả Jacob Parker&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Tiếp tục luận bàn về cách tổ chức thư mục, đặt tên component trong React]]></title><description><![CDATA[Tổ chức thư mục Containers và Components Tác và nhóm code lại với nhau UI Components Đặt tên components Screens Kết luận Tổ chức thư mục Nếu…]]></description><link>https://luubinhan.github.io/blog/2018-06-18-huong-dan-luan-ban-ve-cach-to-chuc-thu-muc-dat-ten</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-06-18-huong-dan-luan-ban-ve-cach-to-chuc-thu-muc-dat-ten</guid><category><![CDATA[react]]></category><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Mon, 18 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#t%E1%BB%95-ch%E1%BB%A9c-th%C6%B0-m%E1%BB%A5c&quot;&gt;Tổ chức thư mục&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#containers-v%C3%A0-components&quot;&gt;Containers và Components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#t%C3%A1c-v%C3%A0-nh%C3%B3m-code-l%E1%BA%A1i-v%E1%BB%9Bi-nhau&quot;&gt;Tác và nhóm code lại với nhau&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#ui-components&quot;&gt;UI Components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%C4%91%E1%BA%B7t-t%C3%AAn-components&quot;&gt;Đặt tên components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#screens&quot;&gt;Screens&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#k%E1%BA%BFt-lu%E1%BA%ADn&quot;&gt;Kết luận&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- /TOC --&gt;
+&lt;h2 id=&quot;tổ-chức-thư-mục&quot;&gt;&lt;a href=&quot;#t%E1%BB%95-ch%E1%BB%A9c-th%C6%B0-m%E1%BB%A5c&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tổ chức thư mục&lt;/h2&gt;
+&lt;p&gt;Nếu init project bằng &lt;strong&gt;create-react-app&lt;/strong&gt;, chúng ta sẽ có sẵn những thư mục và file cơ bản nhất: &lt;em&gt;.gitinore&lt;/em&gt;, &lt;em&gt;package.json&lt;/em&gt;, &lt;em&gt;README.md&lt;/em&gt;, &lt;em&gt;yarn.lock&lt;/em&gt;, thư mục &lt;strong&gt;public&lt;/strong&gt; và &lt;strong&gt;src&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/1600/1*eXN1LlNnuZmosJ7n7EsJ-Q.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Chúng ta sẽ chỉ tập trung vào thư mục &lt;strong&gt;src&lt;/strong&gt; và khoog quan tâm tới những file và thư mục ở khác.&lt;/p&gt;
+&lt;h2 id=&quot;containers-và-components&quot;&gt;&lt;a href=&quot;#containers-v%C3%A0-components&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Containers và Components&lt;/h2&gt;
+&lt;p&gt;Bên trong thư mục &lt;strong&gt;src&lt;/strong&gt; chúng ta sẽ tạo thêm 2 thư mục là &lt;strong&gt;components&lt;/strong&gt; và &lt;strong&gt;containers&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
+├─ components // chứa components làm nhiệm vụ render 
+└─ containers // các component xử lý logic&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Nếu là theo cách này có một vài chổ không hợp lý&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rất là khó để phân biệt và tách biệt 100% giữa container và presentational component, chắc chắn trong team sẽ có người là lên &quot;em thấy cái này là container chứ sao lại là presentational được&quot;, kiểu như vậy.&lt;/li&gt;
+&lt;li&gt;Cho phép 2 component có cùng tên với nhau, trong toàn bộ project mỗi component chỉ nên là duy nhất, tránh confuse trách nhiệm của mỗi bên.&lt;/li&gt;
+&lt;li&gt;Tốn công, việc tách container ở một thư mục, presentationial ở thư mục khác, rất là phiền nếu muốn bay qua bay lại giữa 2 thư mục.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
+└─ User
+  ├─ components
+  └─ containers&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Cách này thì sao? Có thể giải quyết được vấn đề bay qua bay lại ở trên, nhưng nếu có 100 cái components chung ta tiếp tục ngụp lặn trong cả trăm thư mục components containers ở khắp mọi nơi.&lt;/p&gt;
+&lt;p&gt;Theo tác giả chúng ta nên dẹp luôn khái niệm container và presentational luôn, tất cả chúng ta cần là 2 thư mục &lt;strong&gt;components&lt;/strong&gt; và &lt;strong&gt;screens&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;tác-và-nhóm-code-lại-với-nhau&quot;&gt;&lt;a href=&quot;#t%C3%A1c-v%C3%A0-nh%C3%B3m-code-l%E1%BA%A1i-v%E1%BB%9Bi-nhau&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tác và nhóm code lại với nhau&lt;/h2&gt;
+&lt;p&gt;Bên trong thư mục &lt;em&gt;components&lt;/em&gt; chúng ta group files theo module/tính năng.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
+└─ components
+  └─ User
+    ├─ Form.jsx
+    └─ List.jsx&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Khi component là kết hợp của nhiều component lại ta gom các file components vào 1 thư mục. Thí dụ nếu có thêm file &lt;code class=&quot;language-text&quot;&gt;Form.css&lt;/code&gt; ta sẽ làm như sau&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
+└─ components
+  └─ User
+    ├─ Form
+    │ ├─ Form.jsx
+    │ └─ Form.css
+    └─ List.jsx&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2 id=&quot;ui-components&quot;&gt;&lt;a href=&quot;#ui-components&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;UI Components&lt;/h2&gt;
+&lt;p&gt;Bên trong thư mục &lt;strong&gt;components&lt;/strong&gt; ta có thể có thêm thư mục &lt;strong&gt;UI&lt;/strong&gt;, trong đây sẽ chứa các component dạng generic. Thế nào là component generic? là những component dạng giống như những React UI Components của Sematic UI, Office Fabric UI, Reactrap.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
+└─ components
+  └─ UI&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2 id=&quot;Đặt-tên-components&quot;&gt;&lt;a href=&quot;#%C4%90%E1%BA%B7t-t%C3%AAn-components&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Đặt tên components&lt;/h2&gt;
+&lt;p&gt;Chúng ta đã bàn về cách sắp xếp thư mục và chia các component ra dạng module. Giờ còn câu hỏi là đặt tên nó sao?&lt;/p&gt;
+&lt;p&gt;Như đã nói ở trên tên của mỗi component nên là duy nhất và gợi hình, đọc xong có thể hình dung được component đó dùng để làm gì. Việc này cũng rất có lợi trong lúc debug bằng React Dev Tools.&lt;/p&gt;
+&lt;p&gt;Pattern để đặt tên component &lt;strong&gt;đường dẫn-tên file&lt;/strong&gt;. Thí dụ component ở file &lt;code class=&quot;language-text&quot;&gt;components/User/List.jsx&lt;/code&gt; thì đặt là &lt;code class=&quot;language-text&quot;&gt;UserList&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Nếu &lt;code class=&quot;language-text&quot;&gt;components/User/Form/Form.jsx&lt;/code&gt; thì không cần đặt là &lt;code class=&quot;language-text&quot;&gt;UserFormForm&lt;/code&gt;, chỉ cần gọi nó là &lt;code class=&quot;language-text&quot;&gt;UserForm&lt;/code&gt; trong trường hợp tên file cùng tên với thư mục chứa nó.&lt;/p&gt;
+&lt;p&gt;Lợi ích của việc đặt tên như vậy là giúp chúng ta navigate đến file đó rất nhanh, đa phần các editor &apos;xịn&apos; đều có thể dùng fuzzy search&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/1600/1*vZO9Ci9a_lrfi2yTP9OiMA.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Tránh lặp lại tên, ngày xưa khi mới bắt đầu chúng ta thường đặt tên file rất là đầy đủ chuẩn không cần chỉnh, tuy nhiên việc này làm cho lúc &lt;code class=&quot;language-text&quot;&gt;import&lt;/code&gt; rất dài dòng, đường dẫn dài cả cây số. Trong trường hợp ở trên do &lt;code class=&quot;language-text&quot;&gt;Form&lt;/code&gt; đang nằm trong &lt;code class=&quot;language-text&quot;&gt;User&lt;/code&gt; thì ta biết ngay là &lt;code class=&quot;language-text&quot;&gt;FormUser&lt;/code&gt; rồi, không nên đặt tên file là &lt;code class=&quot;language-text&quot;&gt;FormUser&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ScreenUserForm &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./screens/User/UserForm&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// đấu với&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ScreenUserForm &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./screens/User/Form&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Nếu ví dụ trên chưa đủ thuyết phục, hãy xem tiếp thêm một ví dụ khách&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; MediaPlanViewChannel &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/MediaPlan/MediaPlanView/MediaPlanViewChannel.jsx&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; MediaPlanViewChannel &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./MediaPlan/View/Channel&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2 id=&quot;screens&quot;&gt;&lt;a href=&quot;#screens&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Screens&lt;/h2&gt;
+&lt;p&gt;Nãy có nói thư mục &lt;strong&gt;screen&lt;/strong&gt; mà chưa giải thích, screens sẽ nơi chứa là những components được map vào cho &lt;code class=&quot;language-text&quot;&gt;route&lt;/code&gt;, như screen để tạo user mới, reset password, đăng nhập. Screen không nên chứa logic gì cả, 1 functional component, chúng ta sẽ đưa screen vào một thư mục hẳn hoi để dễ mapping đúng với structure của &lt;code class=&quot;language-text&quot;&gt;route&lt;/code&gt; chứ chúng ta không theo module&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
+├─ components 
+└─ screens
+  └─ User
+    ├─ Form.jsx
+    └─ List.jsx&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Chúng ta có file &lt;code class=&quot;language-text&quot;&gt;Route.jsx&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Component &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Router &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react-router&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Redirect&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Route&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Switch &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react-router-dom&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ScreensUserForm &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./User/Form&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ScreensUserList &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./User/List&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;ScreensRoot&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Router&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Switch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Route&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/user/list&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;ScreensUserList&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Route&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/user/create&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;ScreensUserForm&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Route&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/user/:id&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;ScreensUserForm&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;Switch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;Router&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; ScreensRoot&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Bằng cách này chỉ cần nhìn url ta có thể trace được đang dùng component ở thư mục nào&lt;/p&gt;
+&lt;p&gt;Về tên gọi của component trong thư mục screen này,
+nếu &lt;code class=&quot;language-text&quot;&gt;scr/screens/User/List.jsx&lt;/code&gt; thì đặt tên là &lt;code class=&quot;language-text&quot;&gt;ScreensUserList&lt;/code&gt;;&lt;/p&gt;
+&lt;p&gt;Nếu bạn để ý thì sẽ thấy 2 route &lt;code class=&quot;language-text&quot;&gt;create&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;edit&lt;/code&gt; đang cùng được render cùng 1 component &lt;code class=&quot;language-text&quot;&gt;ScreensUserForm&lt;/code&gt;, cái này implement cũng dể thôi&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; UserForm &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;../../components/User/Form/Form&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;ScreensUserForm&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; match&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; params &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;params&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Create&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Update&apos;&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; User
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;UserForm&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;params&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; ScreensUserForm&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Thư mục cuối cùng có như sau&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
+├─ components 
+│  ├─ User
+│  │ ├─ Form
+│  │ │ ├─ Form.jsx
+│  │ │ └─ Form.css
+│  │ └─ List.jsx
+│  └─ UI 
+│
+└─ screens
+  ├─ User
+  │ ├─ Form.jsx
+  │ └─ List.jsx
+  └─ Root.jsx&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2 id=&quot;kết-luận&quot;&gt;&lt;a href=&quot;#k%E1%BA%BFt-lu%E1%BA%ADn&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Kết luận&lt;/h2&gt;
+&lt;p&gt;Trong bài này tác giả sẽ chỉ đề tập trung vào project sử dụng React, chưa đề cặp tới Redux, bài sau có.&lt;/p&gt;
+&lt;p&gt;Nếu thích thì có thể cảm ơn và follow tác giả để có thêm nhiều bài viết hay ho khác.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://hackernoon.com/structuring-projects-and-naming-components-in-react-1261b6e18d76&quot;&gt;Link bài gốc của Vinicius Dacal&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sử dụng Middleware với Redux dành cho người mới bắt đầu]]></title><description><![CDATA[Middleware là gì Tại sao và tại sao Một số ứng dụng của Middleware Loging Đợi user confirm Một số lựa chọn Middleware là gì Nghe tên thì hơi…]]></description><link>https://luubinhan.github.io/blog/2018-06-18-huong-dan-tim-hieu-middleware-va-redux</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-06-18-huong-dan-tim-hieu-middleware-va-redux</guid><category><![CDATA[react]]></category><category><![CDATA[redux]]></category><category><![CDATA[javascript]]></category><category><![CDATA[middleware]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Mon, 18 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#middleware-l%C3%A0-g%C3%AC&quot;&gt;Middleware là gì&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#t%E1%BA%A1i-sao-v%C3%A0-t%E1%BA%A1i-sao&quot;&gt;Tại sao và tại sao&lt;/a&gt;&lt;/li&gt;
@@ -5504,160 +5657,7 @@ store&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span clas
 &lt;li&gt;&lt;a href=&quot;https://github.com/gothinkster/react-redux-realworld-example-app/blob/master/src/middleware.js&quot;&gt;Realworld example sử dụng redux, middleware&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://medium.com/@meagle/understanding-87566abcfb7a&quot;&gt;Tìm hiểu Middleware của tác giả Mark&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://redux.js.org/api-reference/applymiddleware&quot;&gt;applyMiddleware&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Tiếp tục luận bàn về cách tổ chức thư mục, đặt tên component trong React]]></title><description><![CDATA[Tổ chức thư mục Containers và Components Tác và nhóm code lại với nhau UI Components Đặt tên components Screens Kết luận Tổ chức thư mục Nếu…]]></description><link>https://luubinhan.github.io/blog/2018-06-18-huong-dan-luan-ban-ve-cach-to-chuc-thu-muc-dat-ten</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-06-18-huong-dan-luan-ban-ve-cach-to-chuc-thu-muc-dat-ten</guid><category><![CDATA[react]]></category><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Mon, 18 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#t%E1%BB%95-ch%E1%BB%A9c-th%C6%B0-m%E1%BB%A5c&quot;&gt;Tổ chức thư mục&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#containers-v%C3%A0-components&quot;&gt;Containers và Components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#t%C3%A1c-v%C3%A0-nh%C3%B3m-code-l%E1%BA%A1i-v%E1%BB%9Bi-nhau&quot;&gt;Tác và nhóm code lại với nhau&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#ui-components&quot;&gt;UI Components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%C4%91%E1%BA%B7t-t%C3%AAn-components&quot;&gt;Đặt tên components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#screens&quot;&gt;Screens&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#k%E1%BA%BFt-lu%E1%BA%ADn&quot;&gt;Kết luận&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- /TOC --&gt;
-&lt;h2 id=&quot;tổ-chức-thư-mục&quot;&gt;&lt;a href=&quot;#t%E1%BB%95-ch%E1%BB%A9c-th%C6%B0-m%E1%BB%A5c&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tổ chức thư mục&lt;/h2&gt;
-&lt;p&gt;Nếu init project bằng &lt;strong&gt;create-react-app&lt;/strong&gt;, chúng ta sẽ có sẵn những thư mục và file cơ bản nhất: &lt;em&gt;.gitinore&lt;/em&gt;, &lt;em&gt;package.json&lt;/em&gt;, &lt;em&gt;README.md&lt;/em&gt;, &lt;em&gt;yarn.lock&lt;/em&gt;, thư mục &lt;strong&gt;public&lt;/strong&gt; và &lt;strong&gt;src&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/1600/1*eXN1LlNnuZmosJ7n7EsJ-Q.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Chúng ta sẽ chỉ tập trung vào thư mục &lt;strong&gt;src&lt;/strong&gt; và khoog quan tâm tới những file và thư mục ở khác.&lt;/p&gt;
-&lt;h2 id=&quot;containers-và-components&quot;&gt;&lt;a href=&quot;#containers-v%C3%A0-components&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Containers và Components&lt;/h2&gt;
-&lt;p&gt;Bên trong thư mục &lt;strong&gt;src&lt;/strong&gt; chúng ta sẽ tạo thêm 2 thư mục là &lt;strong&gt;components&lt;/strong&gt; và &lt;strong&gt;containers&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
-├─ components // chứa components làm nhiệm vụ render 
-└─ containers // các component xử lý logic&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;Nếu là theo cách này có một vài chổ không hợp lý&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Rất là khó để phân biệt và tách biệt 100% giữa container và presentational component, chắc chắn trong team sẽ có người là lên &quot;em thấy cái này là container chứ sao lại là presentational được&quot;, kiểu như vậy.&lt;/li&gt;
-&lt;li&gt;Cho phép 2 component có cùng tên với nhau, trong toàn bộ project mỗi component chỉ nên là duy nhất, tránh confuse trách nhiệm của mỗi bên.&lt;/li&gt;
-&lt;li&gt;Tốn công, việc tách container ở một thư mục, presentationial ở thư mục khác, rất là phiền nếu muốn bay qua bay lại giữa 2 thư mục.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
-└─ User
-  ├─ components
-  └─ containers&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;Cách này thì sao? Có thể giải quyết được vấn đề bay qua bay lại ở trên, nhưng nếu có 100 cái components chung ta tiếp tục ngụp lặn trong cả trăm thư mục components containers ở khắp mọi nơi.&lt;/p&gt;
-&lt;p&gt;Theo tác giả chúng ta nên dẹp luôn khái niệm container và presentational luôn, tất cả chúng ta cần là 2 thư mục &lt;strong&gt;components&lt;/strong&gt; và &lt;strong&gt;screens&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;tác-và-nhóm-code-lại-với-nhau&quot;&gt;&lt;a href=&quot;#t%C3%A1c-v%C3%A0-nh%C3%B3m-code-l%E1%BA%A1i-v%E1%BB%9Bi-nhau&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tác và nhóm code lại với nhau&lt;/h2&gt;
-&lt;p&gt;Bên trong thư mục &lt;em&gt;components&lt;/em&gt; chúng ta group files theo module/tính năng.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
-└─ components
-  └─ User
-    ├─ Form.jsx
-    └─ List.jsx&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;Khi component là kết hợp của nhiều component lại ta gom các file components vào 1 thư mục. Thí dụ nếu có thêm file &lt;code class=&quot;language-text&quot;&gt;Form.css&lt;/code&gt; ta sẽ làm như sau&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
-└─ components
-  └─ User
-    ├─ Form
-    │ ├─ Form.jsx
-    │ └─ Form.css
-    └─ List.jsx&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h2 id=&quot;ui-components&quot;&gt;&lt;a href=&quot;#ui-components&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;UI Components&lt;/h2&gt;
-&lt;p&gt;Bên trong thư mục &lt;strong&gt;components&lt;/strong&gt; ta có thể có thêm thư mục &lt;strong&gt;UI&lt;/strong&gt;, trong đây sẽ chứa các component dạng generic. Thế nào là component generic? là những component dạng giống như những React UI Components của Sematic UI, Office Fabric UI, Reactrap.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
-└─ components
-  └─ UI&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h2 id=&quot;Đặt-tên-components&quot;&gt;&lt;a href=&quot;#%C4%90%E1%BA%B7t-t%C3%AAn-components&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Đặt tên components&lt;/h2&gt;
-&lt;p&gt;Chúng ta đã bàn về cách sắp xếp thư mục và chia các component ra dạng module. Giờ còn câu hỏi là đặt tên nó sao?&lt;/p&gt;
-&lt;p&gt;Như đã nói ở trên tên của mỗi component nên là duy nhất và gợi hình, đọc xong có thể hình dung được component đó dùng để làm gì. Việc này cũng rất có lợi trong lúc debug bằng React Dev Tools.&lt;/p&gt;
-&lt;p&gt;Pattern để đặt tên component &lt;strong&gt;đường dẫn-tên file&lt;/strong&gt;. Thí dụ component ở file &lt;code class=&quot;language-text&quot;&gt;components/User/List.jsx&lt;/code&gt; thì đặt là &lt;code class=&quot;language-text&quot;&gt;UserList&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Nếu &lt;code class=&quot;language-text&quot;&gt;components/User/Form/Form.jsx&lt;/code&gt; thì không cần đặt là &lt;code class=&quot;language-text&quot;&gt;UserFormForm&lt;/code&gt;, chỉ cần gọi nó là &lt;code class=&quot;language-text&quot;&gt;UserForm&lt;/code&gt; trong trường hợp tên file cùng tên với thư mục chứa nó.&lt;/p&gt;
-&lt;p&gt;Lợi ích của việc đặt tên như vậy là giúp chúng ta navigate đến file đó rất nhanh, đa phần các editor &apos;xịn&apos; đều có thể dùng fuzzy search&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/1600/1*vZO9Ci9a_lrfi2yTP9OiMA.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Tránh lặp lại tên, ngày xưa khi mới bắt đầu chúng ta thường đặt tên file rất là đầy đủ chuẩn không cần chỉnh, tuy nhiên việc này làm cho lúc &lt;code class=&quot;language-text&quot;&gt;import&lt;/code&gt; rất dài dòng, đường dẫn dài cả cây số. Trong trường hợp ở trên do &lt;code class=&quot;language-text&quot;&gt;Form&lt;/code&gt; đang nằm trong &lt;code class=&quot;language-text&quot;&gt;User&lt;/code&gt; thì ta biết ngay là &lt;code class=&quot;language-text&quot;&gt;FormUser&lt;/code&gt; rồi, không nên đặt tên file là &lt;code class=&quot;language-text&quot;&gt;FormUser&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ScreenUserForm &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./screens/User/UserForm&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;// đấu với&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ScreenUserForm &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./screens/User/Form&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;Nếu ví dụ trên chưa đủ thuyết phục, hãy xem tiếp thêm một ví dụ khách&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; MediaPlanViewChannel &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/MediaPlan/MediaPlanView/MediaPlanViewChannel.jsx&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; MediaPlanViewChannel &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./MediaPlan/View/Channel&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h2 id=&quot;screens&quot;&gt;&lt;a href=&quot;#screens&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Screens&lt;/h2&gt;
-&lt;p&gt;Nãy có nói thư mục &lt;strong&gt;screen&lt;/strong&gt; mà chưa giải thích, screens sẽ nơi chứa là những components được map vào cho &lt;code class=&quot;language-text&quot;&gt;route&lt;/code&gt;, như screen để tạo user mới, reset password, đăng nhập. Screen không nên chứa logic gì cả, 1 functional component, chúng ta sẽ đưa screen vào một thư mục hẳn hoi để dễ mapping đúng với structure của &lt;code class=&quot;language-text&quot;&gt;route&lt;/code&gt; chứ chúng ta không theo module&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
-├─ components 
-└─ screens
-  └─ User
-    ├─ Form.jsx
-    └─ List.jsx&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;Chúng ta có file &lt;code class=&quot;language-text&quot;&gt;Route.jsx&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Component &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Router &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react-router&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Redirect&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Route&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Switch &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react-router-dom&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ScreensUserForm &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./User/Form&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ScreensUserList &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./User/List&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;ScreensRoot&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Router&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Switch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-      &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Route&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/user/list&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;ScreensUserList&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
-      &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Route&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/user/create&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;ScreensUserForm&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
-      &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Route&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/user/:id&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;ScreensUserForm&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;Switch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;Router&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; ScreensRoot&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;Bằng cách này chỉ cần nhìn url ta có thể trace được đang dùng component ở thư mục nào&lt;/p&gt;
-&lt;p&gt;Về tên gọi của component trong thư mục screen này,
-nếu &lt;code class=&quot;language-text&quot;&gt;scr/screens/User/List.jsx&lt;/code&gt; thì đặt tên là &lt;code class=&quot;language-text&quot;&gt;ScreensUserList&lt;/code&gt;;&lt;/p&gt;
-&lt;p&gt;Nếu bạn để ý thì sẽ thấy 2 route &lt;code class=&quot;language-text&quot;&gt;create&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;edit&lt;/code&gt; đang cùng được render cùng 1 component &lt;code class=&quot;language-text&quot;&gt;ScreensUserForm&lt;/code&gt;, cái này implement cũng dể thôi&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; UserForm &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;../../components/User/Form/Form&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;ScreensUserForm&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; match&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; params &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;params&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Create&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Update&apos;&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; User
-    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;UserForm&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;params&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; ScreensUserForm&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;Thư mục cuối cùng có như sau&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
-├─ components 
-│  ├─ User
-│  │ ├─ Form
-│  │ │ ├─ Form.jsx
-│  │ │ └─ Form.css
-│  │ └─ List.jsx
-│  └─ UI 
-│
-└─ screens
-  ├─ User
-  │ ├─ Form.jsx
-  │ └─ List.jsx
-  └─ Root.jsx&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h2 id=&quot;kết-luận&quot;&gt;&lt;a href=&quot;#k%E1%BA%BFt-lu%E1%BA%ADn&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Kết luận&lt;/h2&gt;
-&lt;p&gt;Trong bài này tác giả sẽ chỉ đề tập trung vào project sử dụng React, chưa đề cặp tới Redux, bài sau có.&lt;/p&gt;
-&lt;p&gt;Nếu thích thì có thể cảm ơn và follow tác giả để có thêm nhiều bài viết hay ho khác.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://hackernoon.com/structuring-projects-and-naming-components-in-react-1261b6e18d76&quot;&gt;Link bài gốc của Vinicius Dacal&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Làm việc với CSS Modules trong React]]></title><description><![CDATA[CSS modules là gì Xóa style đầy tự tin Một vài lựa chọn nâng cao CSS modules là gì Dựa vào cái tên chắc phần nào cũng đoán được, nó là kiểu…]]></description><link>https://luubinhan.github.io/blog/2018-06-15-huong-dan-lam-viec-voi-css-module</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-06-15-huong-dan-lam-viec-voi-css-module</guid><category><![CDATA[react]]></category><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Fri, 15 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Làm việc với CSS Modules trong React]]></title><description><![CDATA[CSS modules là gì Xóa style đầy tự tin Một vài lựa chọn nâng cao CSS modules là gì Dựa vào cái tên chắc phần nào cũng đoán được, nó là kiểu…]]></description><link>https://luubinhan.github.io/blog/2018-06-15-huong-dan-lam-viec-voi-css-module</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-06-15-huong-dan-lam-viec-voi-css-module</guid><category><![CDATA[react]]></category><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Fri, 15 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#css-modules-l%C3%A0-g%C3%AC&quot;&gt;CSS modules là gì&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#x%C3%B3a-style-%C4%91%E1%BA%A7y-t%E1%BB%B1-tin&quot;&gt;Xóa style đầy tự tin&lt;/a&gt;&lt;/li&gt;
