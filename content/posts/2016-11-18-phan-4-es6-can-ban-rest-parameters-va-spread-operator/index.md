@@ -33,7 +33,7 @@ Mục lục
 
 ## Rest parameter
 
-Khi có số lượng tham số truyền vào cho một function không cố định, trước đây ta dùng `arguments object`, sau đó sử dụng `Array.prototype.slice.call` để chuyển nó thành một mảng
+Khi số lượng tham số truyền vào cho một function không cố định, chúng ta có thể sử dụng `arguments`, sau đó sử dụng `Array.prototype.slice.call` để chuyển nó thành một mảng
 
 ```js
 var print() {
@@ -44,7 +44,7 @@ print('a','b','c')
 // -> ['a','b','c']
 ```
 
-Kết quả tương tự với cách làm mới đơn giản hơn, thêm dấu "..." phía trước tham số
+Với ES6, chúng ta có một cách làm khác, thêm dấu "..." phía trước tham số
 
 ```js
 var print(...list) {
@@ -66,14 +66,6 @@ print('a','b','c')
 // -> ['b','c']
 ```
 
-Nếu sử dụng `Arrow function` thì buộc phải thêm dấu ngoặc kép `()`, dù chỉ có một tham số
-
-```js
-var sumAll = ( ...numbers ) => numbers.reduce((total,next) => total + next)
-console.log( sumAll(1,2,5))
-// = 8
-```
-
 Nếu lúc trước ta phải viết
 
 ```js
@@ -84,6 +76,14 @@ function sumAll(){
     })
 }
 // =8
+```
+
+Nếu sử dụng *Arrow function* thì buộc phải thêm dấu ngoặc kép `()`, dù chỉ có một tham số
+
+```js
+var sumAll = ( ...numbers ) => numbers.reduce((total,next) => total + next)
+console.log( sumAll(1,2,5))
+// = 8
 ```
 
 # Spread Operator
@@ -98,7 +98,7 @@ cast('a','b','c')
 // ['a','b','c']
 ```
 
-Trong trường hợp phải combine nhiều mảng
+Trong trường hợp phải kết hợp nhiều mảng
 
 ```js
 var all = [ 1, ...[2,3], 4, ...[5],6,7]

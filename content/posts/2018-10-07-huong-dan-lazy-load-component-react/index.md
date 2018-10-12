@@ -15,6 +15,7 @@ tags: ["javascript", "react"]
 - [Vấn đề](#vấn-đề)
 - [Giải pháp](#giải-pháp)
 - [Code ví dụ](#code-ví-dụ)
+- [Lazy load react-router](#lazy-load-react-router)
 - [Tổng kết](#tổng-kết)
 
 <!-- /TOC -->
@@ -158,6 +159,77 @@ Mở file này ra để check xem sau
 ![Hướng dẫn lazy load component trong React](https://i.imgur.com/Y9lytUD.png)
 
 Đúng là file component của chúng ta được được tách ra :D
+
+# Lazy load react-router
+
+Giờ xem xét phần chúng ta setup cho cái route, đại khái nó sẽ như thế này
+
+```jsx
+import Home from './Home'
+import Blog from './Blog'
+
+<Switch>
+    <Route exact path="/" component={HomeComponent} />
+    <Route path="/blog" component={BlogComponent} />
+</Switch>
+```
+
+Áp dụng lazy load component với *route*, ở đây mình viết thêm một hàm `asyncComponent`, nó sẽ nhận vào hàm `import('path/to/file')` và return về component đó.
+
+```jsx
+import React, {Component} from 'react';
+
+export default function asyncComponent(getComponent) {
+  class AsyncComponent extends Component {
+    static Component = null;
+    state = { 
+      // chổ này hơi tricky, trỏ về chính nó
+      Component: AsyncComponent.Component 
+    };
+
+    componentDidMount(prevProps, prevState) {
+      // không re-load nếu đã có rồi
+      if (!this.state.Component) {
+        getComponent().then(Component => {
+          AsyncComponent.Component = Component;
+          this.setState({ Component })
+        })
+      }
+    }
+
+    render() {
+      const { Component } = this.state;
+      if (Component) {
+        return <Component {...this.props} />
+      }
+      return null;
+    }
+  }
+  return AsyncComponent;
+}
+```
+
+Hàm `asyncComponent()` này chúng ta sẽ truyền vào cho nó function là `getComponent()` (chính là hàm import)
+
+Chỉnh lại cách chúng ta import component cho từng route
+
+```jsx
+// Dynamically imported components
+const Home = asyncComponent(() =>
+  import('./Home').then(module => module.default)
+)
+
+const Blog = asyncComponent(() =>
+  import('./Blog').then(module => module.default)
+)
+
+<Switch>
+  <Route exact path="/" component={Home} />
+  <Route path="/blog" component={Blog} />
+</Switch>
+```
+
+![Hướng dẫn lazy load component trong React](https://i.imgur.com/PN8f7w9.png)
 
 # Tổng kết
 

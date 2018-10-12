@@ -151,13 +151,13 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
 - Map
 - Set
 
-Nguồn tham khảo ( mình sẽ viết từ từ )
+Nguồn tham khảo
 
 - [JavaScript Promises](/2017-10-12-javascript-promise)
 - [Template literals](/2016-11-19-phan-5-es6-can-ban-template-literals)
 - [Arrow Function](/2016-11-16-chuong-2-es-6-can-ban-arrow-function)
-- Default parameters
-- For...of
+- [Rest Parameters và Spread Operator](/2016-11-18-phan-4-es6-can-ban-rest-parameters-va-spread-operator)
+- [For...of](https://developer.mozilla.org/vi/docs/Web/JavaScript/Reference/Statements/for...of)
 - Map
 - Set
 
