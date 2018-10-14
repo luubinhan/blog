@@ -37,6 +37,7 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
+          <link rel="manifest" href="https://luubinhan.github.io/blog/manifest.json"/>
           {this.props.headComponents}
           <link
             rel="author"
@@ -45,6 +46,11 @@ export default class HTML extends React.Component {
           />
           <link rel="icon" sizes="32x32" href={favi32} type="image/png" />
           <link rel="icon" sizes="180x180" href={favi128} type="image/png" />
+          <meta name="mobile-web-app-capable" content="yes"/>
+          <meta name="apple-mobile-web-app-capable" content="yes"/>
+          <meta name="application-name" content="luckyluu blog"/>
+          <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+          <meta name="apple-mobile-web-app-title" content="luckyluu"/>
           {css}
         </head>
         <body>

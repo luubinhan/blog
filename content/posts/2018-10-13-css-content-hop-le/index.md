@@ -2,7 +2,7 @@
 slug: "/2018-10-13-css-content-hop-le"
 date: "2018-10-13"
 title: "Sử dụng CSS content như thế nào cho đúng"
-desc: "Thuộc tính content trong CSS thường được sử dụng cùng với 2 ghost element là after và before, những giá trị nào có thể đưa vào cho thuộc tính content này?"
+desc: "Thuộc tính content trong CSS thường được sử dụng cùng với 2 ghost element là after và before, những giá trị nào có thể đưa vào cho thuộc tính content này"
 cover: ""
 type: "post"
 lesson: 0

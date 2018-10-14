@@ -16,6 +16,7 @@ tags: ["ux-ui"]
 - [Một vài `aria` phổ biến](#một-vài-aria-phổ-biến)
   - [aria-label và aria-labelledby](#aria-label-và-aria-labelledby)
   - [role](#role)
+  - [aria-live](#aria-live)
 - [Thêm `aria` cần thiết cho trang ecommerce](#thêm-aria-cần-thiết-cho-trang-ecommerce)
 
 <!-- /TOC -->
@@ -60,6 +61,15 @@ Không bắt đầu bằng `aria`, dùng để khai báo công dụng của từ
 <div src="questionmark.png" role="tooltip" />
 ```
 
+## aria-live
+
+Thông báo đến user ngay khi nội dung bên trong element gắn thuộc tính này có thay đổi.
+
+Có 2 giá trị có thể thêm cho thuộc tính `aria-live`: **polite**, **assertive**
+
+- **polite**: user không cần tương tác gì, nội dụng tự động cập nhập bởi server, ví dụ như bài viết mới được push lên
+- **assertive**: user thực hiện một tương tác làm thay đổi giá trị nào đó, ví dụ như tăng số lượng sản phẩm muốn mua
+
 # Thêm `aria` cần thiết cho trang ecommerce
 
 Mockup ví dụ
@@ -82,8 +92,17 @@ Mockup ví dụ
             <option value="brown">Brown</option>
             <option value="black">Black</option>
         </select>
- 
+    
         <input type="checkbox" value="Glossy"> 
+        <fieldset>
+            <legend>Adjust Quantity</legend>
+            <div>
+            <label for="qty-element">Current Quantity</label>
+            <input type="text" value="0" id="qty-element" />
+            <button type="button">+</button>
+            <button type="button" title="subtract 10">=</button>
+            </div>
+        </fieldset>
         <button>Add to cart</button>
     </div> 
 </div>
@@ -112,6 +131,15 @@ Bổ sung cho cái mockup này với các attribute cần thiết
         </select>
      
         <input type="checkbox" value="Glossy" role="checkbox" aria-checked="false" aria-label='Glossy Bag?'><br>
+        <fieldset>
+            <legend>Adjust Quantity</legend>
+            <div>
+            <label for="qty-element">Current Quantity</label>
+            <input type="text" role="alert" aria-live="assertive" value="0" id="qty-element" />
+            <button type="button" aria-label='Add to Quantity' aria-controls="qty-element">+</button>
+            <button type="button" aria-label='Subtract from Quantity' title="subtract 10" aria-controls="qty-element">=</button>
+            </div>
+        </fieldset>
         <button aria-label="Add to Cart">Add to Cart</button>
     </div>
      
