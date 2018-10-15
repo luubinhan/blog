@@ -37,10 +37,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
   return new Promise((resolve, reject) => {
     const postPage = path.resolve("src/templates/post.jsx");
-    const lessonPage = path.resolve("src/templates/category.jsx");
-    const categoryPage = path.resolve("src/templates/category.jsx");
     const tagTemplate = path.resolve(`src/templates/tag.jsx`);
-    const archivesTemplate = path.resolve(`src/templates/archives.jsx`);
     resolve(
       graphql(
         `
@@ -71,10 +68,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
 
         const tagSet = new Set();
-        const categorySet = new Set();
-
         const postsTag = {};
         const allPosts = result.data.allMarkdownRemark.edges;
+        // Create Home page
         createPaginatedPages({
           edges: result.data.allMarkdownRemark.edges,
           createPage: createPage,
@@ -83,6 +79,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           pathPrefix: "", // This is optional and defaults to an empty string if not used
           context: {} // This is optional and defaults to an empty object if not used
         });
+        // Create Single Post
         allPosts.forEach((edge, index) => {
           if (edge.node.frontmatter.tags) {
             edge.node.frontmatter.tags.forEach(tag => {
@@ -92,32 +89,18 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               }
               postsTag[tag].push(edge.node);
             });
-          }
-
-          if (edge.node.frontmatter.category) {
-            categorySet.add(edge.node.frontmatter.category);
-          }
-          if (edge.node.frontmatter.type === "post") {
-            const prev = index === 0 ? false : allPosts[index - 1].node;
-            const next = index === allPosts.length - 1 ? false : allPosts[index + 1].node;
-            createPage({
-              path: edge.node.fields.slug,
-              component: postPage,
-              context: {
-                slug: edge.node.fields.slug,
-                prev,
-                next
-              }
-            });
-          } else {
-            createPage({
-              path: edge.node.fields.slug,
-              component: lessonPage,
-              context: {
-                slug: edge.node.fields.slug
-              }
-            });
-          }
+          }          
+          const prev = index === 0 ? false : allPosts[index - 1].node;
+          const next = index === allPosts.length - 1 ? false : allPosts[index + 1].node;
+          createPage({
+            path: edge.node.fields.slug,
+            component: postPage,
+            context: {
+              slug: edge.node.fields.slug,
+              prev,
+              next
+            }
+          });
         });
         Object.keys(postsTag)
           .forEach(tagName => {
@@ -131,27 +114,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               }
             })
           });
-        /* const tagList = Array.from(tagSet);
-        tagList.forEach(category => {
-          createPage({
-            path: `/tags/${_.kebabCase(category)}/`,
-            component: tagTemplate,
-            context: {
-              category
-            }
-          });
-        }); */
-
-        const categoryList = Array.from(categorySet);
-        categoryList.forEach(category => {
-          createPage({
-            path: `/categories/${_.kebabCase(category)}/`,
-            component: categoryPage,
-            context: {
-              category
-            }
-          });
-        });
       })
     );
   });

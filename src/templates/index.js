@@ -20,7 +20,7 @@ const NavLink = props => {
   return <span className="btn btn-light disabled">{props.text}</span>;
 };
 
-class Index extends React.Component {
+class IndexPage extends React.Component {
   render() {
     const { data, pathContext } = this.props;
     const { group, index, first, last, pageCount } = pathContext;
@@ -42,4 +42,4 @@ class Index extends React.Component {
   }
 }
 
-export default Index;
+export default IndexPage;

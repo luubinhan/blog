@@ -1,7 +1,7 @@
 ---
 slug: "/2018-10-14-react-job-interview-goc-nhin-nguoi-tuyen-dung"
 date: "2018-10-14"
-title: "Gốc nhìn của người tuyển dụng một lập trình viên React"
+title: "Góc nhìn của người tuyển dụng một lập trình viên React"
 desc: "Trong một tương lai không xa, khi mình được đặt vào vị trí phỏng vấn các bạn Front-End, mình sẽ hỏi gì đây?"
 cover: ""
 type: "post"

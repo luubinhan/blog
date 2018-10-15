@@ -64,6 +64,25 @@ module.exports = {
     "gatsby-plugin-twitter",
     "gatsby-plugin-sitemap",
     "gatsby-transformer-json",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: config.siteTitle,
+        short_name: config.siteTitle,
+        description: config.siteDescription,
+        start_url: config.pathPrefix,
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
+        display: "standalone",
+        icons: [
+          {
+            src: "images/luckyluu_manifest_192.png",
+            sizes: "192x192",
+            type: "image/png"
+          }
+        ]
+      }
+    },
     "gatsby-plugin-offline",
     {
       resolve: "gatsby-plugin-feed",
