@@ -19,6 +19,7 @@ tags: ["react"]
 - [Nếu tiền không phải vấn đề, thời gian vô tư, bạn sẽ làm gì để nâng cấp cho dự án trước đây, tại sao?](#nếu-tiền-không-phải-vấn-đề-thời-gian-vô-tư-bạn-sẽ-làm-gì-để-nâng-cấp-cho-dự-án-trước-đây-tại-sao)
 - [Một số câu React cơ bản, các bạn cũng nên nắm](#một-số-câu-react-cơ-bản-các-bạn-cũng-nên-nắm)
 - [Feedback](#feedback)
+- [Câu cuối cùng, quan trọng nhất](#câu-cuối-cùng-quan-trọng-nhất)
 
 <!-- /TOC -->
 
@@ -69,17 +70,29 @@ Viết tài liệu tốt hơn, thay MobX bằng Redux, đưa unit test vào
 Sự khác biệt giữa cách truyền hàm, chuyện gì xảy ra khi click 
 
 ```jsx
-class App extends React.Component {  
+class App extends React.Component {
+  
   constructor() {
-    super();
-    this.state = {
-      name: this.props.name || 'Anonymous'
-    }
-  }    
+    super(); 
+    this.name = 'MyComponent';
+    
+    this.handleClick2 = this.handleClick1.bind(this);
+  }
+  
+  handleClick1() {
+    alert(this.name);
+  }
+  
+  handleClick3 = () => alert(this.name);
   render() {
     return (
-      <p>Hello {this.state.name}</p>
-    );  
+      <div>
+        <button onClick={this.handleClick1()}>click 1</button>
+        <button onClick={this.handleClick1}>click 2</button>
+        <button onClick={this.handleClick2}>click 3</button>
+        <button onClick={this.handleClick3}>click 4</button>
+      </div>
+    );
   }
 }
 ```
@@ -117,5 +130,13 @@ Xong phần mình, thế bạn có muốn hỏi mình gì không?
 Nếu có chổ nào đó bạn trả lời không tốt, mình sẽ feedback lại cho bạn giải pháp hoặc chổ bạn cần về nhà nghiên cứu.
 
 Bạn sẽ nhận được hồi âm trong 2-3 ngày, đa phần các trường hợp lâu hơn 4 ngày là bạn nhận được thư cảm ơn. Bạn không cần lên ITViec để check vị trí đó có mới chạy quảng cáo nữa không, mình chắc chắn gởi thư cảm ơn.
+
+# Câu cuối cùng, quan trọng nhất
+
+Câu này là câu mình được hỏi khi phỏng vấn bên Sendo.vn, dừng lại 5 giây, hít thở, mình đã không trả lời được, và mình vẫn đang tìm câu trả lời cho câu hỏi này.
+
+> Điều gì khiến bạn khác biệt với những FrontEnd Developer ứng tuyển cho vị trí này, hay lớn hơn là những dev ở ngoài kia?
+
+Hy vọng câu này sẽ giúp bạn thấy rõ hơn con đường mình muốn đi.
 
 [Câu hỏi tổng hợp và phần trả lời](https://medium.com/@baphemot/a-react-job-interview-recruiter-perspective-f1096f54dd16)
