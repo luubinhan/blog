@@ -20,13 +20,13 @@ tags: ["javascript"]
 
 <!-- /TOC -->
 
-Lưu ý quan trọng JS modules được hổ trợ bởi các trình duyệt XỊN, hàng cùi mía của Microsoft thì chưa support
+Lưu ý quan trọng JS modules được hỗ trợ bởi các trình duyệt XỊN, hàng cùi mía của Microsoft thì chưa support
 
 ## JS Modules là gì
 
 JS modules hay còn gọi là ES modules, ECMAcript modules là một tính năng quan trọng mới của của javascript, trước đây chúng ta sử dụng CommonJS trong Node.js hay AMD để có thể sử dụng tính năng này trước thời đại. Các thư viện này nó làm gì? nó cho phép chúng ta `import` và `export` cái chúng ta muốn
 
-Và giờ javascript trong tương lai không xa chúng ta sẽ không cần những thư viện này nữa vì có hổ trợ sẵn.
+Và giờ javascript trong tương lai không xa chúng ta sẽ không cần những thư viện này nữa vì có hỗ trợ sẵn.
 
 ```js
 // file lib.mjs
@@ -71,7 +71,7 @@ const x = 42; // TODO: Rename x to y.
 <script nomodule scr="fallback.js"></script>
 ```
 
-Ở đây ngoài việc biết được trình duyệt đang mở có hổ trợ module ko, chúng ta cũng có thể đoán được là nó có hổ trợ js mới không như arrow function, async - await
+Ở đây ngoài việc biết được trình duyệt đang mở có hỗ trợ module ko, chúng ta cũng có thể đoán được là nó có hỗ trợ js mới không như arrow function, async - await
 
 Một điều tuyệt vời khác của `type="module"` là mặc dù chúng ta add thêm bao nhiêu tag tùy thích nhưng nó sẽ chỉ load 1 file nếu giống nhau, ngược lại với js thường
 

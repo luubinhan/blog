@@ -28,7 +28,7 @@ Trên bộ DevTools sẽ có thêm tab **Profiler**
 
 ![](https://reactjs.org/static/devtools-profiler-tab-4da6b55fc3c98de04c261cd902c14dc3-acf85.png)
 
-React-dom 16.5+ hổ trợ thu thập dữ liệu khi chạy DEV, để dùng trong production sử dụng `react-dom/profiling`, Đọc thêm cách sử dụng ở đây https://fb.me/react-profiling
+React-dom 16.5+ hỗ trợ thu thập dữ liệu khi chạy DEV, để dùng trong production sử dụng `react-dom/profiling`, Đọc thêm cách sử dụng ở đây https://fb.me/react-profiling
 
 Trên màn hình vừa mở, click nút record để bắt đầu thu thập dữ liệu
 

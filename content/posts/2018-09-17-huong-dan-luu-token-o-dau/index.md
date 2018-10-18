@@ -20,7 +20,7 @@ Cả 3 thằng điều là để lưu lại một ít thông tin trên trình du
 
 Khác biệt lớn nhất giữa 3 thằng là *nơi* chúng được lưu và việc có được gởi đi cùng request không.
 
-Nếu đảm bảo được trình duyệt truy cập trang web, ứng dụng web hổ trợ `localStorage` và `sessionStorage` thì gần như ai cũng thích xài 2 thằng `localStorage` và `sessionStorage` hơn.
+Nếu đảm bảo được trình duyệt truy cập trang web, ứng dụng web hỗ trợ `localStorage` và `sessionStorage` thì gần như ai cũng thích xài 2 thằng `localStorage` và `sessionStorage` hơn.
 
 Video giải thích
 https://www.youtube.com/watch?v=AwicscsvGLg

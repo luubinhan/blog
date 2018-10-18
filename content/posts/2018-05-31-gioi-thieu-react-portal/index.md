@@ -2,7 +2,7 @@
 slug: "/2018-05-31-huong-dan-gioi-thieu-react-portal"
 date: "2018-05-31"
 title: "Giới thiệu React Portal"
-desc: "Tìm hiểu về Portals, bản hổ trợ chính thức của react-dom"
+desc: "Tìm hiểu về Portals, bản hỗ trợ chính thức của react-dom"
 category: "react"
 cover: ""
 type: "post"
@@ -19,7 +19,7 @@ tags: ["javascript", "react"]
 
 <!-- /TOC -->
 
-Gọi là bản hổ trợ chính thức vì trước bản React 16 thì không có support, chúng ta phải dùng các thư viện bổ sung. Giờ thì nó official rồi nhé.
+Gọi là bản hỗ trợ chính thức vì trước bản React 16 thì không có support, chúng ta phải dùng các thư viện bổ sung. Giờ thì nó official rồi nhé.
 
 ## Vấn đề Portal giải quyết
 

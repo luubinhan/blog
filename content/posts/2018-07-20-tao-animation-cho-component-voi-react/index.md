@@ -98,7 +98,7 @@ Giờ có 1 vấn đề nhỏ là nội dung bên trong dropdown lúc xuất hi�
 
 Cũng gần được rồi, chúng ta cần để ý thêm vào những chi tiết nhỏ nhất để animate nhìn cool hơn
 
-Styled-components hổ trợ rất tốt việc [thay đổi keyframe animation](https://www.styled-components.com/docs/basics#animations). Chúng ta sẽ sử dụng tính năng này để làm animation lúc enter và cross-fade nội dung dropdown khi thay đổi ví trí chuột.
+Styled-components hỗ trợ rất tốt việc [thay đổi keyframe animation](https://www.styled-components.com/docs/basics#animations). Chúng ta sẽ sử dụng tính năng này để làm animation lúc enter và cross-fade nội dung dropdown khi thay đổi ví trí chuột.
 
 ```jsx
 const getFadeContainerKeyFrame = ({ animatingOut, direction }) => {

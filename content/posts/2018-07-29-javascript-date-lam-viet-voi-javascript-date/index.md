@@ -224,7 +224,7 @@ Lưu ý là đang so sánh đến mili giây, nên nếu so sánh 2 giá trị `
 
 # Format theo locale
 
-Nếu trình duyệt hổ trợ `Intl`, ta có thể sử dụng để localize number, string, currencies, date
+Nếu trình duyệt hỗ trợ `Intl`, ta có thể sử dụng để localize number, string, currencies, date
 
 ```js
 // "12/22/2017"

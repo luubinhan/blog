@@ -113,7 +113,7 @@ Một trình quản lý module khác cho trình duyệt, một phiên bản tố
 
 *Tốt hơn chổ nào*
 
-Nó cho phép sử dụng những module manager khác nhau không chỉ riêng CommonJS, đề phòng không hổ trợ ES6
+Nó cho phép sử dụng những module manager khác nhau không chỉ riêng CommonJS, đề phòng không hỗ trợ ES6
 
 *Quá confuse với mới CommoJS/ES6 luôn*
 
@@ -165,7 +165,7 @@ Bằng cách đưa cái callback qua promise, có thể viết code dễ hiểu 
 
 *Fetch làm chuyện đó ?*
 
-Đúng trong trường hợp user sử dụng trình duyệt hổ trợ, bằng không phải sử dụng thêm Fetch polyfill hoặc Request, Bluebird, Axios
+Đúng trong trường hợp user sử dụng trình duyệt hỗ trợ, bằng không phải sử dụng thêm Fetch polyfill hoặc Request, Bluebird, Axios
 
 *Trời đất ơi vậy cần bao nhiêu thư viện, bao nhiêu thư viện cho cái việc đơn giản này*
 

@@ -30,12 +30,12 @@ Expo là một framework để đẩy nhanh việc viết app React Native. Gi�
 Trước khi nghiên cứu tiếp, một vài vấn đề quan trọng sau cần biết
 
 
-1. **Expo không hổ trợ code chạy nền**, ví dụ như việc tracking vị trí thiết bị.
-2. **Expo chỉ hổ trợ những API mà Expo SDK hổ trợ**, có nghĩa là, nếu ứng dụng đang viết cần tương tác với Bluetooh, vốn không được hổ trợ bởi Expo SDK thì bạn phải viết code React Native thuần luôn, hoặc tự viết thêm native code sử dụng thư viện [ExpoKit](https://docs.expo.io/versions/latest/expokit/expokit).
+1. **Expo không hỗ trợ code chạy nền**, ví dụ như việc tracking vị trí thiết bị.
+2. **Expo chỉ hỗ trợ những API mà Expo SDK hỗ trợ**, có nghĩa là, nếu ứng dụng đang viết cần tương tác với Bluetooh, vốn không được hỗ trợ bởi Expo SDK thì bạn phải viết code React Native thuần luôn, hoặc tự viết thêm native code sử dụng thư viện [ExpoKit](https://docs.expo.io/versions/latest/expokit/expokit).
 3. **Sử dụng Expo là chết dính với bộ toolset của nó**. Một số đồ chơi sẽ không chạy được với Expo, trong trường hợp cần xài tới, phải `eject` cái app ra khỏi Expo, mà khi đã `eject` thì sẽ ko thể có `inject` ngược lại.
 4. **Ứng dụng Expo chỉ build online**. Expo cung cấp một công cụ command-line là *Exp*, cho phép việc build lên Expo Server, một khi hoàn tất, một URL để download **.apk** hoặc **ipa**, [Bài hướng dẫn](https://docs.expo.io/versions/latest/distribution/building-standalone-apps)
 
-Mặc dù nghe có vẻ khá hạn chế, nhưng thực sự Expo rất mạnh, rất nhiều thứ hổ trợ sẵn cho Androi và iOS. Có nghĩa là nếu app đang viết không có gì quá đặc biệt, quá "đỉnh của đỉnh" thì việc sử dụng Expo sẽ mang tới rất nhiều lợi ích.
+Mặc dù nghe có vẻ khá hạn chế, nhưng thực sự Expo rất mạnh, rất nhiều thứ hỗ trợ sẵn cho Androi và iOS. Có nghĩa là nếu app đang viết không có gì quá đặc biệt, quá "đỉnh của đỉnh" thì việc sử dụng Expo sẽ mang tới rất nhiều lợi ích.
 
 
 ## App sẽ viết

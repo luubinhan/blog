@@ -22,7 +22,7 @@ tags: ["javascript", "webpack"]
 
 <!-- /TOC -->
 
-Ở đây mình sẽ nói cách import và export với webpack, mới đây, thiên hạ đang đề nghị hổ trợ [import và export với native javascript](/2018-07-02-huong-dan-javascript-modules-tren-web)
+Ở đây mình sẽ nói cách import và export với webpack, mới đây, thiên hạ đang đề nghị hỗ trợ [import và export với native javascript](/2018-07-02-huong-dan-javascript-modules-tren-web)
 
 Một **giá trị**, **hàm**, **object** có thể được `export` từ một file này và dùng câu lệnh `import` để sử dụng bên trong file khác.
 

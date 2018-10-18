@@ -105,7 +105,7 @@ service cloud.firestore {
 
 # Hàm tùy biến
 
-Một khi các rule security này trở nên phức tạp, chúng ta sẽ muốn gom các điều kiện này vào trong một hàm để tái sử dụng. Firestore hổ trợ luôn. Nó sẽ như Javascript, tuy nhiên không hẳn là javascript đâu, nó có một số hạn chế
+Một khi các rule security này trở nên phức tạp, chúng ta sẽ muốn gom các điều kiện này vào trong một hàm để tái sử dụng. Firestore hỗ trợ luôn. Nó sẽ như Javascript, tuy nhiên không hẳn là javascript đâu, nó có một số hạn chế
 
 - Hàm này luôn chỉ chứa 1 return, không chạy loop, gọi service bên ngoài
 - Hàm có thể access được các hàm và biến có cùng scope.

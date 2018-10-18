@@ -22,7 +22,7 @@ tags: ["react", "javascript", "redux"]
 
 ## Tại sao?
 
-Câu hỏi đâu tiên cần trả lời: Tại sao chúng ta cần Redux?
+Câu hỏi đầu tiên cần trả lời: Tại sao chúng ta cần Redux?
 
 Dĩ nhiên câu trả lời không phải là bởi vì ai trên mạng cũng bảo thế nên em phải xài nó.
 
@@ -36,31 +36,31 @@ Nếu sử dụng React một thời gian, chúng ta thấy ngay `props` trong R
 
 Ví dụ với *component* `Couter` như sau
 
-![](https://daveceddia.com/images/counter-component.png)
+![Redux là gì và tại sao phải dùng?](https://daveceddia.com/images/counter-component.png)
 
 Giá trị `count` lưu trong *state* của component `App`, được truyền xuống qua *props*
 
-![](https://daveceddia.com/images/passing-props-down.png)
+![Redux là gì và tại sao phải dùng?](https://daveceddia.com/images/passing-props-down.png)
 
 Để dữ liệu đi ngược lên trên, có phải chúng ta sẽ có 1 hàm *callback*, hàm *callback* này được truyền xuống cho **tất cả** các component con, khi dữ liệu `count` thay đổi, chúng ta gọi lại hàm *callback* này để 'báo' cho `App` biết giá trị `count` đã thay đổi.
 
-![](https://daveceddia.com/images/passing-callbacks-down.png)
+![Redux là gì và tại sao phải dùng?](https://daveceddia.com/images/passing-callbacks-down.png)
 
-Hình dung như thế này, dữ liệu như là nguồn điện ở nhà, muốn có điện từ nhà máy tới từng hộ dân ta cần đường dây điện được nối xuyên suốt từ nhà máy đến từng hộ dân, vì điện không thể truyền qua không khí như sóng điện thoại. Đó là cách React đưa dữ liệu đến các *component* con, với Redux chúng ta sẽ hổ trợ dữ liệu đi qua đường sóng điện thoại.
+Hình dung như thế này, dữ liệu như là nguồn điện ở nhà, muốn có điện từ nhà máy tới từng hộ dân ta cần đường dây điện được nối xuyên suốt từ nhà máy đến từng hộ dân, vì điện không thể truyền qua không khí như sóng điện thoại. Đó là cách React đưa dữ liệu đến các *component* con, với Redux chúng ta sẽ hỗ trợ dữ liệu đi qua đường sóng điện thoại.
 
 Sớm hay muộn gì bạn cũng rơi vào tình huống như trên, container ở trên cùng có một vài dữ liệu mà components bên dưới nó cũng cần dữ liệu tương tự. Lấy ví dụ như thông tin user trên trang Twitter
 
-![](https://daveceddia.com/images/twitter-user-data.png)
+![Redux là gì và tại sao phải dùng?](https://daveceddia.com/images/twitter-user-data.png)
 
 Để đưa dữ liệu từ `App` xuống các `Avatar` components, bạn phải truyền dữ liệu này qua những component không cần thiết.
 
-![](https://daveceddia.com/images/twitter-hierarchy.png)
+![Redux là gì và tại sao phải dùng?](https://daveceddia.com/images/twitter-hierarchy.png)
 
 ## Kết nối trực tiếp đến dữ liệu với Redux
 
 Sử dụng hàm `connect` trong Redux sẽ cho phép chúng ta kết nối bất kỳ *component* nào đến trung tâm của mọi dữ liệu, thích cái gì thì *map* nó vô component
 
-![](https://daveceddia.com/images/redux-connected-twitter.png)
+![Redux là gì và tại sao phải dùng?](https://daveceddia.com/images/redux-connected-twitter.png)
 
 Bên cạnh đó nó còn có một số tính năng khác đi kèm, như giúp debug dễ hơn với Redux DevTools cho phép kiểm tra mỗi khi state thay đổi, time-travel debug cho phép roll back lại state trước đó
 

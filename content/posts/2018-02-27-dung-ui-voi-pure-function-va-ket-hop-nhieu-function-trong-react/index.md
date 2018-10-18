@@ -52,9 +52,9 @@ const Avatar = React.createClass({
 <Avatar username="tylermcginnis" />
 ```
 
-Từ React 0.14, trong trường hợp một compoment không có state, có thể viết lại bằng Stateless Function Component, cách gọi cho sang thôi, bản chất là một function nhận vào data và trả về một View
+Từ React 0.14, trong trường hợp một component không có state, có thể viết lại bằng Stateless Function Component, cách gọi cho sang thôi, bản chất là một function nhận vào data và trả về một View
 
-ProfilePic
+<ProfilePic/>
 
 ```jsx
 const ProfilePic = (props) => {
@@ -62,7 +62,7 @@ const ProfilePic = (props) => {
 }
 ```
 
-ProfileLink
+<ProfileLink/>
 
 ```jsx
 var ProfileLink = (props) => (
@@ -72,7 +72,7 @@ var ProfileLink = (props) => (
 )
 ```
 
-Avatar
+<Avatar/>
 
 ```jsx
 const Avatar = (props) => {
@@ -86,7 +86,7 @@ const Avatar = (props) => {
 ```
 
 ```html
-<Avatar username="tylermcginnis" />
+<Avatar username="anluu" />
 ```
 
 

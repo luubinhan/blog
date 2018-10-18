@@ -121,7 +121,7 @@ Nếu Realm có quá nhiều tính năng ko dùng đến, thì có thể sử d�
 
 ### Analytics
 
-[Fabric](https://get.fabric.io/) bộ công cụ tất cả trong một hoặc nếu thích Google Analytics thì có nhiều [thư viện khác](https://github.com/idehub/react-native-google-analytics-bridge) hổ trợ
+[Fabric](https://get.fabric.io/) bộ công cụ tất cả trong một hoặc nếu thích Google Analytics thì có nhiều [thư viện khác](https://github.com/idehub/react-native-google-analytics-bridge) hỗ trợ
 
 ### Push Notifications
 

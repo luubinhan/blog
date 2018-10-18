@@ -35,7 +35,7 @@ service cloud.firestore {
 
 `service cloud.firestore` để giới hạn chúng ta chỉ áp rule này xuống Cloud Firestore, tránh xung đột với các service khác của Firebase
 
-`match /databases/{database}/documents` chỉ định rule này chỉ áp dụng cho các database trong project. Hiện tại mỗi project trên Firebase sẽ chỉ hổ trợ một database Firestore
+`match /databases/{database}/documents` chỉ định rule này chỉ áp dụng cho các database trong project. Hiện tại mỗi project trên Firebase sẽ chỉ hỗ trợ một database Firestore
 
 # Rules read/write
 

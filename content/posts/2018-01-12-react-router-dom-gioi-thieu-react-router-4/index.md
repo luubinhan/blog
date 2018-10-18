@@ -12,9 +12,9 @@ tags: ["react", "javascript"]
 ---
 
 
-Lúc đầu Michael and Ryan (2 tác giả của React Router) vốn là người viết Ember, chưa rõ cách vận hành lắm của React, nên lúc anh viết cái React Router thì gần như nó cũng giống như Ember, Express, Angular, giờ khi 2 anh đã năm dững React, 2 anh quyết định đập đi làm lại React Router để kế thừa những ý tưởng của React Component. Và ta có React Router v4 hoàn toàn mới lạ so với bản cũ
+Lúc đầu Michael and Ryan (2 tác giả của React Router) vốn là người viết Ember, chưa rõ cách vận hành lắm của React, nên lúc anh viết cái React Router thì cũng giống như Ember, Express, Angular, giờ khi 2 anh đã nắm vững React, 2 anh quyết định đập đi làm lại React Router để kế thừa những ý tưởng của React Component. Và ta có React Router v4 hoàn toàn mới so với bản cũ
 
-Chìa khóa để nắm rõ React Router v4, gọi react router dom đi hé, vì package giờ cũng đổi tên react-router-dom, là quên hết những gì về React Router từng biết, **React Router là một component với hàm render ra một component khi đường dẫn thõa điều kiện trong path.**
+Chìa khóa để nắm rõ React Router v4, gọi react-router-dom đi hé, vì package giờ cũng đổi tên react-router-dom, là **quên hết những gì về React Router** từng biết, **React Router là một component với hàm render ra một component khi đường dẫn thõa điều kiện trong path.**
 
 ```jsx
 import React, { Component } from 'react'
@@ -138,7 +138,7 @@ render() {
 }
 ```
 
-Bây giờ bên trong component `Topics`, cứ vô từ lồng thêm Route vào như lồng div trong div thôi
+Bây giờ bên trong component `Topics`, cứ vô tư lồng thêm Route vào như lồng `div` trong `div` thôi
 
 ```jsx
 const Topic = () => {

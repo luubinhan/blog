@@ -14,14 +14,14 @@ tags: ["react", "javascript"]
 <!-- TOC -->
 
 - [Tổng quan](#tổng-quan)
-- [Higher-Order Functions](#higher-order-functions)
-- [Higher-Order Components](#higher-order-components)
+- [Higher-Order Function](#higher-order-function)
+- [Higher-Order Component](#higher-order-component)
 
 <!-- /TOC -->
 
-Nghe khá trừa tượng và cao siêu. Tuy nhiên đây là một kỹ thuật hay (architectural pattern), một vài người cũng vạch ra được điểm khó chịu khi làm HOCs, tuy nhiên thích thì học thôi, trong vài trường hợp sẽ hữu dụng.
+Nghe khá trừu tượng và cao siêu. Tuy nhiên đây là một kỹ thuật hay (architectural pattern), một vài người cũng vạch ra được điểm khó chịu khi làm HOC, tuy nhiên thích thì học thôi, trong vài trường hợp sẽ hữu dụng.
 
-## Tổng quan
+# Tổng quan
 
 Để đọc hiểu bài này dĩ nhiên cần nắm cơ bản ES6, hiểu cà-ri function là thế nào (Currying Functional Programming)
 
@@ -36,7 +36,6 @@ const curriedSum = function(a) {
     return function(b) {
         return (a + b)
     }
-
 }
 // viết hàm cà-ri bằng arrow function
 const curriedSum = a => b => a + b
@@ -45,11 +44,13 @@ const curriedSum = a => b => a + b
 curriedSum(4)(5)
 ```
 
-Một số cách viết khác của ES6 tìm lại mấy bài cũ của mình đã chia sẽ.
+Một số cách viết khác của ES6 tìm lại mấy bài cũ của mình [đã chia sẻ](/2016-11-15-chuong-1-es6-can-ban).
 
-## Higher-Order Functions
+# Higher-Order Function
 
-Cái này không mới, trước đây trong javascript vẫn thường viết kiểu truyền một anonymous function (callback) như một argument cho 1 function khác, vì function trong javascript là object nên làm được chuyện này, hay 1 function trả về một kết quả trả về của function khác. Xét ví dụ
+Cái này không mới, trước đây trong javascript vẫn thường viết kiểu truyền một callback function (*vì trong javascript function được xem là object nên làm được chuyện này*), hay 1 function trả về một kết quả trả về của function khác (Closure).
+
+Xét ví dụ
 
 ```js
 const calculator = (inputFunction) => (...args) => {
@@ -79,9 +80,9 @@ calculator(add)(3,6,9,12,15,18);
 
 Các hàm như `add`, `multiply` chấp nhận số lượng input không giới hạn, hàm `calculator` sử dụng như một container, extend thêm một số xử lý trước khi gọi hàm `add`, `multiply`
 
-## Higher-Order Components
+# Higher-Order Component
 
-Một higher-order component là một một function nhận vào một `component` như một argument và trả về "phiên bản mở rộng" của component đó.
+Một higher-order component là một **một function** nhận vào một `component` như một argument và trả về "phiên bản mở rộng" của component đó.
 
 ```jsx
 (InputComponent) => {
@@ -94,12 +95,12 @@ InputComponent => ExtendedComponent
 
 `ExtendedComponent` là một component container, nó trả về `InputComponent` với một số extend
 
-![](https://cms-assets.tutsplus.com/uploads/users/1795/posts/30094/image/Introduction-To-Higher-Order-Components-in-React-Overview.jpg)
+![Giới thiệu Higher-Order Components trong React](https://cms-assets.tutsplus.com/uploads/users/1795/posts/30094/image/Introduction-To-Higher-Order-Components-in-React-Overview.jpg)
 
 Giờ implement cái khái niệm này
 
 ```jsx
-const withGreyBg = WrappedComponent => class NewComponent extedns Component {
+const withGreyBg = WrappedComponent => class NewComponent extends Component {
     const bgStyle = {
         backgroundColor: 'grey',
     }
@@ -126,5 +127,5 @@ class CardsDemo extends Component {
 }
 ```
 
-![](https://cms-assets.tutsplus.com/uploads/users/1795/posts/30094/image/Introduction-To-Higher-Order-Components-in-React-An-Example-HOC.jpg)
+![Giới thiệu Higher-Order Components trong React](https://cms-assets.tutsplus.com/uploads/users/1795/posts/30094/image/Introduction-To-Higher-Order-Components-in-React-An-Example-HOC.jpg)
 

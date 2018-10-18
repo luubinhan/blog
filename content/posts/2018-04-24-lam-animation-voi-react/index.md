@@ -48,7 +48,7 @@ Cách cơ bản và dễ hình dung nhất, sử dụng class CSS, add/remove c�
 
 ### Nhược
 
-Không hổ trợ cross-platform, cơ bản là không chạy được trên React Native, chỉ chạy các trình duyệt hổ trợ các thuộc tính CSS dùng để làm animation. Phụ thuộc vào CSS và DOM nên cũng hạn chế các thay đổi theo logic phức tạp.
+Không hỗ trợ cross-platform, cơ bản là không chạy được trên React Native, chỉ chạy các trình duyệt hỗ trợ các thuộc tính CSS dùng để làm animation. Phụ thuộc vào CSS và DOM nên cũng hạn chế các thay đổi theo logic phức tạp.
 
 ### Ưu
 
@@ -338,7 +338,7 @@ Có thể nói các API của Velocity React là sự kết hợp giữa Animate
 
 ### Nhược
 
-Hơi kỳ là nó không chạy trên `componentDidMount` mà bạn phải khai báo `runOnMount`, không hổ trợ cross-platform
+Hơi kỳ là nó không chạy trên `componentDidMount` mà bạn phải khai báo `runOnMount`, không hỗ trợ cross-platform
 
 ### Ưu
 

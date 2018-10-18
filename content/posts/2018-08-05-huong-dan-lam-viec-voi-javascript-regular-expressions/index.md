@@ -326,7 +326,7 @@ Trường hợp group đó thõa điều kiện nhiều lần, chỉ trả về 
 - `g`: kiểm tra điều kiện nhiều lần
 - `i`: không phân biệt hoa thường
 - `m`: cho phép kiểm tra xuống dòng
-- `u`: bật hổ trợ unicode
+- `u`: bật hỗ trợ unicode
 
 ```js
 /hey/ig.test('HEy') //✅

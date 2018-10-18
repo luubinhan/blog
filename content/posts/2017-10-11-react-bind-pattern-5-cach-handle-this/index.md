@@ -36,7 +36,7 @@ const Contacts = React.createClass({
 
 ```
 
-Tuy nhiên từ khi ES6 có hổ trợ `class`, React.createClass có thể bị tách ra các release trong tương lai.
+Tuy nhiên từ khi ES6 có hỗ trợ `class`, React.createClass có thể bị tách ra các release trong tương lai.
 
 # Bind trong lúc render
 
