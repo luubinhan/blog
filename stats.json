@@ -1,5 +1,9 @@
 {
   "assetsByChunkName": {
+    "path---2018-10-15-nhung-cau-nen-hoi-khi-di-phong-van": [
+      "path---2018-10-15-nhung-cau-nen-hoi-khi-di-phong-van-acc88f70acf1f49ead08.js",
+      "path---2018-10-15-nhung-cau-nen-hoi-khi-di-phong-van-acc88f70acf1f49ead08.js.map"
+    ],
     "path---2018-03-19-huong-dan-react-patterns-can-ban": [
       "path---2018-03-19-huong-dan-react-patterns-can-ban-5a071abc7f1d726c8ba6.js",
       "path---2018-03-19-huong-dan-react-patterns-can-ban-5a071abc7f1d726c8ba6.js.map"
@@ -33,8 +37,8 @@
       "path---2017-03-08-thoi-dai-cua-pixel-perfect-da-het-phan-3-f6fe7d3b7f273825389a.js.map"
     ],
     "path---4": [
-      "path---4-f02a499d69089cd4d993.js",
-      "path---4-f02a499d69089cd4d993.js.map"
+      "path---4-7284552a59928468a85e.js",
+      "path---4-7284552a59928468a85e.js.map"
     ],
     "path---2018-10-03-huong-dan-reactjs-table-du-lieu-lon": [
       "path---2018-10-03-huong-dan-reactjs-table-du-lieu-lon-691f375b4ffa94232150.js",
@@ -105,8 +109,8 @@
       "path---2018-10-05-gioi-thieu-focus-2181c2a4864f1c4a7128.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-87a6117ba4b17843f2a3.js",
-      "path---tags-javascript-87a6117ba4b17843f2a3.js.map"
+      "path---tags-javascript-50ab2472f494d2097c35.js",
+      "path---tags-javascript-50ab2472f494d2097c35.js.map"
     ],
     "path---2018-09-17-huong-dan-luu-token-o-dau": [
       "path---2018-09-17-huong-dan-luu-token-o-dau-a585d64f076de9a9ae06.js",
@@ -145,16 +149,16 @@
       "path---2018-05-01-huong-dan-cai-thien-performance-react-app-7616809fdbee6b093731.js.map"
     ],
     "path---5": [
-      "path---5-1e69f11e6592c4cfb98e.js",
-      "path---5-1e69f11e6592c4cfb98e.js.map"
+      "path---5-5970aca8a200c7c280e2.js",
+      "path---5-5970aca8a200c7c280e2.js.map"
     ],
     "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react": [
       "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react-aa22daaa670c13ef9c85.js",
       "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react-aa22daaa670c13ef9c85.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-f6b097c6488ac6d8e227.js",
-      "path---tags-react-f6b097c6488ac6d8e227.js.map"
+      "path---tags-react-5146ca3fab66a8084e59.js",
+      "path---tags-react-5146ca3fab66a8084e59.js.map"
     ],
     "path---2018-05-21-huong-dan-thuoc-tinh-counter-increment-va-counter-reset": [
       "path---2018-05-21-huong-dan-thuoc-tinh-counter-increment-va-counter-reset-327a153def1b4280189b.js",
@@ -241,8 +245,8 @@
       "path---2018-07-02-huong-dan-javascript-modules-tren-web-849d8d80712f1f4ef97c.js.map"
     ],
     "path---index": [
-      "path---index-3cf27fa0828bd0da9b26.js",
-      "path---index-3cf27fa0828bd0da9b26.js.map"
+      "path---index-24046eb57ec7033a95b7.js",
+      "path---index-24046eb57ec7033a95b7.js.map"
     ],
     "component---src-pages-about-jsx": [
       "component---src-pages-about-jsx-a416f5eeba7408b43c06.js",
@@ -277,8 +281,8 @@
       "path---2018-04-28-huong-dan-redux-vs-mobx-chon-cai-nao-day-7a7677d0fb29415647c6.js.map"
     ],
     "path---2": [
-      "path---2-5361e0c54a56dfb678f5.js",
-      "path---2-5361e0c54a56dfb678f5.js.map"
+      "path---2-f71110ac70a9e78465d4.js",
+      "path---2-f71110ac70a9e78465d4.js.map"
     ],
     "path---2018-03-29-huong-dan-query-string-voi-react-router": [
       "path---2018-03-29-huong-dan-query-string-voi-react-router-b1cb932b6a3de984c7ad.js",
@@ -289,8 +293,8 @@
       "path---tags-redux-7e12e00c8d67db7111d8.js.map"
     ],
     "path---6": [
-      "path---6-a87f4a1fb784a78fbf5d.js",
-      "path---6-a87f4a1fb784a78fbf5d.js.map"
+      "path---6-5194f4cd6f720a1d27ef.js",
+      "path---6-5194f4cd6f720a1d27ef.js.map"
     ],
     "path---2017-10-27-react-children-react-clone-element": [
       "path---2017-10-27-react-children-react-clone-element-b411811ebbac98947849.js",
@@ -355,8 +359,8 @@
       "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-f64f1b15d1ca3919be2c.js.map"
     ],
     "path---3": [
-      "path---3-37f1b7ce982e2d23ae4b.js",
-      "path---3-37f1b7ce982e2d23ae4b.js.map"
+      "path---3-f3cc13c4053d0a6531a2.js",
+      "path---3-f3cc13c4053d0a6531a2.js.map"
     ],
     "component---src-pages-404-jsx": [
       "component---src-pages-404-jsx-713f07a0074f497d9225.js",
@@ -475,9 +479,9 @@
       "path---2018-08-12-huong-dan-con-duong-tro-thanh-developer-2018-a450ae4ec4950375c76d.js.map"
     ],
     "app": [
-      "app-75a4109e8f7d1c9b4210.js",
+      "app-783fcb434d16ba2e5353.js",
       "build-js-styles.css",
-      "app-75a4109e8f7d1c9b4210.js.map",
+      "app-783fcb434d16ba2e5353.js.map",
       "build-js-styles.css.map"
     ],
     "path---2018-08-21-huong-dan-su-dung-checkbox-va-toggle-switch": [
@@ -537,8 +541,8 @@
       "path---2018-01-12-huong-dan-react-router-dom-gioi-thieu-react-router-4-a830b2b1a035b30140f1.js.map"
     ],
     "path---2018-03-05-8-huong-dan-cach-render-component-trong-react": [
-      "path---2018-03-05-8-huong-dan-cach-render-component-trong-react-340d32adefcfaba32d1d.js",
-      "path---2018-03-05-8-huong-dan-cach-render-component-trong-react-340d32adefcfaba32d1d.js.map"
+      "path---2018-03-05-8-huong-dan-cach-render-component-trong-react-0ac59f20599484e8e928.js",
+      "path---2018-03-05-8-huong-dan-cach-render-component-trong-react-0ac59f20599484e8e928.js.map"
     ],
     "path---2018-10-01-huong-dan-gioi-thieu-fetch-javascript": [
       "path---2018-10-01-huong-dan-gioi-thieu-fetch-javascript-add3eb1737f3674d0a5c.js",
