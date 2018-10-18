@@ -30,5 +30,24 @@ Có rất nhiều thứ có thể xem là async data stream. Ví dụ: một cá
 
 # Tại sao chúng ta cần Stream + Reactive Programing
 
-Có thể thấy ngay Reactive programing khá trừu tượng, 
+Có thể thấy ngay Reactive programing khá trừu tượng, nhưng do thay vì implement những ràng buộc một cách chi tiết, những ràng buộc này được gắn vào từng data gởi đi trên stream, code nó sẽ gọn gàng hơn.
+
+10 năm trước, mọi việc chỉ đơn giản là submit toàn bộ giá trị các field lên backend xử lý, rồi đơn thuần hiển thị kết quả trả về, bây giờ user thích real-time feedback, bấm "like" một phát là đầu bên kia thấy được liền.
+
+Những event real-time như thế, user khoái, chúng ta cần có một công cụ lập trình để làm việc đó, Reactive Program ra đời cũng từ yêu cầu của user.
+
+# Implement hộp thoại "Who to follow" của twitter
+
+Mình sẽ sử dụng [RxJS](https://github.com/Reactive-Extensions/RxJS) trong ví dụ, vì mình chỉ biết javascript thôi các bạn.
+
+![](https://camo.githubusercontent.com/81e5d63c69768e1b04447d2e246f47540dd83fbd/687474703a2f2f692e696d6775722e636f6d2f65416c4e62306a2e706e67)
+
+Tính năng chính của hộp thoại này
+
+- Vừa mở lên, load data từ API, hiển thị 3 tài khoản
+- Click "Refresh", hiển thị 3 tài khoản khác
+- Khi click "x", xóa tài khoản đó khỏi danh sách, hiển thị một tài khoản khác.
+
+
+
 

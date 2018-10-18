@@ -1,7 +1,7 @@
 ---
 slug: "/2018-10-08-huong-dan-aria-va-su-dung-voi-ecommerce-site"
 date: "2018-10-08"
-title: "Tổng quát các vấn đề bảo mật trên website, ứng dụng trong Single Page App"
+title: "Tổng quát các vấn đề bạn cần quan tâm để bảo mật ứng dụng web"
 desc: ""
 cover: ""
 type: "post"
@@ -17,7 +17,7 @@ tags: ["javascript"]
   - [Session quản lý ở client](#session-quản-lý-ở-client)
 - [Một số kiểu tấn công](#một-số-kiểu-tấn-công)
   - [CSRF (Cross-Site Request Forgery)](#csrf-cross-site-request-forgery)
-    - [Cách ngăn chặn #1: Sử dụng HTML token,](#cách-ngăn-chặn-1-sử-dụng-html-token)
+    - [Cách ngăn chặn #1: Sử dụng HTML token](#cách-ngăn-chặn-1-sử-dụng-html-token)
     - [Cách ngăn chặn #2: Origin Header](#cách-ngăn-chặn-2-origin-header)
     - [Cách ngăn chặn #3: dùng transparent token](#cách-ngăn-chặn-3-dùng-transparent-token)
   - [Cross-Site Scripting (XSS)](#cross-site-scripting-xss)
@@ -25,7 +25,6 @@ tags: ["javascript"]
     - [Reflect XSS](#reflect-xss)
   - [DOM-Based XSS](#dom-based-xss)
     - [Ứng dụng trong Single Page Application](#ứng-dụng-trong-single-page-application)
-- [Những điều cần làm](#những-điều-cần-làm)
 - [Công cụ kiểm tra](#công-cụ-kiểm-tra)
   - [Content Security Policy (CSP)](#content-security-policy-csp)
   - [Cross-Origin Resource Sharing (CORS)](#cross-origin-resource-sharing-cors)
@@ -53,6 +52,8 @@ Server toàn quyền kiểm soát session, kiểm tra tình trạng active, expi
 - Hầu hết các trình duyệt đều hổ trợ, **khó**, nếu sử dụng bên ngoài trình duyệt (ứng dụng điện thoại chẳng hạn)
 - Bị tấn công [CSRF](#csrf-cross-site-request-forgery)
 
+Theo mặc định các request sẽ không nên gởi kèm thông tin xác thực tài khoản (ví dụ cookie), nếu cần gởi thêm thông tin này bằng thiết đặt `withCredentials` thủ công, phía server đồng thời cũng gởi lại trong response header giá trị `Access-Control-Allow-Credentials: true`
+
 ## Session quản lý ở client
 
 Đưa toàn bộ thông tin session xuống phía client
@@ -74,7 +75,7 @@ Kiểu tấn công rất phổ biến, nếu thông tin session được gởi q
 
 ![CSRF (Cross-Site Request Forgery)](https://i.imgur.com/sRrzge5.png)
 
-### Cách ngăn chặn #1: Sử dụng HTML token,
+### Cách ngăn chặn #1: Sử dụng HTML token
 
 Dấu token bên trong HTML, cơ chế bảo mật **Same-Origin** sẽ ngăn chặn các trang khác trên trình duyệt lấy được token.
 
@@ -134,12 +135,22 @@ Cách phổ biến để phòng chống
 
 ### Ứng dụng trong Single Page Application
 
-# Những điều cần làm
 
 # Công cụ kiểm tra
 
-
 ## Content Security Policy (CSP)
 ## Cross-Origin Resource Sharing (CORS)
+
+CORS là một cơ chế sử dụng HTTP header để báo với trình duyệt, ứng dụng chạy trên một tên miền này có quyền truy cập đến resource từ server khác, domain khác, port khác, protocol khác với chổ nó được host (gọi chung là Origin)
+
+Ví dụ ứng dụng trên địa chỉ domain-a.com sử dụng `fetch()` đến domain-b.com/data.json
+
+Mặc định trình duyệt ngăn chặn duyệt truy cập như vậy trừ khi được cho phép từ phía API, server. Theo nguyên tắc chung
+
+- Response trả về từ GET thì có thể cho phép cross-origin
+- PUT/DELETE luôn không cho phép cross-origin
+- POST thì hạn chế trên từng field
+
+Rất nhiều Server Side Framework hổ trợ cấu hình CORS, tìm hiểu cái bạn đang xài và nắm thật rõ nguyên tắc của nó.
 
 [Getting Single Page Application Security Right by Philippe De Ryck](https://www.youtube.com/watch?v=UFPGOvDrTOk)
