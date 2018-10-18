@@ -178,4 +178,4 @@ emitter.fuel = 10
 emitter.delete()
 ```
 
-Tức nhiên vẫn khai báo phương thức như bình thường được, cách khai bao mới này có vẻ hơi dễ lẫn lộn giữa phương thức và object, tất nhiên đây chỉ là thêm lựa chọn để viết chứ không khuyến khích viết theo kiểu này vì nhìn code không được tường minh.
+Tức nhiên vẫn khai báo phương thức như bình thường được, cách khai báo mới này có vẻ hơi dễ lẫn lộn giữa phương thức và object, tất nhiên đây chỉ là thêm lựa chọn để viết chứ không khuyến khích viết theo kiểu này vì nhìn code không được tường minh.

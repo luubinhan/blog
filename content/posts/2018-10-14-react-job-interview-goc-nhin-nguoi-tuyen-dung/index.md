@@ -45,7 +45,7 @@ Ví dụ, bạn là thầu xây dựng nhà, bạn chủ yếu thầu nhà thổ
 
 # Đi sâu technical một chút
 
-Theo như kinh nghiệm được phóng vấn của mình, việc hỏi nhanh đáp liền như chương trình nhanh như chớp rất là khó cho ứng viên trả lời rành rọt và trọn vẹn. Cụ thể là ngay cả mình, khi được hỏi sự khác nhau giữa GET/POST/PUT, mình cũng sẽ không thể nói một cách mạch lạc được, kiến thức quá nhiều, bạn cần cho ứng viên tí thời gian để nhớ lại. Một danh sách in sẵn các câu sẽ hỏi, cho anh ấy đọc qua trước 5-10 phút chuẩn bị sẽ tốt hơn.
+Theo như kinh nghiệm được phỏng vấn của mình, việc hỏi nhanh đáp liền như chương trình nhanh như chớp rất là khó cho ứng viên trả lời rành rọt và trọn vẹn. Cụ thể là ngay cả mình, khi được hỏi sự khác nhau giữa GET/POST/PUT, mình cũng sẽ không thể nói một cách mạch lạc được, kiến thức quá nhiều, bạn cần cho ứng viên tí thời gian để nhớ lại. Một danh sách in sẵn các câu sẽ hỏi, cho anh ấy đọc qua trước 5-10 phút chuẩn bị sẽ tốt hơn.
 
 # Vấn đề lớn nhất bạn đối mặt trong dự án cũ là gì, thành công lớn nhất bạn đạt được trong đó?
 
@@ -127,9 +127,9 @@ Xong phần mình, thế bạn có muốn hỏi mình gì không?
 
 *Cái mà mình thấy rất thiếu trong đa số các buổi mình bị phỏng vấn.*
 
-Nếu có chổ nào đó bạn trả lời không tốt, mình sẽ feedback lại cho bạn giải pháp hoặc chổ bạn cần về nhà nghiên cứu.
+Nếu có điểm nào đó bạn trả lời không tốt, mình sẽ feedback lại cho bạn giải pháp hoặc điểm bạn cần về nhà nghiên cứu.
 
-Bạn sẽ nhận được hồi âm trong 2-3 ngày, đa phần các trường hợp lâu hơn 4 ngày là bạn nhận được thư cảm ơn. Bạn không cần lên ITViec để check vị trí đó có mới chạy quảng cáo nữa không, mình chắc chắn gởi thư cảm ơn.
+Bạn sẽ nhận được hồi âm trong 2-3 ngày, đa phần các trường hợp lâu hơn 4 ngày là bạn nhận được thư cảm ơn. Bạn không cần lên ITViec để check vị trí đó có mới chạy quảng cáo nữa không, mình chắc chắn gửi thư cảm ơn.
 
 # Câu cuối cùng, quan trọng nhất
 

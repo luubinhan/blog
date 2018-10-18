@@ -20,7 +20,7 @@ tags: ["react", "javascript"]
 - [Short-circuit operator (&&)](#short-circuit-operator-)
 - [Immediately-invoked function expressions (IIFE)](#immediately-invoked-function-expressions-iife)
 - [Subcomponents](#subcomponents)
-- [Higher-order components](#higher-order-components)
+- [Higher-Order Component (HOC)](#higher-order-component-hoc)
 
 <!-- /TOC -->
 
@@ -66,7 +66,7 @@ Giờ nếu không muốn thêm câu `else`
 render() {
     let input;
     
-    if(this.state.mode !== 'view') {
+    if (this.state.mode !== 'view') {
       input = <h1/>;
     }
       
@@ -76,7 +76,7 @@ render() {
 
 # Câu điều kiện rút gọn
 
-Thay gì if/else, có thể dùng câu điều kiện rút gọn để render luôn
+Thay gì `if/else`, có thể dùng câu điều kiện rút gọn để render luôn
 
 ```
 điều kiện ? nếu true : nếu false
@@ -94,7 +94,7 @@ render() {
 }
 ```
 
-Gọn gàn sạch sẽ hơn, tuy nhiên cũng đừng lạm dụng quá, có anh bạn làm chung với mình, lạm dụng cách này quá lố, đến nổi mỗi lần đọc code của anh ấy là cơn ác mộng, mặc dù không sai, nhưng thằng nào code sau mở lên đọc tội nó lắm.
+Gọn gàng sạch sẽ hơn, tuy nhiên cũng đừng lạm dụng quá, có anh bạn làm chung với mình, lạm dụng cách này quá lố, đến nổi mỗi lần đọc code của anh ấy là cơn ác mộng, mặc dù không sai, nhưng thằng nào code sau mở lên đọc tội nó lắm.
 
 ```jsx
 return (
@@ -115,7 +115,7 @@ return (
 
 # Short-circuit operator (&&)
 
-Trong trường hợp trên, rõ ràng việc trả về `null` thật sự cũng hơi dư thừa, có thể sự dụng ngắn-hơn-cả-ngắn với cú pháp `&&`. Cũng như câu điều kiện rút gọn, tuy nhiên nó sẽ chỉ render nếu `true`, con `false` nó sẽ không làm gì cả
+Trong trường hợp trên, rõ ràng việc trả về `null` cũng hơi dư thừa, có thể sử dụng ngắn-hơn-cả-ngắn với cú pháp `&&`. Cũng như câu điều kiện rút gọn, tuy nhiên nó sẽ chỉ render nếu `true`, con `false` nó sẽ không làm gì cả
 
 ```jsx
 render() {
@@ -216,25 +216,25 @@ render(
 )
 ```
 
-Hoặc trọng React-Router 4 mỗi route là một `If component` với cách thức vận hành như sau
+Hoặc trong React-Router-4 mỗi route là một `If component` với cách thức vận hành như sao
 
 ```jsx
 <If
     condition={ view }
-    then= { editComponent }
-    else= { editComponent }
+    then={ editComponent }
+    else={ editComponent }
 />
 
 // Component Route trong React-Router
 <Route path='/' component={Home} />
 ```
 
-Đọc thêm về [React-Router-4](https://luubinhan.github.io/blog/2018-01-12-react-router-dom-gioi-thieu-react-router-4)
+Đọc thêm về [React-Router-4](/2018-01-12-react-router-dom-gioi-thieu-react-router-4)
 
 
-# Higher-order components
+# Higher-Order Component (HOC)
 
-Sử dụng HOC để truyền xuống một `props` dựa trên kiểm tra logic
+Sử dụng HOC để truyền xuống một `prop` dựa trên kiểm tra logic
 
 ```jsx
 function higherOrderComponent(Component) {
@@ -248,4 +248,4 @@ function higherOrderComponent(Component) {
 }
 ```
 
-Đọc thêm về [HOCs tại đây](https://luubinhan.github.io/blog/2018-03-02-gioi-thieu-higher-order-component-trong-react)
+Đọc thêm về [HOCs tại đây](/2018-03-02-gioi-thieu-higher-order-component-trong-react)

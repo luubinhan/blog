@@ -65,7 +65,7 @@ Cần thêm cái Module manager
 
 *Module manager nó là cái gì*
 
-Cái này tùy thuộc vào môi trường, trên web thì thường là phải hổ trợ AMD hoặc CommonJS modules
+Cái này tùy thuộc vào môi trường, trên web thì thường là phải hỗ trợ AMD hoặc CommonJS modules
 
 *rồi vậy AMD và Common JS là cái chi chi ?*
 
@@ -197,13 +197,13 @@ Transparency? JSRender? MarkupJS? KnockoutJS, PlatesJS? jQuery-tmpl? Handlebars?
 
 *Có cái nào dễ biết hơn chút không*
 
-Nhứt đầu rồi, underscore? công nghệ từ 2014 ông có biết không?
+Nhức đầu rồi, underscore? công nghệ từ 2014 ông có biết không?
 
 *Chưa bao giờ đụng tới*
 
 Jade? DustJS? DotJS? EJS ? Coffeescript ?
 
-*Thôi tui xin quay lại với code backen, quá nhiều thay đổi cần phải học tui không thể handle hết, cộng động javascript mấy ông đúng là điên hết rồi nếu nghĩ là có ai đó có thể biết hết chừng đó thứ*
+*Thôi tui xin quay lại với code backend, quá nhiều thay đổi cần phải học tui không thể handle hết, cộng động javascript mấy ông đúng là điên hết rồi nếu nghĩ là có ai đó có thể biết hết chừng đó thứ*
 
 Hiểu rồi, ông nên vô học Python đi
 
