@@ -107,7 +107,7 @@ class AboutPage extends React.Component {
                       <blockquote>
                         Mình không quá giỏi bất cứ thứ gì, không thông minh, chỉ là đứa chịu khó và có trách nhiệm với những gì mình làm
                       </blockquote>
-                      <h2>Phòng vấn toàn thất bại</h2>
+                      <h2>Phỏng vấn toàn thất bại</h2>
                       <p>
                         Sau khi tốt nghiệp đại học Hoa Sen năm 2011, bước chân
                         vào những lần phỏng vấn thất bại liên tiếp. Xin vào ví
