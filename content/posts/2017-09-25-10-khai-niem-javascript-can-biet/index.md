@@ -134,7 +134,7 @@ if (true) {
 console.log(name); // logs 'Hammad'
 ```
 
-Trong ES6, để tránh sự nhập nhằn này, khai báo biến bằng `let`,`const` để biến chỉ được hiểu bên trong các khối `{}`
+Trong ES6, để tránh sự nhập nhằng này, khai báo biến bằng `let`,`const` để biến chỉ được hiểu bên trong các khối `{}`
 
 ```js
 if (true) {

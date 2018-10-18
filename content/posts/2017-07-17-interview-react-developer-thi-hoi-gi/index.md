@@ -13,24 +13,24 @@ tags: ["javascript", "react"]
 
 <!-- TOC -->
 
-- [Chuyện gì xảy ra khi gọi `setSate` ?](#chuyện-gì-xảy-ra-khi-gọi-setsate-)
+- [Chuyện gì xảy ra khi gọi `setState` ?](#chuyện-gì-xảy-ra-khi-gọi-setstate-)
 - [Sự khác nhau giữa Element và Component trong React?](#sự-khác-nhau-giữa-element-và-component-trong-react)
 - [Khi nào thì sử dụng Class Component và Functional Component](#khi-nào-thì-sử-dụng-class-component-và-functional-component)
 - [`Ref` trong React dùng để làm gì](#ref-trong-react-dùng-để-làm-gì)
 - [Key trong React là gì](#key-trong-react-là-gì)
 - [Sự khác nhau giữa controlled component và uncontrolled component](#sự-khác-nhau-giữa-controlled-component-và-uncontrolled-component)
-- [Để gọi AJAX, sự dụng sự kiện nào của lifecycle?](#để-gọi-ajax-sự-dụng-sự-kiện-nào-của-lifecycle)
+- [Để gọi AJAX, sử dụng sự kiện nào của lifecycle?](#để-gọi-ajax-sử-dụng-sự-kiện-nào-của-lifecycle)
 - [`shouldComponentUpdate` dùng để làm gì](#shouldcomponentupdate-dùng-để-làm-gì)
 - [Build Product bằng cách nào?](#build-product-bằng-cách-nào)
 - [Tại sao nên sử dụng `React.Children.map()` thay vì `props.children.map()`](#tại-sao-nên-sử-dụng-reactchildrenmap-thay-vì-propschildrenmap)
 - [Events được xử lý trong React như thế nào?](#events-được-xử-lý-trong-react-như-thế-nào)
 - [Sự khác nhau giữa `createElement` và `cloneElement`](#sự-khác-nhau-giữa-createelement-và-cloneelement)
 - [Argument thứ 2 của `setState` dùng để làm gì](#argument-thứ-2-của-setstate-dùng-để-làm-gì)
-- [Đoạn code sau sai ở chổ nào](#đoạn-code-sau-sai-ở-chổ-nào)
+- [Đoạn code sau sai ở đâu](#đoạn-code-sau-sai-ở-đâu)
 
 <!-- /TOC -->
 
-# Chuyện gì xảy ra khi gọi `setSate` ?
+# Chuyện gì xảy ra khi gọi `setState` ?
 
 Đầu tiên, object được truyền trong <code>setState</code> sẽ được merge với state hiện tại của component, dựa trên sự thay đổi của object này, UI được update với state mới. Để làm được chuyện này, React sẽ dựng một cây React Element mới, so sánh sự khác nhau của cây element mới và cây element trước đó, React biết được chính xác chỉ cần update phần UI nào đã bị thay đổi.
 
@@ -78,7 +78,7 @@ Key giúp React theo dõi sự thay đổi của một item trong list. Tại sa
 <input type='text' ref={(input) => this.input = input} />
 ```
 
-# Để gọi AJAX, sự dụng sự kiện nào của lifecycle?
+# Để gọi AJAX, sử dụng sự kiện nào của lifecycle?
 
 `componentDidMount`
 
@@ -127,7 +127,7 @@ callback function, function sẽ chạy sau khi `component` được `render` l�
 
 `setState` là một phương thức bất đồng bộ (asynchronous)
 
-# Đoạn code sau sai ở chổ nào
+# Đoạn code sau sai ở đâu
 
 ```jsx
 this.setState((prevState, props) => {

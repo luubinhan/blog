@@ -16,7 +16,7 @@ tags: ["ux-ui", "design", "web"]
 - [Thiết kế tốt hơn phải giải quyết một vấn đề thực tế của người sử dụng](#thiết-kế-tốt-hơn-phải-giải-quyết-một-vấn-đề-thực-tế-của-người-sử-dụng)
 - [Product Manager và Lập trình viên luôn là bạn tốt nhất](#product-manager-và-lập-trình-viên-luôn-là-bạn-tốt-nhất)
 - [Bạn đang thiết kế sản phẩm cho người sử dụng hoàn toàn khác bạn](#bạn-đang-thiết-kế-sản-phẩm-cho-người-sử-dụng-hoàn-toàn-khác-bạn)
-- [Thiết kế sẽ được cân đo đong điếm](#thiết-kế-sẽ-được-cân-đo-đong-điếm)
+- [Thiết kế sẽ được cân đo đong đếm](#thiết-kế-sẽ-được-cân-đo-đong-đếm)
 - [Công việc này không như bạn đã nghĩ](#công-việc-này-không-như-bạn-đã-nghĩ)
 
 <!-- /TOC -->
@@ -27,7 +27,7 @@ Tôi học được rằng giải quyết vấn đề cho người sử dụng k
 
 Ngày xửa ngày xưa tôi rất thích các trang web với nhiều hiệu ứng lạ mắt, những logo ý nghĩa, những bản thiết kế làm lại (re-design) của những designer từ khắp nơi cho những trang web nổi tiếng,... . Ngày xưa tôi từng mơ ước trở thành kế toán, tôi thích trở thành người giữ tiền cho các công ty lớn, thế rồi tôi thấy những thiết kế lộng lẫy đó trên mạng, tôi nghĩ rằng, chắc đây có thể là một công việc với nhiều điều thú vị hơn một kế toán viên.
 
-Giờ khi tôi đã là prodoct design cho các sản phẩm của Facebook, với hơn 2 tỉ người người sử dụng, tôi biết rằng những gì tôi từng tưởng tượng trước đây về thiết kế chỉ là phần nổi của tảng băng chìm.
+Giờ khi tôi đã là product design cho các sản phẩm của Facebook, với hơn 2 tỷ người người sử dụng, tôi biết rằng những gì tôi từng tưởng tượng trước đây về thiết kế chỉ là phần nổi của tảng băng chìm.
 
 # Thiết kế tốt hơn phải giải quyết một vấn đề thực tế của người sử dụng
 
@@ -35,7 +35,7 @@ Khi mới bắt đầu, tôi dành thời gian hàng đêm để làm những we
 
 Lúc đó tôi đã nghĩ rằng mình là product design thực thụ. Tôi vẽ ra tất cả các màn hình, flows cho ứng dụng, và tự nhủ rằng đã xong hết 90% của công việc, phần còn lại là quăng hết đống design đó cho các anh lập trình viên code đúng theo thiết kế này và hiển nhiên ngồi bắt bẻ các anh lập trình không làm đúng ý tôi.
 
-Giờ nhìn lại, những gì trước đây mình làm còn rất xa so với công việc của product design, trước khi làm việc cho Facebook, tôi chưa bao giờ bỏ thời gian ra để xác định vấn đề cần giải quyết ở đây là gì trước khi bắt tay vào làm, tôi chỉ muốn làm cái gì đó thiệt "ngầu" để trưng lên Dribbble hay Behance để câu like.
+Giờ nhìn lại, những gì trước đây mình làm còn rất xa so với công việc của product design, trước khi làm việc cho Facebook, tôi chưa bao giờ bỏ thời gian ra để xác định vấn đề cần giải quyết ở đây là gì trước khi bắt tay vào làm, tôi chỉ muốn làm cái gì đó thật "ngầu" để trưng lên Dribbble hay Behance để câu like.
 
 Giờ tôi không còn lơ lửng trên 9 tầng mây, tôi phải đứng cùng vị trí với người sử dụng, tôi cùng các đồng nghiệp của mình cùng nhau xác định bài toán đặt ra là gì, đưa ra một giải pháp được cho là khả thi nhất dựa trên dữ liệu chúng tôi có được, test thử giải pháp trên một số lượng nhỏ người sử dụng trước khi đưa nó vào vận hành chính thức.
 
@@ -43,7 +43,7 @@ Giờ tôi cũng rất dễ bị hấp dẫn bởi các xu hướng thiết kế
 
 # Product Manager và Lập trình viên luôn là bạn tốt nhất
 
-Tôi từng tưởng tượng, tôi sẽ trang bị cho những designer là cấp dưới, đồng nghiệp của tôi những vũ khí 'hạng nặng' để đối phó với bên kia chiến tuyến là các anh lập trình viên cù lần. Chúng tôi sẽ cũng nhau thương thảo những vấn đề cực quan trọng như nên sử dụng màu gradient nào đang là hot trend bây giờ, hay tạo ra cái mới, bo tròn bao nhiêu là đủ, bao nhiều là quá lố...
+Tôi từng tưởng tượng, tôi sẽ trang bị cho những designer là cấp dưới, đồng nghiệp của tôi những vũ khí 'hạng nặng' để đối phó với bên kia chiến tuyến là các anh lập trình viên cù lần. Chúng tôi sẽ cùng nhau thương thảo những vấn đề cực quan trọng như nên sử dụng màu gradient nào đang là hot trend bây giờ, hay tạo ra cái mới, bo tròn bao nhiêu là đủ, bao nhiêu là quá lố...
 
 Ở Facebook, rất nhiều cơ hội để làm việc với các designer khác. Tôi ngồi ngay kế vài anh lão làng như thế trong công ty, thế nhưng mấy anh này lại làm việc trên các sản phẩm khác, nên tôi chỉ tiếp xúc nhiều với product manager và các lập trình viên.
 
@@ -53,25 +53,25 @@ Product manager là người nắm rõ nhất những gì các team đang làm. 
 
 ![https://cdn-images-1.medium.com/max/800/1*LYvWth8qUnXztOkj7GUC5g@2x.jpeg](https://cdn-images-1.medium.com/max/800/1*LYvWth8qUnXztOkj7GUC5g@2x.jpeg)
 
-Làm việc với mấy anh cù lần 'developer' giúp tôi trở nên tốt hơn rất nhiều, mấy anh chỉ cho tôi rất nhiều điều mà tôi không lường trước. Ví dụ, tôi thường không quan tâm đến thời gian phản hồi từ điện thoại đến server, các phác thảo của tôi gần như chỉ tính đến chuyện click-reponse ngay lập tức. Các anh dev cho tôi thấy việc truyền gởi dữ liệu cần tốn một thời gian nhất định và còn phụ thuộc yếu tố mạng nhanh hay chậm, anh cho tôi thấy sự khác biệt trải nghiệm rõ rệt khi mở ứng dụng của tôi với mạng siêu nhanh của công ty và mạng rùa bò ở các nước có đường truyền thấp.
+Làm việc với mấy anh cù lần 'developer' giúp tôi trở nên tốt hơn rất nhiều, mấy anh chỉ cho tôi rất nhiều điều mà tôi không lường trước. Ví dụ, tôi thường không quan tâm đến thời gian phản hồi từ điện thoại đến server, các phác thảo của tôi gần như chỉ tính đến chuyện click-response ngay lập tức. Các anh dev cho tôi thấy việc truyền gửi dữ liệu cần tốn một thời gian nhất định và còn phụ thuộc yếu tố mạng nhanh hay chậm, anh cho tôi thấy sự khác biệt trải nghiệm rõ rệt khi mở ứng dụng của tôi với mạng siêu nhanh của công ty và mạng rùa bò ở các nước có đường truyền thấp.
 
-Sản phẩm khi thiết kế luôn chịu ảnh hưởng của yếu tố technical, ở Facebook chúng tôi luôn đưa anh lập trình vào trong quá trình thiết kế ngay từ giai đoạn đầu của design, làm như vậy để biết được những ràng buộc nhất định về mặt kỹ thuật, lắng nghe cách giải quyết vấn đề từ gốc nhìn từ developer.
+Sản phẩm khi thiết kế luôn chịu ảnh hưởng của yếu tố technical, ở Facebook chúng tôi luôn đưa anh lập trình vào trong quá trình thiết kế ngay từ giai đoạn đầu của design, làm như vậy để biết được những ràng buộc nhất định về mặt kỹ thuật, lắng nghe cách giải quyết vấn đề từ góc nhìn từ developer.
 
 Tôi có thể ngồi kế rất nhiều designer khác, nhưng người bạn thân thiết giúp sản phẩm của tôi tốt hơn là các anh developer và product manager
 
 # Bạn đang thiết kế sản phẩm cho người sử dụng hoàn toàn khác bạn
 
-Trừ trường hợp bạn tự làm tự xài, đa phần các sản phẩm được thiết kế ra được dành cho những người không am hiểu thiết kế, phần lớn người sử dụng sản phẩm Facebook nằm ngoài nước Mỹ, không sử dụng con smart phone đẳng cấp nhất thời đại mà tôi đang sử dụng.
+Trừ trường hợp bạn tự làm tự xài, đa phần các sản phẩm được thiết kế ra được dành cho những người không am hiểu thiết kế, phần lớn người sử dụng sản phẩm Facebook nằm ngoài nước Mỹ, không sử dụng con Iphone đẳng cấp nhất thời đại mà tôi đang sử dụng.
 
-Team UX research ở Facebook luôn biết sản phẩm chúng tôi đang tạo ra cho ai sử dụng, họ mời những con người thật với nhiều tiêu chí khác nhau đến phòng labs để kiểm thử chức năng mới, nói chuyện với những người sử dụng từ nữa vòng trái đất, đo lường ảnh hưởng của những thay đổi trong sản phẩm bằng những đánh giá được gởi đi khắp nơi.
+Team UX research ở Facebook luôn biết sản phẩm chúng tôi đang tạo ra cho ai sử dụng, họ mời những con người thật với nhiều tiêu chí khác nhau đến phòng labs để kiểm thử chức năng mới, nói chuyện với những người sử dụng từ nửa vòng trái đất, đo lường ảnh hưởng của những thay đổi trong sản phẩm bằng những đánh giá được gửi đi khắp nơi.
 
 Với những "chứng cứ" người thật việc thật, những người gặp rắc rối khi thực hiện một tác vụ được thiết kế, chúng tôi có được những giải pháp nhanh nhất từ những lập trình viên ưu tú.
 
-Ví dụ, qua research chúng tôi mới thấy được cái nút nhỏ xíu "Add Friend" có thể tốt trên tiếng anh nhưng với những ngôn ngữ khác lại không ổn.
+Ví dụ, thông qua research chúng tôi mới thấy được cái nút nhỏ xíu "Add Friend" có thể tốt trên tiếng anh nhưng với những ngôn ngữ khác lại không ổn.
 
 ![](https://cdn-images-1.medium.com/max/800/1*Ir4lwTDLoV0LZVobw94AAQ.png)
 
-# Thiết kế sẽ được cân đo đong điếm
+# Thiết kế sẽ được cân đo đong đếm
 
 Khi ngồi nhà thiết kế cho chính mình, tôi chẳng bao giờ nghĩ tới chuyện đi cân đo các thiết kế của mình, phần lớn khi ra quyết định một thiết kế được đưa ra dựa trên sở thích cá nhân nhiều hơn trên những số liệu, căn cứ thực tế.
 
@@ -79,7 +79,7 @@ Khi ngồi nhà thiết kế cho chính mình, tôi chẳng bao giờ nghĩ tớ
 
 Dữ liệu luôn là kẻ chiến thắng trong mọi cuộc tranh cãi. Đó là câu khẩu hiệu ở Facebook, nếu bạn là designer làm việc ở đây, nếu muốn tranh cãi vấn đề vì đó tốt hơn hãy có dữ liệu cụ thể để thuyết phục đồng đội.
 
-Khi team tôi bắt đầu đi lòng vòng quanh một vấn đề mà chưa ngã ngủ, tôi thường sử dụng câu hỏi "Tại sao". Tại sao chẳng ai vào mục Giúp đỡ trên website của bạn? Phải chăng họ quá rành không cần vào xem hay họ chẳng biết vào đó bằng cách nào?
+Khi team tôi bắt đầu đi lòng vòng quanh một vấn đề mà chưa ngã ngũ, tôi thường sử dụng câu hỏi "Tại sao". Tại sao chẳng ai vào mục Giúp đỡ trên website của bạn? Phải chăng họ quá rành không cần vào xem hay họ chẳng biết vào đó bằng cách nào?
 
 # Công việc này không như bạn đã nghĩ
 
