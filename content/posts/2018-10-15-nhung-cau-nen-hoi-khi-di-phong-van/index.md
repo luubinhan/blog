@@ -10,6 +10,17 @@ chapter: 0
 tags: ["javascript", "react"]
 ---
 
+<!-- TOC -->
+
+- [Quy trình, nơi làm việc, team](#quy-trình-nơi-làm-việc-team)
+- [Các vấn đề liên quan đến kỹ thuật](#các-vấn-đề-liên-quan-đến-kỹ-thuật)
+- [Xử lý các tình huống khẩn cấp](#xử-lý-các-tình-huống-khẩn-cấp)
+- [Con đường phát triển cho từng nhân viên](#con-đường-phát-triển-cho-từng-nhân-viên)
+- [Phương pháp quản lý dự án và xét độ ưu tiên](#phương-pháp-quản-lý-dự-án-và-xét-độ-ưu-tiên)
+- [Đã hết giờ hỏi!](#đã-hết-giờ-hỏi)
+
+<!-- /TOC -->
+
 # Quy trình, nơi làm việc, team
 
 **Một task dài nhất là bao lâu? Fix một lỗi tốn nhiều nhất là bao lâu? Theo anh đánh giá, mất bao lâu để hiểu hết toàn bộ source code hiện tại?**
