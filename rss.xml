@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[luckyluu]]></title><description><![CDATA[Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End]]></description><link>https://luubinhan.github.io/blog</link><image><url>https://luubinhan.github.io/blog/logos/logo-512.png</url><title>luckyluu</title><link>https://luubinhan.github.io/blog</link></image><generator>Front End Developer An.Luu</generator><lastBuildDate>Thu, 18 Oct 2018 10:39:59 GMT</lastBuildDate><atom:link href="https://luubinhan.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[luckyluu]]></author><copyright><![CDATA[Copyright © 2018. luckyluu]]></copyright><item><title><![CDATA[Em có muốn hỏi câu gì không?]]></title><description><![CDATA[Quy trình, nơi làm việc, team Các vấn đề liên quan đến kỹ thuật Xử lý các tình huống khẩn cấp Con đường phát triển cho từng nhân viên Phương…]]></description><link>https://luubinhan.github.io/blog/2018-10-15-nhung-cau-nen-hoi-khi-di-phong-van</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-15-nhung-cau-nen-hoi-khi-di-phong-van</guid><category><![CDATA[javascript]]></category><category><![CDATA[react]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Mon, 15 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[luckyluu]]></title><description><![CDATA[Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End]]></description><link>https://luubinhan.github.io/blog</link><image><url>https://luubinhan.github.io/blog/logos/logo-512.png</url><title>luckyluu</title><link>https://luubinhan.github.io/blog</link></image><generator>Front End Developer An.Luu</generator><lastBuildDate>Thu, 18 Oct 2018 11:18:09 GMT</lastBuildDate><atom:link href="https://luubinhan.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[luckyluu]]></author><copyright><![CDATA[Copyright © 2018. luckyluu]]></copyright><item><title><![CDATA[Em có muốn hỏi câu gì không?]]></title><description><![CDATA[Quy trình, nơi làm việc, team Các vấn đề liên quan đến kỹ thuật Xử lý các tình huống khẩn cấp Con đường phát triển cho từng nhân viên Phương…]]></description><link>https://luubinhan.github.io/blog/2018-10-15-nhung-cau-nen-hoi-khi-di-phong-van</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-15-nhung-cau-nen-hoi-khi-di-phong-van</guid><category><![CDATA[javascript]]></category><category><![CDATA[react]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Mon, 15 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#quy-tr%C3%ACnh-n%C6%A1i-l%C3%A0m-vi%E1%BB%87c-team&quot;&gt;Quy trình, nơi làm việc, team&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#c%C3%A1c-v%E1%BA%A5n-%C4%91%E1%BB%81-li%C3%AAn-quan-%C4%91%E1%BA%BFn-k%E1%BB%B9-thu%E1%BA%ADt&quot;&gt;Các vấn đề liên quan đến kỹ thuật&lt;/a&gt;&lt;/li&gt;
@@ -3025,14 +3025,14 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
       &lt;/div&gt;
 &lt;p&gt;Security rule trên story&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /stories/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;storyid&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      // Chỉ user đăng nhập có &lt;span class=&quot;token function&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; author
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; resource.data.author&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /stories/{storyid} {
+      // Chỉ user đăng nhập có id = author
+      allow read, write: if request.auth.uid == resource.data.author;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Câu query nếu sẽ fail vì nó không khớp với security rules ở trên, mặc dù user đăng nhập chính là author của 1 document trong collection&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
@@ -3046,15 +3046,15 @@ db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&
 &lt;h1 id=&quot;query-document-dựa-trên-field&quot;&gt;&lt;a href=&quot;#query-document-d%E1%BB%B1a-tr%C3%AAn-field&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Query document dựa trên field&lt;/h1&gt;
 &lt;p&gt;Để hình dung tương quan giữa rule và lúc query, xét ví dụ rule bên dưới, collection &lt;em&gt;stories&lt;/em&gt; cho phép bất kỳ user nào truy cập vào &lt;strong&gt;story&lt;/strong&gt; documents khi giá trị của field &lt;em&gt;published&lt;/em&gt; là &lt;code class=&quot;language-text&quot;&gt;true&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /stories/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;storyid&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; resource.data.published &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; resource.data.author
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /stories/{storyid} {
+      allow read: if resource.data.published == true || request.auth.uid == resource.data.author
 
-      allow write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; resource.data.author&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      allow write: if request.auth.uid == resource.data.author;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Để query data ở trên&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
@@ -3063,28 +3063,28 @@ db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&
 &lt;h1 id=&quot;tính-toán-ràng-buộc-lúc-query&quot;&gt;&lt;a href=&quot;#t%C3%ADnh-to%C3%A1n-r%C3%A0ng-bu%E1%BB%99c-l%C3%BAc-query&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tính toán ràng buộc lúc query&lt;/h1&gt;
 &lt;p&gt;Trong biến &lt;code class=&quot;language-text&quot;&gt;request.query&lt;/code&gt; bao gồm &lt;code class=&quot;language-text&quot;&gt;limit&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;offset&lt;/code&gt;, và &lt;code class=&quot;language-text&quot;&gt;orderBy&lt;/code&gt;, ví dụ chúng ta đặt ra rule là không trả về dữ liệu nếu câu query không chứa limit hoặc limit lớn hơn quy định&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;allow list: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.query.limit &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; 10&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;allow list: if request.query.limit &amp;lt;= 10&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Một cách đầy đủ hơn, gom các điều kiện về author và publish vào trong hàm &lt;code class=&quot;language-text&quot;&gt;authorOrPublished()&lt;/code&gt; để tránh lập lại&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /stories/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;storyid&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      // &lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt; nếu story đang &lt;span class=&quot;token string&quot;&gt;&apos;published&apos;&lt;/span&gt;
-      // hoặc authored &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; người đang request
-      &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; authorOrPublished&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; resource.data.published &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; resource.data.author&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /stories/{storyid} {
+      // `true` nếu story đang &amp;#39;published&amp;#39;
+      // hoặc authored = người đang request
+      function authorOrPublished() {
+        return resource.data.published == true || request.auth.uid == resource.data.author;
+      }
 
-      allow list: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.query.limit &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; 10 &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
-                     authorOrPublished&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      allow list: if request.query.limit &amp;lt;= 10 &amp;amp;&amp;amp;
+                     authorOrPublished();
 
-      allow get: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; authorOrPublished&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      allow get: if authorOrPublished();
       
-      allow write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; resource.data.author&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      allow write: if request.auth.uid == resource.data.author;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;&lt;a href=&quot;https://firebase.google.com/docs/firestore/security/rules-query&quot;&gt;Link bài gốc&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hướng dẫn viết điều kiện security rules cho Cloud Firestore - Phần 2]]></title><description><![CDATA[Xác thực Kiểm tra dữ liệu Truy cập đến các documents khác Hàm tùy biến Xác thực Một trong những tình huống phổ biến nhất là cho phép truy…]]></description><link>https://luubinhan.github.io/blog/2018-08-17-huong-dan-viet-dieu-kien-security-rules-cho-cloud-firetore</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-08-17-huong-dan-viet-dieu-kien-security-rules-cho-cloud-firetore</guid><category><![CDATA[firestore]]></category><category><![CDATA[firebase]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Sat, 18 Aug 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;
@@ -3097,70 +3097,70 @@ db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&
 &lt;h1 id=&quot;xác-thực&quot;&gt;&lt;a href=&quot;#x%C3%A1c-th%E1%BB%B1c&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Xác thực&lt;/h1&gt;
 &lt;p&gt;Một trong những tình huống phổ biến nhất là cho phép truy cập dữ liệu nếu user đã đăng nhập (còn gọi là xác thực, authentication).&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
     // Cho phép user truy cập document
     // trong collection cities nếu đã đăng nhập
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; null&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+    match /cities/{city} {
+      allow read, write: if request.auth.uid != null;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Hoặc một tình huống phổ biến thứ 2 là cho phép user read và write lên dữ liệu của chính user đó&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;services cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;services cloud.firestore {
+  match /databases/{database}/documents {
     // chỉ cho phép uid khớp với userId trong document.
-    // Dùng ký tự đại diện &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;userId&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; như một biến bên trong câu điều kiện
-    match /users/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;userId&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, update, delete: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; userId&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      allow create: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; null&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+    // Dùng ký tự đại diện {userId} như một biến bên trong câu điều kiện
+    match /users/{userId} {
+      allow read, update, delete: if request.auth.uid == userId;
+      allow create: if request.auth.uid != null;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Nếu đang sử dụng Firebase Authentication, biến &lt;code class=&quot;language-text&quot;&gt;request.auth&lt;/code&gt; sẽ chưa thông tin của user gởi request, xem thêm chi tiết &lt;a href=&quot;https://firebase.google.com/docs/reference/rules/rules.firestore.Request#auth&quot;&gt;ở đây.&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;kiểm-tra-dữ-liệu&quot;&gt;&lt;a href=&quot;#ki%E1%BB%83m-tra-d%E1%BB%AF-li%E1%BB%87u&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Kiểm tra dữ liệu&lt;/h1&gt;
 &lt;p&gt;Nếu muốn can thiệp việc cho phép hoặc từ chối truy cập theo dữ liệu trong document&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
     // cho phép truy cập nếu giá trị của visibility bằng public
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; resource.data.visibility &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;public&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+    match /cities/{city} {
+      allow read: if resource.data.visibility == &amp;#39;public&amp;#39;;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Biến &lt;code class=&quot;language-text&quot;&gt;resource&lt;/code&gt; tương ứng với dữ liệu của document đang request, &lt;code class=&quot;language-text&quot;&gt;request.data&lt;/code&gt; sẽ là toàn bộ các field lưu trong document&lt;/p&gt;
 &lt;p&gt;Trước khi write dữ liệu xuống, chúng ta sẽ muốn kiểm tra dữ liệu đang có và dữ liệu mới. Nếu chúng ta đang set rule pending write (không write dữ liệu ngay lập tức mà đợi xí), biến &lt;code class=&quot;language-text&quot;&gt;request.resource&lt;/code&gt; lúc này sẽ chứa dữ liệu mới.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow update: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.resource.data.population &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; 0
-      &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; request.resource.data.name &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; resource.data.name
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /cities/{city} {
+      allow update: if request.resource.data.population &amp;gt; 0
+      &amp;amp;&amp;amp; request.resource.data.name == resource.data.name
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;h1 id=&quot;truy-cập-đến-các-documents-khác&quot;&gt;&lt;a href=&quot;#truy-c%E1%BA%ADp-%C4%91%E1%BA%BFn-c%C3%A1c-documents-kh%C3%A1c&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Truy cập đến các documents khác&lt;/h1&gt;
 &lt;p&gt;Sử dụng &lt;code class=&quot;language-text&quot;&gt;get()&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;exists()&lt;/code&gt; chúng ta có thể đánh giá các request với các documents trong database. Cả hai hàm này đều yêu cầu chỉ định đường dẫn đầy đủ, và phải đưa biến theo cú pháp &lt;code class=&quot;language-text&quot;&gt;$(biến)&lt;/code&gt; trong đường dẫn&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /cities/{city} {
       // kiểm tra user hiện tại
-      // có tồn tại bên trong collections &lt;span class=&quot;token function&quot;&gt;users&lt;/span&gt;
+      // có tồn tại bên trong collections users
       // trước khi cho phép tạo thêm city mới
-      allow create: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; exists&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;/databases/&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;database&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;/documents/users/&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;request.auth.uid&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+      allow create: if exists(/databases/$(database)/documents/users/$(request.auth.uid))
 
       // cho phép user xóa city nếu user này là admin
-      allow delete: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; get&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;/databases/&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;database&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;/documents/users/&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;request.auth.id&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;.data.admin &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; true&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      allow delete: if get(/databases/$(database)/documents/users/$(request.auth.id).data.admin == true)
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Đối với thao tác write, chúng ta có thể sử dụng &lt;code class=&quot;language-text&quot;&gt;getAfter()&lt;/code&gt; để truy cập dữ liệu của document sau khi thực hiện, thằng này cũng giống như &lt;code class=&quot;language-text&quot;&gt;get&lt;/code&gt; phải dùng đường dẫn đầy đủ.&lt;/p&gt;
 &lt;h1 id=&quot;hàm-tùy-biến&quot;&gt;&lt;a href=&quot;#h%C3%A0m-t%C3%B9y-bi%E1%BA%BFn&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Hàm tùy biến&lt;/h1&gt;
@@ -3172,21 +3172,21 @@ db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&
 &lt;/ul&gt;
 &lt;p&gt;Ví dụ kết hợp cả 2 điều kiện ở trên thành một hàm&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; signedInOrPublic&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; null &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; resource.data.visibility &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;public&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedInOrPublic() {
+      return request.auth.uid !== null || resource.data.visibility == &amp;#39;public&amp;#39;;
+    }
 
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; signedInOrPublic&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    match /cities/{city} {
+      allow read, write: if signedInOrPublic();
+    }
 
-    match /users/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;user&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; signedInOrPublic&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+    match /users/{user} {
+      allow read, write: if signedInOrPublic();
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;&lt;a href=&quot;https://firebase.google.com/docs/firestore/security/rules-conditions&quot;&gt;Link bài gốc&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hướng dẫn cách cài đặt security rules cho Cloud Firestore]]></title><description><![CDATA[Khai báo Rules read/write Chia nhỏ thao tác ra Kế thừa Cloud FireStore Security Rules cho phép chúng ta tùy chỉnh việc cấp quyền truy cập…]]></description><link>https://luubinhan.github.io/blog/2018-08-17-huong-dan-set-security-rules-cho-cloud-firestore</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-08-17-huong-dan-set-security-rules-cho-cloud-firestore</guid><category><![CDATA[firestore]]></category><category><![CDATA[firebase]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Fri, 17 Aug 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;
@@ -3200,118 +3200,118 @@ db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&
 &lt;h1 id=&quot;khai-báo&quot;&gt;&lt;a href=&quot;#khai-b%C3%A1o&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Khai báo&lt;/h1&gt;
 &lt;p&gt;Câu lệnh khai báo của Firestore Security Rules &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    // &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    // ...
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;service cloud.firestore&lt;/code&gt; để giới hạn chúng ta chỉ áp rule này xuống Cloud Firestore, tránh xung đột với các service khác của Firebase&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;match /databases/{database}/documents&lt;/code&gt; chỉ định rule này chỉ áp dụng cho các database trong project. Hiện tại mỗi project trên Firebase sẽ chỉ hỗ trợ một database Firestore&lt;/p&gt;
 &lt;h1 id=&quot;rules-readwrite&quot;&gt;&lt;a href=&quot;#rules-readwrite&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Rules read/write&lt;/h1&gt;
 &lt;p&gt;Câu lệnh &lt;code class=&quot;language-text&quot;&gt;match&lt;/code&gt; sẽ chỉ định đường dẫn của &lt;em&gt;document&lt;/em&gt; bị ảnh hưởng, bên trong đó ta dùng lệnh &lt;code class=&quot;language-text&quot;&gt;allow&lt;/code&gt; để diễn giải chi tiết về rule&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
     // tất cả document trong collection cities
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      allow write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+    match /cities/{city} {
+      allow read: if &amp;lt;condition&amp;gt;;
+      allow write: if &amp;lt;condition&amp;gt;;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Tất cả câu &lt;code class=&quot;language-text&quot;&gt;match&lt;/code&gt; phải chỉ đến &lt;strong&gt;documents&lt;/strong&gt;, không trỏ tới &lt;strong&gt;collections&lt;/strong&gt;, có thể dùng &lt;code class=&quot;language-text&quot;&gt;match /cities/HCM&lt;/code&gt; hoặc sử dụng ký tự đại diện bất kỳ document nào bên trong &lt;code class=&quot;language-text&quot;&gt;cities&lt;/code&gt; như ví dụ &lt;code class=&quot;language-text&quot;&gt;match /cities/{city}&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&quot;chia-nhỏ-thao-tác-ra&quot;&gt;&lt;a href=&quot;#chia-nh%E1%BB%8F-thao-t%C3%A1c-ra&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Chia nhỏ thao tác ra&lt;/h1&gt;
 &lt;p&gt;Tình huống: chúng ta muốn lúc tạo có những điều khác với lúc xóa document, hoặc cho phép read 1 document nhưng không cho phép đọc toàn bộ&lt;/p&gt;
 &lt;p&gt;Câu điều kiện &lt;code class=&quot;language-text&quot;&gt;read&lt;/code&gt; có thể chia nhỏ ra thành &lt;code class=&quot;language-text&quot;&gt;get&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;list&lt;/code&gt;, trong khi &lt;code class=&quot;language-text&quot;&gt;write&lt;/code&gt; có thể chia nhỏ thành &lt;code class=&quot;language-text&quot;&gt;create&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;update&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;delete&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /cities/{city} {
       // điều kiện trên 1 document
-      allow get: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      allow get: if &amp;lt;condition&amp;gt;;
 
       // điều kiện khi queries nhiều document, hoặc gọi hết collection
-      allow list: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      allow list: if &amp;lt;condition&amp;gt;;
+    }
 
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    match /cities/{city} {
       // lúc tạo
-      allow create: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      allow create: if &amp;lt;condition&amp;gt;;
 
       // lúc update
-      allow update: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      allow update: if &amp;lt;condition&amp;gt;;
 
       // lúc delete
-      allow delete: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      allow delete: if &amp;lt;condition&amp;gt;;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;h1 id=&quot;kế-thừa&quot;&gt;&lt;a href=&quot;#k%E1%BA%BF-th%E1%BB%ABa&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Kế thừa&lt;/h1&gt;
 &lt;p&gt;Như đã biết, nếu chưa biết thì giờ mình giải thích nhanh, database trên Firebase lưu dạng collections(giống như array), trong các collection là document (một object). Trên mỗi document nó có thể chứa các collection khác nữa. Vậy thì các rules trên document nó sẽ ảnh hưởng thế nào đến các sub collection này.&lt;/p&gt;
 &lt;p&gt;Với ví dụ ở trên, trong &lt;code class=&quot;language-text&quot;&gt;cities&lt;/code&gt; chúng ta chứa một sub collection là &lt;code class=&quot;language-text&quot;&gt;landmarks&lt;/code&gt;. Rule trên &lt;code class=&quot;language-text&quot;&gt;cities&lt;/code&gt; sẽ không ảnh hưởng đến &lt;code class=&quot;language-text&quot;&gt;landmarks&lt;/code&gt;, trừ khi chúng ta cố tình set nó như sau&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /cities/{city} {
+      allow read, write: if &amp;lt;condition&amp;gt;;
         // áp dụng luôn cho collections con
-        match /landmarks/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;landmark&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-          allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+        match /landmarks/{landmark} {
+          allow read, write: if &amp;lt;condition&amp;gt;;
+        }
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Khi viết lồng câu &lt;code class=&quot;language-text&quot;&gt;match&lt;/code&gt; như vậy, câu &lt;code class=&quot;language-text&quot;&gt;match&lt;/code&gt; bên dưới sẽ &lt;strong&gt;luôn relative&lt;/strong&gt; với thằng trên. Và chúng ta cũng có thể viết như sau, kết quả tương tự với cách viết ở trên&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      match /landmarks/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;landmark&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /cities/{city} {
+      match /landmarks/{landmark} {
+        allow read, write: if &amp;lt;condition&amp;gt;;
+      }
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/landmarks/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;landmark&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /cities/{city}/landmarks/{landmark} {
+      allow read, write: if &amp;lt;condition&amp;gt;;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Nếu không chỉ áp dụng rule cho đúng thằng &lt;code class=&quot;language-text&quot;&gt;landmarks&lt;/code&gt;, sử dụng cú pháp đại diện cho toàn bộ collection nằm dưới &lt;code class=&quot;language-text&quot;&gt;cities&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;{name=**}&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /database/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;document&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;**&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /database/{database}/documents {
+    match /cities/{document=**} {
+      allow read, write: if &amp;lt;condition&amp;gt;;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Với cách viết trên toàn bộ document nằm ở &lt;code class=&quot;language-text&quot;&gt;/cities/hochiminh/landmarks/landmark81&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;/cities/hochiminh/landmarks/bitexco&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;cities/hochiminh&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Nếu chúng ta viết lại &lt;code class=&quot;language-text&quot;&gt;match /cities/{city}/{document=**} thì nó chỉ ảnh hưởng đến sub collection, thằng&lt;/code&gt;cities/hochiminh` sẽ không bị ảnh hưởng.&lt;/p&gt;
 &lt;p&gt;Nếu có nhiều câu &lt;code class=&quot;language-text&quot;&gt;allow&lt;/code&gt; khớp với &lt;code class=&quot;language-text&quot;&gt;match&lt;/code&gt;, thì kết quả sẽ là một phép &lt;code class=&quot;language-text&quot;&gt;hoặc&lt;/code&gt;, bất kỳ thằng nào thõa điều kiện thì &lt;code class=&quot;language-text&quot;&gt;allow&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    // &lt;span class=&quot;token string&quot;&gt;&apos;cities&apos;&lt;/span&gt; collection.
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    // &lt;span class=&quot;token string&quot;&gt;&apos;cities&apos;&lt;/span&gt; collection hoặc subcollections.
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;document&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;**&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    // &amp;#39;cities&amp;#39; collection.
+    match /cities/{city} {
+      allow read, write: if false;
+    }
+    // &amp;#39;cities&amp;#39; collection hoặc subcollections.
+    match /cities/{document=**} {
+      allow read, write: if true;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Ví dụ ở trên toàn bộ collection cities sẽ cho phép read, write vì điều kiện thứ 2 luôn &lt;code class=&quot;language-text&quot;&gt;true&lt;/code&gt;, mặc dù thằng trước nó luôn &lt;code class=&quot;language-text&quot;&gt;false&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://firebase.google.com/docs/firestore/security/rules-structure&quot;&gt;Link bài gốc của Google&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Flow sử lý trong modern JS - từ callback đến promise, đến Async/Await]]></title><description><![CDATA[Single-threat processing Asynchronous với Callbacks Promises finally() all() race() Async/Await Single-threat processing Xét thử đoạn code…]]></description><link>https://luubinhan.github.io/blog/2018-08-14-huong-dan-flow-xy-ly-trong-modern-js-callback-promise-async-await</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-08-14-huong-dan-flow-xy-ly-trong-modern-js-callback-promise-async-await</guid><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Tue, 14 Aug 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
@@ -8279,11 +8279,11 @@ input&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span clas
 &lt;li&gt;Cài bộ CLI tool của Expo, để mà khởi chạy một dự án Expo mới, chạy build,... dễ lắm như sau&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;npm install expo --global
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; expo --global
 
 // init một project mới
 expo init luckyluu-project
-cd luckyluu-project
+&lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; luckyluu-project
 expo start&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;h2 id=&quot;tạo-một-dự-án-expo-mới&quot;&gt;&lt;a href=&quot;#t%E1%BA%A1o-m%E1%BB%99t-d%E1%BB%B1-%C3%A1n-expo-m%E1%BB%9Bi&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tạo một dự án Expo mới&lt;/h2&gt;
@@ -8292,7 +8292,7 @@ expo start&lt;/code&gt;&lt;/pre&gt;
       &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;exp init MemoryGame
 
 // trỏ vô thư mục mới tạo
-cd MemoryGame
+&lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; MemoryGame
 
 // Let ruuuuuuun
 exp start&lt;/code&gt;&lt;/pre&gt;
@@ -9470,13 +9470,13 @@ PrivateRoute &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;spa
 &lt;p&gt;Khởi tạo project và các thư viện sẽ sử dụng&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
       &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;create-react-app react-auth
-cd react-auth
+&lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; react-auth
 
-npm i react-router-dom glamor --save&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; i react-router-dom glamor --save&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Cài AWSMobile CLI&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;npm i -g awsmobile-cli&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; i -g awsmobile-cli&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Khởi tạo config AWS IAM&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
@@ -9485,7 +9485,7 @@ awsmobile init&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Nó sẽ tạo project Mobile Hub và file aws-exports.js trong thư mục src. Tiếp theo, thêm user-signin và deploy các config mới&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;awsmobile user-signin enable
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;awsmobile user-signin &lt;span class=&quot;token function&quot;&gt;enable&lt;/span&gt;
 awsmobile push&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;awsmobile user-signin enable&lt;/code&gt; sẽ bật Amazon Congito trong project với các thiết đặt mặc định, bao gồm 2 factor authentication với SMS (sẽ thêm TOTP sau). Nếu muôn can thiệp các thiệt đặt, vào trực tiếp &lt;a href=&quot;https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fcognito%2Fhome%3Fregion%3Dus-east-1%26state%3DhashArgs%2523%26isauthcode%3Dtrue&amp;#x26;client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fcognito&amp;#x26;forceMobileApp=0&quot;&gt;Amazon Cognito&lt;/a&gt; để chỉnh&lt;/p&gt;
@@ -11857,40 +11857,40 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
 &lt;li&gt;&lt;a href=&quot;#thi%E1%BA%BFt-k%E1%BA%BF-t%E1%BB%91t-h%C6%A1n-ph%E1%BA%A3i-gi%E1%BA%A3i-quy%E1%BA%BFt-m%E1%BB%99t-v%E1%BA%A5n-%C4%91%E1%BB%81-th%E1%BB%B1c-t%E1%BA%BF-c%E1%BB%A7a-ng%C6%B0%E1%BB%9Di-s%E1%BB%AD-d%E1%BB%A5ng&quot;&gt;Thiết kế tốt hơn phải giải quyết một vấn đề thực tế của người sử dụng&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#product-manager-v%C3%A0-l%E1%BA%ADp-tr%C3%ACnh-vi%C3%AAn-lu%C3%B4n-l%C3%A0-b%E1%BA%A1n-t%E1%BB%91t-nh%E1%BA%A5t&quot;&gt;Product Manager và Lập trình viên luôn là bạn tốt nhất&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#b%E1%BA%A1n-%C4%91ang-thi%E1%BA%BFt-k%E1%BA%BF-s%E1%BA%A3n-ph%E1%BA%A9m-cho-ng%C6%B0%E1%BB%9Di-s%E1%BB%AD-d%E1%BB%A5ng-ho%C3%A0n-to%C3%A0n-kh%C3%A1c-b%E1%BA%A1n&quot;&gt;Bạn đang thiết kế sản phẩm cho người sử dụng hoàn toàn khác bạn&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#thi%E1%BA%BFt-k%E1%BA%BF-s%E1%BA%BD-%C4%91%C6%B0%E1%BB%A3c-c%C3%A2n-%C4%91o-%C4%91ong-%C4%91i%E1%BA%BFm&quot;&gt;Thiết kế sẽ được cân đo đong điếm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#thi%E1%BA%BFt-k%E1%BA%BF-s%E1%BA%BD-%C4%91%C6%B0%E1%BB%A3c-c%C3%A2n-%C4%91o-%C4%91ong-%C4%91%E1%BA%BFm&quot;&gt;Thiết kế sẽ được cân đo đong đếm&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#c%C3%B4ng-vi%E1%BB%87c-n%C3%A0y-kh%C3%B4ng-nh%C6%B0-b%E1%BA%A1n-%C4%91%C3%A3-ngh%C4%A9&quot;&gt;Công việc này không như bạn đã nghĩ&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- /TOC --&gt;
 &lt;p&gt;Khi chưa vào làm cho Facebook, tôi chưa hề biết thế nào gọi là thiết kế để giải quyết vấn đề cho người sử dụng.&lt;/p&gt;
 &lt;p&gt;Tôi học được rằng giải quyết vấn đề cho người sử dụng không bao giờ là công việc đo từng ly từng tí pixel được thiết kế, nó đòi hỏi phải làm việc như một phần của team để tìm ra cách giải quyết.&lt;/p&gt;
 &lt;p&gt;Ngày xửa ngày xưa tôi rất thích các trang web với nhiều hiệu ứng lạ mắt, những logo ý nghĩa, những bản thiết kế làm lại (re-design) của những designer từ khắp nơi cho những trang web nổi tiếng,... . Ngày xưa tôi từng mơ ước trở thành kế toán, tôi thích trở thành người giữ tiền cho các công ty lớn, thế rồi tôi thấy những thiết kế lộng lẫy đó trên mạng, tôi nghĩ rằng, chắc đây có thể là một công việc với nhiều điều thú vị hơn một kế toán viên.&lt;/p&gt;
-&lt;p&gt;Giờ khi tôi đã là prodoct design cho các sản phẩm của Facebook, với hơn 2 tỉ người người sử dụng, tôi biết rằng những gì tôi từng tưởng tượng trước đây về thiết kế chỉ là phần nổi của tảng băng chìm.&lt;/p&gt;
+&lt;p&gt;Giờ khi tôi đã là product design cho các sản phẩm của Facebook, với hơn 2 tỷ người người sử dụng, tôi biết rằng những gì tôi từng tưởng tượng trước đây về thiết kế chỉ là phần nổi của tảng băng chìm.&lt;/p&gt;
 &lt;h1 id=&quot;thiết-kế-tốt-hơn-phải-giải-quyết-một-vấn-đề-thực-tế-của-người-sử-dụng&quot;&gt;&lt;a href=&quot;#thi%E1%BA%BFt-k%E1%BA%BF-t%E1%BB%91t-h%C6%A1n-ph%E1%BA%A3i-gi%E1%BA%A3i-quy%E1%BA%BFt-m%E1%BB%99t-v%E1%BA%A5n-%C4%91%E1%BB%81-th%E1%BB%B1c-t%E1%BA%BF-c%E1%BB%A7a-ng%C6%B0%E1%BB%9Di-s%E1%BB%AD-d%E1%BB%A5ng&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Thiết kế tốt hơn phải giải quyết một vấn đề thực tế của người sử dụng&lt;/h1&gt;
 &lt;p&gt;Khi mới bắt đầu, tôi dành thời gian hàng đêm để làm những website, ứng dụng nhỏ, những dự án chẳng ai biết tới, những ý tưởng rất ngô nghê như ứng dụng hẹn hò dựa trên kết quả tìm kiếm.&lt;/p&gt;
 &lt;p&gt;Lúc đó tôi đã nghĩ rằng mình là product design thực thụ. Tôi vẽ ra tất cả các màn hình, flows cho ứng dụng, và tự nhủ rằng đã xong hết 90% của công việc, phần còn lại là quăng hết đống design đó cho các anh lập trình viên code đúng theo thiết kế này và hiển nhiên ngồi bắt bẻ các anh lập trình không làm đúng ý tôi.&lt;/p&gt;
-&lt;p&gt;Giờ nhìn lại, những gì trước đây mình làm còn rất xa so với công việc của product design, trước khi làm việc cho Facebook, tôi chưa bao giờ bỏ thời gian ra để xác định vấn đề cần giải quyết ở đây là gì trước khi bắt tay vào làm, tôi chỉ muốn làm cái gì đó thiệt &quot;ngầu&quot; để trưng lên Dribbble hay Behance để câu like.&lt;/p&gt;
+&lt;p&gt;Giờ nhìn lại, những gì trước đây mình làm còn rất xa so với công việc của product design, trước khi làm việc cho Facebook, tôi chưa bao giờ bỏ thời gian ra để xác định vấn đề cần giải quyết ở đây là gì trước khi bắt tay vào làm, tôi chỉ muốn làm cái gì đó thật &quot;ngầu&quot; để trưng lên Dribbble hay Behance để câu like.&lt;/p&gt;
 &lt;p&gt;Giờ tôi không còn lơ lửng trên 9 tầng mây, tôi phải đứng cùng vị trí với người sử dụng, tôi cùng các đồng nghiệp của mình cùng nhau xác định bài toán đặt ra là gì, đưa ra một giải pháp được cho là khả thi nhất dựa trên dữ liệu chúng tôi có được, test thử giải pháp trên một số lượng nhỏ người sử dụng trước khi đưa nó vào vận hành chính thức.&lt;/p&gt;
 &lt;p&gt;Giờ tôi cũng rất dễ bị hấp dẫn bởi các xu hướng thiết kế mới, nhưng không bao giờ áp những xu thế này để giải quyết các vấn đề mà không cần suy nghĩ, nó là một hành động ảnh hưởng xấu đến những người trong team đã và đang đối mặt với vấn đề đó hằng ngày, họ biết rõ vấn đề cần giải quyết là gì hơn ai hết, nó giống như câu nói &quot;nếu ai cũng có cây búa trong tay, thì mọi thứ chỉ như cái cán búa&quot;.&lt;/p&gt;
 &lt;h1 id=&quot;product-manager-và-lập-trình-viên-luôn-là-bạn-tốt-nhất&quot;&gt;&lt;a href=&quot;#product-manager-v%C3%A0-l%E1%BA%ADp-tr%C3%ACnh-vi%C3%AAn-lu%C3%B4n-l%C3%A0-b%E1%BA%A1n-t%E1%BB%91t-nh%E1%BA%A5t&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Product Manager và Lập trình viên luôn là bạn tốt nhất&lt;/h1&gt;
-&lt;p&gt;Tôi từng tưởng tượng, tôi sẽ trang bị cho những designer là cấp dưới, đồng nghiệp của tôi những vũ khí &apos;hạng nặng&apos; để đối phó với bên kia chiến tuyến là các anh lập trình viên cù lần. Chúng tôi sẽ cũng nhau thương thảo những vấn đề cực quan trọng như nên sử dụng màu gradient nào đang là hot trend bây giờ, hay tạo ra cái mới, bo tròn bao nhiêu là đủ, bao nhiều là quá lố...&lt;/p&gt;
+&lt;p&gt;Tôi từng tưởng tượng, tôi sẽ trang bị cho những designer là cấp dưới, đồng nghiệp của tôi những vũ khí &apos;hạng nặng&apos; để đối phó với bên kia chiến tuyến là các anh lập trình viên cù lần. Chúng tôi sẽ cùng nhau thương thảo những vấn đề cực quan trọng như nên sử dụng màu gradient nào đang là hot trend bây giờ, hay tạo ra cái mới, bo tròn bao nhiêu là đủ, bao nhiêu là quá lố...&lt;/p&gt;
 &lt;p&gt;Ở Facebook, rất nhiều cơ hội để làm việc với các designer khác. Tôi ngồi ngay kế vài anh lão làng như thế trong công ty, thế nhưng mấy anh này lại làm việc trên các sản phẩm khác, nên tôi chỉ tiếp xúc nhiều với product manager và các lập trình viên.&lt;/p&gt;
 &lt;p&gt;Một designer chỉ tập trung cho một sản phẩm nào đó của Facebook, vì với độ lớn của sản phẩm mà chúng tôi đang làm, nếu các anh designer cứ nhảy từ team này qua team khác, sẽ mất khá nhiều thời gian để người mới có thể bắt kịp tốc độ dự án.&lt;/p&gt;
 &lt;p&gt;Product manager là người nắm rõ nhất những gì các team đang làm. Vì thế tôi luôn tin tưởng tìm đến anh ấy khi cần một cái nhìn khác về thiết kế của mình hay những gì tôi nên tập trung nhiều hơn trên sản phẩm cần đạt được.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/800/1*LYvWth8qUnXztOkj7GUC5g@2x.jpeg&quot; alt=&quot;https://cdn-images-1.medium.com/max/800/1*LYvWth8qUnXztOkj7GUC5g@2x.jpeg&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Làm việc với mấy anh cù lần &apos;developer&apos; giúp tôi trở nên tốt hơn rất nhiều, mấy anh chỉ cho tôi rất nhiều điều mà tôi không lường trước. Ví dụ, tôi thường không quan tâm đến thời gian phản hồi từ điện thoại đến server, các phác thảo của tôi gần như chỉ tính đến chuyện click-reponse ngay lập tức. Các anh dev cho tôi thấy việc truyền gởi dữ liệu cần tốn một thời gian nhất định và còn phụ thuộc yếu tố mạng nhanh hay chậm, anh cho tôi thấy sự khác biệt trải nghiệm rõ rệt khi mở ứng dụng của tôi với mạng siêu nhanh của công ty và mạng rùa bò ở các nước có đường truyền thấp.&lt;/p&gt;
-&lt;p&gt;Sản phẩm khi thiết kế luôn chịu ảnh hưởng của yếu tố technical, ở Facebook chúng tôi luôn đưa anh lập trình vào trong quá trình thiết kế ngay từ giai đoạn đầu của design, làm như vậy để biết được những ràng buộc nhất định về mặt kỹ thuật, lắng nghe cách giải quyết vấn đề từ gốc nhìn từ developer.&lt;/p&gt;
+&lt;p&gt;Làm việc với mấy anh cù lần &apos;developer&apos; giúp tôi trở nên tốt hơn rất nhiều, mấy anh chỉ cho tôi rất nhiều điều mà tôi không lường trước. Ví dụ, tôi thường không quan tâm đến thời gian phản hồi từ điện thoại đến server, các phác thảo của tôi gần như chỉ tính đến chuyện click-response ngay lập tức. Các anh dev cho tôi thấy việc truyền gửi dữ liệu cần tốn một thời gian nhất định và còn phụ thuộc yếu tố mạng nhanh hay chậm, anh cho tôi thấy sự khác biệt trải nghiệm rõ rệt khi mở ứng dụng của tôi với mạng siêu nhanh của công ty và mạng rùa bò ở các nước có đường truyền thấp.&lt;/p&gt;
+&lt;p&gt;Sản phẩm khi thiết kế luôn chịu ảnh hưởng của yếu tố technical, ở Facebook chúng tôi luôn đưa anh lập trình vào trong quá trình thiết kế ngay từ giai đoạn đầu của design, làm như vậy để biết được những ràng buộc nhất định về mặt kỹ thuật, lắng nghe cách giải quyết vấn đề từ góc nhìn từ developer.&lt;/p&gt;
 &lt;p&gt;Tôi có thể ngồi kế rất nhiều designer khác, nhưng người bạn thân thiết giúp sản phẩm của tôi tốt hơn là các anh developer và product manager&lt;/p&gt;
 &lt;h1 id=&quot;bạn-đang-thiết-kế-sản-phẩm-cho-người-sử-dụng-hoàn-toàn-khác-bạn&quot;&gt;&lt;a href=&quot;#b%E1%BA%A1n-%C4%91ang-thi%E1%BA%BFt-k%E1%BA%BF-s%E1%BA%A3n-ph%E1%BA%A9m-cho-ng%C6%B0%E1%BB%9Di-s%E1%BB%AD-d%E1%BB%A5ng-ho%C3%A0n-to%C3%A0n-kh%C3%A1c-b%E1%BA%A1n&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Bạn đang thiết kế sản phẩm cho người sử dụng hoàn toàn khác bạn&lt;/h1&gt;
-&lt;p&gt;Trừ trường hợp bạn tự làm tự xài, đa phần các sản phẩm được thiết kế ra được dành cho những người không am hiểu thiết kế, phần lớn người sử dụng sản phẩm Facebook nằm ngoài nước Mỹ, không sử dụng con smart phone đẳng cấp nhất thời đại mà tôi đang sử dụng.&lt;/p&gt;
-&lt;p&gt;Team UX research ở Facebook luôn biết sản phẩm chúng tôi đang tạo ra cho ai sử dụng, họ mời những con người thật với nhiều tiêu chí khác nhau đến phòng labs để kiểm thử chức năng mới, nói chuyện với những người sử dụng từ nữa vòng trái đất, đo lường ảnh hưởng của những thay đổi trong sản phẩm bằng những đánh giá được gởi đi khắp nơi.&lt;/p&gt;
+&lt;p&gt;Trừ trường hợp bạn tự làm tự xài, đa phần các sản phẩm được thiết kế ra được dành cho những người không am hiểu thiết kế, phần lớn người sử dụng sản phẩm Facebook nằm ngoài nước Mỹ, không sử dụng con Iphone đẳng cấp nhất thời đại mà tôi đang sử dụng.&lt;/p&gt;
+&lt;p&gt;Team UX research ở Facebook luôn biết sản phẩm chúng tôi đang tạo ra cho ai sử dụng, họ mời những con người thật với nhiều tiêu chí khác nhau đến phòng labs để kiểm thử chức năng mới, nói chuyện với những người sử dụng từ nửa vòng trái đất, đo lường ảnh hưởng của những thay đổi trong sản phẩm bằng những đánh giá được gửi đi khắp nơi.&lt;/p&gt;
 &lt;p&gt;Với những &quot;chứng cứ&quot; người thật việc thật, những người gặp rắc rối khi thực hiện một tác vụ được thiết kế, chúng tôi có được những giải pháp nhanh nhất từ những lập trình viên ưu tú.&lt;/p&gt;
-&lt;p&gt;Ví dụ, qua research chúng tôi mới thấy được cái nút nhỏ xíu &quot;Add Friend&quot; có thể tốt trên tiếng anh nhưng với những ngôn ngữ khác lại không ổn.&lt;/p&gt;
+&lt;p&gt;Ví dụ, thông qua research chúng tôi mới thấy được cái nút nhỏ xíu &quot;Add Friend&quot; có thể tốt trên tiếng anh nhưng với những ngôn ngữ khác lại không ổn.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/800/1*Ir4lwTDLoV0LZVobw94AAQ.png&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;thiết-kế-sẽ-được-cân-đo-đong-điếm&quot;&gt;&lt;a href=&quot;#thi%E1%BA%BFt-k%E1%BA%BF-s%E1%BA%BD-%C4%91%C6%B0%E1%BB%A3c-c%C3%A2n-%C4%91o-%C4%91ong-%C4%91i%E1%BA%BFm&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Thiết kế sẽ được cân đo đong điếm&lt;/h1&gt;
+&lt;h1 id=&quot;thiết-kế-sẽ-được-cân-đo-đong-đếm&quot;&gt;&lt;a href=&quot;#thi%E1%BA%BFt-k%E1%BA%BF-s%E1%BA%BD-%C4%91%C6%B0%E1%BB%A3c-c%C3%A2n-%C4%91o-%C4%91ong-%C4%91%E1%BA%BFm&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Thiết kế sẽ được cân đo đong đếm&lt;/h1&gt;
 &lt;p&gt;Khi ngồi nhà thiết kế cho chính mình, tôi chẳng bao giờ nghĩ tới chuyện đi cân đo các thiết kế của mình, phần lớn khi ra quyết định một thiết kế được đưa ra dựa trên sở thích cá nhân nhiều hơn trên những số liệu, căn cứ thực tế.&lt;/p&gt;
 &lt;p&gt;Ở Facebook tôi học được rằng trước khi muốn giải quyết vấn đề nào đó chúng tôi cần dựa trên những thông tin liên quan về vấn đề đó. Ai sử dụng tính năng này? Bao nhiêu người sẽ chịu ảnh hưởng từ các thay đổi được đưa ra? Những thay đổi tích cực có đủ lớn để chấp nhận rủi ro cho những thay đổi này không?&lt;/p&gt;
 &lt;p&gt;Dữ liệu luôn là kẻ chiến thắng trong mọi cuộc tranh cãi. Đó là câu khẩu hiệu ở Facebook, nếu bạn là designer làm việc ở đây, nếu muốn tranh cãi vấn đề vì đó tốt hơn hãy có dữ liệu cụ thể để thuyết phục đồng đội.&lt;/p&gt;
-&lt;p&gt;Khi team tôi bắt đầu đi lòng vòng quanh một vấn đề mà chưa ngã ngủ, tôi thường sử dụng câu hỏi &quot;Tại sao&quot;. Tại sao chẳng ai vào mục Giúp đỡ trên website của bạn? Phải chăng họ quá rành không cần vào xem hay họ chẳng biết vào đó bằng cách nào?&lt;/p&gt;
+&lt;p&gt;Khi team tôi bắt đầu đi lòng vòng quanh một vấn đề mà chưa ngã ngũ, tôi thường sử dụng câu hỏi &quot;Tại sao&quot;. Tại sao chẳng ai vào mục Giúp đỡ trên website của bạn? Phải chăng họ quá rành không cần vào xem hay họ chẳng biết vào đó bằng cách nào?&lt;/p&gt;
 &lt;h1 id=&quot;công-việc-này-không-như-bạn-đã-nghĩ&quot;&gt;&lt;a href=&quot;#c%C3%B4ng-vi%E1%BB%87c-n%C3%A0y-kh%C3%B4ng-nh%C6%B0-b%E1%BA%A1n-%C4%91%C3%A3-ngh%C4%A9&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Công việc này không như bạn đã nghĩ&lt;/h1&gt;
 &lt;p&gt;Tôi đã từng nghĩ công việc của một product design phần lớn là để làm cho sản phẩm được đẹp một cách &quot;lồng lộn&quot;. Từ ngày bị lôi vào Facebook tôi nhận ra mình đã hiểu sai khái niệm về product design.&lt;/p&gt;
 &lt;p&gt;Visual designer mới làm công việc trang điểm cho sản phẩm, công việc của tôi là phối hợp với đồng nghiệp của mình, xác định bài toán mà người sử dụng sản phẩm chúng tôi muốn giải quyết, chuyển nó thành những giải pháp thiết kế tốt nhất có thể, tìm ra cách đánh giá để biết chúng tôi có thành công trong việc giải quyết vấn đề đó không.&lt;/p&gt;
@@ -12001,7 +12001,7 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
 
 console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// logs &apos;Hammad&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
-&lt;p&gt;Trong ES6, để tránh sự nhập nhằn này, khai báo biến bằng &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;,&lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt; để biến chỉ được hiểu bên trong các khối &lt;code class=&quot;language-text&quot;&gt;{}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Trong ES6, để tránh sự nhập nhằng này, khai báo biến bằng &lt;code class=&quot;language-text&quot;&gt;let&lt;/code&gt;,&lt;code class=&quot;language-text&quot;&gt;const&lt;/code&gt; để biến chỉ được hiểu bên trong các khối &lt;code class=&quot;language-text&quot;&gt;{}&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
       &lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token comment&quot;&gt;// name = global scope&lt;/span&gt;
@@ -12445,23 +12445,23 @@ ReactDOM&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span c
       &lt;/div&gt;
 &lt;p&gt;Component UserProfile sẽ được render trong các trường hợp: &lt;code class=&quot;language-text&quot;&gt;users/1&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;users/145&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;users/abc&lt;/code&gt;, React Router sẽ truyền vào giá trị &lt;code class=&quot;language-text&quot;&gt;userId&lt;/code&gt; vào UserProfile như một props, access đến giá trị này bằng &lt;code class=&quot;language-text&quot;&gt;this.props.params.userId&lt;/code&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Interview React Developer thì hỏi gì?]]></title><description><![CDATA[Chuyện gì xảy ra khi gọi   ? Sự khác nhau giữa Element và Component trong React? Khi nào thì sử dụng Class Component và Functional Component…]]></description><link>https://luubinhan.github.io/blog/2017-07-17-interview-react-developer-thi-hoi-gi</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2017-07-17-interview-react-developer-thi-hoi-gi</guid><category><![CDATA[javascript]]></category><category><![CDATA[react]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Mon, 17 Jul 2017 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#chuy%E1%BB%87n-g%C3%AC-x%E1%BA%A3y-ra-khi-g%E1%BB%8Di-setsate-&quot;&gt;Chuyện gì xảy ra khi gọi &lt;code class=&quot;language-text&quot;&gt;setSate&lt;/code&gt; ?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#chuy%E1%BB%87n-g%C3%AC-x%E1%BA%A3y-ra-khi-g%E1%BB%8Di-setstate-&quot;&gt;Chuyện gì xảy ra khi gọi &lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; ?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#s%E1%BB%B1-kh%C3%A1c-nhau-gi%E1%BB%AFa-element-v%C3%A0-component-trong-react&quot;&gt;Sự khác nhau giữa Element và Component trong React?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#khi-n%C3%A0o-th%C3%AC-s%E1%BB%AD-d%E1%BB%A5ng-class-component-v%C3%A0-functional-component&quot;&gt;Khi nào thì sử dụng Class Component và Functional Component&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#ref-trong-react-d%C3%B9ng-%C4%91%E1%BB%83-l%C3%A0m-g%C3%AC&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Ref&lt;/code&gt; trong React dùng để làm gì&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#key-trong-react-l%C3%A0-g%C3%AC&quot;&gt;Key trong React là gì&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#s%E1%BB%B1-kh%C3%A1c-nhau-gi%E1%BB%AFa-controlled-component-v%C3%A0-uncontrolled-component&quot;&gt;Sự khác nhau giữa controlled component và uncontrolled component&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%C4%91%E1%BB%83-g%E1%BB%8Di-ajax-s%E1%BB%B1-d%E1%BB%A5ng-s%E1%BB%B1-ki%E1%BB%87n-n%C3%A0o-c%E1%BB%A7a-lifecycle&quot;&gt;Để gọi AJAX, sự dụng sự kiện nào của lifecycle?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%C4%91%E1%BB%83-g%E1%BB%8Di-ajax-s%E1%BB%AD-d%E1%BB%A5ng-s%E1%BB%B1-ki%E1%BB%87n-n%C3%A0o-c%E1%BB%A7a-lifecycle&quot;&gt;Để gọi AJAX, sử dụng sự kiện nào của lifecycle?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#shouldcomponentupdate-d%C3%B9ng-%C4%91%E1%BB%83-l%C3%A0m-g%C3%AC&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;shouldComponentUpdate&lt;/code&gt; dùng để làm gì&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#build-product-b%E1%BA%B1ng-c%C3%A1ch-n%C3%A0o&quot;&gt;Build Product bằng cách nào?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#t%E1%BA%A1i-sao-n%C3%AAn-s%E1%BB%AD-d%E1%BB%A5ng-reactchildrenmap-thay-v%C3%AC-propschildrenmap&quot;&gt;Tại sao nên sử dụng &lt;code class=&quot;language-text&quot;&gt;React.Children.map()&lt;/code&gt; thay vì &lt;code class=&quot;language-text&quot;&gt;props.children.map()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#events-%C4%91%C6%B0%E1%BB%A3c-x%E1%BB%AD-l%C3%BD-trong-react-nh%C6%B0-th%E1%BA%BF-n%C3%A0o&quot;&gt;Events được xử lý trong React như thế nào?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#s%E1%BB%B1-kh%C3%A1c-nhau-gi%E1%BB%AFa-createelement-v%C3%A0-cloneelement&quot;&gt;Sự khác nhau giữa &lt;code class=&quot;language-text&quot;&gt;createElement&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;cloneElement&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#argument-th%E1%BB%A9-2-c%E1%BB%A7a-setstate-d%C3%B9ng-%C4%91%E1%BB%83-l%C3%A0m-g%C3%AC&quot;&gt;Argument thứ 2 của &lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; dùng để làm gì&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%C4%91o%E1%BA%A1n-code-sau-sai-%E1%BB%9F-ch%E1%BB%95-n%C3%A0o&quot;&gt;Đoạn code sau sai ở chổ nào&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%C4%91o%E1%BA%A1n-code-sau-sai-%E1%BB%9F-%C4%91%C3%A2u&quot;&gt;Đoạn code sau sai ở đâu&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- /TOC --&gt;
-&lt;h1 id=&quot;chuyện-gì-xảy-ra-khi-gọi-code-classlanguage-textsetsatecode-&quot;&gt;&lt;a href=&quot;#chuy%E1%BB%87n-g%C3%AC-x%E1%BA%A3y-ra-khi-g%E1%BB%8Di-code-classlanguage-textsetsatecode-&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Chuyện gì xảy ra khi gọi &lt;code class=&quot;language-text&quot;&gt;setSate&lt;/code&gt; ?&lt;/h1&gt;
+&lt;h1 id=&quot;chuyện-gì-xảy-ra-khi-gọi-code-classlanguage-textsetstatecode-&quot;&gt;&lt;a href=&quot;#chuy%E1%BB%87n-g%C3%AC-x%E1%BA%A3y-ra-khi-g%E1%BB%8Di-code-classlanguage-textsetstatecode-&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Chuyện gì xảy ra khi gọi &lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; ?&lt;/h1&gt;
 &lt;p&gt;Đầu tiên, object được truyền trong &lt;code&gt;setState&lt;/code&gt; sẽ được merge với state hiện tại của component, dựa trên sự thay đổi của object này, UI được update với state mới. Để làm được chuyện này, React sẽ dựng một cây React Element mới, so sánh sự khác nhau của cây element mới và cây element trước đó, React biết được chính xác chỉ cần update phần UI nào đã bị thay đổi.&lt;/p&gt;
 &lt;h1 id=&quot;sự-khác-nhau-giữa-element-và-component-trong-react&quot;&gt;&lt;a href=&quot;#s%E1%BB%B1-kh%C3%A1c-nhau-gi%E1%BB%AFa-element-v%C3%A0-component-trong-react&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Sự khác nhau giữa Element và Component trong React?&lt;/h1&gt;
 &lt;p&gt;React Element ám chỉ những gì thấy trên màn hình.&lt;/p&gt;
@@ -12491,7 +12491,7 @@ ReactDOM&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span c
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
       &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;input&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&apos;&lt;/span&gt;text&lt;span class=&quot;token punctuation&quot;&gt;&apos;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;ref&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;input&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;input &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; input&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
-&lt;h1 id=&quot;Để-gọi-ajax-sự-dụng-sự-kiện-nào-của-lifecycle&quot;&gt;&lt;a href=&quot;#%C4%90%E1%BB%83-g%E1%BB%8Di-ajax-s%E1%BB%B1-d%E1%BB%A5ng-s%E1%BB%B1-ki%E1%BB%87n-n%C3%A0o-c%E1%BB%A7a-lifecycle&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Để gọi AJAX, sự dụng sự kiện nào của lifecycle?&lt;/h1&gt;
+&lt;h1 id=&quot;Để-gọi-ajax-sử-dụng-sự-kiện-nào-của-lifecycle&quot;&gt;&lt;a href=&quot;#%C4%90%E1%BB%83-g%E1%BB%8Di-ajax-s%E1%BB%AD-d%E1%BB%A5ng-s%E1%BB%B1-ki%E1%BB%87n-n%C3%A0o-c%E1%BB%A7a-lifecycle&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Để gọi AJAX, sử dụng sự kiện nào của lifecycle?&lt;/h1&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;componentDidMount&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&quot;code-classlanguage-textshouldcomponentupdatecode-dùng-để-làm-gì&quot;&gt;&lt;a href=&quot;#code-classlanguage-textshouldcomponentupdatecode-d%C3%B9ng-%C4%91%E1%BB%83-l%C3%A0m-g%C3%AC&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;code class=&quot;language-text&quot;&gt;shouldComponentUpdate&lt;/code&gt; dùng để làm gì&lt;/h1&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;shouldComponentUpdate&lt;/code&gt; cho phép can thiệp quá trình update UI của component và các component con của nó. Nếu return &lt;code class=&quot;language-text&quot;&gt;true&lt;/code&gt; thì update, ngược lại &lt;code class=&quot;language-text&quot;&gt;false&lt;/code&gt;&lt;/p&gt;
@@ -12520,7 +12520,7 @@ ReactDOM&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span c
 &lt;h1 id=&quot;argument-thứ-2-của-code-classlanguage-textsetstatecode-dùng-để-làm-gì&quot;&gt;&lt;a href=&quot;#argument-th%E1%BB%A9-2-c%E1%BB%A7a-code-classlanguage-textsetstatecode-d%C3%B9ng-%C4%91%E1%BB%83-l%C3%A0m-g%C3%AC&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Argument thứ 2 của &lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; dùng để làm gì&lt;/h1&gt;
 &lt;p&gt;callback function, function sẽ chạy sau khi &lt;code class=&quot;language-text&quot;&gt;component&lt;/code&gt; được &lt;code class=&quot;language-text&quot;&gt;render&lt;/code&gt; lại với state mới.&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; là một phương thức bất đồng bộ (asynchronous)&lt;/p&gt;
-&lt;h1 id=&quot;Đoạn-code-sau-sai-ở-chổ-nào&quot;&gt;&lt;a href=&quot;#%C4%90o%E1%BA%A1n-code-sau-sai-%E1%BB%9F-ch%E1%BB%95-n%C3%A0o&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Đoạn code sau sai ở chổ nào&lt;/h1&gt;
+&lt;h1 id=&quot;Đoạn-code-sau-sai-ở-đâu&quot;&gt;&lt;a href=&quot;#%C4%90o%E1%BA%A1n-code-sau-sai-%E1%BB%9F-%C4%91%C3%A2u&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Đoạn code sau sai ở đâu&lt;/h1&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
       &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;prevState&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; props&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; streak&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; prevState&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;streak &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
