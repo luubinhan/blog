@@ -23,8 +23,8 @@ class PostListing extends React.Component {
     const postList = this.getPostList();
     return (
       <div className="posts-list">
-        {postList.map(post => (
-          <div key={post.slug}>
+        {postList.map((post, index) => (
+          <div key={index}>
             <ContentPost
               title={post.title}
               desc={post.desc}

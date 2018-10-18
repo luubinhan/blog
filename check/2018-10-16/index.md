@@ -24,13 +24,13 @@ Tuân theo [Observer Design Pattern](https://en.wikipedia.org/wiki/Observer_patt
 
 Tạm dịch: là cách xử lý với dữ liệu stream không tuần tự (async)
 
-Có rất nhiều thứ có thể xem là async data stream. Ví dụ: một cái form đăng ký với các input username, password, email, nút submit, nguyên quá trình user nhập giá trị các field này đến lúc submit, là một async data stream. Một giao diện counter, có duy nhất một button ấn để tăng counter, thì suốt quá trình ấn couter được xem là async data stream.
+Có rất nhiều thứ có thể xem là async data stream. Ví dụ: một cái form đăng ký với các input username, password, email, nút submit, nguyên quá trình user nhập giá trị các field này đến lúc submit, là một async data stream. Một giao diện counter, có duy nhất một button ấn để tăng counter, thì suốt quá trình ấn counter được xem là async data stream.
 
 Để làm việc với Reactive Programing, 100% bạn cần dùng đến thư viện (siêu nhân có thể tự viết), tùy theo ngôn ngữ (ko chỉ có javascript mới có nhé), nó sẽ có một số hàm để bạn chuyển đổi một data bình thường thành một data stream (data stream là phải có thể emit 3 cái đã nói), một số hàm để bạn `merge`, `flatten`, `filter` các data stream này lại.
 
 # Tại sao chúng ta cần Stream + Reactive Programing
 
-Có thể thấy ngay Reactive programing khá trừu tượng, nhưng do thay vì implement những ràng buộc một cách chi tiết, những ràng buộc này được gắn vào từng data gởi đi trên stream, code nó sẽ gọn gàng hơn.
+Có thể thấy ngay Reactive programing khá trừu tượng, nhưng do thay vì implement những ràng buộc một cách chi tiết, những ràng buộc này được gắn vào từng data gửi đi trên stream, code nó sẽ gọn gàng hơn.
 
 10 năm trước, mọi việc chỉ đơn giản là submit toàn bộ giá trị các field lên backend xử lý, rồi đơn thuần hiển thị kết quả trả về, bây giờ user thích real-time feedback, bấm "like" một phát là đầu bên kia thấy được liền.
 
@@ -47,6 +47,8 @@ Tính năng chính của hộp thoại này
 - Vừa mở lên, load data từ API, hiển thị 3 tài khoản
 - Click "Refresh", hiển thị 3 tài khoản khác
 - Khi click "x", xóa tài khoản đó khỏi danh sách, hiển thị một tài khoản khác.
+
+
 
 
 
