@@ -2,7 +2,7 @@
 slug: "/2018-03-16-huong-dan-react-authentication-phan-1"
 date: "2018-03-16"
 title: "React Authentication với Amazon Cognito - Phần 1"
-desc: "Implement authentication 2 factor sử dụng React, React Router, Amazone Cognito"
+desc: "Implement authentication 2 factor sử dụng React, React Router, Amazon Cognito"
 cover: ""
 type: "post"
 lesson: 0
@@ -306,7 +306,7 @@ Các thông tin của user sẽ được lại trong 'Manage your User Pools', v
 
 # Sign In
 
-Sign in thì cũng tương tự như signup, chúng ta sử dụng `Auth.signIn(username, password)`, trả về object nếu thành công, sau đó nó sẽ gởi SMS tới user với code xác nhận lần nữa, verify bằng `confirmSignIn`
+Sign in thì cũng tương tự như signup, chúng ta sử dụng `Auth.signIn(username, password)`, trả về object nếu thành công, sau đó nó sẽ gửi SMS tới user với code xác nhận lần nữa, verify bằng `confirmSignIn`
 
 ```jsx
 signIn() {

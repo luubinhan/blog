@@ -68,7 +68,7 @@ Giải thích ngắn gọn cho dễ theo dõi
 
 - Giá trị `count` được lưu trong *state* của component `Counter`
 - Khi user click '+', hàm `increment` sẽ tăng giá trị `count` lên
-- Khi state bị thay đổi, React sẽ render lại `Counter` và những component bên trong của nó, giá trị mới sẽ hiện thị
+- Khi state bị thay đổi, React sẽ render lại `Counter` và những component bên trong của nó, giá trị mới sẽ hiển thị
 
 ## Thêm Redux
 
@@ -187,7 +187,7 @@ const App = () => (
 
 Action là gì, nó đóng vai trò như thế nào và nó đến từ đâu? Làm thế nào mà ta đổi giá trị `counter`?
 
-`action` là 1 JS object nó sẽ cho biết bạn đang muốn `ordẻr` món nào, như tờ giấy ghi `order` trong nhà hàng ấy mà, nó sẽ chưa thông tin 'món' bạn order, đầu bếp `reducer` sẽ dựa vào đó mà xào nấu ra 'món' bạn order
+`action` là 1 JS object nó sẽ cho biết bạn đang muốn `order` món nào, như tờ giấy ghi `order` trong nhà hàng ấy mà, nó sẽ chưa thông tin 'món' bạn order, đầu bếp `reducer` sẽ dựa vào đó mà xào nấu ra 'món' bạn order
 
 
 ```js
@@ -207,7 +207,7 @@ function reducer(state = initialState, action) {
 }
 ```
 
-Reducer sẽ căn cứ vào `action.type` để thục hiện thay đổi và trả về state mới, nên nhớ chúng ta phải LUÔN LUÔN trả về state trong `reducer`, nếu có hay không có thay đổi cũng phải trả về *state*
+Reducer sẽ căn cứ vào `action.type` để thực hiện thay đổi và trả về state mới, nên nhớ chúng ta phải LUÔN LUÔN trả về state trong `reducer`, nếu có hay không có thay đổi cũng phải trả về *state*
 
 ## Không bao giờ được phép thay đổi State trực tiếp
 

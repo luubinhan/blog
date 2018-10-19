@@ -147,7 +147,7 @@ Một khi ứng dụng phình ra, nhiều tính năng hơn, nên có cái reduce
 
 Mỗi trang đảm trách state của chính nó, các file reducer có thể để cùng với các file page luôn.
 
-Sẽ đến lúc chúng ta cần chia sẽ một vài state giữa 2 view. Cân nhắc các câu hỏi sau
+Sẽ đến lúc chúng ta cần chia sẻ một vài state giữa 2 view. Cân nhắc các câu hỏi sau
 
 - Có bao nhiêu view hoặc reducer sẽ phụ thuộc vào dữ liệu này?
 - Mỗi trang có cần một bản sao dữ liệu không?
@@ -163,7 +163,7 @@ Trường hợp nào chuyện xài chung như vậy là ko hợp lý? Thí dụ 
 
 Sau một thời gian viết reducer, sẽ có lúc mình thấy mấy cái function này xử lý na ná nhau, như vậy thì nên tái sử dụng nó đừng viết mới. Ví dụ nếu logic của việc load dữ liệu bài viết và bình luận là như nhau, khác cái endpoint thôi và object schema, phân trang cũng giống.
 
-Để dùng chung reducer, cách thứ nhất, truyền vào scope bên trong payload của action. Để dể hình dung, lấy vị dụ một trang chứa nhiều section khác nhau, tất cả đều load bất tuần tự từ các API endpoint khác nhau, để theo dõi tình trang load này bằng state trong store
+Để dùng chung reducer, cách thứ nhất, truyền vào scope bên trong payload của action. Để dễ hình dung, lấy vị dụ một trang chứa nhiều section khác nhau, tất cả đều load bất tuần tự từ các API endpoint khác nhau, để theo dõi tình trang load này bằng state trong store
 
 ```js
 const initialLoadingState = {

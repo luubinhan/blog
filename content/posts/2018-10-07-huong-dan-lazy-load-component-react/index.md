@@ -2,7 +2,7 @@
 slug: "/2018-10-07-huong-dan-lazy-load-component-react"
 date: "2018-10-07"
 title: "Hướng dẫn lazy load component trong React"
-desc: "Sự là hôm rồi đi phỏng vấn, được hỏi câu này mà mình đó giờ chưa làm nên không biết, nay có thời gian rãnh rỗi tìm hiểu, chia sẽ lại cho các bạn chưa biết."
+desc: "Sự là hôm rồi đi phỏng vấn, được hỏi câu này mà mình đó giờ chưa làm nên không biết, nay có thời gian rảnh rỗi tìm hiểu, chia sẻ lại cho các bạn chưa biết."
 cover: ""
 type: "post"
 lesson: 0

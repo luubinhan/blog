@@ -24,7 +24,7 @@ JWT là một đoạn string dạng JSON đã được mã hóa và truyền qua
 
 # JWT vận hành thế nào
 
-Khi user đăng nhập thành công, server sẽ trả về một cục JWT, chúng ta lưu cục này lại trong `localStorage` để sử dụng về sau. Khi muốn thực hiện một request nào đó, chẳng hạn gọi đến API để lấy dữ liệu, mà cần xác thực đã đăng nhập, ta gởi cái token này kèm trong header của request. Server kiểm trả token này và thực thi yêu cầu nếu kiểm tra thấy hợp lệ.
+Khi user đăng nhập thành công, server sẽ trả về một cục JWT, chúng ta lưu cục này lại trong `localStorage` để sử dụng về sau. Khi muốn thực hiện một request nào đó, chẳng hạn gọi đến API để lấy dữ liệu, mà cần xác thực đã đăng nhập, ta gởi cái token này kèm trong header của request. Server kiểm tra token này và thực thi yêu cầu nếu kiểm tra thấy hợp lệ.
 
 Nội dung của header thường sẽ là
 
@@ -173,7 +173,6 @@ export function loginUser(creds) {
   }
 
   return dispatch => {
-    // We dispatch requestLogin to kickoff the call to the API
     dispatch(requestLogin(creds))
 
     return fetch('http://localhost:3001/sessions/create', config)
@@ -198,7 +197,7 @@ export function loginUser(creds) {
 
 ```
 
-Ở đây chúng ta cũng đã lưu token này lại nếu user đăng nhập thành công xuống `localStorage`, đồng thời chúng ta cũng dispatch cái action `receivedLogin`, việc lưu token này có thể lưu nó ở chổ nào đó khác, tuy nhiên không được lưu nó trong `reducer`, vì nó có thể gây ra side effect.
+Ở đây chúng ta cũng đã lưu token này lại nếu user đăng nhập thành công xuống `localStorage`, đồng thời chúng ta cũng dispatch cái action `receivedLogin`, việc lưu token này có thể lưu nó ở chỗ nào đó khác, tuy nhiên không được lưu nó trong `reducer`, vì nó có thể gây ra side effect.
 
 Còn việc logout user cũng tương tự, ta chỉ việc set `isAuthenticated = false` và xóa token này đi
 

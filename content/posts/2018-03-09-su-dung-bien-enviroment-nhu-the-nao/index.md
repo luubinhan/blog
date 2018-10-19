@@ -18,7 +18,7 @@ Khi nhắc đến thuật ngữ "Environment Variable" là nghĩ ngay tới vi�
 
 Thật ra không liên quan gì đâu nhá
 
-Trong Node, biến Environment là một biến global, thường được sử dụng để chỉ định `process` nào muốn chạy. Ví dụ, khi chạy một ứng dụng web, ta sẽ có các biến **Environmen** sau:
+Trong Node, biến Environment là một biến global, thường được sử dụng để chỉ định `process` nào muốn chạy. Ví dụ, khi chạy một ứng dụng web, ta sẽ có các biến **Environment** sau:
 
 - Port
 - Database connection string
@@ -85,7 +85,7 @@ MongoClient.connect(process.env.DB_CONN, function(err, db) {
 
 # Extension của VSCode
 
-Nếu đang dùng VSCode, một số extension này sẽ hưu ích
+Nếu đang dùng VSCode, một số extension này sẽ hữu ích
 
 DotENV extension: mang màu sắc đến với cuộc sống
 

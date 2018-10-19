@@ -10,7 +10,7 @@ chapter: 0
 tags: ["javascript", "react"]
 ---
 
-Giả xử chúng ta có component như sau
+Chúng ta có component như sau
 
 
 ```jsx

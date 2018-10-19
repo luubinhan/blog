@@ -17,7 +17,7 @@ tags: ["javascript"]
 - [Response Types](#response-types)
 - [Chuỗi Promise](#chuỗi-promise)
 - [POST Request](#post-request)
-- [Gởi thông tin xác thực với Fetch](#gởi-thông-tin-xác-thực-với-fetch)
+- [Gửi thông tin xác thực với Fetch](#gửi-thông-tin-xác-thực-với-fetch)
 - [Upload file](#upload-file)
 - [Upload nhiều file](#upload-nhiều-file)
 
@@ -71,7 +71,7 @@ Khi chúng ta tạo một fetch request, response trả về sẽ chứa **respo
 
 ![same origin](https://rootsec.info/wp-content/uploads/2017/07/same-origin-policy.jpg)
 
-Nếu request lên cùng một **nguồn** (ứng dụng host trên server A gởi request lên API trên server A), response.type sẽ là `basic`, không có bất kỳ giới hạn việc xem các thông tin trên response.
+Nếu request lên cùng một **nguồn** (ứng dụng host trên server A gửi request lên API trên server A), response.type sẽ là `basic`, không có bất kỳ giới hạn việc xem các thông tin trên response.
 
 Nếu request dạng **CORS**, type trả về `cors.cors`, lúc đó bên trong `header` chúng ta chỉ được phép truy cập đến `Cache-Control`, `Content-Language`, `Content-Type`, `Expires`, `Last-Modified` và `Pragma`
 
@@ -81,7 +81,7 @@ Type `opaque` cho các request tạo ra khác **nguồn**, và thằng API nó k
 
 - `same-origin`: các request khác nguồn sẽ trả về `reject`
 - `cors`: cho phép khác nguồn nếu header trả về cũng là CORs
-- `cors-with-forced-preflight` luôn thực hiện kiểm tra [preflight](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Preflighted_requests). Trước khi gởi đi, để đảm bảo có an toàn trước, tạo một request dùng phương thức OPTIONS để kiểm tra độ an toàn
+- `cors-with-forced-preflight` luôn thực hiện kiểm tra [preflight](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Preflighted_requests). Trước khi gửi đi, để đảm bảo có an toàn trước, tạo một request dùng phương thức OPTIONS để kiểm tra độ an toàn
 - `no-cors` tạo một request không cùng nguồn, không trả về CORS
 
 Để khai báo mode
@@ -150,7 +150,7 @@ fetch(url, {
 })
 ```
 
-Gởi lên dữ liệu dạng JSON
+Gửi lên dữ liệu dạng JSON
 
 ```js
 var data = {username: 'example'};
@@ -167,9 +167,9 @@ fetch(url, {
 .catch(error => console.error('Error:', error))
 ```
 
-# Gởi thông tin xác thực với Fetch
+# Gửi thông tin xác thực với Fetch
 
-Để gởi kèm thông tin xác thực (user là ai), như cookie, chúng ta truyền tham số `credentials: include`
+Để gửi kèm thông tin xác thực (user là ai), như cookie, chúng ta truyền tham số `credentials: include`
 
 ```js
 fetch(url, {
@@ -177,7 +177,7 @@ fetch(url, {
 })
 ```
 
-Nếu muốn gởi credentials khi request URL là cùng nguồn, truyền giá trị `same-origin`
+Nếu muốn gửi credentials khi request URL là cùng nguồn, truyền giá trị `same-origin`
 
 ```js
 fetch(url, {
@@ -185,7 +185,7 @@ fetch(url, {
 })
 ```
 
-Không cho trình duyệt gởi thông tin xác thực, dùng `omit`
+Không cho trình duyệt gửi thông tin xác thực, dùng `omit`
 
 ```js
 fetch(url, {
