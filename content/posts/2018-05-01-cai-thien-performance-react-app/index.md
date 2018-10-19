@@ -24,18 +24,15 @@ tags: ["javascript", "react"]
 
 <!-- /TOC -->
 
-Chúng ta sẽ lượt qua các vấn đề sau
+Toàn bộ source app ví dụ có thể lấy [ở đây https://github.com/ohansemmanuel/Cardie-performace](https://github.com/ohansemmanuel/Cardie-performace), khuyến khích các bạn nên tự lấy về và vọc.
 
-1. Cách viết `shouldComponentUpdate` không hợp lý và tại sao `PureComponent` không phải vị cứu tinh
-2. Thay đổi **DOM** quá nhiều lần
-3. Sử dụng **events** và **calbacks**
 
-## `shouldComponentUpdate` và PureComponent
+# `shouldComponentUpdate` và PureComponent
 
 Để ngăn việc *render* không cần thiết chúng ta sẽ can thiệp bên trong hook `shouldComponentUpdate`, nó nhận vào `props` sẽ thay đổi và `state` mới, nếu hàm này return `true`, hàm `render` sẽ được gọi, và ngược lại.
 
 
-### Vấn đề
+## Vấn đề
 
 Hãy thử xem xét cách viết `shouldComponentUpdate` thường thấy 
 
@@ -75,7 +72,7 @@ class ShouldNotUpdate extends React.PureComponent {
 
 Trong thực tế cho thấy PureComponent không mấy hữu dụng, không biết là tính năng hay là bug mà PureComponent sẽ không chặn việc render ở đây.
 
-### Giải pháp
+## Giải pháp
 
 Một giải pháp có thể nghĩ ngay tới là thực hiện một phép so sánh toàn diện, cái này thật ra là chạy, nhưng sẽ vướng 2 khuyết điểm
 
@@ -84,29 +81,29 @@ Một giải pháp có thể nghĩ ngay tới là thực hiện một phép so s
 
 Theo quan điểm cá nhân, so sánh toàn diện không nên áp dụng.
 
-Evan You tác giả của Vue.js trong [trả lời này](https://github.com/vuejs/vue/issues/4255#issuecomment-274143903) có đề cập việc sử dụng `shouldComponentUpdate` có thể bỏ qua vì nó không mấy thực tế, có rất nhiều trường hợp có thể bị bỏ xót nếu để mặc cho React Element tự xác định state nào đã change trong component.
+Evan You tác giả của Vue.js trong [trả lời này](https://github.com/vuejs/vue/issues/4255#issuecomment-274143903) có đề cập việc sử dụng `shouldComponentUpdate` có thể bỏ qua vì nó không mấy thực tế, có rất nhiều trường hợp có thể bị bỏ sót nếu để mặc cho React Element tự xác định state nào đã change trong component.
 
 Thay vì kiểm tra `this.props.children !== nextProps.children`, sử dụng các `props` khác nhau để xác định state change, khuyến khích dùng *string/numeric* để so sánh cho lẹ
 
 
-## Thay đổi DOM quá nhiều lần
+# Thay đổi DOM quá nhiều lần
 
-Có bao giờ bạn từng sử dụng một *component* nhiều lần trong app, cảm thấy app hơi lag? Animation cảm giác chạy hơi khực khực?
+Có bao giờ bạn từng sử dụng một *component* nhiều lần trong app, cảm thấy app hơi lag? Animation cảm giác chạy không mướt?
 
-### Vấn đề
+## Vấn đề
 
-Khi xây các component phức tạp, bạn sẽ phải xào nấo DOM một chút, khả năng sẽ vướng vào 2 issue sau
+Khi xây các component phức tạp, bạn sẽ phải xử lý DOM một chút, khả năng sẽ vướng vào 2 issue sau
 
 1. [Trigger layout](https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing)
 2. [Layout Thrashing](https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing#avoid_layout_thrashing)
 
 Hãy chạy thử hiệu ứng đang làm cho một component **Collapse** với khoản vài chục cái instance, sau đó chọn 6x slowdown trên dev tool để thấy sự khác biệt, 6x slowdown là giá trị tương ứng với tốc độ khi xem trên điện thoại
 
-[](https://cdn-images-1.medium.com/max/800/1*2xOju9iTPGs22U0joILHmQ.png)
+[Cải thiện performance của React App](https://cdn-images-1.medium.com/max/800/1*2xOju9iTPGs22U0joILHmQ.png)
 
-### Giải pháp
+## Giải pháp
 
-Mỗ sẽ một component **Collapse**, ta thường sẽ làm là thay đổi độ cao của nó
+Component **Collapse**, ta thường sẽ làm là thay đổi độ cao của nó
 
 ```jsx
 updateHeight(isOpen) {
@@ -147,9 +144,9 @@ updateHeight(isOpen) {
 
 Có thể sử dụng thư viện [Fastdom](https://github.com/wilsonpage/fastdom) thay vì tự viết
 
-## Callback
+# Callback
 
-Khi attact một function vào bất kỳ event nào trên DOM, nếu có thêm `debounced` hoặc `throttled` sẽ tốt hơn, giảm tải số lần gọi đến function này đến mức thấp nhất.
+Khi attach một function vào bất kỳ event nào trong DOM, nếu có thêm `debounced` hoặc `throttled` sẽ tốt hơn, giảm tải số lần gọi đến function này đến mức thấp nhất.
 
 Cách viết rất thường thấy
 
@@ -159,7 +156,7 @@ window.addEventListener('resize', _.throttle(callback))
 
 Nhưng tại sao không sử dụng nó trong component callback
 
-### Vấn đề
+## Vấn đề
 
 Xét component sau
 
@@ -182,9 +179,9 @@ export default class UnleashedOne extends React.Component {
 
 Chúng ta đang lắng nghe tất tần tật mỗi khi có thay đổi trên `input`, như vậy thực sự có cần thiết không?
 
-### Giải pháp
+## Giải pháp
 
-Để giải quyết vấn đề trên, có thểm viết lại component
+Để giải quyết vấn đề trên, có thể viết lại component
 
 ```jsx
 export default class LeashedOne extends React.Component {
@@ -206,7 +203,9 @@ export default class LeashedOne extends React.Component {
 
 Đợi user nhập xong đi rồi xử lý sự kiện, ở đây sử dụng `_.debounce`, `_.throttle` từ thư viện **lodash**, sự khác nhau của 2 thằng này thì đọc thểm trên docs của nó.
 
-Nếu bị nghiện performance, bạn có thể chia sẽ thêm một số tip với mình. Thanks You
+Nếu bị nghiện performance, bạn có thể chia sẻ thêm một số tip với mình.
 
-Tác Giả: Noam Elboim
-Link bài gốc: https://medium.com/myheritage-engineering/how-to-greatly-improve-your-react-app-performance-e70f7cbbb5f6
+Tham khảo
+
+- [https://medium.com/myheritage-engineering/how-to-greatly-improve-your-react-app-performance-e70f7cbbb5f6](https://medium.com/myheritage-engineering/how-to-greatly-improve-your-react-app-performance-e70f7cbbb5f6)
+- [https://logrocket-blog.ghost.io/death-by-a-thousand-cuts-a-checklist-for-eliminating-common-react-performance-issues/](https://logrocket-blog.ghost.io/death-by-a-thousand-cuts-a-checklist-for-eliminating-common-react-performance-issues/)

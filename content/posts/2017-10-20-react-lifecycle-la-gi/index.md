@@ -31,9 +31,9 @@ tags: ["javascript", "react"]
 
 Các phương thức của lifecycle là một dạng `hook` (giống như khái niệm `hook` trong wordpress)
 
-Có thể group các phương thức lifecycle ra 3 nhóm, ứng với 4 giai đoạn của component: **Mouting**, **Updating**, **Unmounting**, **Error Handling**
+Có thể group các phương thức lifecycle ra 3 nhóm, ứng với 4 giai đoạn của component: **Mounting**, **Updating**, **Unmounting**, **Error Handling**
 
-**Mouting**
+**Mounting**
 
 Nó sẽ theo thứ tự sau
 
@@ -117,7 +117,7 @@ constructor(props) {
 Component đã hiện hình, là lúc mà ta gọi AJAX
 
 ```jsx
-componetDidMount() {
+componentDidMount() {
   fetch('https://gitconnected.com')
     .then((res) => {
       this.setState({
@@ -127,7 +127,7 @@ componetDidMount() {
 }
 ```
 
-Có thể gọi `setState()` ở dòng đầu tiên của phương thức `componentDidMount()`, hàm `render()` sẽ được gọi lại một lần nữa, nhưng nó chi xảy ra trước khi trình duyệt update DOM, render chắc chắn sẽ gọi 2 lần, user có thể không nhận ra sự thay đổi này, tuy nhiên đây là nguyên nhân cho vấn đề với performance. Nhưng cần thiết trong trường hợp như modal hay tooltip chúng ta cần tính toán vị trí của DOM trước khi render
+Có thể gọi `setState()` ở dòng đầu tiên của phương thức `componentDidMount()`, hàm `render()` sẽ được gọi lại một lần nữa, nhưng nó chỉ xảy ra trước khi trình duyệt update DOM, render chắc chắn sẽ gọi 2 lần, user có thể không nhận ra sự thay đổi này, tuy nhiên đây là nguyên nhân cho vấn đề với performance. Nhưng cần thiết trong trường hợp như modal hay tooltip chúng ta cần tính toán vị trí của DOM trước khi render
 
 # componentDidUpdate(prevProps, prevState, snapshot)
 
