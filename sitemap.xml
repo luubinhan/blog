@@ -6,6 +6,7 @@
 <url> <loc>https://luubinhan.github.io/blog/blog/4</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-10-20-huong-dan-thuc-hien-kiem-tra-performance-voi-chrome-devtools</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-10-19-gioi-thieu-typeof-trong-javascript-cho-nguoi-moi-bat-dau</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luubinhan.github.io/blog/blog/2018-10-16-huong-dan-progressive-web-app-cho-nguoi-moi-bat-dau</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-10-15-nhung-cau-nen-hoi-khi-di-phong-van</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-10-14-react-job-interview-goc-nhin-nguoi-tuyen-dung</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-10-13-css-content-hop-le</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -121,6 +122,7 @@
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/chrome</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/performance</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luubinhan.github.io/blog/blog/tags/pwa</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/css</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/ux-ui</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
