@@ -4,6 +4,7 @@
 <url> <loc>https://luubinhan.github.io/blog/blog/2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/3</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/4</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luubinhan.github.io/blog/blog/2018-10-20-huong-dan-thuc-hien-kiem-tra-performance-voi-chrome-devtools</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-10-19-gioi-thieu-typeof-trong-javascript-cho-nguoi-moi-bat-dau</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-10-15-nhung-cau-nen-hoi-khi-di-phong-van</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-10-14-react-job-interview-goc-nhin-nguoi-tuyen-dung</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -106,9 +107,7 @@
 <url> <loc>https://luubinhan.github.io/blog/blog/2017-08-07-gioi-thieu-nhanh-ve-mobx</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2017-07-31-react-router</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2017-07-17-interview-react-developer-thi-hoi-gi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://luubinhan.github.io/blog/blog/2017-03-08-thoi-dai-cua-pixel-perfect-da-het-phan-3</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2017-03-07-thoi-dai-cua-pixel-perfect-da-het-phan-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://luubinhan.github.io/blog/blog/2017-03-06-thoi-dai-cua-pixel-effect-design-da-het-tu-lau</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2017-01-10-nam-vung-5-khai-niem-sau-xem-nhu-master-react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2016-11-21-phan-7-es-6-can-ban-classes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2016-11-20-phan-6-es-6-can-ban-khai-bao-let-const</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -119,6 +118,8 @@
 <url> <loc>https://luubinhan.github.io/blog/blog/2016-11-15-chuong-1-es-6-can-ban</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2016-04-12-front-end-developer-2016-nen-hoc-gi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luubinhan.github.io/blog/blog/tags/chrome</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luubinhan.github.io/blog/blog/tags/performance</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/css</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -133,7 +134,6 @@
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/githubpage</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/middleware</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/webpack</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://luubinhan.github.io/blog/blog/tags/performance</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/design</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/wordpress</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/seo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
