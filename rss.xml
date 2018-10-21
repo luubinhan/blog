@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[luckyluu]]></title><description><![CDATA[Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End]]></description><link>https://luubinhan.github.io/blog</link><image><url>https://luubinhan.github.io/blog/logos/logo-512.png</url><title>luckyluu</title><link>https://luubinhan.github.io/blog</link></image><generator>Front End Developer An.Luu</generator><lastBuildDate>Sun, 21 Oct 2018 09:21:49 GMT</lastBuildDate><atom:link href="https://luubinhan.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[luckyluu]]></author><copyright><![CDATA[Copyright © 2018. luckyluu]]></copyright><item><title><![CDATA[No title]]></title><link>https://luubinhan.github.io/blog/</link><guid isPermaLink="false">https://luubinhan.github.io/blog/</guid><dc:creator><![CDATA[luckyluu]]></dc:creator><content:encoded></content:encoded></item><item><title><![CDATA[Hướng dẫn inspect animation với Chrome DevTools]]></title><description><![CDATA[Ấn   để mở Chrome DevTools. Nhìn lên góc phải, chỗ có 3 dấu chấm, chọn vào  More tools  >  Animations F5 lại trang để bắt đầu xem phân tích…]]></description><link>https://luubinhan.github.io/blog/2018-10-21-huong-dan-dung-chrome-devtool-de-inspect-animation</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-21-huong-dan-dung-chrome-devtool-de-inspect-animation</guid><category><![CDATA[chrome]]></category><category><![CDATA[animation]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Sun, 21 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Ấn &lt;code class=&quot;language-text&quot;&gt;Ctrl + Shift + I&lt;/code&gt; để mở Chrome DevTools. Nhìn lên góc phải, chỗ có 3 dấu chấm, chọn vào &lt;strong&gt;More tools&lt;/strong&gt; &gt; &lt;strong&gt;Animations&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[luckyluu]]></title><description><![CDATA[Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End]]></description><link>https://luubinhan.github.io/blog</link><image><url>https://luubinhan.github.io/blog/logos/logo-512.png</url><title>luckyluu</title><link>https://luubinhan.github.io/blog</link></image><generator>Front End Developer An.Luu</generator><lastBuildDate>Sun, 21 Oct 2018 09:37:31 GMT</lastBuildDate><atom:link href="https://luubinhan.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[luckyluu]]></author><copyright><![CDATA[Copyright © 2018. luckyluu]]></copyright><item><title><![CDATA[Hướng dẫn inspect animation với Chrome DevTools]]></title><description><![CDATA[Ấn   để mở Chrome DevTools. Nhìn lên góc phải, chỗ có 3 dấu chấm, chọn vào  More tools  >  Animations F5 lại trang để bắt đầu xem phân tích…]]></description><link>https://luubinhan.github.io/blog/2018-10-21-huong-dan-dung-chrome-devtool-de-inspect-animation</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-21-huong-dan-dung-chrome-devtool-de-inspect-animation</guid><category><![CDATA[chrome]]></category><category><![CDATA[animation]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Sun, 21 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Ấn &lt;code class=&quot;language-text&quot;&gt;Ctrl + Shift + I&lt;/code&gt; để mở Chrome DevTools. Nhìn lên góc phải, chỗ có 3 dấu chấm, chọn vào &lt;strong&gt;More tools&lt;/strong&gt; &gt; &lt;strong&gt;Animations&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/activateInDevTools.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
 &lt;p&gt;F5 lại trang để bắt đầu xem phân tích animation&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/afterRefresh.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
@@ -1678,7 +1678,7 @@ store&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span clas
 &lt;li&gt;&lt;a href=&quot;https://github.com/reactjs/reselect&quot;&gt;Reselect&lt;/a&gt; thư viện tạo selector&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/paularmstrong/normalizr&quot;&gt;Normalizr&lt;/a&gt; thư viện chuẩn hóa dữ liệu JSON&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href=&quot;https://techblog.appnexus.com/five-tips-for-working-with-redux-in-large-applications-89452af4fdcb&quot;&gt;Toàn bộ vài viết&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Xử lý tập dữ liệu lớn trong React]]></title><description><![CDATA[Chúng ta có component như sau Khi mà   nhận được  , trước hết nó sẽ đổ tất cả dữ liệu vào trong virtual DOM, sau đó kiểm tra xem phần nào…]]></description><link>https://luubinhan.github.io/blog/2018-10-03-huong-dan-reactjs-table-du-lieu-lon</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-03-huong-dan-reactjs-table-du-lieu-lon</guid><category><![CDATA[javascript]]></category><category><![CDATA[react]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Wed, 03 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Chúng ta có component như sau&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://techblog.appnexus.com/five-tips-for-working-with-redux-in-large-applications-89452af4fdcb&quot;&gt;Toàn bộ vài viết&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Xử lý tập dữ liệu lớn trong React]]></title><description><![CDATA[Chúng ta có component như sau Khi mà   nhận được  , trước hết nó sẽ đổ tất cả dữ liệu vào trong virtual DOM, sau đó kiểm tra xem phần nào…]]></description><link>https://luubinhan.github.io/blog/2018-10-03-huong-dan-reactjs-table-du-lieu-lon</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-03-huong-dan-reactjs-table-du-lieu-lon</guid><category><![CDATA[javascript]]></category><category><![CDATA[react]]></category><category><![CDATA[performance]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Wed, 03 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Chúng ta có component như sau&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
       &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ParentComponent&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Component&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -2701,7 +2701,7 @@ git rebase -i HEAD~3&lt;/code&gt;&lt;/pre&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
       &lt;pre class=&quot;language-git&quot;&gt;&lt;code class=&quot;language-git&quot;&gt;git merge-base feature master&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.atlassian.com/git/tutorials/merging-vs-rebasing&quot;&gt;Link bài gốc&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Lưu token ở đâu?]]></title><description><![CDATA[Sự khác nhau giữa cookie - localStorage - sessionStorage Trước hết, cùng phân biệt sự khác nhau giữa  ,  ,  Cả 3 thằng điều là để lưu lại…]]></description><link>https://luubinhan.github.io/blog/2018-09-17-huong-dan-luu-token-o-dau</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-09-17-huong-dan-luu-token-o-dau</guid><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Mon, 17 Sep 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;sự-khác-nhau-giữa-cookie---localstorage---sessionstorage&quot;&gt;&lt;a href=&quot;#s%E1%BB%B1-kh%C3%A1c-nhau-gi%E1%BB%AFa-cookie---localstorage---sessionstorage&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Sự khác nhau giữa cookie - localStorage - sessionStorage&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.atlassian.com/git/tutorials/merging-vs-rebasing&quot;&gt;Link bài gốc&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Lưu token ở đâu?]]></title><description><![CDATA[Sự khác nhau giữa cookie - localStorage - sessionStorage Trước hết, cùng phân biệt sự khác nhau giữa  ,  ,  Cả 3 thằng điều là để lưu lại…]]></description><link>https://luubinhan.github.io/blog/2018-09-17-huong-dan-luu-token-o-dau</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-09-17-huong-dan-luu-token-o-dau</guid><category><![CDATA[javascript]]></category><category><![CDATA[security]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Mon, 17 Sep 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;sự-khác-nhau-giữa-cookie---localstorage---sessionstorage&quot;&gt;&lt;a href=&quot;#s%E1%BB%B1-kh%C3%A1c-nhau-gi%E1%BB%AFa-cookie---localstorage---sessionstorage&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Sự khác nhau giữa cookie - localStorage - sessionStorage&lt;/h1&gt;
 &lt;p&gt;Trước hết, cùng phân biệt sự khác nhau giữa &lt;code class=&quot;language-text&quot;&gt;cookie&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;localStorage&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;sessionStorage&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Cả 3 thằng điều là để lưu lại một ít thông tin trên trình duyệt để sử dụng sau này.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://codepen.io/beaucarnes/pen/KmeRMx/image/large.png&quot;&gt;&lt;/p&gt;
@@ -3757,7 +3757,109 @@ db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&
   }
 }&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
-&lt;p&gt;&lt;a href=&quot;https://firebase.google.com/docs/firestore/security/rules-query&quot;&gt;Link bài gốc&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hướng dẫn cách cài đặt security rules cho Cloud Firestore]]></title><description><![CDATA[Khai báo Rules read/write Chia nhỏ thao tác ra Kế thừa Cloud FireStore Security Rules cho phép chúng ta tùy chỉnh việc cấp quyền truy cập…]]></description><link>https://luubinhan.github.io/blog/2018-08-17-huong-dan-set-security-rules-cho-cloud-firestore</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-08-17-huong-dan-set-security-rules-cho-cloud-firestore</guid><category><![CDATA[firestore]]></category><category><![CDATA[firebase]]></category><category><![CDATA[security]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Fri, 17 Aug 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
+&lt;p&gt;&lt;a href=&quot;https://firebase.google.com/docs/firestore/security/rules-query&quot;&gt;Link bài gốc&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hướng dẫn viết điều kiện security rules cho Cloud Firestore - Phần 2]]></title><description><![CDATA[Xác thực Kiểm tra dữ liệu Truy cập đến các documents khác Hàm tùy biến Xác thực Một trong những tình huống phổ biến nhất là cho phép truy…]]></description><link>https://luubinhan.github.io/blog/2018-08-17-huong-dan-viet-dieu-kien-security-rules-cho-cloud-firetore</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-08-17-huong-dan-viet-dieu-kien-security-rules-cho-cloud-firetore</guid><category><![CDATA[firestore]]></category><category><![CDATA[firebase]]></category><category><![CDATA[security]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Sat, 18 Aug 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#x%C3%A1c-th%E1%BB%B1c&quot;&gt;Xác thực&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#ki%E1%BB%83m-tra-d%E1%BB%AF-li%E1%BB%87u&quot;&gt;Kiểm tra dữ liệu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#truy-c%E1%BA%ADp-%C4%91%E1%BA%BFn-c%C3%A1c-documents-kh%C3%A1c&quot;&gt;Truy cập đến các documents khác&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#h%C3%A0m-t%C3%B9y-bi%E1%BA%BFn&quot;&gt;Hàm tùy biến&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- /TOC --&gt;
+&lt;h1 id=&quot;xác-thực&quot;&gt;&lt;a href=&quot;#x%C3%A1c-th%E1%BB%B1c&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Xác thực&lt;/h1&gt;
+&lt;p&gt;Một trong những tình huống phổ biến nhất là cho phép truy cập dữ liệu nếu user đã đăng nhập (còn gọi là xác thực, authentication).&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    // Cho phép user truy cập document
+    // trong collection cities nếu đã đăng nhập
+    match /cities/{city} {
+      allow read, write: if request.auth.uid != null;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Hoặc một tình huống phổ biến thứ 2 là cho phép user read và write lên dữ liệu của chính user đó&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;services cloud.firestore {
+  match /databases/{database}/documents {
+    // chỉ cho phép uid khớp với userId trong document.
+    // Dùng ký tự đại diện {userId} như một biến bên trong câu điều kiện
+    match /users/{userId} {
+      allow read, update, delete: if request.auth.uid == userId;
+      allow create: if request.auth.uid != null;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Nếu đang sử dụng Firebase Authentication, biến &lt;code class=&quot;language-text&quot;&gt;request.auth&lt;/code&gt; sẽ chưa thông tin của user gởi request, xem thêm chi tiết &lt;a href=&quot;https://firebase.google.com/docs/reference/rules/rules.firestore.Request#auth&quot;&gt;ở đây.&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;kiểm-tra-dữ-liệu&quot;&gt;&lt;a href=&quot;#ki%E1%BB%83m-tra-d%E1%BB%AF-li%E1%BB%87u&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Kiểm tra dữ liệu&lt;/h1&gt;
+&lt;p&gt;Nếu muốn can thiệp việc cho phép hoặc từ chối truy cập theo dữ liệu trong document&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    // cho phép truy cập nếu giá trị của visibility bằng public
+    match /cities/{city} {
+      allow read: if resource.data.visibility == &amp;#39;public&amp;#39;;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Biến &lt;code class=&quot;language-text&quot;&gt;resource&lt;/code&gt; tương ứng với dữ liệu của document đang request, &lt;code class=&quot;language-text&quot;&gt;request.data&lt;/code&gt; sẽ là toàn bộ các field lưu trong document&lt;/p&gt;
+&lt;p&gt;Trước khi write dữ liệu xuống, chúng ta sẽ muốn kiểm tra dữ liệu đang có và dữ liệu mới. Nếu chúng ta đang set rule pending write (không write dữ liệu ngay lập tức mà đợi xí), biến &lt;code class=&quot;language-text&quot;&gt;request.resource&lt;/code&gt; lúc này sẽ chứa dữ liệu mới.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /cities/{city} {
+      allow update: if request.resource.data.population &amp;gt; 0
+      &amp;amp;&amp;amp; request.resource.data.name == resource.data.name
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h1 id=&quot;truy-cập-đến-các-documents-khác&quot;&gt;&lt;a href=&quot;#truy-c%E1%BA%ADp-%C4%91%E1%BA%BFn-c%C3%A1c-documents-kh%C3%A1c&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Truy cập đến các documents khác&lt;/h1&gt;
+&lt;p&gt;Sử dụng &lt;code class=&quot;language-text&quot;&gt;get()&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;exists()&lt;/code&gt; chúng ta có thể đánh giá các request với các documents trong database. Cả hai hàm này đều yêu cầu chỉ định đường dẫn đầy đủ, và phải đưa biến theo cú pháp &lt;code class=&quot;language-text&quot;&gt;$(biến)&lt;/code&gt; trong đường dẫn&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /cities/{city} {
+      // kiểm tra user hiện tại
+      // có tồn tại bên trong collections users
+      // trước khi cho phép tạo thêm city mới
+      allow create: if exists(/databases/$(database)/documents/users/$(request.auth.uid))
+
+      // cho phép user xóa city nếu user này là admin
+      allow delete: if get(/databases/$(database)/documents/users/$(request.auth.id).data.admin == true)
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Đối với thao tác write, chúng ta có thể sử dụng &lt;code class=&quot;language-text&quot;&gt;getAfter()&lt;/code&gt; để truy cập dữ liệu của document sau khi thực hiện, thằng này cũng giống như &lt;code class=&quot;language-text&quot;&gt;get&lt;/code&gt; phải dùng đường dẫn đầy đủ.&lt;/p&gt;
+&lt;h1 id=&quot;hàm-tùy-biến&quot;&gt;&lt;a href=&quot;#h%C3%A0m-t%C3%B9y-bi%E1%BA%BFn&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Hàm tùy biến&lt;/h1&gt;
+&lt;p&gt;Một khi các rule security này trở nên phức tạp, chúng ta sẽ muốn gom các điều kiện này vào trong một hàm để tái sử dụng. Firestore hỗ trợ luôn. Nó sẽ như Javascript, tuy nhiên không hẳn là javascript đâu, nó có một số hạn chế&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hàm này luôn chỉ chứa 1 return, không chạy loop, gọi service bên ngoài&lt;/li&gt;
+&lt;li&gt;Hàm có thể access được các hàm và biến có cùng scope.&lt;/li&gt;
+&lt;li&gt;Hàm có thể gọi đến hàm khác nhưng không được recurse, tối đa là sâu đến 10 thôi.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ví dụ kết hợp cả 2 điều kiện ở trên thành một hàm&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedInOrPublic() {
+      return request.auth.uid !== null || resource.data.visibility == &amp;#39;public&amp;#39;;
+    }
+
+    match /cities/{city} {
+      allow read, write: if signedInOrPublic();
+    }
+
+    match /users/{user} {
+      allow read, write: if signedInOrPublic();
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;&lt;a href=&quot;https://firebase.google.com/docs/firestore/security/rules-conditions&quot;&gt;Link bài gốc&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hướng dẫn cách cài đặt security rules cho Cloud Firestore]]></title><description><![CDATA[Khai báo Rules read/write Chia nhỏ thao tác ra Kế thừa Cloud FireStore Security Rules cho phép chúng ta tùy chỉnh việc cấp quyền truy cập…]]></description><link>https://luubinhan.github.io/blog/2018-08-17-huong-dan-set-security-rules-cho-cloud-firestore</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-08-17-huong-dan-set-security-rules-cho-cloud-firestore</guid><category><![CDATA[firestore]]></category><category><![CDATA[firebase]]></category><category><![CDATA[security]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Fri, 17 Aug 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#khai-b%C3%A1o&quot;&gt;Khai báo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#rules-readwrite&quot;&gt;Rules read/write&lt;/a&gt;&lt;/li&gt;
@@ -10117,13 +10219,13 @@ PrivateRoute &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;spa
 &lt;p&gt;Khởi tạo project và các thư viện sẽ sử dụng&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
       &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;create-react-app react-auth
-cd react-auth
+&lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; react-auth
 
-npm i react-router-dom glamor --save&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; i react-router-dom glamor --save&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Cài AWSMobile CLI&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;npm i -g awsmobile-cli&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; i -g awsmobile-cli&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Khởi tạo config AWS IAM&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
@@ -10132,7 +10234,7 @@ awsmobile init&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Nó sẽ tạo project Mobile Hub và file aws-exports.js trong thư mục src. Tiếp theo, thêm user-signin và deploy các config mới&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;awsmobile user-signin enable
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;awsmobile user-signin &lt;span class=&quot;token function&quot;&gt;enable&lt;/span&gt;
 awsmobile push&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;awsmobile user-signin enable&lt;/code&gt; sẽ bật Amazon Congito trong project với các thiết đặt mặc định, bao gồm 2 factor authentication với SMS (sẽ thêm TOTP sau). Nếu muôn can thiệp các thiệt đặt, vào trực tiếp &lt;a href=&quot;https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fcognito%2Fhome%3Fregion%3Dus-east-1%26state%3DhashArgs%2523%26isauthcode%3Dtrue&amp;#x26;client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fcognito&amp;#x26;forceMobileApp=0&quot;&gt;Amazon Cognito&lt;/a&gt; để chỉnh&lt;/p&gt;
