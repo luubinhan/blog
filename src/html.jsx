@@ -44,6 +44,11 @@ export default class HTML extends React.Component {
             type="text/plain"
             href="https://luubinhan.github.io/blog/humans.txt"
           />
+          <link rel="apple-touch-icon" href="https://luubinhan.github.io/blog/images/luckyluu_manifest_192.png" />
+
+          <meta name="msapplication-TileImage" content="https://luubinhan.github.io/blog/images/luckyluu_manifest_192.png"/>
+          <meta name="msapplication-TileColor" content="#01A1B1"/>
+
           <link rel="icon" sizes="32x32" href={favi32} type="image/png" />
           <link rel="icon" sizes="180x180" href={favi128} type="image/png" />
           <meta name="mobile-web-app-capable" content="yes"/>

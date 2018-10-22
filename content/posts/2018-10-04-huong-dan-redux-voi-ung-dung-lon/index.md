@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript", "react"]
+tags: ["javascript", "react", "performance"]
 ---
 
 Đây là những chỉ dẫn của [AppNexus](https://www.appnexus.com/) để tối ưu redux với lượng dữ liệu khủng. Mức độ bài viết khá chuyên sâu, bạn cần nắm thật vững redux, hoặc xem lại redux để hiểu rõ và nhớ lâu nội dung bài này.

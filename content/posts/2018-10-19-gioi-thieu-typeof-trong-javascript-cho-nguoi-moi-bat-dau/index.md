@@ -37,13 +37,13 @@ Có tất cả 6 kiểu được định nghĩa sẵn trước ES6, ES6 bổ sun
 Kết quả trả về sẽ là `string` đại diện cho tên kiểu dữ liệu
 
 ```js
-Typeof 53; // "number"
+typeof 53; // "number"
 ```
 
 Để check kết quả trả về của một expression
 
 ```js
-Typeof(typeof 53); // "string"
+typeof(typeof 53); // "string"
 ```
 
 *Lưu ý* Trước thời ES6, câu `typeof` luôn trả về `string`, với các biến chưa được khai báo, nó sẽ trả về "undefined" chứ không quăng ra lỗi `ReferenceError`

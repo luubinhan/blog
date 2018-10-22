@@ -70,15 +70,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         const tagSet = new Set();
         const postsTag = {};
         const allPosts = result.data.allMarkdownRemark.edges;
-        // Create Home page
-        createPaginatedPages({
-          edges: result.data.allMarkdownRemark.edges,
-          createPage: createPage,
-          pageTemplate: "src/templates/index.js",
-          pageLength: 30, // This is optional and defaults to 10 if not used
-          pathPrefix: "", // This is optional and defaults to an empty string if not used
-          context: {} // This is optional and defaults to an empty object if not used
-        });
+        
         // Create Single Post
         allPosts.forEach((edge, index) => {
           if (edge.node.frontmatter.tags) {
@@ -114,7 +106,16 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               }
             })
           });
-      })
+          // Create Home page
+          createPaginatedPages({
+            edges: result.data.allMarkdownRemark.edges,
+            createPage: createPage,
+            pageTemplate: "src/templates/index.js",
+            pageLength: 30, // This is optional and defaults to 10 if not used
+            pathPrefix: "", // This is optional and defaults to an empty string if not used
+            context: {} // This is optional and defaults to an empty object if not used
+          });
+        })
     );
   });
 };

@@ -1219,12 +1219,16 @@ $masterWidth: 870px;
     background: $bg-gray;
     margin: 0;
     padding: 15px;
+    p {
+      margin-top: 0;
+    }
     > li {
       list-style: none;
       padding-left: 15px;
       ul {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         margin-left: 0;
+        margin-top: 10px;
         li {
           list-style: none;
           position: relative;

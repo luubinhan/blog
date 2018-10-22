@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript", "react"]
+tags: ["javascript", "react", "security"]
 ---
 
 <!-- TOC -->
@@ -385,7 +385,7 @@ export function fetchSecretQuote() {
 
 `quotes` reducer sẽ handle cái action trên
 
-```js
+```jsx
 // reducers.js
 
 ...

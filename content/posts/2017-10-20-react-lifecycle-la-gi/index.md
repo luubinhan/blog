@@ -25,7 +25,7 @@ tags: ["javascript", "react"]
 
 <!-- /TOC -->
 
-![React Component Lifecycle](https://cdn-images-1.medium.com/max/1800/0*OoDfQ7pzAqg6yETH.)
+![Giải thích React Component Lifecycle](https://cdn-images-1.medium.com/max/1800/0*OoDfQ7pzAqg6yETH.)
 
 Để thực sự trở thành một master React, việc hiểu lifecycle của component là bắt buộc.
 

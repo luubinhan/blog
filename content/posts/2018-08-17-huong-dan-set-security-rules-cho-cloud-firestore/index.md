@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["firestore", "firebase"]
+tags: ["firestore", "firebase", "security"]
 ---
 
 <!-- TOC -->
