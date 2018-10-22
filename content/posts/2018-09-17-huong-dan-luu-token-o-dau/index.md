@@ -1,14 +1,23 @@
 ---
 slug: "/2018-09-17-huong-dan-luu-token-o-dau"
 date: "2018-09-17"
-title: "Lưu token ở đâu?"
-desc: "Một ngày đẹp trời mình tự hỏi, nếu token là một string được lưu ở localStorage, liệu có an toàn không khi việc copy đoạn token này từ trình duyệt là vô cùng đơn giản? Liệu lưu trữ cái token ở đâu sẽ hợp lý?"
+title: "So sánh localStorage, sessionStorage, cookie"
+desc: "Sự khác nhau giữa 3 cách lưu thông tin xuống trình duyệt"
 cover: ""
 type: "post"
 lesson: 0
 chapter: 0
 tags: ["javascript", "security"]
 ---
+
+<!-- TOC -->
+
+- [Sự khác nhau giữa cookie - localStorage - sessionStorage](#sự-khác-nhau-giữa-cookie---localstorage---sessionstorage)
+- [JSON Web Token](#json-web-token)
+- [Giải pháp để sử dụng JWT an toàn?](#giải-pháp-để-sử-dụng-jwt-an-toàn)
+- [Một số cân nhắc khi sử dụng cookie](#một-số-cân-nhắc-khi-sử-dụng-cookie)
+
+<!-- /TOC -->
 
 # Sự khác nhau giữa cookie - localStorage - sessionStorage
 
@@ -18,14 +27,12 @@ Cả 3 thằng điều là để lưu lại một ít thông tin trên trình du
 
 ![](https://codepen.io/beaucarnes/pen/KmeRMx/image/large.png)
 
-Khác biệt lớn nhất giữa 3 thằng là *nơi* chúng được lưu và việc có được gởi đi cùng request không.
+Khác biệt lớn nhất giữa 3 thằng là *nơi* chúng được lưu và việc có được gửi đi cùng request không.
 
 Nếu đảm bảo được trình duyệt truy cập trang web, ứng dụng web hỗ trợ `localStorage` và `sessionStorage` thì gần như ai cũng thích xài 2 thằng `localStorage` và `sessionStorage` hơn.
 
 Video giải thích
 https://www.youtube.com/watch?v=AwicscsvGLg
-
-Mình từng nghĩ việc lưu ở đâu cho an toàn, thật ra việc lưu ở đâu phía client không ảnh hưởng nhiều đến việc gởi đi bằng cách nào. Tại sao? Thử tìm hiểu kiểu token đang được sử dụng phổ biến hiện này JSON Web token.
 
 # JSON Web Token
 
@@ -41,9 +48,9 @@ yRQYnWzskCZUxPwaQupWkiUzKELZ49eM7oWxAQK_ZXw
 
 ![](https://techmaster.vn/fileman/Uploads/users/2504/toptal-blog-image-1426676395222.jpeg)
 
-- Header: chứa kiểu dữ liệu, thuật toán mã hóa signature
-- Payload: một số thông tin như thời gian expire, thông tin user,... tùy thuộc server muốn đưa về cái gì.
-- Signature chứa thông tin để server có thể verify cái JWT này
+- **Header**: chứa kiểu dữ liệu, thuật toán mã hóa signature
+- **Payload**: một số thông tin như thời gian expire, thông tin user,... tùy thuộc server muốn đưa về cái gì.
+- **Signature** chứa thông tin để server có thể verify cái JWT này
 
 Signature được tạo ra bằng cách sau ở phía server
 
@@ -59,9 +66,9 @@ var jwt = encode64(header) + "." + encode64(payload) + "." + signature;
 
 Về phía client để sử dụng JWT này, chèn vào header của request
 
-
+```
 Authorization: Bearer DoanJSONWebToken
-
+```
 
 Có thể thấy là việc tạo ra một token giả là vô cùng khó, vì có được cái signature khớp với phía server ko dễ, cái `secret` chỉ có server biết.
 
@@ -69,14 +76,12 @@ Có thể thấy là việc tạo ra một token giả là vô cùng khó, vì c
 
 - `secret` phải thật mạnh
 - Nếu có những thông tin nhạy cảm trong token, chúng ta cần encrypt cái token bằng JSON Web Encryption
-- Không nên gởi đi token bằng HTTP, luôn dùng HTTPS nếu có gởi đi token
+- Không nên gửi đi token bằng HTTP, luôn dùng HTTPS nếu có gửi đi token
 - Xác định thời gian expire của token chứ không để nó tồn tại vô thời hạn
 
-Chúng ta nghe rất nhiều bàn luận xung quanh session cookie và access token. Mình đã từng lẫn lộn các khái niệm này. **Session cookie** là một đoạn thông tin của user lưu ở **cookie** trình duyệt, sẽ được gởi kèm theo request lên server, `cookie` là nơi chứa cái *session cookie*, **cookie** cũng có thể chứa được **access token**
+# Một số cân nhắc khi sử dụng cookie
 
-Như vậy, để an toàn đừng dùng cookie của http, dùng cookie của **https**, đừng lưu access token trong `localStorage`, nó có thể được sử dụng để tấng công XSS
-
-Nếu không muốn javascript được đụng vô cookie, trình duyệt cung cấp thêm một chổ gọi là HttpOnly cookie, ủa vậy sao nhét vào trong cookie này? Lúc này khi gọi lên server, ví dụ `POST /authenticate` nó sẽ trả về token bên trong header `Set-Cookie`, ví dụ như bên dưới
+Trình duyệt cung cấp thêm một chỗ gọi là HttpOnly cookie, lúc này khi gọi lên server, ví dụ `POST /authenticate` nó sẽ trả về token bên trong header `Set-Cookie`, ví dụ như bên dưới
 
 
 HTTP/1.1 200 OK
@@ -92,7 +97,7 @@ Access-Control-Allow-Origin: https://www.bobank.com
 Set-Cookie: session=15d38683-a98f-402d-a373-4f81a5549536; path=/; expires=Fri, 06 Nov 2015 08:30:15 GMT; httponly
 
 
-Bên trong Set-Cookie bạn sẽ thấy có giá trị `httponly`, nó sẽ khiến javascript ở client không thể nào lấy được thông tin này. Khi gọi AJAX bình thường nó sẽ không có dùng đến cookie này, muốn có mình phải chỉ định thêm `credentials: include`
+Bên trong Set-Cookie bạn sẽ thấy có giá trị `httponly`. Khi gọi request network bình thường nó sẽ không có dùng đến cookie này, muốn có mình phải chỉ định thêm `credentials: include`
 
 ```js
 /**
@@ -136,7 +141,7 @@ function getAccounts() {
 }
 ```
 
-Vẫn còn thiếu! Khi browser mà gởi đi `XmlHtpRequests` với thông tin `credentials` thì API cũng phải có `Access-Control-Allow-Credentials` trong response. Ví dụ `GET /accounts` trả về từ server
+Vẫn còn thiếu! Khi browser mà gửi đi `XmlHtpRequests` với thông tin `credentials` thì API cũng phải có `Access-Control-Allow-Credentials` trong response. Ví dụ `GET /accounts` trả về từ server
 
 
 HTTP/1.1 200 OK

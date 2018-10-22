@@ -69,7 +69,7 @@ Quản lý state thì dùng [Mobx](http://mobx.js.org/) hoặc [Redux](http://re
 Một số UI Components khác có thể tham khảo
 
 <ul>
-<a href="https://github.com/christopherdro/react-native-calendar" rel="external" target="_blank"><strong>react-native-calendar</strong></a></li>
+<a href="https://github.com/christopherdro/react-native-calendar" rel="external" target="_blank" rel="noopener noreferrer"><strong>react-native-calendar</strong></a></li>
 <li>
 <a href="https://github.com/xgfe/react-native-datepicker" target="_self"><strong>react-native-</strong></a><a href="https://github.com/xgfe/react-native-datepicker" target="_self"><strong>datepicker</strong></a></li>
 <li>

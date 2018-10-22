@@ -17,7 +17,7 @@ tags: ["wordpress","SEO"]
 
 Trong giới làm web ai cũng biết một điều "Speed is King". Dân tình thích mưa một gói hàng trên mạng và phải được giao ngay lập tức, ít nhất là trong 24g, chậm trễ vài ngày là thấy hông vui, thích post tấm hình lên facebook có triệu triệu lượt người like ngay lập tức.
 
-Kết quả <a href="https://blogs.akamai.com/2015/06/performance-matters-more-than-ever.html" target="_blank">thống kê</a> cảm nhận người dùng
+Kết quả <a href="https://blogs.akamai.com/2015/06/performance-matters-more-than-ever.html" target="_blank" rel="noopener noreferrer">thống kê</a> cảm nhận người dùng
 
 - Với những trang bán hàng, 30% người dùng mong muốn trang web phải load xong trong 1 giây.
 - Phân nữa khách hàng sẽ không quay lại mua sắm trực tuyến nếu thủ tục checkout rườm ra lâu lắc

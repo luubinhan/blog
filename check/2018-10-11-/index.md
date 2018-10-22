@@ -1,8 +1,8 @@
 ---
 slug: "/2018-10-08-huong-dan-aria-va-su-dung-voi-ecommerce-site"
 date: "2018-10-08"
-title: "Tổng quát các vấn đề bạn cần quan tâm để bảo mật ứng dụng web"
-desc: ""
+title: "Bảo mật web - biết gì chỉ nấy cho các bạn"
+desc: "Tổng quát các vấn đề bạn cần quan tâm để bảo mật ứng dụng web"
 cover: ""
 type: "post"
 lesson: 0
@@ -24,9 +24,10 @@ tags: ["javascript"]
     - [Store XSS - lưu đoạn script đó lên trên server](#store-xss---lưu-đoạn-script-đó-lên-trên-server)
     - [Reflect XSS](#reflect-xss)
   - [DOM-Based XSS](#dom-based-xss)
-    - [Ứng dụng trong Single Page Application](#ứng-dụng-trong-single-page-application)
 - [Công cụ kiểm tra](#công-cụ-kiểm-tra)
-  - [Content Security Policy (CSP)](#content-security-policy-csp)
+- [Content Security Policy (CSP)](#content-security-policy-csp)
+  - [Whitelist](#whitelist)
+- [Policy được áp dụng trên nhiều resource khác nhau](#policy-được-áp-dụng-trên-nhiều-resource-khác-nhau)
   - [Cross-Origin Resource Sharing (CORS)](#cross-origin-resource-sharing-cors)
 
 <!-- /TOC -->
@@ -133,12 +134,36 @@ Cách phổ biến để phòng chống
 - Filter hết mấy đoạn html nguy hiểm (như < >, " ", &) trước khi lưu
 - Dùng thư viện để escape context-sensitive trước khi output
 
-### Ứng dụng trong Single Page Application
-
-
 # Công cụ kiểm tra
 
-## Content Security Policy (CSP)
+https://securityheaders.com/
+
+# Content Security Policy (CSP)
+
+- Sử dụng whitelist để báo client cái gì cho phép, cái gì không cho phép
+- Các khai báo có sẵn
+- Code inline và `eval()`
+- Báo với server vi phạm policy trước khi gửi
+
+## Whitelist
+
+Thay vì tin tưởng tất cả những gì server gửi, CSP định nghĩa trong HTTP Header: `Content-Security-Policy cho phép tạo whitelist các source tin tưởng, báo với browser chỉ thực thi hoặc render từ whitelist
+
+```
+Content-Security-Policy: script-src "self" https://apis.google.com
+```
+
+`script-src` khai báo trình duyệt có toàn quyền thực thi javascript từ **apis.google.com** và cùng origin
+
+# Policy được áp dụng trên nhiều resource khác nhau
+
+- `base-uri`: giới hạn các URL có thể xuất hiện trong thẻ <base>
+- `child-src`: danh sách URL cho worker và embedded frame. Ví dụ: child-src https://youtube.com được phép embed các video từ Youtube, không được phép từ các origin khác
+- `connect-src`: giới hạn các origin được phép kết nối (thông qua XHR, WebSocket, EventSource)
+- `font-src`: chỉ định các origin cung cấp web font.
+- `form-action`: danh sách
+
+
 ## Cross-Origin Resource Sharing (CORS)
 
 CORS là một cơ chế sử dụng HTTP header để báo với trình duyệt, ứng dụng chạy trên một tên miền này có quyền truy cập đến resource từ server khác, domain khác, port khác, protocol khác với chổ nó được host (gọi chung là Origin)

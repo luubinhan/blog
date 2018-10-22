@@ -50,10 +50,10 @@ class About extends Component {
 												<tr>
 													<td>
 														<div className="pr-30">
-															<a href={SITE_CONFIG.linkedin} target="_blank"><i className="ion-social-linkedin-outline"></i><span className="pl-10 ">LinkedIn</span></a>
+															<a href={SITE_CONFIG.linkedin} target="_blank" rel="noopener noreferrer"><i className="ion-social-linkedin-outline"></i><span className="pl-10 ">LinkedIn</span></a>
 														</div>
 													</td>
-													<td><a href={SITE_CONFIG.twitter} target="_blank"><i className="ion-social-twitter-outline"></i><span className="pl-10 ">Twitter</span></a></td>
+													<td><a href={SITE_CONFIG.twitter} target="_blank" rel="noopener noreferrer"><i className="ion-social-twitter-outline"></i><span className="pl-10 ">Twitter</span></a></td>
 												</tr>
 											</tbody>
 										</table>

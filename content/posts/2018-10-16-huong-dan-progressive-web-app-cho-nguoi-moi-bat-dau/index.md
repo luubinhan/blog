@@ -33,7 +33,7 @@ tags: ["pwa"]
 
 # 1. Giới thiệu
 
-Trong lúc dựng một Progressive Web App, chúng ta cần nhớ những quan điều sau
+Trong lúc dựng một Progressive Web App, chúng ta cần nhớ những điều sau
 
 - Không quan trọng user đang dùng trình duyệt gì
 - Hỗ trợ tốt trên nhiều loại thiết bị desktop, mobile, tablet
