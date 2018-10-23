@@ -10,7 +10,7 @@ chapter: 0
 tags: ["css"]
 ---
 
-Anh <a href="https://9elements.com/io/css-border-radius/" target="_blank" rel="noopener noreferrer">Nils Binder</a> nghĩ ra một trick khá hay để tạo vẽ hình bằng `border-radius`
+Anh <a href="https://9elements.com/io/css-border-radius/" target="_blank" rel="noopener noreferrer">Nils Binder</a> nghĩ ra một trick khá hay để vẽ hình bằng `border-radius`
 
 Bạn có thể dùng ngay luôn [công cụ anh này làm](https://9elements.github.io/fancy-border-radius/), kéo chỉnh theo ý muốn, rồi copy giá trị.
 
