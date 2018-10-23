@@ -13,8 +13,8 @@
       "path---2017-07-31-react-router-8fa1188bfd19c1e04fcd.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-0add3c63519188177b4d.js",
-      "path---tags-ux-ui-0add3c63519188177b4d.js.map"
+      "path---tags-ux-ui-a85c2fe0ec50bf51c6a1.js",
+      "path---tags-ux-ui-a85c2fe0ec50bf51c6a1.js.map"
     ],
     "path---2018-10-16-huong-dan-progressive-web-app-cho-nguoi-moi-bat-dau": [
       "path---2018-10-16-huong-dan-progressive-web-app-cho-nguoi-moi-bat-dau-1de483893b348ec4cfbe.js",
@@ -41,8 +41,8 @@
       "path---2018-07-30-huong-dan-tam-quan-trong-cua-thuoc-tinh-sizes-trong-the-img-aec895dd43976f01057e.js.map"
     ],
     "path---4": [
-      "path---4-375b8e76892c66d92444.js",
-      "path---4-375b8e76892c66d92444.js.map"
+      "path---4-70e2329a29ff5560e431.js",
+      "path---4-70e2329a29ff5560e431.js.map"
     ],
     "path---2018-10-03-huong-dan-reactjs-table-du-lieu-lon": [
       "path---2018-10-03-huong-dan-reactjs-table-du-lieu-lon-346d837b6842c1e75ad2.js",
@@ -156,6 +156,10 @@
       "path---2018-05-01-huong-dan-cai-thien-performance-react-app-3eaf41573f3048265df8.js",
       "path---2018-05-01-huong-dan-cai-thien-performance-react-app-3eaf41573f3048265df8.js.map"
     ],
+    "path---5": [
+      "path---5-55eea587baebf11ad455.js",
+      "path---5-55eea587baebf11ad455.js.map"
+    ],
     "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react": [
       "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react-68b7b0f39ebdd876f924.js",
       "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react-68b7b0f39ebdd876f924.js.map"
@@ -253,8 +257,8 @@
       "path---2018-07-02-huong-dan-javascript-modules-tren-web-f66f268967df84a72998.js.map"
     ],
     "path---index": [
-      "path---index-078534e8edd449e0e2a6.js",
-      "path---index-078534e8edd449e0e2a6.js.map"
+      "path---index-5bd56708affbdbda9a40.js",
+      "path---index-5bd56708affbdbda9a40.js.map"
     ],
     "component---src-pages-about-jsx": [
       "component---src-pages-about-jsx-af59531e5ca9ef0770d3.js",
@@ -289,8 +293,8 @@
       "path---2018-04-28-huong-dan-redux-vs-mobx-chon-cai-nao-day-54a71170ed5f2fff1a47.js.map"
     ],
     "path---2": [
-      "path---2-13ebf35618500f083260.js",
-      "path---2-13ebf35618500f083260.js.map"
+      "path---2-5391a6f93da66f6e9bb0.js",
+      "path---2-5391a6f93da66f6e9bb0.js.map"
     ],
     "path---2018-03-29-huong-dan-query-string-voi-react-router": [
       "path---2018-03-29-huong-dan-query-string-voi-react-router-d86c3e5241e0c2f0b725.js",
@@ -339,8 +343,8 @@
       "path---2018-10-23-huong-dan-do-toc-do-website-bang-chrome-3e2a4b5fb1fe2b5680bb.js.map"
     ],
     "path---tags-chrome": [
-      "path---tags-chrome-e81568ed774ca7aa70df.js",
-      "path---tags-chrome-e81568ed774ca7aa70df.js.map"
+      "path---tags-chrome-9aeb88f50bff8548618b.js",
+      "path---tags-chrome-9aeb88f50bff8548618b.js.map"
     ],
     "path---2018-02-14-huong-dan-redux-la-gi-tai-sao-phai-dung": [
       "path---2018-02-14-huong-dan-redux-la-gi-tai-sao-phai-dung-b72e8ab04d7c74c138f1.js",
@@ -375,8 +379,8 @@
       "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-4882d78ed5be1ee7e410.js.map"
     ],
     "path---3": [
-      "path---3-1e1bd49018524ed937fa.js",
-      "path---3-1e1bd49018524ed937fa.js.map"
+      "path---3-e4c9ecadc78f99db385f.js",
+      "path---3-e4c9ecadc78f99db385f.js.map"
     ],
     "component---src-pages-404-jsx": [
       "component---src-pages-404-jsx-713f07a0074f497d9225.js",
@@ -495,9 +499,9 @@
       "path---2018-08-12-huong-dan-con-duong-tro-thanh-developer-2018-a450ae4ec4950375c76d.js.map"
     ],
     "app": [
-      "app-af67d9294cbc90eb9fad.js",
+      "app-c601daf67845febb08c0.js",
       "build-js-styles.css",
-      "app-af67d9294cbc90eb9fad.js.map",
+      "app-c601daf67845febb08c0.js.map",
       "build-js-styles.css.map"
     ],
     "path---2018-08-21-huong-dan-su-dung-checkbox-va-toggle-switch": [
@@ -619,6 +623,10 @@
     "path---tags-githubpage": [
       "path---tags-githubpage-6504851521afadfb305d.js",
       "path---tags-githubpage-6504851521afadfb305d.js.map"
+    ],
+    "path---2018-10-18-huong-dan-dung-chrome-dev-tool-de-kiem-tra-contrast": [
+      "path---2018-10-18-huong-dan-dung-chrome-dev-tool-de-kiem-tra-contrast-61bf33d467b07795e171.js",
+      "path---2018-10-18-huong-dan-dung-chrome-dev-tool-de-kiem-tra-contrast-61bf33d467b07795e171.js.map"
     ],
     "path---about": [
       "path---about-a0e39f21c11f6a62c5ab.js",
