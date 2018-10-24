@@ -33,10 +33,6 @@ export default class PostTemplate extends React.Component {
             name="keywords"
             content="frontend,developer,javascript,wordpress,react,hochiminh,web-developer"
           />
-          <script
-            src="https://luubinhan.github.io/blog/facebookcomment.js"
-            defer="true"
-          />
         </Helmet>
         <div className="inner">
           <SEO postPath={slug} postNode={postNode} postSEO />
