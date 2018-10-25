@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript"]
+tags: ["mobile-web-specialist"]
 ---
 
 <!-- TOC -->
@@ -41,7 +41,8 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
 - [Tổng quát về canh lề với Flexbox display](/2018-07-04-huong-dan-tong-hop-canh-le-voi-flexbox-alignment)
 - Using media queries
 - [Video and audio content](https://developer.mozilla.org/vi/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content), bài này mình dịch nếu sai chổ nào các bạn sữa giúp
-- Responsive Images by Google
+- [Responsive Image course](https://www.udacity.com/course/responsive-images--ud882)
+- [Tầm quan trọng của thuộc tính sizes trong thẻ img](/2018-07-30-huong-dan-tam-quan-trong-cua-thuoc-tinh-sizes-trong-the-img)
 - Supporting both TouchEvent and MouseEvent
 - [Touch events](https://developer.mozilla.org/vi/docs/Web/API/Touch_events/Supporting_both_TouchEvent_and_MouseEvent)
 

@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["css"]
+tags: ["css", "mobile-web-specialist"]
 ---
 
 # Cung cấp kích thước ảnh trên `srcset`
