@@ -10,7 +10,7 @@ module.exports = {
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "445556375516928", // FB Application ID for using app insights
   googleAnalyticsID: "UA-29685098-2", // GA tracking ID.
-  disqusShortname: "luckyluu", // Disqus shortname.
+  disqusShortname: "luckyluu-blog", // Disqus shortname.
   postDefaultCategoryID: "React", // Default category for posts.
   userName: "luckyluu", // Username to display in the author segment.
   userTwitter: "luubinhan", // Optionally renders "Follow Me" in the UserInfo segment.

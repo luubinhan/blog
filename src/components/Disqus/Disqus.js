@@ -21,6 +21,7 @@ class Disqus extends Component {
     toasts.push({ text: "New comment available!" });
     this.setState({ toasts });
   }
+  doNothing = () => {}
   render() {
     const { postNode } = this.props;
     if (!config.disqusShortname) {
@@ -31,11 +32,11 @@ class Disqus extends Component {
     return (
       <ReactDisqusComments
         shortname={config.disqusShortname}
-        identifier={post.title}
+        identifier={post.id}
         title={post.title}
         url={url}
-        category_id={post.category_id}
-        onNewComment={this.notifyAboutComment}
+        category_id="123456"
+        onNewComment={this.doNothing}
       />
     );
   }
