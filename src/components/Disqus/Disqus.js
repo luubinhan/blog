@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactDisqusComments from "react-disqus-comments";
+import ReactDisqus from 'disqus-react';
 import config from "../../../data/SiteConfig";
 
 class Disqus extends Component {
@@ -21,23 +21,18 @@ class Disqus extends Component {
     toasts.push({ text: "New comment available!" });
     this.setState({ toasts });
   }
-  doNothing = () => {}
+  doNothing = () => {};
   render() {
     const { postNode } = this.props;
-    if (!config.disqusShortname) {
-      return null;
-    }
     const post = postNode.frontmatter;
     const url = config.siteUrl + config.pathPrefix + postNode.fields.slug;
+    const disqusConfig = {
+      url: url,
+      identifier: post.id,
+      title: post.title
+    };
     return (
-      <ReactDisqusComments
-        shortname={config.disqusShortname}
-        identifier={post.id}
-        title={post.title}
-        url={url}
-        category_id="123456"
-        onNewComment={this.doNothing}
-      />
+      <ReactDisqus.DiscussionEmbed shortname={config.disqusShortname} config={disqusConfig} />
     );
   }
 }
