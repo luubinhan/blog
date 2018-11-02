@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["react", "javascript"]
+tags: ["react"]
 ---
 
 <!-- TOC -->

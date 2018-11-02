@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["react", "javascript"]
+tags: ["react"]
 ---
 
 <!-- TOC -->
@@ -21,11 +21,11 @@ tags: ["react", "javascript"]
 
 # Static vs Dynamic Typing
 
-Để bắt đầu chúng ta phải hiểu cách javascript handle type
+Để bắt đầu chúng ta phải hiểu cách javascript làm việc với `type`
 
-Một cách ngắn gọn nhất ngôn ngữ statically-typed thì type của biến có thể xác định lúc **compile** (trước khi chạy), ngôn ngữ dynamically-typed thì chỉ biết được type của biến lúc **runttime**
+Một cách ngắn gọn nhất, ngôn ngữ **statically-typed** thì `type` của biến có thể xác định lúc **compile** (trước khi chạy), ngôn ngữ **dynamically-typed** thì chỉ biết được type của biến lúc **run time**
 
-Như vậy với ngôn ngữ dạng statically-typed, lỗi sẽ được báo ngay khi build hoặc trên editor khi chúng ta sử dụng type không đúng. Nhưng với những ngôn ngữ kiểu dynamically-typed như Javascript nó sẽ khác chút. Xem xét đoạn code sau
+Như vậy với ngôn ngữ dạng *statically-typed*, lỗi sẽ được báo ngay khi build hoặc trên editor khi chúng ta sử dụng type không đúng. Nhưng với những ngôn ngữ kiểu dynamically-typed như Javascript nó sẽ khác chút. Xem xét đoạn code sau
 
 ```js
 var myObject = {
@@ -57,23 +57,23 @@ console.log(typeof myNumber); // boolean
 
 Để đặt ràng buộc type trong Javascript hay React chúng có những 3 tên tuổi nổi bật Typescript, PropTypes, Flow.
 
-Flow là thư viện của Facebook, hỗ trợ tốt nhất cho React, đứng trên góc độ của người làm sell, nếu nói chúng ta sử dụng Flow từ Facebook sẽ ngon hơn, Typescript là superset của javascript, việc dùng Typescript cũng thay đổi khá nhiều thứ khác trong project, mình cảm thấy nó tiêu tốn khá nhiều thời gian hơn trong lúc dev, PropTpyes đã ko còn được quan tâm nhiều như trước nữa từ sau khi có Flow
+Flow là thư viện của Facebook, hỗ trợ tốt nhất cho React, đứng trên góc độ của người làm sell, nếu nói chúng ta sử dụng Flow từ Facebook sẽ ngon hơn, Typescript là superset của javascript, việc dùng Typescript cũng thay đổi khá nhiều thứ khác trong project, mình cảm thấy nó tiêu tốn khá nhiều thời gian hơn trong lúc dev, `PropTypes` đã ko còn được quan tâm nhiều như trước nữa từ sau khi có Flow
 
 Còn theo như phát biểu từ những người tạo ra Flow (những developer trong Facebook)
 
-"Chúng tôi built Flow vì thấy TypeScript đang đi không theo hướng mà công động mong đợi. Ví dụ, TypeScript cố tính không muốn đi theo hướng tập trung vào vấn đề type checking như một type system, không cung cấp việc generate ra document cho API với type đã định nghĩa. Nếu bạn muốn TypeScript làm cái gì bạn cũng phải bảo nó hết, ko hoàn toàn tự động. Mặc dù từ TypeScript 2.0 họ bắt đầu để ý chuyện này, tuy nhiên còn phải rất lâu mới bắt kịp Flow nhé"
+"Chúng tôi built Flow vì thấy TypeScript đang đi theo hướng mà công đồng không mong đợi. Ví dụ, TypeScript cố tình không muốn đi theo hướng tập trung vào vấn đề type checking như một type system, không cung cấp việc generate ra document cho API với type đã định nghĩa. Nếu bạn muốn TypeScript làm cái gì, bạn cũng phải bảo nó hết, ko hoàn toàn tự động. Mặc dù từ TypeScript 2.0 họ bắt đầu để ý chuyện này, tuy nhiên còn phải rất lâu mới bắt kịp Flow nhé"
 
 # Setup Flow với React
 
-Theo hướng dẫn trên tài liệu chính thức https://flow.org/en/docs/react/
+Theo hướng dẫn trên tài liệu chính thức <a href="https://flow.org/en/docs/react/" target="_blank" rel="noopener noreferrer">https://flow.org/en/docs/react/</a>
 
-Nếu khởi tạo project bằng Create-React-App thì chỉ việc instal Flow và tạo file `.flowconfig`
+Nếu khởi tạo project bằng create-react-App thì chỉ việc instal Flow và tạo file `.flowconfig`
 
-```shell
+```powershell
 npm i flow-bin --save-dev
 ```
 
-Bên trong file package.json, add thêm đoạn script để chạy flow
+Bên trong file `package.json`, add thêm đoạn script để chạy flow
 
 ```json
 "scripts": {
@@ -83,7 +83,7 @@ Bên trong file package.json, add thêm đoạn script để chạy flow
 
 Để init file `.flowconfig`
 
-```shell
+```powershell
 npm run flow init
 ```
 
@@ -149,4 +149,7 @@ class App extends React.Component<Props> {
 }
 ```
 
-[Link bài gốc](https://www.lullabot.com/articles/flow-for-static-type-checking-javascript)
+[Đọc thêm: Sử dụng Flow để check type trong React Redux](/2018-09-13-huong-dan-su-dung-flow-voi-react-redux)
+
+
+[Nguồn tham khảo: Why I Chose to Use Flow for Static Type Checking My JavaScript](https://www.lullabot.com/articles/flow-for-static-type-checking-javascript)

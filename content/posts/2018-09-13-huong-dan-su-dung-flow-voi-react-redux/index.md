@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["react", "javascript", "redux"]
+tags: ["react", "redux"]
 ---
 
 <!-- TOC -->
@@ -315,4 +315,7 @@ export default function player(
 
 Một lợi ích của việc define type mà mình rất thích là nó sẽ có cái hint trên IDE mỗi khi mình dùng gọi đến hàm hay params đó.
 
-[Link bài gốc](https://medium.com/@cdebotton/redux-and-flowtype-69ff1dd09036)
+
+[Đọc thêm: Tại sao sử dụng Flow, và sử dụng Flow như thế nào trong React](/2018-09-10-huong-dan-lam-viec-voi-flow-react-type-checking)
+
+[Tài liệu tham khảo](https://medium.com/@cdebotton/redux-and-flowtype-69ff1dd09036)
