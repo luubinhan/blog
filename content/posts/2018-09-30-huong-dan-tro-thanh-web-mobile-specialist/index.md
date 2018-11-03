@@ -59,9 +59,6 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
 Nguồn tham khảo ( mình sẽ viết từ từ )
 
 - [Giới thiệu fetch() của javascript](/2018-10-01-huong-dan-gioi-thieu-fetch-javascript)
-- Using fetch
-- David Walsh's blog on fetch
-- Jake Archibald's blog on fetch
 - [Nắm vững Promise trong javascript](/2017-10-12-javascript-promise)
 - HTTP access control (CORS)
 
@@ -94,10 +91,9 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
 
 Nguồn tham khảo ( mình sẽ viết từ từ )
 
-- Progressive Web Apps
 - Progressive Web Apps Training
 - Web Fundamentals - The App Shell Model
-- Your First Progressive Web App
+- [Dựng Progressive Web App đầu tiên của bạn](/2018-10-16-huong-dan-progressive-web-app-cho-nguoi-moi-bat-dau)
 - Using Service Workers
 
 # Performance Optimization và Caching
@@ -169,16 +165,14 @@ Nguồn tham khảo
 - Sử dụng input có kích thước phù hợp cho việc touch
 - Suggestion cho user bằng `datalist`
 - Validate các input ở FrontEnd ( ví dụ pattern, maxlength, required)
-  - Kiểm tra validate ngay lặp tức bằng **pseudo-classes** trên input
-  - Thực hiện validate khi submit
+- Kiểm tra validate ngay lặp tức bằng **pseudo-classes** trên input
+- Thực hiện validate khi submit
 
 Nguồn tham khảo ( mình sẽ viết từ từ )
 
 - Create Amazing Forms
 - Constraint Validation
-- Client-Side Form Validation with HTML5
-- Data form validation
-- HTML Forms
+- [Validate form với HTML5](/2018-11-02-validate-form-voi-html-5)
 
 [Tham khảo cách lấy chứng chỉ Web Mobile Specialist](
 https://developers.google.com/training/certification/mobile-web-specialist/)

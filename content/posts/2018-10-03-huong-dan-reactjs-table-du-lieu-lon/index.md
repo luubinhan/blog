@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript", "react", "performance"]
+tags: ["react", "performance"]
 ---
 
 Chúng ta có component như sau

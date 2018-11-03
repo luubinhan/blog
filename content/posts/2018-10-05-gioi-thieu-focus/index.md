@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript", "ux-ui"]
+tags: ["mobile-web-specialist", "ux-ui"]
 ---
 
 Nói đến focus là nói đến element nào (như input, button, link, checkbox, select) đang nhận input từ bàn phím, hoặc clipboard nếu user gọi paste
