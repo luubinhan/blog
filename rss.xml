@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[luckyluu]]></title><description><![CDATA[Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End]]></description><link>https://luubinhan.github.io/blog</link><image><url>https://luubinhan.github.io/blog/logos/logo-512.png</url><title>luckyluu</title><link>https://luubinhan.github.io/blog</link></image><generator>Front End Developer An.Luu</generator><lastBuildDate>Sat, 03 Nov 2018 11:15:26 GMT</lastBuildDate><atom:link href="https://luubinhan.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[luckyluu]]></author><copyright><![CDATA[Copyright © 2018. luckyluu]]></copyright><item><title><![CDATA[Validate form với HTML5]]></title><description><![CDATA[Chúng ta cùng điểm qua các attribute mà HTML5 cung cấp để validate type required minlength, maxlength, min, max pattern Gợi ý Customize câu…]]></description><link>https://luubinhan.github.io/blog/2018-11-02-validate-form-voi-html-5</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-11-02-validate-form-voi-html-5</guid><category><![CDATA[mobile-web-specialist]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Fri, 02 Nov 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Chúng ta cùng điểm qua các attribute mà HTML5 cung cấp để validate&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[luckyluu]]></title><description><![CDATA[Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End]]></description><link>https://luubinhan.github.io/blog</link><image><url>https://luubinhan.github.io/blog/logos/logo-512.png</url><title>luckyluu</title><link>https://luubinhan.github.io/blog</link></image><generator>Front End Developer An.Luu</generator><lastBuildDate>Sun, 04 Nov 2018 08:26:50 GMT</lastBuildDate><atom:link href="https://luubinhan.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[luckyluu]]></author><copyright><![CDATA[Copyright © 2018. luckyluu]]></copyright><item><title><![CDATA[Giới thiệu React.memo]]></title><description><![CDATA[Class component như  , hoặc return   trong  , component đó sẽ không bị re-render khi  tree  thay đổi, nó chỉ thay đổi khi   truyền vào thay…]]></description><link>https://luubinhan.github.io/blog/2018-11-04-gioi-thieu-react-memo-moi-trong-react-16</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-11-04-gioi-thieu-react-memo-moi-trong-react-16</guid><category><![CDATA[react]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Sun, 04 Nov 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Class component như &lt;code class=&quot;language-text&quot;&gt;PureComponent&lt;/code&gt;, hoặc return &lt;code class=&quot;language-text&quot;&gt;false&lt;/code&gt; trong &lt;code class=&quot;language-text&quot;&gt;shouldComponentUpdate&lt;/code&gt;, component đó sẽ không bị re-render khi &lt;strong&gt;tree&lt;/strong&gt; thay đổi, nó chỉ thay đổi khi &lt;code class=&quot;language-text&quot;&gt;prop&lt;/code&gt; truyền vào thay đổi&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;React.memo()&lt;/code&gt; hoạt động y chang như &lt;code class=&quot;language-text&quot;&gt;React.PureComponent()&lt;/code&gt;, nhưng nó là function component thay vì class như &lt;code class=&quot;language-text&quot;&gt;PureComponent&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; MyComponent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;memo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;MyComponent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;/* chỉ render khi prop thay đổi */&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// khai báo bằng arrow function&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; MyComponent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;memo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;props &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;my memoized component&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// ngắn hơn nữa&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; MyComponent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;memo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;props &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;implicit memoized component&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Vì &lt;code class=&quot;language-text&quot;&gt;React.memo()&lt;/code&gt; là HOC, chúng ta cũng có thể dùng như sau&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;RocketComponent&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; props &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;my rocket component&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;fuel&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// một version chỉ render khi prop thay đổi&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; MemoizedRocketComponent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;memo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;RocketComponent&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Tại sao đặt tên là &lt;code class=&quot;language-text&quot;&gt;memo&lt;/code&gt; nghe có vẻ chướng tai? &lt;strong&gt;Memoization&lt;/strong&gt; là một kỹ thuật lập trình để optimize tốc độ, thực hiện bằng việc lưu kết quả của một function vào cache để nếu có gọi và truyền vào cùng input thì return cache thay vì thực thi các câu lệnh trong function.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Validate form với HTML5]]></title><description><![CDATA[Chúng ta cùng điểm qua các attribute mà HTML5 cung cấp để validate type required minlength, maxlength, min, max pattern Gợi ý Customize câu…]]></description><link>https://luubinhan.github.io/blog/2018-11-02-validate-form-voi-html-5</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-11-02-validate-form-voi-html-5</guid><category><![CDATA[mobile-web-specialist]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Fri, 02 Nov 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Chúng ta cùng điểm qua các attribute mà HTML5 cung cấp để validate&lt;/p&gt;
 &lt;!-- TOC --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#type&quot;&gt;type&lt;/a&gt;&lt;/li&gt;
@@ -3195,9 +3219,6 @@ formData&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span c
 &lt;p&gt;Nguồn tham khảo ( mình sẽ viết từ từ )&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;/blog/2018-10-01-huong-dan-gioi-thieu-fetch-javascript&quot;&gt;Giới thiệu fetch() của javascript&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Using fetch&lt;/li&gt;
-&lt;li&gt;David Walsh&apos;s blog on fetch&lt;/li&gt;
-&lt;li&gt;Jake Archibald&apos;s blog on fetch&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;/blog/2017-10-12-javascript-promise&quot;&gt;Nắm vững Promise trong javascript&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;HTTP access control (CORS)&lt;/li&gt;
 &lt;/ul&gt;
@@ -3230,10 +3251,9 @@ formData&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span c
 &lt;/ul&gt;
 &lt;p&gt;Nguồn tham khảo ( mình sẽ viết từ từ )&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Progressive Web Apps&lt;/li&gt;
 &lt;li&gt;Progressive Web Apps Training&lt;/li&gt;
 &lt;li&gt;Web Fundamentals - The App Shell Model&lt;/li&gt;
-&lt;li&gt;Your First Progressive Web App&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/blog/2018-10-16-huong-dan-progressive-web-app-cho-nguoi-moi-bat-dau&quot;&gt;Dựng Progressive Web App đầu tiên của bạn&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Using Service Workers&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;performance-optimization-và-caching&quot;&gt;&lt;a href=&quot;#performance-optimization-v%C3%A0-caching&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Performance Optimization và Caching&lt;/h1&gt;
@@ -3312,21 +3332,15 @@ formData&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span c
 &lt;li&gt;Input với giá trị &lt;code class=&quot;language-text&quot;&gt;type&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;name&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;autocomplete&lt;/code&gt; phù hợp&lt;/li&gt;
 &lt;li&gt;Sử dụng input có kích thước phù hợp cho việc touch&lt;/li&gt;
 &lt;li&gt;Suggestion cho user bằng &lt;code class=&quot;language-text&quot;&gt;datalist&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Validate các input ở FrontEnd ( ví dụ pattern, maxlength, required)&lt;/p&gt;
-&lt;ul&gt;
+&lt;li&gt;Validate các input ở FrontEnd ( ví dụ pattern, maxlength, required)&lt;/li&gt;
 &lt;li&gt;Kiểm tra validate ngay lặp tức bằng &lt;strong&gt;pseudo-classes&lt;/strong&gt; trên input&lt;/li&gt;
 &lt;li&gt;Thực hiện validate khi submit&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Nguồn tham khảo ( mình sẽ viết từ từ )&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Create Amazing Forms&lt;/li&gt;
 &lt;li&gt;Constraint Validation&lt;/li&gt;
-&lt;li&gt;Client-Side Form Validation with HTML5&lt;/li&gt;
-&lt;li&gt;Data form validation&lt;/li&gt;
-&lt;li&gt;HTML Forms&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/blog/2018-11-02-validate-form-voi-html-5&quot;&gt;Validate form với HTML5&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href=&quot;https://developers.google.com/training/certification/mobile-web-specialist/&quot;&gt;Tham khảo cách lấy chứng chỉ Web Mobile Specialist&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Điểm qua các kiểu navigator của thư viện react-navigation]]></title><description><![CDATA[Stack Switch Drawer Bottom Tab Material Top Tab Có rất nhiều thư viện khác nhau để làm navigation với React native, mình khuyến khích các…]]></description><link>https://luubinhan.github.io/blog/2018-09-27-huong-dan-react-native-cac-kieu-react-navigation</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-09-27-huong-dan-react-native-cac-kieu-react-navigation</guid><category><![CDATA[javascript]]></category><category><![CDATA[react-native]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Thu, 27 Sep 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;

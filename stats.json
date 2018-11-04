@@ -41,8 +41,8 @@
       "path---2018-07-30-huong-dan-tam-quan-trong-cua-thuoc-tinh-sizes-trong-the-img-478664aec8e6bfce3e2b.js.map"
     ],
     "path---4": [
-      "path---4-8390a929c46bbc7f50d8.js",
-      "path---4-8390a929c46bbc7f50d8.js.map"
+      "path---4-1c2d7c472610abc410e7.js",
+      "path---4-1c2d7c472610abc410e7.js.map"
     ],
     "path---2018-10-03-huong-dan-reactjs-table-du-lieu-lon": [
       "path---2018-10-03-huong-dan-reactjs-table-du-lieu-lon-80cd4245d99b59bf51e7.js",
@@ -104,6 +104,10 @@
       "path----557518bd178906f8d58a.js",
       "path----557518bd178906f8d58a.js.map"
     ],
+    "path---2018-11-04-gioi-thieu-react-memo-moi-trong-react-16": [
+      "path---2018-11-04-gioi-thieu-react-memo-moi-trong-react-16-7a2e0c5a60ebd10cae3d.js",
+      "path---2018-11-04-gioi-thieu-react-memo-moi-trong-react-16-7a2e0c5a60ebd10cae3d.js.map"
+    ],
     "path---tags-design": [
       "path---tags-design-f0916eff19d52dd1a71e.js",
       "path---tags-design-f0916eff19d52dd1a71e.js.map"
@@ -161,16 +165,16 @@
       "path---2018-05-01-huong-dan-cai-thien-performance-react-app-98253e920f6fa4c8e9b1.js.map"
     ],
     "path---5": [
-      "path---5-a3bcf5a765f1552771c1.js",
-      "path---5-a3bcf5a765f1552771c1.js.map"
+      "path---5-ec553aa91342799bb5f9.js",
+      "path---5-ec553aa91342799bb5f9.js.map"
     ],
     "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react": [
       "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react-68b7b0f39ebdd876f924.js",
       "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react-68b7b0f39ebdd876f924.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-a2c88dd60c57178f1eb6.js",
-      "path---tags-react-a2c88dd60c57178f1eb6.js.map"
+      "path---tags-react-1d5daa0b834466efb8e5.js",
+      "path---tags-react-1d5daa0b834466efb8e5.js.map"
     ],
     "path---tags-performance": [
       "path---tags-performance-4b6f592a914d4e699916.js",
@@ -261,8 +265,8 @@
       "path---2018-07-02-huong-dan-javascript-modules-tren-web-66de3b496687e73c5d80.js.map"
     ],
     "path---index": [
-      "path---index-4e3d1e54ab221569d284.js",
-      "path---index-4e3d1e54ab221569d284.js.map"
+      "path---index-fcc73298ab17d49bbc43.js",
+      "path---index-fcc73298ab17d49bbc43.js.map"
     ],
     "component---src-pages-about-jsx": [
       "component---src-pages-about-jsx-af59531e5ca9ef0770d3.js",
@@ -297,8 +301,8 @@
       "path---2018-04-28-huong-dan-redux-vs-mobx-chon-cai-nao-day-54a71170ed5f2fff1a47.js.map"
     ],
     "path---2": [
-      "path---2-ab4cbb56cf6b00026586.js",
-      "path---2-ab4cbb56cf6b00026586.js.map"
+      "path---2-30bed4a1fb5b44585671.js",
+      "path---2-30bed4a1fb5b44585671.js.map"
     ],
     "path---2018-03-29-huong-dan-query-string-voi-react-router": [
       "path---2018-03-29-huong-dan-query-string-voi-react-router-d86c3e5241e0c2f0b725.js",
@@ -395,8 +399,8 @@
       "path---2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet-4882d78ed5be1ee7e410.js.map"
     ],
     "path---3": [
-      "path---3-e0a8ce1e0ca5e7cb1746.js",
-      "path---3-e0a8ce1e0ca5e7cb1746.js.map"
+      "path---3-605a8e300b4ef18a1842.js",
+      "path---3-605a8e300b4ef18a1842.js.map"
     ],
     "component---src-pages-404-jsx": [
       "component---src-pages-404-jsx-713f07a0074f497d9225.js",
@@ -491,8 +495,8 @@
       "path---2018-09-12-huong-dan-build-notify-system-voi-react-redux-d9c05b69269f4811a1cb.js.map"
     ],
     "path---2018-09-30-huong-dan-tro-thanh-web-moblie-specialist": [
-      "path---2018-09-30-huong-dan-tro-thanh-web-moblie-specialist-0b7998ae33030f563d78.js",
-      "path---2018-09-30-huong-dan-tro-thanh-web-moblie-specialist-0b7998ae33030f563d78.js.map"
+      "path---2018-09-30-huong-dan-tro-thanh-web-moblie-specialist-b0c0294683ab020f93b9.js",
+      "path---2018-09-30-huong-dan-tro-thanh-web-moblie-specialist-b0c0294683ab020f93b9.js.map"
     ],
     "path---2018-08-17-huong-dan-set-security-rules-cho-cloud-firestore": [
       "path---2018-08-17-huong-dan-set-security-rules-cho-cloud-firestore-ecf2b3773ecbeaa116d1.js",
@@ -523,9 +527,9 @@
       "path---2018-08-12-huong-dan-con-duong-tro-thanh-developer-2018-a450ae4ec4950375c76d.js.map"
     ],
     "app": [
-      "app-71193e0f21fc3aaf2f39.js",
+      "app-98f68a61b1d604e5783d.js",
       "build-js-styles.css",
-      "app-71193e0f21fc3aaf2f39.js.map",
+      "app-98f68a61b1d604e5783d.js.map",
       "build-js-styles.css.map"
     ],
     "path---2018-08-21-huong-dan-su-dung-checkbox-va-toggle-switch": [
