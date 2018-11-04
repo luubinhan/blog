@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[luckyluu]]></title><description><![CDATA[Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End]]></description><link>https://luubinhan.github.io/blog</link><image><url>https://luubinhan.github.io/blog/logos/logo-512.png</url><title>luckyluu</title><link>https://luubinhan.github.io/blog</link></image><generator>Front End Developer An.Luu</generator><lastBuildDate>Sun, 04 Nov 2018 08:26:50 GMT</lastBuildDate><atom:link href="https://luubinhan.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[luckyluu]]></author><copyright><![CDATA[Copyright © 2018. luckyluu]]></copyright><item><title><![CDATA[Giới thiệu React.memo]]></title><description><![CDATA[Class component như  , hoặc return   trong  , component đó sẽ không bị re-render khi  tree  thay đổi, nó chỉ thay đổi khi   truyền vào thay…]]></description><link>https://luubinhan.github.io/blog/2018-11-04-gioi-thieu-react-memo-moi-trong-react-16</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-11-04-gioi-thieu-react-memo-moi-trong-react-16</guid><category><![CDATA[react]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Sun, 04 Nov 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Class component như &lt;code class=&quot;language-text&quot;&gt;PureComponent&lt;/code&gt;, hoặc return &lt;code class=&quot;language-text&quot;&gt;false&lt;/code&gt; trong &lt;code class=&quot;language-text&quot;&gt;shouldComponentUpdate&lt;/code&gt;, component đó sẽ không bị re-render khi &lt;strong&gt;tree&lt;/strong&gt; thay đổi, nó chỉ thay đổi khi &lt;code class=&quot;language-text&quot;&gt;prop&lt;/code&gt; truyền vào thay đổi&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[luckyluu]]></title><description><![CDATA[Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End]]></description><link>https://luubinhan.github.io/blog</link><image><url>https://luubinhan.github.io/blog/logos/logo-512.png</url><title>luckyluu</title><link>https://luubinhan.github.io/blog</link></image><generator>Front End Developer An.Luu</generator><lastBuildDate>Sun, 04 Nov 2018 16:47:54 GMT</lastBuildDate><atom:link href="https://luubinhan.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[luckyluu]]></author><copyright><![CDATA[Copyright © 2018. luckyluu]]></copyright><item><title><![CDATA[Giới thiệu React.memo]]></title><description><![CDATA[Class component như  , hoặc return   trong  , component đó sẽ không bị re-render khi  tree  thay đổi, nó chỉ thay đổi khi   truyền vào thay…]]></description><link>https://luubinhan.github.io/blog/2018-11-04-gioi-thieu-react-memo-moi-trong-react-16</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-11-04-gioi-thieu-react-memo-moi-trong-react-16</guid><category><![CDATA[react]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Sun, 04 Nov 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Class component như &lt;code class=&quot;language-text&quot;&gt;PureComponent&lt;/code&gt;, hoặc return &lt;code class=&quot;language-text&quot;&gt;false&lt;/code&gt; trong &lt;code class=&quot;language-text&quot;&gt;shouldComponentUpdate&lt;/code&gt;, component đó sẽ không bị re-render khi &lt;strong&gt;tree&lt;/strong&gt; thay đổi, nó chỉ thay đổi khi &lt;code class=&quot;language-text&quot;&gt;prop&lt;/code&gt; truyền vào thay đổi&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;React.memo()&lt;/code&gt; hoạt động y chang như &lt;code class=&quot;language-text&quot;&gt;React.PureComponent()&lt;/code&gt;, nhưng nó là function component thay vì class như &lt;code class=&quot;language-text&quot;&gt;PureComponent&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
       &lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; MyComponent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;memo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;MyComponent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -22,7 +22,84 @@
 &lt;span class=&quot;token comment&quot;&gt;// một version chỉ render khi prop thay đổi&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; MemoizedRocketComponent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;memo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;RocketComponent&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
-&lt;p&gt;Tại sao đặt tên là &lt;code class=&quot;language-text&quot;&gt;memo&lt;/code&gt; nghe có vẻ chướng tai? &lt;strong&gt;Memoization&lt;/strong&gt; là một kỹ thuật lập trình để optimize tốc độ, thực hiện bằng việc lưu kết quả của một function vào cache để nếu có gọi và truyền vào cùng input thì return cache thay vì thực thi các câu lệnh trong function.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Validate form với HTML5]]></title><description><![CDATA[Chúng ta cùng điểm qua các attribute mà HTML5 cung cấp để validate type required minlength, maxlength, min, max pattern Gợi ý Customize câu…]]></description><link>https://luubinhan.github.io/blog/2018-11-02-validate-form-voi-html-5</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-11-02-validate-form-voi-html-5</guid><category><![CDATA[mobile-web-specialist]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Fri, 02 Nov 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Chúng ta cùng điểm qua các attribute mà HTML5 cung cấp để validate&lt;/p&gt;
+&lt;p&gt;Tại sao đặt tên là &lt;code class=&quot;language-text&quot;&gt;memo&lt;/code&gt; nghe có vẻ chướng tai? &lt;strong&gt;Memoization&lt;/strong&gt; là một kỹ thuật lập trình để optimize tốc độ, thực hiện bằng việc lưu kết quả của một function vào cache để nếu có gọi và truyền vào cùng input thì return cache thay vì thực thi các câu lệnh trong function.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Giới thiệu Markdown]]></title><description><![CDATA[Markdown - Ngôn ngữ dành để soạn thảo trên web Tại sao bạn nên tìm hiểu và sử dụng markdown Cách viết có định dạng Sử dụng Markdown với…]]></description><link>https://luubinhan.github.io/blog/2018-11-03-gioi-thieu-markdown</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-11-03-gioi-thieu-markdown</guid><category><![CDATA[css]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Sat, 03 Nov 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#markdown---ng%C3%B4n-ng%E1%BB%AF-d%C3%A0nh-%C4%91%E1%BB%83-so%E1%BA%A1n-th%E1%BA%A3o-tr%C3%AAn-web&quot;&gt;Markdown - Ngôn ngữ dành để soạn thảo trên web&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#t%E1%BA%A1i-sao-b%E1%BA%A1n-n%C3%AAn-t%C3%ACm-hi%E1%BB%83u-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-markdown&quot;&gt;Tại sao bạn nên tìm hiểu và sử dụng markdown&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#c%C3%A1ch-vi%E1%BA%BFt-c%C3%B3-%C4%91%E1%BB%8Bnh-d%E1%BA%A1ng&quot;&gt;Cách viết có định dạng&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#s%E1%BB%AD-d%E1%BB%A5ng-markdown-v%E1%BB%9Bi-gmail&quot;&gt;Sử dụng Markdown với gmail&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- /TOC --&gt;
+&lt;h1 id=&quot;markdown---ngôn-ngữ-dành-để-soạn-thảo-trên-web&quot;&gt;&lt;a href=&quot;#markdown---ng%C3%B4n-ng%E1%BB%AF-d%C3%A0nh-%C4%91%E1%BB%83-so%E1%BA%A1n-th%E1%BA%A3o-tr%C3%AAn-web&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Markdown - Ngôn ngữ dành để soạn thảo trên web&lt;/h1&gt;
+&lt;p&gt;Markdown không phải là ngôn ngữ mới được giới thiệu để thay thế ngôn ngữ hiển thị văn bản trên web hiện tại - HTML, là ngôn ngữ được phát triển với mục đích dễ viết, dễ học và dễ đọc cho những người không muốn học các tag html hoặc viết các tag html rối mắt, những vẫn đáp ứng được một định dạng văn bản &quot;chuẩn web&quot;. Nói cách khác, Markdown là một công cụ chuyển đổi file text thông thường sang HTML.&lt;/p&gt;
+&lt;p&gt;Nói Markdown không phải là ngôn ngữ mới bởi nó đã được phát triển từ tháng 5, 2004, bởi John Gruber và Aaron Swartz, nhưng chưa được nhiều ở Việt Nam biết đến, với những người thường xuyên làm việc với văn bản trên web, sử dụng bộ text editor (WYSIWYG) để hỗ trợ định dạng văn bản vẫn được xem là cách dễ dàng và nhanh nhất. Với cộng đồng người dùng trên Github, StackOverflow, Markdown là ngôn ngữ chính thống để viết lách&lt;/p&gt;
+&lt;h1 id=&quot;tại-sao-bạn-nên-tìm-hiểu-và-sử-dụng-markdown&quot;&gt;&lt;a href=&quot;#t%E1%BA%A1i-sao-b%E1%BA%A1n-n%C3%AAn-t%C3%ACm-hi%E1%BB%83u-v%C3%A0-s%E1%BB%AD-d%E1%BB%A5ng-markdown&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tại sao bạn nên tìm hiểu và sử dụng markdown&lt;/h1&gt;
+&lt;p&gt;Mục tiêu lớn nhất mà markdown ra đời là làm đơn giản và dễ đọc nhất có thể, để một người không quen với các thẻ &lt;code class=&quot;language-text&quot;&gt;html&lt;/code&gt; vẫn có thể hiểu được và viết được một văn bản chỉnh chu trên web.&lt;/p&gt;
+&lt;p&gt;Ví dụ đây là html&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Tại sao &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;em&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;bạn nên sử dụng markdown&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;em&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;a&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;http://www.anluu.com&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Markdown&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;a&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; cực kỳ dễ hiểu, nó sẽ làm &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;em&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;việc soạn thảo một văn bản trên web&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;em&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; không quá phức tạp như bạn nghĩ. &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;strong&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Cam đoan.&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;strong&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Còn đây là markdown&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token title important&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;#&lt;/span&gt; Tại sao *bạn nên sử dụng markdown*&lt;/span&gt;
+&lt;span class=&quot;token url&quot;&gt;[Markdown](http://www.anluu.com)&lt;/span&gt; cực kỳ dễ hiểu, nó sẽ làm &lt;span class=&quot;token italic&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;*&lt;/span&gt;việc soạn thảo một văn bản trên web &lt;span class=&quot;token punctuation&quot;&gt;*&lt;/span&gt;&lt;/span&gt;
+ không quá phức tạp như bạn nghĩ. &lt;span class=&quot;token bold&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;**&lt;/span&gt;Cam đoan.&lt;span class=&quot;token punctuation&quot;&gt;**&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h1 id=&quot;cách-viết-có-định-dạng&quot;&gt;&lt;a href=&quot;#c%C3%A1ch-vi%E1%BA%BFt-c%C3%B3-%C4%91%E1%BB%8Bnh-d%E1%BA%A1ng&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cách viết có định dạng&lt;/h1&gt;
+&lt;p&gt;Định dạng cho Heading&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token title important&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;#&lt;/span&gt; Tiêu đề cấp 1&lt;/span&gt;
+&lt;span class=&quot;token title important&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;##&lt;/span&gt; Tiêu đề cấp 2&lt;/span&gt;
+&lt;span class=&quot;token title important&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;###&lt;/span&gt; Tiêu đề cấp 3&lt;/span&gt;
+&lt;span class=&quot;token title important&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;####&lt;/span&gt; Tiêu đề cấp 4&lt;/span&gt;
+&lt;span class=&quot;token title important&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;#####&lt;/span&gt; Tiêu đề cấp 5&lt;/span&gt;
+&lt;span class=&quot;token title important&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;######&lt;/span&gt; Tiêu đề cấp 6&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Blockquote&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token blockquote punctuation&quot;&gt;&gt;&lt;/span&gt; Nội dung trích dẫn&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Image&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token url&quot;&gt;![Mô tả cho hình](http://www.anluu.com/hinh.jpg)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Link&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token url&quot;&gt;[Liên kết](http://www.anluu.com)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Danh sách&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token list punctuation&quot;&gt;*&lt;/span&gt; Node
+&lt;span class=&quot;token code keyword&quot;&gt;    * Child node&lt;/span&gt;
+&lt;span class=&quot;token code keyword&quot;&gt;    * Child node 2&lt;/span&gt;
+&lt;span class=&quot;token list punctuation&quot;&gt;*&lt;/span&gt; Node 2 
+&lt;span class=&quot;token list punctuation&quot;&gt;*&lt;/span&gt; Node 3&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Hoặc&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token list punctuation&quot;&gt;*&lt;/span&gt; Node
+&lt;span class=&quot;token code keyword&quot;&gt;    * Child node&lt;/span&gt;
+&lt;span class=&quot;token code keyword&quot;&gt;    * Child node 2&lt;/span&gt;
+&lt;span class=&quot;token list punctuation&quot;&gt;*&lt;/span&gt; Node 2 
+&lt;span class=&quot;token list punctuation&quot;&gt;*&lt;/span&gt; Node 3&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h1 id=&quot;sử-dụng-markdown-với-gmail&quot;&gt;&lt;a href=&quot;#s%E1%BB%AD-d%E1%BB%A5ng-markdown-v%E1%BB%9Bi-gmail&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Sử dụng Markdown với gmail&lt;/h1&gt;
+&lt;p&gt;Để viết email sử dụng markdown bằng Google Chrome, Firefox, Thunderbird, bạn cần tải thêm extension tại địa chỉ&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/elifhakcjgalahccnjkneoccemfahfoa&quot;&gt;Bản dùng cho Chrome&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/markdown-here/&quot;&gt;Bản dùng cho Firefox, Thunderbird, Postbox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sau khi cài đặt thành công, biểu tượng Markdown sẽ hiển thị trên thanh toolbar&lt;/p&gt;
+&lt;p&gt;Các ứng dụng, web đã test và sử dụng tốt&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gmail&lt;/li&gt;
+&lt;li&gt;Thunderbird&lt;/li&gt;
+&lt;li&gt;Hotmail&lt;/li&gt;
+&lt;li&gt;Wordpress&lt;/li&gt;
+&lt;li&gt;Tumblr&lt;/li&gt;
+&lt;li&gt;Evernote (Web)&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Validate form với HTML5]]></title><description><![CDATA[Chúng ta cùng điểm qua các attribute mà HTML5 cung cấp để validate type required minlength, maxlength, min, max pattern Gợi ý Customize câu…]]></description><link>https://luubinhan.github.io/blog/2018-11-02-validate-form-voi-html-5</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-11-02-validate-form-voi-html-5</guid><category><![CDATA[mobile-web-specialist]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Fri, 02 Nov 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Chúng ta cùng điểm qua các attribute mà HTML5 cung cấp để validate&lt;/p&gt;
 &lt;!-- TOC --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#type&quot;&gt;type&lt;/a&gt;&lt;/li&gt;
@@ -1143,7 +1220,35 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
 &lt;p&gt;Với cách làm này, ta có kết quả&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://9elements.com/io/images/border-radius-5.png&quot; alt=&quot;Sử dụng border-radius để vẽ custom shape&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://9elements.com/io/images/border-radius-6.png&quot; alt=&quot;Sử dụng border-radius để vẽ custom shape&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Dễ như ăn cơm sườn há!!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sử dụng localStorage trên website như thế nào]]></title><description><![CDATA[Vì sao chúng ta cần localStorage Nói đến HTTP, nó là dạng kết nối  stateless , nghĩa là khi đóng một ứng dụng web, lần truy cập sau mọi thứ…]]></description><link>https://luubinhan.github.io/blog/2018-10-21-huong-dan-su-dung-local-storage</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-21-huong-dan-su-dung-local-storage</guid><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Sun, 21 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;vì-sao-chúng-ta-cần-localstorage&quot;&gt;&lt;a href=&quot;#v%C3%AC-sao-ch%C3%BAng-ta-c%E1%BA%A7n-localstorage&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Vì sao chúng ta cần localStorage&lt;/h1&gt;
+&lt;p&gt;Dễ như ăn cơm sườn há!!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hướng dẫn inspect animation với Chrome DevTools]]></title><description><![CDATA[Ấn   để mở Chrome DevTools. Nhìn lên góc phải, chỗ có 3 dấu chấm, chọn vào  More tools  >  Animations F5 lại trang để bắt đầu xem phân tích…]]></description><link>https://luubinhan.github.io/blog/2018-10-21-huong-dan-dung-chrome-devtool-de-inspect-animation</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-21-huong-dan-dung-chrome-devtool-de-inspect-animation</guid><category><![CDATA[chrome]]></category><category><![CDATA[animation]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Sun, 21 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Ấn &lt;code class=&quot;language-text&quot;&gt;Ctrl + Shift + I&lt;/code&gt; để mở Chrome DevTools. Nhìn lên góc phải, chỗ có 3 dấu chấm, chọn vào &lt;strong&gt;More tools&lt;/strong&gt; &gt; &lt;strong&gt;Animations&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/activateInDevTools.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
+&lt;p&gt;F5 lại trang để bắt đầu xem phân tích animation&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/afterRefresh.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Di chuyển nút tròn màu đỏ (gọi là playhead) trên timeline đến vị trí tương ứng với thời gian của animation&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/animationGraphs.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Mỗi element đang chạy animate sẽ được đại diện bằng một màu line khác nhau. Trên mỗi line này sẽ có các keyframe&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/calculateKeyframePercentage.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;delay-và-duration&quot;&gt;&lt;a href=&quot;#delay-v%C3%A0-duration&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Delay và Duration&lt;/h1&gt;
+&lt;p&gt;2 thay đổi này sẽ update lại css trên tab &lt;strong&gt;Styles&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/delayAnimation.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Để thay đổi delay, rê chuột lên đường line đến khi nào nhìn thấy trỏ chuột chuyển thành hình bàn tay, kéo rê qua lại để thấy giá trị css được update&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/lengthenAnimation.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Tăng duration của animation, rê chuột lên trên keyframe cuối cùng đến khi thấy chuyển thành mũi tên 2 đầu, kéo rê qua lại để tăng hoặc giảm thời gian.&lt;/p&gt;
+&lt;h1 id=&quot;cubic-bezier&quot;&gt;&lt;a href=&quot;#cubic-bezier&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cubic bezier&lt;/h1&gt;
+&lt;p&gt;Inspect đến element có animation, phía trước thuộc tính animation, có một ô vuông nhỏ màu tím, click vào để mở popup chỉnh cubic bezier.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/openCurveEditor.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Có thể chọn theo preset có sẵn, hoặc dùng chuột kéo theo ý thích, sau đó copy lại css đã được thay đổi&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/curveEditorPanel.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;xoay-layer&quot;&gt;&lt;a href=&quot;#xoay-layer&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Xoay layer&lt;/h1&gt;
+&lt;p&gt;Một tính năng cũng khá hay khác là visualize các layer được sử dụng, bao gồm tùy chọn xoay và xem trên nhiều góc độ để hiểu rõ hơn cách mọi thứ chạy&lt;/p&gt;
+&lt;p&gt;Để mở bảng Layer, vào **More Tools &gt; Layers **&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/openLayers.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Dùng công cụ này để xoay các layer theo góc độ mong muốn&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/rotateMode.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;
+&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/rotatedLayers.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://webdesign.tutsplus.com/articles/quick-tip-chrome-animation-dev-tools--cms-31505&quot;&gt;https://webdesign.tutsplus.com/articles/quick-tip-chrome-animation-dev-tools--cms-31505&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Đọc thêm &lt;a href=&quot;https://webdesign.tutsplus.com/courses/10-css3-projects-ui-and-layout&quot;&gt;10 CSS3 Projects: UI and Layout&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://webdesign.tutsplus.com/courses/easing-in-to-cubic-bezier-functions&quot;&gt;Cubic bezier&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sử dụng localStorage trên website như thế nào]]></title><description><![CDATA[Vì sao chúng ta cần localStorage Nói đến HTTP, nó là dạng kết nối  stateless , nghĩa là khi đóng một ứng dụng web, lần truy cập sau mọi thứ…]]></description><link>https://luubinhan.github.io/blog/2018-10-21-huong-dan-su-dung-local-storage</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-21-huong-dan-su-dung-local-storage</guid><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Sun, 21 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;vì-sao-chúng-ta-cần-localstorage&quot;&gt;&lt;a href=&quot;#v%C3%AC-sao-ch%C3%BAng-ta-c%E1%BA%A7n-localstorage&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Vì sao chúng ta cần localStorage&lt;/h1&gt;
 &lt;p&gt;Nói đến HTTP, nó là dạng kết nối &lt;em&gt;stateless&lt;/em&gt;, nghĩa là khi đóng một ứng dụng web, lần truy cập sau mọi thứ bị reset lại như ban đầu.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;localStorag&lt;/strong&gt;e đơn giản là nó giúp dev chúng ta lưu lại một vài thông tin ở phía trình duyệt của user, để lần sau truy cập ta có thể truy xuất các thông tin này.&lt;/p&gt;
 &lt;h1 id=&quot;cookie-không-đủ-xài&quot;&gt;&lt;a href=&quot;#cookie-kh%C3%B4ng-%C4%91%E1%BB%A7-x%C3%A0i&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cookie không đủ xài&lt;/h1&gt;
@@ -1185,35 +1290,7 @@ Console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Đọc thêm &lt;a href=&quot;/blog/2018-09-17-huong-dan-luu-token-o-dau&quot;&gt;Lưu token ở đâu?&lt;/a&gt; để so sánh với &lt;code class=&quot;language-text&quot;&gt;sessionStorage&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;cookie&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2010/10/local-storage-and-how-to-use-it/&quot;&gt;Local Storage And How To Use It On Websites&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hướng dẫn inspect animation với Chrome DevTools]]></title><description><![CDATA[Ấn   để mở Chrome DevTools. Nhìn lên góc phải, chỗ có 3 dấu chấm, chọn vào  More tools  >  Animations F5 lại trang để bắt đầu xem phân tích…]]></description><link>https://luubinhan.github.io/blog/2018-10-21-huong-dan-dung-chrome-devtool-de-inspect-animation</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-21-huong-dan-dung-chrome-devtool-de-inspect-animation</guid><category><![CDATA[chrome]]></category><category><![CDATA[animation]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Sun, 21 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Ấn &lt;code class=&quot;language-text&quot;&gt;Ctrl + Shift + I&lt;/code&gt; để mở Chrome DevTools. Nhìn lên góc phải, chỗ có 3 dấu chấm, chọn vào &lt;strong&gt;More tools&lt;/strong&gt; &gt; &lt;strong&gt;Animations&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/activateInDevTools.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
-&lt;p&gt;F5 lại trang để bắt đầu xem phân tích animation&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/afterRefresh.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Di chuyển nút tròn màu đỏ (gọi là playhead) trên timeline đến vị trí tương ứng với thời gian của animation&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/animationGraphs.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Mỗi element đang chạy animate sẽ được đại diện bằng một màu line khác nhau. Trên mỗi line này sẽ có các keyframe&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/calculateKeyframePercentage.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;delay-và-duration&quot;&gt;&lt;a href=&quot;#delay-v%C3%A0-duration&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Delay và Duration&lt;/h1&gt;
-&lt;p&gt;2 thay đổi này sẽ update lại css trên tab &lt;strong&gt;Styles&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/delayAnimation.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Để thay đổi delay, rê chuột lên đường line đến khi nào nhìn thấy trỏ chuột chuyển thành hình bàn tay, kéo rê qua lại để thấy giá trị css được update&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/lengthenAnimation.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Tăng duration của animation, rê chuột lên trên keyframe cuối cùng đến khi thấy chuyển thành mũi tên 2 đầu, kéo rê qua lại để tăng hoặc giảm thời gian.&lt;/p&gt;
-&lt;h1 id=&quot;cubic-bezier&quot;&gt;&lt;a href=&quot;#cubic-bezier&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cubic bezier&lt;/h1&gt;
-&lt;p&gt;Inspect đến element có animation, phía trước thuộc tính animation, có một ô vuông nhỏ màu tím, click vào để mở popup chỉnh cubic bezier.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/openCurveEditor.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Có thể chọn theo preset có sẵn, hoặc dùng chuột kéo theo ý thích, sau đó copy lại css đã được thay đổi&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/curveEditorPanel.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;xoay-layer&quot;&gt;&lt;a href=&quot;#xoay-layer&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Xoay layer&lt;/h1&gt;
-&lt;p&gt;Một tính năng cũng khá hay khác là visualize các layer được sử dụng, bao gồm tùy chọn xoay và xem trên nhiều góc độ để hiểu rõ hơn cách mọi thứ chạy&lt;/p&gt;
-&lt;p&gt;Để mở bảng Layer, vào **More Tools &gt; Layers **&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/openLayers.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Dùng công cụ này để xoay các layer theo góc độ mong muốn&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/rotateMode.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;
-&lt;img src=&quot;https://cms-assets.tutsplus.com/uploads/users/53/posts/31505/image/rotatedLayers.png&quot; alt=&quot;Học cách sử dụng công cụ inspection animation trong Chrome DevTools rất hữu ích khi làm animate&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://webdesign.tutsplus.com/articles/quick-tip-chrome-animation-dev-tools--cms-31505&quot;&gt;https://webdesign.tutsplus.com/articles/quick-tip-chrome-animation-dev-tools--cms-31505&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Đọc thêm &lt;a href=&quot;https://webdesign.tutsplus.com/courses/10-css3-projects-ui-and-layout&quot;&gt;10 CSS3 Projects: UI and Layout&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://webdesign.tutsplus.com/courses/easing-in-to-cubic-bezier-functions&quot;&gt;Cubic bezier&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hướng dẫn kiểm tra performace với Chrome DevTools]]></title><description><![CDATA[Bước 1: Cài đặt DevTools Bước 2: Giả lập mobile Bước 3: Đánh giá kết quả Tìm các đoạn script block render Tìm các request lớn Xác nhận lại…]]></description><link>https://luubinhan.github.io/blog/2018-10-20-huong-dan-thuc-hien-kiem-tra-performance-voi-chrome-devtools</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-20-huong-dan-thuc-hien-kiem-tra-performance-voi-chrome-devtools</guid><category><![CDATA[chrome]]></category><category><![CDATA[performance]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Sat, 20 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2010/10/local-storage-and-how-to-use-it/&quot;&gt;Local Storage And How To Use It On Websites&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hướng dẫn kiểm tra performace với Chrome DevTools]]></title><description><![CDATA[Bước 1: Cài đặt DevTools Bước 2: Giả lập mobile Bước 3: Đánh giá kết quả Tìm các đoạn script block render Tìm các request lớn Xác nhận lại…]]></description><link>https://luubinhan.github.io/blog/2018-10-20-huong-dan-thuc-hien-kiem-tra-performance-voi-chrome-devtools</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-10-20-huong-dan-thuc-hien-kiem-tra-performance-voi-chrome-devtools</guid><category><![CDATA[chrome]]></category><category><![CDATA[performance]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Sat, 20 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#b%C6%B0%E1%BB%9Bc-1-c%C3%A0i-%C4%91%E1%BA%B7t-devtools&quot;&gt;Bước 1: Cài đặt DevTools&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#b%C6%B0%E1%BB%9Bc-2-gi%E1%BA%A3-l%E1%BA%ADp-mobile&quot;&gt;Bước 2: Giả lập mobile&lt;/a&gt;&lt;/li&gt;
@@ -4906,14 +4983,14 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
       &lt;/div&gt;
 &lt;p&gt;Security rule trên story&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /stories/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;storyid&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      // Chỉ user đăng nhập có &lt;span class=&quot;token function&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; author
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; resource.data.author&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /stories/{storyid} {
+      // Chỉ user đăng nhập có id = author
+      allow read, write: if request.auth.uid == resource.data.author;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Câu query nếu sẽ fail vì nó không khớp với security rules ở trên, mặc dù user đăng nhập chính là author của 1 document trong collection&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
@@ -4927,15 +5004,15 @@ db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&
 &lt;h1 id=&quot;query-document-dựa-trên-field&quot;&gt;&lt;a href=&quot;#query-document-d%E1%BB%B1a-tr%C3%AAn-field&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Query document dựa trên field&lt;/h1&gt;
 &lt;p&gt;Để hình dung tương quan giữa rule và lúc query, xét ví dụ rule bên dưới, collection &lt;em&gt;stories&lt;/em&gt; cho phép bất kỳ user nào truy cập vào &lt;strong&gt;story&lt;/strong&gt; documents khi giá trị của field &lt;em&gt;published&lt;/em&gt; là &lt;code class=&quot;language-text&quot;&gt;true&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /stories/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;storyid&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; resource.data.published &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; resource.data.author
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /stories/{storyid} {
+      allow read: if resource.data.published == true || request.auth.uid == resource.data.author
 
-      allow write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; resource.data.author&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      allow write: if request.auth.uid == resource.data.author;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Để query data ở trên&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
@@ -4944,28 +5021,28 @@ db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&
 &lt;h1 id=&quot;tính-toán-ràng-buộc-lúc-query&quot;&gt;&lt;a href=&quot;#t%C3%ADnh-to%C3%A1n-r%C3%A0ng-bu%E1%BB%99c-l%C3%BAc-query&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tính toán ràng buộc lúc query&lt;/h1&gt;
 &lt;p&gt;Trong biến &lt;code class=&quot;language-text&quot;&gt;request.query&lt;/code&gt; bao gồm &lt;code class=&quot;language-text&quot;&gt;limit&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;offset&lt;/code&gt;, và &lt;code class=&quot;language-text&quot;&gt;orderBy&lt;/code&gt;, ví dụ chúng ta đặt ra rule là không trả về dữ liệu nếu câu query không chứa limit hoặc limit lớn hơn quy định&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;allow list: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.query.limit &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; 10&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;allow list: if request.query.limit &amp;lt;= 10&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Một cách đầy đủ hơn, gom các điều kiện về author và publish vào trong hàm &lt;code class=&quot;language-text&quot;&gt;authorOrPublished()&lt;/code&gt; để tránh lập lại&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /stories/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;storyid&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      // &lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt; nếu story đang &lt;span class=&quot;token string&quot;&gt;&apos;published&apos;&lt;/span&gt;
-      // hoặc authored &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; người đang request
-      &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; authorOrPublished&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; resource.data.published &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; resource.data.author&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /stories/{storyid} {
+      // `true` nếu story đang &amp;#39;published&amp;#39;
+      // hoặc authored = người đang request
+      function authorOrPublished() {
+        return resource.data.published == true || request.auth.uid == resource.data.author;
+      }
 
-      allow list: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.query.limit &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; 10 &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
-                     authorOrPublished&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      allow list: if request.query.limit &amp;lt;= 10 &amp;amp;&amp;amp;
+                     authorOrPublished();
 
-      allow get: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; authorOrPublished&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      allow get: if authorOrPublished();
       
-      allow write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; resource.data.author&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      allow write: if request.auth.uid == resource.data.author;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;&lt;a href=&quot;https://firebase.google.com/docs/firestore/security/rules-query&quot;&gt;Link bài gốc&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hướng dẫn viết điều kiện security rules cho Cloud Firestore - Phần 2]]></title><description><![CDATA[Xác thực Kiểm tra dữ liệu Truy cập đến các documents khác Hàm tùy biến Xác thực Một trong những tình huống phổ biến nhất là cho phép truy…]]></description><link>https://luubinhan.github.io/blog/2018-08-17-huong-dan-viet-dieu-kien-security-rules-cho-cloud-firetore</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-08-17-huong-dan-viet-dieu-kien-security-rules-cho-cloud-firetore</guid><category><![CDATA[firestore]]></category><category><![CDATA[firebase]]></category><category><![CDATA[security]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Sat, 18 Aug 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;
@@ -4978,70 +5055,70 @@ db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&
 &lt;h1 id=&quot;xác-thực&quot;&gt;&lt;a href=&quot;#x%C3%A1c-th%E1%BB%B1c&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Xác thực&lt;/h1&gt;
 &lt;p&gt;Một trong những tình huống phổ biến nhất là cho phép truy cập dữ liệu nếu user đã đăng nhập (còn gọi là xác thực, authentication).&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
     // Cho phép user truy cập document
     // trong collection cities nếu đã đăng nhập
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; null&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+    match /cities/{city} {
+      allow read, write: if request.auth.uid != null;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Hoặc một tình huống phổ biến thứ 2 là cho phép user read và write lên dữ liệu của chính user đó&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;services cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;services cloud.firestore {
+  match /databases/{database}/documents {
     // chỉ cho phép uid khớp với userId trong document.
-    // Dùng ký tự đại diện &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;userId&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; như một biến bên trong câu điều kiện
-    match /users/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;userId&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, update, delete: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; userId&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      allow create: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; null&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+    // Dùng ký tự đại diện {userId} như một biến bên trong câu điều kiện
+    match /users/{userId} {
+      allow read, update, delete: if request.auth.uid == userId;
+      allow create: if request.auth.uid != null;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Nếu đang sử dụng Firebase Authentication, biến &lt;code class=&quot;language-text&quot;&gt;request.auth&lt;/code&gt; sẽ chưa thông tin của user gởi request, xem thêm chi tiết &lt;a href=&quot;https://firebase.google.com/docs/reference/rules/rules.firestore.Request#auth&quot;&gt;ở đây.&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;kiểm-tra-dữ-liệu&quot;&gt;&lt;a href=&quot;#ki%E1%BB%83m-tra-d%E1%BB%AF-li%E1%BB%87u&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Kiểm tra dữ liệu&lt;/h1&gt;
 &lt;p&gt;Nếu muốn can thiệp việc cho phép hoặc từ chối truy cập theo dữ liệu trong document&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
     // cho phép truy cập nếu giá trị của visibility bằng public
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; resource.data.visibility &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;public&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+    match /cities/{city} {
+      allow read: if resource.data.visibility == &amp;#39;public&amp;#39;;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Biến &lt;code class=&quot;language-text&quot;&gt;resource&lt;/code&gt; tương ứng với dữ liệu của document đang request, &lt;code class=&quot;language-text&quot;&gt;request.data&lt;/code&gt; sẽ là toàn bộ các field lưu trong document&lt;/p&gt;
 &lt;p&gt;Trước khi write dữ liệu xuống, chúng ta sẽ muốn kiểm tra dữ liệu đang có và dữ liệu mới. Nếu chúng ta đang set rule pending write (không write dữ liệu ngay lập tức mà đợi xí), biến &lt;code class=&quot;language-text&quot;&gt;request.resource&lt;/code&gt; lúc này sẽ chứa dữ liệu mới.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow update: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; request.resource.data.population &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; 0
-      &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; request.resource.data.name &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; resource.data.name
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /cities/{city} {
+      allow update: if request.resource.data.population &amp;gt; 0
+      &amp;amp;&amp;amp; request.resource.data.name == resource.data.name
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;h1 id=&quot;truy-cập-đến-các-documents-khác&quot;&gt;&lt;a href=&quot;#truy-c%E1%BA%ADp-%C4%91%E1%BA%BFn-c%C3%A1c-documents-kh%C3%A1c&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Truy cập đến các documents khác&lt;/h1&gt;
 &lt;p&gt;Sử dụng &lt;code class=&quot;language-text&quot;&gt;get()&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;exists()&lt;/code&gt; chúng ta có thể đánh giá các request với các documents trong database. Cả hai hàm này đều yêu cầu chỉ định đường dẫn đầy đủ, và phải đưa biến theo cú pháp &lt;code class=&quot;language-text&quot;&gt;$(biến)&lt;/code&gt; trong đường dẫn&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /cities/{city} {
       // kiểm tra user hiện tại
-      // có tồn tại bên trong collections &lt;span class=&quot;token function&quot;&gt;users&lt;/span&gt;
+      // có tồn tại bên trong collections users
       // trước khi cho phép tạo thêm city mới
-      allow create: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; exists&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;/databases/&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;database&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;/documents/users/&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;request.auth.uid&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+      allow create: if exists(/databases/$(database)/documents/users/$(request.auth.uid))
 
       // cho phép user xóa city nếu user này là admin
-      allow delete: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; get&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;/databases/&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;database&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;/documents/users/&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;request.auth.id&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;.data.admin &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; true&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      allow delete: if get(/databases/$(database)/documents/users/$(request.auth.id).data.admin == true)
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Đối với thao tác write, chúng ta có thể sử dụng &lt;code class=&quot;language-text&quot;&gt;getAfter()&lt;/code&gt; để truy cập dữ liệu của document sau khi thực hiện, thằng này cũng giống như &lt;code class=&quot;language-text&quot;&gt;get&lt;/code&gt; phải dùng đường dẫn đầy đủ.&lt;/p&gt;
 &lt;h1 id=&quot;hàm-tùy-biến&quot;&gt;&lt;a href=&quot;#h%C3%A0m-t%C3%B9y-bi%E1%BA%BFn&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Hàm tùy biến&lt;/h1&gt;
@@ -5053,21 +5130,21 @@ db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&
 &lt;/ul&gt;
 &lt;p&gt;Ví dụ kết hợp cả 2 điều kiện ở trên thành một hàm&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; signedInOrPublic&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; request.auth.uid &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; null &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; resource.data.visibility &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;public&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedInOrPublic() {
+      return request.auth.uid !== null || resource.data.visibility == &amp;#39;public&amp;#39;;
+    }
 
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; signedInOrPublic&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    match /cities/{city} {
+      allow read, write: if signedInOrPublic();
+    }
 
-    match /users/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;user&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; signedInOrPublic&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+    match /users/{user} {
+      allow read, write: if signedInOrPublic();
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;&lt;a href=&quot;https://firebase.google.com/docs/firestore/security/rules-conditions&quot;&gt;Link bài gốc&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hướng dẫn cách cài đặt security rules cho Cloud Firestore]]></title><description><![CDATA[Khai báo Rules read/write Chia nhỏ thao tác ra Kế thừa Cloud FireStore Security Rules cho phép chúng ta tùy chỉnh việc cấp quyền truy cập…]]></description><link>https://luubinhan.github.io/blog/2018-08-17-huong-dan-set-security-rules-cho-cloud-firestore</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-08-17-huong-dan-set-security-rules-cho-cloud-firestore</guid><category><![CDATA[firestore]]></category><category><![CDATA[firebase]]></category><category><![CDATA[security]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Fri, 17 Aug 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;
@@ -5081,118 +5158,118 @@ db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&
 &lt;h1 id=&quot;khai-báo&quot;&gt;&lt;a href=&quot;#khai-b%C3%A1o&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Khai báo&lt;/h1&gt;
 &lt;p&gt;Câu lệnh khai báo của Firestore Security Rules &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    // &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    // ...
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;service cloud.firestore&lt;/code&gt; để giới hạn chúng ta chỉ áp rule này xuống Cloud Firestore, tránh xung đột với các service khác của Firebase&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;match /databases/{database}/documents&lt;/code&gt; chỉ định rule này chỉ áp dụng cho các database trong project. Hiện tại mỗi project trên Firebase sẽ chỉ hỗ trợ một database Firestore&lt;/p&gt;
 &lt;h1 id=&quot;rules-readwrite&quot;&gt;&lt;a href=&quot;#rules-readwrite&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Rules read/write&lt;/h1&gt;
 &lt;p&gt;Câu lệnh &lt;code class=&quot;language-text&quot;&gt;match&lt;/code&gt; sẽ chỉ định đường dẫn của &lt;em&gt;document&lt;/em&gt; bị ảnh hưởng, bên trong đó ta dùng lệnh &lt;code class=&quot;language-text&quot;&gt;allow&lt;/code&gt; để diễn giải chi tiết về rule&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
     // tất cả document trong collection cities
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      allow write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+    match /cities/{city} {
+      allow read: if &amp;lt;condition&amp;gt;;
+      allow write: if &amp;lt;condition&amp;gt;;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Tất cả câu &lt;code class=&quot;language-text&quot;&gt;match&lt;/code&gt; phải chỉ đến &lt;strong&gt;documents&lt;/strong&gt;, không trỏ tới &lt;strong&gt;collections&lt;/strong&gt;, có thể dùng &lt;code class=&quot;language-text&quot;&gt;match /cities/HCM&lt;/code&gt; hoặc sử dụng ký tự đại diện bất kỳ document nào bên trong &lt;code class=&quot;language-text&quot;&gt;cities&lt;/code&gt; như ví dụ &lt;code class=&quot;language-text&quot;&gt;match /cities/{city}&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&quot;chia-nhỏ-thao-tác-ra&quot;&gt;&lt;a href=&quot;#chia-nh%E1%BB%8F-thao-t%C3%A1c-ra&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Chia nhỏ thao tác ra&lt;/h1&gt;
 &lt;p&gt;Tình huống: chúng ta muốn lúc tạo có những điều khác với lúc xóa document, hoặc cho phép read 1 document nhưng không cho phép đọc toàn bộ&lt;/p&gt;
 &lt;p&gt;Câu điều kiện &lt;code class=&quot;language-text&quot;&gt;read&lt;/code&gt; có thể chia nhỏ ra thành &lt;code class=&quot;language-text&quot;&gt;get&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;list&lt;/code&gt;, trong khi &lt;code class=&quot;language-text&quot;&gt;write&lt;/code&gt; có thể chia nhỏ thành &lt;code class=&quot;language-text&quot;&gt;create&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;update&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;delete&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /cities/{city} {
       // điều kiện trên 1 document
-      allow get: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      allow get: if &amp;lt;condition&amp;gt;;
 
       // điều kiện khi queries nhiều document, hoặc gọi hết collection
-      allow list: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      allow list: if &amp;lt;condition&amp;gt;;
+    }
 
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    match /cities/{city} {
       // lúc tạo
-      allow create: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      allow create: if &amp;lt;condition&amp;gt;;
 
       // lúc update
-      allow update: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      allow update: if &amp;lt;condition&amp;gt;;
 
       // lúc delete
-      allow delete: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      allow delete: if &amp;lt;condition&amp;gt;;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;h1 id=&quot;kế-thừa&quot;&gt;&lt;a href=&quot;#k%E1%BA%BF-th%E1%BB%ABa&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Kế thừa&lt;/h1&gt;
 &lt;p&gt;Như đã biết, nếu chưa biết thì giờ mình giải thích nhanh, database trên Firebase lưu dạng collections(giống như array), trong các collection là document (một object). Trên mỗi document nó có thể chứa các collection khác nữa. Vậy thì các rules trên document nó sẽ ảnh hưởng thế nào đến các sub collection này.&lt;/p&gt;
 &lt;p&gt;Với ví dụ ở trên, trong &lt;code class=&quot;language-text&quot;&gt;cities&lt;/code&gt; chúng ta chứa một sub collection là &lt;code class=&quot;language-text&quot;&gt;landmarks&lt;/code&gt;. Rule trên &lt;code class=&quot;language-text&quot;&gt;cities&lt;/code&gt; sẽ không ảnh hưởng đến &lt;code class=&quot;language-text&quot;&gt;landmarks&lt;/code&gt;, trừ khi chúng ta cố tình set nó như sau&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /cities/{city} {
+      allow read, write: if &amp;lt;condition&amp;gt;;
         // áp dụng luôn cho collections con
-        match /landmarks/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;landmark&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-          allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+        match /landmarks/{landmark} {
+          allow read, write: if &amp;lt;condition&amp;gt;;
+        }
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Khi viết lồng câu &lt;code class=&quot;language-text&quot;&gt;match&lt;/code&gt; như vậy, câu &lt;code class=&quot;language-text&quot;&gt;match&lt;/code&gt; bên dưới sẽ &lt;strong&gt;luôn relative&lt;/strong&gt; với thằng trên. Và chúng ta cũng có thể viết như sau, kết quả tương tự với cách viết ở trên&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      match /landmarks/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;landmark&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /cities/{city} {
+      match /landmarks/{landmark} {
+        allow read, write: if &amp;lt;condition&amp;gt;;
+      }
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/landmarks/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;landmark&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    match /cities/{city}/landmarks/{landmark} {
+      allow read, write: if &amp;lt;condition&amp;gt;;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Nếu không chỉ áp dụng rule cho đúng thằng &lt;code class=&quot;language-text&quot;&gt;landmarks&lt;/code&gt;, sử dụng cú pháp đại diện cho toàn bộ collection nằm dưới &lt;code class=&quot;language-text&quot;&gt;cities&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;{name=**}&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /database/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;document&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;**&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;condition&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /database/{database}/documents {
+    match /cities/{document=**} {
+      allow read, write: if &amp;lt;condition&amp;gt;;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Với cách viết trên toàn bộ document nằm ở &lt;code class=&quot;language-text&quot;&gt;/cities/hochiminh/landmarks/landmark81&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;/cities/hochiminh/landmarks/bitexco&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;cities/hochiminh&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Nếu chúng ta viết lại &lt;code class=&quot;language-text&quot;&gt;match /cities/{city}/{document=**} thì nó chỉ ảnh hưởng đến sub collection, thằng&lt;/code&gt;cities/hochiminh` sẽ không bị ảnh hưởng.&lt;/p&gt;
 &lt;p&gt;Nếu có nhiều câu &lt;code class=&quot;language-text&quot;&gt;allow&lt;/code&gt; khớp với &lt;code class=&quot;language-text&quot;&gt;match&lt;/code&gt;, thì kết quả sẽ là một phép &lt;code class=&quot;language-text&quot;&gt;hoặc&lt;/code&gt;, bất kỳ thằng nào thõa điều kiện thì &lt;code class=&quot;language-text&quot;&gt;allow&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;service&lt;/span&gt; cloud.firestore &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  match /databases/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;database&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/documents &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    // &lt;span class=&quot;token string&quot;&gt;&apos;cities&apos;&lt;/span&gt; collection.
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;city&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    // &lt;span class=&quot;token string&quot;&gt;&apos;cities&apos;&lt;/span&gt; collection hoặc subcollections.
-    match /cities/&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;document&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;**&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-      allow read, write: &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;service cloud.firestore {
+  match /databases/{database}/documents {
+    // &amp;#39;cities&amp;#39; collection.
+    match /cities/{city} {
+      allow read, write: if false;
+    }
+    // &amp;#39;cities&amp;#39; collection hoặc subcollections.
+    match /cities/{document=**} {
+      allow read, write: if true;
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Ví dụ ở trên toàn bộ collection cities sẽ cho phép read, write vì điều kiện thứ 2 luôn &lt;code class=&quot;language-text&quot;&gt;true&lt;/code&gt;, mặc dù thằng trước nó luôn &lt;code class=&quot;language-text&quot;&gt;false&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://firebase.google.com/docs/firestore/security/rules-structure&quot;&gt;Link bài gốc của Google&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Flow sử lý trong modern JS - từ callback đến promise, đến Async/Await]]></title><description><![CDATA[Single-threat processing Asynchronous với Callbacks Promises finally() all() race() Async/Await Single-threat processing Xét thử đoạn code…]]></description><link>https://luubinhan.github.io/blog/2018-08-14-huong-dan-flow-xy-ly-trong-modern-js-callback-promise-async-await</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-08-14-huong-dan-flow-xy-ly-trong-modern-js-callback-promise-async-await</guid><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Tue, 14 Aug 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
@@ -7554,7 +7631,160 @@ optimization&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;s
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Miễn là làm đúng cái middleware này, chúng ta sẽ không bao giờ dính mấy con bug kiểu như nút Play thì đang cho thấy ở trạng thái Pause trong khi đang phát rầm rầm.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@jacobp100/you-arent-using-redux-middleware-enough-94ffe991e6&quot;&gt;Link bài gốc của tác giả Jacob Parker&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sử dụng Middleware với Redux dành cho người mới bắt đầu]]></title><description><![CDATA[Middleware là gì Tại sao và tại sao Một số ứng dụng của Middleware Loging Đợi user confirm Một số lựa chọn Middleware là gì Nghe tên thì hơi…]]></description><link>https://luubinhan.github.io/blog/2018-06-18-huong-dan-tim-hieu-middleware-va-redux</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-06-18-huong-dan-tim-hieu-middleware-va-redux</guid><category><![CDATA[react]]></category><category><![CDATA[redux]]></category><category><![CDATA[javascript]]></category><category><![CDATA[middleware]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Mon, 18 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@jacobp100/you-arent-using-redux-middleware-enough-94ffe991e6&quot;&gt;Link bài gốc của tác giả Jacob Parker&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Tiếp tục luận bàn về cách tổ chức thư mục, đặt tên component trong React]]></title><description><![CDATA[Tổ chức thư mục Containers và Components Tác và nhóm code lại với nhau UI Components Đặt tên components Screens Kết luận Tổ chức thư mục Nếu…]]></description><link>https://luubinhan.github.io/blog/2018-06-18-huong-dan-luan-ban-ve-cach-to-chuc-thu-muc-dat-ten</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-06-18-huong-dan-luan-ban-ve-cach-to-chuc-thu-muc-dat-ten</guid><category><![CDATA[react]]></category><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Mon, 18 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#t%E1%BB%95-ch%E1%BB%A9c-th%C6%B0-m%E1%BB%A5c&quot;&gt;Tổ chức thư mục&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#containers-v%C3%A0-components&quot;&gt;Containers và Components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#t%C3%A1c-v%C3%A0-nh%C3%B3m-code-l%E1%BA%A1i-v%E1%BB%9Bi-nhau&quot;&gt;Tác và nhóm code lại với nhau&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#ui-components&quot;&gt;UI Components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#%C4%91%E1%BA%B7t-t%C3%AAn-components&quot;&gt;Đặt tên components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#screens&quot;&gt;Screens&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#k%E1%BA%BFt-lu%E1%BA%ADn&quot;&gt;Kết luận&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- /TOC --&gt;
+&lt;h2 id=&quot;tổ-chức-thư-mục&quot;&gt;&lt;a href=&quot;#t%E1%BB%95-ch%E1%BB%A9c-th%C6%B0-m%E1%BB%A5c&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tổ chức thư mục&lt;/h2&gt;
+&lt;p&gt;Nếu init project bằng &lt;strong&gt;create-react-app&lt;/strong&gt;, chúng ta sẽ có sẵn những thư mục và file cơ bản nhất: &lt;em&gt;.gitinore&lt;/em&gt;, &lt;em&gt;package.json&lt;/em&gt;, &lt;em&gt;README.md&lt;/em&gt;, &lt;em&gt;yarn.lock&lt;/em&gt;, thư mục &lt;strong&gt;public&lt;/strong&gt; và &lt;strong&gt;src&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/1600/1*eXN1LlNnuZmosJ7n7EsJ-Q.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Chúng ta sẽ chỉ tập trung vào thư mục &lt;strong&gt;src&lt;/strong&gt; và khoog quan tâm tới những file và thư mục ở khác.&lt;/p&gt;
+&lt;h2 id=&quot;containers-và-components&quot;&gt;&lt;a href=&quot;#containers-v%C3%A0-components&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Containers và Components&lt;/h2&gt;
+&lt;p&gt;Bên trong thư mục &lt;strong&gt;src&lt;/strong&gt; chúng ta sẽ tạo thêm 2 thư mục là &lt;strong&gt;components&lt;/strong&gt; và &lt;strong&gt;containers&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
+├─ components // chứa components làm nhiệm vụ render 
+└─ containers // các component xử lý logic&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Nếu là theo cách này có một vài chổ không hợp lý&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rất là khó để phân biệt và tách biệt 100% giữa container và presentational component, chắc chắn trong team sẽ có người là lên &quot;em thấy cái này là container chứ sao lại là presentational được&quot;, kiểu như vậy.&lt;/li&gt;
+&lt;li&gt;Cho phép 2 component có cùng tên với nhau, trong toàn bộ project mỗi component chỉ nên là duy nhất, tránh confuse trách nhiệm của mỗi bên.&lt;/li&gt;
+&lt;li&gt;Tốn công, việc tách container ở một thư mục, presentationial ở thư mục khác, rất là phiền nếu muốn bay qua bay lại giữa 2 thư mục.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
+└─ User
+  ├─ components
+  └─ containers&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Cách này thì sao? Có thể giải quyết được vấn đề bay qua bay lại ở trên, nhưng nếu có 100 cái components chung ta tiếp tục ngụp lặn trong cả trăm thư mục components containers ở khắp mọi nơi.&lt;/p&gt;
+&lt;p&gt;Theo tác giả chúng ta nên dẹp luôn khái niệm container và presentational luôn, tất cả chúng ta cần là 2 thư mục &lt;strong&gt;components&lt;/strong&gt; và &lt;strong&gt;screens&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;tác-và-nhóm-code-lại-với-nhau&quot;&gt;&lt;a href=&quot;#t%C3%A1c-v%C3%A0-nh%C3%B3m-code-l%E1%BA%A1i-v%E1%BB%9Bi-nhau&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tác và nhóm code lại với nhau&lt;/h2&gt;
+&lt;p&gt;Bên trong thư mục &lt;em&gt;components&lt;/em&gt; chúng ta group files theo module/tính năng.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
+└─ components
+  └─ User
+    ├─ Form.jsx
+    └─ List.jsx&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Khi component là kết hợp của nhiều component lại ta gom các file components vào 1 thư mục. Thí dụ nếu có thêm file &lt;code class=&quot;language-text&quot;&gt;Form.css&lt;/code&gt; ta sẽ làm như sau&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
+└─ components
+  └─ User
+    ├─ Form
+    │ ├─ Form.jsx
+    │ └─ Form.css
+    └─ List.jsx&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2 id=&quot;ui-components&quot;&gt;&lt;a href=&quot;#ui-components&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;UI Components&lt;/h2&gt;
+&lt;p&gt;Bên trong thư mục &lt;strong&gt;components&lt;/strong&gt; ta có thể có thêm thư mục &lt;strong&gt;UI&lt;/strong&gt;, trong đây sẽ chứa các component dạng generic. Thế nào là component generic? là những component dạng giống như những React UI Components của Sematic UI, Office Fabric UI, Reactrap.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
+└─ components
+  └─ UI&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2 id=&quot;Đặt-tên-components&quot;&gt;&lt;a href=&quot;#%C4%90%E1%BA%B7t-t%C3%AAn-components&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Đặt tên components&lt;/h2&gt;
+&lt;p&gt;Chúng ta đã bàn về cách sắp xếp thư mục và chia các component ra dạng module. Giờ còn câu hỏi là đặt tên nó sao?&lt;/p&gt;
+&lt;p&gt;Như đã nói ở trên tên của mỗi component nên là duy nhất và gợi hình, đọc xong có thể hình dung được component đó dùng để làm gì. Việc này cũng rất có lợi trong lúc debug bằng React Dev Tools.&lt;/p&gt;
+&lt;p&gt;Pattern để đặt tên component &lt;strong&gt;đường dẫn-tên file&lt;/strong&gt;. Thí dụ component ở file &lt;code class=&quot;language-text&quot;&gt;components/User/List.jsx&lt;/code&gt; thì đặt là &lt;code class=&quot;language-text&quot;&gt;UserList&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Nếu &lt;code class=&quot;language-text&quot;&gt;components/User/Form/Form.jsx&lt;/code&gt; thì không cần đặt là &lt;code class=&quot;language-text&quot;&gt;UserFormForm&lt;/code&gt;, chỉ cần gọi nó là &lt;code class=&quot;language-text&quot;&gt;UserForm&lt;/code&gt; trong trường hợp tên file cùng tên với thư mục chứa nó.&lt;/p&gt;
+&lt;p&gt;Lợi ích của việc đặt tên như vậy là giúp chúng ta navigate đến file đó rất nhanh, đa phần các editor &apos;xịn&apos; đều có thể dùng fuzzy search&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/1600/1*vZO9Ci9a_lrfi2yTP9OiMA.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Tránh lặp lại tên, ngày xưa khi mới bắt đầu chúng ta thường đặt tên file rất là đầy đủ chuẩn không cần chỉnh, tuy nhiên việc này làm cho lúc &lt;code class=&quot;language-text&quot;&gt;import&lt;/code&gt; rất dài dòng, đường dẫn dài cả cây số. Trong trường hợp ở trên do &lt;code class=&quot;language-text&quot;&gt;Form&lt;/code&gt; đang nằm trong &lt;code class=&quot;language-text&quot;&gt;User&lt;/code&gt; thì ta biết ngay là &lt;code class=&quot;language-text&quot;&gt;FormUser&lt;/code&gt; rồi, không nên đặt tên file là &lt;code class=&quot;language-text&quot;&gt;FormUser&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ScreenUserForm &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./screens/User/UserForm&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// đấu với&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ScreenUserForm &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./screens/User/Form&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Nếu ví dụ trên chưa đủ thuyết phục, hãy xem tiếp thêm một ví dụ khách&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; MediaPlanViewChannel &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/MediaPlan/MediaPlanView/MediaPlanViewChannel.jsx&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; MediaPlanViewChannel &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./MediaPlan/View/Channel&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2 id=&quot;screens&quot;&gt;&lt;a href=&quot;#screens&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Screens&lt;/h2&gt;
+&lt;p&gt;Nãy có nói thư mục &lt;strong&gt;screen&lt;/strong&gt; mà chưa giải thích, screens sẽ nơi chứa là những components được map vào cho &lt;code class=&quot;language-text&quot;&gt;route&lt;/code&gt;, như screen để tạo user mới, reset password, đăng nhập. Screen không nên chứa logic gì cả, 1 functional component, chúng ta sẽ đưa screen vào một thư mục hẳn hoi để dễ mapping đúng với structure của &lt;code class=&quot;language-text&quot;&gt;route&lt;/code&gt; chứ chúng ta không theo module&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
+├─ components 
+└─ screens
+  └─ User
+    ├─ Form.jsx
+    └─ List.jsx&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Chúng ta có file &lt;code class=&quot;language-text&quot;&gt;Route.jsx&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Component &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Router &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react-router&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Redirect&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Route&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Switch &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react-router-dom&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ScreensUserForm &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./User/Form&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ScreensUserList &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./User/List&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;ScreensRoot&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Router&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Switch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Route&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/user/list&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;ScreensUserList&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Route&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/user/create&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;ScreensUserForm&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Route&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/user/:id&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;ScreensUserForm&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;Switch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;Router&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; ScreensRoot&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Bằng cách này chỉ cần nhìn url ta có thể trace được đang dùng component ở thư mục nào&lt;/p&gt;
+&lt;p&gt;Về tên gọi của component trong thư mục screen này,
+nếu &lt;code class=&quot;language-text&quot;&gt;scr/screens/User/List.jsx&lt;/code&gt; thì đặt tên là &lt;code class=&quot;language-text&quot;&gt;ScreensUserList&lt;/code&gt;;&lt;/p&gt;
+&lt;p&gt;Nếu bạn để ý thì sẽ thấy 2 route &lt;code class=&quot;language-text&quot;&gt;create&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;edit&lt;/code&gt; đang cùng được render cùng 1 component &lt;code class=&quot;language-text&quot;&gt;ScreensUserForm&lt;/code&gt;, cái này implement cũng dể thôi&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; UserForm &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;../../components/User/Form/Form&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;ScreensUserForm&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; match&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; params &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;params&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Create&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Update&apos;&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; User
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;UserForm&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;params&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; ScreensUserForm&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Thư mục cuối cùng có như sau&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
+├─ components 
+│  ├─ User
+│  │ ├─ Form
+│  │ │ ├─ Form.jsx
+│  │ │ └─ Form.css
+│  │ └─ List.jsx
+│  └─ UI 
+│
+└─ screens
+  ├─ User
+  │ ├─ Form.jsx
+  │ └─ List.jsx
+  └─ Root.jsx&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2 id=&quot;kết-luận&quot;&gt;&lt;a href=&quot;#k%E1%BA%BFt-lu%E1%BA%ADn&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Kết luận&lt;/h2&gt;
+&lt;p&gt;Trong bài này tác giả sẽ chỉ đề tập trung vào project sử dụng React, chưa đề cặp tới Redux, bài sau có.&lt;/p&gt;
+&lt;p&gt;Nếu thích thì có thể cảm ơn và follow tác giả để có thêm nhiều bài viết hay ho khác.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://hackernoon.com/structuring-projects-and-naming-components-in-react-1261b6e18d76&quot;&gt;Link bài gốc của Vinicius Dacal&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sử dụng Middleware với Redux dành cho người mới bắt đầu]]></title><description><![CDATA[Middleware là gì Tại sao và tại sao Một số ứng dụng của Middleware Loging Đợi user confirm Một số lựa chọn Middleware là gì Nghe tên thì hơi…]]></description><link>https://luubinhan.github.io/blog/2018-06-18-huong-dan-tim-hieu-middleware-va-redux</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-06-18-huong-dan-tim-hieu-middleware-va-redux</guid><category><![CDATA[react]]></category><category><![CDATA[redux]]></category><category><![CDATA[javascript]]></category><category><![CDATA[middleware]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Mon, 18 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#middleware-l%C3%A0-g%C3%AC&quot;&gt;Middleware là gì&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#t%E1%BA%A1i-sao-v%C3%A0-t%E1%BA%A1i-sao&quot;&gt;Tại sao và tại sao&lt;/a&gt;&lt;/li&gt;
@@ -7725,160 +7955,7 @@ store&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span clas
 &lt;li&gt;&lt;a href=&quot;https://github.com/gothinkster/react-redux-realworld-example-app/blob/master/src/middleware.js&quot;&gt;Realworld example sử dụng redux, middleware&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://medium.com/@meagle/understanding-87566abcfb7a&quot;&gt;Tìm hiểu Middleware của tác giả Mark&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://redux.js.org/api-reference/applymiddleware&quot;&gt;applyMiddleware&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Tiếp tục luận bàn về cách tổ chức thư mục, đặt tên component trong React]]></title><description><![CDATA[Tổ chức thư mục Containers và Components Tác và nhóm code lại với nhau UI Components Đặt tên components Screens Kết luận Tổ chức thư mục Nếu…]]></description><link>https://luubinhan.github.io/blog/2018-06-18-huong-dan-luan-ban-ve-cach-to-chuc-thu-muc-dat-ten</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-06-18-huong-dan-luan-ban-ve-cach-to-chuc-thu-muc-dat-ten</guid><category><![CDATA[react]]></category><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Mon, 18 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#t%E1%BB%95-ch%E1%BB%A9c-th%C6%B0-m%E1%BB%A5c&quot;&gt;Tổ chức thư mục&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#containers-v%C3%A0-components&quot;&gt;Containers và Components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#t%C3%A1c-v%C3%A0-nh%C3%B3m-code-l%E1%BA%A1i-v%E1%BB%9Bi-nhau&quot;&gt;Tác và nhóm code lại với nhau&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#ui-components&quot;&gt;UI Components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#%C4%91%E1%BA%B7t-t%C3%AAn-components&quot;&gt;Đặt tên components&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#screens&quot;&gt;Screens&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#k%E1%BA%BFt-lu%E1%BA%ADn&quot;&gt;Kết luận&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- /TOC --&gt;
-&lt;h2 id=&quot;tổ-chức-thư-mục&quot;&gt;&lt;a href=&quot;#t%E1%BB%95-ch%E1%BB%A9c-th%C6%B0-m%E1%BB%A5c&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tổ chức thư mục&lt;/h2&gt;
-&lt;p&gt;Nếu init project bằng &lt;strong&gt;create-react-app&lt;/strong&gt;, chúng ta sẽ có sẵn những thư mục và file cơ bản nhất: &lt;em&gt;.gitinore&lt;/em&gt;, &lt;em&gt;package.json&lt;/em&gt;, &lt;em&gt;README.md&lt;/em&gt;, &lt;em&gt;yarn.lock&lt;/em&gt;, thư mục &lt;strong&gt;public&lt;/strong&gt; và &lt;strong&gt;src&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/1600/1*eXN1LlNnuZmosJ7n7EsJ-Q.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Chúng ta sẽ chỉ tập trung vào thư mục &lt;strong&gt;src&lt;/strong&gt; và khoog quan tâm tới những file và thư mục ở khác.&lt;/p&gt;
-&lt;h2 id=&quot;containers-và-components&quot;&gt;&lt;a href=&quot;#containers-v%C3%A0-components&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Containers và Components&lt;/h2&gt;
-&lt;p&gt;Bên trong thư mục &lt;strong&gt;src&lt;/strong&gt; chúng ta sẽ tạo thêm 2 thư mục là &lt;strong&gt;components&lt;/strong&gt; và &lt;strong&gt;containers&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
-├─ components // chứa components làm nhiệm vụ render 
-└─ containers // các component xử lý logic&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;Nếu là theo cách này có một vài chổ không hợp lý&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Rất là khó để phân biệt và tách biệt 100% giữa container và presentational component, chắc chắn trong team sẽ có người là lên &quot;em thấy cái này là container chứ sao lại là presentational được&quot;, kiểu như vậy.&lt;/li&gt;
-&lt;li&gt;Cho phép 2 component có cùng tên với nhau, trong toàn bộ project mỗi component chỉ nên là duy nhất, tránh confuse trách nhiệm của mỗi bên.&lt;/li&gt;
-&lt;li&gt;Tốn công, việc tách container ở một thư mục, presentationial ở thư mục khác, rất là phiền nếu muốn bay qua bay lại giữa 2 thư mục.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
-└─ User
-  ├─ components
-  └─ containers&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;Cách này thì sao? Có thể giải quyết được vấn đề bay qua bay lại ở trên, nhưng nếu có 100 cái components chung ta tiếp tục ngụp lặn trong cả trăm thư mục components containers ở khắp mọi nơi.&lt;/p&gt;
-&lt;p&gt;Theo tác giả chúng ta nên dẹp luôn khái niệm container và presentational luôn, tất cả chúng ta cần là 2 thư mục &lt;strong&gt;components&lt;/strong&gt; và &lt;strong&gt;screens&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;tác-và-nhóm-code-lại-với-nhau&quot;&gt;&lt;a href=&quot;#t%C3%A1c-v%C3%A0-nh%C3%B3m-code-l%E1%BA%A1i-v%E1%BB%9Bi-nhau&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tác và nhóm code lại với nhau&lt;/h2&gt;
-&lt;p&gt;Bên trong thư mục &lt;em&gt;components&lt;/em&gt; chúng ta group files theo module/tính năng.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
-└─ components
-  └─ User
-    ├─ Form.jsx
-    └─ List.jsx&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;Khi component là kết hợp của nhiều component lại ta gom các file components vào 1 thư mục. Thí dụ nếu có thêm file &lt;code class=&quot;language-text&quot;&gt;Form.css&lt;/code&gt; ta sẽ làm như sau&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
-└─ components
-  └─ User
-    ├─ Form
-    │ ├─ Form.jsx
-    │ └─ Form.css
-    └─ List.jsx&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h2 id=&quot;ui-components&quot;&gt;&lt;a href=&quot;#ui-components&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;UI Components&lt;/h2&gt;
-&lt;p&gt;Bên trong thư mục &lt;strong&gt;components&lt;/strong&gt; ta có thể có thêm thư mục &lt;strong&gt;UI&lt;/strong&gt;, trong đây sẽ chứa các component dạng generic. Thế nào là component generic? là những component dạng giống như những React UI Components của Sematic UI, Office Fabric UI, Reactrap.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
-└─ components
-  └─ UI&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h2 id=&quot;Đặt-tên-components&quot;&gt;&lt;a href=&quot;#%C4%90%E1%BA%B7t-t%C3%AAn-components&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Đặt tên components&lt;/h2&gt;
-&lt;p&gt;Chúng ta đã bàn về cách sắp xếp thư mục và chia các component ra dạng module. Giờ còn câu hỏi là đặt tên nó sao?&lt;/p&gt;
-&lt;p&gt;Như đã nói ở trên tên của mỗi component nên là duy nhất và gợi hình, đọc xong có thể hình dung được component đó dùng để làm gì. Việc này cũng rất có lợi trong lúc debug bằng React Dev Tools.&lt;/p&gt;
-&lt;p&gt;Pattern để đặt tên component &lt;strong&gt;đường dẫn-tên file&lt;/strong&gt;. Thí dụ component ở file &lt;code class=&quot;language-text&quot;&gt;components/User/List.jsx&lt;/code&gt; thì đặt là &lt;code class=&quot;language-text&quot;&gt;UserList&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Nếu &lt;code class=&quot;language-text&quot;&gt;components/User/Form/Form.jsx&lt;/code&gt; thì không cần đặt là &lt;code class=&quot;language-text&quot;&gt;UserFormForm&lt;/code&gt;, chỉ cần gọi nó là &lt;code class=&quot;language-text&quot;&gt;UserForm&lt;/code&gt; trong trường hợp tên file cùng tên với thư mục chứa nó.&lt;/p&gt;
-&lt;p&gt;Lợi ích của việc đặt tên như vậy là giúp chúng ta navigate đến file đó rất nhanh, đa phần các editor &apos;xịn&apos; đều có thể dùng fuzzy search&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/1600/1*vZO9Ci9a_lrfi2yTP9OiMA.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Tránh lặp lại tên, ngày xưa khi mới bắt đầu chúng ta thường đặt tên file rất là đầy đủ chuẩn không cần chỉnh, tuy nhiên việc này làm cho lúc &lt;code class=&quot;language-text&quot;&gt;import&lt;/code&gt; rất dài dòng, đường dẫn dài cả cây số. Trong trường hợp ở trên do &lt;code class=&quot;language-text&quot;&gt;Form&lt;/code&gt; đang nằm trong &lt;code class=&quot;language-text&quot;&gt;User&lt;/code&gt; thì ta biết ngay là &lt;code class=&quot;language-text&quot;&gt;FormUser&lt;/code&gt; rồi, không nên đặt tên file là &lt;code class=&quot;language-text&quot;&gt;FormUser&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ScreenUserForm &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./screens/User/UserForm&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;// đấu với&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ScreenUserForm &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./screens/User/Form&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;Nếu ví dụ trên chưa đủ thuyết phục, hãy xem tiếp thêm một ví dụ khách&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; MediaPlanViewChannel &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/MediaPlan/MediaPlanView/MediaPlanViewChannel.jsx&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; MediaPlanViewChannel &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./MediaPlan/View/Channel&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h2 id=&quot;screens&quot;&gt;&lt;a href=&quot;#screens&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Screens&lt;/h2&gt;
-&lt;p&gt;Nãy có nói thư mục &lt;strong&gt;screen&lt;/strong&gt; mà chưa giải thích, screens sẽ nơi chứa là những components được map vào cho &lt;code class=&quot;language-text&quot;&gt;route&lt;/code&gt;, như screen để tạo user mới, reset password, đăng nhập. Screen không nên chứa logic gì cả, 1 functional component, chúng ta sẽ đưa screen vào một thư mục hẳn hoi để dễ mapping đúng với structure của &lt;code class=&quot;language-text&quot;&gt;route&lt;/code&gt; chứ chúng ta không theo module&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
-├─ components 
-└─ screens
-  └─ User
-    ├─ Form.jsx
-    └─ List.jsx&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;Chúng ta có file &lt;code class=&quot;language-text&quot;&gt;Route.jsx&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Component &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Router &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react-router&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Redirect&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Route&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Switch &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react-router-dom&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ScreensUserForm &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./User/Form&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ScreensUserList &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./User/List&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;ScreensRoot&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Router&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Switch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-      &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Route&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/user/list&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;ScreensUserList&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
-      &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Route&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/user/create&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;ScreensUserForm&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
-      &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;Route&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/user/:id&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;ScreensUserForm&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;Switch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;Router&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; ScreensRoot&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;Bằng cách này chỉ cần nhìn url ta có thể trace được đang dùng component ở thư mục nào&lt;/p&gt;
-&lt;p&gt;Về tên gọi của component trong thư mục screen này,
-nếu &lt;code class=&quot;language-text&quot;&gt;scr/screens/User/List.jsx&lt;/code&gt; thì đặt tên là &lt;code class=&quot;language-text&quot;&gt;ScreensUserList&lt;/code&gt;;&lt;/p&gt;
-&lt;p&gt;Nếu bạn để ý thì sẽ thấy 2 route &lt;code class=&quot;language-text&quot;&gt;create&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;edit&lt;/code&gt; đang cùng được render cùng 1 component &lt;code class=&quot;language-text&quot;&gt;ScreensUserForm&lt;/code&gt;, cái này implement cũng dể thôi&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; UserForm &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;../../components/User/Form/Form&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;ScreensUserForm&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; match&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; params &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
-  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;params&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Create&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Update&apos;&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; User
-    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;UserForm&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;params&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;
-  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; ScreensUserForm&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;p&gt;Thư mục cuối cùng có như sau&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;src
-├─ components 
-│  ├─ User
-│  │ ├─ Form
-│  │ │ ├─ Form.jsx
-│  │ │ └─ Form.css
-│  │ └─ List.jsx
-│  └─ UI 
-│
-└─ screens
-  ├─ User
-  │ ├─ Form.jsx
-  │ └─ List.jsx
-  └─ Root.jsx&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-&lt;h2 id=&quot;kết-luận&quot;&gt;&lt;a href=&quot;#k%E1%BA%BFt-lu%E1%BA%ADn&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Kết luận&lt;/h2&gt;
-&lt;p&gt;Trong bài này tác giả sẽ chỉ đề tập trung vào project sử dụng React, chưa đề cặp tới Redux, bài sau có.&lt;/p&gt;
-&lt;p&gt;Nếu thích thì có thể cảm ơn và follow tác giả để có thêm nhiều bài viết hay ho khác.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://hackernoon.com/structuring-projects-and-naming-components-in-react-1261b6e18d76&quot;&gt;Link bài gốc của Vinicius Dacal&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Làm việc với CSS Modules trong React]]></title><description><![CDATA[CSS modules là gì Xóa style đầy tự tin Một vài lựa chọn nâng cao CSS modules là gì Dựa vào cái tên chắc phần nào cũng đoán được, nó là kiểu…]]></description><link>https://luubinhan.github.io/blog/2018-06-15-huong-dan-lam-viec-voi-css-module</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-06-15-huong-dan-lam-viec-voi-css-module</guid><category><![CDATA[react]]></category><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Fri, 15 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Làm việc với CSS Modules trong React]]></title><description><![CDATA[CSS modules là gì Xóa style đầy tự tin Một vài lựa chọn nâng cao CSS modules là gì Dựa vào cái tên chắc phần nào cũng đoán được, nó là kiểu…]]></description><link>https://luubinhan.github.io/blog/2018-06-15-huong-dan-lam-viec-voi-css-module</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-06-15-huong-dan-lam-viec-voi-css-module</guid><category><![CDATA[react]]></category><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Fri, 15 Jun 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#css-modules-l%C3%A0-g%C3%AC&quot;&gt;CSS modules là gì&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#x%C3%B3a-style-%C4%91%E1%BA%A7y-t%E1%BB%B1-tin&quot;&gt;Xóa style đầy tự tin&lt;/a&gt;&lt;/li&gt;
@@ -10230,11 +10307,11 @@ input&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span clas
 &lt;li&gt;Cài bộ CLI tool của Expo, để mà khởi chạy một dự án Expo mới, chạy build,... dễ lắm như sau&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;npm install expo --global
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; expo --global
 
 // init một project mới
 expo init luckyluu-project
-cd luckyluu-project
+&lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; luckyluu-project
 expo start&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;h2 id=&quot;tạo-một-dự-án-expo-mới&quot;&gt;&lt;a href=&quot;#t%E1%BA%A1o-m%E1%BB%99t-d%E1%BB%B1-%C3%A1n-expo-m%E1%BB%9Bi&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tạo một dự án Expo mới&lt;/h2&gt;
@@ -10243,7 +10320,7 @@ expo start&lt;/code&gt;&lt;/pre&gt;
       &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;exp init MemoryGame
 
 // trỏ vô thư mục mới tạo
-cd MemoryGame
+&lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; MemoryGame
 
 // Let ruuuuuuun
 exp start&lt;/code&gt;&lt;/pre&gt;
@@ -11421,13 +11498,13 @@ PrivateRoute &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;spa
 &lt;p&gt;Khởi tạo project và các thư viện sẽ sử dụng&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
       &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;create-react-app react-auth
-cd react-auth
+&lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; react-auth
 
-npm i react-router-dom glamor --save&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; i react-router-dom glamor --save&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Cài AWSMobile CLI&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;npm i -g awsmobile-cli&lt;/code&gt;&lt;/pre&gt;
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; i -g awsmobile-cli&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Khởi tạo config AWS IAM&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
@@ -11436,7 +11513,7 @@ awsmobile init&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;Nó sẽ tạo project Mobile Hub và file aws-exports.js trong thư mục src. Tiếp theo, thêm user-signin và deploy các config mới&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
-      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;awsmobile user-signin enable
+      &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;awsmobile user-signin &lt;span class=&quot;token function&quot;&gt;enable&lt;/span&gt;
 awsmobile push&lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;awsmobile user-signin enable&lt;/code&gt; sẽ bật Amazon Congito trong project với các thiết đặt mặc định, bao gồm 2 factor authentication với SMS (sẽ thêm TOTP sau). Nếu muôn can thiệp các thiệt đặt, vào trực tiếp &lt;a href=&quot;https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fcognito%2Fhome%3Fregion%3Dus-east-1%26state%3DhashArgs%2523%26isauthcode%3Dtrue&amp;#x26;client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fcognito&amp;#x26;forceMobileApp=0&quot;&gt;Amazon Cognito&lt;/a&gt; để chỉnh&lt;/p&gt;
@@ -11680,7 +11757,36 @@ ReactDOM&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span c
 &lt;p&gt;Có rất nhiều cách để lấy thông tin user đang đăng nhập, có thể dùng &lt;code class=&quot;language-text&quot;&gt;Auth.currentAuthenticatedUser()&lt;/code&gt; là dễ nhất, toàn bộ API có thể tham khảo &lt;a href=&quot;https://aws.github.io/aws-amplify/api/classes/authclass.html&quot;&gt;ở đây&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Kết thúc phần 1 ở đây, phần 2 tiếp tục với Routing và TOTP để có thể làm Google Authenticator.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;Bài dịch từ tác giả Nader Dabit trên HackerNoon&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Authentication với JWT]]></title><description><![CDATA[JWT là gì JWT vận hành thế nào Authentication sử dụng kết hợp với Redux JWT là gì JWT là một đoạn string dạng JSON đã được mã hóa và truyền…]]></description><link>https://luubinhan.github.io/blog/2018-03-14-huong-dan-react-authentication-voi-jwt-redux</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-03-14-huong-dan-react-authentication-voi-jwt-redux</guid><category><![CDATA[javascript]]></category><category><![CDATA[react]]></category><category><![CDATA[security]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Wed, 14 Mar 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
+&lt;p&gt;Bài dịch từ tác giả Nader Dabit trên HackerNoon&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sync extensions của VSCode]]></title><description><![CDATA[Tạo access token trên Github Upload những thiết đặt, extensions đã cài cho VSCode Download các thiết từ gist về Cần có Tài khoản Github…]]></description><link>https://luubinhan.github.io/blog/2018-03-14-huong-dan-sync-addin-vscode</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-03-14-huong-dan-sync-addin-vscode</guid><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Wed, 14 Mar 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#t%E1%BA%A1o-access-token-tr%C3%AAn-github&quot;&gt;Tạo access token trên Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#upload-nh%E1%BB%AFng-thi%E1%BA%BFt-%C4%91%E1%BA%B7t-extensions-%C4%91%C3%A3-c%C3%A0i-cho-vscode&quot;&gt;Upload những thiết đặt, extensions đã cài cho VSCode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#download-c%C3%A1c-thi%E1%BA%BFt-t%E1%BB%AB-gist-v%E1%BB%81&quot;&gt;Download các thiết từ gist về&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- /TOC --&gt;
+&lt;p&gt;Cần có&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tài khoản Github, danh sách extension sẽ được lưu lên gist&lt;/li&gt;
+&lt;li&gt;Cài thêm extention tên là Settings Sync - tác giả Shan Khan.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;tạo-access-token-trên-github&quot;&gt;&lt;a href=&quot;#t%E1%BA%A1o-access-token-tr%C3%AAn-github&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tạo access token trên Github&lt;/h1&gt;
+&lt;p&gt;Đăng nhập vào tài khoản Github, vào trang Settings / Developer settings / Personal access tokens / Generate New Token&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://shanalikhan.github.io/img/github1.PNG&quot; alt=&quot;Sync extensions của VSCode&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Nhập tên và cấp quyền tạo gist cho token này&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://shanalikhan.github.io/img/github2.PNG&quot; alt=&quot;Sync extensions của VSCode&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Sau khi tạo xong, nhớ lưu lại token này ở đâu đó&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://shanalikhan.github.io/img/github3.PNG&quot; alt=&quot;Sync extensions của VSCode&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;upload-những-thiết-đặt-extensions-đã-cài-cho-vscode&quot;&gt;&lt;a href=&quot;#upload-nh%E1%BB%AFng-thi%E1%BA%BFt-%C4%91%E1%BA%B7t-extensions-%C4%91%C3%A3-c%C3%A0i-cho-vscode&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Upload những thiết đặt, extensions đã cài cho VSCode&lt;/h1&gt;
+&lt;p&gt;Dùng phím tắt &lt;code class=&quot;language-text&quot;&gt;Shift + Alt + U&lt;/code&gt; hoặc search từ command Palette, search từ sync&lt;/p&gt;
+&lt;p&gt;Nó sẽ yêu cầu nhập giá trị token vừa mới tạo&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://shanalikhan.github.io/img/upload1.png&quot; alt=&quot;Sync extensions của VSCode&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Sau khi upload thành công, nó sẽ trả về gist id, &lt;strong&gt;nhớ copy&lt;/strong&gt; và lưu lại giá trị gist Id này để sử dụng trên máy khác.&lt;/p&gt;
+&lt;h1 id=&quot;download-các-thiết-từ-gist-về&quot;&gt;&lt;a href=&quot;#download-c%C3%A1c-thi%E1%BA%BFt-t%E1%BB%AB-gist-v%E1%BB%81&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Download các thiết từ gist về&lt;/h1&gt;
+&lt;p&gt;Dùng phím tắt &lt;code class=&quot;language-text&quot;&gt;Shift + Alt + D&lt;/code&gt;, hoặc gọi từ command palette&lt;/p&gt;
+&lt;p&gt;Nó sẽ yêu cầu nhập lại token và gist id đã tạo, điền vào, xong!
+&lt;img src=&quot;https://shanalikhan.github.io/img/upload1.png&quot; alt=&quot;Sync extensions của VSCode&quot;&gt;
+&lt;img src=&quot;https://shanalikhan.github.io/img/download2.png&quot; alt=&quot;Sync extensions của VSCode&quot;&gt;
+&lt;img src=&quot;https://shanalikhan.github.io/img/download3.png&quot; alt=&quot;Sync extensions của VSCode&quot;&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Authentication với JWT]]></title><description><![CDATA[JWT là gì JWT vận hành thế nào Authentication sử dụng kết hợp với Redux JWT là gì JWT là một đoạn string dạng JSON đã được mã hóa và truyền…]]></description><link>https://luubinhan.github.io/blog/2018-03-14-huong-dan-react-authentication-voi-jwt-redux</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-03-14-huong-dan-react-authentication-voi-jwt-redux</guid><category><![CDATA[javascript]]></category><category><![CDATA[react]]></category><category><![CDATA[security]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Wed, 14 Mar 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#jwt-l%C3%A0-g%C3%AC&quot;&gt;JWT là gì&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#jwt-v%E1%BA%ADn-h%C3%A0nh-th%E1%BA%BF-n%C3%A0o&quot;&gt;JWT vận hành thế nào&lt;/a&gt;&lt;/li&gt;
@@ -12068,36 +12174,7 @@ App&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;propTypes &lt;s
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;</content:encoded></item><item><title><![CDATA[Sync extensions của VSCode]]></title><description><![CDATA[Tạo access token trên Github Upload những thiết đặt, extensions đã cài cho VSCode Download các thiết từ gist về Cần có Tài khoản Github…]]></description><link>https://luubinhan.github.io/blog/2018-03-14-huong-dan-sync-addin-vscode</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-03-14-huong-dan-sync-addin-vscode</guid><category><![CDATA[javascript]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Wed, 14 Mar 2018 00:00:00 GMT</pubDate><content:encoded>&lt;!-- TOC --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#t%E1%BA%A1o-access-token-tr%C3%AAn-github&quot;&gt;Tạo access token trên Github&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#upload-nh%E1%BB%AFng-thi%E1%BA%BFt-%C4%91%E1%BA%B7t-extensions-%C4%91%C3%A3-c%C3%A0i-cho-vscode&quot;&gt;Upload những thiết đặt, extensions đã cài cho VSCode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#download-c%C3%A1c-thi%E1%BA%BFt-t%E1%BB%AB-gist-v%E1%BB%81&quot;&gt;Download các thiết từ gist về&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- /TOC --&gt;
-&lt;p&gt;Cần có&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Tài khoản Github, danh sách extension sẽ được lưu lên gist&lt;/li&gt;
-&lt;li&gt;Cài thêm extention tên là Settings Sync - tác giả Shan Khan.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;tạo-access-token-trên-github&quot;&gt;&lt;a href=&quot;#t%E1%BA%A1o-access-token-tr%C3%AAn-github&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tạo access token trên Github&lt;/h1&gt;
-&lt;p&gt;Đăng nhập vào tài khoản Github, vào trang Settings / Developer settings / Personal access tokens / Generate New Token&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://shanalikhan.github.io/img/github1.PNG&quot; alt=&quot;Sync extensions của VSCode&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Nhập tên và cấp quyền tạo gist cho token này&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://shanalikhan.github.io/img/github2.PNG&quot; alt=&quot;Sync extensions của VSCode&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Sau khi tạo xong, nhớ lưu lại token này ở đâu đó&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://shanalikhan.github.io/img/github3.PNG&quot; alt=&quot;Sync extensions của VSCode&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;upload-những-thiết-đặt-extensions-đã-cài-cho-vscode&quot;&gt;&lt;a href=&quot;#upload-nh%E1%BB%AFng-thi%E1%BA%BFt-%C4%91%E1%BA%B7t-extensions-%C4%91%C3%A3-c%C3%A0i-cho-vscode&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Upload những thiết đặt, extensions đã cài cho VSCode&lt;/h1&gt;
-&lt;p&gt;Dùng phím tắt &lt;code class=&quot;language-text&quot;&gt;Shift + Alt + U&lt;/code&gt; hoặc search từ command Palette, search từ sync&lt;/p&gt;
-&lt;p&gt;Nó sẽ yêu cầu nhập giá trị token vừa mới tạo&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://shanalikhan.github.io/img/upload1.png&quot; alt=&quot;Sync extensions của VSCode&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Sau khi upload thành công, nó sẽ trả về gist id, &lt;strong&gt;nhớ copy&lt;/strong&gt; và lưu lại giá trị gist Id này để sử dụng trên máy khác.&lt;/p&gt;
-&lt;h1 id=&quot;download-các-thiết-từ-gist-về&quot;&gt;&lt;a href=&quot;#download-c%C3%A1c-thi%E1%BA%BFt-t%E1%BB%AB-gist-v%E1%BB%81&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Download các thiết từ gist về&lt;/h1&gt;
-&lt;p&gt;Dùng phím tắt &lt;code class=&quot;language-text&quot;&gt;Shift + Alt + D&lt;/code&gt;, hoặc gọi từ command palette&lt;/p&gt;
-&lt;p&gt;Nó sẽ yêu cầu nhập lại token và gist id đã tạo, điền vào, xong!
-&lt;img src=&quot;https://shanalikhan.github.io/img/upload1.png&quot; alt=&quot;Sync extensions của VSCode&quot;&gt;
-&lt;img src=&quot;https://shanalikhan.github.io/img/download2.png&quot; alt=&quot;Sync extensions của VSCode&quot;&gt;
-&lt;img src=&quot;https://shanalikhan.github.io/img/download3.png&quot; alt=&quot;Sync extensions của VSCode&quot;&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sử dụng biến Node Environment]]></title><description><![CDATA[Khi nhắc đến thuật ngữ "Environment Variable" là nghĩ ngay tới việc thiết đặt biến này cho thư mục Java Home trong windows Thật ra không…]]></description><link>https://luubinhan.github.io/blog/2018-03-09-huong-dan-su-dung-bien-enviroment-nhu-the-nao</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-03-09-huong-dan-su-dung-bien-enviroment-nhu-the-nao</guid><category><![CDATA[javascript]]></category><category><![CDATA[webpack]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Fri, 09 Mar 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Khi nhắc đến thuật ngữ &quot;Environment Variable&quot; là nghĩ ngay tới việc thiết đặt biến này cho thư mục Java Home trong windows&lt;/p&gt;
+      &lt;/div&gt;</content:encoded></item><item><title><![CDATA[Sử dụng biến Node Environment]]></title><description><![CDATA[Khi nhắc đến thuật ngữ "Environment Variable" là nghĩ ngay tới việc thiết đặt biến này cho thư mục Java Home trong windows Thật ra không…]]></description><link>https://luubinhan.github.io/blog/2018-03-09-huong-dan-su-dung-bien-enviroment-nhu-the-nao</link><guid isPermaLink="false">https://luubinhan.github.io/blog/2018-03-09-huong-dan-su-dung-bien-enviroment-nhu-the-nao</guid><category><![CDATA[javascript]]></category><category><![CDATA[webpack]]></category><dc:creator><![CDATA[luckyluu]]></dc:creator><pubDate>Fri, 09 Mar 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Khi nhắc đến thuật ngữ &quot;Environment Variable&quot; là nghĩ ngay tới việc thiết đặt biến này cho thư mục Java Home trong windows&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/800/1*NWeRct1eJ16rAmEaabKV7A.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Thật ra không liên quan gì đâu nhá&lt;/p&gt;
 &lt;p&gt;Trong Node, biến Environment là một biến global, thường được sử dụng để chỉ định &lt;code class=&quot;language-text&quot;&gt;process&lt;/code&gt; nào muốn chạy. Ví dụ, khi chạy một ứng dụng web, ta sẽ có các biến &lt;strong&gt;Environment&lt;/strong&gt; sau:&lt;/p&gt;
