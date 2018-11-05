@@ -10,6 +10,24 @@ chapter: 0
 tags: ["react-native"]
 ---
 
+<!-- TOC -->
+
+- [1. Được](#1-được)
+  - [1.1. Build nhanh hơn](#11-build-nhanh-hơn)
+  - [1.2. Một framework, nhiều platform](#12-một-framework-nhiều-platform)
+  - [1.3. Hot reloading](#13-hot-reloading)
+- [2. Mất](#2-mất)
+  - [2.1. Không phải module nào cũng ngon](#21-không-phải-module-nào-cũng-ngon)
+  - [2.2. Performance](#22-performance)
+  - [2.3. Vẫn cần Native Developer](#23-vẫn-cần-native-developer)
+  - [2.4. Sân chơi của Facebook](#24-sân-chơi-của-facebook)
+  - [2.5. Về mặt con người](#25-về-mặt-con-người)
+- [3. Lập team](#3-lập-team)
+- [4. Quản lý dự án](#4-quản-lý-dự-án)
+  - [4.1. Dựng design system](#41-dựng-design-system)
+
+<!-- /TOC -->
+
 React Native đang là xu hướng lựa chọn của nhiều công ty khi muốn bắt đầu làm app, với lời đường mật build một lần chạy cả 2 nền tảng iOS và Android khiến ai cũng muốn học và muốn làm
 
 Trước khi đưa ra quyết định lựa chọn công nghệ nào cho sản phẩm của công ty, đây là những thứ bạn luôn phải cân nhắc: được gì và mất gì với React Native
@@ -39,7 +57,9 @@ Một vài module bạn cần có thể không có sẵn, hoặc không có docu
 ## 2.2. Performance
 
 Đạt được performance như Native app thực sự quá khó cho các nền tảng muốn chạy cross platform. Bạn sẽ phải đánh đổi giữa bộ nhớ, kích thước app, tốc độ.
+
 ## 2.3. Vẫn cần Native Developer
+
 Implement một vài tính năng native vẫn cần kiến thức của platform đó. Như truy cập sensor, camera hoặc push notification cần sự giúp đỡ của iOS và Android developer.
 
 
@@ -71,8 +91,8 @@ Chúng ta hãy đứng trên góc nhìn của một người viết mobile app v
 
 Trong một thế giới lý tưởng, nơi bạn có chuyên gia iOS, chuyên gia Android trong team. Nhưng không, bạn chỉ được chọn một native developer, hãy chọn Android. React Native trên iOS dễ quản lý hơn trên Android. Ở Mỹ, đa phần những người làm trong kỹ thuật, như đội của Facebook chẳng hạn, user cũng vậy, sử dụng iOS nhiều hơn, nói nôm na iOS luôn được ưu tiên và test kỹ hơn trên iOS. Android sẽ có những lỗi mà chỉ có chuyên gia trên Android mới hiểu nổi.
 
-![](https://cdn-images-1.medium.com/max/1600/1*ivbK3rkZMIAgt9hVpNshig.png)
-![](https://cdn-images-1.medium.com/max/800/0*HvHub4QRI5jFiihz.jpg)
+![Chia sẻ của lead team React Native trong quá trình lập team React Native](https://cdn-images-1.medium.com/max/1600/1*ivbK3rkZMIAgt9hVpNshig.png)
+![Chia sẻ của lead team React Native trong quá trình lập team React Native](https://cdn-images-1.medium.com/max/800/0*HvHub4QRI5jFiihz.jpg)
 
 Sau khi thuê lead React Native, bạn nên thuê thêm 2 người chuyên làm React. Họ không cần kinh nghiệm native mobile. Chỉ cần đảm bảo họ có khái niệm trong đầu về mobile app, đừng dùng những người chỉ biết web. Làm React Native sẽ vướng nhiều vấn đề mà người làm web sẽ cảm thấy khó chịu vì những vấn đề với web thì nó quá đơn giản.
 3 người là đủ, tất nhiên cũng tùy thuộc vào tốc độ phát triển của ứng dụng. Lead của team nên dùng 50% thời gian để phát triển tính năng, còn lại thì maintain và hỗ trợ các dev khác
