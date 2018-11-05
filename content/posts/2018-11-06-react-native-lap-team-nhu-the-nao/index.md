@@ -2,7 +2,7 @@
 slug: "/2018-11-06-react-native-lap-team-nhu-the-nao"
 date: "2018-11-06"
 title: "Chia sẻ của lead team React Native trong quá trình lập team React Native"
-desc: ""
+desc: "Bài viết sẽ phù hợp với founder của một startup, hoặc CTO. Bài viết này là chia sẻ của một team lead đang làm React Native, khía cạnh kỹ thuật cũng như cách tổ chức một team."
 cover: ""
 type: "post"
 lesson: 0
@@ -10,19 +10,14 @@ chapter: 0
 tags: ["react-native"]
 ---
 
-
-
-React Native đang là xu hướng lựa chọn của nhiều công ty khi muốn bắt đầu làm app, với lời đường mật "build một lần chạy cả 2 nền tảng iOS và Android" khiến ai cũng muốn học và muốn làm
-
-Bài viết này là chia sẻ của một team lead đang làm React Native, khía cạnh kỹ thuật cũng như cách tổ chức một team.
-
-Bài viết sẽ phù hợp với founder của một startup, hoặc CTO.
+React Native đang là xu hướng lựa chọn của nhiều công ty khi muốn bắt đầu làm app, với lời đường mật build một lần chạy cả 2 nền tảng iOS và Android khiến ai cũng muốn học và muốn làm
 
 Trước khi đưa ra quyết định lựa chọn công nghệ nào cho sản phẩm của công ty, đây là những thứ bạn luôn phải cân nhắc: được gì và mất gì với React Native
 
 # 1. Được
 
 ## 1.1. Build nhanh hơn
+
 Một trong những selling point của React Native việc phát triển app nhanh hơn, với rất nhiều thư viện nguồn mở trên mạng, rất nhiều component giải quyết các vấn đề chung mà bạn ko cần built từ đầu.
 
 Javascript là thứ ngôn ngữ được sử dụng *quá nhiều* ở những năm gần đây, càng nhiều developer có kiến thức nền tảng của Javascript, muốn học javascript, nhân lực rất dồi dào.
@@ -47,8 +42,11 @@ Một vài module bạn cần có thể không có sẵn, hoặc không có docu
 ## 2.3. Vẫn cần Native Developer
 Implement một vài tính năng native vẫn cần kiến thức của platform đó. Như truy cập sensor, camera hoặc push notification cần sự giúp đỡ của iOS và Android developer.
 
+
 Không phải mọi thứ đều làm được như native app mặc dù bạn sẽ luôn thấy React Native luôn được quảng cáo là chạy trên nhiều platform. Trên khía cạnh kinh doanh, các công ty chống lưng cho Android và iOS sẽ luôn làm cho platform của họ khác biết với đối thủ. 
+
 ## 2.4. Sân chơi của Facebook
+
 React Native suy cho cùng là một project riêng của Facebook sau được chuyển thành open source, Facebook ko được thừa hưởng những tài liệu được dấu bởi Apple và Google, họ đâu muốn tặng hết cái android và iOS ra ngoài. Đồng nghĩa với việc, sẽ rất nhiều kiến thức nằm rải rác khắp nơi trên Github issue, blog, tweet, trao đổi, hội thảo, chưa có một official document nào đầy đủ.
 
 React Native tiến hoá không ngừng. Cứ mỗi tháng có release mới, nếu nguyên cái app không chết, thì cũng chết một vài thư viện đang dùng. Upgrade là một cơn ác mộng, còn nếu không upgrade, sau 6 tháng là xem như app bạn đã lỗi thời
