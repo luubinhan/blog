@@ -833,7 +833,20 @@ table.normal tr td {
     font-size: 21px;
     line-height: 1.58;
     letter-spacing: -.003em;
-    
+    code.language-text {
+      background: rgba(236, 198, 48, .1);
+      line-height: inherit;
+      padding: 5px 7px 0;
+      white-space: pre-wrap;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      color: $primary-text-color;
+      font-family: $serif;
+      border-bottom: 2px solid rgba(236, 198, 48, .3);
+      font-style: normal;
+      border-radius: 4px;
+    }
     h2, h1 {
       margin-top: 56px;
       --x-height-multiplier: 0.363;
