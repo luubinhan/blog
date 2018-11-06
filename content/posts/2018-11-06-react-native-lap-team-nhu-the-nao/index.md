@@ -83,7 +83,7 @@ Nếu bạn đã có người đảm nhiệm cho iOS và Android rồi, React Na
 <a href="https://medium.com/airbnb-engineering/sunsetting-react-native-1868ba28e30a" target="_blank" rel="noopener noreferrer">Sunsetting React Native</a>
 
 
-Nếu công ty bạn chỉ mới có iOS, chuẩn bị build Android, hãy chọn React Native để build Android
+<div class="note">Nếu công ty bạn chỉ mới có iOS, chuẩn bị build Android, hãy chọn React Native để build Android</div>
 
 # 3. Lập team
 

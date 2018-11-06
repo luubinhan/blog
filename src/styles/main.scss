@@ -833,6 +833,12 @@ table.normal tr td {
     font-size: 21px;
     line-height: 1.58;
     letter-spacing: -.003em;
+    .note {
+      padding: 20px;
+      background: #FFF9C4;
+      padding: 20px;
+      margin: 20px 0;
+    }
     code.language-text {
       background: rgba(236, 198, 48, .1);
       line-height: inherit;
