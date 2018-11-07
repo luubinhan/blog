@@ -20,9 +20,9 @@ Chúng ta có thể nhóm nó theo
 <!-- TOC -->
 
 - [1. Khởi tạo](#1-khởi-tạo)
-- [Mount ( chèn vào DOM )](#mount--chèn-vào-dom-)
-- [Cập nhập](#cập-nhập)
-- [Xóa](#xóa)
+- [2. Chèn vào DOM](#2-chèn-vào-dom)
+- [3. Cập nhập](#3-cập-nhập)
+- [4. Xóa](#4-xóa)
 
 <!-- /TOC -->
 
@@ -67,7 +67,7 @@ export default {
 }
 ```
 
-# Mount ( chèn vào DOM )
+# 2. Chèn vào DOM
 
 Các hook được sử dụng thường xuyên nhất. Cho phép truy cập lúc component ngay trước và sau lần render đầu tiên, tất nhiên nó sẽ không chạy lúc server render
 
@@ -103,7 +103,7 @@ Chúng ta có thể truy cập tất cả, cũng là hook được sử dụng n
 </script>
 ```
 
-# Cập nhập
+# 3. Cập nhập
 
 Các hook sẽ được gọi khi component được re-render.
 
@@ -159,7 +159,7 @@ export default {
 </script>
 ```
 
-# Xóa
+# 4. Xóa
 
 `beforeDestroy`
 
