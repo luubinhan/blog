@@ -10,7 +10,7 @@ chapter: 0
 tags: ["vue"]
 ---
 
-Mình đã có bài giới thiệu về [lifecycle hook của React Component](/2017-10-20-react-lifecycle-la-gi), Vue component cũng có lifecycle hook, biết hết các hook cơ bản là quan trọng vì sớm muốn chúng ta cũng muốn chạy một số đoạn code khi component được thêm vào DOM, được update, hoặc xóa.
+Mình đã có bài giới thiệu về [lifecycle hook của React Component](/2017-10-20-react-lifecycle-la-gi), Vue component cũng có lifecycle hook, biết hết các hook cơ bản là quan trọng vì sớm muộn chúng ta cũng muốn chạy một số đoạn code khi component được thêm vào DOM, được update, hoặc xóa.
 
 ![Giới thiệu lifecycle hook của Vue JS](https://d33wubrfki0l68.cloudfront.net/435786c6cbd23e078c35c2b21f40e1756b2c3d30/2098f/images/vuejs/external/component-lifecycle.png)
 
@@ -19,26 +19,18 @@ Chúng ta có thể nhóm nó theo
 
 <!-- TOC -->
 
-- [Initialization](#initialization)
-  - [beforeCreate](#beforecreate)
-  - [created](#created)
+- [1. Khởi tạo](#1-khởi-tạo)
 - [Mount ( chèn vào DOM )](#mount--chèn-vào-dom-)
-  - [beforeMount](#beforemount)
-  - [mounted](#mounted)
-- [Update](#update)
-  - [beforeUpdate](#beforeupdate)
-- [updated](#updated)
-- [Destroy](#destroy)
-  - [beforeDestroy](#beforedestroy)
-  - [destroyed](#destroyed)
+- [Cập nhập](#cập-nhập)
+- [Xóa](#xóa)
 
 <!-- /TOC -->
 
-# Initialization
+# 1. Khởi tạo
 
 Các hook xảy ra trước khi component được chèn vào DOM, khác với các hook khác, những hook thuộc nhóm này sẽ chạy trong quá trình server-side render. Chúng ta cũng không truy cập được DOM và `this.$el` trong đây
 
-## beforeCreate
+`beforeCreate`
 
 Sự kiện xảy ra khi mới vừa khởi tạo component, `data` chưa khởi tạo, và các sự kiện chưa được setup
 
@@ -50,7 +42,7 @@ export default {
 }
 ```
 
-## created
+`created`
 
 Có thể truy xuất đến `data` và `events`. Template và Virtual DOM chưa được mount và render
 
@@ -81,7 +73,7 @@ Các hook được sử dụng thường xuyên nhất. Cho phép truy cập lú
 
 Không nên sử dụng trong trường hợp muốn fetch dữ liệu cho component lúc khởi tạo. Thay vào đó dùng `created` ( hoặc `created` + `activated` cho component `keep-alive` )
 
-## beforeMount
+`beforeMount`
 
 Ngay trước lần render đầu tiên và sau khi template hoặc render function được compile. Thường thì rất chẳng ai đụng đến hook này.
 
@@ -89,11 +81,11 @@ Ngay trước lần render đầu tiên và sau khi template hoặc render funct
 export default {
 	beforeMount() {
 		console.log('this.$el chưa tồn tại')
-}
+  }
 }
 ```
 
-## mounted
+`mounted`
 
 Chúng ta có thể truy cập tất cả, cũng là hook được sử dụng nhiều nhất
 
@@ -111,13 +103,13 @@ Chúng ta có thể truy cập tất cả, cũng là hook được sử dụng n
 </script>
 ```
 
-# Update
+# Cập nhập
 
 Các hook sẽ được gọi khi component được re-render.
 
 Không nên sử dụng các hook này nếu muốn biết các reactive property nào trên component đã thay đổi. Thay vào đó hãy sử dụng `computed` và `watch`
 
-## beforeUpdate
+`beforeUpdate`
 
 Sau khi data thay đổi, trước khi render lại component.
 
@@ -139,9 +131,9 @@ export default {
 }
 ```
 
-# updated
+`updated`
 
-Sau khi component được re-render
+Sau khi component đã re-render
 
 ```jsx
 <template>
@@ -152,24 +144,24 @@ export default {
 	data() {
 		return {
 			counter: 0
-}
-},
-updated() {
-	// gọi mỗi giây
-	console.log(+this.$refs['dom-element'].textContent === this.counter)
-},
-created() {
-	setInterval( () => {
-		this.counter++;
-	}, 1000)
-}
+  }
+  },
+  updated() {
+    // gọi mỗi giây
+    console.log(+this.$refs['dom-element'].textContent === this.counter)
+  },
+  created() {
+    setInterval( () => {
+      this.counter++;
+    }, 1000)
+  }
 }
 </script>
 ```
 
-# Destroy
+# Xóa
 
-## beforeDestroy
+`beforeDestroy`
 
 Trước khi destroy
 
@@ -189,9 +181,9 @@ export default {
 
 ```
 
-## destroyed
+`destroyed`
 
-Sau khi destroy
+Sau khi đã destroy
 
 ```jsx
 export default {
