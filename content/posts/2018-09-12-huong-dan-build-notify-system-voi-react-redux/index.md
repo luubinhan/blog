@@ -94,7 +94,7 @@ export function removeToast(id) {
 }
 ```
 
-Giờ đến nhiệm vụ của reducer là phải xử lý khi 2 action trên
+Giờ đến nhiệm vụ của reducer là phải xử lý khi có 2 action trên
 
 ```js
 // src/reducers/toasts.js
@@ -161,7 +161,7 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps, mapDispatchToProps)(Toasts);
 ```
 
-Ở component `Toasts` này chúng ta render tất cả notification có trong **store**, đưa vào function xử lý nút close trêe mỗi component.
+Ở component `Toasts` này chúng ta render tất cả notification có trong **store**, đưa vào function xử lý nút close trên mỗi component.
 
 Đến Component `Toast`
 
