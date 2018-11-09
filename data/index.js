@@ -37,10 +37,10 @@ export const PrimaryNav = [
     icon: "react-native"
   },
 	{
-		name: 'Wordpress',
-		href: '/tags/wordpress',
+		name: 'Vue',
+		href: '/tags/vuejs',
 		isActive: false,
-		icon: "wordpress"
+		icon: "vue"
 	},
 	{
 		name: 'HTML/CSS',

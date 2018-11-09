@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["vue"]
+tags: ["vuejs"]
 ---
 
 Mình đã có bài giới thiệu về [lifecycle hook của React Component](/2017-10-20-react-lifecycle-la-gi), Vue component cũng có lifecycle hook, biết hết các hook cơ bản là quan trọng vì sớm muộn chúng ta cũng muốn chạy một số đoạn code khi component được thêm vào DOM, được update, hoặc xóa.

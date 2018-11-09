@@ -30,7 +30,7 @@ class IndexPage extends React.Component {
       <div className="master">
         <Helmet title={config.siteTitle + ' - ' + config.siteDescription} />
         <main className="inner">
-          <h1 style="display: none">{config.siteTitle + ' - ' + config.siteDescription}</h1>
+          <h1 style={{display: "none"}}>{config.siteTitle + ' - ' + config.siteDescription}</h1>
           {!isEmpty(group) && <PostListing postEdges={group} />}
           <div className="pagination">
             <NavLink test={first} url={previousUrl} text="Trang Trước" />

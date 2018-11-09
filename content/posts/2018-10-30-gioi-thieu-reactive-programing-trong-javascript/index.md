@@ -23,7 +23,7 @@ tags: ["javascript"]
 
 <!-- /TOC -->
 
-# Reactive programing là gì?
+## Reactive programing là gì?
 
 > Reactive programming is programming with asynchronous data streams
 
@@ -33,7 +33,7 @@ Có khái niệm mới **stream**
 
 Muốn hiểu được reactive programing, bạn cần biết khái niệm **stream**
 
-# Stream là gì?
+## Stream là gì?
 
 Có thể hình dung stream như là một **array đặc biệt**, chứa một *tập* các phần tử **đặc biệt**, các phần tử này có thể emit: 1. value, 2. error, 3. complete, các phần tử trong stream cũng không có hết ngay từ đầu, mà sẽ xuất hiện ở một thời điểm ko xác định trong tương lai.
 
@@ -62,7 +62,7 @@ Có rất nhiều thứ có thể xem là async data stream. Ví dụ: một cá
 
 Để làm việc với Reactive Programing, 100% bạn cần dùng đến thư viện (siêu nhân có thể tự viết), tùy theo ngôn ngữ (ko chỉ có javascript mới có nhé), nó sẽ có một số hàm để bạn chuyển đổi một data bình thường thành một data stream (data stream là phải có thể emit 3 cái đã nói), một số hàm để bạn `merge`, `flatten`, `filter` các data stream này lại.
 
-# Tại sao chúng ta cần Stream + Reactive Programing
+## Tại sao chúng ta cần Stream + Reactive Programing
 
 Có thể thấy ngay Reactive programing khá trừu tượng, nhưng do thay vì implement những ràng buộc một cách chi tiết, những ràng buộc này được gắn vào từng data gửi đi trên stream, code nó sẽ gọn gàng hơn.
 
@@ -74,7 +74,7 @@ Kiểu viết này sẽ mang phong cách **declarative** hơn là **imperative**
 
 Những event real-time như thế, user khoái, chúng ta cần có một công cụ lập trình để làm việc đó, Reactive Program ra đời cũng từ yêu cầu của user.
 
-# Implement hộp thoại "Who to follow" của twitter
+## Implement hộp thoại "Who to follow" của twitter
 
 Mình sẽ sử dụng [RxJS](https://github.com/Reactive-Extensions/RxJS) trong ví dụ, vì mình chỉ biết javascript thôi các bạn.
 
@@ -88,7 +88,7 @@ Tính năng chính của hộp thoại này
 
 Chúng ta tiếp cận với vấn đề này như thế nào, **gần như mọi thứ có thể xem là stream**.
 
-## Load dữ liệu lúc đầu
+### Load dữ liệu lúc đầu
 
 Bắt đầu với tính năng đơn giản nhất "Mới vào, load 3 account từ API". (1) gửi 1 request (2) nhận response (3) render kết quả
 
@@ -195,7 +195,7 @@ responseStream.subscribe(function(response) {
 });
 ```
 
-## Nút refresh
+### Nút refresh
 
 JSON trả về từ API sẽ có 100 user, nó chỉ cho thêm offset, không cho set page size, chúng ta chỉ cần 3 user, lãng phí hết 97 user. Tạm thời không quan tâm phần này, chúng ta sẽ cache lại cái response sau.
 
@@ -356,7 +356,7 @@ refreshClickStream: ----------o--------o---->
  suggestion3Stream: ----t-----N---t----N-t-->
 ```
 
-## Click đóng một suggestion
+### Click đóng một suggestion
 
 Khi user click vào nút "x", chúng ta sẽ load 1 user khác vào. Cách chúng ta nghĩ đến đầu tiên, tạo một request mới khi click vào nút "x"
 
