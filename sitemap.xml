@@ -13,8 +13,8 @@
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-10-24-giai-thich-prototype-trong-javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-10-23-huong-dan-do-toc-do-website-bang-chrome</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-10-22-huong-dan-dung-border-radius-ve-custom-shape</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://luubinhan.github.io/blog/blog/2018-10-21-huong-dan-dung-chrome-devtool-de-inspect-animation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-10-21-huong-dan-su-dung-local-storage</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luubinhan.github.io/blog/blog/2018-10-21-huong-dan-dung-chrome-devtool-de-inspect-animation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-10-20-huong-dan-thuc-hien-kiem-tra-performance-voi-chrome-devtools</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-10-19-gioi-thieu-typeof-trong-javascript-cho-nguoi-moi-bat-dau</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-10-18-huong-dan-dung-chrome-dev-tool-de-kiem-tra-contrast</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -96,8 +96,8 @@
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-19-huong-dan-react-patterns-can-ban</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-17-huong-dan-react-native-authentication-voi-amazone-cognito-phan-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-16-huong-dan-react-authentication-phan-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://luubinhan.github.io/blog/blog/2018-03-14-huong-dan-sync-addin-vscode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-14-huong-dan-react-authentication-voi-jwt-redux</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luubinhan.github.io/blog/blog/2018-03-14-huong-dan-sync-addin-vscode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-09-huong-dan-su-dung-bien-enviroment-nhu-the-nao</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-06-huong-dan-redux-van-hanh-nhu-the-nao-kem-vi-du</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-05-8-huong-dan-cach-render-component-trong-react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
