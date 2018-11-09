@@ -34,7 +34,7 @@ Sử dụng `React.lazy` để làm ví dụ sau
 
 <a href="https://github.com/vigzmv/react-lazy-example" target="_blank" rel="noopener noreferrer">Source Github</a>
 
-Phần code sử dụng `React.lazy` không có gì cao siêu, thay vì import bình thường, chúng ta *import** bằng `React.lazy`.
+Phần code sử dụng `React.lazy` không có gì cao siêu, thay vì import bình thường, chúng ta *import* bằng `React.lazy`.
 
 ```jsx
 const User = React.lazy(() => import('./User'));

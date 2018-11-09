@@ -26,7 +26,7 @@ Chúng ta có thể nhóm nó theo
 
 <!-- /TOC -->
 
-# 1. Khởi tạo
+## 1. Khởi tạo
 
 Các hook xảy ra trước khi component được chèn vào DOM, khác với các hook khác, những hook thuộc nhóm này sẽ chạy trong quá trình server-side render. Chúng ta cũng không truy cập được DOM và `this.$el` trong đây
 
@@ -67,7 +67,7 @@ export default {
 }
 ```
 
-# 2. Chèn vào DOM
+## 2. Chèn vào DOM
 
 Các hook được sử dụng thường xuyên nhất. Cho phép truy cập lúc component ngay trước và sau lần render đầu tiên, tất nhiên nó sẽ không chạy lúc server render
 
@@ -103,7 +103,7 @@ Chúng ta có thể truy cập tất cả, cũng là hook được sử dụng n
 </script>
 ```
 
-# 3. Cập nhập
+## 3. Cập nhập
 
 Các hook sẽ được gọi khi component được re-render.
 
@@ -159,7 +159,7 @@ export default {
 </script>
 ```
 
-# 4. Xóa
+## 4. Xóa
 
 `beforeDestroy`
 

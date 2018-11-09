@@ -853,6 +853,9 @@ table.normal tr td {
       font-style: normal;
       border-radius: 4px;
     }
+    .gatsby-highlight .token.comment, .gatsby-highlight .token.prolog, .gatsby-highlight .token.doctype, .gatsby-highlight .token.cdata {
+      color: #a9daaf;
+    }
     h2, h1 {
       margin-top: 56px;
       --x-height-multiplier: 0.363;
