@@ -9,7 +9,8 @@ import {
   IoSocialHtml5,
   IoAndroidCompass,
   IoAndroidSend,
-  IoAndroidPhonePortrait
+  IoAndroidPhonePortrait,
+  IoAndroidMenu
 } from "react-icons/lib/io";
 
 import config from "../../data/SiteConfig";
@@ -104,7 +105,7 @@ export default class MainLayout extends React.Component {
       case "send":
         return <IoAndroidSend />;
       default:
-        return null;
+        return <IoAndroidMenu />;
     }
   };
   render() {
