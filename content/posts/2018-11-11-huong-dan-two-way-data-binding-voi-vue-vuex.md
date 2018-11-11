@@ -1,6 +1,6 @@
 ---
-slug: "/2018-11-05-moi-so-loi-javascript-lam-anh-huong-perfomance.md"
-date: "2018-11-05"
+slug: "/2018-11-11-huong-dan-two-way-data-binding-voi-vue-vuex"
+date: "2018-11-11"
 title: "Cách làm two-way data binding cho form field trong Vue và Vuex"
 desc: "Two-way data binding trong Vue và Vuex làm như thế nào cho đúng mà nhanh"
 cover: ""
