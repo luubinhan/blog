@@ -96,7 +96,7 @@ Chúng ta có thể truy cập tất cả, cũng là hook được sử dụng n
 
 <script>
 	export default {
-		mouted() {
+		mounted() {
 			console.log(this.$el.textContent); // text here
 		}
 	}

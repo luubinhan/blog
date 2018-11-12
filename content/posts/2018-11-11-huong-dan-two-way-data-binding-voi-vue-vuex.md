@@ -32,7 +32,7 @@ Tuy nhiên khi làm những ứng dụng lớn, chúng ta sẽ có những nhu c
 
 Nếu đưa toàn bộ dữ liệu vào vuex store, chúng ta sẽ sửa lại
 
-```js
+```jsx
 <template>
   <input v-model="form.message" />
 </template>
