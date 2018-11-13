@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: "vuejs"
+tags: ["vuejs"]
 ---
 
 
