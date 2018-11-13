@@ -10,6 +10,16 @@ chapter: 0
 tags: ["vuejs"]
 ---
 
+<!-- TOC -->
+
+- [state](#state)
+- [mutations](#mutations)
+- [actions](#actions)
+- [getters](#getters)
+- [modules](#modules)
+
+<!-- /TOC -->
+
 Vuex là một cái store cho Vue, nó giống hệt như redux store của React, cũng giải quyết những vấn đề như redux, nên nếu bạn ko biết tại sao nó lại cần thì có thể đọc lại [Redux là gì và tại sao phải dùng](/2018-02-14-huong-dan-redux-la-gi-tai-sao-phai-dung).
 
 Một số khái niệm chính của Vuex, các khái niệm này gần như là tương đồng với redux

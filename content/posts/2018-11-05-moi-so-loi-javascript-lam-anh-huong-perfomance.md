@@ -10,6 +10,14 @@ chapter: 0
 tags: ["vuejs"]
 ---
 
+<!-- TOC -->
+
+- [1. loop qua một array](#1-loop-qua-một-array)
+- [2. Duplicate một array](#2-duplicate-một-array)
+- [3. Loop qua một object](#3-loop-qua-một-object)
+
+<!-- /TOC -->
+
 
 ## 1. loop qua một array
 
@@ -37,7 +45,7 @@ Chúng ta hãy xem kết quả tất cả các cách chúng ta có thể dùng �
 
 Như vậy 2 phương thức cũ như dưa mắm `concat` và `slice` vẫn dành chiến thắng, kiểu spread operation mới ES6 vẫn top cuối.
 
-## Loop qua một object
+## 3. Loop qua một object
 
 - `for(let key in obj)`: ~240 microseconds
 - `Object.keys(obj)` sau đó for each: ~294 microseconds

@@ -10,6 +10,18 @@ chapter: 0
 tags: ["vuejs"]
 ---
 
+<!-- TOC -->
+
+- [src/store/index.js](#srcstoreindexjs)
+- [src/store/modules/forms](#srcstoremodulesforms)
+- [src/store/modules/customer.js](#srcstoremodulescustomerjs)
+- [PageCustomer.vue](#pagecustomervue)
+- [Tổng kết](#tổng-kết)
+  - [Chủ động load các module](#chủ-động-load-các-module)
+  - [Tối đa việc tái sử dụng](#tối-đa-việc-tái-sử-dụng)
+
+<!-- /TOC -->
+
 
 <a href="https://d33wubrfki0l68.cloudfront.net/696421d01191c8c515704cbbec42120ce807c38c/fc4e4/videos/2018-02-04/vuex-store-api-model-mapping.mp4" target="_blank" rel="noopener noreferrer">Video demo ứng dụng  </a>
 
@@ -250,7 +262,7 @@ export const customer = {
 
 ```
 
-# PageCustomer.vue
+## PageCustomer.vue
 
 ```jsx
 <template>

@@ -10,13 +10,12 @@ chapter: 0
 tags: ["javascript"]
 ---
 
-<!-- MarkdownTOC -->
+<!-- TOC -->
 
-- Global Execution Context
-- Function Execution Context
+- [Global Execution Context](#global-execution-context)
+- [Function Execution Context](#function-execution-context)
 
-<!-- /MarkdownTOC -->
-
+<!-- /TOC -->
 
 Sau khi nắm được nó chúng ta có thể giải thích những vấn đề *cao siêu* như **hoisting**, **scope chain**, **closure**.
 
