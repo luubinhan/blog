@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript"]
+tags: "vuejs"
 ---
 
 Sử dụng directive `v-model`, chúng có thể dễ dàng thực hiện two-way data binding cho element, một trong những tính năng rất hay ho mà Vue cung cấp.

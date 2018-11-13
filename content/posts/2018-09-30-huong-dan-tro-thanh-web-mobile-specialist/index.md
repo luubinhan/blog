@@ -35,7 +35,7 @@ Cần nắm
 - Responsive image theo từng resolution và hướng màn hình (ngang hay đứng) trên bất kỳ thiết bị mobile nào
 - Cách bắt Sự kiện Touch và mouse
 
-Nguồn tham khảo ( mình sẽ viết từ từ )
+Nguồn tham khảo
 
 - Responsive Web Design
 - [Tổng quát về canh lề với Flexbox display](/2018-07-04-huong-dan-tong-hop-canh-le-voi-flexbox-alignment)
@@ -73,7 +73,7 @@ Nguồn tham khảo ( mình sẽ viết từ từ )
 - Gởi thông báo khẩn cấp sử dụng `aria-live`
 - Sử dụng semantic markup để giữ nội dung chính và các element khác riêng biệt
 
-Nguồn tham khảo ( mình sẽ viết từ từ )
+Nguồn tham khảo
 
 - Web Fundamentals – Accessibility
 - Web Accessibility
