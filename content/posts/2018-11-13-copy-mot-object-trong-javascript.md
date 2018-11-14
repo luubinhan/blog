@@ -1,5 +1,5 @@
 ---
-slug: "/2018-11-13-copy-mot-object-trong-javascript.md"
+slug: "/2018-11-13-copy-mot-object-trong-javascript"
 date: "2018-11-13"
 title: "Copy object trong javascript"
 desc: "Luận bàn các cách mà chúng ta copy một object trong javascript, shallow copy và deep copy"
