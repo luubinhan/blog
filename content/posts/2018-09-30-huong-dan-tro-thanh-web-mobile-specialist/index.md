@@ -168,9 +168,9 @@ Nguồn tham khảo
 - Kiểm tra validate ngay lặp tức bằng **pseudo-classes** trên input
 - Thực hiện validate khi submit
 
-Nguồn tham khảo ( mình sẽ viết từ từ )
+Nguồn tham khảo
 
-- Create Amazing Forms
+- [Chỉ dẫn thiết kế form từ Google](/2018-11-14-chi-dan-thiet-ke-form-cua-google)
 - Constraint Validation
 - [Validate form với HTML5](/2018-11-02-validate-form-voi-html-5)
 
