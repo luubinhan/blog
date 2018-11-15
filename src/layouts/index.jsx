@@ -16,6 +16,7 @@ import {
 import config from "../../data/SiteConfig";
 import { PrimaryNav } from "../../data";
 import "../styles/main.scss";
+import "../styles/prism.scss";
 import "../styles/primaryMenu.scss";
 import "./css/footer.scss";
 
