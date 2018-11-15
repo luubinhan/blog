@@ -62,11 +62,11 @@ Nếu nhu cầu cao hơn, chúng ta có thể không muốn dùng đến các ev
 
 ```jsx
 export default {
-	props: {
-		tabilu
-	},
-	model: {
-	  prop: "tabilu",
+  props: {
+    tabilu
+  },
+  model: {
+    prop: "tabilu",
     event: "blur"
   },
   methods: {
