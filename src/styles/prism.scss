@@ -6,6 +6,8 @@ https://prismjs.com/download.html#themes=prism-coy&languages=markup+css+clike+ja
  * @author Tim  Shedor
  */
 .gatsby-highlight {
+  margin-top: 25px;
+  margin-bottom: 25px;
   margin-left: -75px;
   margin-right: -75px;
   code[class*="language-"] {
