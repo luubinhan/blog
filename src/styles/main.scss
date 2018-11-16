@@ -838,6 +838,14 @@ table.normal tr td {
       background: #FFF9C4;
       padding: 20px;
       margin: 20px 0;
+      code {
+        border: none;
+        border-bottom: 2px solid rgba(236, 198, 48, 0.3);
+        background: rgba(236, 198, 48, 0.4);
+        color: #000;
+        vertical-align: top;
+        font-size: 1.1em;
+      }
     }
     p code.language-text {
       background: rgba(236, 198, 48, .1);

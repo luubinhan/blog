@@ -53,9 +53,10 @@ pre[class*="language-"] > code {
     transparent 50%,
     rgba(69, 142, 209, 0.04) 50%
   );
-  background-size: 3em 3em;
+  background-size: 70px 70px;
   background-origin: content-box;
   background-attachment: local;
+  line-height: 35px;
 }
 
 code[class*="language"] {
@@ -85,43 +86,12 @@ pre[class*="language-"] {
   display: inline;
   white-space: normal;
 }
-
-pre[class*="language-"]:before,
-pre[class*="language-"]:after {
-  content: "";
-  z-index: -2;
-  display: block;
-  position: absolute;
-  bottom: 0.75em;
-  left: 0.18em;
-  width: 40%;
-  height: 20%;
-  max-height: 13em;
-  box-shadow: 0px 13px 8px #979797;
-  -webkit-transform: rotate(-2deg);
-  -moz-transform: rotate(-2deg);
-  -ms-transform: rotate(-2deg);
-  -o-transform: rotate(-2deg);
-  transform: rotate(-2deg);
-}
-
-:not(pre) > code[class*="language-"]:after,
-pre[class*="language-"]:after {
-  right: 0.75em;
-  left: auto;
-  -webkit-transform: rotate(2deg);
-  -moz-transform: rotate(2deg);
-  -ms-transform: rotate(2deg);
-  -o-transform: rotate(2deg);
-  transform: rotate(2deg);
-}
-
 .token.comment,
 .token.block-comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #7d8b99;
+  color: #026e79;
 }
 
 .token.punctuation {
