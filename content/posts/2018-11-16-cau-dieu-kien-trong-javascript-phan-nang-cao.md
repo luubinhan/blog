@@ -71,12 +71,9 @@ Tất cả giá trị trong javascript đều có thể phân thành **truthy** 
 
 Các giá trị sau được xếp vào **falsy**
 
-`''`, `""`, ````
-`0` hoặc '-0'
-`null`
-`undefined`
-`NaN`
-`false`
+<div class="note">
+  '', "", ``, 0, -0, null, undefined, NaN, false
+</div>
 
 Các giá trị còn lại được coi là **truthy**. Khi nào javascript cần giá trị là `Boolean`, nó sẽ tự động đưa những giá trị trong nhóm truthy thành `true`, nhóm falsy thành `false`
 
