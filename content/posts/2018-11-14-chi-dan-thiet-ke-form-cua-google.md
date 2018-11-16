@@ -56,7 +56,12 @@ Ví dụ trên trang đăng ký nếu chúng ta đã cho user nhập first name 
 
 ```html
 <label for="frmNameCC">Name on card</label>
-<input name="ccname" id="frmNameCC" required placeholder="Full Name" autocomplete="cc-name">
+<input 
+name="ccname" 
+id="frmNameCC" 
+required 
+placeholder="Full Name" 
+autocomplete="cc-name">
 
 <label for="frmCCNum">Card Number</label>
 <input name="cardnumber" id="frmCCNum" required autocomplete="cc-number">
@@ -65,43 +70,89 @@ Ví dụ trên trang đăng ký nếu chúng ta đã cho user nhập first name 
 <input name="cvc" id="frmCCCVC" required autocomplete="cc-csc">
 
 <label for="frmCCExp">Expiry</label>
-<input name="cc-exp" id="frmCCExp" required placeholder="MM-YYYY" autocomplete="cc-exp">
+<input 
+name="cc-exp" 
+id="frmCCExp" 
+required 
+placeholder="MM-YYYY" 
+autocomplete="cc-exp">
 ```
 
 ### Name 
 
 ```html
 <label for="frmNameA">Name</label>
-<input name="name" id="frmNameA" placeholder="Full name" required autocomplete="name">
+<input 
+name="name" 
+id="frmNameA" 
+placeholder="Full name" 
+required 
+autocomplete="name">
 ```
 
 ### Email
 
 ```html
 <label for="frmEmailA">Email</label>
-<input type="email" name="email" id="frmEmailA" placeholder="name@example.com" required autocomplete="email">
+<input 
+type="email" 
+name="email" 
+id="frmEmailA" 
+placeholder="name@example.com" 
+required 
+autocomplete="email">
 
 <label for="frmEmailC">Confirm Email</label>
-<input type="email" name="emailC" id="frmEmailC" placeholder="name@example.com" required autocomplete="email">
+<input type="email" 
+name="emailC" 
+id="frmEmailC" 
+placeholder="name@example.com" 
+required 
+autocomplete="email"/>
 ```
 
 ### Address
 
 ```html
 <label for="frmAddressS">Address</label>
-<input name="ship-address" required id="frmAddressS" placeholder="123 Any Street" autocomplete="shipping street-address">
+<input 
+name="ship-address" 
+required 
+id="frmAddressS" 
+placeholder="123 Any Street" 
+autocomplete="shipping street-address">
 
 <label for="frmCityS">City</label>
-<input name="ship-city" required id="frmCityS" placeholder="New York" autocomplete="shipping locality">
+<input 
+name="ship-city" 
+required 
+id="frmCityS" 
+placeholder="New York" 
+autocomplete="shipping locality">
 
 <label for="frmStateS">State</label>
-<input name="ship-state" required id="frmStateS" placeholder="NY" autocomplete="shipping region">
+<input 
+name="ship-state" 
+required 
+id="frmStateS" 
+placeholder="NY" 
+autocomplete="shipping region">
 
 <label for="frmZipS">Zip</label>
-<input name="ship-zip" required id="frmZipS" placeholder="10011" autocomplete="shipping postal-code">
+<input 
+name="ship-zip" 
+required 
+id="frmZipS" 
+placeholder="10011" 
+autocomplete="shipping postal-code">
 
 <label for="frmCountryS">Country</label>
-<input name="ship-country" required id="frmCountryS" placeholder="USA" autocomplete="shipping country">
+<input 
+name="ship-country" 
+required 
+id="frmCountryS" 
+placeholder="USA" 
+autocomplete="shipping country">
 ```
 
 
@@ -109,7 +160,13 @@ Ví dụ trên trang đăng ký nếu chúng ta đã cho user nhập first name 
 
 ```html
 <label for="frmPhoneNumA">Phone</label>
-<input type="tel" name="phone" id="frmPhoneNumA" placeholder="+1-650-450-1212" required autocomplete="tel">
+<input 
+type="tel" 
+name="phone" 
+id="frmPhoneNumA" 
+placeholder="+1-650-450-1212" 
+required 
+autocomplete="tel">
 ```
 
 
@@ -117,16 +174,34 @@ Ví dụ trên trang đăng ký nếu chúng ta đã cho user nhập first name 
 
 ```html
 <label for="frmNameCC">Name on card</label>
-<input name="ccname" id="frmNameCC" required placeholder="Full Name" autocomplete="cc-name">
+<input 
+name="ccname" 
+id="frmNameCC" 
+required 
+placeholder="Full Name" 
+autocomplete="cc-name">
 
 <label for="frmCCNum">Card Number</label>
-<input name="cardnumber" id="frmCCNum" required autocomplete="cc-number">
+<input 
+name="cardnumber" 
+id="frmCCNum" 
+required 
+autocomplete="cc-number">
 
 <label for="frmCCCVC">CVC</label>
-<input name="cvc" id="frmCCCVC" required autocomplete="cc-csc">
+<input 
+name="cvc" 
+id="frmCCCVC" 
+required 
+autocomplete="cc-csc">
 
 <label for="frmCCExp">Expiry</label>
-<input name="cc-exp" id="frmCCExp" required placeholder="MM-YYYY" autocomplete="cc-exp">
+<input 
+name="cc-exp" 
+id="frmCCExp" 
+required 
+placeholder="MM-YYYY" 
+autocomplete="cc-exp">
 ```
 
 ## How far I go?
@@ -173,7 +248,11 @@ HTML5 hỗ trợ khá nhiều kiểu input mà căn cứ vào đó trên điện
 
 ```html
 <label for="frmFavChocolate">Favorite Type of Chocolate</label>
-<input type="text" name="fav-choc" id="frmFavChocolate" list="chocType">
+<input 
+type="text" 
+name="fav-choc" 
+id="frmFavChocolate" 
+lít="chocType">
 <datalist id="chocType">
   <option value="white">
   <option value="milk">
