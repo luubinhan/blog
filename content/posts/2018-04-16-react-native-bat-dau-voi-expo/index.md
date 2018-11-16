@@ -35,18 +35,18 @@ Trước khi nghiên cứu tiếp, một vài vấn đề quan trọng sau cần
 3. **Sử dụng Expo là chết dính với bộ toolset của nó**. Một số đồ chơi sẽ không chạy được với Expo, trong trường hợp cần xài tới, phải `eject` cái app ra khỏi Expo, mà khi đã `eject` thì sẽ ko thể có `inject` ngược lại.
 4. **Ứng dụng Expo chỉ build online**. Expo cung cấp một công cụ command-line là *Exp*, cho phép việc build lên Expo Server, một khi hoàn tất, một URL để download **.apk** hoặc **ipa**, [Bài hướng dẫn](https://docs.expo.io/versions/latest/distribution/building-standalone-apps)
 
-Mặc dù nghe có vẻ khá hạn chế, nhưng thực sự Expo rất mạnh, rất nhiều thứ hỗ trợ sẵn cho Androi và iOS. Có nghĩa là nếu app đang viết không có gì quá đặc biệt, quá "đỉnh của đỉnh" thì việc sử dụng Expo sẽ mang tới rất nhiều lợi ích.
+Mặc dù nghe có vẻ khá hạn chế, nhưng thực sự Expo rất mạnh, rất nhiều thứ hỗ trợ sẵn cho Android và iOS. Có nghĩa là nếu app đang viết không có gì quá đặc biệt, quá "đỉnh của đỉnh" thì việc sử dụng Expo sẽ mang tới rất nhiều lợi ích.
 
 
 ## App sẽ viết
 
-Làm cái game kiểu tìm cập *đóa*
+Làm cái game kiểu tìm cặp
 
-![](https://cms-assets.tutsplus.com/uploads/users/1125/posts/30546/image/memory-game-default.png)
+![Giới thiệu Expo, nhập môn React Native](https://cms-assets.tutsplus.com/uploads/users/1125/posts/30546/image/memory-game-default.png)
 
 Và đây là mặt kia của thẻ
 
-![](https://cms-assets.tutsplus.com/uploads/users/1125/posts/30546/image/memory-game-done.png)
+![Giới thiệu Expo, nhập môn React Native](https://cms-assets.tutsplus.com/uploads/users/1125/posts/30546/image/memory-game-done.png)
 
 Sau khi tìm ra được hết các cặp, user nhấn reset để chơi lại
 
@@ -83,17 +83,17 @@ cd MemoryGame
 exp start
 ```
 
-Nếu sử dụng Expo XDE thì có thể tạo và chạy Expo app qua giao diện, tải [ở đây nè](https://github.com/expo/xde/releases). Sau khi chạy xong thì trên màn hình command-line sẽ có đoạn QR code
+Nếu sử dụng Expo XDE thì có thể tạo và chạy Expo app qua giao diện, <a href="https://github.com/expo/xde/releases" target="_blank" rel="noopener noreferrer">tải ở đây nè</a>. Sau khi chạy xong thì trên màn hình command-line sẽ có đoạn QR code
 
-![](https://cms-assets.tutsplus.com/uploads/users/1125/posts/30546/image/run-dev-server.png)
+![Giới thiệu Expo, nhập môn React Native](https://cms-assets.tutsplus.com/uploads/users/1125/posts/30546/image/run-dev-server.png)
 
-Rút điện thoại ra, mở app Expo lên, quét đoạn QR code này và xong. Sẽ thấy màn hình mặc định của ứng dụng, mỗi lần bấm `Control + S` là nó sẽ tự động load lại.
+Rút điện thoại ra, mở app Expo lên, quét đoạn QR code này và xong. Sẽ thấy màn hình mặc định của ứng dụng, mỗi lần bấm `Ctrl + S` là nó sẽ tự động load lại.
 
-Với bạn nào đang xài Iphone, gần đây Expo phải mở cái quét mã QR ra khỏi app vì bị Apple chửi bới, trên bộ cung cụ debug mới (lúc chạy expo start nó sẽ mở lên trình duyệt), bạn chỉ cần chọn gởi link qua email
+Với bạn nào đang xài Iphone, gần đây Expo phải xóa cái quét mã QR ra khỏi app vì bị Apple chửi bới, trên bộ công cụ debug mới (lúc chạy expo start nó sẽ mở lên trình duyệt), bạn chỉ cần chọn gửi link qua email
 
 ## Chạy code ví dụ
 
-Toàn bộ code ví dụ có thể download [ở đây](https://github.com/tutsplus/easier-react-native-development-with-expo), bạn có thể down về chạy thử. Mình không phân tích toàn bộ code vì mình chỉ tập trung giới thiệu về Expo, mình mặc định các bạn đã biết React, React Native căn bản nhé.
+Toàn bộ code ví dụ có thể <a href="https://github.com/tutsplus/easier-react-native-development-with-expo" target="_blank" rel="noopener noreferrer">download ở đây</a>, bạn có thể down về chạy thử. Mình không phân tích toàn bộ code vì mình chỉ tập trung giới thiệu về Expo, mình mặc định các bạn đã biết React, React Native căn bản nhé.
 
-Tác giả: Wern Ancheta
-Link bài gốc: https://code.tutsplus.com/tutorials/easier-react-native-development-with-expo--cms-30546
+
+<a href="https://code.tutsplus.com/tutorials/easier-react-native-development-with-expo--cms-30546" target="_blank" rel="noopener noreferrer">Wern Ancheta</a>
