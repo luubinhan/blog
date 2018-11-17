@@ -215,4 +215,6 @@ CSS
 <iframe height='265' scrolling='no' title='Vue Case 4: To Do List' src='//codepen.io/tutsplus/embed/PxWVJL/?height=265&theme-id=0&default-tab=css,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/tutsplus/pen/PxWVJL/'>Vue Case 4: To Do List</a> by Envato Tuts+ (<a href='https://codepen.io/tutsplus'>@tutsplus</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-Ví dụ https://code.tutsplus.com/tutorials/design-better-ux-with-vuejs-transitions-and-animations--cms-32050
+
+<a href="https://code.tutsplus.com/tutorials/design-better-ux-with-vuejs-transitions-and-animations--cms-32050" target="_blank" rel="noopener noreferrer">Phần code ví dụ lấy từ Tutsplus</a>
+
