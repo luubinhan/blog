@@ -10,6 +10,16 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [Phân biệt Expression và Statement](#phân-biệt-expression-và-statement)
+- [Phân biệt `true/false`, `truthy/falsy`](#phân-biệt-truefalse-truthyfalsy)
+- [Phân biệt toán tử AND `&&` và OR `||`](#phân-biệt-toán-tử-and--và-or-)
+- [Thay statement bằng expression](#thay-statement-bằng-expression)
+- [Một số cách viết tắt và lưu ý](#một-số-cách-viết-tắt-và-lưu-ý)
+
+<!-- /TOC -->
+
 ## Phân biệt Expression và Statement
 
 Trước tiên chúng ta ôn lại expression và statement trong javascript.
