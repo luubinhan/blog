@@ -170,10 +170,12 @@ Cá nhân tác giả bài viết cũng như mình đồng quan điểm: **JIRA l
 
 Không có con người hoàn hảo, không có công ty hoàn hảo, bạn chấp nhận được những gì, những gì bạn sắp ưu tiên nó thấp hơn. Chúc các bạn tìm được công việc tốt. Mình đã có việc rồi, không muốn đi phỏng vấn nữa đâu các bạn.
 
--[https://medium.com/@vcarl/questions-to-ask-your-interviewer-82a26e67ce6c](https://medium.com/@vcarl/questions-to-ask-your-interviewer-82a26e67ce6c)
 
-- [https://medium.com/@vcarl/questions-to-ask-your-interviewer-development-and-emergencies-f7fbc4519e5b](https://medium.com/@vcarl/questions-to-ask-your-interviewer-development-and-emergencies-f7fbc4519e5b)
 
-- [https://medium.com/@cvitullo/questions-to-ask-your-interviewer-growth-c88eed119ce2](https://medium.com/@cvitullo/questions-to-ask-your-interviewer-growth-c88eed119ce2)
+<a href="https://medium.com/@vcarl/questions-to-ask-your-interviewer-82a26e67ce6c" target="_blank" rel="noopener noreferrer">Questions to ask your interviewer: onboarding and the workplace</a>
 
-- [https://medium.com/@vcarl/questions-to-ask-your-interviewer-project-management-and-prioritization-69ac3aad3689](https://medium.com/@vcarl/questions-to-ask-your-interviewer-project-management-and-prioritization-69ac3aad3689)
+<a href="https://medium.com/@vcarl/questions-to-ask-your-interviewer-development-and-emergencies-f7fbc4519e5b" target="_blank" rel="noopener noreferrer">Questions to ask your interviewer: development and emergencies</a>
+
+<a href="https://medium.com/@cvitullo/questions-to-ask-your-interviewer-growth-c88eed119ce2" target="_blank" rel="noopener noreferrer">Questions to ask your interviewer: Growth</a>
+
+<a href="https://medium.com/@vcarl/questions-to-ask-your-interviewer-project-management-and-prioritization-69ac3aad3689" target="_blank" rel="noopener noreferrer">Questions to ask your interviewer: Project management and prioritization</a>
