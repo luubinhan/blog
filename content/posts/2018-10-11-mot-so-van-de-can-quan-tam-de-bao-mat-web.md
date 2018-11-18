@@ -23,7 +23,7 @@ tags: ["javascript"]
   - [Cross-Site Scripting (XSS)](#cross-site-scripting-xss)
     - [Store XSS - lưu đoạn script đó lên trên server](#store-xss---lưu-đoạn-script-đó-lên-trên-server)
     - [Reflect XSS](#reflect-xss)
-  - [DOM-Based XSS](#dom-based-xss)
+    - [DOM-Based XSS](#dom-based-xss)
 - [Công cụ kiểm tra](#công-cụ-kiểm-tra)
 
 <!-- /TOC -->
@@ -121,7 +121,7 @@ Hacker sẽ tìm cách để chạy javascript trên trang trình duyệt của 
 
 ![Reflect XSS](https://i.imgur.com/dbRVLC5.jpg)
 
-### DOM-Based XSS
+#### DOM-Based XSS
 
 ![Reflect XSS](https://i.imgur.com/29G28Ee.jpg)
 
@@ -132,7 +132,21 @@ Cách phổ biến để phòng chống
 
 ## Công cụ kiểm tra
 
+Một số trang online để check
+
 https://securityheaders.com/
+
+https://sitecheck.sucuri.net/
+
+https://www.ssllabs.com/ssltest/
+
+https://quttera.com/
+
+https://detectify.com/
+
+https://app.webinspector.com/
+
+https://app.upguard.com/webscan
 
 
 <a href="https://www.youtube.com/watch?v=UFPGOvDrTOk" target="_blank" rel="noopener noreferrer">Getting Single Page Application Security Right by Philippe De Ryck</a>
