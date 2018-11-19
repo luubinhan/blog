@@ -157,4 +157,4 @@ Nếu lỗi hiển thị dạng inline phía dưới input
 ```
 
 
-<a href="https://levelup.gitconnected.com/the-definite-guide-to-handling-errors-gracefully-in-javascript-58424d9c60e6" target="_blank" rel="noopener noreferrer">https://levelup.gitconnected.com/the-definite-guide-to-handling-errors-gracefully-in-javascript-58424d9c60e6</a>
+<a href="https://levelup.gitconnected.com/the-definite-guide-to-handling-errors-gracefully-in-javascript-58424d9c60e6" target="_blank" rel="noopener noreferrer">Handling Errors in JavaScript: The Definitive Guide</a>
