@@ -1,5 +1,5 @@
 ---
-slug: "/2018-11-18-mot-so-van-de-can-quan-tam-de-bao-mat-web"
+slug: "/2018-11-19-xu-ly-loi-neu-co-xay-ra-trong-javascript"
 date: "2018-11-19"
 title: "Xử lý lỗi nếu có xảy ra trong javascript"
 desc: "Lỗi nếu có xảy ra, phải được xử lý hết tránh để chết nguyên ứng dụng. Điểm lại một vài cách xử lý lỗi trong javascript"
@@ -9,6 +9,19 @@ lesson: 0
 chapter: 0
 tags: ["javascript"]
 ---
+
+<!-- TOC -->
+
+- [Javascript error](#javascript-error)
+- [try...catch](#trycatch)
+- [...finally](#finally)
+- [Các hàm async](#các-hàm-async)
+  - [callback](#callback)
+  - [Promise](#promise)
+  - [async/await](#asyncawait)
+- [Hiển thị lỗi ở phía giao diện người dùng](#hiển-thị-lỗi-ở-phía-giao-diện-người-dùng)
+
+<!-- /TOC -->
 
 ## Javascript error
 

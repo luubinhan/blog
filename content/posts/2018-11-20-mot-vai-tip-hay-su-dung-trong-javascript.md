@@ -11,6 +11,16 @@ tags: ["javascript"]
 ---
 
 
+<!-- TOC -->
+
+- [Giá trị: `truthy` và `falsy`](#giá-trị-truthy-và-falsy)
+- [Chuyển đổi: Number và String](#chuyển-đổi-number-và-string)
+- [Short-Circuiting](#short-circuiting)
+- [Câu điều kiện rút gọn](#câu-điều-kiện-rút-gọn)
+- [Hàm random hay dùng](#hàm-random-hay-dùng)
+
+<!-- /TOC -->
+
 
 ## Giá trị: `truthy` và `falsy`
 
