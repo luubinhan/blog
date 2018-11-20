@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://luubinhan.github.io/blog/blog/2018-11-20-mot-vai-tip-hay-su-dung-trong-javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luubinhan.github.io/blog/blog/2018-11-19-xu-ly-loi-neu-co-xay-ra-trong-javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-11-18-mot-so-van-de-can-quan-tam-de-bao-mat-web</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-11-17-huong-dan-lam-animation-voi-vue-component</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-11-16-cau-dieu-kien-trong-javascript-phan-nang-cao</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
