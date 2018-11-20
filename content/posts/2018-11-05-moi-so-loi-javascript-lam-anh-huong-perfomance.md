@@ -1,5 +1,5 @@
 ---
-slug: "/2018-11-05-moi-so-loi-javascript-lam-anh-huong-perfomance.md"
+slug: "/2018-11-05-moi-so-loi-javascript-lam-anh-huong-perfomance"
 date: "2018-11-05"
 title: "3 lỗi javascript thường mắc phải làm ảnh hưỏng perfomance"
 desc: "Bài viết dành cho những người nghiện tốc độ, nghiện cách viết ES6"
@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["vuejs"]
+tags: ["javascript"]
 ---
 
 <!-- TOC -->
