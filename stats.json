@@ -56,17 +56,13 @@
       "path---4-80bc8e09b3098d71c8e8.js",
       "path---4-80bc8e09b3098d71c8e8.js.map"
     ],
-    "path---2018-11-05-moi-so-loi-javascript-lam-anh-huong-perfomance-md": [
-      "path---2018-11-05-moi-so-loi-javascript-lam-anh-huong-perfomance-md-f3b1db49ca7ce3a5e1fa.js",
-      "path---2018-11-05-moi-so-loi-javascript-lam-anh-huong-perfomance-md-f3b1db49ca7ce3a5e1fa.js.map"
-    ],
     "path---2018-10-03-huong-dan-reactjs-table-du-lieu-lon": [
       "path---2018-10-03-huong-dan-reactjs-table-du-lieu-lon-80cd4245d99b59bf51e7.js",
       "path---2018-10-03-huong-dan-reactjs-table-du-lieu-lon-80cd4245d99b59bf51e7.js.map"
     ],
     "path---tags-vuejs": [
-      "path---tags-vuejs-13a101aa5fd67083b400.js",
-      "path---tags-vuejs-13a101aa5fd67083b400.js.map"
+      "path---tags-vuejs-6e1256da9f506c38f1ef.js",
+      "path---tags-vuejs-6e1256da9f506c38f1ef.js.map"
     ],
     "path---tags-mobile-web-specialist": [
       "path---tags-mobile-web-specialist-da0e0bdf42d4ecacf458.js",
@@ -153,8 +149,8 @@
       "path---2018-10-05-gioi-thieu-focus-2b1def162ddef13d6b2d.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-e30b0e4ce31554166a6b.js",
-      "path---tags-javascript-e30b0e4ce31554166a6b.js.map"
+      "path---tags-javascript-fbd7b4691d81f300470c.js",
+      "path---tags-javascript-fbd7b4691d81f300470c.js.map"
     ],
     "path---2018-09-17-huong-dan-luu-token-o-dau": [
       "path---2018-09-17-huong-dan-luu-token-o-dau-676729483bcc7e6983dd.js",
@@ -325,8 +321,8 @@
       "path---2018-07-02-huong-dan-javascript-modules-tren-web-66de3b496687e73c5d80.js.map"
     ],
     "path---index": [
-      "path---index-9aaa3d588362688da3d0.js",
-      "path---index-9aaa3d588362688da3d0.js.map"
+      "path---index-459b559e4124816a0672.js",
+      "path---index-459b559e4124816a0672.js.map"
     ],
     "component---src-pages-about-jsx": [
       "component---src-pages-about-jsx-af59531e5ca9ef0770d3.js",
@@ -351,6 +347,10 @@
     "path---2017-11-09-higher-order-function-trong-javascript": [
       "path---2017-11-09-higher-order-function-trong-javascript-8a9eaa959c49f703358e.js",
       "path---2017-11-09-higher-order-function-trong-javascript-8a9eaa959c49f703358e.js.map"
+    ],
+    "path---2018-11-05-moi-so-loi-javascript-lam-anh-huong-perfomance": [
+      "path---2018-11-05-moi-so-loi-javascript-lam-anh-huong-perfomance-d4a5158db3dd41e6a367.js",
+      "path---2018-11-05-moi-so-loi-javascript-lam-anh-huong-perfomance-d4a5158db3dd41e6a367.js.map"
     ],
     "path---2018-10-13-css-content-hop-le": [
       "path---2018-10-13-css-content-hop-le-efd320238161bc964b2b.js",
@@ -591,9 +591,9 @@
       "path---2018-08-12-huong-dan-con-duong-tro-thanh-developer-2018-a450ae4ec4950375c76d.js.map"
     ],
     "app": [
-      "app-2d0ed7f79664e33a59b6.js",
+      "app-cc7191010937cde62362.js",
       "build-js-styles.css",
-      "app-2d0ed7f79664e33a59b6.js.map",
+      "app-cc7191010937cde62362.js.map",
       "build-js-styles.css.map"
     ],
     "path---2018-08-21-huong-dan-su-dung-checkbox-va-toggle-switch": [
