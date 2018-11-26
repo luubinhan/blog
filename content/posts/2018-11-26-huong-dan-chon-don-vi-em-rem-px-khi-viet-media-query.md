@@ -2,7 +2,7 @@
 slug: "/2018-11-26-huong-dan-chon-don-vi-em-rem-px-khi-viet-media-query"
 date: "2018-11-26"
 title: "Dùng Px, Em hay Rem để viết media query"
-desc: "Khi viết media query, bạn có bao giờ thắc mắc nên dùng đơn vị nào: `px`, `em` hay `rem` ?"
+desc: "Khi viết media query, bạn có bao giờ thắc mắc nên dùng đơn vị nào: px, em hay rem?"
 cover: ""
 type: "post"
 lesson: 0
