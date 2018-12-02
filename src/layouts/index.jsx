@@ -20,8 +20,6 @@ import "../styles/prism.scss";
 import "../styles/primaryMenu.scss";
 import "./css/footer.scss";
 
-import logo from "../../static/logos/logo.png";
-
 export default class MainLayout extends React.Component {
   constructor(props) {
     super(props);
@@ -128,7 +126,7 @@ export default class MainLayout extends React.Component {
         <div className="sidebar">
           <div className="inner">
             <Link to={"/"} className="go-home">
-              <img src={logo} alt={config.siteTitleAlt} />
+              <img src="/logos/luckyluu.svg" alt={config.siteTitleAlt} />
             </Link>
             <button
               type="button"

@@ -72,7 +72,6 @@ export default class PostTemplate extends React.Component {
                 name={config.siteTitle}
                 desc={config.siteTitleAlt}
                 href="about"
-                img={config.userAvatar}
               />
               <div className="post-meta">
                 <SocialLinks postPath={slug} postNode={postNode} />
