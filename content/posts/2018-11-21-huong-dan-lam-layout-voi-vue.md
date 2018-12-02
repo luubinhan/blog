@@ -24,7 +24,7 @@ tags: ["vuejs"]
 
 Nếu dùng Vue CLI để khởi tạo, bạn sẽ có sẵn layout như thế này
 
-```js
+```jsx
 <template>
   <div class="App">
     <nav class="App__nav">
@@ -69,6 +69,7 @@ Với cách này chúng ta phải dùng thêm khá nhiều biến để kiểm s
 Tuy nhiên, nếu ứng dụng lớn, bạn không nên dùng cách này vì nó sẽ nhanh chóng trở thành mớ code hầm bà lằng
 
 ## Dùng một wrapper component
+
 Chúng ta sẽ dựng một component làm layout, chừa một vài vị trí trong component để chèn các element khác vào đó, trong React gọi là `children`, trong Vue thì nó mạnh hơn, vì nó cho bạn đặt nhiều vị trí khác nhau bằng `slot`.
 
 Rất nhiều người thích xài cách này, và mình cũng thuộc nhóm đó.
@@ -133,6 +134,7 @@ Nghe đồn component của Vue mạnh dữ lắm, nó có một component tên 
 ```
 
 Trong đó biến `SomeComponent` có thể được gán cho bất kỳ component nào, nó sẽ thay cái SomeComponent được gán lúc đó như là `<component/>`
+
 ```jsx
 <component :is="bien-so">A</component>
 // rồi đâu đó bạn gán lại cái bien-so thành <LayoutComponent />
@@ -169,7 +171,7 @@ Trên Home chúng ta emit sự kiện để thay giá trị layout khi component
 <template>
   <div class="Home">
     <h1>Home</h1>
-    <!-- ... -->
+    ...
   </div>
 </template>
 
