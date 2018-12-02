@@ -6,8 +6,8 @@ import Link from "gatsby-link";
 import PostListing from "../components/PostListing/PostListing";
 import config from "../../data/SiteConfig";
 
-import { bgSidebar } from "../../data";
-const sideBg = bgSidebar[random(bgSidebar.length - 1)];
+// import { bgSidebar } from "../../data";
+// const sideBg = bgSidebar[random(bgSidebar.length - 1)];
 
 const NavLink = props => {
   if (!props.test) {
@@ -37,7 +37,7 @@ class IndexPage extends React.Component {
             <NavLink test={last} url={nextUrl} text="Trang Sau" />
           </div>
         </main>
-        <div className="aside" style={{ backgroundImage: `url(${sideBg})` }} />
+        <div className="aside"/>
       </div>
     );
   }

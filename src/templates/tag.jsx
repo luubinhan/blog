@@ -3,8 +3,8 @@ import Helmet from "react-helmet";
 import { random } from "lodash";
 import PostListing from "../components/PostListing/PostListing";
 import config from "../../data/SiteConfig";
-import { bgSidebar } from "../../data";
-const sideBg = bgSidebar[random(bgSidebar.length - 1)];
+// import { bgSidebar } from "../../data";
+// const sideBg = bgSidebar[random(bgSidebar.length - 1)];
 
 export default class TagTemplate extends React.Component {
   render() {
@@ -16,7 +16,7 @@ export default class TagTemplate extends React.Component {
         <div className="inner">
           <PostListing postEdges={postEdges} />
         </div>
-        <div className="aside" style={{ backgroundImage: `url(${sideBg})` }}>
+        <div className="aside">
           <div className="company-info tag">
             <div className="company-name">TAGS</div>
           </div>

@@ -1248,6 +1248,7 @@ $masterWidth: 870px;
     }
   }
   .aside {
+    background-color: #f1f1f1;
     background-size: auto 100%;
     min-height: 100vh;
     background-position: right top;
@@ -1264,7 +1265,7 @@ $masterWidth: 870px;
 
 .aside {
 
-  &:before {
+  /* &:before {
     display: block;
     content: "";
     position: absolute;
@@ -1275,7 +1276,7 @@ $masterWidth: 870px;
     background: -webkit-linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.65) 100%);
     background: -o-linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.65) 100%);
     background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.65) 100%);  
-  }
+  } */
   .beatiful-post-name {
     position: absolute;
     bottom: 15%;
@@ -1284,11 +1285,10 @@ $masterWidth: 870px;
     text-align: center;
     font-family: "avo_bold",$san-serif;
     font-size: 3rem;
-    line-height: 1.2;    
-    color: #fff; 
+    line-height: 1.2;
     transform: rotate(-5deg) skew(-5deg);
      
-    text-shadow: .04em .04em 0 rgba(0, 0, 0, 0.8);
+    text-shadow: .04em .04em 0 rgba(244, 222, 222, 0.8);
     z-index:1;
     margin: 0;
     letter-spacing: .1em;

@@ -10,8 +10,8 @@ import PostTags from "../components/PostTags/PostTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks.jsx";
 import SEO from "../components/SEO.jsx";
 import config from "../../data/SiteConfig";
-import { bgSidebar } from "../../data";
-const sideBg = bgSidebar[random(bgSidebar.length - 1)];
+// import { bgSidebar } from "../../data";
+// const sideBg = bgSidebar[random(bgSidebar.length - 1)];
 
 export default class PostTemplate extends React.Component {
   render() {
@@ -116,7 +116,7 @@ export default class PostTemplate extends React.Component {
             </div>
           </div>
         </div>
-        <div className="aside" style={{ backgroundImage: `url(${sideBg})` }}>
+        <div className="aside">
           <div className="beatiful-post-name" data-text-shadow={post.title}>
             {post.title}
           </div>
