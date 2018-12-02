@@ -75,7 +75,7 @@ var array1 = Array(5);
 var array2 = Array(1, 2, 3);
 
 console.log(Object.getOwnPropertyNames(array1));
-// => ["lenght"]
+// => ["length"]
 
 console.log(Object.getOwnPropertyNames(array2));
 // => ["0", "1", "2", "length"]
