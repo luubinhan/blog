@@ -1,7 +1,7 @@
 ---
 slug: "/2018-12-02-tao-array-trong-javascript"
 date: "2018-12-02"
-title: "Các kiểu tạo Array trong Javascript"
+title: "Tạo Array trong Javascript"
 desc: "Cùng xem qua các cách để tạo một array mới"
 cover: ""
 type: "post"
