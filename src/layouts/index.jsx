@@ -126,7 +126,7 @@ export default class MainLayout extends React.Component {
         <div className="sidebar">
           <div className="inner">
             <Link to={"/"} className="go-home">
-              <img src="/logos/luckyluu.svg" alt={config.siteTitleAlt} />
+              <img src="/blog/logos/luckyluu.svg" alt={config.siteTitleAlt} />
             </Link>
             <button
               type="button"
