@@ -8,7 +8,7 @@ export default function Bio({ img = "", href = "", name = "", desc = "" }) {
     <div className="bio">
       <GatsbyLink to={href} className="bio-wrapper">
         <div className="bio-img">
-          <img src="/images/my-image.jpg" alt={name} />
+          <img src="/blog/images/my-image.jpg" alt={name} />
         </div>
         <div className="bio-content">
           <div className="bio-name">{name}</div>
