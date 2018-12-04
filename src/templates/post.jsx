@@ -28,7 +28,7 @@ export default class PostTemplate extends React.Component {
       <div className="master">
         <Helmet>
           <title>{`${post.title} | ${config.siteTitle} | ${config.siteDescription}`}</title>
-          <meta name="description" content={`Blog - ${post.title} | ${config.siteDescription}`} />
+          <meta name="description" content={`${post.desc} || ${post.title} || ${config.siteDescription}`} />
           <meta
             name="keywords"
             content="frontend,developer,javascript,wordpress,react,hochiminh,web-developer"

@@ -12,7 +12,10 @@ export default class TagTemplate extends React.Component {
     const postEdges = this.props.data.allMarkdownRemark.edges;
     return (
       <div className="master">
-        <Helmet title={`Kiến thức "${tag}" | ${config.siteTitle} | ${config.siteDescription}`} />
+        <Helmet>
+          <title>{`Kiến thức ${tag} | ${config.siteTitle} | ${config.siteDescription}`}</title>
+          <meta name="description" content="Nơi mình chia sẽ kiến thức frontend, css, html, javascript, các framework như React, Vuejs, React Native" />
+        </Helmet>
         <div className="inner">
           <PostListing postEdges={postEdges} />
         </div>

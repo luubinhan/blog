@@ -28,7 +28,10 @@ class IndexPage extends React.Component {
     const nextUrl = (index + 1).toString();
     return (
       <div className="master">
-        <Helmet title={config.siteTitle + ' - ' + config.siteDescription} />
+        <Helmet>
+          <title>{config.siteTitle + ' - ' + config.siteDescription}</title>
+          <meta name="description" content="Nơi mình chia sẽ kiến thức frontend, css, html, javascript, các framework như React, Vuejs, React Native" />
+        </Helmet>
         <main className="inner">
           <h1 style={{display: "none"}}>{config.siteTitle + ' - ' + config.siteDescription}</h1>
           {!isEmpty(group) && <PostListing postEdges={group} />}
