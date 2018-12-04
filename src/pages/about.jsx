@@ -62,7 +62,7 @@ class AboutPage extends React.Component {
                           {config.userLinks.map(item => (
                             <td key={item.label}>
                               <div className="pr-30">
-                                <a href={item.url}>
+                                <a aria-label={item.label} title={item.label} className="link-flex" target="_blank" rel="noopener noreferrer" href={item.url}>
                                   {this.renderIcon(item.iconClassName)}
                                   <span className="pl-10 ">{item.label}</span>
                                 </a>
@@ -82,6 +82,8 @@ class AboutPage extends React.Component {
                     role="button"
                     aria-pressed="false"
                     tabIndex="0"
+                    aria-label="Vietnamese"
+                    title="Vietnamese"
                     onClick={() => this.handleSelect(1)}
                   >
                     Vietnamese
@@ -92,6 +94,8 @@ class AboutPage extends React.Component {
                     role="button"
                     aria-pressed="false"
                     tabIndex="0"
+                    aria-label="English"
+                    title="English"
                     onClick={() => this.handleSelect(2)}
                   >
                     English
@@ -104,9 +108,16 @@ class AboutPage extends React.Component {
                 {this.state.selectedTab === 1 && (
                   <div className="post-content">
                     <article>
-                      <blockquote>
-                        Mình không quá giỏi bất cứ thứ gì, không thông minh, chỉ là đứa chịu khó và có trách nhiệm với những gì mình làm
-                      </blockquote>
+                      <div className="blockquote">
+                        <p>
+                        Feel like he  spread the positive energy to people around</p>
+                        <small>Trần Thảo Khánh, Designer</small>
+                      </div>
+
+                      <div className="blockquote">
+                        <p>You're one of the best coworkers we have ever worked with</p>
+                        <small>Ngô Tú Quỳnh, HR</small>
+                      </div>
                       <h2>Phỏng vấn toàn thất bại</h2>
                       <p>
                         Sau khi tốt nghiệp đại học Hoa Sen năm 2011, bước chân
@@ -138,9 +149,16 @@ class AboutPage extends React.Component {
                 {this.state.selectedTab === 2 && (
                   <div className="post-content">
                     <article>
-                      <blockquote>
-                        Nothing of me is special, just a hard-working person
-                      </blockquote>
+                      <div className="blockquote">
+                        <p>
+                        Feel like he  spread the positive energy to people around</p>
+                        <small>Trần Thảo Khánh, Designer</small>
+                      </div>
+
+                      <div className="blockquote">
+                        <p>You're one of the best coworkers we have ever worked with</p>
+                        <small>Ngô Tú Quỳnh, HR</small>
+                      </div>
                       <p>
                         I moved to the largest city in vietnam, formerly named
                         saigon in 2007 and became a web tailor since 2011,

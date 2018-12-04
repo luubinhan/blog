@@ -298,6 +298,40 @@ blockquote.pull-right small:before {
 blockquote.pull-right small:after {
   content: '\00A0 \2014';
 }
+.blockquote {
+  border-left: none;
+  max-width: 70%;
+  margin: 0 auto 50px;
+  text-align: center;        
+  font-style: normal;
+  font-size: 2.5rem;      
+  padding-top: 15px;
+  line-height: 1.2;
+  letter-spacing: -.028em;
+  position: relative;
+  &:before {
+    content: "\f347";
+    display: block;
+    font-family: "Ionicons";
+    color: rgba(0, 0, 0, .2);
+    speak: none;
+    margin-bottom: 15px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+  }
+  p {
+    font-size: 1.7rem;
+    line-height: 1.2;
+  }
+  small {
+    font-size: 1.1rem;
+  }
+}
 q:before,
 q:after,
 blockquote:before,
@@ -649,6 +683,14 @@ table.normal tr td {
 .mystyle-highlight {
   color: #ffffff;
   background-color: $yellow;
+}
+.link-flex {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 /* MISC --------------------------------------------- */
 .pattern {
