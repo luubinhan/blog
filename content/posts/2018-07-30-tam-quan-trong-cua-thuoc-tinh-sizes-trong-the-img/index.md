@@ -42,6 +42,12 @@ Chúng ta có 3 hình
 
 Nếu là màn hình 2x (nó sẽ lấy gía trị của `window.devicePixelRatio`), trình duyệt sẽ chọn 3.125 vì nó gần với giá trị 2 nhất.
 
+Bên cạnh gía trị w, tương ứng với kích thước của hình, chúng ta cũng có thể dùng đơn vị `x` tương ứng cho **độ** density của màn hình
+
+```html
+<img src="image_2x.jpg" srcset="image_2x.jpg 2x, image_1x.jpg 1x" alt="luckyluu blog | Tầm quan trọng của thuộc tính sizes, srcset trong thẻ img">
+```
+
 ## `sizes`
 
 Bên cạnh `srcset`, một thuộc tính rất hay ho khác là `sizes`, nó cũng sẽ giúp trình duyệt có cơ sở để load hình nào
