@@ -310,9 +310,8 @@ blockquote.pull-right small:after {
   letter-spacing: -.028em;
   position: relative;
   &:before {
-    content: "\f347";
+    content: "„";
     display: block;
-    font-family: "Ionicons";
     color: rgba(0, 0, 0, .2);
     speak: none;
     margin-bottom: 15px;
