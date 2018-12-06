@@ -15,6 +15,7 @@ export default function Bio({ img = "", href = "", name = "", desc = "" }) {
           <div className="bio-desc">{desc}</div>
         </div>
       </GatsbyLink>
+      <a className="btn btn-primary mt-10" style={{color: '#fff', fontWeight: 'bold'}} href="https://www.patreon.com/luubinhan" rel="noopener noreferrer" target="_blank">Mời mình ly cafe trên Patreon</a>
     </div>
   );
 }

@@ -111,7 +111,7 @@ export default class MainLayout extends React.Component {
     const { collapsed } = this.state;
     const primaryNav = PrimaryNav.map(item => (
       <li key={item.name} className={camelCase(item.name)}>
-        <Link to={item.href} activeClassName="active">
+        <Link aria-label={`Kiến thức ${item.name}`} title={`Kiến thức ${item.name}`} to={item.href} activeClassName="active">
           {item.icon !== "" && this.renderIcon(item.icon)}
           {item.name}
         </Link>
