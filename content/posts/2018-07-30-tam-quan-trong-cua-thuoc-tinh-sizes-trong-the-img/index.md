@@ -1,8 +1,8 @@
 ---
 slug: "/2018-07-30-huong-dan-tam-quan-trong-cua-thuoc-tinh-sizes-trong-the-img"
 date: "2018-07-30"
-title: "Tầm quan trọng của thuộc tính sizes trong thẻ img"
-desc: "Một tình huống cơ bản product slider images, trên điện thoại, chúng ta có mỗi slide một ảnh với chiều ngang 320px, trên desktop chúng ta có 6 ảnh/slide, ảnh rộng 160px, tức là kích thước ảnh trên desktop nhỏ hơn trên di động, dùng srcset giải quyết vấn đề này như thế nào"
+title: "Tầm quan trọng của thuộc tính sizes, srcset trong thẻ img"
+desc: "Hướng dẫn sử dụng srcset và sizes để tối ưu việc load ảnh responsive"
 cover: ""
 type: "post"
 lesson: 0
@@ -10,19 +10,23 @@ chapter: 0
 tags: ["css", "mobile-web-specialist"]
 ---
 
-# Cung cấp kích thước ảnh trên `srcset`
+## `srcset`
 
-Thay vì fix luôn 1 kích thước hình cụ thể, trên thuộc tính `srcset` chúng ta báo kích thước của hình tương ứng, cho phép trình duyệt tính toán với viewport hiện tại và download hình thích hợp
+Công dụng của thuộc tính `srcset` trên thẻ `<img/>` là cho phép chúng ta cung cấp các file với kích thưóc khác so với file được cung cấp trên `src`, chúng ta có thể sử dụng `srcset` vô tư vì căn bản nếu trình duyệt ko hổ trợ `srcset` (IE cũ), nó đơn giản chỉ load file trên thuộc tính `src`.
+
+Trên thuộc tính `srcset` chúng ta báo kích thước của hình này luôn, `medium.jpg 1000w` ( có nghĩa hình này width=1000px ) đa phần dùng width có thể giải quyết tất cả các trường hợp, trình duyệt không cần download vẫn biết được độ rộng của file, trên cơ sở đó, trình duyệt tính toán với viewport hiện tại và download hình thích hợp
 
 ```html
 <img
   src="small.jpg"
   srcset="medium.jpg 1000w, large.jpg 2000w"
-  alt="luckyluu blog | Viết tuts cho thế hệ trẻ"
+  alt="luckyluu blog | Tầm quan trọng của thuộc tính sizes, srcset trong thẻ img"
 >
 ```
 
-Thử xem trình duyệt đã tính toán thế nào. Thí dụ kích thước thiết bị là *320px*, 1x (không phải retina), chúng ta có 3 hình
+Thử xem trình duyệt đã tính toán thế nào. Thí dụ kích thước thiết bị là *320px*, 1x (là gía trị density của màn hình, xem ở đây https://pixensity.com/list/phone/, hoặc check bằng javascript `window.devicePixelRatio`).
+
+Chúng ta có 3 hình
 
 - small.jpg: 500px wide
 - medium.jpg: 1000px wide
@@ -36,40 +40,60 @@ Thử xem trình duyệt đã tính toán thế nào. Thí dụ kích thước t
 
 *Trình duyệt* - màn hình của mày là 1x, 1.5625 là tỉ lệ gần nhất với 1, tuy hơi cao nhưng tốt hơn mấy thằng kia. Tao load thằng `small.jpg`
 
-Nếu là màn hình 2x, trình duyệt sẽ chọn 3.125 vì nó gần với giá trị 2 nhất.
+Nếu là màn hình 2x (nó sẽ lấy gía trị của `window.devicePixelRatio`), trình duyệt sẽ chọn 3.125 vì nó gần với giá trị 2 nhất.
 
-# Breakpoint
+## `sizes`
 
-Hầu như khi layout thay đổi theo breakpoint, hình cũng sẽ thay đổi kích thước. Ví dụ, trên điện thoại, bạn thường cho hình full hết viewport, trên màn hình lớn như desktop, bạn chỉ để hình float bên trái thôi.
+Bên cạnh `srcset`, một thuộc tính rất hay ho khác là `sizes`, nó cũng sẽ giúp trình duyệt có cơ sở để load hình nào
 
-Với thuộc tính `sizes`, nếu không xác định mặc định sẽ là 100 viewport width
+> Nếu không dùng thuộc tính `sizes`. Trình duyệt ngầm hiểu chúng ta muốn render ảnh ở độ rộng 100vw.
+
+![Tầm quan trọng của thuộc tính sizes trong thẻ img](https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_1000,f_auto,q_auto/v1531489586/640-version_txwye1.png)
+
+Không phải lúc nào hình sẽ hiển thị hết 100vw của màn hình, ví dụ bạn có mà hình rộng 1000px, hình được layout để hiển thị một nữa màn hình thôi, tức là bạn chỉ cần hình có kích thước 1000/2 = 500px là đủ xài
+
+```css
+img {
+  float: left;
+  width: 500px;
+}
+```
+
+Trước trình duyệt load được css nó sẽ ko biết được là hình chỉ có hiện thị tối đa 500px, chúng ta báo với nó, "Ê, hình này của tao chỉ hiển thị tối đa là 500px nhé"
 
 ```html
 <img
   src="small.jpg"
   srcset="medium.jpg 1000w, large.jpg 2000w"
-  alt="luckyluu blog | Viết tuts cho thế hệ trẻ"
-  sizes="100vw"
+  alt="luckyluu blog | Tầm quan trọng của thuộc tính sizes, srcset trong thẻ img"
+  sizes="500px"
 >
 ```
 
-Để ý ta không dùng thuộc tính `sizes`. Trình duyệt ngầm hiểu chúng ta muốn render ảnh ở độ rộng 100vw.
+Nhưng trên điện thoại, chúng ta muốn layout lại, hình này sẽ full hết viewport,
 
-![Tầm quan trọng của thuộc tính sizes trong thẻ img](https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_1000,f_auto,q_auto/v1531489586/640-version_txwye1.png)
+```css
+@media (max-width: 600px) {
+  img {
+    float: none;
+    width: 100vw;
+  }
+}
+```
 
-Để báo với trình duyệt cần render theo breakpoint, chúng ta khai báo thuộc tính `sizes` như sau
+
+Để báo với trình duyệt có một sự thay đổi nhỏ trên nếu màn hình < 600px, chúng ta khai báo thuộc tính `sizes` như sau
 
 ```html
-<img srcset="
-  food-big.jpg 640w,
-  foot-medium.jpg 320w,
-  food-small.jpg 160w"
- 
-  sizes="(min-width: 600px) 160px, 320px"
+<img 
+  src="small.jpg"
+  srcset="medium.jpg 1000w, large.jpg 2000w"
+  alt="luckyluu blog | Tầm quan trọng của thuộc tính sizes, srcset trong thẻ img"
+  sizes="(max-width: 600px) 100vw, 500px"
 />
 ```
 
-Đoạn trên nếu dịch ra thì sẽ là: ê trình duyệt, render kích thước 160px khi viewport > 600px, còn lại cứ dùng kích thước 320px
+Đoạn trên nếu dịch ra thì sẽ là: ê trình duyệt, hình này sẽ render kích thước 100vw khi viewport < 600px, còn lại cứ dùng kích thước 500px
 
 ![Tầm quan trọng của thuộc tính sizes trong thẻ img](https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_1000,f_auto,q_auto/v1531489882/320-version_afwzxa.png)
 
