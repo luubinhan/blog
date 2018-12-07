@@ -1,5 +1,5 @@
 ---
-slug: "/2018-12-06-huong-dan-xu-ly-authentication-voi-vue-vuex.md"
+slug: "/2018-12-06-huong-dan-xu-ly-authentication-voi-vue-vuex"
 date: "2018-12-06"
 title: "Authentication với Vue và Vuex"
 desc: "Khi bắt đầu một dự án, việc chúng ta làm đầu tiên, luôn là trang đăng ký đăng nhập, hoặc gọi là xử lý luồng authen cho ngầu."

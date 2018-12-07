@@ -155,8 +155,8 @@ Nguồn tham khảo
 - [Arrow Function](/2016-11-16-chuong-2-es-6-can-ban-arrow-function)
 - [Rest Parameters và Spread Operator](/2016-11-18-phan-4-es6-can-ban-rest-parameters-va-spread-operator)
 - [For...of](https://developer.mozilla.org/vi/docs/Web/JavaScript/Reference/Statements/for...of)
-- Map
-- Set
+- [Map và Object trong Javascript](/2018-12-07-giai-thich-su-dung-map-hay-object)
+- [Set](https://developer.mozilla.org/vi/docs/Web/JavaScript/Reference/Global_Objects/Set)
 
 # Mobile Web Forms
 
