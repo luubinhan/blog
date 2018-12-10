@@ -14,14 +14,17 @@ Tương tự như `<ol>`, để có thể đánh số thứ tự một cách t�
 
 ```css
 article {
-    counter-reset: section; // section là một định danh bất kỳ, giá trị khởi tạo = 0
+    // section là một định danh bất kỳ, giá trị khởi tạo = 0
+    counter-reset: section; 
 }
 section {
-    counter-increment: section; // đặt cho đối tượng con, trên mỗi giá trị section nằm trong article, counter sẽ tăng lên 1
+    // đặt cho đối tượng con, trên mỗi giá trị section nằm trong article, counter sẽ tăng lên 1
+    counter-increment: section; 
 }
 
 section h2:before {
-    content: counter(section) '. '; // giá trị counter được truyền vào cho thuộc tính content
+    // giá trị counter được truyền vào cho thuộc tính content
+    content: counter(section) '. '; 
 }
 ```
 
