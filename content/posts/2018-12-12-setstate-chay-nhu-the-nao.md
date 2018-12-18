@@ -23,12 +23,12 @@ Rất nhiều người lầm tưởng có một React *engine* bên trong packag
 
 Thực chất, kể từ phiên bản React 0.14, package `react` đã được tách hẳn ra cung cấp các API để khai báo *component*. Hầu hết code được thực hiện ở các **renderers**
 
-`react-dom`, `react-dom/server`, `react-native`, `react-test-renderer`, `react-art` là những **renderers` như vậy. Và bạn cũng có thể tự build một cái  luôn.
+`react-dom`, `react-dom/server`, `react-native`, `react-test-renderer`, `react-art` là những **renderers** như vậy. Và bạn cũng có thể tự build một cái  luôn.
 
-Đó là lý do tại sao package `react` rất là hữu dụng dù bạn đang sử dụng trên bất kỳ platform nào. Tất cả những gì nó export, như `React.Component`, `React.createElement`, `React.Children` và thậm chị là *Hook*, độc lập hoàn toàn với platform. Và khi dùng chung với React DOM, React DOM server, React Native, các component của chúng ta vẫn import và sử dụng như nhau.
+Đó là lý do tại sao package `react` rất là hữu dụng dù bạn đang sử dụng trên bất kỳ platform nào. Tất cả những gì nó export, như `React.Component`, `React.createElement`, `React.Children` và thậm chí là *Hook*, độc lập hoàn toàn với platform. Và khi dùng chung với React DOM, React DOM server, React Native, các component của chúng ta vẫn import và sử dụng như nhau.
 
 Những thằng renderer sẽ có các API như `ReactDOM.render()` cho phép mount cấu trúc React Component vào DOM node. Mỗi thằng renderer sẽ cung cấp các API tương tự như vậy trên platform của nó. Tất cả các component khi được khai báo không cần import bất cứ gì từ renderer, như vậy để nó portable.
-Như vậy bạn có thể hiểu là tại sao khi cập nhập thì chúng ta cần cập nhập cả 2 package `react` và `react-dom` cùng lúc. Ví dụ khi React 16.3 ra API context, `React.createContext()`, cái này `react` chưa có implement, mà được implement trong renderer như  React DOM, và React DOM Server sẽ có 2 cách implement khác nhau, React DOM có thể track context một chiều, nhưng React DOM Server sẽ track theo kiểu khác.
+Bạn có thể hiểu là tại sao khi cập nhập thì chúng ta cần cập nhập cả 2 package `react` và `react-dom` cùng lúc. Ví dụ khi React 16.3 ra API context, `React.createContext()`, cái này `react` chưa có implement, mà được implement trong renderer như  React DOM, và React DOM Server sẽ có 2 cách implement khác nhau, React DOM có thể track context một chiều, nhưng React DOM Server sẽ track theo kiểu khác.
 
 Vẫn chưa trả lời được câu hỏi ban đầu, làm sao `setState()` bên trong `React.Component` **nói chuyện** với đúng renderer nó cần.
 
