@@ -10,6 +10,13 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [Thế nào gọi là Carrying?](#thế-nào-gọi-là-carrying)
+- [Currying có hữu dụng không?](#currying-có-hữu-dụng-không)
+- [Chuyển bất cứ hàm nào thành hàm Currying](#chuyển-bất-cứ-hàm-nào-thành-hàm-currying)
+
+<!-- /TOC -->
 
 Bạn sẽ gặp kiểu lập trình truyền vào **function như một argument** (callback) cho một function khác không chỉ trong Javascript mà còn có thể thấy ở Haskell, Clojure, Erlang và Scala
 

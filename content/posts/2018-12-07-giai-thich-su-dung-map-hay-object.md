@@ -11,6 +11,21 @@ tags: ["javascript", "mobile-web-specialist"]
 ---
 
 
+<!-- TOC -->
+
+- [key](#key)
+- [Thứ tự các element](#thứ-tự-các-element)
+- [Khởi tạo](#khởi-tạo)
+- [Lấy giá trị](#lấy-giá-trị)
+- [Thêm một element](#thêm-một-element)
+- [Xóa element](#xóa-element)
+- [Lấy `size` (hay length)](#lấy-size-hay-length)
+- [Loop](#loop)
+- [Khi nào dùng `Map`, khi nào dùng `Object`](#khi-nào-dùng-map-khi-nào-dùng-object)
+
+<!-- /TOC -->
+
+
 > Căn bản nhất thì có thể xem `Map` là con đẻ của `Object`, nó kế thừa và bổ sung một số thứ ko có trong Object, đồng thời cũng có cắt bỏ một số thứ.
 
 ```js

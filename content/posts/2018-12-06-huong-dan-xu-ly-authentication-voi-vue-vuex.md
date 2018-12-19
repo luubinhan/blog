@@ -10,6 +10,15 @@ chapter: 0
 tags: ["vuejs"]
 ---
 
+<!-- TOC -->
+
+- [Khai báo Vuex Auth Module](#khai-báo-vuex-auth-module)
+- [Tự động authen](#tự-động-authen)
+- [Authen Route](#authen-route)
+- [Xử lý các tình huống khác](#xử-lý-các-tình-huống-khác)
+
+<!-- /TOC -->
+
 
 Chúng ta có những câu hỏi sau
 
