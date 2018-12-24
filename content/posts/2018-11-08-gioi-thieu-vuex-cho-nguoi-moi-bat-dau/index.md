@@ -24,6 +24,8 @@ Vuex là một cái store cho Vue, nó giống hệt như redux store của Reac
 
 Một số khái niệm chính của Vuex, các khái niệm này gần như là tương đồng với redux
 
+![Giới thiệu Vuex cho người mới bắt đầu](https://cms-assets.tutsplus.com/uploads/users/2028/posts/32354/image/vueccvuex.png)
+
 Trong store có
 
 ```js
