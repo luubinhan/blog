@@ -1,7 +1,7 @@
 ---
 slug: "/2017-03-07-thoi-dai-cua-pixel-perfect-da-het-phan-2"
 date: "2017-03-07"
-title: "Thời đại của Pixel Perfect Design đã hết từ lâuƯ"
+title: "Thời đại của Pixel Perfect Design đã hết từ lâu"
 desc: "Khi bắt dầu dàn trang cho web, hãy sử dụng những hệ thống grid phổ biến hiện nay như Bootstrap Grid. Nếu bạn là designer mà chưa biết đến CSS framework này thì thiệt thiếu xót trầm trọng..."
 category: "javascript"
 cover: ""
@@ -70,7 +70,7 @@ Chúng ta đang sống trong cái thời đại mà mọi người đều cố x
 
 # Hiệu ứng
 
-Thay vì ngồi viết note giải thích các trang flow đi như thế nào, viết docs như vậy thực sự méo cần thiết. Designer chỉ cần sử dụng những trang như InVision hay Axure để biểu diễn cái flow,  dụng Principle, Framer, Adobe After Effect để mô tả mấy hiệu chạy thế nào. Nó sẽ giảm đi những hiểu nhầm giữa designer và developer, khách hàng
+Một số tool cho designer như InVision, Axure để biểu diễn flow, Principle, Framer, Adobe After Effect để mô tả hiệu chạy thế nào. Nó sẽ giảm đi những hiểu nhầm giữa designer và developer, khách hàng.
 
 ![Thời đại của Pixel Perfect Design đã hết từ lâu - Phần 2](https://cdn-images-1.medium.com/max/800/1*yEMXAwVff__nrM_OCwLknw.gif)
 

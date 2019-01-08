@@ -12,7 +12,7 @@ tags: ["react"]
 
 <!-- TOC -->
 
-- [1. Render theo điều kiện](#1-render-theo-điều-kiện)
+- [Render theo điều kiện](#render-theo-điều-kiện)
 - [Truyền prop xuống các component children](#truyền-prop-xuống-các-component-children)
 - [Provider](#provider)
 - [Higher Order Component](#higher-order-component)
@@ -21,7 +21,7 @@ tags: ["react"]
 
 <!-- /TOC -->
 
-## 1. Render theo điều kiện
+## Render theo điều kiện
 
 Nếu đang viết câu render theo điều kiện như bên dưới.
 
