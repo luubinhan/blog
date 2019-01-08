@@ -1,8 +1,8 @@
 ---
 slug: "/2019-01-09-tong-ket-mot-nam-2018-trong-the-gioi-front-end"
-date: "2018-01-09"
+date: "2019-01-09"
 title: "Tổng kết một năm của thế giới FrontEnd"
-desc: "Thế giới lập trình Frontend nhiều biển chuyển, nhanh chóng mặt, chúng ta cùng điểm lại những tin tức, sự kiện, xu hướng nổi bật nhất trong năm 2018 vừa qua"
+desc: "Thế giới lập trình Frontend nhiều biến chuyển, nhanh chóng mặt, chúng ta cùng điểm lại những tin tức, sự kiện, xu hướng nổi bật nhất trong năm 2018 vừa qua"
 cover: "https://cdn-images-1.medium.com/max/800/1*lJAYDVQ5iJLzEhmJ-KsqoA.png"
 type: "post"
 lesson: 0
@@ -23,7 +23,7 @@ tags: ["javascript"]
 
 <!-- /TOC -->
 
-Thế giới lập trình Frontend nhiều biển chuyển, nhanh chóng mặt, chúng ta cùng điểm lại những tin tức, sự kiện, xu hướng nổi bật nhất trong năm 2018 vừa qua
+
 
 ## WebAssembly ra bản 1.0
 
