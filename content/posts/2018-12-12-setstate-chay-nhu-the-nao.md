@@ -32,7 +32,7 @@ Bạn có thể hiểu là tại sao khi cập nhập thì chúng ta cần cập
 
 Vẫn chưa trả lời được câu hỏi ban đầu, làm sao `setState()` bên trong `React.Component` **nói chuyện** với đúng renderer nó cần.
 
-Câu trả lời là các renderer set một field đặc biệt trong lúc create class. Field này gọi là `updater`, giá trị này bạn phải set, mà là công việc của React DOM, React DOM server, React Native set ngay sau khi tạo 1 instance của class.
+Câu trả lời là các renderer set một field đặc biệt trong lúc create class. Field này gọi là `updater`, giá trị này bạn ko phải set, mà là công việc của React DOM, React DOM server, React Native set ngay sau khi tạo 1 instance của class.
 
 ```js
 // Bên trong React DOM
