@@ -10,6 +10,18 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [WebAssembly ra bản 1.0](#webassembly-ra-bản-10)
+- [Top download trên NPM](#top-download-trên-npm)
+- [GraphQL phát triển, được chờ đợi nhưng chưa thể thay thế REST](#graphql-phát-triển-được-chờ-đợi-nhưng-chưa-thể-thay-thế-rest)
+- [CSS-in-JS muôn hình muôn vẻ](#css-in-js-muôn-hình-muôn-vẻ)
+- [Developer tin dùng những bộ CLI có sẵn](#developer-tin-dùng-những-bộ-cli-có-sẵn)
+- [Static site generator phát triển đem đến sự đơn giản quá cho Frontend và tối ưu performance](#static-site-generator-phát-triển-đem-đến-sự-đơn-giản-quá-cho-frontend-và-tối-ưu-performance)
+- [Serverless và JAMStack](#serverless-và-jamstack)
+- [VS Code trở thành ông vua mới của Text Editor/IDE](#vs-code-trở-thành-ông-vua-mới-của-text-editoride)
+
+<!-- /TOC -->
 
 Thế giới lập trình Frontend nhiều biển chuyển, nhanh chóng mặt, chúng ta cùng điểm lại những tin tức, sự kiện, xu hướng nổi bật nhất trong năm 2018 vừa qua
 
