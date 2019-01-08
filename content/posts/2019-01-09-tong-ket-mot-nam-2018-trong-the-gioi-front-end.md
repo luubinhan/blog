@@ -106,13 +106,13 @@ Vue cũng hỗ trợ *scoped* CSS mà ko cần cài thêm bất cứ package gì
 
 ## Developer tin dùng những bộ CLI có sẵn
 
-Không có gì ngạc nhiên khi việc cập nhập các thư viện mới nhất, các configure mới nhất, lựa chọn kiến trúc tốt nhất luôn là vấn đề mệt mỏi. Khó khăn này được giải quyết bằng những package CLI cho phép developer tập trung vào việc logic của app. Next.js, Create-React-App, Nuxt.js, Vue CLI, Expo CLI, Angular là những cái tên được dùng nhiều nhất.
+Không có gì ngạc nhiên khi việc cập nhập các thư viện mới nhất, các configure mới nhất, lựa chọn kiến trúc tốt nhất luôn là vấn đề mệt mỏi. Khó khăn này được giải quyết bằng những package CLI cho phép developer tập trung vào viết logic của app. Next.js, Create-React-App, Nuxt.js, Vue CLI, Expo CLI, Angular là những cái tên được dùng nhiều nhất.
 
-## Static site generator phát triển đem đến sự đơn giản quá cho Frontend và tối ưu performance
+## Static site generator phát triển
 
 Ai cũng thích học những công nghệ tiên tiến, những thư viện mới nhất của javascript, tuy nhiên chúng ta cũng nhận ra rằng, không phải tất cả các website điều cần đến một single page app phức tạp. Đó là nguồn gốc của những công cụ phát triển static site.
 
-Static site là sự kết hợp vừa performance và tinh giản. Với HTML được render lúc build, chúng ta có thể có ngay một trang gửi đến user mà không cần server side render., cho phép load trang gần như ngay lập tức. Các file javascript được download cho phép trải nghiệm tương tự như một single page app.
+Static site đem đến các website đơn giản, đảm bảo hiệu năng tốt nhất. Với HTML được render lúc build, chúng ta có ngay một trang html gửi đến user mà không cần server side render, cho phép load trang gần như ngay lập tức. Các file javascript được download cho phép trải nghiệm tương tự như một single page app.
 
 Những cái tên như [Gatsby](https://www.gatsbyjs.org/), [React Static](https://github.com/nozzle/react-static), [VuePress](https://vuepress.vuejs.org/). Sự phổ biến của những trang static như vậy được minh chứng bằng việc Gatsby đã thành lập hẳn một công ty và được rót vốn phát triển trong năm qua
 
