@@ -169,8 +169,8 @@
       "path---2018-10-05-gioi-thieu-focus-2b1def162ddef13d6b2d.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-c1b68c3a1f18d905848b.js",
-      "path---tags-javascript-c1b68c3a1f18d905848b.js.map"
+      "path---tags-javascript-29695240173c2c241268.js",
+      "path---tags-javascript-29695240173c2c241268.js.map"
     ],
     "path---2018-09-17-huong-dan-luu-token-o-dau": [
       "path---2018-09-17-huong-dan-luu-token-o-dau-676729483bcc7e6983dd.js",
@@ -179,6 +179,10 @@
     "path---2018-04-24-huong-dan-huong-dan-lam-animation-voi-react": [
       "path---2018-04-24-huong-dan-huong-dan-lam-animation-voi-react-a402cda8f73eab9fd1cb.js",
       "path---2018-04-24-huong-dan-huong-dan-lam-animation-voi-react-a402cda8f73eab9fd1cb.js.map"
+    ],
+    "path---2019-01-09-tong-ket-mot-nam-2018-trong-the-gioi-front-end": [
+      "path---2019-01-09-tong-ket-mot-nam-2018-trong-the-gioi-front-end-bceba0e1f22275e5ac00.js",
+      "path---2019-01-09-tong-ket-mot-nam-2018-trong-the-gioi-front-end-bceba0e1f22275e5ac00.js.map"
     ],
     "path---2018-08-07-huong-dan-su-dung-firebase-realtime-voi-react-native": [
       "path---2018-08-07-huong-dan-su-dung-firebase-realtime-voi-react-native-045c1adfee317c8e5f30.js",
@@ -217,8 +221,8 @@
       "path---2018-05-01-huong-dan-cai-thien-performance-react-app-3eaf41573f3048265df8.js.map"
     ],
     "path---5": [
-      "path---5-e3211d39a3b0ddb522aa.js",
-      "path---5-e3211d39a3b0ddb522aa.js.map"
+      "path---5-855965d1cc910fa37799.js",
+      "path---5-855965d1cc910fa37799.js.map"
     ],
     "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react": [
       "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react-68b7b0f39ebdd876f924.js",
@@ -397,8 +401,8 @@
       "path---tags-redux-043a763d176bdcfd4d8f.js.map"
     ],
     "path---6": [
-      "path---6-2fa70a9ea47b64022bce.js",
-      "path---6-2fa70a9ea47b64022bce.js.map"
+      "path---6-796d9ae35f8c17a1f283.js",
+      "path---6-796d9ae35f8c17a1f283.js.map"
     ],
     "path---2017-10-27-react-children-react-clone-element": [
       "path---2017-10-27-react-children-react-clone-element-b411811ebbac98947849.js",
@@ -587,8 +591,8 @@
       "path---2018-09-12-huong-dan-build-notify-system-voi-react-redux-cc40361848223e105780.js.map"
     ],
     "path---2018-09-30-huong-dan-tro-thanh-web-moblie-specialist": [
-      "path---2018-09-30-huong-dan-tro-thanh-web-moblie-specialist-269b5f6639e73b629952.js",
-      "path---2018-09-30-huong-dan-tro-thanh-web-moblie-specialist-269b5f6639e73b629952.js.map"
+      "path---2018-09-30-huong-dan-tro-thanh-web-moblie-specialist-4e3824d17ad85bdc668f.js",
+      "path---2018-09-30-huong-dan-tro-thanh-web-moblie-specialist-4e3824d17ad85bdc668f.js.map"
     ],
     "path---2018-08-17-huong-dan-set-security-rules-cho-cloud-firestore": [
       "path---2018-08-17-huong-dan-set-security-rules-cho-cloud-firestore-647c99ac0d05f96cbcf8.js",
@@ -623,9 +627,9 @@
       "path---2018-08-12-huong-dan-con-duong-tro-thanh-developer-2018-a450ae4ec4950375c76d.js.map"
     ],
     "app": [
-      "app-b89f96a077bd46f374dc.js",
+      "app-3466af07ce97df60e50b.js",
       "build-js-styles.css",
-      "app-b89f96a077bd46f374dc.js.map",
+      "app-3466af07ce97df60e50b.js.map",
       "build-js-styles.css.map"
     ],
     "path---2018-08-21-huong-dan-su-dung-checkbox-va-toggle-switch": [
