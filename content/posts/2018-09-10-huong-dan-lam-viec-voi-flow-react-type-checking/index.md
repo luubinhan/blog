@@ -67,7 +67,7 @@ Còn theo như phát biểu từ những người tạo ra Flow (những develop
 
 Theo hướng dẫn trên tài liệu chính thức <a href="https://flow.org/en/docs/react/" target="_blank" rel="noopener noreferrer">https://flow.org/en/docs/react/</a>
 
-Nếu khởi tạo project bằng create-react-App thì chỉ việc instal Flow và tạo file `.flowconfig`
+Nếu khởi tạo project bằng create-react-App thì chỉ việc install Flow và tạo file `.flowconfig`
 
 ```powershell
 npm i flow-bin --save-dev
