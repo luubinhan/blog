@@ -12,6 +12,7 @@ tags: ["javascript"]
 
 
 ## Xóa phần tử trùng trong mảng
+
 Bạn có một mảng String, Number, giờ chúng ta xóa đi các phần tử bị trùng giá trị. Chúng ta sử dụng [kiểu Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) để đạt được mục đích này
 
 ```js
@@ -19,6 +20,7 @@ let values = [3,1,3,5,2,4,4,4];
 let uniqueValues = [...new Set(values)];
 // uniqueValues [3,1,5,2,4]
 ```
+
 ## Phương thức search đơn giản, phân biệt hoa thường
 
 Chúng ta dùng hàm `filter` để tạo mảng mới, với điều kiện phần tử đó `includes` một String hoặc thỏa một expression
@@ -35,6 +37,7 @@ let res = users.filter(it => it.name.includes('oli'));
 ```
 
 ## Search đơn giản, không phần biệt hoa thường
+
 Chúng ta dùng `RegExp` để lọc theo điều kiện
 
 ```js
