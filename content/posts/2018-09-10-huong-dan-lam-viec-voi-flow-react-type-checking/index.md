@@ -10,6 +10,8 @@ chapter: 0
 tags: ["react"]
 ---
 
+*Bài viết mang tính chất tham khảo, hiện tại đội ngũ Facebook đã bỏ rơi Flow để theo TypeScript https://github.com/facebook/jest/pull/7554*
+
 <!-- TOC -->
 
 - [Static vs Dynamic Typing](#static-vs-dynamic-typing)
@@ -18,6 +20,7 @@ tags: ["react"]
 - [Define type check cho Prop và State của cho React Component](#define-type-check-cho-prop-và-state-của-cho-react-component)
 
 <!-- /TOC -->
+
 
 # Static vs Dynamic Typing
 

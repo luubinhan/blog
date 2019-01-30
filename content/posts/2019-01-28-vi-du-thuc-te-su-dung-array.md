@@ -10,6 +10,25 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [Xóa phần tử trùng trong mảng](#xóa-phần-tử-trùng-trong-mảng)
+- [Phương thức search đơn giản, phân biệt hoa thường](#phương-thức-search-đơn-giản-phân-biệt-hoa-thường)
+- [Search đơn giản, không phần biệt hoa thường](#search-đơn-giản-không-phần-biệt-hoa-thường)
+- [Kiểm tra user có nằm trong group admin không](#kiểm-tra-user-có-nằm-trong-group-admin-không)
+- [Giảm số chiều của mảng](#giảm-số-chiều-của-mảng)
+- [Tạo một object chứa 1 key được tính toán](#tạo-một-object-chứa-1-key-được-tính-toán)
+- [Tạo một object từ mảng](#tạo-một-object-từ-mảng)
+- [Lấy giá trị unique của các item trong một mảng](#lấy-giá-trị-unique-của-các-item-trong-một-mảng)
+- [Đảo giá trị key-value trong object](#đảo-giá-trị-key-value-trong-object)
+- [Chuyển đổi mảng chứa giá trị độ F sang giá trị độ C](#chuyển-đổi-mảng-chứa-giá-trị-độ-f-sang-giá-trị-độ-c)
+- [Chuyển object thành query string](#chuyển-object-thành-query-string)
+- [Echo ra bảng giá trị dữ liệu](#echo-ra-bảng-giá-trị-dữ-liệu)
+- [Tìm và thay thế key-value trong một mảng object](#tìm-và-thay-thế-key-value-trong-một-mảng-object)
+- [Union hay mảng](#union-hay-mảng)
+- [Lấy kết quả giao nhau giữa 2 mảng](#lấy-kết-quả-giao-nhau-giữa-2-mảng)
+
+<!-- /TOC -->
 
 ## Xóa phần tử trùng trong mảng
 
@@ -109,7 +128,7 @@ let uTable = users.reduce((acc, it) => ({...acc, [it.id]: it }), {})
 
 ## Lấy giá trị unique của các item trong một mảng
 
-Chúng ta có mảng user, mỗi user có thuộc vào một group khác nhau, chúng ta sẽ lấy tất cả group đang tồn tại trong mảng user
+Chúng ta có mảng user, mỗi user có thuộc vào một group khác nhau, chúng ta sẽ lấy tất cả group đang tồn tại trong mảng `user`
 
 ```js
 let listOfUserGroups = [...new Set(users.map(it => it.group)];
@@ -149,7 +168,7 @@ Có thể áp dụng để chuyển đổi tiền tệ, khối lượng, …
 ```js
 let celsius = [-15, -5, 0, 10, 16, 20, 24, 32]
 let fahrenheit = celsius.map(t => t * 1.8 + 32);
-// fahrenheit is [5, 23, 32, 50, 60.8, 68, 75.2, 89.6]
+// kết quả [5, 23, 32, 50, 60.8, 68, 75.2, 89.6]
 ```
 
 ## Chuyển object thành query string
@@ -157,7 +176,7 @@ let fahrenheit = celsius.map(t => t * 1.8 + 32);
 ```js
 let params = {lat: 45, lng: 6, alt: 1000};
 let queryString = Object.entries(params).map(p => encodeURIComponent(p[0]) + '=' + encodeURIComponent(p[1])).join('&')
-// queryString is "lat=45&lng=6&alt=1000"
+// kết quả "lat=45&lng=6&alt=1000"
 ```
 
 ## Echo ra bảng giá trị dữ liệu

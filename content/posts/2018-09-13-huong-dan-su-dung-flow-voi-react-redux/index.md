@@ -10,6 +10,8 @@ chapter: 0
 tags: ["react", "redux"]
 ---
 
+*Bài viết mang tính chất tham khảo, hiện tại đội ngũ Facebook đã bỏ rơi Flow để theo TypeScript https://github.com/facebook/jest/pull/7554*
+
 <!-- TOC -->
 
 - [Constants](#constants)
