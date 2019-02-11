@@ -10,6 +10,13 @@ chapter: 0
 tags: ["react"]
 ---
 
+<!-- TOC -->
+
+- [State trong React](#state-trong-react)
+- [Sử dụng React Hook](#sử-dụng-react-hook)
+
+<!-- /TOC -->
+
 Mấy tháng trước thiên hạ rần rần với React hook khi nó còn đang ở bản proposal (show hàng cho các anh lập trình viên, nếu thích thì họ phát triển tiếp), bây giờ khi [React chính thức công bố trên trang chủ](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html) rồi, chúng ta cùng làm quen với React hook cũng ko có gì muộn.
 
 ## State trong React
@@ -49,9 +56,7 @@ Vấn đề của hàm `setState` là nó chỉ có khi chúng ta khai báo comp
 
 Nguyên nhân chính đẻ ra cái hook chính là việc ko thể `setState` trong function component (ủa vậy tại sao đẻ ra khái niệm function component chi, stateless component chi?)
 
-
 ## Sử dụng React Hook
-
 
 Trước tiên muốn dùng React Hook, phải đảm bảo version React đang dùng thấp nhất là 16.8.0
 
@@ -111,20 +116,18 @@ const StatelessComponent = () => {
         <div>
             <Form addTodo={addTodo} />
             <div>
-        {todos.map((todo, index) => (
-                <div key={index} onClick={() => deleteTodo(index)}>
-                    <span>{text}</span>
-                </div>
-        ))}
-      </div>
+                {todos.map((todo, index) => (
+                        <div key={index} onClick={() => deleteTodo(index)}>
+                            <span>{text}</span>
+                        </div>
+                ))}
+            </div>
         </div>
     )
 }
 ```
 
 ![Làm quen với React Hook bằng ví dụ thực tế](https://cdn.hashnode.com/res/hashnode/image/upload/v1549453648271/wSbUZbet_.gif)
-
-
 
 
 <a target="_blank" rel="noopener noreferrer" href="https://hashnode.com/post/write-your-first-react-hook-cjrt8lfci00aw18s1z8v9s06n

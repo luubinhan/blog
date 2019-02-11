@@ -10,12 +10,19 @@ chapter: 0
 tags: ["css"]
 ---
 
+<!-- TOC -->
+
+- [Thay đổi bằng giá trị `fill`](#thay-đổi-bằng-giá-trị-fill)
+- [CSS Filters](#css-filters)
+- [SVG filters](#svg-filters)
+
+<!-- /TOC -->
 
 File SVG
 
 ```html
 <svg class="icon">
-    <path />
+  <path />
 </svg>
 ```
 
@@ -136,7 +143,7 @@ Trong CSS chúng ta trỏ đến thằng filter ở trên như sau
 
 ```css
 .icon:hover {
-     filter: url('assets/your-SVG.svg#id-of-your-filter');
+  filter: url('assets/your-SVG.svg#id-of-your-filter');
 }
 ```
 
