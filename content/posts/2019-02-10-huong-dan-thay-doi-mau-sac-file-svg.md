@@ -93,7 +93,7 @@ Tiếp đến là thêm màu sắc mình yêu thích
 
 ```css
 .icon:hover {
-  filter: invert(0.5) sepia(1) hue-rotate(200deg);                                  
+  filter: invert(0.5) sepia(1) hue-rotate(200deg);
 }
 ```
 
@@ -149,23 +149,23 @@ Trong CSS chúng ta trỏ đến thằng filter ở trên như sau
 
 Những filter có thể sử dụng
 
-- [<feBlend>]
-- [<feColorMatrix>]
-- [<feComponentTransfer>]
-- [<feComposite>]
-- [<feConvolveMatrix>]
-- [<feDiffuseLighting>]
-- [<feDisplacementMap>]
-- [<feDropShadow>]
-- [<feFlood>]
-- [<feGaussianBlur>]
-- [<feImage>]
-- [<feMerge>]
-- [<feMorphology>]
-- [<feOffset>]
-- [<feSpecularLighting>]
-- [<feTile>]
-- [<feTurbulence>]
+- `<feBlend>`
+- `<feColorMatrix>`
+- `<feComponentTransfer>`
+- `<feComposite>`
+- `<feConvolveMatrix>`
+- `<feDiffuseLighting>`
+- `<feDisplacementMap>`
+- `<feDropShadow>`
+- `<feFlood>`
+- `<feGaussianBlur>`
+- `<feImage>`
+- `<feMerge>`
+- `<feMorphology>`
+- `<feOffset>`
+- `<feSpecularLighting>`
+- `<feTile>`
+- `<feTurbulence>`
 
 
 Với yêu cầu đổi màu, chúng ta sẽ dùng `feColorMatrix`
