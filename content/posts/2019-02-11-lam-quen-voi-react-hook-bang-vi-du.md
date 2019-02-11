@@ -1,5 +1,5 @@
 ---
-slug: "/2019-02-11-lam-quen-voi-react-hook-bang-vi-du.md"
+slug: "/2019-02-11-lam-quen-voi-react-hook-bang-vi-du"
 date: "2019-02-11"
 title: "Làm quen với React Hook bằng ví dụ"
 desc: "Chúng ta cùng bắt đầu học sử dụng React Hook, nó giải quyết vấn đề gì, sử dụng nó ra sao"
