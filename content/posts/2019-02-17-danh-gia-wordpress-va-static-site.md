@@ -38,14 +38,14 @@ Sếp cũ hôm rồi liên lạc hỏi “em có biết công ty nào nhận là
 
 Static site là gì, nói nôm na là một website chỉ bao gồm html/css/javascript không có database, nó sẽ được build từ file [markdown](/blog/2018-11-03-gioi-thieu-markdown), dùng một số tool phổ biến để build như
 
-[Jekyll](https://github.com/jekyll/jekyll) 
-[Hugo](https://github.com/gohugoio/hugo) 
-[next.js](https://github.com/zeit/next.js) 
-[gatsby](https://github.com/gatsbyjs/gatsby) 
-[gitbook](https://github.com/GitbookIO/gitbook) 
-[nuxt](https://github.com/nuxt/nuxt.js) 
-[vuepress](https://github.com/vuejs/vuepress) 
-[mkdocs](https://github.com/mkdocs/mkdocs)
+- [Jekyll](https://github.com/jekyll/jekyll) 
+- [Hugo](https://github.com/gohugoio/hugo) 
+- [next.js](https://github.com/zeit/next.js) 
+- [gatsby](https://github.com/gatsbyjs/gatsby) 
+- [gitbook](https://github.com/GitbookIO/gitbook) 
+- [nuxt](https://github.com/nuxt/nuxt.js) 
+- [vuepress](https://github.com/vuejs/vuepress) 
+- [mkdocs](https://github.com/mkdocs/mkdocs)
 
 ## Static Site
 ### Thế mạnh
