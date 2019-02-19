@@ -10,6 +10,15 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [Đặt file service worker trong thư mục root](#đặt-file-service-worker-trong-thư-mục-root)
+- [Sử dụng Panel Application trên Chrome Dev Tools](#sử-dụng-panel-application-trên-chrome-dev-tools)
+- [Không sử dụng Hard Reload](#không-sử-dụng-hard-reload)
+- [Bật "Update on Reload"](#bật-update-on-reload)
+- [Inspect và manual delete cache](#inspect-và-manual-delete-cache)
+
+<!-- /TOC -->
 
 
 Nếu chưa biết [Service worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) là gì, bạn hãy vào đọc lại link mình đã gắn sẵn
