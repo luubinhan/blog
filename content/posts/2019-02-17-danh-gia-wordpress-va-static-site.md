@@ -58,16 +58,20 @@ Tốc độ hiển thị nội dung của trang sẽ rất nhanh, nếu không m
 Để test bạn dùng [Ping Dom](https://tools.pingdom.com/)
 
 #### Nội dung nhiều lên, vấn đề cũng ít phức tạp hơn
+
 Khi nội dung của trang nhiều lên, thí dụ 10.000 bài viết trong wordpress, thì database nó cũng sẽ phình lên, số lượng user truy cập **vượt ngoài mong đợi** 10.000 user một ngày, nó sẽ phát sinh ra khá nhiều vấn đề cần xử lý. Và một trong những cách đó là chuyển một phần nội dung đó về static site! Bạn thấy sức mạnh của static site ghê chưa. Tất nhiên static site khi lớn lên nó cũng phát sinh vấn đề, tuy nhiên nó sẽ dễ xử lý và đơn giản hơn như wordpress
 
 #### Bảo mật
+
 Quá hiển nhiên là static site thì chẳng có gì phải quan tâm đến bảo mật, ko có quản lý user, không có database để mà hack đâu nhé. Những static site chỉ đơn thuần là hiển thị thông tin lên bằng file html, 99.999999% là ko bị hack, trừ khi nó cướp luôn được host và tên miền.
 
 #### Chi phí duy trì rẻ
+
 Để duy trì một static site, bạn chỉ tốn vài đô hàng tháng cho dịch vụ hosting, vài trăm k một cái tên miền. Nếu dùng wordpress hay một CMS nào đó khác đi, bạn phải trả cao hơn vì bạn dùng đến database và một host chạy php, chưa nói đến việc bạn lưu trữ đủ thứ trên đó khiến dung lượng ổ cứng lúc nào cũng ko đủ dùng. Bèo lắm cũng 120$ một năm. Nếu sử dụng GitHub pages cho static site, bạn gần như chỉ tốn tiền domain
 
 ### Thế không mạnh
 #### Không thân thiện với người dùng bình thường
+
 Mặc dù markdown được sinh ra là để phục vụ cho đối tượng user không biết gì về lập trình, người dùng bình thường nhất có thể viết được nội dung chuẩn html ko cần chỉnh, tuy nhiên không quá nhiều người không rành công nghệ biết cách viết markdown, và mình thấy đa số họ lại thích một cái editor phức tạp như Word hơn, hoặc là copy từ word lên mà muốn giữ format lại 
 
 ```markdown
@@ -76,11 +80,13 @@ Mặc dù markdown được sinh ra là để phục vụ cho đối tượng us
 Nội dung
 ### Heading 3
 ```
+
 Khách hàng sẽ thích thú có một cái trang admin, đăng nhập vào và được chủ động cập nhập theo ý thích hơn, một editor đầy đủ tính năng chỉnh màu chữ, chèn hình, xử lý hình, thay đổi font chữ to nhỏ, đổi kiểu chữ lung tung ben lên. Static site sẽ không có những thứ đó cho bạn
 
 ![Wordpress vs Static site](https://kinsta.com/wp-content/uploads/2018/03/what-is-a-content-management-system-1.png)
 
 #### Hạn chế tính năng
+
 Những tính năng căn bản như contact form, bình luận sẽ phải *outsource* cho một bên thứ 3, static site chỉ giới hạn ở mức hiển thị nội dung, tìm kiếm căn bản, lọc căn bản trong html
 
 #### Cộng đồng sử dụng không nhiều
@@ -93,6 +99,7 @@ Cũng đâu phải tự nhiên mà [33% site trên internet là wordpress](https
 
 ### Thế mạnh
 #### Một giao diện admin để cập nhập nội dung mà mọi khách hàng đều hài lòng
+
 Giao diện admin của wordpress thực sự ảnh hưởng rất lớn đến thế giới web, nếu ko muốn nói ai làm trang admin cũng đè wordpress ra tham khảo. Với cái giao diện admin bị chê đó bạn làm được đủ thứ
 Viết nội dung mới
 Thay đổi giao diện trang web
