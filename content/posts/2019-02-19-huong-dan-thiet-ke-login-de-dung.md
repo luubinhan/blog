@@ -17,7 +17,7 @@ Bây giờ, người ta hay dùng 1Password, Lastpass, Chrome password manager �
 
 ## Đặt login form trong modal
 
-![Login form tưởng dễ mà ko dễ](http://www.bradfrost.com/wp-content/uploads/2019/02/Screenshot-2019-02-13-22.41.20-1-700x364.png)
+![Login form tưởng dễ mà ko dễ](https://i.imgur.com/P6PR9b6.png)
 
 Vấn đề của kiểu này
 
@@ -26,13 +26,13 @@ Vấn đề của kiểu này
 
 ## Ẩn hết cho gọn ràng
 
-![Login form tưởng dễ mà ko dễ](http://www.bradfrost.com/wp-content/uploads/2019/02/ooijScreenshot-2019-02-13-14.54.08-700x606.png)
+![Login form tưởng dễ mà ko dễ](https://i.imgur.com/GJMjc7w.png)
 
 Cái trang Delta này, lúc đầu ẩn đi cái `Last Name`, sau khi nhập xong user name nó mới kêu nhập thêm last name (thằng này hiếm thấy, nhưng nếu là trang register thì thấy nhiều hơn), chắc là muốn dẹp cho gọn bớt giao diện. Ẩn field như vậy thì trình quản lý password chào thua, nó ko điền tự động được.
 
 ## Link vi diệu
 
-![Login form tưởng dễ mà ko dễ](http://www.bradfrost.com/wp-content/uploads/2019/02/Screenshot-2019-02-14-09.00.01-700x444.png)
+![Login form tưởng dễ mà ko dễ](https://i.imgur.com/lpbFv1K.png)
 
 Cái này có thể thấy trên Slack, nhưng thôi lấy trang Notion để ví dụ đi. Nó gửi cái **login code** qua email, user như vậy ko cần nhớ thêm password nào khác ngoài email. Tuy nhiên, vấn đề là
 
@@ -42,20 +42,19 @@ Cái này có thể thấy trên Slack, nhưng thôi lấy trang Notion để v�
 
 ## Tách trang login thành nhiều trang
 
-![Login form tưởng dễ mà ko dễ](http://www.bradfrost.com/wp-content/uploads/2019/02/shopify-1-1-700x700.png)
+![Login form tưởng dễ mà ko dễ](https://i.imgur.com/FI5xTzY.png)
 
-![Login form tưởng dễ mà ko dễ](http://www.bradfrost.com/wp-content/uploads/2019/02/shopify-2-700x700.png)
+![Login form tưởng dễ mà ko dễ](https://i.imgur.com/fggd9Ng.png)
 
-![Login form tưởng dễ mà ko dễ](http://www.bradfrost.com/wp-content/uploads/2019/02/shopify-3-700x689.png)
-
+![Login form tưởng dễ mà ko dễ](https://i.imgur.com/wibMgsA.png)
 
 Cũng như google, họ ko muốn đập vào mặt user quá nhiều thông tin một lúc, tuy nhiên thông tin ở đây thật sự có nhiều tới mức phải tách ra chưa? User phải click 2 bước mới login được.
 
 ## Một vài thiết kế form, đơn giản là nó kinh điển và ko có gì để chê
 
-![Login form tưởng dễ mà ko dễ](http://www.bradfrost.com/wp-content/uploads/2019/02/Screenshot-2019-02-14-09.43.43-700x767.png)
+![Login form tưởng dễ mà ko dễ](https://i.imgur.com/2vRsUZ6.png)
 
-![Login form tưởng dễ mà ko dễ](http://www.bradfrost.com/wp-content/uploads/2019/02/Screenshot-2019-02-14-09.44.04-700x901.png)
+![Login form tưởng dễ mà ko dễ](https://i.imgur.com/YjnInZa.png)
 
 
 <a target="_blank" rel="noopener noreferrer" href="http://bradfrost.com/blog/post/dont-get-clever-with-login-forms/">don’t get clever with login forms</a>
