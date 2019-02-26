@@ -10,6 +10,16 @@ chapter: 0
 tags: ["ux-ui"]
 ---
 
+<!-- TOC -->
+
+- [Đặt login form trong modal](#đặt-login-form-trong-modal)
+- [Ẩn hết cho gọn ràng](#ẩn-hết-cho-gọn-ràng)
+- [Link vi diệu](#link-vi-diệu)
+- [Tách trang login thành nhiều trang](#tách-trang-login-thành-nhiều-trang)
+- [Một vài thiết kế form, đơn giản là nó kinh điển và ko có gì để chê](#một-vài-thiết-kế-form-đơn-giản-là-nó-kinh-điển-và-ko-có-gì-để-chê)
+
+<!-- /TOC -->
+
 Bây giờ, người ta hay dùng 1Password, Lastpass, Chrome password manager để tự điền login. Là một website creator *chuyên nghiệp*, chúng ta phải để ý và làm sao đó để user có được trãi nghiệm tốt nhất từ trang đơn giản nhất Login
 
 > Login form: đơn giản nhất có thể, dễ đoán, làm việc tốt với các công cụ quản lý password
