@@ -125,7 +125,7 @@ Google một phát về dịch vụ làm website ở Việt Nam, trong 100 công
 
 #### Thế yếu  
 
-Một cách ngắn gọn nhất, những gì là thế mạnh của static site chính là thế yếu của Wordpress, load chậm, open source đồng thời với sự **nổi tiếng** của nó, Wordpress luôn là đích ngắm của cộng đồng hacker **thực tập** (hacker thực thụ ko rãnh hơi đâu hack mảnh trang wordpress vặt vãnh), việc rồng ránh những website có nội dung to nặng đòi hỏi sức người, sức của khá nhiều
+Một cách ngắn gọn nhất, những gì là thế mạnh của static site chính là thế yếu của Wordpress, load chậm, open source đồng thời với sự **nổi tiếng** của nó, Wordpress luôn là đích ngắm của cộng đồng hacker **thực tập** (hacker thực thụ ko rãnh hơi đâu hack mấy trang wordpress vặt vãnh). Việc gồng gánh những website có nội dung to nặng đòi hỏi sức người, sức của khá nhiều, không hiểu những trang như tuổi trẻ, vnexpress mà làm wordpress sẽ ra làm sao
 
 ## Kết luận
 
