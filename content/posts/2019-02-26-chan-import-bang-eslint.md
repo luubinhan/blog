@@ -2,7 +2,7 @@
 slug: "/2019-02-26-chan-import-bang-eslint"
 date: "2019-02-26"
 title: "Không cho phép import với ESlint"
-desc: "Năm điều nhỏ nhỏ, nhưng rất hay ho cần thiết, cần biết"
+desc: "Với ESlint chúng ta có thể cấm import những thư viện lớn, tránh để bà con trong team import tá lả."
 cover: ""
 type: "post"
 lesson: 0
@@ -10,7 +10,6 @@ chapter: 0
 tags: ["javascript"]
 ---
 
-Với ESlint chúng ta có thể cấm import những thư viện lớn, tránh để bà con trong team import tá lả.
 
 Sử dụng rule `no-restricted-imports`
 
