@@ -13,11 +13,11 @@ tags: ["chrome"]
 <!-- TOC -->
 
 - [Logpoint](#logpoint)
-- [Tooltip hiển thị chi tiết về element trong Inspect mode](#tooltip-hiển-thị-chi-tiết-về-element-trong-inspect-mode)
-- [Export dữ liệu code coverage](#export-dữ-liệu-code-coverage)
-- [Di chuyển bên trong cửa sổ Console bằng phím mũi tên](#di-chuyển-bên-trong-cửa-sổ-console-bằng-phím-mũi-tên)
-- [Thêm đường contrast đề nghị trong popup Color Picker](#thêm-đường-contrast-đề-nghị-trong-popup-color-picker)
-- [Lưu giá trị Geolocation đã thay đổi](#lưu-giá-trị-geolocation-đã-thay-đổi)
+- [Tooltip hiển thị chi tiết về element trong Inspect mode](#tooltip-hi%E1%BB%83n-th%E1%BB%8B-chi-ti%E1%BA%BFt-v%E1%BB%81-element-trong-inspect-mode)
+- [Export dữ liệu code coverage](#export-d%E1%BB%AF-li%E1%BB%87u-code-coverage)
+- [Di chuyển bên trong cửa sổ Console bằng phím mũi tên](#di-chuy%E1%BB%83n-b%C3%AAn-trong-c%E1%BB%ADa-s%E1%BB%95-console-b%E1%BA%B1ng-ph%C3%ADm-m%C5%A9i-t%C3%AAn)
+- [Thêm đường contrast đề nghị trong popup Color Picker](#th%C3%AAm-%C4%91%C6%B0%E1%BB%9Dng-contrast-%C4%91%E1%BB%81-ngh%E1%BB%8B-trong-popup-color-picker)
+- [Lưu giá trị Geolocation đã thay đổi](#l%C6%B0u-gi%C3%A1-tr%E1%BB%8B-geolocation-%C4%91%C3%A3-thay-%C4%91%E1%BB%95i)
 - [Code Folding](#code-folding)
 - [Message Tab](#message-tab)
 
@@ -79,15 +79,17 @@ Code coverage là kết quả đánh giá có bao nhiêu phần trong code đã 
 - `text` là toàn bộ source code
 
 1. Đầu tiên gọi `Control + Shift + P` để mở cửa sổ Command
+2. 
 ![mở cửa sổ Command](https://developers.google.com/web/updates/images/2019/01/command-menu.png)
 
 2. Gõ vào đoạn text `coverage`
-![Chọn Coverage(https://developers.google.com/web/updates/images/2019/01/show-coverage.png)
-![Cửa sổ Coverage(https://developers.google.com/web/updates/images/2019/01/coverage.png)
 
-3. Click **Reload** [Reload](https://developers.google.com/web/tools/chrome-devtools/images/shared/reload.png) để tiến hành analyze
+![Chọn Coverage](https://developers.google.com/web/updates/images/2019/01/show-coverage.png)
+![Cửa sổ Coverage](https://developers.google.com/web/updates/images/2019/01/coverage.png)
 
-4. Click nút **Export** [Export](https://developers.google.com/web/tools/chrome-devtools/images/shared/export.png) để xuất file
+3. Click **Reload** ![Reload](https://developers.google.com/web/tools/chrome-devtools/images/shared/reload.png) để tiến hành analyze
+
+4. Click nút **Export** ![Export](https://developers.google.com/web/tools/chrome-devtools/images/shared/export.png) để xuất file
 
 ## Di chuyển bên trong cửa sổ Console bằng phím mũi tên
 
@@ -104,6 +106,7 @@ Dùng phím mũi tên lên xuống để di chuyển, trái phải để mở ho
 Popup Color Picker giờ sẽ có thêm một đường nữa gọi là [AAA Contrast Ratio recommendation](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast7.html), trước đây chỉ có một đường là AA
 
 Đường ở trên là AA, đường dưới là AAA
+
 ![The AA line (top) and AAA line (bottom)](https://developers.google.com/web/updates/images/2019/01/AAA.png)
 
 Nếu bạn chưa biết, contrast ratio là độ tương phản đề nghị cần có cho chữ và màu nền để người đọc web có thể đọc được nội dung, design thường thích kiểu chữ xám xám trong khi nó rất khó đọc.
@@ -116,6 +119,7 @@ Mở cửa sổ **Sensors** Control + Shift + P, gõ tìm **Sensors**
 ![Sensors tab](https://developers.google.com/web/updates/images/2019/01/sensors.png)
 
 Trong mục **Geolocation** click **Manager**. **Settings > Geolocations** trong cửa sổ mới mở ra
+
 ![Geolocations tab in Settings](https://developers.google.com/web/updates/images/2019/01/geolocations.png)
 
 Chọn **Add location**, nhập thông tin xong chọn **Add**
@@ -123,6 +127,7 @@ Chọn **Add location**, nhập thông tin xong chọn **Add**
 ## Code Folding
 
 Trong cửa sổ **Source** và **Network** có thể thu gọn code, kiểu collapse ấy
+
 ![Lines 54 to 65 have been folded](https://developers.google.com/web/updates/images/2019/01/folding.png)
 
 Để bật tính năng này, ấn F1 để vào **Settings > Preferences > Source **, sau đó chọn mục **Code Folding**
