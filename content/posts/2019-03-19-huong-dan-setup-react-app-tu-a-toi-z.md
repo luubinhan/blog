@@ -435,4 +435,4 @@ Xong.
 
 [Source code ở đây](https://github.com/leonardomso/react-bolt)
 
-<a target="_blank" rel="noopener noreferrer" href="[https://overreacted.io/how-are-function-components-different-from-classes/](https://medium.freecodecamp.org/a-complete-react-boilerplate-tutorial-from-zero-to-hero-20023e086c4a)">Link bài gốc - A Complete React Boilerplate Tutorial — From Zero to Hero</a>
+<a target="_blank" rel="noopener noreferrer" href="https://medium.freecodecamp.org/a-complete-react-boilerplate-tutorial-from-zero-to-hero-20023e086c4a">Link bài gốc - A Complete React Boilerplate Tutorial — From Zero to Hero</a>
