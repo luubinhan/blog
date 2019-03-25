@@ -10,7 +10,7 @@ chapter: 0
 tags: ["react"]
 ---
 
-Class component như `PureComponent`, hoặc return `false` trong `shouldComponentUpdate`, component đó sẽ không bị re-render khi **tree** thay đổi, nó chỉ thay đổi khi `prop` truyền vào thay đổi
+Functional Component, hoặc Class Component return `false` trong `shouldComponentUpdate`, component đó sẽ không bị re-render khi **tree** thay đổi, nó chỉ thay đổi khi `prop` truyền vào thay đổi
 
 `React.memo()` hoạt động y chang như `React.PureComponent()`, nhưng nó là function component thay vì class như `PureComponent`.
 
