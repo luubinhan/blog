@@ -10,7 +10,7 @@ chapter: 0
 tags: ["react"]
 ---
 
-React 16.6 giới thiệu api mới, <a href="https://reactjs.org/docs/code-splitting.html#reactlazy" target="_blank" rel="noopener noreferrer">React.lazy</a>, function này sẽ cho phép chúng ta render 1 component được import kiểu [lazy load](/2018-10-07-huong-dan-lazy-load-component-react)
+React 16.6 giới thiệu api mới, <a href="https://reactjs.org/docs/code-splitting.html#reactlazy" target="_blank" rel="noopener noreferrer">React.lazy</a>, function này sẽ cho phép chúng ta render 1 component được import kiểu [lazy load](/blog/2018-10-07-huong-dan-lazy-load-component-react)
 
 Như trước đây chúng ta thường phải tự viết phần kiểm tra khi nào nên load, kết hợp với `componentDidUpdate`. Chúng ta không cần làm những công việc như vậy nữa, với api mới này
 

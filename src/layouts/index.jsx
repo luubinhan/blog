@@ -154,16 +154,6 @@ export default class MainLayout extends React.Component {
               <section className="footer-inner">
                 <div className="credit">
                   {config.copyright}
-                  <div>
-                    picture credit{" "}
-                    <a
-                      href="https://unsplash.com"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      unsplash.com
-                    </a>
-                  </div>
                 </div>
               </section>
             </footer>

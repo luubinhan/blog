@@ -855,6 +855,24 @@ table.normal tr td {
       font-size: 28px;
       letter-spacing: .6em;
     }
+    table {
+      border-collapse: collapse;
+      tbody tr:nth-of-type(odd) {
+        background: rgba(0,0,0,.02);
+      }
+      td,
+      th {
+        text-align: left !important;
+        border-bottom: 1px solid #dee2e6;
+        border-top: 1px solid #dee2e6;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        padding-right: 15px;
+        margin: 0;
+        border-collapse: inherit;
+        border-spacing: 0;
+      }
+    }
   }
   .tag-list{
     margin-top: 20px;
