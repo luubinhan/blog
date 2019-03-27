@@ -2,12 +2,14 @@ import React from "react";
 import Helmet from "react-helmet";
 import { random, isEmpty } from "lodash";
 import Link from "gatsby-link";
+import Search from "../components/Search";
 
 import PostListing from "../components/PostListing/PostListing";
 import config from "../../data/SiteConfig";
 
-// import { bgSidebar } from "../../data";
-// const sideBg = bgSidebar[random(bgSidebar.length - 1)];
+const searchIndices = [
+  { name: `Posts`, title: `Blog Posts`, hitComp: `PostHit` }
+];
 
 const NavLink = props => {
   if (!props.test) {
@@ -33,6 +35,7 @@ class IndexPage extends React.Component {
           <meta name="description" content="Nơi mình chia sẽ kiến thức frontend, css, html, javascript, các framework như React, Vuejs, React Native" />
         </Helmet>
         <main className="inner">
+          <Search indices={searchIndices} />
           <h1 style={{display: "none"}}>{config.siteTitle + ' - ' + config.siteDescription}</h1>
           {!isEmpty(group) && <PostListing postEdges={group} />}
           <div className="pagination">
