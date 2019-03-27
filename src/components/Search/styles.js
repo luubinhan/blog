@@ -22,57 +22,36 @@ const focussed = css`
   }
 `;
 
-const collapse = css`
-  width: 0;
-  cursor: pointer;
-  color: ${props => props.theme.lightBlue};
-  + ${SearchIcon} {
-    color: ${props => props.theme.white};
-  }
-  ${props => props.focussed && focussed}
-  margin-left: ${props => (props.focussed ? `-1.6em` : `-1em`)};
-  padding-left: ${props => (props.focussed ? `1.6em` : `1em`)};
-  ::placeholder {
-    color: ${props => props.theme.gray};
-  }
-`;
-
-const expand = css`
-  background: ${props => props.theme.veryLightGray};
-  width: 6em;
-  margin-left: -1.6em;
-  padding-left: 1.6em;
-  + ${SearchIcon} {
-    margin: 0.3em;
-  }
-`;
-
 export const Input = styled.input`
-  outline: none;
-  border: none;
   font-size: 1em;
-  background: transparent;
-  transition: ${props => props.theme.shortTrans};
-  border-radius: ${props => props.theme.smallBorderRadius};
-  ${props => (props.collapse ? collapse : expand)};
+  padding: 12px 20px;
+  font-size: 1.3em;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  opacity: .8;
+  border-radius: 3px;
+  &:focus {
+    opacity: 1;
+    outline: none;
+    -webkit-box-shadow: 0 0 0 2px #27c5c3;
+    box-shadow: 0 0 0 2px #27c5c3;
+    border-color: #27c5c3;
+  }
 `;
 
-export const Form = styled.form`
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
+export const Form = styled.div`
 `;
 
 const list = css`
   position: absolute;
   right: 0;
-  top: calc(100% + 0.5em);
-  width: calc(4em + 40vw);
-  max-width: 30em;
-  box-shadow: 0 0 5px 0;
+  top: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgba(0,0,0,.2);
   padding: 0.7em 1em 0.4em;
-  background: ${props => props.theme.white};
-  border-radius: ${props => props.theme.smallBorderRadius};
   > * + * {
     padding-top: 1em !important;
     border-top: 2px solid ${props => props.theme.darkGray};
@@ -100,10 +79,11 @@ const grid = css`
 export const HitsWrapper = styled.div`
   display: ${props => (props.show ? `block` : `none`)};
   max-height: 80vh;
-  overflow: scroll;
+  overflow-y: auto;
   z-index: 9999;
   position: relative;
   background: #fff;
+  left: 0;
   ${props => (props.hitsAsGrid ? grid : list)};
   * {
     margin-top: 0;
@@ -136,7 +116,7 @@ export const HitsWrapper = styled.div`
 `;
 
 export const By = styled.span`
-  font-size: 0.6em;
+  font-size: 0.7em;
   text-align: end;
   padding: 0;
 `;

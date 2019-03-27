@@ -5,7 +5,7 @@ import { SearchIcon, Form, Input } from "./styles";
 
 export default connectSearchBox(({ refine, ...rest }) => (
   <Form>
-    <input
+    <Input
       type="text"
       placeholder="Search"
       aria-label="Search"
