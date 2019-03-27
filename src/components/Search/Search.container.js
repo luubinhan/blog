@@ -89,7 +89,7 @@ class Search extends Component {
               return (
                 <Index key={name} indexName={name}>
                   <header>
-                    {title && <h2>{title}</h2>}
+                    {title && <strong>{title}</strong>}
                     <Stats />
                   </header>
                   <Results>
