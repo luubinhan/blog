@@ -104,6 +104,10 @@
       "path---2016-11-17-phan-3-es-6-can-ban-assignment-destructuring-0ed08137d2e5629386d2.js",
       "path---2016-11-17-phan-3-es-6-can-ban-assignment-destructuring-0ed08137d2e5629386d2.js.map"
     ],
+    "component---src-pages-donate-jsx": [
+      "component---src-pages-donate-jsx-66eb53c503c7f2d6946a.js",
+      "component---src-pages-donate-jsx-66eb53c503c7f2d6946a.js.map"
+    ],
     "path---2017-10-20-react-lifecycle-la-gi": [
       "path---2017-10-20-react-lifecycle-la-gi-c2550f6422acd3d38a30.js",
       "path---2017-10-20-react-lifecycle-la-gi-c2550f6422acd3d38a30.js.map"
@@ -319,6 +323,10 @@
     "path---2018-06-28-huong-dan-thay-component-will-receive-props": [
       "path---2018-06-28-huong-dan-thay-component-will-receive-props-e10e93d4d357686c6899.js",
       "path---2018-06-28-huong-dan-thay-component-will-receive-props-e10e93d4d357686c6899.js.map"
+    ],
+    "path---donate": [
+      "path---donate-a0e39f21c11f6a62c5ab.js",
+      "path---donate-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---2018-08-06-huong-dan-bat-dau-voi-firebase": [
       "path---2018-08-06-huong-dan-bat-dau-voi-firebase-4b23671aeeb371bcfbd2.js",
@@ -623,8 +631,8 @@
       "path---2018-08-19-huong-dan-viet-query-data-tren-firestore-a2507d250f2a687200d1.js.map"
     ],
     "component---src-templates-post-jsx": [
-      "component---src-templates-post-jsx-6a3e0ebc2c5f12348069.js",
-      "component---src-templates-post-jsx-6a3e0ebc2c5f12348069.js.map"
+      "component---src-templates-post-jsx-56929de842cf710c3150.js",
+      "component---src-templates-post-jsx-56929de842cf710c3150.js.map"
     ],
     "path---tags-seo": [
       "path---tags-seo-e7c329c040e86eeeb5c9.js",
@@ -675,9 +683,9 @@
       "path---2018-08-12-huong-dan-con-duong-tro-thanh-developer-2018-a450ae4ec4950375c76d.js.map"
     ],
     "app": [
-      "app-cddf319a73c52f66e226.js",
+      "app-7d25d050b82ebb85f06c.js",
       "build-js-styles.css",
-      "app-cddf319a73c52f66e226.js.map",
+      "app-7d25d050b82ebb85f06c.js.map",
       "build-js-styles.css.map"
     ],
     "path---2018-08-21-huong-dan-su-dung-checkbox-va-toggle-switch": [
