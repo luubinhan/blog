@@ -8,7 +8,7 @@ import PostListing from "../components/PostListing/PostListing";
 import config from "../../data/SiteConfig";
 
 const searchIndices = [
-  { name: `Posts`, title: `Blog Posts`, hitComp: `PostHit` }
+  { name: `Posts`, title: `Blog Posts` }
 ];
 
 const NavLink = props => {

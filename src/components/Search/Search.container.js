@@ -16,8 +16,10 @@ import * as hitComps from "./hits";
 const events = ["mousedown", "touchstart"];
 
 const Results = connectStateResults(
-  ({ searchState: state, searchResults: res, children }) =>
-    res && res.nbHits ? children : `No results for ${state.query}`
+  ({ searchState: state, searchResults: res, children }) => {
+    console.log(res);
+    return res && res.nbHits ? children : `No results for ${state.query}`;
+  }
 );
 
 const Stats = connectStateResults(
@@ -83,8 +85,7 @@ class Search extends Component {
             show={query.length > 0 && focussed}
             hitsAsGrid={hitsAsGrid}
           >
-            {indices.map(({ name, title, h }) => {
-              console.log(h);
+            {indices.map(({ name, title }) => {
               return (
                 <Index key={name} indexName={name}>
                   <header>
