@@ -7,8 +7,14 @@ export const Root = styled.div`
 `;
 
 export const SearchIcon = styled.div`
-  width: 1em;
+  width: 20px;
+  position: absolute;
+  left: 12px;
+  top: 9px;
   pointer-events: none;
+  svg {
+    font-size: 20px;
+  }
 `;
 
 const focussed = css`
@@ -25,6 +31,7 @@ const focussed = css`
 export const Input = styled.input`
   font-size: 1em;
   padding: 12px 20px;
+  padding-left: 40px;
   font-size: 1.3em;
   display: block;
   width: 100%;
@@ -42,6 +49,7 @@ export const Input = styled.input`
 `;
 
 export const Form = styled.div`
+  position: relative;
 `;
 
 const list = css`
@@ -51,15 +59,9 @@ const list = css`
   width: 100%;
   box-sizing: border-box;
   box-shadow: 0 0 5px rgba(0,0,0,.2);
-  padding: 0.7em 1em 0.4em;
-  > * + * {
-    padding-top: 1em !important;
-    border-top: 2px solid ${props => props.theme.darkGray};
-  }
-  li + li {
-    margin-top: 0.7em;
-    padding-top: 0.7em;
-    border-top: 1px solid ${props => props.theme.lightGray};
+  padding: 20px 20px 0;
+  ul {
+    display: inline-flex;
   }
 `;
 
@@ -84,11 +86,27 @@ export const HitsWrapper = styled.div`
   position: relative;
   background: #fff;
   left: 0;
-  ${props => (props.hitsAsGrid ? grid : list)};
-  * {
-    margin-top: 0;
-    padding: 0;
+  &::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
   }
+  &::-webkit-scrollbar-track {
+    background: #f0f0f0;
+  }
+  &::-webkit-scrollbar-corner {
+    background: #000; 
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: #13c4c1;
+    background: -moz-linear-gradient(top, #13c4c1 0%, #3cc4c2 40%, #27c5c3 100%);
+    background: -webkit-linear-gradient(top, #13c4c1 0%,#3cc4c2 40%,#27c5c3 100%);
+    background: linear-gradient(to bottom, #13c4c1 0%,#3cc4c2 40%,#27c5c3 100%);
+    -webkit-box-shadow:inset 0 0 2px 2px rgba(0,0,0,.1);
+    box-shadow:inset 0 0 2px 2px rgba(0,0,0,.1);
+  }
+  ${props => (props.hitsAsGrid ? grid : list)};
   ul {
     list-style: none;
   }
@@ -115,8 +133,13 @@ export const HitsWrapper = styled.div`
   }
 `;
 
-export const By = styled.span`
+export const By = styled.div`
   font-size: 0.7em;
-  text-align: end;
+  text-align: right;
   padding: 0;
+  background: #fafafa;
+  padding: 9px 15px;
+  margin-top: 30px;
+  margin-left: -20px;
+  margin-right: -20px;
 `;

@@ -7,10 +7,6 @@ import Search from "../components/Search";
 import PostListing from "../components/PostListing/PostListing";
 import config from "../../data/SiteConfig";
 
-const searchIndices = [
-  { name: 'Posts', title: 'Found Post' }
-];
-
 const NavLink = props => {
   if (!props.test) {
     return (
@@ -35,7 +31,7 @@ class IndexPage extends React.Component {
           <meta name="description" content="Nơi mình chia sẽ kiến thức frontend, css, html, javascript, các framework như React, Vuejs, React Native" />
         </Helmet>
         <main className="inner">
-          <Search indices={searchIndices} />
+          <Search indices={[{ name: 'Posts', title: 'Tìm bài viết' }]} />
           <h1 style={{display: "none"}}>{config.siteTitle + ' - ' + config.siteDescription}</h1>
           {!isEmpty(group) && <PostListing postEdges={group} />}
           <div className="pagination">
