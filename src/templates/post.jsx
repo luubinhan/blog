@@ -10,7 +10,6 @@ import PostTags from "../components/PostTags/PostTags";
 import SocialLinks from "../components/SocialLinks/SocialLinks.jsx";
 import SEO from "../components/SEO.jsx";
 import config from "../../data/SiteConfig";
-import Search from "../components/Search";
 
 export default class PostTemplate extends React.Component {
   render() {
@@ -34,7 +33,6 @@ export default class PostTemplate extends React.Component {
           />
         </Helmet>
         <div className="inner">
-          <Search indices={[{ name: 'Posts', title: 'Tìm bài viết' }]} />
           <SEO postPath={slug} postNode={postNode} postSEO />
           <div className="single-post">
             <div className="single-post-container">
