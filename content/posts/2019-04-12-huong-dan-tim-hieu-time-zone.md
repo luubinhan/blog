@@ -11,7 +11,7 @@ tags: ["javascript"]
 ---
 
 
-Như Việt Nam chúng ta thì giá trị time zone chỉ có một *GMT+7*, với những nước to bự như Mỹ, Canada, Nga thì có phải tới vài ba cái time zone trong cùng một nước ( Ko hiểu sao Trung Quốc thì chỉ có giá trị Time zone, nên nhiều khu vực ở Trung Quốc mặt trời mọc lúc 10 AM) 
+Như Việt Nam chúng ta thì giá trị time zone chỉ có một *GMT+7*, với những nước to bự như Mỹ, Canada, Nga thì có phải tới vài ba cái time zone trong cùng một nước ( ko hiểu sao Trung Quốc thì chỉ có 1 giá trị Time zone, nên nhiều khu vực ở Trung Quốc mặt trời mọc lúc 10 AM) 
 
 ## GMT, UTC và Offset
 
