@@ -66,7 +66,7 @@ Các column hiển thị trên Network log có thể tùy biến dễ dàng bằ
 
 Chúng ta có thể dùng tab Network để tìm một string trong header và message body.
 
-Thí dụ, chúng ta muốn kiểm tra các resource có sử dụng cơ chế cache phù hợp chưa, nếu resource không thay đổi thường xuyên, trình duyệt nên được thông báo để cache các resource này. **Cơ chế** cache này được thiết đặt trong header, click nút search ![Search (https://developers.google.com/web/tools/chrome-devtools/images/shared/search.png) để hiển thị ô search, nhập Cache-Control rồi *enter*,  chúng ta sẽ có toàn bộ thông tin `Cache-control: max-age` của từng resource
+Thí dụ, chúng ta muốn kiểm tra các resource có sử dụng cơ chế cache phù hợp chưa, nếu resource không thay đổi thường xuyên, trình duyệt nên được thông báo để cache các resource này. **Cơ chế** cache này được thiết đặt trong header, click nút search ![Search](https://developers.google.com/web/tools/chrome-devtools/images/shared/search.png) để hiển thị ô search, nhập Cache-Control rồi *enter*,  chúng ta sẽ có toàn bộ thông tin `Cache-control: max-age` của từng resource
 
 ![Sử dụng Search Panel Network của Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network-performance/imgs/tutorial/search.png)
 
