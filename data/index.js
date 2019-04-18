@@ -55,9 +55,8 @@ export const PrimaryNav = [
 		icon: "compass"
 	},
 	{
-		name: "Liên hệ",
-		href: '/about',
-		isActive: false,
-		icon: "send"
+		name: "About",
+		href: 'https://luubinhan.github.io/',
+		target: "_blank"
 	},		
 ]
