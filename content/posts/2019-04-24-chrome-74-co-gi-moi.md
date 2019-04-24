@@ -18,7 +18,7 @@ Khi hover lên một property CSS, giao diện sẽ được highlight những e
 
 ## Lighthouse 
 
-Thêm mục đánh giá [Tap targets are not sized appropriately](https://developers.google.com/web/tools/lighthouse/audits/tap-targets), đại khái là nó sẽ kiểm tra các element để user tương click, như là button, a, role=button, có được set kích thước phù hợp trên mobile hay chưa, các element có bị đặt gần nhau quá không, vì gần nhau quá user có thể vô tình click nhầm
+Thêm mục đánh giá [Tap targets are not sized appropriately](https://developers.google.com/web/tools/lighthouse/audits/tap-targets), đại khái là nó sẽ kiểm tra các element để user click, như là button, a, role=button, có được set kích thước phù hợp trên mobile hay chưa, các element có bị đặt gần nhau quá không, vì gần nhau quá user có thể vô tình click nhầm
 
 ![Tap targets are not sized appropriately](https://developers.google.com/web/tools/lighthouse/audits/images/tap-targets.png)
 
