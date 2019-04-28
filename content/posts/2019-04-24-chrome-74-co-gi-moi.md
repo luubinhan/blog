@@ -10,6 +10,17 @@ chapter: 0
 tags: ["chrome"]
 ---
 
+<!-- TOC -->
+
+- [Highlight tất cả element đang áp dụng CSS](#highlight-t%E1%BA%A5t-c%E1%BA%A3-element-%C4%91ang-%C3%A1p-d%E1%BB%A5ng-css)
+- [Lighthouse](#lighthouse)
+- [Xem nội dung của WebSocket binary](#xem-n%E1%BB%99i-dung-c%E1%BB%A7a-websocket-binary)
+- [Chụp ảnh màn hình](#ch%E1%BB%A5p-%E1%BA%A3nh-m%C3%A0n-h%C3%ACnh)
+- [Bổ sung filter Service worker trong tab Network](#b%E1%BB%95-sung-filter-service-worker-trong-tab-network)
+- [Performance recording](#performance-recording)
+
+<!-- /TOC -->
+
 ## Highlight tất cả element đang áp dụng CSS
 
 Khi hover lên một property CSS, giao diện sẽ được highlight những element nào đang chịu ảnh hưởng

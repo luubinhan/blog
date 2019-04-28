@@ -10,6 +10,27 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [Các phương thức **phải biết**](#c%C3%A1c-ph%C6%B0%C6%A1ng-th%E1%BB%A9c-ph%E1%BA%A3i-bi%E1%BA%BFt)
+  - [map](#map)
+  - [filter](#filter)
+  - [reduce](#reduce)
+  - [spread operator](#spread-operator)
+- [Biết thì tốt](#bi%E1%BA%BFt-th%C3%AC-t%E1%BB%91t)
+  - [includes](#includes)
+  - [concat](#concat)
+  - [forEach](#foreach)
+  - [indexOf](#indexof)
+  - [find](#find)
+  - [findIndex](#findindex)
+  - [slice](#slice)
+  - [some](#some)
+  - [every](#every)
+  - [from](#from)
+
+<!-- /TOC -->
+
 
 ## Các phương thức **phải biết**
 

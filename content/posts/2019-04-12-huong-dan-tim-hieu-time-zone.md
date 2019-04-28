@@ -10,6 +10,16 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [GMT, UTC và Offset](#gmt-utc-v%C3%A0-offset)
+- [Time zone !== offset](#time-zone--offset)
+  - [Summer time (DST)](#summer-time-dst)
+  - [Time zone vui vui nó lại đổi](#time-zone-vui-vui-n%C3%B3-l%E1%BA%A1i-%C4%91%E1%BB%95i)
+- [Time zone trong môi trường Server-Client](#time-zone-trong-m%C3%B4i-tr%C6%B0%E1%BB%9Dng-server-client)
+- [Đối tượng Date trong javascript](#%C4%91%E1%BB%91i-t%C6%B0%E1%BB%A3ng-date-trong-javascript)
+
+<!-- /TOC -->
 
 Như Việt Nam chúng ta thì giá trị time zone chỉ có một *GMT+7*, với những nước to bự như Mỹ, Canada, Nga thì có phải tới vài ba cái time zone trong cùng một nước ( ko hiểu sao Trung Quốc thì chỉ có 1 giá trị Time zone, nên nhiều khu vực ở Trung Quốc mặt trời mọc lúc 10 AM) 
 
