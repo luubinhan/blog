@@ -12,12 +12,12 @@ tags: ["javascript", "react", "react-native"]
 
 <!-- TOC -->
 
-- [Expo là cái gì](#expo-là-cái-gì)
-- [Hạn chế của Expo](#hạn-chế-của-expo)
-- [App sẽ viết](#app-sẽ-viết)
-- [Cài Expo](#cài-expo)
-- [Tạo một dự án Expo mới](#tạo-một-dự-án-expo-mới)
-- [Chạy code ví dụ](#chạy-code-ví-dụ)
+- [Expo là cái gì](#expo-l%C3%A0-c%C3%A1i-g%C3%AC)
+- [Hạn chế của Expo](#h%E1%BA%A1n-ch%E1%BA%BF-c%E1%BB%A7a-expo)
+- [App sẽ viết](#app-s%E1%BA%BD-vi%E1%BA%BFt)
+- [Cài Expo](#c%C3%A0i-expo)
+- [Tạo một dự án Expo mới](#t%E1%BA%A1o-m%E1%BB%99t-d%E1%BB%B1-%C3%A1n-expo-m%E1%BB%9Bi)
+- [Chạy code ví dụ](#ch%E1%BA%A1y-code-v%C3%AD-d%E1%BB%A5)
 
 <!-- /TOC -->
 
@@ -29,11 +29,9 @@ Expo là một framework để đẩy nhanh việc viết app React Native. Gi�
 
 Trước khi nghiên cứu tiếp, một vài vấn đề quan trọng sau cần biết
 
-
-1. **Expo không hỗ trợ code chạy nền**, ví dụ như việc tracking vị trí thiết bị.
-2. **Expo chỉ hỗ trợ những API mà Expo SDK hỗ trợ**, có nghĩa là, nếu ứng dụng đang viết cần tương tác với Bluetooh, vốn không được hỗ trợ bởi Expo SDK thì bạn phải viết code React Native thuần luôn, hoặc tự viết thêm native code sử dụng thư viện [ExpoKit](https://docs.expo.io/versions/latest/expokit/expokit).
-3. **Sử dụng Expo là chết dính với bộ toolset của nó**. Một số đồ chơi sẽ không chạy được với Expo, trong trường hợp cần xài tới, phải `eject` cái app ra khỏi Expo, mà khi đã `eject` thì sẽ ko thể có `inject` ngược lại.
-4. **Ứng dụng Expo chỉ build online**. Expo cung cấp một công cụ command-line là *Exp*, cho phép việc build lên Expo Server, một khi hoàn tất, một URL để download **.apk** hoặc **ipa**, [Bài hướng dẫn](https://docs.expo.io/versions/latest/distribution/building-standalone-apps)
+1. **Expo chỉ hỗ trợ những API mà Expo SDK hỗ trợ**, có nghĩa là, nếu ứng dụng đang viết cần tương tác với Bluetooh, vốn không được hỗ trợ bởi Expo SDK thì bạn phải viết code React Native thuần luôn, hoặc tự viết thêm native code sử dụng thư viện [ExpoKit](https://docs.expo.io/versions/latest/expokit/expokit).
+2. **Sử dụng Expo là chết dính với bộ toolset của nó**. Một số đồ chơi sẽ không chạy được với Expo, trong trường hợp cần xài tới, phải `eject` cái app ra khỏi Expo, mà khi đã `eject` thì sẽ ko thể có `inject` ngược lại.
+3. **Ứng dụng Expo chỉ build online**. Expo cung cấp một công cụ command-line là *Exp*, cho phép việc build lên Expo Server, một khi hoàn tất, một URL để download **.apk** hoặc **ipa**, [Bài hướng dẫn](https://docs.expo.io/versions/latest/distribution/building-standalone-apps)
 
 Mặc dù nghe có vẻ khá hạn chế, nhưng thực sự Expo rất mạnh, rất nhiều thứ hỗ trợ sẵn cho Android và iOS. Có nghĩa là nếu app đang viết không có gì quá đặc biệt, quá "đỉnh của đỉnh" thì việc sử dụng Expo sẽ mang tới rất nhiều lợi ích.
 
