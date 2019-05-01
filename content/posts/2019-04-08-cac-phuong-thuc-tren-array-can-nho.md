@@ -88,10 +88,10 @@ Một trong những phương thức khó hiểu nhất, theo quan điểm cá nh
 
 Về căn bản, `reduce` sẽ lấy các giá trị trong array,  tính toán các kiểu rồi **trả về 1 giá trị**. Nó nhận vào các tham số
 
-Kết quả trả về từ lần tính toán trước, lần chạy đầu tiên, giá trị này là phần tử đầu tiên trong array
-Giá trị phần tử hiện tại trong array
-Giá trị index của phần tử
-Mảng đã gọi trước đó
+- Kết quả trả về từ lần tính toán trước, lần chạy đầu tiên, giá trị này là phần tử đầu tiên trong array
+- Giá trị phần tử hiện tại trong array
+- Giá trị index của phần tử
+- Mảng đã gọi trước đó
 
 Hầu như chúng ta chỉ sử dụng 2 tham số đầu
 

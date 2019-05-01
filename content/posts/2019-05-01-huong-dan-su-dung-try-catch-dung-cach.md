@@ -56,11 +56,11 @@ Có thể phân error ra làm 2 loại: **operational error** và **programmer e
 
 Với kiểu operational error, chúng ta có những cách tiếp cận sau
 
-catch lại error và thực hiện lại thao tác đó lần nữa
-catch error mà ko làm gì cả, hoặc hiển thị một thông báo đến user
-Ko catch luôn, hoặc throw một custom error
+- catch lại error và thực hiện lại thao tác đó lần nữa
+- catch error mà ko làm gì cả, hoặc hiển thị một thông báo đến user
+- Ko catch luôn, hoặc throw một custom error
 
-Với lỗi với network request, chúng ta có thể dựa vào error code trả về để lựa chọn thao tác tiếp theo muốn thực hiện.
+Với lỗi với network request, chúng ta có thể dựa vào `error.code` trả về để lựa chọn thao tác tiếp theo muốn thực hiện.
 
 ```js
 // notifications.js
