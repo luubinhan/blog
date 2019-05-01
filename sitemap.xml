@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://luubinhan.github.io/blog/blog/2019-05-01-huong-dan-su-dung-try-catch-dung-cach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2019-04-24-chrome-74-co-gi-moi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2019-04-18-huong-dan-async-await-loi-tren-vong-lap-array</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2019-04-17-huong-dan-sua-loi-scroll-voi-fixed-header</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -175,8 +176,8 @@
 <url> <loc>https://luubinhan.github.io/blog/blog/2016-11-15-chuong-1-es-6-can-ban</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2016-04-12-front-end-developer-2016-nen-hoc-gi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://luubinhan.github.io/blog/blog/tags/chrome</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luubinhan.github.io/blog/blog/tags/chrome</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/css</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/gatsby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/tags/mobile-web-specialist</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
