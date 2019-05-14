@@ -11,7 +11,6 @@ tags: ["javascript"]
 ---
 
 
-
 Bắt đầu với một ví dụ đơn giản: một ô để user có thể kéo thả vào, chúng ta hiển thị user đã kéo thả vào ô màu nào
 
 ```html
@@ -99,11 +98,11 @@ const preview = evt => {
 document.querySelector('section').addEventListener('dragstart', preview);
 ```
 
-## Click
+## Sự kiện Click
 
 `evt.target` chạy tốt với các sự kiện `change` và `dragstart` vì chỉ có một số lượng rất ít các element có thể nhận focus và giá trị input bị thay đổi tại một thời điểm chỉ có một
 
-Với sự kiện click thì có khác một chút xíu
+Với sự kiện `click` thì có khác một chút xíu
 
 ```html
 <section>
@@ -130,7 +129,7 @@ const preview = evt => {
 document.querySelector('section').addEventListener('click', preview);
 ```
 
-Nếu chúng ta click vào vùng của `span`, sự kiện vẫn được đẩy ra, tuy nhiên nó không chứa `id` nên `evt.target.id` ngủm, đó là lý do tại sao có khi đoạn code trên có khi chạy đúng có khi sai
+Nếu chúng ta click vào vùng của `span`, sự kiện vẫn được đẩy ra, tuy nhiên nó không chứa `id` nên `evt.target.id` ngủm, đó là lý do tại sao có khi đoạn code trên có khi chạy đúng, có khi sai
 
 Để lấy được element cha gần nhất, chúng ta dùng `element.closest()`
 
@@ -165,10 +164,12 @@ document.querySelector('#add').addEventListener('click', evt => {
 
   container.appendChild(newButton);
 });
+
+// gắn listener cho container, thay vì trên từng button
 container.addEventListener('click', evt => {
   const clickedButton = evt.target.closest('button');
   if (clickedButton != null) {
-    // When clicked, log the clicked button's number.
+    // log gía trị khi click
     document.querySelector('#clicked').textContent = `Clicked button #${clickedButton.dataset.number}`;
   }
 });
