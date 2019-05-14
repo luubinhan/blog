@@ -10,6 +10,15 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [Sử dụng Event Object](#s%E1%BB%AD-d%E1%BB%A5ng-event-object)
+- [Sử dụng bubbling](#s%E1%BB%AD-d%E1%BB%A5ng-bubbling)
+- [Sự kiện Click](#s%E1%BB%B1-ki%E1%BB%87n-click)
+- [Một số ví dụ khác](#m%E1%BB%99t-s%E1%BB%91-v%C3%AD-d%E1%BB%A5-kh%C3%A1c)
+
+<!-- /TOC -->
+
 
 Bắt đầu với một ví dụ đơn giản: một ô để user có thể kéo thả vào, chúng ta hiển thị user đã kéo thả vào ô màu nào
 

@@ -10,8 +10,6 @@ chapter: 0
 tags: ["javascript"]
 ---
 
-
-
 `async`/`await` không hoạt động bên trong vòng lặp `Array.prototype.forEach`, cùng xem tại sao nhé
 
 ```js

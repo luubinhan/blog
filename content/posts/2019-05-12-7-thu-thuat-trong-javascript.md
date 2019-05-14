@@ -10,6 +10,18 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [Lấy tất cả giá trị không giống nhau trong array](#l%E1%BA%A5y-t%E1%BA%A5t-c%E1%BA%A3-gi%C3%A1-tr%E1%BB%8B-kh%C3%B4ng-gi%E1%BB%91ng-nhau-trong-array)
+- [Bỏ qua tất cả giá trị falsy](#b%E1%BB%8F-qua-t%E1%BA%A5t-c%E1%BA%A3-gi%C3%A1-tr%E1%BB%8B-falsy)
+- [Tạo một object rỗng](#t%E1%BA%A1o-m%E1%BB%99t-object-r%E1%BB%97ng)
+- [Merge object](#merge-object)
+- [Yêu cầu parameter cho function](#y%C3%AAu-c%E1%BA%A7u-parameter-cho-function)
+- [Destructuring và alias](#destructuring-v%C3%A0-alias)
+- [Lấy giá trị query string](#l%E1%BA%A5y-gi%C3%A1-tr%E1%BB%8B-query-string)
+
+<!-- /TOC -->
+
 ## Lấy tất cả giá trị không giống nhau trong array
 
 ```js

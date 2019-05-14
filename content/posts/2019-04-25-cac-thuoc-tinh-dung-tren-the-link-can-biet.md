@@ -10,6 +10,16 @@ chapter: 0
 tags: ["css"]
 ---
 
+<!-- TOC -->
+
+- [preload](#preload)
+- [prefetch](#prefetch)
+- [preconnect](#preconnect)
+- [dns-prefetch](#dns-prefetch)
+- [prerender](#prerender)
+
+<!-- /TOC -->
+
 
 ```html
 <link rel="prefetch" href="/style.css" as="style" />

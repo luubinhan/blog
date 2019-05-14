@@ -146,6 +146,11 @@ export default class MainLayout extends React.Component {
                 className={`nav primary-menu ${collapsed ? "collapsed" : ""}`}
               >
                 {primaryNav}
+                <li className="about">
+                  <a href="https://luubinhan.github.io/" target="_blank">
+                    About
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
