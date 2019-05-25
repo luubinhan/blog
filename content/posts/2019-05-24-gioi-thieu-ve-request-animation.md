@@ -15,7 +15,7 @@ Khi muốn thực hiện một vòng lặp thời gian trong javascript, chúng 
 
 ```js
 setInterval(function() {
-// làm hiệu ứng ở đây
+  // chay animation ở đây
 }, 1000/60);
 ```
 
@@ -31,9 +31,10 @@ Ví dụ đơn giản nhất
 
 ```js
 function repeatOften() {
-// thực hiện animation nào đó
-requestAnimationFrame(repeatOften);
+  // thực hiện animation nào đó
+  requestAnimationFrame(repeatOften);
 }
+
 requestAnimationFrame(repeatOften);
 ```
 
@@ -44,7 +45,7 @@ var start = null;
 var element = document.getElementById(‘SomeElementYouWantToAnimate’);
 
 function step(timestamp) {
-if (!start) start = timestamp;
+  if (!start) start = timestamp;
   var progress = timestamp - start;
   element.style.transform = 'translateX(' + Math.min(progress / 10, 200) + 'px)';
   if (progress < 2000) {
