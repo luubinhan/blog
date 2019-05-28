@@ -15,7 +15,7 @@ tags: ["react"]
 - [Vấn đề](#v%E1%BA%A5n-%C4%91%E1%BB%81)
 - [Giải pháp của Facebook: luồng dữ liệu một chiều](#gi%E1%BA%A3i-ph%C3%A1p-c%E1%BB%A7a-facebook-lu%E1%BB%93ng-d%E1%BB%AF-li%E1%BB%87u-m%E1%BB%99t-chi%E1%BB%81u)
 - [Giới thiệu các vai chính](#gi%E1%BB%9Bi-thi%E1%BB%87u-c%C3%A1c-vai-ch%C3%ADnh)
-  - ['Bọn' action creator](#b%E1%BB%8Dn-action-creator)
+  - [Bọn action creator](#b%E1%BB%8Dn-action-creator)
   - [Bọn dispatcher](#b%E1%BB%8Dn-dispatcher)
   - [Bọn đầu cầu Store](#b%E1%BB%8Dn-%C4%91%E1%BA%A7u-c%E1%BA%A7u-store)
   - [Bọn View](#b%E1%BB%8Dn-view)
