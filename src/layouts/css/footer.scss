@@ -4,6 +4,7 @@
 /* Footer
 -------------------------------------------------------------- */
 .footer {
+
   color: #f2f2f2;
   font-family: $monospace;
   line-height: 20px;  
@@ -15,6 +16,11 @@
     padding: $glutter 0;
     a {      
       color: #f2f2f2;
+    }
+    .link-youtube {
+      color: $google;
+      font-weight: bold;
+      font-family: $san-serif;
     }
   }
   .copyright {

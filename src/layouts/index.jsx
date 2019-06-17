@@ -10,7 +10,8 @@ import {
   IoAndroidCompass,
   IoAndroidSend,
   IoAndroidPhonePortrait,
-  IoAndroidMenu
+  IoAndroidMenu,
+  IoSocialYoutube
 } from "react-icons/lib/io";
 
 import config from "../../data/SiteConfig";
@@ -157,6 +158,11 @@ export default class MainLayout extends React.Component {
           <div id="footer">
             <footer className="footer">
               <section className="footer-inner">
+                <div className="social-links">
+                  <a className="link-youtube" href="https://www.youtube.com/channel/UC0Te8s0b0aplS1ZoVLfjKHA" target="_blank" rel="noopener noreferrer">
+                    <IoSocialYoutube /> Youtube
+                  </a>
+                </div>
                 <div className="credit">
                   {config.copyright}
                 </div>
