@@ -10,6 +10,14 @@ chapter: 0
 tags: ["react"]
 ---
 
+<!-- TOC -->
+
+- [React.memo](#Reactmemo)
+- [useMemo](#useMemo)
+- [useCallback](#useCallback)
+
+<!-- /TOC -->
+
 
 Khi sử dụng function component, React cung cấp 3 phương thức để tối ưu: `React.memo`, `useMemo`, và `useCallback`, chúng ta cùng điểm qua 3 thằng này
 

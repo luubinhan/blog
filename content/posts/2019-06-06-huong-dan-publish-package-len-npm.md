@@ -10,6 +10,15 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [Package là gì, và module là gì](#Package-l%C3%A0-g%C3%AC-v%C3%A0-module-l%C3%A0-g%C3%AC)
+- [Cài đặt](#C%C3%A0i-%C4%91%E1%BA%B7t)
+- [Kiểm tra](#Ki%E1%BB%83m-tra)
+- [Publish](#Publish)
+
+<!-- /TOC -->
+
 
 ## Package là gì, và module là gì
 

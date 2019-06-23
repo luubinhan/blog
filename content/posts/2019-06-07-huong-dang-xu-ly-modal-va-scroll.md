@@ -10,6 +10,14 @@ chapter: 0
 tags: ["css", "javascript"]
 ---
 
+<!-- TOC -->
+
+- [Cách đơn giản nhất](#C%C3%A1ch-%C4%91%C6%A1n-gi%E1%BA%A3n-nh%E1%BA%A5t)
+- [Trên mobile](#Tr%C3%AAn-mobile)
+- [Giải pháp cuối cùng](#Gi%E1%BA%A3i-ph%C3%A1p-cu%E1%BB%91i-c%C3%B9ng)
+
+<!-- /TOC -->
+
 
 ## Cách đơn giản nhất
 
