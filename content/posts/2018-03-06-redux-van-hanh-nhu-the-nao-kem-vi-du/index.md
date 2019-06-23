@@ -13,11 +13,11 @@ tags: ["react", "javascript", "redux"]
 
 <!-- TOC -->
 
-- [Chỉ sử dụng State của React](#chỉ-sử-dụng-state-của-react)
-- [Thêm Redux](#thêm-redux)
-- [Action](#action)
-- [Không bao giờ được phép thay đổi State trực tiếp](#không-bao-giờ-được-phép-thay-đổi-state-trực-tiếp)
-- [Action từ đâu mà có](#action-từ-đâu-mà-có)
+- [Chỉ sử dụng State của React](#Ch%E1%BB%89-s%E1%BB%AD-d%E1%BB%A5ng-State-c%E1%BB%A7a-React)
+- [Thêm Redux](#Th%C3%AAm-Redux)
+- [Action](#Action)
+- [Không bao giờ được phép thay đổi State trực tiếp](#Kh%C3%B4ng-bao-gi%E1%BB%9D-%C4%91%C6%B0%E1%BB%A3c-ph%C3%A9p-thay-%C4%91%E1%BB%95i-State-tr%E1%BB%B1c-ti%E1%BA%BFp)
+- [Action từ đâu mà có](#Action-t%E1%BB%AB-%C4%91%C3%A2u-m%C3%A0-c%C3%B3)
 
 <!-- /TOC -->
 
@@ -27,7 +27,7 @@ Nếu chưa biết tại sao lại sinh ra thằng Redux này, có thể xem ở
 
 Component sẽ build
 
-![](https://daveceddia.com/images/counter-plain.png)
+![Redux vận hành như thế nào](https://daveceddia.com/images/counter-plain.png)
 
 ```jsx
 import React from 'react';
@@ -90,11 +90,9 @@ import React from 'react';
 
 class Counter extends React.Component {
   increment = () => {
-    // fill in later
   }
 
   decrement = () => {
-    // fill in later
   }
 
   render() {
@@ -114,22 +112,22 @@ class Counter extends React.Component {
 export default Counter;
 ```
 
-connect nó với store thôi
+`connect` nó với store thôi
 
 ```jsx
 import { connect } from 'react-redux';
 // ...
-// Add this function:
+// Viết thêm hàm này
 function mapStateToProps(state) {
   return {
     count: state.count
   };
 }
 
-// Then replace this:
+// Thay cái
 // export default Counter;
 
-// With this:
+// bằng
 export default connect(mapStateToProps)(Counter);
 ```
 
@@ -217,17 +215,16 @@ State là một immutable object, tuyệt đối **KHÔNG** thay đổi state nh
 function brokenReducer(state = initialState, action) {
   switch(action.type) {
     case 'INCREMENT':
-      // NO! BAD: this is changing state!
+      // BẬY: đừng thay giá trị bằng kiểu này
       state.count++;
       return state;
 
     case 'DECREMENT':
-      // NO! BAD: this is changing state too!
+      // BẬY: đừng thay giá trị bằng kiểu này
       state.count--;
       return state;
 
     default:
-      // this is fine.
       return state;
   }
 }
