@@ -10,6 +10,24 @@ chapter: 0
 tags: ["react"]
 ---
 
+<!-- TOC -->
+
+- [Effect không cần Cleanup {#effects-without-cleanup}](#Effect-kh%C3%B4ng-c%E1%BA%A7n-Cleanup-effects-without-cleanup)
+  - [Ví dụ sử dụng Classes {#example-using-classes}](#V%C3%AD-d%E1%BB%A5-s%E1%BB%AD-d%E1%BB%A5ng-Classes-example-using-classes)
+  - [Ví dụ sử dụng Hook {#example-using-hooks}](#V%C3%AD-d%E1%BB%A5-s%E1%BB%AD-d%E1%BB%A5ng-Hook-example-using-hooks)
+  - [Giải thích cụ thể {#detailed-explanation}](#Gi%E1%BA%A3i-th%C3%ADch-c%E1%BB%A5-th%E1%BB%83-detailed-explanation)
+- [Effect cần Cleanup {#effects-with-cleanup}](#Effect-c%E1%BA%A7n-Cleanup-effects-with-cleanup)
+  - [Ví dụ sử dụng Class {#example-using-classes-1}](#V%C3%AD-d%E1%BB%A5-s%E1%BB%AD-d%E1%BB%A5ng-Class-example-using-classes-1)
+  - [Ví dụ sử dụng Hooks {#example-using-hooks-1}](#V%C3%AD-d%E1%BB%A5-s%E1%BB%AD-d%E1%BB%A5ng-Hooks-example-using-hooks-1)
+- [Tổng hợp {#recap}](#T%E1%BB%95ng-h%E1%BB%A3p-recap)
+- [Tip sử dụng Effect {#tips-for-using-effects}](#Tip-s%E1%BB%AD-d%E1%BB%A5ng-Effect-tips-for-using-effects)
+  - [Tip: Sử dụng nhiều Effect tách biệt{#tip-use-multiple-effects-to-separate-concerns}](#Tip-S%E1%BB%AD-d%E1%BB%A5ng-nhi%E1%BB%81u-Effect-t%C3%A1ch-bi%E1%BB%87ttip-use-multiple-effects-to-separate-concerns)
+  - [Giải thích: Tại sao Effect chạy trên mỗi update {#explanation-why-effects-run-on-each-update}](#Gi%E1%BA%A3i-th%C3%ADch-T%E1%BA%A1i-sao-Effect-ch%E1%BA%A1y-tr%C3%AAn-m%E1%BB%97i-update-explanation-why-effects-run-on-each-update)
+  - [Tip: Tối ưu Performance bằng cách bỏ qua Effect {#tip-optimizing-performance-by-skipping-effects}](#Tip-T%E1%BB%91i-%C6%B0u-Performance-b%E1%BA%B1ng-c%C3%A1ch-b%E1%BB%8F-qua-Effect-tip-optimizing-performance-by-skipping-effects)
+- [Bước tiếp theo {#next-steps}](#B%C6%B0%E1%BB%9Bc-ti%E1%BA%BFp-theo-next-steps)
+
+<!-- /TOC -->
+
 *Hook* là một tính năng mới từ React 16.8. Nó cho phép sử dụng state và các tính năng khác của React mà không cần viết dạng class
 
 *Effect Hook* cho phép thực hiện side effect bên trong các function component:
