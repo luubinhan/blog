@@ -18,6 +18,9 @@ https://prismjs.com/download.html#themes=prism-coy&languages=markup+css+clike+ja
     }
   }
 }
+.gatsby-highlight-code-line {
+  background: #fdf9ea !important;
+}
 code[class*="language-"],
 pre[class*="language-"] {
   color: black;
