@@ -10,6 +10,17 @@ chapter: 0
 tags: ["react"]
 ---
 
+<!-- TOC -->
+
+- [Handle các event bằng Observable](#Handle-c%C3%A1c-event-b%E1%BA%B1ng-Observable)
+- [Operator, operator](#Operator-operator)
+- [Ai có thể là Observable](#Ai-c%C3%B3-th%E1%BB%83-l%C3%A0-Observable)
+- [Observable cho các HTTP request](#Observable-cho-c%C3%A1c-HTTP-request)
+- [Kết hợp các Observable](#K%E1%BA%BFt-h%E1%BB%A3p-c%C3%A1c-Observable)
+- [Kết](#K%E1%BA%BFt)
+
+<!-- /TOC -->
+
 **Observable** mình dịch ra tiếng việt thế này cho bạn dễ hình dung. Một khi bạn bật chế độ `observable` với một đứa con gái nào đó, là bạn đang trong giai đoạn bị nó ám ảnh, nhất cử nhất động của nó bạn điều để ý, nó hắc xì bạn cũng biết, một tuần nó mặc mấy bộ đồ bạn cũng biết. Chỉ cần nghe tiếng bước chân là bạn biết được hôm nay nó mang đôi dép gì (mức độ này hơi kinh khủng lắm rồi) là bạn có những phản xạ vô điều kiện bộc phát nơi cửa miệng "Chiều nay trời mưa nhe em, mang dép lào đi cho chuẩn". Phản xạ này là gọi là **subscription**
 
 Rồi quay lại với vấn đề kỹ thuật, bài này không giải thích rõ Observable pattern, các khái niệm chính của nó, nếu muốn bạn đọc lại bài này trước đây [có viết rồi](https://luubinhan.github.io/blog/2018-10-30-gioi-thieu-reactive-programing-trong-javascript), như cái tựa bài viết nó spoil hết cái nội dung rồi "Ví dụ để thấy tại sao chúng ta nên *bật chế độ* Observable với một em gái nào đó"
