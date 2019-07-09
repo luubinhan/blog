@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://luubinhan.github.io/blog/blog/2019-07-09-6-vi-du-giup-ban-yeu-luon-rxjs-observable</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2019-07-03-huong-dan-su-dung-react-hook-effect</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2019-06-22-su-dung-refs-trong-react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2019-06-17-huong-dan-toi-uu-hieu-nang-react-app</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -127,8 +128,8 @@
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-06-28-huong-dan-thay-component-will-receive-props</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-06-24-huong-dan-lam-viec-voi-console-trong-javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-06-21-huong-dan-mot-so-ung-dung-cua-middleware</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://luubinhan.github.io/blog/blog/2018-06-18-huong-dan-tim-hieu-middleware-va-redux</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-06-18-huong-dan-luan-ban-ve-cach-to-chuc-thu-muc-dat-ten</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luubinhan.github.io/blog/blog/2018-06-18-huong-dan-tim-hieu-middleware-va-redux</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-06-15-huong-dan-lam-viec-voi-css-module</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-06-08-huong-dan-kinh-nghiem-lam-viec-voi-du-an-lon</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-05-31-huong-dan-gioi-thieu-react-portal</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -155,8 +156,8 @@
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-19-huong-dan-react-patterns-can-ban</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-17-huong-dan-react-native-authentication-voi-amazone-cognito-phan-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-16-huong-dan-react-authentication-phan-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://luubinhan.github.io/blog/blog/2018-03-14-huong-dan-sync-addin-vscode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-14-huong-dan-react-authentication-voi-jwt-redux</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luubinhan.github.io/blog/blog/2018-03-14-huong-dan-sync-addin-vscode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-09-huong-dan-su-dung-bien-enviroment-nhu-the-nao</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-06-huong-dan-redux-van-hanh-nhu-the-nao-kem-vi-du</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luubinhan.github.io/blog/blog/2018-03-05-8-huong-dan-cach-render-component-trong-react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
