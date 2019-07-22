@@ -58,10 +58,12 @@ export default class HTML extends React.Component {
           <meta name="apple-mobile-web-app-title" content="luckyluu"/>
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <script>
-            (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-5409528808847700",
-              enable_page_level_ads: true
-            });
+            {`
+              (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-5409528808847700",
+                enable_page_level_ads: true
+              });
+            `}
           </script>
           {css}
         </head>
