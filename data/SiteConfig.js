@@ -4,8 +4,8 @@ module.exports = {
   siteTitle: "luckyluu", // Site title.
   siteTitleAlt: "Front-End Developer live in Ho Chi Minh City, a photography geek, and a music lover", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
-  siteUrl: "https://luubinhan.github.io", // Domain of your website without pathPrefix.
-  pathPrefix: "/blog", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
+  siteUrl: "https://http://vuilaptrinh.com", // Domain of your website without pathPrefix.
+  pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: "Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "445556375516928", // FB Application ID for using app insights
