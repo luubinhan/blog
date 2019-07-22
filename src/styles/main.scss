@@ -1256,6 +1256,7 @@ $masterWidth: 870px;
     width: 50px;
     padding-bottom: 20px;
     color: #fff;
+    font-family: "avo_bold", $san-serif;
     font-size: 1.4rem;
   }
   &:after {
@@ -1586,6 +1587,8 @@ $masterWidth: 870px;
       .go-home {
         width: 34px;
         padding-bottom: 0;
+        color: #fff;
+        font-family: "avo_bold", $san-serif;
         img {
           display: block;
         }
