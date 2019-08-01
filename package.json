@@ -36,7 +36,7 @@
     "lodash-webpack-plugin": "^0.11.5",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-facebook": "^6.0.14",
+    "react-facebook": "^6.0.15",
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
     "react-instantsearch-dom": "^5.4.0",

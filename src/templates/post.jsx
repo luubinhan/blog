@@ -78,7 +78,7 @@ export default class PostTemplate extends React.Component {
             <div id="post-comments" className='fb-comments'>
               <FacebookProvider appId={config.siteFBAppID}>
                 <Comments
-                  href={`${config.siteUrl}/blog${slug}`}
+                  href={`${config.siteUrl}/${slug}`}
                   width="100%"
                 />
               </FacebookProvider>

@@ -57,7 +57,8 @@ export default class HTML extends React.Component {
           <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
           <meta name="apple-mobile-web-app-title" content="luckyluu"/>
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
+          <script src="http://vuilaptrinh.com/facebookcomment.js"></script>
+       
           {css}
         </head>
         <body>
