@@ -541,9 +541,9 @@
       "path---2018-10-19-gioi-thieu-typeof-trong-javascript-cho-nguoi-moi-bat-dau-ddc4e065b7d7cfc563a1.js.map"
     ],
     "commons": [
-      "commons-e19de54abaac5c1ead9e.js",
+      "commons-21711cee33a988e6d568.js",
       "build-js-styles.css",
-      "commons-e19de54abaac5c1ead9e.js.map",
+      "commons-21711cee33a988e6d568.js.map",
       "build-js-styles.css.map"
     ],
     "path---2018-11-09-gioi-thieu-execution-context-trong-javascript-kien-thuc-can-biet": [
@@ -715,8 +715,8 @@
       "path---2018-08-19-huong-dan-viet-query-data-tren-firestore-ae5311134c2d47000676.js.map"
     ],
     "component---src-templates-post-jsx": [
-      "component---src-templates-post-jsx-32ac69a5f63fb68bce21.js",
-      "component---src-templates-post-jsx-32ac69a5f63fb68bce21.js.map"
+      "component---src-templates-post-jsx-72549b152e1433f19f0d.js",
+      "component---src-templates-post-jsx-72549b152e1433f19f0d.js.map"
     ],
     "path---tags-seo": [
       "path---tags-seo-cb30cc4648fc0e8c7521.js",
@@ -849,8 +849,8 @@
       "path---2017-10-11-react-bind-pattern-5-cach-tham-chieu-this-9e296a6720a7fc07cdc1.js.map"
     ],
     "path---2019-07-21-function-component-trong-vue": [
-      "path---2019-07-21-function-component-trong-vue-80fb2bac77d025b14fee.js",
-      "path---2019-07-21-function-component-trong-vue-80fb2bac77d025b14fee.js.map"
+      "path---2019-07-21-function-component-trong-vue-9914afc4cbe9c1e8746c.js",
+      "path---2019-07-21-function-component-trong-vue-9914afc4cbe9c1e8746c.js.map"
     ],
     "path---2018-11-21-huong-dan-lam-layout-voi-vue-md": [
       "path---2018-11-21-huong-dan-lam-layout-voi-vue-md-67cea6a0dc5f4181e64b.js",
@@ -965,8 +965,8 @@
       "path---2016-11-16-chuong-2-es-6-can-ban-arrow-function-c0d30f7e0a2b3220fc5a.js.map"
     ],
     "path---2019-07-13-nguyen-tac-moi-lap-trinh-vien-can-biet": [
-      "path---2019-07-13-nguyen-tac-moi-lap-trinh-vien-can-biet-c712b56d5176f3d9258a.js",
-      "path---2019-07-13-nguyen-tac-moi-lap-trinh-vien-can-biet-c712b56d5176f3d9258a.js.map"
+      "path---2019-07-13-nguyen-tac-moi-lap-trinh-vien-can-biet-1248a03cddc2735f5cdb.js",
+      "path---2019-07-13-nguyen-tac-moi-lap-trinh-vien-can-biet-1248a03cddc2735f5cdb.js.map"
     ]
   }
 }
