@@ -1,6 +1,6 @@
 ---
 slug: "/2019-07-26-nguyen-ly-chung-cua-lap-trinh-huong-function"
-date: "22019-07-26"
+date: "2019-07-26"
 title: "Nguyên lý chung của lập trình function"
 desc: "Khái niệm ngàn người biết, bạn cũng phải biết"
 cover: ""
