@@ -16,17 +16,17 @@ Nếu lập trình chúng ta có các nguyên tắc chung khi viết code như *
 
 Đây là danh sách của trang [GOV.UK](https://www.gov.uk/guidance/government-design-principles)
 
-Bắt đầu với thứ user cần
-Làm ít hơn
-Thiết kế với dữ liệu
-Làm mọi thứ thật dễ dàng
-Lặp. Rồi lặp lại lần nữa
-Dành cho tất cả mọi người
-Hiểu ngữ cảnh hiện tại
-Làm dịch vụ digital, không phải làm website
-Nhất quán, nhưng không *hòa tan* (phải có chất riêng với thằng khác)
-Cởi mở, mọi thứ tốt hơn
-Bao trừu tượng luôn các bạn, trang Gov.uk này cũng có câu tổng quát rất hay
+- Bắt đầu với thứ user cần
+- Làm ít hơn
+- Thiết kế với dữ liệu
+- Làm mọi thứ thật dễ dàng
+- Lặp. Rồi lặp lại lần nữa
+- Dành cho tất cả mọi người
+- Hiểu ngữ cảnh hiện tại
+- Làm dịch vụ digital, không phải làm website
+- Nhất quán, nhưng không *hòa tan* (phải có chất riêng với thằng khác)
+- Cởi mở, mọi thứ tốt hơn
+- Bao trừu tượng luôn các bạn, trang Gov.uk này cũng có câu tổng quát rất hay
 
 > Thiết kế tốt là thiết kế có thể sử dụng. Phục vụ cho nhiều đối tượng sử dụng, dễ đọc nhất nhất có thể. Nếu phải từ bỏ *đẹp tinh tế - thì cứ bỏ luôn*. Chúng ta tạo sản phẩm cho nhu cầu sử dụng, không phải cho người *hâm mộ*. Chúng ta thiết kế để cả nước sử dụng, không phải những người đã từng sử dụng web. Những người cần dịch vụ của chúng ta nhất là những người đang cảm thấy khó sử dụng dịch vụ nhất. Luôn nhớ về họ ngay từ đầu.
 
