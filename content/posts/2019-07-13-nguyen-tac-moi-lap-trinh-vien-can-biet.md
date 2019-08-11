@@ -34,7 +34,7 @@ Nếu bạn là người theo chủ nghĩa viết code sao cho *chạy được*
 
 Nguyên tắc “Keep it simple, stupid” được áp dụng cho rất nhiều thứ trong cuộc sống, rất cần thiết cho các dự án từ vừa tới lớn.
 
-Từ lúc bắt đầu code những dòng đầu tiên, chúng ta phải khắc cốt ghi tâm câu “phải dữ mọi thứ đơn giản nhất có thể”, code càng phức tạp càng khó thiết kế và viết, càng có khả năng phát sinh bug, càng khó chỉnh sửa sau này. Cụ Antoine de Saint-Exupery có phán câu này:
+Từ lúc bắt đầu code những dòng đầu tiên, chúng ta phải khắc cốt ghi tâm câu “phải giữ mọi thứ đơn giản nhất có thể”, code càng phức tạp càng khó thiết kế và viết, càng có khả năng phát sinh bug, càng khó chỉnh sửa sau này. Cụ Antoine de Saint-Exupery có phán câu này:
 > Hoàn hảo không phải là khi không còn gì để thêm vào nữa, mà là không còn gì có thể bỏ bớt
 
 ## DRY
@@ -94,7 +94,7 @@ Ví dụ dễ thấy, một số thanh niên mình từng làm việc chung rấ
 
 ## Tổng kết
 
-9 người thì 10 ý, nếu đi hỏi 9 người với câu hỏi “Thế nào được gọi là một lập trình viên tốt”, thì chắc nhận được không ích sự khác nhau về quan điểm, mà đôi khi còn trái chiều với nhau nữa.
+9 người thì 10 ý, nếu đi hỏi 9 người với câu hỏi “Thế nào được gọi là một lập trình viên tốt”, thì chắc nhận được không ít sự khác nhau về quan điểm, mà đôi khi còn trái chiều với nhau nữa.
 
 Bạn thấy ý kiến này thế nào, một lập trình viên giỏi là người biết mình đang phục vụ người dùng cuối, người có thể làm việc hiệu quả với đồng đội, người có thể hoàn thành công việc được giao đúng yêu cầu, đúng tiến độ.
 
