@@ -94,11 +94,11 @@ Sản phẩm của chúng ta là công cụ hữu dụng không phải công c�
 
 ### Nhanh
 
-Chung ta tôn trọng thời gian của user hơn thời gian của chúng ta. Trải nghiệm mọi thứ nhanh, hiệu quả, không tốn công sức.
+Không chỉ tôn trọng thời giản của bản thân, chúng ta phải biết tôn trọng thời gian người khác. Chạy phải nhanh, hiệu quả, không tốn thời gian.
 
 ### Minh bạch
 
-User tin tưởng trao cho chúng nhận dạng, ảnh, suy nghĩ, hội thoại của họ. Chúng ta phải trung thực và rõ ràng về mọi thứ, tại sao và những gì đang diễn ra.
+User tin tưởng trao cho chúng nhận dạng, ảnh, suy nghĩ, hội thoại của họ. Chúng ta phải trung thực và rõ ràng về mọi thứ, tại sao và những gì đang diễn ra. (Sau vụ lùm xùm làm mất thông tin user mình hoan mang Hồ Quỳnh Hương với nguyên tắc này quá)
 
 ## Apple (Cái này dành cho các bạn nhà iPhone)
 
@@ -155,6 +155,8 @@ Chúng ta không đơn thuần tạo ra sản phẩm, chúng ta đang xây dựn
 ### Tạo cảm giác hào hứng
 
 Tạo ra những trải nghiệm cho user mà họ biết là người đằng sau thiết kế đó là một con người thực.
+
+Cảm nhận cái này dễ thấy nhất là lúc chúng ta cài window, giờ chúng ta cảm giác như đang có người nói chuyện với mình í, không phải các thông báo đơn thuần, như có một AI đằng sau
 
 
 <a target="_blank" rel="noopener noreferrer" href="https://medium.muz.li/design-principles-behind-great-products-6ef13cd74ccf">Design Principles Behind Great Products</a>
