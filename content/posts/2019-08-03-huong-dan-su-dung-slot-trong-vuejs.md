@@ -140,7 +140,7 @@ export default {
 ```
 
 Chúng ta có thể bind nhiều giá trị.
-Cách viết tắt cho v-slot là **`#`**, nền thay vì viết `v-slot:header="data"` có thể viết `#header="data"` 
+Cách viết tắt cho v-slot là **`#`**, nên thay vì viết `v-slot:header="data"` có thể viết `#header="data"` 
 
 ## Ví dụ để sử dụng làm modal
 
