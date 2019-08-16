@@ -1,7 +1,7 @@
 ---
 slug: "/2018-10-16-huong-dan-progressive-web-app-cho-nguoi-moi-bat-dau"
 date: "2018-10-16"
-title: "Dựng Progressive Web App đầu tiên của bạn"
+title: "Làm Progressive Web App cho người mới"
 desc: "Cùng mình đú trend, dựng một Progressive Web App theo chỉ dẫn của Google"
 cover: ""
 type: "post"
@@ -33,7 +33,7 @@ tags: ["pwa", "mobile-web-specialist"]
 
 # 1. Giới thiệu
 
-Trong lúc dựng một Progressive Web App, chúng ta cần nhớ những điều sau
+Trong lúc lầm Progressive Web App, chúng ta cần nhớ những điều sau
 
 - Không quan trọng user đang dùng trình duyệt gì
 - Hỗ trợ tốt trên nhiều loại thiết bị desktop, mobile, tablet
