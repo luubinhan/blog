@@ -42,7 +42,7 @@ export default class HTML extends React.Component {
           <link
             rel="author"
             type="text/plain"
-            href="https://luubinhan.github.io/blog/humans.txt"
+            href="http://vuilaptrinh.com/humans.txt"
           />
           <link rel="apple-touch-icon" href="https://luubinhan.github.io/blog/images/luckyluu_manifest_192.png" />
 
@@ -53,9 +53,9 @@ export default class HTML extends React.Component {
           <link rel="icon" sizes="180x180" href={favi128} type="image/png" />
           <meta name="mobile-web-app-capable" content="yes"/>
           <meta name="apple-mobile-web-app-capable" content="yes"/>
-          <meta name="application-name" content="luckyluu blog"/>
+          <meta name="application-name" content="vuilaptrinh.com"/>
           <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-          <meta name="apple-mobile-web-app-title" content="luckyluu"/>
+          <meta name="apple-mobile-web-app-title" content="vuilaptrinh"/>
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <script src="http://vuilaptrinh.com/facebookcomment.js"></script>
        

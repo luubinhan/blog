@@ -1,12 +1,12 @@
 module.exports = {
   blogPostDir: "posts", // The name of directory that contains your posts.
   lessonsDir: "lessons", // The name of the directory that contains lessons or docs.
-  siteTitle: "luckyluu", // Site title.
-  siteTitleAlt: "Front-End Developer live in Ho Chi Minh City, a photography geek, and a music lover", // Alternative site title for SEO.
+  siteTitle: "vuilaptrinh", // Site title.
+  siteTitleAlt: "Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
   siteUrl: "http://vuilaptrinh.com", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
-  siteDescription: "Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Front End", // Website description used for RSS feeds/meta description tag.
+  siteDescription: "Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "445556375516928", // FB Application ID for using app insights
   googleAnalyticsID: "UA-29685098-2", // GA tracking ID.
@@ -16,7 +16,7 @@ module.exports = {
   userTwitter: "luubinhan", // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: "Hồ Chí Minh, Việt Nam", // User location to display in the author segment.
   userAvatar: "https://media.licdn.com/dms/image/C4E03AQFQg5eGuqMWkA/profile-displayphoto-shrink_200_200/0?e=1543449600&v=beta&t=KSe235f95l89g6FW6ICJ91sd2uBfmBXKLosm3pfcwzo", // User avatar to display in the author segment.
-  userDescription: "Front-End Developer live in Ho Chi Minh City, a photography geek, and a music lover", // User description to display in the author segment.
+  userDescription: "Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover", // User description to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   userLinks: [
     {
