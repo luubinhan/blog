@@ -83,7 +83,7 @@ Khách hàng luôn thích xem, sờ, ngắm thật kỹ sản phẩm muốn mua,
 
 ## Nén ảnh
 
-Kỹ thuật nén ảnh <a href="https://www.html5rocks.com/en/mobile/high-dpi/#toc-tech-overview" rel="noopener noreferrer">compressive image technique</a>này, với mức độ nén phù hợp, định dạng của ảnh gốc, chất lượng ảnh sau nén không thay đổi, nhưng kích thước giảm khá nhiều.
+<a href="https://www.html5rocks.com/en/mobile/high-dpi/#toc-tech-overview" rel="noopener noreferrer">Kỹ thuật nén ảnh</a> này, với mức độ nén phù hợp, định dạng của ảnh gốc, chất lượng ảnh sau nén không thay đổi, nhưng kích thước giảm khá nhiều.
 
 ## Dùng javascript
 
@@ -117,7 +117,7 @@ string convert được cũng có thể xài với thuộc tính background tron
 }
 ```
 
-Việc sử dụng background trong css có thể làm giảm số lượng HTTP request, bên cạnh đó là một nhược điểm
+Việc sử dụng background trong css có thể làm giảm số lượng HTTP request, bên cạnh đó là một số nhược điểm
 
 - Trên mobile, Data URI hiển thị chậm hơn `<img src="http://" />`
 - Dảm số lượng request, nhưng tăng kích thước của request css
@@ -144,8 +144,8 @@ Trong CSS có một thuộc tính để load hình như thẻ `<picture />` là 
 Với độ phân giải 2x, 1x
 
 ```css
-@media (min-resolution: 2dppx), /* Standard syntax */ 
-(-webkit-min-device-pixel-ratio: 2)  /* Safari & Android Browser */ 
+@media (min-resolution: 2dppx), 
+(-webkit-min-device-pixel-ratio: 2)  /* Dành riêng cho Safari và Android */ 
 {
   .sample {
     background-size: contain;
@@ -154,7 +154,7 @@ Với độ phân giải 2x, 1x
 }
 ```
 
-Các phương pháp như lựa chọn hình JPG, GIF, PNG, các phương pháp giảm kích thước file (mình hay dùng FileOptimizer), image sprite, lazy load khá phổ biến nên mình không đề cập ở đây.
+Các phương pháp như lựa chọn hình JPG, GIF, PNG, các phương pháp giảm kích thước file (mình hay dùng [FileOptimizer](https://nikkhokkho.sourceforge.io/static.php?page=FileOptimizer)), [image sprite](https://www.w3schools.com/css/css_image_sprites.asp), [lazy load](https://css-tricks.com/native-lazy-loading/) khá phổ biến nên mình không đề cập ở đây.
 
 <ul>
   <li>
