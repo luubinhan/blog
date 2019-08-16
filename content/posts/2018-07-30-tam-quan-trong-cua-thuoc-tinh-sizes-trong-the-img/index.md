@@ -12,7 +12,7 @@ tags: ["css", "mobile-web-specialist"]
 
 ## `srcset`
 
-Công dụng của thuộc tính `srcset` trên thẻ `<img/>` là cho phép chúng ta cung cấp các file với kích thưóc khác so với file được cung cấp trên `src`, chúng ta có thể sử dụng `srcset` vô tư vì căn bản nếu trình duyệt ko hổ trợ `srcset` (IE cũ), nó đơn giản chỉ load file trên thuộc tính `src`.
+Công dụng của thuộc tính `srcset` trên thẻ `<img/>` là cho phép chúng ta cung cấp các file với kích thước khác file được cung cấp trên `src`, chúng ta có thể sử dụng `srcset` vô tư, nếu trình duyệt ko hổ trợ `srcset` (IE cũ), nó đơn giản chỉ load file trên thuộc tính `src`.
 
 Trên thuộc tính `srcset` chúng ta báo kích thước của hình này luôn, `medium.jpg 1000w` ( có nghĩa hình này width=1000px ) đa phần dùng width có thể giải quyết tất cả các trường hợp, trình duyệt không cần download vẫn biết được độ rộng của file, trên cơ sở đó, trình duyệt tính toán với viewport hiện tại và download hình thích hợp
 
@@ -24,7 +24,9 @@ Trên thuộc tính `srcset` chúng ta báo kích thước của hình này luô
 >
 ```
 
-Thử xem trình duyệt đã tính toán thế nào. Thí dụ kích thước thiết bị là *320px*, 1x (là gía trị density của màn hình, xem ở đây https://pixensity.com/list/phone/, hoặc check bằng javascript `window.devicePixelRatio`).
+Thử xem trình duyệt đã tính toán thế nào. 
+
+Thí dụ kích thước thiết bị là *320px*, 1x (là giá trị *density* của màn hình, xem ở đây https://pixensity.com/list/phone/, hoặc check bằng javascript `window.devicePixelRatio`).
 
 Chúng ta có 3 hình
 
@@ -40,12 +42,16 @@ Chúng ta có 3 hình
 
 *Trình duyệt* - màn hình của mày là 1x, 1.5625 là tỉ lệ gần nhất với 1, tuy hơi cao nhưng tốt hơn mấy thằng kia. Tao load thằng `small.jpg`
 
-Nếu là màn hình 2x (nó sẽ lấy gía trị của `window.devicePixelRatio`), trình duyệt sẽ chọn 3.125 vì nó gần với giá trị 2 nhất.
+Nếu là màn hình 2x (nó sẽ lấy gía trị của `window.devicePixelRatio`), trình duyệt sẽ chọn 3.125 vì nó gần với 2 nhất.
 
-Bên cạnh gía trị w, tương ứng với kích thước của hình, chúng ta cũng có thể dùng đơn vị `x` tương ứng cho **độ** density của màn hình
+Bên cạnh đơn vị `w`, tương ứng với kích thước của hình, chúng ta cũng có thể dùng đơn vị `x` tương ứng cho **độ** *density* của màn hình
 
 ```html
-<img src="image_2x.jpg" srcset="image_2x.jpg 2x, image_1x.jpg 1x" alt="luckyluu blog | Tầm quan trọng của thuộc tính sizes, srcset trong thẻ img">
+<img 
+  src="image_2x.jpg" 
+  srcset="image_2x.jpg 2x, image_1x.jpg 1x" 
+  alt="luckyluu blog | Tầm quan trọng của thuộc tính sizes, srcset trong thẻ img"
+/>
 ```
 
 ## `sizes`
@@ -56,7 +62,7 @@ Bên cạnh `srcset`, một thuộc tính rất hay ho khác là `sizes`, nó c�
 
 ![Tầm quan trọng của thuộc tính sizes trong thẻ img](https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_1000,f_auto,q_auto/v1531489586/640-version_txwye1.png)
 
-Không phải lúc nào hình sẽ hiển thị hết 100vw của màn hình, ví dụ bạn có mà hình rộng 1000px, hình được layout để hiển thị một nữa màn hình thôi, tức là bạn chỉ cần hình có kích thước 1000/2 = 500px là đủ xài
+Không phải lúc nào hình sẽ hiển thị hết 100vw của màn hình, ví dụ bạn có mà hình rộng 1000px, hình không hiển thị hết chiều ngang của màn hình, nhỏ hơn một nữa đi, tức là bạn chỉ cần hình có kích thước `1000/2 = 500px` là đủ xài
 
 ```css
 img {
@@ -65,7 +71,7 @@ img {
 }
 ```
 
-Trước trình duyệt load được css nó sẽ ko biết được là hình chỉ có hiện thị tối đa 500px, chúng ta báo với nó, "Ê, hình này của tao chỉ hiển thị tối đa là 500px nhé"
+Trước khi trình duyệt load được css, nó sẽ **ko biết được** là hình chỉ có hiện thị tối đa 500px, chúng ta báo với nó, "Ê, hình này của tao chỉ hiển thị tối đa là 500px nhé" bằng HTML
 
 ```html
 <img
@@ -76,7 +82,7 @@ Trước trình duyệt load được css nó sẽ ko biết được là hình 
 >
 ```
 
-Nhưng trên điện thoại, chúng ta muốn layout lại, hình này sẽ full hết viewport,
+Nhưng trên điện thoại, chúng ta muốn khác, hình này sẽ full hết 100% viewport,
 
 ```css
 @media (max-width: 600px) {
@@ -88,7 +94,7 @@ Nhưng trên điện thoại, chúng ta muốn layout lại, hình này sẽ ful
 ```
 
 
-Để báo với trình duyệt có một sự thay đổi nhỏ trên nếu màn hình < 600px, chúng ta khai báo thuộc tính `sizes` như sau
+Để báo với trình duyệt có một sự thay đổi *nhỏ** trên nếu màn hình < 600px, chúng ta khai báo thuộc tính `sizes` như sau
 
 ```html
 <img 
@@ -99,7 +105,7 @@ Nhưng trên điện thoại, chúng ta muốn layout lại, hình này sẽ ful
 />
 ```
 
-Đoạn trên nếu dịch ra thì sẽ là: ê trình duyệt, hình này sẽ render kích thước 100vw khi viewport < 600px, còn lại cứ dùng kích thước 500px
+Đoạn trên nếu dịch ra: ê trình duyệt, hình này sẽ render kích thước 100vw khi viewport < 600px, còn lại cứ dùng kích thước 500px
 
 ![Tầm quan trọng của thuộc tính sizes trong thẻ img](https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_1000,f_auto,q_auto/v1531489882/320-version_afwzxa.png)
 
