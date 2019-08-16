@@ -164,7 +164,7 @@ export default class MainLayout extends React.Component {
                   </a>
                 </div>
                 <div className="credit">
-                  {config.copyright}
+                  Copyright © {new Date.getFullYear()}. luckyluu
                 </div>
               </section>
             </footer>
