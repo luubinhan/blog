@@ -256,7 +256,7 @@ export default ({ negative = false, name, surname }) => (
 - `i18n-js` để làm đa ngôn ngữ
 - `lodash`, một số utility function sử lý chuổi, object này nọ
 - `ramda` thay cho `lodash` nếu bạn khoái pure function, và `recompose` nếu đã thích `ramda`
-- `dinero.js` để hiện thị và sử lý tiền
+- `dinero.js` để hiển thị và sử lý tiền
 - `moment` để làm việc với date time
 - `react-helmet` để thay đổi tag `<head>` cho từng component
 - `react-table` và `react-virtualized` cho hiển thị dữ liệu kiểu table

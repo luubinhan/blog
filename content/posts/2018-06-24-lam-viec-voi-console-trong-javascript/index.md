@@ -24,7 +24,7 @@ tags: ["javascript"]
 
 # console.log, console.error, console.warn và console.info
 
-Đây là những phương thức được sử dụng nhiều nhất. Có thể truyền vào 1 hoặc nhiều parameter, mỗi parameter trường vào sẽ được hiển thị về kết quả ở dạng string và cách nhau bằng khoảng trắng, trong trường hợp là object hay array thì nó hiện thị dạng cây
+Đây là những phương thức được sử dụng nhiều nhất. Có thể truyền vào 1 hoặc nhiều parameter, mỗi parameter trường vào sẽ được hiển thị về kết quả ở dạng string và cách nhau bằng khoảng trắng, trong trường hợp là object hay array thì nó hiển thị dạng cây
 
 ![](https://cdn-images-1.medium.com/max/1600/1*1Zh9s1-XCx27o6FAKGb5Hg.png)
 

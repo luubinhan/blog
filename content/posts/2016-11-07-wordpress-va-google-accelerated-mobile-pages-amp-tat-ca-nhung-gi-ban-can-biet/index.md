@@ -61,7 +61,7 @@ Nói chung cài xong, active lên là chạy không cần setup gì hết. Sao k
 
 - Plugin này chỉ chạy trên Post không chạy cho page
 - Không hỗ trợ ads và thiết đặt một số thuộc tính riêng của trang AMP
-- Không thay đổi cách hiện thị của trang AMP
+- Không thay đổi cách hiển thị của trang AMP
 
 Một số plugin khác có thể sử dụng
 

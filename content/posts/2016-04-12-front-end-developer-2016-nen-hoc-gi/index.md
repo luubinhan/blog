@@ -19,7 +19,7 @@ Mình chỉ là frontend developer, nhưng bạn đã tìm đúng người rồi
 
 <!--more-->
 
-*Ngon, giờ mình cần một trang hiển thị những hoạt động gần đây của user, mình chỉ cần dữ liệu từ REST sau đó hiện thị lên table, trên đó mình có thể cho phép user lọc lại theo điều kiện họ muốn, chắc là xài jQuery để hiện thị dữ liệu hả?*
+*Ngon, giờ mình cần một trang hiển thị những hoạt động gần đây của user, mình chỉ cần dữ liệu từ REST sau đó hiển thị lên table, trên đó mình có thể cho phép user lọc lại theo điều kiện họ muốn, chắc là xài jQuery để hiển thị dữ liệu hả?*
 
 Trời, thời nào rồi ông, giờ còn ai viết jQuery nữa. Học React đi, năm 2016 rồi còn làm cái đó bằng jQuery.
 
@@ -141,7 +141,7 @@ Thư viện của David Chamber viết. Nếu muốn học kiểu viết functio
 
 *Dừng ở đây được rồi, cái gì cũng tốt, nhưng mà quá phức tạp và chả cần thiết, lấy dữ liệu hiển thị lên mà nhằn vậy hả, có thằng khùng nào học hết cái nùi đó chỉ để hiển thị cái table lên không, rồi quay lại với React đi, giờ làm sao*
 
-Thật ra React không có giữ việc fetch dữ liệu, nó chỉ hiện thị thôi
+Thật ra React không có giữ việc fetch dữ liệu, nó chỉ hiển thị thôi
 
 *Đậu xanh. vậy chở sao get dữ liệu*
 

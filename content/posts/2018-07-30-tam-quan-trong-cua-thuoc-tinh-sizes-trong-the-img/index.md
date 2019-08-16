@@ -71,7 +71,7 @@ img {
 }
 ```
 
-Trước khi trình duyệt load được css, nó sẽ **ko biết được** là hình chỉ có hiện thị tối đa 500px, chúng ta báo với nó, "Ê, hình này của tao chỉ hiển thị tối đa là 500px nhé" bằng HTML
+Trước khi trình duyệt load được css, nó sẽ **ko biết được** là hình chỉ có hiển thị tối đa 500px, chúng ta báo với nó, "Ê, hình này của tao chỉ hiển thị tối đa là 500px nhé" bằng HTML
 
 ```html
 <img
@@ -105,7 +105,7 @@ Nhưng trên điện thoại, chúng ta muốn khác, hình này sẽ full hết
 />
 ```
 
-Đoạn trên nếu dịch ra: ê trình duyệt, hình này sẽ render kích thước 100vw khi viewport < 600px, còn lại cứ dùng kích thước 500px
+Đoạn trên nếu dịch rad: ê trình duyệt, hình này sẽ render kích thước 100vw khi viewport < 600px, còn lại cứ dùng kích thước 500px
 
 ![Tầm quan trọng của thuộc tính sizes trong thẻ img](https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_1000,f_auto,q_auto/v1531489882/320-version_afwzxa.png)
 

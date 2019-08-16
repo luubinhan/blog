@@ -85,7 +85,7 @@ Nguồn tham khảo
 # Progressive Web Apps
 
 - Tạo web app có thể sử dụng offline, cache các element bằng cách đưa request về service worker
-- Lưu những giá trị hiện thị mặc định như màu sắc, icon (nút thêm vào màn hình chính trên điện thoại) và splash screen trong web application manifest ( hoặc dùng meta tag )
+- Lưu những giá trị hiển thị mặc định như màu sắc, icon (nút thêm vào màn hình chính trên điện thoại) và splash screen trong web application manifest ( hoặc dùng meta tag )
 - Tách các tính năng quan trọng và UI để có thể load độc lập nội dung
 
 Nguồn tham khảo ( mình sẽ viết từ từ )

@@ -118,29 +118,41 @@ Ví dụ một số regular expression hay xài
 Số điện thoại Việt Nam
 
 ```html
-<input type="text" pattern="(\+84|0)\d{9,10}" />
+<input
+  type="text"
+  pattern="(\+84|0)\d{9,10}" 
+/>
 ```
 
 Chỉ gồm số và chữ
 
 ```html
-<input type="text" pattern="[a-zA-Z0-9]+" >
+<input
+  type="text"
+  pattern="[a-zA-Z0-9]+" 
+>
 ```
 
 Giá trị Hex Color như `#3b5998` hoặc `#000`.
 
 ```html
-<input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" >
+<input
+  type="text"
+  pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$"
+>
 ```
 
 # Gợi ý
 
-Sử dụng attribute `title` để hiện thị một tooltip cho user biết chúng ta muốn user nhập vào giá trị gì
+Sử dụng `title` để hiển thị một tooltip cho user biết chúng ta muốn user nhập vào giá trị gì
 
 ```html
-<input type="text" name="phone"
-       pattern="(\+84|0)\d{9,10}"
-       title="Nhập số điện thoại từ 10 đến 11 số" />
+<input
+  type="text"
+  name="phone"
+  pattern="(\+84|0)\d{9,10}"
+  title="Nhập số điện thoại từ 10 đến 11 số" 
+/>
 ```
 
 ![Validate form với HTML5](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/06/1401959770image-2.png)
