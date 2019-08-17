@@ -26,7 +26,8 @@ tags: ["javascript", "mobile-web-specialist"]
 <!-- /TOC -->
 
 
-> Căn bản nhất thì có thể xem `Map` là con đẻ của `Object`, nó kế thừa và bổ sung một số thứ ko có trong Object, đồng thời cũng có cắt bỏ một số thứ.
+> `Map` là con đẻ của `Object`, nó kế thừa, cắt bỏ, bổ sung một số thứ trong Object
+
 
 ```js
 var map = new Map([[1,2],[3,4]]);
@@ -36,11 +37,13 @@ var obj = new Object();
 console.log(obj instanceof Map); //false
 ```
 
-Map cũng là kiểu dữ liệu dạng collection, mỗi item trong Map được lưu theo cặp `key:value`, các giá trị `key` này cũng là duy nhất trong Map, không có trường hợp được lặp lại. Giống Object thôi, phần khác nhau sẽ được đề cặp ở dưới.
+Mỗi phần tử trong Map được lưu theo cặp `key: value`, các giá trị `key` này cũng là duy nhất trong Map, không có trường hợp được lặp lại, giống Object thôi, phần khác nhau sẽ được đề cặp ở dưới.
 
-Tại sao lại đặt là Map? Vì mang các đặc điểm rất giống với World Map, Street Map. Chữ `Map` được dùng trong các trường hợp cần tìm nhanh dữ liệu, vì các giá trị trên Map là duy nhất.
+Nói về cái tên Map một chút, vì mang các đặc điểm rất giống với World Map, Street Map. Chữ `Map` được dùng trong các trường hợp cần tìm nhanh dữ liệu, vì các giá trị trên Map là duy nhất.
 
 Ví dụ bản đồ TP.HCM thì tất cả các con đường là khác nhau (do hết tên anh hùng nên nhiều khi đặt trùng trên một số quận, vụ này không tính nhé), bản đồ thế giới thì mỗi nước là duy nhất trên bản đồ.
+
+Giờ nói các điểm khác nhau nè
 
 ## key
 
@@ -48,7 +51,7 @@ Nếu key của `Object` chỉ có thể là `String` hoặc `Integer`, thì key
 
 ## Thứ tự các element
 
-Trong Map thứ tự các element là cố định, ngược lại so với Object
+Trong Map **thứ tự các element là cố định**, ngược lại so với Object
 
 ```js
 var myObject = {
@@ -58,7 +61,8 @@ var myObject = {
     1: 4,
     5: 5
 };
-console.log(myObject) // Object {1: 4, 5: 5, z: 1, @: 2, b: 3}
+console.log(myObject) 
+// Object {1: 4, 5: 5, z: 1, @: 2, b: 3}
 
 for (item in myObject) {...
 // 1
@@ -68,7 +72,7 @@ for (item in myObject) {...
 // b
 ```
 
-Vì thứ tự các item trong object không được khai báo cụ thể, nên khi `for...in` qua các element trên object, mỗi trình duyệt có rule khác nhau để chạy
+Thứ tự các phần trong object không quan trọng, khi `for...in` qua các phần tử trên object, tùy theo enzine của trình duyệt, thứ tự này có thể khác nhau
 
 ```js
 var myObject = new Map();
@@ -77,47 +81,58 @@ myObject.set('@', 2);
 myObject.set('b', 3);
 for (var [key, value] of myObject) {
   console.log(key, value);
-...
+}
 // z 1
 // @ 2
 // b 3
 ```
 
-Thứ tự khi gọi qua `for...of` trên Map luôn đúng theo thứ tự đã add
+Thứ tự khi chạy `for...of` trên Map luôn đúng theo thứ tự đã thêm
 
 ## Khởi tạo 
 
 Với Oject ta có một số cách để khởi tạo
 
 ```js
-var obj = {}; //Empty object
+var obj = {};
+
 // bằng constructor
-var obj = new Object(); //Empty Object
-var obj = new Object; // cùng kết quả như trên
+var obj = new Object();
+var obj = new Object; 
+// cùng kết quả như trên
+
 // dùng Object.prototype.create
-var obj = Object.create(null); //Empty Object
+var obj = Object.create(null);
 ```
-> Hay dùng `Object.create` để tạo object mới kế thừa từ một object khác.
+
+> Dùng `Object.create` để tạo object mới **kế thừa* từ một object khác.
 
 ```js
 var Vehicle = {
-type: "General",
-display: function(){console.log(this.type);}
+    type: "General",
+    display: function() {
+        console.log(this.type);
+    }
 }
+
 // Car sẽ kế thừa các property của Vehicle
 var Car = Object.create(Vehicle);
-Car.type = "Car"; // overwrite lại giá trị type
+// overwrite lại giá trị type
+Car.type = "Car"; 
 Car.display(); // "Car"
 
-Vehicle.display();// vẫn là "General"
+Vehicle.display();
+// vẫn là "General"
 ```
-Cũng tương tự như Array, chúng ta không dùng constructor nhiều vì nó tốn xíu performance, lười gõ, dễ gây confuse
+
+Cũng tương tự như Array, chúng ta không dùng constructor nhiều vì nó tốn xíu performance, lười đánh máy dài
 
 Với `Map` chúng ta sẽ chỉ có duy nhất một cách để khởi tạo bằng constructor `new Map`
 
 ```js
-var map = new Map(); //Empty Map
-var map = new Map([[1,2],[2,3]]); // map = {1=>2, 2=>3}
+var map = new Map();
+var map = new Map( [[1,2], [2,3]] ); 
+// map = {1=>2, 2=>3}
 ```
 
 ## Lấy giá trị
@@ -140,6 +155,7 @@ Kiểm tra element có tồn tại trong Map dễ hơn chút so với Object
 ```js
 // Map
 map.has(keyName);
+
 // object
 var isExist = obj.keyName === undefined
 // hoặc
@@ -243,9 +259,9 @@ console.log(`key: ${key}, value: ${obj[key]}`);
 
 ## Khi nào dùng `Map`, khi nào dùng `Object`
 
-Mặc dù nãy giờ đọc thì bạn sẽ thấy `Map` quá ư thần thánh, vậy tại sao ta không dẹp mẹ luôn Object?
+Mặc dù nãy giờ đọc thì bạn sẽ thấy `Map` quá ư thần thánh, vậy tại sao ta không dẹp luôn Object?
 
-- Trường hợp mà các giá trị key của chúng ta nó chỉ là integer, string, truy xuất một element trong object bằng key là **nhanh nhất**, trong khi `Map.prototype.get` là một function thì ai cũng biết là nó phải tốn chút tính toán
+- Trường hợp mà các giá trị key của chúng ta nó chỉ là `integer`, `string`, truy xuất một element trong object bằng key là **nhanh nhất**, trong khi `Map.prototype.get` là một function thì nó phải tốn chút tính toán
 
 - Hoặc trường hợp chúng ta có các element phụ thuộc lẫn nhau như bên dưới
 
