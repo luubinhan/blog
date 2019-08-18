@@ -10,6 +10,15 @@ chapter: 0
 tags: ["vuejs"]
 ---
 
+<!-- TOC -->
+
+- [Slot là gì](#slot-l%c3%a0-g%c3%ac)
+- [Scope](#scope)
+- [Ví dụ để sử dụng làm modal](#v%c3%ad-d%e1%bb%a5-%c4%91%e1%bb%83-s%e1%bb%ad-d%e1%bb%a5ng-l%c3%a0m-modal)
+- [Component không render gì cả](#component-kh%c3%b4ng-render-g%c3%ac-c%e1%ba%a3)
+
+<!-- /TOC -->
+
 ## Slot là gì
 
 Trong React không có vụ này, vì bạn chỉ có một lựa chọn là `this.props.children` để định vị trí component con nằm trong component cha. Với Vue, bạn không chỉ có một mà rất nhiều chỗ để đặt component con, định vị trí nó bằng các `slot`

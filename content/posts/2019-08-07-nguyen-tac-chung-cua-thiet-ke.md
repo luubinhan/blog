@@ -10,6 +10,43 @@ chapter: 0
 tags: ["ux-ui"]
 ---
 
+<!-- TOC -->
+
+- [Nguyên tắc thiết kế của GOV.UK](#nguy%c3%aan-t%e1%ba%afc-thi%e1%ba%bft-k%e1%ba%bf-c%e1%bb%a7a-govuk)
+- [Airbnb](#airbnb)
+  - [Đồng nhất](#%c4%90%e1%bb%93ng-nh%e1%ba%a5t)
+  - [Triệu người sử dụng](#tri%e1%bb%87u-ng%c6%b0%e1%bb%9di-s%e1%bb%ad-d%e1%bb%a5ng)
+  - [Biểu tượng](#bi%e1%bb%83u-t%c6%b0%e1%bb%a3ng)
+  - [Ngôn ngữ tự nhiên, cởi mở](#ng%c3%b4n-ng%e1%bb%af-t%e1%bb%b1-nhi%c3%aan-c%e1%bb%9fi-m%e1%bb%9f)
+  - [Là người bạn thân thiết](#l%c3%a0-ng%c6%b0%e1%bb%9di-b%e1%ba%a1n-th%c3%a2n-thi%e1%ba%bft)
+  - [Thiết kế để có ấn tượng đầu tiên tốt đẹp](#thi%e1%ba%bft-k%e1%ba%bf-%c4%91%e1%bb%83-c%c3%b3-%e1%ba%a5n-t%c6%b0%e1%bb%a3ng-%c4%91%e1%ba%a7u-ti%c3%aan-t%e1%bb%91t-%c4%91%e1%ba%b9p)
+  - [Tin tưởng cần thời gian](#tin-t%c6%b0%e1%bb%9fng-c%e1%ba%a7n-th%e1%bb%9di-gian)
+- [Facebook](#facebook)
+  - [Triệu người sử dụng](#tri%e1%bb%87u-ng%c6%b0%e1%bb%9di-s%e1%bb%ad-d%e1%bb%a5ng-1)
+  - [Cho con người](#cho-con-ng%c6%b0%e1%bb%9di)
+  - [Sạch sẽ](#s%e1%ba%a1ch-s%e1%ba%bd)
+  - [Đồng nhất](#%c4%90%e1%bb%93ng-nh%e1%ba%a5t-1)
+  - [Hữu dụng](#h%e1%bb%afu-d%e1%bb%a5ng)
+  - [Nhanh](#nhanh)
+  - [Minh bạch](#minh-b%e1%ba%a1ch)
+- [Apple (Cái này dành cho các bạn nhà iPhone)](#apple-c%c3%a1i-n%c3%a0y-d%c3%a0nh-cho-c%c3%a1c-b%e1%ba%a1n-nh%c3%a0-iphone)
+  - [Thẩm mỹ](#th%e1%ba%a9m-m%e1%bb%b9)
+  - [Thống nhất](#th%e1%bb%91ng-nh%e1%ba%a5t)
+  - [Tương tác trực tiếp](#t%c6%b0%c6%a1ng-t%c3%a1c-tr%e1%bb%b1c-ti%e1%ba%bfp)
+  - [Phản hồi](#ph%e1%ba%a3n-h%e1%bb%93i)
+  - [Ẩn dụ](#%e1%ba%a8n-d%e1%bb%a5)
+  - [User là người quyết định](#user-l%c3%a0-ng%c6%b0%e1%bb%9di-quy%e1%ba%bft-%c4%91%e1%bb%8bnh)
+- [Google Material Design](#google-material-design)
+  - [Nổi bật, hình ảnh, mục đích rõ ràng](#n%e1%bb%95i-b%e1%ba%adt-h%c3%acnh-%e1%ba%a3nh-m%e1%bb%a5c-%c4%91%c3%adch-r%c3%b5-r%c3%a0ng)
+  - [Chuyển động cung cấp một ý nghĩa](#chuy%e1%bb%83n-%c4%91%e1%bb%99ng-cung-c%e1%ba%a5p-m%e1%bb%99t-%c3%bd-ngh%c4%a9a)
+- [Microsoft](#microsoft)
+  - [Giữ mọi thứ đơn giản](#gi%e1%bb%af-m%e1%bb%8di-th%e1%bb%a9-%c4%91%c6%a1n-gi%e1%ba%a3n)
+  - [Mang tính cá nhân](#mang-t%c3%adnh-c%c3%a1-nh%c3%a2n)
+  - [Nghĩ toàn diện](#ngh%c4%a9-to%c3%a0n-di%e1%bb%87n)
+  - [Tạo cảm giác hào hứng](#t%e1%ba%a1o-c%e1%ba%a3m-gi%c3%a1c-h%c3%a0o-h%e1%bb%a9ng)
+
+<!-- /TOC -->
+
 Nếu lập trình chúng ta có các nguyên tắc chung khi viết code như **KISS**, **DRY**, thì trong thiết kế cũng có những **nguyên tắc chính** khi làm việc. Những nguyên tắc này sẽ là kim chỉ nam, nếu có tranh cãi giữa các member trong team, thì cứ đè nguyên tắc này ra mà giải quyết (nghe hơi có mùi cứng nhắc, mình thì thích tùy cơ ứng biến hơn)
 
 ## Nguyên tắc thiết kế của GOV.UK

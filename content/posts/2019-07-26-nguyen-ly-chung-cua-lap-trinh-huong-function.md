@@ -10,6 +10,17 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [Nói về lợi ích](#n%c3%b3i-v%e1%bb%81-l%e1%bb%a3i-%c3%adch)
+- [Immutable](#immutable)
+- [Pure Function](#pure-function)
+- [Đệ quy](#%c4%90%e1%bb%87-quy)
+- [Tổng kết](#t%e1%bb%95ng-k%e1%ba%bft)
+- [Tài liệu tham khảo](#t%c3%a0i-li%e1%bb%87u-tham-kh%e1%ba%a3o)
+
+<!-- /TOC -->
+
 ## Nói về lợi ích
 
 Trước tiên chúng ta phải nói về lợi ích của kiểu lập trình hướng function, để có thể có động lực *nghiên cứu đào sâu*, một vài điểm được nhiều người thống nhất

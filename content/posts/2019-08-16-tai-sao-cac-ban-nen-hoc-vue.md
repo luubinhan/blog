@@ -10,6 +10,16 @@ chapter: 0
 tags: ["vuejs"]
 ---
 
+<!-- TOC -->
+
+- [Single File Component](#single-file-component)
+- [Sử dụng Vue mà không build, không cần webpack luôn](#s%e1%bb%ad-d%e1%bb%a5ng-vue-m%c3%a0-kh%c3%b4ng-build-kh%c3%b4ng-c%e1%ba%a7n-webpack-lu%c3%b4n)
+- [Tích hợp với các ứng dụng server side đã có](#t%c3%adch-h%e1%bb%a3p-v%e1%bb%9bi-c%c3%a1c-%e1%bb%a9ng-d%e1%bb%a5ng-server-side-%c4%91%c3%a3-c%c3%b3)
+- [Những plugin cần thiết, được hỗ trợ đầy đủ](#nh%e1%bb%afng-plugin-c%e1%ba%a7n-thi%e1%ba%bft-%c4%91%c6%b0%e1%bb%a3c-h%e1%bb%97-tr%e1%bb%a3-%c4%91%e1%ba%a7y-%c4%91%e1%bb%a7)
+- [Kết](#k%e1%ba%bft)
+
+<!-- /TOC -->
+
 Khi thế giới frontend đang tôn thờ React như một **chuẩn mực mới của lập trình frontend**, có bao giờ bạn tự hỏi "vì React quá lợi hại tới mức không ai đánh bại nổi, hay vì Facebook biết cách quảng cáo bộ đồ chơi của mình trong cộng đồng lập trình viên?"
 
 Bị *ép buộc* xài Vue khoảng 8 tháng nay, từ khi anh lead phán câu "Anh không thích React, build feature lâu quá em", cũng có thể gọi là có chút ít kinh nghiệm xài qua Vue. Tổng kết lại những điểm mà cá nhân mình thấy thích khi sử dụng Vue, mọi người góp ý thêm nếu thấy còn thiếu
