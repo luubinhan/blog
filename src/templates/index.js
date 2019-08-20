@@ -32,7 +32,7 @@ class IndexPage extends React.Component {
         <main className="inner">
           <h1 style={{display: "none"}}>{config.siteTitle + ' - ' + config.siteDescription}</h1>
           <div className="mb-4">
-            <img src="/images/favi128.png" alt=""/>
+            <img src="/images/banner-blog.jpg" alt="Bánh tằm bì nước cốt dừa Sài Gòn"/>
           </div>
           {!isEmpty(group) && <PostListing postEdges={group} />}
           <div className="pagination">
