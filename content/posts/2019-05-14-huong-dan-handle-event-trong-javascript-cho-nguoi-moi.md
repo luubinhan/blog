@@ -20,7 +20,7 @@ tags: ["javascript"]
 <!-- /TOC -->
 
 
-Bắt đầu với một ví dụ đơn giản: một ô để user có thể kéo thả vào, chúng ta hiển thị user đã kéo thả vào ô màu nào
+Bắt đầu với một ví dụ đơn giản: một `<div/>` để user có thể kéo thả vào, chúng ta hiển thị user đã kéo thả vào nào
 
 ```html
 <section>
@@ -77,7 +77,7 @@ Gọn hơn, nhưng vẫn cần nhiều function khác nhau cho các element khá
 
 ## Sử dụng Event Object
 
-Khi một listener được gọi, nó cũng sẽ nhận được một `Event` Object, object nếu chứa một số thông tin như thời gian xả ra sự kiện, đối tượng gây ra sự kiện
+Khi một listener được gọi, nó cũng sẽ nhận được một `Event` Object, object nếu chứa một số thông tin như thời gian xảy ra sự kiện, đối tượng gây ra sự kiện
 
 ```js
 const preview = evt => {
@@ -96,7 +96,7 @@ document.querySelector('#green').addEventListener('dragstart', preview);
 
 Khi một sự kiện xảy ra trên element, nó ko dừng lại tại element đó, trình duyệt sẽ đi qua tất cả các element cha của nó, gọi tất cả các listener cho đến khi nó đi tới thẻ `body`. Quá trình này được gọi là `bubbling`
 
-Bên trong `evt.target` sẽ chứa element đẩy ra sự kiện, chứ không phải element được gắn listener `section`
+Bên trong `evt.target` sẽ chứa element bắn ra sự kiện, chứ không phải element được gắn listener là `section`
 
 ```js
 const preview = evt => {
@@ -138,7 +138,7 @@ const preview = evt => {
 document.querySelector('section').addEventListener('click', preview);
 ```
 
-Nếu chúng ta click vào vùng của `span`, sự kiện vẫn được đẩy ra, tuy nhiên nó không chứa `id` nên `evt.target.id` ngủm, đó là lý do tại sao có khi đoạn code trên có khi chạy đúng, có khi sai
+Nếu chúng ta click vào vùng của `span`, sự kiện vẫn được bắn ra, tuy nhiên nó không chứa `id` nên `evt.target.id` ngủm, đó là lý do tại sao có khi đoạn code trên có khi chạy đúng, có khi sai
 
 Để lấy được element cha gần nhất, chúng ta dùng `element.closest()`
 
