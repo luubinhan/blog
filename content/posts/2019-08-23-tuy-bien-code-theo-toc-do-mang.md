@@ -83,7 +83,7 @@ Mình sử dụng Vue.js, không phải HTML thuần nên đừng thắc mắc s
 Nếu bạn viết React, có [bài này cũng hay](https://mxb.dev/blog/connection-aware-components/), nói về việc làm component đáp ứng theo tốc độ kết nối
 
 
-<a target="_blank" rel="noopener noreferrer" href="https://dev.to/addyosmani/adaptive-serving-using-javascript-and-the-network-information-api-331p">Adaptive Serving using JavaScript and the Network Information API</a>
+<a target="_blank" rel="noopener noreferrer" href="https://dev.to/addyosmani/adaptive-serving-using-javascript-and-the-network-information-api-331p">📜 Adaptive Serving using JavaScript and the Network Information API</a>
 
 
 
