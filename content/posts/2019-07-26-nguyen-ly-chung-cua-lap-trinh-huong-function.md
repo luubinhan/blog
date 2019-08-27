@@ -1,7 +1,7 @@
 ---
 slug: "/2019-07-26-nguyen-ly-chung-cua-lap-trinh-huong-function"
 date: "2019-07-26"
-title: "Nguyên lý chung của lập trình function"
+title: "Nguyên lý nền tảng của lập trình function"
 desc: "Khái niệm ngàn người biết, bạn cũng phải biết"
 cover: ""
 type: "post"
@@ -35,7 +35,7 @@ Module cũng sẽ giúp code dễ hiểu hơn, 1 function = 1 công dụng, *kh�
 - Dễ copy/paste hơn
 - Dễ test hơn
 
-Bên dưới chúng ta sẽ đề cập đến những nguyên lý cơ bản, mà kinh nghiệm thực tế đúc kết được, như sử dụng **immutable** thay vì **mutable**, viết **pure function**, chia nhỏ bằng đệ quy, là những **nguyên lý** chung, không ám chỉ một ngôn ngữ cụ thể nào
+Bên dưới chúng ta sẽ đề cập đến những nguyên lý nền tảng, mà kinh nghiệm thực tế đúc kết được, như sử dụng **immutable** thay vì **mutable**, viết **pure function**, chia nhỏ bằng đệ quy, là những **nguyên lý** nền tảng, không ám chỉ một ngôn ngữ cụ thể nào
 
 ## Immutable
 
