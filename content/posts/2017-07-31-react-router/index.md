@@ -2,7 +2,7 @@
 slug: "/2017-07-31-react-router"
 date: "2017-07-31"
 title: "Giới thiệu React Router"
-desc: "React không phải một framework, nó chỉ là một thư viện javascript, bởi vì vậy nó không thể giải quyết tất cả các yêu cầu một ứng dụng. Việc mà React làm rất tốt là tạo component và cách thức quản lý state của component, nhưng để tạo một Single Page App (sẽ viết tắt là SPA) phức tạp, nó cần những thư viện khác nữa, đầu tiền cần nhắc đến là React Router"
+desc: "React không phải một framework, nó chỉ là một thư viện javascript, bởi vì vậy nó không thể giải quyết tất cả các yêu cầu một ứng dụng. Việc mà React làm rất tốt là tạo component và cách thức quản lý state của component, nhưng để tạo một Single Page App (sẽ viết tắt là SPA) phức tạp, nó cần những thư viện khác nữa, đầu tiên cần nhắc đến là React Router"
 category: "react"
 cover: ""
 type: "post"
@@ -20,7 +20,7 @@ tags: ["javascript", "react"]
 - [Một số cách khai báo với Route](#một-số-cách-khai-báo-với-route)
 - [Sử dụng Link component, đừng sử dụng tag a](#sử-dụng-link-component-đừng-sử-dụng-tag-a)
 - [Browser History](#browser-history)
-- [Route với paramater string](#route-với-paramater-string)
+- [Route với parameter string](#route-với-parameter-string)
 
 <!-- /TOC -->
 
@@ -46,9 +46,9 @@ Sử dụng với React-Router
 
 ```jsx
 ReactDOM.render((
-	<Router>
-		<Route path="/" component={Home} /> 
-	</Router>
+  <Router>
+    <Route path="/" component={Home} /> 
+  </Router>
 ), document.getElementById('root'));
 ```
 
@@ -62,11 +62,11 @@ Xét ví dụ
 
 ```jsx
 ReactDOM.render((
-	<Router>
-		<Route path="/" component={Home}></Route>
-		<Route path="/tags" component={TagsPage}></Route>
-		<Route path="/post/:id" component={Post}></Route>
-	</Router>
+  <Router>
+    <Route path="/" component={Home}></Route>
+    <Route path="/tags" component={TagsPage}></Route>
+    <Route path="/post/:id" component={Post}></Route>
+  </Router>
 ), document.getElementById('root'));
 ```
 
@@ -191,8 +191,8 @@ Với `<Link>` nó biết khi nào đang active
 var browserHistory = ReactRouter.browserHistory;
 
 ReactDOM.render((
-	<Router history={browserHistory}>
-	</Router>
+  <Router history={browserHistory}>
+  </Router>
 ), document.getElementById('root'));
 
 ```
@@ -205,10 +205,11 @@ Nếu muốn redirect user đến một route nào đó
 browserHistory.push('/some/path');
 ```
 
-# Route với paramater string
+# Route với parameter string
 
 ```html
 <Route path="users/:userId" component={UserProfile} />
 ```
 
 Component UserProfile sẽ được render trong các trường hợp: `users/1`, `users/145`, `users/abc`, React Router sẽ truyền vào giá trị `userId` vào UserProfile như một props, access đến giá trị này bằng `this.props.params.userId`
+

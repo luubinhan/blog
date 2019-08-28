@@ -30,29 +30,31 @@ tags: ["javascript", "react"]
 
 <!-- /TOC -->
 
-# Chuyện gì xảy ra khi gọi `setState` ?
+## Chuyện gì xảy ra khi gọi `setState` ?
 
-Đầu tiên, object được truyền trong <code>setState</code> sẽ được merge với state hiện tại của component, dựa trên sự thay đổi của object này, UI được update với state mới. Để làm được chuyện này, React sẽ dựng một cây React Element mới, so sánh sự khác nhau của cây element mới và cây element trước đó, React biết được chính xác chỉ cần update phần UI nào đã bị thay đổi.
+Đầu tiên, object được truyền trong <code>setState</code> sẽ được merge với state hiện tại của component, dựa trên sự thay đổi của object này, UI được update với state mới.
 
-# Sự khác nhau giữa Element và Component trong React?
+Để làm được chuyện này, React sẽ dựng một cây React Element mới, so sánh sự khác nhau của cây element mới và cây element trước đó, React biết được chính xác chỉ cần update phần UI nào đã bị thay đổi.
+
+## Sự khác nhau giữa Element và Component trong React?
 
 React Element ám chỉ những gì thấy trên màn hình.
 
 React component là một function hoặc class có hoặc không có input và sẽ trả về một React element.
 
-# Khi nào thì sử dụng Class Component và Functional Component
+## Khi nào thì sử dụng Class Component và Functional Component
 
 Nếu component có state và các phương thức của lifecycle, sử dụng **Class Component**, ngược lại dùng **functional component**
 
-# `Ref` trong React dùng để làm gì
+## `Ref` trong React dùng để làm gì
 
-Ref để truy cập trực tiếp đến DOM node/hoặc một instance của component sau khi render
+Ref để truy cập trực tiếp đến DOM sau khi render
 
 ```jsx
-<input type="text" ref={this.input = input} />
+<input type="text" ref={(input) => this.input = input} />
 ```
 
-# Key trong React là gì
+## Key trong React là gì
 
 Key giúp React theo dõi sự thay đổi của một item trong list. Tại sao thêm key? để **tối ưu performance**, giúp React tìm nhanh tới element đó khi cần.
 
@@ -64,7 +66,7 @@ Key giúp React theo dõi sự thay đổi của một item trong list. Tại sa
 )}
 ```
 
-# Sự khác nhau giữa controlled component và uncontrolled component
+## Sự khác nhau giữa controlled component và uncontrolled component
 
 **Controlled Component**: `prop` hoặc `state` của component được gán cho giá trị DOM
 
@@ -78,7 +80,7 @@ Key giúp React theo dõi sự thay đổi của một item trong list. Tại sa
 <input type='text' ref={(input) => this.input = input} />
 ```
 
-# Để gọi AJAX, sử dụng sự kiện nào của lifecycle?
+## Để gọi AJAX, sử dụng sự kiện nào của lifecycle?
 
 `componentDidMount`
 
@@ -86,11 +88,8 @@ Key giúp React theo dõi sự thay đổi của một item trong list. Tại sa
 
 `shouldComponentUpdate` cho phép can thiệp quá trình update UI của component và các component con của nó. Nếu return `true` thì update, ngược lại `false`
 
-# Build Product bằng cách nào?
 
-Sử dụng phương thức DefinePlugin của Webpack để set `NODE_ENV = production`. Quá trình build production sẽ bỏ hết những đoạn như validate propType, cảnh báo này nọ, minify code, xóa comments.
-
-# Tại sao nên sử dụng `React.Children.map()` thay vì `props.children.map()`
+## Tại sao nên sử dụng `React.Children.map()` thay vì `props.children.map()`
 
 `props.children` chưa chắc lúc nào cũng là `array`. Ví dụ
 
@@ -111,32 +110,33 @@ Nếu sử dụng `props.children.map` trong Parent sẽ bị lỗi vì `props.c
 
 `React.Children.map` cho phép `props.children` là `array` hoặc `object` đều được.
 
-# Events được xử lý trong React như thế nào?
+## Events được xử lý trong React như thế nào?
 
 Các hàm xử lý event trong React sẽ được truyền vào một instance của `SyntheticEvent`, `SyntheticEvent` cũng giống như những native event bình thường của Browser trừ việc nó có thể làm việc trên tất cả các trình duyệt.
 
 React không attach event vô các child node, mà sẽ lắng nghe tất cả các event sử dụng 1 event listener duy nhất, Với mục đích là để tăng performance và React không cần phải update lại event listener khi update DOM.
 
-# Sự khác nhau giữa `createElement` và `cloneElement`
+## Sự khác nhau giữa `createElement` và `cloneElement`
 
 `createElement` là để tạo element, `cloneElement` copy element và đưa vào các props mới.
 
-# Argument thứ 2 của `setState` dùng để làm gì
+## Argument thứ 2 của `setState` dùng để làm gì
 
 callback function, function sẽ chạy sau khi `component` được `render` lại với state mới.
 
 `setState` là một phương thức bất đồng bộ (asynchronous)
 
-# Đoạn code sau sai ở đâu
+## Đoạn code sau sai ở đâu
 
 ```jsx
 this.setState((prevState, props) => {
- return { streak: prevState.streak + props.count }
+ return { streak: prevState.streak + props.count }
 })
 ```
 
 Không sai gì cả, ít người biết rằng khi `setState` có thể truyền vào `previous state`.
 
+<a target="_blank" rel="noopener noreferrer" href="https://tylermcginnis.com/react-interview-questions/">📜 React Interview Questions</a>
 
-[Link bài gốc](https://tylermcginnis.com/react-interview-questions/)
+
 
