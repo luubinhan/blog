@@ -13,7 +13,7 @@ tags: ["javascript"]
 
 Chúng ta đã biết object trong javascript là một con trỏ đến địa chỉ trên memory, copy 1 object sẽ là 2 biến trỏ tới cùng một địa chỉ memory
 
-```javascript{numberLines: true}
+```js
 var foo = {
     a: "luubinhan"
 }
