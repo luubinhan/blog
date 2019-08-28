@@ -76,17 +76,17 @@ Có thể dùng `cloneDeep` của [thư viện lodash](https://lodash.com/docs/4
 function deepClone(obj) {
   var copy;
 
-  // với các type primitive, null hoặc undefined
+  // kiểu primitive, null hoặc undefined
   if (null == obj || "object" != typeof obj) return obj;
 
-  // Handle Date
+  // nếu là kiểu Date
   if (obj instanceof Date) {
     copy = new Date();
     copy.setTime(obj.getTime());
     return copy;
   }
 
-  // Handle Array
+  // kiểu Array
   if (obj instanceof Array) {
     copy = [];
     for (var i = 0, len = obj.length; i < len; i++) {
@@ -95,7 +95,7 @@ function deepClone(obj) {
     return copy;
   }
 
-  // Handle Function
+  // kiểu Function
   if (obj instanceof Function) {
     copy = function() {
       return obj.apply(this, arguments);
@@ -103,7 +103,7 @@ function deepClone(obj) {
     return copy;
   }
 
-  // Handle Object
+  // kiểu Object
   if (obj instanceof Object) {
       copy = {};
       for (var attr in obj) {
