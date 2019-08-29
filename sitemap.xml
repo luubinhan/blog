@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>http://vuilaptrinh.com/2019-08-30-lam-quen-voi-kien-truc-serverless</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2019-08-23-tuy-bien-code-theo-toc-do-mang</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2019-08-16-tai-sao-cac-ban-nen-hoc-vue</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2019-08-07-nguyen-tac-chung-cua-thiet-ke</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
