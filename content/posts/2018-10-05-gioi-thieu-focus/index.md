@@ -14,7 +14,7 @@ Nói đến focus là nói đến element nào (như input, button, link, checkb
 
 ![Giới thiệu focus trên web](https://developers.google.com/web/fundamentals/accessibility/focus/imgs/keyboard-focus.png)
 
-Item đang có trạng thái focus sẽ được xác định bằng vòng focus ring, tùy theo mỗi trình duyệt mà cách hiển thị khác nhau.
+Element đang có trạng thái focus sẽ được xác định bằng vòng focus ring, tùy theo mỗi trình duyệt mà cách hiển thị khác nhau.
 
 ![Giới thiệu focus trên web](https://developers.google.com/web/fundamentals/accessibility/focus/imgs/sign-up.png)
 
@@ -35,8 +35,12 @@ Những element khác như `<p/>`, `<div/>` không focus khi chúng ta ấn tab,
 
 Thử mở trang [airline site mockup page](http://udacity.github.io/ud891/lesson2-focus/01-basic-form/) và tab thử qua các element, trên trang này đang tắt hết các sự kiện mouse input.
 
-Một tình huống cũng hay xãy ra, là ko biết focus đang nằm đâu, đang tab ngon lành, bổng dưng mất tiêu focus ring, không thấy xuất hiện nữa, tab thêm vài cái nữa thì nó lại xuất hiện.
+Một tình huống cũng hay xảy ra, là ko biết focus đang nằm đâu, đang tab ngon lành, bổng dưng mất tiêu focus ring, không thấy xuất hiện nữa, tab thêm vài cái nữa thì nó lại xuất hiện.
 
 Nguyên nhân là có element focusable đang bị ẩn đi, không nằm trên màn hình, mặc dù nó có tồn tại, để xác định được element nào đang focus, có thể dùng javascript `document.activeElement`
+
+```js
+console.log(document.activeElement)
+```
 
 [Link bài viết gốc](https://developers.google.com/web/fundamentals/accessibility/focus/)
