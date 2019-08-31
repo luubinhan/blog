@@ -12,12 +12,16 @@ tags: ["ux-ui", "mobile-web-specialist"]
 
 <!-- TOC -->
 
-- [`aria` là gì](#aria-là-gì)
-- [Một vài `aria` phổ biến](#một-vài-aria-phổ-biến)
-  - [aria-label và aria-labelledby](#aria-label-và-aria-labelledby)
+- [`aria` là gì](#aria-l%c3%a0-g%c3%ac)
+- [Một vài `aria` phổ biến](#m%e1%bb%99t-v%c3%a0i-aria-ph%e1%bb%95-bi%e1%ba%bfn)
+  - [`aria-label` và `aria-labelledby`](#aria-label-v%c3%a0-aria-labelledby)
   - [role](#role)
   - [aria-live](#aria-live)
-- [Thêm `aria` cần thiết cho trang ecommerce](#thêm-aria-cần-thiết-cho-trang-ecommerce)
+- [aria-owns](#aria-owns)
+  - [aria-activedescendant](#aria-activedescendant)
+  - [aria-pressed](#aria-pressed)
+  - [aria-hidden](#aria-hidden)
+- [Thêm `aria` cần thiết cho trang ecommerce](#th%c3%aam-aria-c%e1%ba%a7n-thi%e1%ba%bft-cho-trang-ecommerce)
 
 <!-- /TOC -->
 
@@ -132,6 +136,27 @@ Thông tin về trạng thái "bị nhấn" của một element
 
 ```css
 .button[aria-pressed="true"] { ... }
+```
+
+### aria-hidden
+
+Nếu chúng ta muốn bỏ qua những element khỏi "ánh mắt dòm ngó" của screen reader, dùng `aria-hidden`, ngoài ra nếu các element này được định dạng là `visibility: hidden`, `display: none` hay `hidden` thì nó cũng sẽ bị bỏ qua
+
+```html
+<div hidden>Ko thấy đâu</div>
+<div aria-hidden="true">Vấn thấy, nhưng screen reader ko đọc</div>
+```
+
+Còn có nhưng element không được hiển thị cho user thấy, những vẫn được dòm ngó bởi screen reader, kỹ thuật css sẽ làm điều đó
+
+```css
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 ```
 
 ## Thêm `aria` cần thiết cho trang ecommerce
