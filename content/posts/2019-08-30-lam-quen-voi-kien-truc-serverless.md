@@ -10,6 +10,14 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [Serverless là gì](#serverless-l%c3%a0-g%c3%ac)
+- [Function as a Service](#function-as-a-service)
+- [Case Study](#case-study)
+
+<!-- /TOC -->
+
 
 Mười mấy năm về trước, ngày còn đang học đại học, mỗi lần đến ngày đăng ký môn học là mình được nghe điệp khúc hát mãi "server quá tải, số lượng sinh viên tranh nhau vào các lớp có nhiều gái xinh quá đông, quá nguy hiểm, mấy em vui lòng canh 12 giờ đêm, khi ko còn ai lên đăng ký môn học, chúng tôi mới đáp ứng kịp"
 
