@@ -120,6 +120,20 @@ Thuộc tính này dùng trong cái dropdown, khi cái dropdown được focus, 
 
 ![aria-activedescendant](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/imgs/aria-activedescendant.jpg)
 
+### aria-pressed
+
+Thông tin về trạng thái "bị nhấn" của một element
+
+```html
+<div class="button" role="button" aria-pressed="true">Save</div>
+```
+
+Để định dạng cho theo từng giá trị của `aria`, lấy ví như cái `pressed` này, chúng ta dùng css selector
+
+```css
+.button[aria-pressed="true"] { ... }
+```
+
 ## Thêm `aria` cần thiết cho trang ecommerce
 
 Mockup ví dụ
@@ -246,7 +260,14 @@ Danh sách sản phẩm
 </div>
 ```
 
-Để test accessibility của trang thì có thể dùng extention này của chrome  https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en
+Để test accessibility của trang thì có thể dùng [extention này của chrome](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en)
 
+Bài viết liên quan
 
-[Link bài gốc](https://code.tutsplus.com/tutorials/hands-on-with-aria-ecommerce-implementations--cms-31890)
+- [Ràng buộc dữ liệu input với HTML5](2019-03-25-rang-buoc-du-lieu-voi-html-5/)
+- [Giới thiệu focus trên web](/2018-10-05-gioi-thieu-focus)
+- [Sử dụng tabindex](http://vuilaptrinh.com/2018-10-02-huong-dan-su-dung-tabindex-de-di-chuyen/)
+
+<a target="_blank" rel="noopener noreferrer" href="https://code.tutsplus.com/tutorials/hands-on-with-aria-ecommerce-implementations--cms-31890">📜 Hands-on With ARIA: Accessibility for eCommerce</a>
+
+<a target="_blank" rel="noopener noreferrer" href="https://developers.google.com/web/fundamentals/accessibility/accessible-styles">📜 Styling focus</a>

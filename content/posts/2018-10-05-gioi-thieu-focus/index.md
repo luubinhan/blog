@@ -43,11 +43,31 @@ Nguyên nhân là có element focusable đang bị ẩn đi, không nằm trên 
 console.log(document.activeElement)
 ```
 
+Đã thấy công dụng của vòng focus, nếu bạn design không thích vòng focus mặc định của trình duyệt, dễ dàng bỏ đi bằng thuộc tính `outline`
+
+```css
+:hover, :focus {
+    outline: none; // hoặc 0
+}
+```
+
+![](https://developers.google.com/web/fundamentals/accessibility/imgs/focus-ring.png)
+
+Bạn hãy cho nó một cách hiển thị khác, để user biết được đang focus vào element nào
+
+```css
+:hover, :focus {
+    background: red;
+}
+```
+
+
 Bài viết liên quan
 
 - [Ràng buộc dữ liệu input với HTML5](2019-03-25-rang-buoc-du-lieu-voi-html-5/)
 - [Sử dụng aria trên site eCommerce, vấn đề accessibility cần quan tâm](http://vuilaptrinh.com/2018-10-08-huong-dan-aria-va-su-dung-voi-ecommerce-site/)
 - [Sử dụng tabindex](http://vuilaptrinh.com/2018-10-02-huong-dan-su-dung-tabindex-de-di-chuyen/)
 
-[
-Introduction to Focus](https://developers.google.com/web/fundamentals/accessibility/focus/)
+<a target="_blank" rel="noopener noreferrer" href="https://developers.google.com/web/fundamentals/accessibility/focus/">📜 Introduction to Focus</a>
+
+<a target="_blank" rel="noopener noreferrer" href="https://developers.google.com/web/fundamentals/accessibility/accessible-styles">📜 Styling focus</a>
