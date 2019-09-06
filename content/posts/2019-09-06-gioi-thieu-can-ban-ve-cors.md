@@ -1,6 +1,6 @@
 ---
 slug: "/2019-09-06-gioi-thieu-can-ban-ve-cors"
-date: "2019-08-06"
+date: "2019-09-06"
 title: "Làm quen khái niệm CORS của Web"
 desc: "Bài này khá căn bản và cần thiết cho bạn nào chưa biết gì về CORS, nghe ai đó nói về từ khóa ghê gớm này mà ko biết nó là gì, không để cập đến vấn đề setup làm sao để chạy CORS trên server - vì mình ko biết code phía server đâu"
 cover: ""
@@ -13,8 +13,8 @@ tags: ["javascript"]
 <!-- TOC -->
 
 - [Access-Control-Allow-Origin](#access-control-allow-origin)
-- [Các kiểu request CORS](#các-kiểu-request-cors)
-  - [Request đơn thuần như `GET`, `POST`, `HEAD`](#request-đơn-thuần-như-get-post-head)
+- [Các kiểu request CORS](#c%c3%a1c-ki%e1%bb%83u-request-cors)
+  - [Request đơn thuần như `GET`, `POST`, `HEAD`](#request-%c4%91%c6%a1n-thu%e1%ba%a7n-nh%c6%b0-get-post-head)
   - [Preflight request](#preflight-request)
 
 <!-- /TOC -->
