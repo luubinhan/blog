@@ -25,7 +25,7 @@ tags: ["javascript", "mobile-web-specialist"]
 
 `fetch()` cho phép tạo một network request tương tự như XMLHttpRequest(XHR). Sự khác nhau chủ yếu là Fetch hoạt động theo **Promises**, cho phép viết gọn ràng, dễ nhớ hơn là XHR. API Fetch có trong `window.fetch()` giờ đã được hổ trợ phổ biến, bạn không cần polyfill gì đâu, vĩnh biệt IE.
 
-# Mmột câu request network bằng `fetch`
+# Một câu request network bằng `fetch`
 
 ```jsx
 fetch('/api/some-url')
