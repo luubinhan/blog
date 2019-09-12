@@ -2,7 +2,7 @@
 slug: "/2018-11-14-chi-dan-thiet-ke-form-cua-google"
 date: "2018-11-14"
 title: "Chỉ dẫn thiết kế form từ Google"
-desc: "Bài này nằm trong loạt bài chuẩn kiến thức để đi thi web mobile specialist của google. Một vài đều cần nhớ khi thiết kế và làm việc với form"
+desc: "Bài này nằm trong loạt bài chuẩn kiến thức để đi thi web mobile specialist của google. Một vài điểm cần nhớ khi thiết kế và làm việc với form"
 cover: ""
 type: "post"
 lesson: 0
@@ -46,163 +46,46 @@ Nguyên tắc chung
 
 Ví dụ trên trang đăng ký nếu chúng ta đã cho user nhập first name và last name, có thể cho generate tự động ra một giá trị cho field nickname để đăng nhập. Hoặc trường hợp trên trang checkout, cho phép lưu lại địa chỉ giao hàng cho lần checkout sau.
 
-Để tiết kiệm thời gian tiền bạc cho user, khai thác tính năng autofill có sẵn của trình duyệt.
+Để tiết kiệm thời gian tiền bạc cho user, khai thác tính năng **autocomplete** có sẵn của trình duyệt.
 
 ```html
+<input type="text" autocomplete="email" />
 <input type="text" autocomplete="address-line1" />
 ```
 
-### Credit Card
+Ta muốn autocomplete giá trị gì thì báo với trình duyệt luôn, hoặc dùng giá trị `name='giá trị name chuẩn'`, hoặc `autocomplete='giá trị autocomplete chuẩn'`
 
-```html
-<label for="frmNameCC">Name on card</label>
-<input 
-name="ccname" 
-id="frmNameCC" 
-required 
-placeholder="Full Name" 
-autocomplete="cc-name">
+Chuẩn này đã được [WHATWG HTML Standard.](https://html.spec.whatwg.org/multipage/forms.html#autofill) đặt ra ko phải mình
 
-<label for="frmCCNum">Card Number</label>
-<input name="cardnumber" id="frmCCNum" required autocomplete="cc-number">
-
-<label for="frmCCCVC">CVC</label>
-<input name="cvc" id="frmCCCVC" required autocomplete="cc-csc">
-
-<label for="frmCCExp">Expiry</label>
-<input 
-name="cc-exp" 
-id="frmCCExp" 
-required 
-placeholder="MM-YYYY" 
-autocomplete="cc-exp">
-```
-
-### Name 
-
-```html
-<label for="frmNameA">Name</label>
-<input 
-name="name" 
-id="frmNameA" 
-placeholder="Full name" 
-required 
-autocomplete="name">
-```
-
-### Email
-
-```html
-<label for="frmEmailA">Email</label>
-<input 
-type="email" 
-name="email" 
-id="frmEmailA" 
-placeholder="name@example.com" 
-required 
-autocomplete="email">
-
-<label for="frmEmailC">Confirm Email</label>
-<input type="email" 
-name="emailC" 
-id="frmEmailC" 
-placeholder="name@example.com" 
-required 
-autocomplete="email"/>
-```
-
-### Address
-
-```html
-<label for="frmAddressS">Address</label>
-<input 
-name="ship-address" 
-required 
-id="frmAddressS" 
-placeholder="123 Any Street" 
-autocomplete="shipping street-address">
-
-<label for="frmCityS">City</label>
-<input 
-name="ship-city" 
-required 
-id="frmCityS" 
-placeholder="New York" 
-autocomplete="shipping locality">
-
-<label for="frmStateS">State</label>
-<input 
-name="ship-state" 
-required 
-id="frmStateS" 
-placeholder="NY" 
-autocomplete="shipping region">
-
-<label for="frmZipS">Zip</label>
-<input 
-name="ship-zip" 
-required 
-id="frmZipS" 
-placeholder="10011" 
-autocomplete="shipping postal-code">
-
-<label for="frmCountryS">Country</label>
-<input 
-name="ship-country" 
-required 
-id="frmCountryS" 
-placeholder="USA" 
-autocomplete="shipping country">
-```
+|  Trường | Giá trị name  |  Giá trị autocomplete  |
+|---|---|---|
+| Name  | name fname mname lname  | name (full name)
+given-name (first name)
+additional-name (middle name)
+family-name (last name)  |
+|  Email |  email |  email |
+| Address  | address city region province state zip zip2 postal country  | For one address input:
+street-address
+For two address inputs:
+address-line1
+address-line2
+address-level1 (state or province)
+address-level2 (city)
+postal-code (zip code)
+country  |
+|  Phone | phone mobile country-code area-code exchange suffix ext  | tel  |
+|  Credit Card |  ccname cardnumber cvc ccmonth ccyear exp-date card-type |  cc-name
+cc-number
+cc-csc
+cc-exp-month
+cc-exp-year
+cc-exp
+cc-type |
+|  Usernames | username  | username  |
+| Passwords  | password  | current-password (for sign-in forms)
+new-password (for sign-up and password-change forms)  |
 
 
-### Phone
-
-```html
-<label for="frmPhoneNumA">Phone</label>
-<input 
-type="tel" 
-name="phone" 
-id="frmPhoneNumA" 
-placeholder="+1-650-450-1212" 
-required 
-autocomplete="tel">
-```
-
-
-### Payment
-
-```html
-<label for="frmNameCC">Name on card</label>
-<input 
-name="ccname" 
-id="frmNameCC" 
-required 
-placeholder="Full Name" 
-autocomplete="cc-name">
-
-<label for="frmCCNum">Card Number</label>
-<input 
-name="cardnumber" 
-id="frmCCNum" 
-required 
-autocomplete="cc-number">
-
-<label for="frmCCCVC">CVC</label>
-<input 
-name="cvc" 
-id="frmCCCVC" 
-required 
-autocomplete="cc-csc">
-
-<label for="frmCCExp">Expiry</label>
-<input 
-name="cc-exp" 
-id="frmCCExp" 
-required 
-placeholder="MM-YYYY" 
-autocomplete="cc-exp">
-```
 
 ## How far I go?
 
@@ -210,36 +93,39 @@ Với các form được chia làm nhiều step trước khi submit, một thanh
 
 ![Một số gợi ý khi thiết kế form](https://designmodo.com/wp-content/uploads/2016/10/Checkout-Form.jpg)
 
-## Field ngày tháng
+## Giá trị ngày tháng
 
-Field ngày tháng là phải hiển thị lịch, để user không phải mở một ứng dụng calendar nào đó trên điện thoại, trên máy tính để kiểm tra ngày trước khi chọn.
+Trường ngày tháng để user chọn từ lịch, không tách ra thành các input độc lập dạng ngày-tháng-năm, user không cần phải mở một ứng dụng calendar khác đó trên điện thoại, trên máy tính để kiểm tra ngày trước khi chọn.
 
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/forms-calendar-good.png)
 
 ## Sử dụng input type phù hợp
 
-HTML5 hỗ trợ khá nhiều kiểu input mà căn cứ vào đó trên điện thoại, thiết bị có thể hiển thị bàn phím thích hợp cho từng kiểu input
-- url
+HTML5 hỗ trợ khá nhiều kiểu input, khi cung cấp giá trị `type` rõ ràng cho input, trình duyệt sẽ biết và hiển thị kiểu keyboard nào cho phù hợp trên điện thoại, cũng như có những validation tích hợp sẵn
+
+> type='url': chuỗi bắt đầu phải là 'http://', 'ftp://', 'mailto:'
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/url-ios.png)
-- email
+> type='tel': ko có ép một syntax hay validation nào cả, giúp hiện thì bàn phím điện thoại trên mobile
+![ko có ép một syntax hay validation nào cả, giúp hiện thì bàn phím điện thoại trên mobile](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/tel-android.png)
+> type='email': trên mobile nó sẽ hiện sẵn phím @
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/email-android.png)
-- search
+> type='search': bàn phím search chuẩn trên từng thiết bị
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/plain-ios.png)
-- number
+> type='number': iOS yêu cầu có thêm `pattern='\d*'` để hiển thị bàn phím số
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/number-android.png)
-- range
+> type='range': hiển thị kiếu slider control
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/range-ios.png)
-- datetime-local
+> type='datetime-local': giá trị ngày tháng có timezone
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/datetime-local-ios.png)
-- datetime
+> type='datetime': giá trị ngày tháng ko có timezone
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/date-android.png)
-- time
+> type='time': chỉ có giá trị giờ
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/time-ios.png)
-- week
+> type='week': chỉ có giá trị tuần
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/week-android.png)
-- month
+> type='month': chỉ có giá trị tháng
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/month-ios.png)
-- color
+> type='color': bảng màu để chọn
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/color-android.png)
 
 ## Gợi ý thông qua trường `datalist`
@@ -252,7 +138,7 @@ HTML5 hỗ trợ khá nhiều kiểu input mà căn cứ vào đó trên điện
 type="text" 
 name="fav-choc" 
 id="frmFavChocolate" 
-lít="chocType">
+list="chocType">
 <datalist id="chocType">
   <option value="white">
   <option value="milk">
@@ -261,6 +147,8 @@ lít="chocType">
 ```
 
 <div class="note">User không bắt buộc phải chọn các giá trị trong datalist, chỉ là gợi ý thích thì chọn</div>
+
+[Xem một form đã hiện thực](https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/input/forms/order.html)
 
 ## auto focus khi cần thiết
 
@@ -295,3 +183,5 @@ Bài này đọc lại [ở đây](/2018-11-02-validate-form-voi-html-5)
 <a href="https://developers.google.com/web/fundamentals/design-and-ux/input/forms/" target="_blank" rel="noopener noreferrer">Create Amazing Forms</a>
 
 <a href="https://developers.google.com/web/updates/2015/06/checkout-faster-with-autofill" target="_blank" rel="noopener noreferrer">Help users checkout faster with Autofill</a>
+
+
