@@ -1,5 +1,5 @@
 ---
-slug: "/2019-09-13-gioi-thieu-can-ban-ve-cors"
+slug: "/2019-09-13-giai-thich-phuong-phap-atomic"
 date: "2019-09-13"
 title: "Làm quen với phương pháp Atomic để structure source code, design"
 desc: "Atom, molecule, organism, template, và page là những khái niệm chính của phương pháp này"
