@@ -1,6 +1,6 @@
 ---
-slug: "/2019-09-06-gioi-thieu-can-ban-ve-cors"
-date: "2019-09-06"
+slug: "/2019-09-13-gioi-thieu-can-ban-ve-cors"
+date: "2019-09-13"
 title: "Làm quen với phương pháp Atomic để structure source code, design"
 desc: "Atom, molecule, organism, template, và page là những khái niệm chính của phương pháp này"
 cover: "https://miro.medium.com/max/1838/1*uhcVPeGql8ejpHjYIbpdJQ.png"
