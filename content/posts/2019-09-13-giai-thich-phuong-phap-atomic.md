@@ -7,7 +7,7 @@ cover: "https://miro.medium.com/max/1838/1*uhcVPeGql8ejpHjYIbpdJQ.png"
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript", "ux-ui"]
+tags: ["javascript", "ux-ui", "kinh-nghiem"]
 ---
 
 <!-- TOC -->
@@ -20,15 +20,13 @@ tags: ["javascript", "ux-ui"]
 
 <!-- /TOC -->
 
-Đây là một trong những cách tiếp cận để structure một thiết kế một system. Tác giả của structure này là Brad Frost, thanh niên bị ám ảnh bởi một thạc sĩ hóa học người Việt Nam (chắc dạy ở Mỹ), dạy môn hóa học khi anh này đang học cấp II.
+Đây là một trong những cách tiếp cận để thiết kế một system. Tác giả của structure này là Brad Frost, ám ảnh bởi một thạc sĩ hóa học người Việt Nam (chắc dạy ở Mỹ), dạy môn hóa học khi anh này đang học cấp II.
 
 Lấy ý tưởng **nguyên tử** hóa học, sự **kết hợp** giữa các **nguyên tử** tạo ra một **phân tử**, kết hợp các phân tử lại tạo thành 1 sinh vật
 
 ![Structure theo phương pháp Atomic](http://atomicdesign.bradfrost.com/images/content/chemical-equation.png)
 
-Thú thật ngày xưa mình rất dốt hóa, nên mình chỉ chém nhiêu đây thôi, không dám chém thêm về hóa học.
-
-Những khái niệm chính của Atomic cần nắm
+Những khái niệm chính của Atomic
 
 - **Atom** nguyên tử (nguyên tố), đơn vị nhỏ nhất
 - **Molecule** do 2 nguyên tử trở lên hợp lại tạo thành, những phân tử hóa học như H2O được cấu thành từ nguyên tử Hidro và Oxy
