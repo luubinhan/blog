@@ -7,7 +7,7 @@ cover: "https://i.imgur.com/fbC5Rb5.jpg"
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["react"]
+tags: ["react", "hoc-thuat"]
 ---
 
 <!-- TOC -->

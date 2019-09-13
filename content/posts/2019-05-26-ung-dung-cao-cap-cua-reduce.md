@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript"]
+tags: ["javascript", "thu-thuat"]
 ---
 
 Khi đọc tài liệu trên [MDN về Array.prototype.reduce()](https://developer.mozilla.org/vi/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) chúng ta sẽ có cái nhìn khá tổng quát về `.reduce()`, những ví dụ cộng, nhân số cơ bản để chúng ta dễ nắm cách hàm `.reduce()` chạy. Tuy nhiên vì nó quá căn bản, nên bạn sẽ không thể thấy hết được sự **lợi hại** của `.reduce()`

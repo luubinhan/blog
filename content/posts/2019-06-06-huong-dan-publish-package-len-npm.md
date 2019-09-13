@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript"]
+tags: ["javascript", "step-by-step"]
 ---
 
 <!-- TOC -->
@@ -53,16 +53,16 @@ Trỏ vào thư mục này, chúng ta sẽ có file `package.json` như sau
 
 ```js
 {
-          "name": "acronym",
-          "version": "1.0.0",
-          "description": "",
-          "main": "index.js",
-          "scripts": {
-              "test": "echo \"Error: no test specified\" && exit 1"
-          },
-          "author": "",
-          "license": "ISC"
-    }
+  "name": "acronym",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
 ```
 
 Theo mặc định, một sẽ có 1 file `index.js`, với `default export`
@@ -70,23 +70,23 @@ Theo mặc định, một sẽ có 1 file `index.js`, với `default export`
 Sửa file **package.json**, để bổ sung thông tin tác giả, chúng ta đi theo nguyên tắc là `Your Name <email@example.com>`
 
 ```js
-    {
-          "name": "acronym",
-          "version": "1.0.0",
-          "description": "Transform sentences to acronyms.",
-          "main": "index.js",
-          "author": "luubinhan <luubinhan@gmail.me>" // không bắt buộc
-    }
+{
+  "name": "acronym",
+  "version": "1.0.0",
+  "description": "Transform sentences to acronyms.",
+  "main": "index.js",
+  "author": "luubinhan <luubinhan@gmail.me>" // không bắt buộc
+}
 ```
 
 File `index.js` nội dung đại loại sẽ như thế này
 
 ```js
-    "use strict";
+"use strict";
 
-    module.exports = function acronym(sentence, callback) {
+module.exports = function acronym(sentence, callback) {
 
-    }
+}
 ```
 
 ## Kiểm tra
@@ -140,7 +140,6 @@ npm version <update_type>
 ```
 
 Đọc thêm [cách đặt tên version ở đây](https://npmjs.com/package/<package>)
-
 
 
 <a target="_blank" rel="noopener noreferrer" href="https://scotch.io/bar-talk/how-to-build-and-publish-a-npm-package">How to Build and Publish an npm Package</a>
