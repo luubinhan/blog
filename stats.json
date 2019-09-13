@@ -21,8 +21,8 @@
       "path---2019-05-14-huong-dan-handle-event-trong-javascript-cho-nguoi-moi-0af36c48fc21c18d0ea0.js.map"
     ],
     "path---tags-ux-ui": [
-      "path---tags-ux-ui-0613dc2702c7a6276147.js",
-      "path---tags-ux-ui-0613dc2702c7a6276147.js.map"
+      "path---tags-ux-ui-291920f171e6e7f18712.js",
+      "path---tags-ux-ui-291920f171e6e7f18712.js.map"
     ],
     "path---2019-07-26-nguyen-ly-chung-cua-lap-trinh-huong-function": [
       "path---2019-07-26-nguyen-ly-chung-cua-lap-trinh-huong-function-a606a6490e3c09138ea9.js",
@@ -201,8 +201,8 @@
       "path---2018-10-05-gioi-thieu-focus-82f87e826af3ed00041d.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-6fdbcaab88f666778fc3.js",
-      "path---tags-javascript-6fdbcaab88f666778fc3.js.map"
+      "path---tags-javascript-95f4c81db107bbc8d194.js",
+      "path---tags-javascript-95f4c81db107bbc8d194.js.map"
     ],
     "path---2019-05-15-huong-dan-layout-masonry-bang-flexbox": [
       "path---2019-05-15-huong-dan-layout-masonry-bang-flexbox-c4c12ffb796ac49101ec.js",
@@ -449,8 +449,8 @@
       "path---2018-07-02-huong-dan-javascript-modules-tren-web-9277eb2f5d9fa7d62ac4.js.map"
     ],
     "path---index": [
-      "path---index-ffbab391959bae269309.js",
-      "path---index-ffbab391959bae269309.js.map"
+      "path---index-7b2924b3059dcc066d99.js",
+      "path---index-7b2924b3059dcc066d99.js.map"
     ],
     "component---src-pages-about-jsx": [
       "component---src-pages-about-jsx-5ff8df5ccd4e76c454ec.js",
@@ -479,6 +479,10 @@
     "path---2019-08-23-tuy-bien-code-theo-toc-do-mang": [
       "path---2019-08-23-tuy-bien-code-theo-toc-do-mang-2f2421b7fe5f993b01d7.js",
       "path---2019-08-23-tuy-bien-code-theo-toc-do-mang-2f2421b7fe5f993b01d7.js.map"
+    ],
+    "path---2019-09-13-giai-thich-phuong-phap-atomic": [
+      "path---2019-09-13-giai-thich-phuong-phap-atomic-b858c73bdb23338eacf7.js",
+      "path---2019-09-13-giai-thich-phuong-phap-atomic-b858c73bdb23338eacf7.js.map"
     ],
     "path---2017-11-09-higher-order-function-trong-javascript": [
       "path---2017-11-09-higher-order-function-trong-javascript-d8de864975c64816d2a2.js",
@@ -779,9 +783,9 @@
       "path---2018-08-12-huong-dan-con-duong-tro-thanh-developer-2018-a450ae4ec4950375c76d.js.map"
     ],
     "app": [
-      "app-9ba8e04c3086a83edcab.js",
+      "app-5e4021edf6bd98ae8e61.js",
       "build-js-styles.css",
-      "app-9ba8e04c3086a83edcab.js.map",
+      "app-5e4021edf6bd98ae8e61.js.map",
       "build-js-styles.css.map"
     ],
     "path---2018-08-21-huong-dan-su-dung-checkbox-va-toggle-switch": [
