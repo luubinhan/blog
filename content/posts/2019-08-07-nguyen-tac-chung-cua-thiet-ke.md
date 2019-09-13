@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["ux-ui"]
+tags: ["ux-ui", "hoc-thuat"]
 ---
 
 <!-- TOC -->

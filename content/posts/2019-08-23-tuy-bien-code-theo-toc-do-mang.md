@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript"]
+tags: ["javascript", "thu-thuat"]
 ---
 
 Responsive với CSS chúng ta tùy biến code bằng @media, vậy với JS, ta thêm các điều kiện theo tốc độ mạng bằng cách nào?
