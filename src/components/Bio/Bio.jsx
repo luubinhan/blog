@@ -15,6 +15,11 @@ export default function Bio({ img = "", href = "", name = "", desc = "" }) {
           <div className="bio-desc">{desc}</div>
         </div>
       </GatsbyLink>
+      <blockquote>
+        <div style={{fontSize: "20px", textAlign: "center"}}>
+          Cảm ơn mình bằng cách click quảng cáo
+        </div>
+      </blockquote>
       <a className="btn btn-primary mt-10" style={{color: '#fff', fontWeight: 'bold'}} href="/donate">Hỗ trợ bằng Zalo Pay</a>
     </div>
   );

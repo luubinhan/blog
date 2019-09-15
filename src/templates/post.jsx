@@ -78,6 +78,7 @@ export default class PostTemplate extends React.Component {
                 <SocialLinks postPath={slug} postNode={postNode} />
               </div>
             </div>
+            
             <div id="post-comments" className='fb-comments'>
               <FacebookProvider appId={config.siteFBAppID}>
                 <Comments
