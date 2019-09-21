@@ -1,4 +1,4 @@
---
+---
 slug: "/2019-09-20-gioi-thieu-iife-cua-javascript"
 date: "2019-09-20"
 title: "IIFE trong javascript là cái gì vại"
@@ -9,6 +9,14 @@ lesson: 0
 chapter: 0
 tags: ["javascript", "hoc-thuat"]
 ---
+
+<!-- TOC -->
+
+- [Khai báo function](#khai-b%c3%a1o-function)
+- [IIFE](#iife)
+- [ES6 Module](#es6-module)
+
+<!-- /TOC -->
 
 Một trong những pattern có tên rất *kiêu* trong javascript "íp-phi" - **IIFE**
 
