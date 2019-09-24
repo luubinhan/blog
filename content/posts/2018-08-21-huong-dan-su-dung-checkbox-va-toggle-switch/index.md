@@ -12,17 +12,17 @@ tags: ["ux-ui"]
 
 <!-- TOC -->
 
-- [1: Thực hiện thay đổi của user ngay lập tức](#1-thực-hiện-thay-đổi-của-user-ngay-lập-tức)
-- [2: Màn hình settings](#2-màn-hình-settings)
-- [3: Nhiều lựa chọn](#3-nhiều-lựa-chọn)
-- [4: Khi thay đổi lựa chọn ảnh hưởng đến các lựa chọn khác](#4-khi-thay-đổi-lựa-chọn-ảnh-hưởng-đến-các-lựa-chọn-khác)
-- [5: Kết quả on/off có thể dễ dàng nhận thấy](#5-kết-quả-onoff-có-thể-dễ-dàng-nhận-thấy)
-- [6: Các phần tử liên quan với nhau](#6-các-phần-tử-liên-quan-với-nhau)
-- [7: Một lựa chọn](#7-một-lựa-chọn)
+- [Thực hiện thay đổi của user ngay lập tức](#1-thực-hiện-thay-đổi-của-user-ngay-lập-tức)
+- [Màn hình settings](#2-màn-hình-settings)
+- [Nhiều lựa chọn](#3-nhiều-lựa-chọn)
+- [Khi thay đổi lựa chọn ảnh hưởng đến các lựa chọn khác](#4-khi-thay-đổi-lựa-chọn-ảnh-hưởng-đến-các-lựa-chọn-khác)
+- [Kết quả on/off có thể dễ dàng nhận thấy](#5-kết-quả-onoff-có-thể-dễ-dàng-nhận-thấy)
+- [Các phần tử liên quan với nhau](#6-các-phần-tử-liên-quan-với-nhau)
+- [Một lựa chọn](#7-một-lựa-chọn)
 
 <!-- /TOC -->
 
-# 1: Thực hiện thay đổi của user ngay lập tức
+## Thực hiện thay đổi của user ngay lập tức
 
 Sử dụng Toggle switch khi
 
@@ -32,7 +32,7 @@ Sử dụng Toggle switch khi
 
 ![Checkbox hay Toggle switch - gợi ý cho thiết kế](https://cdn-images-1.medium.com/max/1600/1*eBbKx5ezvvNQKH8bE-0hpA.png)
 
-# 2: Màn hình settings
+## Màn hình settings
 
 Sử dụng checkbox khi
 
@@ -42,7 +42,7 @@ Sử dụng checkbox khi
 
 ![Checkbox hay Toggle switch - gợi ý cho thiết kế](https://cdn-images-1.medium.com/max/1600/1*veJQ87bB5Lt-K-oNcazJcQ.png)
 
-# 3: Nhiều lựa chọn
+## Nhiều lựa chọn
 
 Sử dụng checkbox khi
 
@@ -50,7 +50,7 @@ Sử dụng checkbox khi
 
 ![Checkbox hay Toggle switch - gợi ý cho thiết kế](https://cdn-images-1.medium.com/max/1600/1*IBd2AFjn0aaBbFU0oz6KCw.png)
 
-# 4: Khi thay đổi lựa chọn ảnh hưởng đến các lựa chọn khác
+## 4: Khi thay đổi lựa chọn ảnh hưởng đến các lựa chọn khác
 
 Sử dụng Checkbox khi
 
@@ -58,7 +58,7 @@ Sử dụng Checkbox khi
 
 ![Checkbox hay Toggle switch - gợi ý cho thiết kế](https://cdn-images-1.medium.com/max/1600/1*RoIVsG5DH5u9K2CcdN6_-Q.png)
 
-# 5: Kết quả on/off có thể dễ dàng nhận thấy
+## Kết quả on/off có thể dễ dàng nhận thấy
 
 Sử dụng Checkbox khi
 
@@ -66,7 +66,7 @@ Sử dụng Checkbox khi
 
 ![Checkbox hay Toggle switch - gợi ý cho thiết kế](https://cdn-images-1.medium.com/max/1600/1*sKQKnqIDpchrX9U5W7SBjQ.png)
 
-# 6: Các phần tử liên quan với nhau
+## Các phần tử liên quan với nhau
 
 Sử dụng Checkbox khi
 
@@ -78,7 +78,7 @@ Sử dụng Toggle switch khi các phần tử này là những tính năng đ�
 
 ![Checkbox hay Toggle switch - gợi ý cho thiết kế](https://cdn-images-1.medium.com/max/1600/1*U-blR633uHKtHEypNOVVOg.png)
 
-# 7: Một lựa chọn
+## Một lựa chọn
 
 Sử dụng Checkbox khi
 
@@ -90,4 +90,6 @@ Sử dụng Toggle switch khi đang cung cấp cho một user option chứ ko b�
 
 ![Checkbox hay Toggle switch - gợi ý cho thiết kế](https://cdn-images-1.medium.com/max/1600/1*LUrW1twRyE4f0jzreot3dA.png)
 
-[Link bài gốc tác giả Saadia Minhas](https://uxplanet.org/checkbox-vs-toggle-switch-7fc6e83f10b8)
+
+<a target="_blank" rel="noopener noreferrer" href="https://uxplanet.org/checkbox-vs-toggle-switch-7fc6e83f10b8
+">📜 Checkbox vs Toggle Switch - Saadia Minhas</a>
