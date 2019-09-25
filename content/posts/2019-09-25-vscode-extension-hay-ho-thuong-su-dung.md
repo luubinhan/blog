@@ -7,22 +7,9 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["thu-thuat", "javascript"]
+tags: ["javascript", "hoc-thuat"]
 ---
 
-<!-- TOC -->
-
-- [Settings Sync](#settings-sync)
-- [Live Server](#live-server)
-- [Bracket Pair Colorizer](#bracket-pair-colorizer)
-- [Auto Rename Tag](#auto-rename-tag)
-- [CSS Peek](#css-peek)
-- [Code Spell Checker](#code-spell-checker)
-- [Debugger for Chrome](#debugger-for-chrome)
-- [vscode-icons](#vscode-icons)
-- [Git History](#git-history)
-
-<!-- /TOC -->
 
 ## Settings Sync
 
