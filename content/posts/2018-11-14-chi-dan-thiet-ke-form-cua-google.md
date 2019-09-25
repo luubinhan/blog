@@ -57,37 +57,20 @@ Ta muốn autocomplete giá trị gì thì báo với trình duyệt luôn, ho�
 
 Chuẩn này đã được [WHATWG HTML Standard.](https://html.spec.whatwg.org/multipage/forms.html#autofill) đặt ra ko phải mình
 
-|  Trường | Giá trị name  |  Giá trị autocomplete  |
-|---|---|---|
-| Name  | name fname mname lname  | name (full name)
-given-name (first name)
-additional-name (middle name)
-family-name (last name)  |
-|  Email |  email |  email |
-| Address  | address city region province state zip zip2 postal country  | For one address input:
-street-address
-For two address inputs:
-address-line1
-address-line2
-address-level1 (state or province)
-address-level2 (city)
-postal-code (zip code)
-country  |
-|  Phone | phone mobile country-code area-code exchange suffix ext  | tel  |
-|  Credit Card |  ccname cardnumber cvc ccmonth ccyear exp-date card-type |  cc-name
-cc-number
-cc-csc
-cc-exp-month
-cc-exp-year
-cc-exp
-cc-type |
-|  Usernames | username  | username  |
-| Passwords  | password  | current-password (for sign-in forms)
-new-password (for sign-up and password-change forms)  |
+
+|  Trường | Giá trị name  |  
+|---|---|
+| Name  | name fname mname lname  |
+|  Email |  email |
+| Address  | address city region province state zip zip2 postal country  | 
+|  Phone | phone mobile country-code area-code exchange suffix ext  | 
+|  Credit Card |  ccname cardnumber cvc ccmonth ccyear exp-date card-type |
+|  Usernames | username  |
+| Passwords  | password  |
 
 
 
-## How far I go?
+## Tôi đang đứng ở bước nào?
 
 Với các form được chia làm nhiều step trước khi submit, một thanh trạng thái cho user biết mình đang đến bước nào là bắt buộc.
 
@@ -103,29 +86,76 @@ Trường ngày tháng để user chọn từ lịch, không tách ra thành cá
 
 HTML5 hỗ trợ khá nhiều kiểu input, khi cung cấp giá trị `type` rõ ràng cho input, trình duyệt sẽ biết và hiển thị kiểu keyboard nào cho phù hợp trên điện thoại, cũng như có những validation tích hợp sẵn
 
-> type='url': chuỗi bắt đầu phải là 'http://', 'ftp://', 'mailto:'
+### `type='url'`
+
+Chuỗi bắt đầu phải là 'http://', 'ftp://', 'mailto:'
+
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/url-ios.png)
-> type='tel': ko có ép một syntax hay validation nào cả, giúp hiện thì bàn phím điện thoại trên mobile
+
+### `type='tel'`
+
+Ko có ép một syntax hay validation nào cả, giúp hiện thì bàn phím điện thoại trên mobile
+ 
 ![ko có ép một syntax hay validation nào cả, giúp hiện thì bàn phím điện thoại trên mobile](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/tel-android.png)
-> type='email': trên mobile nó sẽ hiện sẵn phím @
+
+### `type='email'`
+
+Trên mobile nó sẽ hiện sẵn phím @
+
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/email-android.png)
-> type='search': bàn phím search chuẩn trên từng thiết bị
+
+### `type='search'`
+
+Bàn phím search chuẩn trên từng thiết bị
+
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/plain-ios.png)
-> type='number': iOS yêu cầu có thêm `pattern='\d*'` để hiển thị bàn phím số
+
+### `type='number'` 
+
+iOS yêu cầu có thêm `pattern='\d*'` để hiển thị bàn phím số
+
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/number-android.png)
-> type='range': hiển thị kiếu slider control
+
+### `type='range'`
+
+Hiển thị kiếu slider control
+
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/range-ios.png)
-> type='datetime-local': giá trị ngày tháng có timezone
+
+### `type='datetime-local'` 
+
+Giá trị ngày tháng có timezone
+
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/datetime-local-ios.png)
-> type='datetime': giá trị ngày tháng ko có timezone
+
+### `type='datetime'`
+
+Giá trị ngày tháng ko có timezone
+
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/date-android.png)
-> type='time': chỉ có giá trị giờ
+
+### `type='time'` 
+
+Chỉ có giá trị giờ
+
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/time-ios.png)
-> type='week': chỉ có giá trị tuần
+
+### `type='week'`
+
+Chỉ có giá trị tuần
+
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/week-android.png)
-> type='month': chỉ có giá trị tháng
+
+### `type='month'`
+
+Chỉ có giá trị tháng
+
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/month-ios.png)
-> type='color': bảng màu để chọn
+
+### `type='color'` 
+
+Bảng màu để chọn
+
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/color-android.png)
 
 ## Gợi ý thông qua trường `datalist`
