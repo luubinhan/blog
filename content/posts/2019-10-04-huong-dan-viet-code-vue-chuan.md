@@ -2,7 +2,7 @@
 slug: "/2019-10-04-huong-dan-viet-code-vue-chuan"
 date: "2019-10-04"
 title: "Bộ guide để viết code sạch dành riêng cho Vue"
-desc: "Được để xuất chính thức vởi Vue team"
+desc: "Được đề xuất chính thức bởi Vue team"
 cover: ""
 type: "post"
 lesson: 0
