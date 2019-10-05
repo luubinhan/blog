@@ -1,7 +1,7 @@
 ---
 slug: "/2019-10-04-huong-dan-viet-code-vue-chuan"
 date: "2019-10-04"
-title: "Bộ guide để viết code dành riêng cho Vue"
+title: "Bộ guide để viết code sạch dành riêng cho Vue"
 desc: "Được để xuất chính thức vởi Vue team"
 cover: ""
 type: "post"
@@ -9,6 +9,26 @@ lesson: 0
 chapter: 0
 tags: ["vuejs"]
 ---
+
+<!-- TOC -->
+
+- [Cấp độ: Siêu cần thiết, giúp tránh được nhiều lỗi](#c%e1%ba%a5p-%c4%91%e1%bb%99-si%c3%aau-c%e1%ba%a7n-thi%e1%ba%bft-gi%c3%bap-tr%c3%a1nh-%c4%91%c6%b0%e1%bb%a3c-nhi%e1%bb%81u-l%e1%bb%97i)
+	- [Tên component nên là 2 chữ](#t%c3%aan-component-n%c3%aan-l%c3%a0-2-ch%e1%bb%af)
+	- [`data` phải là một function](#data-ph%e1%ba%a3i-l%c3%a0-m%e1%bb%99t-function)
+	- [Khai báo prop càng chi tiết càng tốt](#khai-b%c3%a1o-prop-c%c3%a0ng-chi-ti%e1%ba%bft-c%c3%a0ng-t%e1%bb%91t)
+	- [Luôn cung cấp `key` cho `v-for`](#lu%c3%b4n-cung-c%e1%ba%a5p-key-cho-v-for)
+	- [Không bao giờ dùng `v-for` chung với `v-if`](#kh%c3%b4ng-bao-gi%e1%bb%9d-d%c3%b9ng-v-for-chung-v%e1%bb%9bi-v-if)
+	- [CSS scoped trên từng component](#css-scoped-tr%c3%aan-t%e1%bb%abng-component)
+	- [Private](#private)
+- [Cấp độ: Cực kỳ khuyến khích](#c%e1%ba%a5p-%c4%91%e1%bb%99-c%e1%bb%b1c-k%e1%bb%b3-khuy%e1%ba%bfn-kh%c3%adch)
+	- [File name luôn là một trong 2 dạng PascalCase hoặc kebab-case](#file-name-lu%c3%b4n-l%c3%a0-m%e1%bb%99t-trong-2-d%e1%ba%a1ng-pascalcase-ho%e1%ba%b7c-kebab-case)
+	- [Base component](#base-component)
+	- [Component chỉ có một instance duy nhất](#component-ch%e1%bb%89-c%c3%b3-m%e1%bb%99t-instance-duy-nh%e1%ba%a5t)
+	- [Component luôn gắn chặt vào một component cha](#component-lu%c3%b4n-g%e1%ba%afn-ch%e1%ba%b7t-v%c3%a0o-m%e1%bb%99t-component-cha)
+	- [Sử dụng kebab-case trong DOM template](#s%e1%bb%ad-d%e1%bb%a5ng-kebab-case-trong-dom-template)
+	- [Đặt tên prop](#%c4%90%e1%ba%b7t-t%c3%aan-prop)
+
+<!-- /TOC -->
 
 Trước tiên cần thống nhất quan điểm thế này, **ko phải guide nào cũng phù hợp cho mọi team**, mọi dự án, nến không nhất thiết phải áp dụng một cách *cứng nhắc* trong mọi trường hợp
  
