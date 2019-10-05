@@ -481,4 +481,5 @@ props: {
 <WelcomeMessage greeting-text="hi"/>
 ```
 
-[https://vuejs.org/v2/style-guide/](https://vuejs.org/v2/style-guide/)
+<a target="_blank" rel="noopener noreferrer" href="https://vuejs.org/v2/style-guide/
+">📜 Style Guide</a>

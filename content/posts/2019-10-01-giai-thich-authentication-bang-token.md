@@ -65,7 +65,6 @@ Hy vọng qua bài viết này, các bạn có thể thuộc làu và giải th�
 
 
 <a target="_blank" rel="noopener noreferrer" href="https://www.jvandemo.com/simple-metaphor-to-understand-and-remember-how-token-based-authentication-works/
-">📜 
-Simple metaphor to easily understand and remember how token-based authentication works</a>
+">📜 Simple metaphor to easily understand and remember how token-based authentication works</a>
 
 
