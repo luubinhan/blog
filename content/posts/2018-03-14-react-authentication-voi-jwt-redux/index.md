@@ -1,8 +1,8 @@
 ---
 slug: "/2018-03-14-huong-dan-react-authentication-voi-jwt-redux"
 date: "2018-03-14"
-title: "Authentication với JWT"
-desc: "Giới thiệu JSON Web Tokens (JWT) và cách hiện thực"
+title: "Authentication bằng Token - Hướng dẫn authentication với React"
+desc: "Hiện thực authentication bằng JWT trong React"
 cover: ""
 type: "post"
 lesson: 0
@@ -17,26 +17,6 @@ tags: ["javascript", "react", "security"]
 - [Authentication sử dụng kết hợp với Redux](#authentication-sử-dụng-kết-hợp-với-redux)
 
 <!-- /TOC -->
-
-# JWT là gì
-
-JWT là một đoạn string dạng JSON đã được mã hóa và truyền qua header để làm nhiệm vụ authenticate. Bên cạnh secret key, cục JWT còn chứa một số thông tin khác được hash kèm trong JSON.
-
-# JWT vận hành thế nào
-
-Khi user đăng nhập thành công, server sẽ trả về một cục JWT, chúng ta lưu cục này lại trong `localStorage` để sử dụng về sau. Khi muốn thực hiện một request nào đó, chẳng hạn gọi đến API để lấy dữ liệu, mà cần xác thực đã đăng nhập, ta gởi cái token này kèm trong header của request. Server kiểm tra token này và thực thi yêu cầu nếu kiểm tra thấy hợp lệ.
-
-Nội dung của header thường sẽ là
-
-```
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsI 
-```
-
-Hình minh họa sau mô tả cách chạy của quá trình này
-
-![](https://cms-assets.tutsplus.com/uploads/users/1885/posts/30460/image/jwt-diagram.png)
-
-# Authentication sử dụng kết hợp với Redux
 
 Tạo Redux Store, ở đây chúng ta sẽ cần sử dụng tới middleware, để mỗi khi có một request đến API, thằng middleware này sẽ chèn thêm vào header đoạn authentication. Setup redux store với middleware
 
