@@ -2,12 +2,12 @@
 slug: "/2018-12-07-giai-thich-su-dung-map-hay-object"
 date: "2018-12-07"
 title: "Map và Object trong Javascript"
-desc: "Hôm rồi lên đọc document về kiểu Map trên MDN, mình khá lúng túng vì thấy nó khá giống với một Object. Viết lại cho những ai cũng đang gặp thắc mắc như mình"
+desc: "Kẻ tám lạng người nữa cân"
 cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript", "mobile-web-specialist"]
+tags: ["javascript", "mobile-web-specialist", "hoc-thuat"]
 ---
 
 
@@ -26,8 +26,7 @@ tags: ["javascript", "mobile-web-specialist"]
 <!-- /TOC -->
 
 
-> `Map` là con đẻ của `Object`, nó kế thừa, cắt bỏ, bổ sung một số thứ trong Object
-
+`Map` có thể coi là con đẻ của `Object`, nó kế thừa, cắt bỏ, bổ sung một số thứ trong Object
 
 ```js
 var map = new Map([[1,2],[3,4]]);
@@ -47,7 +46,9 @@ Giờ nói các điểm khác nhau nè
 
 ## key
 
-Nếu key của `Object` chỉ có thể là `String` hoặc `Integer`, thì key trong `Map` có thể là một `Object`, `Array`, `Function`, nói chung không giới hạn
+Key của `Object` chỉ có thể là `String` hoặc `Integer`
+
+Key trong `Map` có thể là một `Object`, `Array`, `Function`, nói chung không giới hạn
 
 ## Thứ tự các element
 
@@ -125,9 +126,9 @@ Vehicle.display();
 // vẫn là "General"
 ```
 
-Cũng tương tự như Array, chúng ta không dùng constructor nhiều vì nó tốn xíu performance, lười đánh máy dài
+Cũng tương tự như Array, chúng ta không dùng constructor nhiều vì nó tốn tài nguyên (và lười đánh máy dài)
 
-Với `Map` chúng ta sẽ chỉ có duy nhất một cách để khởi tạo bằng constructor `new Map`
+Với `Map` chúng ta sẽ **chỉ có duy nhất một cách để khởi tạo** bằng constructor `new Map`
 
 ```js
 var map = new Map();
@@ -212,7 +213,7 @@ map.size;
 
 ## Loop
 
-Một trong những khác biệt đáng chú ý nhất mà bạn nên cân nhắc dùng `Map` thay vì `Object`
+> Một trong những khác biệt đáng chú ý nhất mà bạn nên cân nhắc dùng `Map` thay vì `Object`
 
 Kiểm tra xem kiểu dữ liệu có là dạng `iterable` (loop được)
 
@@ -277,7 +278,7 @@ var obj = {
 
 Với `Map`? đơn giản là hổng làm được.
 
-- JSON bản thân đã hỗ trợ Object, xài luôn Object chứ không cần chuyển.
+JSON bản thân đã hỗ trợ Object, xài luôn Object chứ không cần convert qua chi.
 
 
 <a target="_blank" rel="noopener noreferrer" href="https://medium.com/front-end-hacking/es6-map-vs-object-what-and-when-b80621932373">ES6 — Map vs Object — What and when?</a>
