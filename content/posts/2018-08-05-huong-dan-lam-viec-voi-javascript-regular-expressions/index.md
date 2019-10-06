@@ -7,37 +7,31 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript"]
+tags: ["javascript", "hoc-thuat"]
 ---
 
 <!-- TOC -->
 
-- [Giới thiệu](#giới-thiệu)
-- [Regex trông như thế nào](#regex-trông-như-thế-nào)
-- [Làm việc thế nào](#làm-việc-thế-nào)
-- [Anchoring](#anchoring)
-- [Thõa điều kiện trong khoản](#thõa-điều-kiện-trong-khoản)
-- [Chỉ được phép xuất hiện 1 lần](#chỉ-được-phép-xuất-hiện-1-lần)
-- [Inverse kết quá](#inverse-kết-quá)
-- [Một số cú pháp đặc biệt](#một-số-cú-pháp-đặc-biệt)
-- [Câu điều kiện Or](#câu-điều-kiện-or)
-- [Quantifiers](#quantifiers)
-  - [+](#)
-  - [*](#)
-  - [{n}](#n)
-  - [{n,m}](#nm)
-- [Điều kiện không bắt buộc (optional)](#điều-kiện-không-bắt-buộc-optional)
-- [Group](#group)
-- [Lấy giá trị của Group](#lấy-giá-trị-của-group)
-- [Flag](#flag)
-- [Thay thế chuỗi bằng Regex](#thay-thế-chuỗi-bằng-regex)
-- [Một vài ứng dụng](#một-vài-ứng-dụng)
+- [Giới thiệu](#gi%e1%bb%9bi-thi%e1%bb%87u)
+- [Khai báo regex](#khai-b%c3%a1o-regex)
+- [Kiểm tra regex](#ki%e1%bb%83m-tra-regex)
+- [Một số điều kiện có sẵn](#m%e1%bb%99t-s%e1%bb%91-%c4%91i%e1%bb%81u-ki%e1%bb%87n-c%c3%b3-s%e1%ba%b5n)
+- [Các điều kiện chúng ta hay sử dụng](#c%c3%a1c-%c4%91i%e1%bb%81u-ki%e1%bb%87n-ch%c3%bang-ta-hay-s%e1%bb%ad-d%e1%bb%a5ng)
+- [Nhóm điều kiện](#nh%c3%b3m-%c4%91i%e1%bb%81u-ki%e1%bb%87n)
+- [Lấy giá trị của 1 Group](#l%e1%ba%a5y-gi%c3%a1-tr%e1%bb%8b-c%e1%bb%a7a-1-group)
+- [Setting](#setting)
+- [Ứng dụng](#%e1%bb%a8ng-d%e1%bb%a5ng)
+  - [Thay thế chuỗi](#thay-th%e1%ba%bf-chu%e1%bb%97i)
+  - [Lấy số từ String](#l%e1%ba%a5y-s%e1%bb%91-t%e1%bb%ab-string)
+  - [Kiểm tra email](#ki%e1%bb%83m-tra-email)
+  - [Lấy đoạn test nằm giữa dấu `""`](#l%e1%ba%a5y-%c4%91o%e1%ba%a1n-test-n%e1%ba%b1m-gi%e1%bb%afa-d%e1%ba%a5u-%22%22)
+  - [Lấy nội dung ở giữa html tag](#l%e1%ba%a5y-n%e1%bb%99i-dung-%e1%bb%9f-gi%e1%bb%afa-html-tag)
 
 <!-- /TOC -->
 
-# Giới thiệu
+## Giới thiệu
 
-Regular Expression (hay gọi tắt là **regex**) là một string với format đặc biệt, với nó chúng ta có thể
+Regular Expression (hay gọi tắt là **regex** - đọc là ghi-ríc-cờ-sờ) là một string với format đặc biệt, với nó chúng ta có thể
 
 - Tìm text trong *string*
 - Thay thế substring trong *string*
@@ -45,63 +39,107 @@ Regular Expression (hay gọi tắt là **regex**) là một string với format
 
 Tất cả các ngôn ngữ đều có hỗ trợ regex. Có thể mỗi ngôn ngữ có đôi chổ khác nhau, tuy nhiên nhìn chung thì nó được áp dụng giống nhau cho hầu hết.
 
-Regex có thể nối là rất khó học và nhớ hết, khó viết, khó maintain, chỉnh sửa. Tuy nhiên có những công việc gần như là chỉ có thể thực hiện với Regex
+Regex có thể nói là rất khó học, khó viết, khó nhớ, khó sửa. Tuy nhiên có những việc chỉ có thể thực hiện được với regex.
 
-Bài này chúng ta chỉ điểm qua những khái niệm cơ bản của nó để làm việc với Regex không sợ sệt
+Ví dụ, kiểm tra một `string` có kết thúc bằng `.com`, `.football` hay không
 
-# Regex trông như thế nào
+```
+"google.com" → true
+"www.vietnam.football" → true
+"google.foobar" → false
+```
+
+regex cho yêu cầu đó
+
+```js
+/(\.com|\.football)$/i
+```
+
+
+## Khai báo regex
+
+**Phân tách** cái regex ở trên
+
+![](https://miro.medium.com/max/1060/1*eRQ3ooQ_LPIEpYjcUMSgZw.png)
+
+- `\` đặt trước các ký tự đặc biệt, dấu `.` là một ký tự đặc biệt
+- `|` là câu điều kiện **or**
+- `$` là điều kiện phải xuất hiện ở cuối string
+- Đoạn nằm giữa `/đoạn-nằm-giữa/`, là chổ chúng ta viết các điều kiện. Đoạn-nằm-giữa có tên tiếng mỹ là pattern
+- Chữ `i` ở cuối, phía sau `/` là một dạng **setting**, `i` là điều kiện chỉ hợp lệ nếu xuất hiện đúng một lần duy nhất. Có nhiều dạng setting khác nữa, phía dưới sẽ đề cập.
 
 Trong javascript, regex là một object, có thể định nghĩa bằng 2 cách
 
 ```js
 // tạo 1 object mới
-const re1 = new RegExp('hey');
+const regex1 = new RegExp('football');
 
 // dùng regular expression literal 
-const re2 = /hey/
+const regex2 = /football/
 ```
 
-`hey` trong ví dụ trên được gọi là **pattern**
+## Kiểm tra regex
 
-# Làm việc thế nào
+Regex ở trên chúng ta đang tìm string `football`, không giới hạn gì cả, chữ `football` nằm ở đâu không quan trọng.
 
-Regex ở trên chúng ta đang tìm string `hey`, không giới hạn gì cả: string có thể gồm một đống text, chữ `hey` nằm ở đâu đó không quan trọng. Test cái regex bằng `RegExp.test(String)`, sẽ trả về 1 **boolean**
+Kiểm tra regex bằng `RegExp.test(string)`, sẽ trả về giá trị `true/false`
 
 ```js
-rel1.test('hey');
+regex1.test('football');
 // => true
-rel1.test('blablabla hey blablabla');
+regex1.test('blablabla football blablabla');
 // => true
-rel1.test('he');
+regex2.test('footba');
 // => false
-rel1.test('blablabla');
+regex2.test('blab foot ballabla');
 // => false
 ```
 
-# Anchoring
+## Một số điều kiện có sẵn
 
-Nếu muốn thêm điều kiện chữ `hey` phải ở **đầu**, sử dụng cú pháp `^`
+*Đã khó rồi, các bạn còn đề nghị một số kiểu viết tắt cho bắt anh em căng não ra học*
+
+- `\d` tương tự như `[0-9]`, chỉ là các giá trị số
+- `\D` tương tự như `[^0-9]`, không chưa các ký tự số
+- `\w` tương tự như `[A-Za-z0-9]`, bao gồm ký tự chữ và số
+- `\W` tương tự như `[^A-Za-z0-9]`, không chứa ký tự chữ và số
+- `\s` chứa các ký tự khoản trống như: space, tab, newline
+- `\S` không chứa ký tự khoản trống
+- `\0` chứa ký tự null
+- `\n` chứa ký tự xuống dòng (newline)
+- `\t` chứ ký tự tab
+
+
+## Các điều kiện chúng ta hay sử dụng
+
+> Phải xuất hiện ở đầu câu: `^`
+
+Nếu muốn thêm điều kiện chữ `football` phải ở **đầu** câu
 
 ```js
-/^hey/.test('hey')     //✅
-/^hey/.test('bla hey') //❌
+/^football/.test('football')     //✅
+/^football/.test('bla football') //❌
 ```
 
-Điều kiện chữ `hey` nằm ở **cuối**, thêm cú pháp `$`
+> Phải xuất hiện ở cuối câu: `$`
+
+Điều kiện chữ `football` nằm ở **cuối**
 
 ```jsx
-/hey$/.test('hey')     //✅
-/hey$/.test('bla hey') //✅
-/hey$/.test('hey you') //❌
+/football$/.test('football')     //✅
+/football$/.test('bla football') //✅
+/football$/.test('football you') //❌
 ```
 
-Nếu kết hợp cả 2 cú pháp trên, ta có câu điều kiện chỉ được phép có đúng chữ `hey`
+Nếu kết hợp cả 2 cú pháp trên, ta có câu điều kiện chỉ được phép có đúng chữ `football`
 
 ```js
-/^hey$/.test('hey') //✅
+/^football$/.test('football') //✅
 ```
 
-Để đặt điều kiện string bắt đầu với 1 text và kết thúc có 1 text khác, dùng `.*`
+> Phải bắt đầu bằng bằng 1 pattern và kết thúc bằng 1 pattern khác: `.*`
+
+Bắt đầu bằng chữ `hey` và có kết thúc bằng chữ `joe`
 
 ```js
 /^hey.*joe$/.test('hey joe')             //✅
@@ -110,9 +148,7 @@ Nếu kết hợp cả 2 cú pháp trên, ta có câu điều kiện chỉ đư�
 /^hey.*joe$/.test('hey joe!')            //❌
 ```
 
-# Thõa điều kiện trong khoản
-
-Thay vì thõa một string cụ thể, có thể cho thõa bất kỳ ký tự nào trong một khoản, đặt giữa cặp `[]`
+> Phải nằm trong khoản: `[điểm bắt đầu - điểm kết thúc]`
 
 ```js
 /[a-z]/ // có các ký tự a,b,c....x,y,z
@@ -130,7 +166,7 @@ Thay vì thõa một string cụ thể, có thể cho thõa bất kỳ ký tự 
 /[a-c]/.test('dc') //✅
 ```
 
-Kết hợp nhiều khoản lại
+*Hợp thể*
 
 ```js
 /[A-Za-z0-9]/
@@ -142,9 +178,7 @@ Kết hợp nhiều khoản lại
 /[A-Za-z0-9]/.test('A') //✅
 ```
 
-# Chỉ được phép xuất hiện 1 lần
-
-Kết hợp với `^` và `$` với cặp điều kiện khoản `[]`
+> Chỉ được phép xuất hiện 1 lần: kết hợp `[]`, `^`, `$`
 
 ```js
 /^[A-Za-z0-9]$/
@@ -153,9 +187,7 @@ Kết hợp với `^` và `$` với cặp điều kiện khoản `[]`
 /^[A-Za-z0-9]$/.test('Ab') //❌
 ```
 
-# Inverse kết quá
-
-Dùng cú pháp `^` ở đầu của khoản giá trị
+> Đảo ngược kết quả: `[^]`
 
 ```js
 /[^A-Za-z0-9]/.test('a') //❌
@@ -164,47 +196,31 @@ Dùng cú pháp `^` ở đầu của khoản giá trị
 /[^A-Za-z0-9]/.test('@') //✅
 ```
 
-# Một số cú pháp đặc biệt
-
-- `\d` tương tự như `[0-9]`, chỉ là các giá trị số
-- `\D` tương tự như `[^0-9], không chưa các ký tự số
-- `\w` tương tự như `[A-Za-z0-9]`, bao gồm ký tự chữ và số
-- `\W` tương tự như `[^A-Za-z0-9]`, không chứa ký tự chữ và số
-- `\s` chứa các ký tự khoản trống như: space, tab, newline
-- `\S` không chứa ký tự khoản trống
-- `\0` chứa ký tự null
-- `\n` chứa ký tự xuống dòng (newline)
-- `\t` chứ ký tự tab
-
-# Câu điều kiện Or
+> Điều kiện **hoặc**: `|`
 
 ```js
 /hey|ho/.test('hey') //✅
 /hey|ho/.test('ho')  //✅
 ```
 
-# Quantifiers
-
-## +
-
-Thõa điều kiện 1 **hoặc** nhiều hơn 1
+> Xuất hiện ít nhất một lần: `+`
 
 ```js
-/^\d+$/
+/^\d+$/ // là các số từ 0-9
 
-/^\d+$/.test('12')     //✅
+/^\d+$/.test('1')     //✅
 /^\d+$/.test('14')     //✅
 /^\d+$/.test('144343') //✅
 /^\d+$/.test('')       //❌
 /^\d+$/.test('1a')     //❌
 ```
 
-## *
+> Chỉ đúng hoặc sai, không có thể cả đúng và sai: `*`
 
-Thõa điều kiện 0 lần trở lên
+Nói vậy hơi khó hiểu, để giải thích rõ hơn nè, ví dụ yêu cầu phải là số từ 0-9, nếu kiểm tra `1a` => false vì nó có 1 là đúng, `a` là sai, còn `'' => true` vì nó chỉ có sai không có đúng
 
 ```js
-/^\d+$/
+/^\d*$/
 
 /^\d*$/.test('12')     //✅
 /^\d*$/.test('14')     //✅
@@ -213,26 +229,23 @@ Thõa điều kiện 0 lần trở lên
 /^\d*$/.test('1a')     //❌
 ```
 
-## {n}
-
-Thõa ít nhất **n** lần
+> Đúng n lần: `{n}`
 
 ```js
-/^\d{3}$/
+/^\d{3}$/ // có 3 ký tự số
 
 /^\d{3}$/.test('123')  //✅
 /^\d{3}$/.test('12')   //❌
 /^\d{3}$/.test('1234') //❌
 
+// hợp thể nào
 /^[A-Za-z0-9]{3}$/.test('Abc') //✅
 ```
 
-## {n,m}
-
-Thõa từ n đến m lần
+> Đúng từ  n đến m lần: `{n,m}`
 
 ```js
-/^\d{3,5}$/
+/^\d{3,5}$/ // đúng từ 3,4,5 lần
 
 /^\d{3,5}$/.test('123')    //✅
 /^\d{3,5}$/.test('1234')   //✅
@@ -240,7 +253,7 @@ Thõa từ n đến m lần
 /^\d{3,5}$/.test('123456') //❌
 ```
 
-nếu mà không đưa vào giá trị `m` thì thõa từ n đến bao nhiêu cũng được
+Nếu không đưa vào giá trị `m` thì thõa từ `n` đến bao nhiêu cũng được
 
 ```js
 /^\d{3,}$/
@@ -251,11 +264,11 @@ nếu mà không đưa vào giá trị `m` thì thõa từ n đến bao nhiêu c
 /^\d{3,}$/.test('123456789') //✅
 ```
 
-# Điều kiện không bắt buộc (optional)
-
-Thêm dấu `?` để điều kiện đó không bắt buộc phải thõa
+>  Điều kiện đó không bắt buộc: `?`
 
 ```js
+// \w bao gồm ký tự chữ và số
+// \d tương tự như `[0-9]`
 /^\d{3}\w?$/
 
 /^\d{3}\w?$/.test('123')   //✅
@@ -263,7 +276,7 @@ Thêm dấu `?` để điều kiện đó không bắt buộc phải thõa
 /^\d{3}\w?$/.test('123ab') //❌
 ```
 
-# Group
+## Nhóm điều kiện
 
 Để nhóm các điều kiện lại, đặt giữa `()`
 
@@ -288,14 +301,14 @@ Nếu đặt dấu `+` phía sau `()`
 /^(\d{2})+$/.test('1234') //✅
 ```
 
-# Lấy giá trị của Group
+## Lấy giá trị của 1 Group
 
 Thay vì sử dụng `RegExp.test(String)` để trả về boolean, sử dụng
 
 - `String.match(RegExp)`
 - `RegExp.exec(String)`
 
-... để return một Array với những string thõa điều kiện
+Sẽ return một Array với những string thõa điều kiện
 
 ```js
 '123s'.match(/^(\d{3})(\w+)$/)
@@ -321,7 +334,7 @@ Trường hợp group đó thõa điều kiện nhiều lần, chỉ trả về 
 // Array ["123456789", "9"]
 ```
 
-# Flag
+## Setting
 
 - `g`: kiểm tra điều kiện nhiều lần
 - `i`: không phân biệt hoa thường
@@ -333,7 +346,9 @@ Trường hợp group đó thõa điều kiện nhiều lần, chỉ trả về 
 new RegExp('hey', 'ig').test('HEy') //✅
 ```
 
-# Thay thế chuỗi bằng Regex
+## Ứng dụng
+
+### Thay thế chuỗi
 
 Hàm `replace` của String Object
 
@@ -341,7 +356,8 @@ Hàm `replace` của String Object
 "Hello world!".replace('world', 'dog') //Hello dog!
 "My dog is a good dog!".replace('dog', 'cat') //My cat is a good dog!
 ```
-... có thể truyền vào tham số đầu  là một Regex
+
+Có thể truyền vào tham số đầu  là một Regex
 
 ```js
 "Hello world".replace(/world/, 'dog') // Hello dog
@@ -360,16 +376,14 @@ Sử dụng Group để di chuyển các phần text trong string
 // "world: Hello!!!"
 ```
 
-# Một vài ứng dụng
-
-Lấy số từ String
+### Lấy số từ String
 
 ```js
 'Test 123123329'.match(/\d+/)
 // Array [ "123123329" ]
 ```
 
-Kiểm tra email
+### Kiểm tra email
 
 ```js
 /(\S+)@(\S+)\.(\S+)/
@@ -377,7 +391,7 @@ Kiểm tra email
 //["copesc@gmail.com", "copesc", "gmail", "com"]
 ```
 
-Lấy đoạn test nằm giữa dấu `""`
+### Lấy đoạn test nằm giữa dấu `""`
 
 ```js
 const hello = 'Hello "nice flower"'
@@ -385,7 +399,7 @@ const result = /"([^']*)"/.exec(hello)
 //Array [ "\"nice flower\"", "nice flower" ]
 ```
 
-Lấy nội dung ở giữa html tag
+### Lấy nội dung ở giữa html tag
 
 ```js
 /<span\b[^>]*>(.*?)<\/span>/
@@ -398,4 +412,4 @@ Lấy nội dung ở giữa html tag
 // ["<span class="x">test</span>", "test"]
 ```
 
-[Link bài gốc](https://flaviocopes.com/javascript-regular-expressions/)
+<a target="_blank" rel="noopener noreferrer" href="A guide to JavaScript Regular Expressions">📜 https://flaviocopes.com/javascript-regular-expressions/</a>
