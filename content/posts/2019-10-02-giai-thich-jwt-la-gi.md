@@ -10,6 +10,13 @@ chapter: 0
 tags: ["hoc-thuat"]
 ---
 
+<!-- TOC -->
+
+- [JWT là gì](#jwt-l%c3%a0-g%c3%ac)
+- [Cơ chế của JWT](#c%c6%a1-ch%e1%ba%bf-c%e1%bb%a7a-jwt)
+
+<!-- /TOC -->
+
 Trước khi đọc bài này, các bạn hãy đọc bài [Ví dụ thực tế để hiểu rõ hơn cách authentication bằng token](/2019-10-01-giai-thich-authentication-bang-token), để hiểu được cơ chế authentication bằng token, tiếng Việt mình có thể dịch ra là Xác thực tài khoản bằng một string đặc biệt (token là một dạng string được tạo ra theo một cơ chế đặc biệt *bí hiểm*)
 
 ## JWT là gì

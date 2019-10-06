@@ -10,6 +10,14 @@ chapter: 0
 tags: ["hoc-thuat", "css"]
 ---
 
+<!-- TOC -->
+
+- [Media type](#media-type)
+- [Toán tử logic](#to%c3%a1n-t%e1%bb%ad-logic)
+- [Nâng cấp từ level 4 (đại khái là sử dụng trên trình duyệt cũ không đảm bảo đó)](#n%c3%a2ng-c%e1%ba%a5p-t%e1%bb%ab-level-4-%c4%91%e1%ba%a1i-kh%c3%a1i-l%c3%a0-s%e1%bb%ad-d%e1%bb%a5ng-tr%c3%aan-tr%c3%acnh-duy%e1%bb%87t-c%c5%a9-kh%c3%b4ng-%c4%91%e1%ba%a3m-b%e1%ba%a3o-%c4%91%c3%b3)
+- [Pattern hay sử dụng](#pattern-hay-s%e1%bb%ad-d%e1%bb%a5ng)
+
+<!-- /TOC -->
 
 Query media là kiến thức bắt buộc phải nắm nếu muốn làm tốt responsive, nó sẽ được sử dụng trong các trường hợp sau 
 

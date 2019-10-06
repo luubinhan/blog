@@ -10,6 +10,20 @@ chapter: 0
 tags: ["vuejs"]
 ---
 
+<!-- TOC -->
+
+- [Xác định những gì cần test](#x%c3%a1c-%c4%91%e1%bb%8bnh-nh%e1%bb%afng-g%c3%ac-c%e1%ba%a7n-test)
+  - [Test cái gì?](#test-c%c3%a1i-g%c3%ac)
+  - [Cái gì KHÔNG CẦN test](#c%c3%a1i-g%c3%ac-kh%c3%94ng-c%e1%ba%a6n-test)
+- [Ví dụ](#v%c3%ad-d%e1%bb%a5)
+  - [Phân tích](#ph%c3%a2n-t%c3%adch)
+  - [Unit test](#unit-test)
+    - [Test case 1: Render HTML](#test-case-1-render-html)
+    - [Test case 2: router login được gọi khi click button mà chưa đăng nhập](#test-case-2-router-login-%c4%91%c6%b0%e1%bb%a3c-g%e1%bb%8di-khi-click-button-m%c3%a0-ch%c6%b0a-%c4%91%c4%83ng-nh%e1%ba%adp)
+    - [Test case 3: vuex được gọi khi user đã đăng nhập và click button](#test-case-3-vuex-%c4%91%c6%b0%e1%bb%a3c-g%e1%bb%8di-khi-user-%c4%91%c3%a3-%c4%91%c4%83ng-nh%e1%ba%adp-v%c3%a0-click-button)
+- [Kết](#k%e1%ba%bft)
+
+<!-- /TOC -->
 
 Khi viết unit test, mình thấy không cần bỏ ra quá nhiều thời gian để cover 100% các case sẽ có, nhưng vẫn đảm bảo đủ các trường hợp cần thiết. Vậy câu hỏi là: như thế nào là **đủ**? Đây là những quan điểm rất cá nhân, nếu bạn nào đã là master of unit test rồi thì mình hy vọng có được sử chỉ giáo.
 
