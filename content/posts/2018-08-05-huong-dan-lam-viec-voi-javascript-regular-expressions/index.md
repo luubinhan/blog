@@ -409,7 +409,7 @@ const result = /"([^']*)"/.exec(hello)
 /<span\b[^>]*>(.*?)<\/span>/.exec('<span>test</span>')
 // ["<span>test</span>", "test"]
 /<span\b[^>]*>(.*?)<\/span>/.exec('<span class="x">test</span>')
-// ["<span class="x">test</span>", "test"]
+z// ["<span class="x">test</span>", "test"]
 ```
 
 <a target="_blank" rel="noopener noreferrer" href="A guide to JavaScript Regular Expressions">📜 https://flaviocopes.com/javascript-regular-expressions/</a>

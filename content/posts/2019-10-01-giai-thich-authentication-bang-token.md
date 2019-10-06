@@ -63,6 +63,11 @@ Khách sạn có thể cung cấp nhiều loại thẻ từ khác nhau, bạn ch
 
 Hy vọng qua bài viết này, các bạn có thể thuộc làu và giải thích được cơ chế token cho những người ngoại đạo biết nó là gì, vận hành ra làm sao.
 
+Các bài viết khác liên quan đến JWT
+
+- [Bảo mật web - Một số kiểu tấn công](/2018-11-18-mot-so-van-de-can-quan-tam-de-bao-mat-web)
+- [Authentication với JWT](/2018-03-14-huong-dan-react-authentication-voi-jwt-redux)
+
 
 <a target="_blank" rel="noopener noreferrer" href="https://www.jvandemo.com/simple-metaphor-to-understand-and-remember-how-token-based-authentication-works/
 ">📜 Simple metaphor to easily understand and remember how token-based authentication works</a>
