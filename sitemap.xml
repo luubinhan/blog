@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url> <loc>http://vuilaptrinh.com/2019-10-05-viet-unit-test-cho-vue-component-cho-nguoi-moi-bat-dau</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2019-10-04-huong-dan-viet-code-vue-chuan</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://vuilaptrinh.com/2019-10-02-giai-thich-jwt-la-gi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2019-10-01-giai-thich-authentication-bang-token</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2019-09-27-huong-dan-su-dung-media-query</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2019-09-25-vscode-extension-hay-ho-thuong-su-dung</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -114,7 +115,6 @@
 <url> <loc>http://vuilaptrinh.com/2018-09-21-huong-dan-react-native-dung-mot-slider-dung-voi-react-native</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-09-19-huong-dan-react-profiler-dev-tool</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-09-18-merging-va-rebase-trong-git</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>http://vuilaptrinh.com/2018-09-17-huong-dan-luu-token-o-dau</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-09-16-huong-dan-gitflow-workflow</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-09-15-huong-dan-cho-nguoi-moi-bat-dau-voi-scrum-va-agile-project-manament</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-09-13-huong-dan-su-dung-flow-voi-react-redux</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -173,7 +173,6 @@
 <url> <loc>http://vuilaptrinh.com/2018-03-17-huong-dan-react-native-authentication-voi-amazone-cognito-phan-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-03-16-huong-dan-react-authentication-phan-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-03-14-huong-dan-sync-addin-vscode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>http://vuilaptrinh.com/2018-03-14-huong-dan-react-authentication-voi-jwt-redux</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-03-09-huong-dan-su-dung-bien-enviroment-nhu-the-nao</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-03-06-huong-dan-redux-van-hanh-nhu-the-nao-kem-vi-du</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-03-05-8-huong-dan-cach-render-component-trong-react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -222,10 +221,10 @@
 <url> <loc>http://vuilaptrinh.com/tags/performance</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/animation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/pwa</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>http://vuilaptrinh.com/tags/security</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/redux</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/firestore</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/firebase</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://vuilaptrinh.com/tags/security</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/web</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/dns</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/githubpage</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
