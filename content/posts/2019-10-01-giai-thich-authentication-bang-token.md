@@ -70,8 +70,8 @@ Hy vọng qua bài viết này, các bạn có thể thuộc làu và giải th�
 
 - [Authentication bằng Token - Bài 1: cơ chế authentication bằng token](/2019-10-01-giai-thich-authentication-bang-token)
 - [Authentication bằng Token - Bài 2: Giới thiệu JWT](/2019-10-02-giai-thich-jwt-la-gi)
-- [Authentication bằng Token - Bài 3: Hướng dẫn authentication với React](/2018-03-14-huong-dan-react-authentication-voi-jwt-redux)
-- [Các kiểu tấn công để lấy thông tin user](/2018-03-14-huong-dan-react-authentication-voi-jwt-redux)
+- [Authentication bằng Token - Bài 3: Hướng dẫn authentication với React]
+- [Bảo mật web - Một số kiểu tấn công](/2018-11-18-mot-so-van-de-can-quan-tam-de-bao-mat-web)
 
 
 <a target="_blank" rel="noopener noreferrer" href="https://www.jvandemo.com/simple-metaphor-to-understand-and-remember-how-token-based-authentication-works/
