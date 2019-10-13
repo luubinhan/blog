@@ -3,7 +3,7 @@ slug: "/2019-10-12-flat-state-trong-vue-store-de-toi-uu-toc-do"
 date: "2019-10-12"
 title: "Sử dụng flat state trong Vue Store"
 desc: "Nhét những tập dữ liệu lớn trong Vuex store, đặc biệt là các cấu trúc dữ liệu lồng nhau luôn gây ra vấn đề không sớm thì muộn. Bài viết giới thiệu cách tiếp cận với flat state trong Vuex store"
-cover: "https://alligator.io/images/vuejs/testing-vue-with-jest.png"
+cover: ""
 type: "post"
 lesson: 0
 chapter: 0
