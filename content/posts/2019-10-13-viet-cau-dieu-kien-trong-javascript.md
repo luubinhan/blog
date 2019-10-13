@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["vuejs"]
+tags: ["javascript"]
 ---
 
 Một trong những **món ăn** mà anh em lập trình chúng ta phải nhai đi nhai lại trong suốt cuộc đời, dù là bạn đang viết ngôn ngữ gì là **C U ĐIỀU KIỆN**. Nếu không khéo trong lúc **nấu code**, thì món ngon đó đôi khi trở thành món dỡ ẹt, người sau vào ăn không thấy ngon, chúng ta tự ăn cũng không thấy ngon.
