@@ -237,4 +237,4 @@ export default {
 Nhờ vào các hàm getter và `resolveRelations()`, chúng ta có thể dễ dàng truy cập author của từng article
 
 
-[Make your Vuex State Flat: State Normalization with Vuex](https://markus.oberlehner.net/blog/make-your-vuex-state-flat-state-normalization-with-vuex/)
+<a target="_blank" rel="noopener noreferrer" href="https://markus.oberlehner.net/blog/make-your-vuex-state-flat-state-normalization-with-vuex/">📜 Make your Vuex State Flat: State Normalization with Vuex</a>

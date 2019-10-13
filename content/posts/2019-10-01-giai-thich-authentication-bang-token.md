@@ -74,7 +74,6 @@ Hy vọng qua bài viết này, các bạn có thể thuộc làu và giải th�
 - [Bảo mật web - Một số kiểu tấn công](/2018-11-18-mot-so-van-de-can-quan-tam-de-bao-mat-web)
 
 
-<a target="_blank" rel="noopener noreferrer" href="https://www.jvandemo.com/simple-metaphor-to-understand-and-remember-how-token-based-authentication-works/
-">📜 Simple metaphor to easily understand and remember how token-based authentication works</a>
+<a target="_blank" rel="noopener noreferrer" href="https://www.jvandemo.com/simple-metaphor-to-understand-and-remember-how-token-based-authentication-works/">📜 Simple metaphor to easily understand and remember how token-based authentication works</a>
 
 

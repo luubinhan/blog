@@ -341,8 +341,6 @@ Các câu hỏi chúng ta đặt ra trước khi viết
 
 Các bài viết đã tham khảo
 
-<a target="_blank" rel="noopener noreferrer" href="https://www.vuemastery.com/blog/unit-testing-vue-1/
-">📜 Unit Testing in Vue: What to Test?</a>
+<a target="_blank" rel="noopener noreferrer" href="https://www.vuemastery.com/blog/unit-testing-vue-1/">📜 Unit Testing in Vue: What to Test?</a>
 
-<a target="_blank" rel="noopener noreferrer" href="https://vuejsdevelopers.com/2019/08/26/vue-what-to-unit-test-components/
-">📜 Knowing What To Test - Vue Component Unit Testing</a>
+<a target="_blank" rel="noopener noreferrer" href="https://vuejsdevelopers.com/2019/08/26/vue-what-to-unit-test-components/">📜 Knowing What To Test - Vue Component Unit Testing</a>
