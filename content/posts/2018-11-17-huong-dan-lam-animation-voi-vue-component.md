@@ -24,7 +24,7 @@ Vue có sẵn một component để chuyên làm animation là `<transition/>`
 
 ```jsx
 <transition>
-	<component />
+  <component />
 </transition>
 ```
 Nó sẽ thêm một số CSS class, mà dựa vào đó chúng ta có thể thêm animation cho component.
@@ -54,18 +54,18 @@ Nếu không thích thêm `v-` vào trước mấy class này, chúng ta có th�
 ## Ví dụ 1: làm dropdown menu
 
 ```html
-    <li class="dropdown">
-      <button class="dropbtn" @mouseover="show = true" @mouseout="show = false">Dropdown 
-        <i class="down-arrow"></i>
-      </button>
-      <transition name="dropdown">
-        <ul class="dropdown-content" v-if="show" @mouseover="show = true" @mouseout="show = false">
-          <li><a href="#">Link 1</a></li>
-          <li><a href="#">Link 2</a></li>
-          <li><a href="#">Link 3</a></li>
-       </ul>
-     </transition>
-    </li> 
+<li class="dropdown">
+  <button class="dropbtn" @mouseover="show = true" @mouseout="show = false">Dropdown 
+    <i class="down-arrow"></i>
+  </button>
+  <transition name="dropdown">
+    <ul class="dropdown-content" v-if="show" @mouseover="show = true" @mouseout="show = false">
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+   </ul>
+ </transition>
+</li> 
 ```
 
 Thêm các CSS cần thiết
@@ -95,31 +95,31 @@ Thêm các CSS cần thiết
 
 ```html
 <transition name="card" mode="out-in">
-    <div class="card" v-if="front == true" key="front">
-      <h2>Sign In</h2>
-      <div class="form">
-        <h1>Sign In Form</h1>
-      </div>
-      <div class="footer">
-        <span>Not a member?</span>
-        <button @click="front = false">
-          Join Us
-        </button>
-      </div>
+  <div class="card" v-if="front == true" key="front">
+    <h2>Sign In</h2>
+    <div class="form">
+      <h1>Sign In Form</h1>
     </div>
-    <div class="card" v-else key="back">
-      <h2>Sign Up</h2>
-      <div class="form">
-        <h1>Sign Up Form</h1>
-      </div>
-      <div class="footer">
-        <span>Already a member?</span>
-        <button @click="front = true">
-          Log In
-        </button>
-      </div>
+    <div class="footer">
+      <span>Not a member?</span>
+      <button @click="front = false">
+        Join Us
+      </button>
     </div>
-  </transition>
+  </div>
+  <div class="card" v-else key="back">
+    <h2>Sign Up</h2>
+    <div class="form">
+      <h1>Sign Up Form</h1>
+    </div>
+    <div class="footer">
+      <span>Already a member?</span>
+      <button @click="front = true">
+        Log In
+      </button>
+    </div>
+  </div>
+</transition>
 ```
 
 CSS cần thiết
@@ -175,13 +175,13 @@ CSS
 
 ```html
 <div>
-    <input v-model="newItemText" />
-    <button v-on:click="addNewTodo">Add</button>
-    <button v-on:click="removeTodo">Remove</button>
-      <transition-group name="list" tag="ul">
-        <li v-for="task in tasks" v-bind:key="task" >{{ task }}</li>
-      </transition-group>
-  </div>
+  <input v-model="newItemText" />
+  <button v-on:click="addNewTodo">Add</button>
+  <button v-on:click="removeTodo">Remove</button>
+  <transition-group name="list" tag="ul">
+    <li v-for="task in tasks" v-bind:key="task" >{{ task }}</li>
+  </transition-group>
+</div>
 ```
 CSS
 
