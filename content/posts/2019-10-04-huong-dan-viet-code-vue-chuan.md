@@ -41,7 +41,7 @@ Trừ `App` component và các component có sẵn trong Vue như `<transition/>
 Để tránh trùng các thẻ html, có thể sau này, HTML sẽ bổ sung thêm nhiều thẻ mới, thẻ HTML sẽ là 1 chữ  
 
 ```js
-👎 Không chuẩn
+❌ Không ngon
 Vue.component('todo', {
 	//...
 })
@@ -50,7 +50,7 @@ export default {
 	name: 'Todo'
 }
 
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 Vue.component('todo-item', {
 	// ...
 })
@@ -67,14 +67,14 @@ export default {
 `data` phải là function trả về object. Nếu là một object, tất cả các instance component sẽ cùng trỏ tới một dữ liệu `data`.
 
 ```js
-👎 Không chuẩn
+❌ Không ngon
 export default{
 	data: {
 		foo: 'bar'
 	}
 }  
 
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 export default {
 	data() {
 		foo: 'bar'
@@ -89,12 +89,12 @@ Riêng với thằng `root` component, nó chỉ có một, nên có thể là o
 Ít nhất là có `type`, nếu được càng chi tiết chừng nào tốt chừng đó
 
 ```js
-👎 Không chuẩn
+❌ Không ngon
 props: {
 	status: String
 }
 
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 props: {
 	status: {
 		type: String,
@@ -116,14 +116,14 @@ props: {
 Có luôn cái video này rồi, bạn [xem ở đây]()  
 
 ```html
-👎 Không chuẩn
+❌ Không ngon
 <ul>
 	<li v-for="todo in todos">
 		{{ todo.text }}
 	</li>
 </ul> 
 
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 <ul>
 	<li
 		v-for="todo in todos"
@@ -139,7 +139,7 @@ Có luôn cái video này rồi, bạn [xem ở đây]()
 Vì `v-for` được ưu tiên cao hơn `v-if`, nghĩa là nếu viết
 
 ```html
-👎 Không chuẩn
+❌ Không ngon
 
 <ul>
 	<li
@@ -167,7 +167,7 @@ Nghĩa là cứ mỗi lần re-render chúng ta đều loop qua tất cả các 
 Nên filter trước các user có giá trị `isActive = true` trước 
 
 ```js
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 computed: {
 	activeUsers: function () {
 		return this.users.filter(function (user) {
@@ -184,7 +184,7 @@ Những style nào dùng global có thể đưa vào `App` component, còn trong
 Tuy nhiên nếu bạn đang làm 1 thư viện component, để dùng tới dùng lui, hay đưa lên npm cho người khác xài, nên dùng cùng css class bình thường, không có scoped, người khác sử dụng có thể dễ override lại nếu cần
 
 ```html
-👎 Không chuẩn
+❌ Không ngon
 <template>
 	<button class="btn btn-close">X</button>
 </template>
@@ -195,7 +195,7 @@ Tuy nhiên nếu bạn đang làm 1 thư viện component, để dùng tới dù
 	}
 </style>
 
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 <template>
 	<button class="button button-close">X</button>
 </template>
@@ -238,7 +238,7 @@ Dùng BEM khi viết thư viện component
 Sử dụng `module` scope cho các function muốn private. Nếu không thể, luôn dùng tiền tố `$_` trước các property private trong plugin, mixin,... và thêm luôn tên plugin để tránh bị conflict với các plugin khác ( `$_yourPluginName_`)
 
 ```js
-👎 Không chuẩn
+❌ Không ngon
 var myMixin = {
 	// ...
 	methods: {
@@ -257,7 +257,7 @@ var myMixin = {
 	}
 }
 
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 var myMixin = {
 	methods: {
 		$_myMixin_update: function () { }
@@ -279,7 +279,7 @@ Vue.component('TodoItem', {
 	// ...
 })
 
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 components/
 |- TodoList.vue
 |- TodoItem.vue
@@ -288,13 +288,13 @@ components/
 ### File name luôn là một trong 2 dạng PascalCase hoặc kebab-case
 
 ```js
-👎 Không chuẩn
+❌ Không ngon
 components/
 |- mycomponent.vue
 components/
 |- myComponent.vue  
 
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 components/
 |- MyComponent.vue
 components/
@@ -330,13 +330,13 @@ Vue.component(baseComponentName, baseComponentConfig)
 ```
 
 ```js
-👎 Không chuẩn
+❌ Không ngon
 components/
 |- MyButton.vue
 |- VueTable.vue
 |- Icon.vue 
 
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 components/
 |- BaseButton.vue
 |- BaseTable.vue
@@ -358,12 +358,12 @@ components/
 Với những component chỉ xuất hiện một lần trên 1 trang, không bao giờ nhận prop. Chúng ta có một cách đặt tên riêng, thêm tiền tố `The`
 
 ```js
-👎 Không chuẩn
+❌ Không ngon
 components/
 |- Heading.vue
 |- MySidebar.vue
 
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 components/
 |- TheHeading.vue
 |- TheSidebar.vue
@@ -396,7 +396,7 @@ components/
 Cách này ko được khuyến khích, vì nó có quá nhiều trùng tên, việc chuyển qua lại giữa các file này trong editor rất khó chịu, vì ko biết đang mở file nào, nhiều thư mục như vậy, làm việc duyệt qua các component này cũng mệt
 
 ```js
-👎 Không chuẩn
+❌ Không ngon
 components/
 |- TodoList.vue
 |- TodoItem.vue
@@ -406,7 +406,7 @@ components/
 |- SearchSidebar.vue
 |- NavigationForSearchSidebar.vue  
 
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 components/
 |- TodoList.vue
 |- TodoListItem.vue
@@ -423,7 +423,7 @@ components/
 Tên file của component thì nên viết dạng PascalCase, còn trong template nên dùng kebab-case
 
 ```html
-👎 Không chuẩn
+❌ Không ngon
 <!-- In single-file components and string templates -->
 <mycomponent/>
 
@@ -433,7 +433,7 @@ Tên file của component thì nên viết dạng PascalCase, còn trong templat
 <!-- In DOM templates -->
 <MyComponent></MyComponent>
 
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 components/
 <!-- In single-file components and string templates -->
 <MyComponent/>
@@ -448,7 +448,7 @@ OR
 ```
 
 ```js
-👎 Không chuẩn
+❌ Không ngon
 Vue.component('myComponent', {
 	// ...
 })
@@ -464,7 +464,7 @@ export default {
 	// ...
 }
 
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 components/
 Vue.component('MyComponent', {
 	// ...
@@ -486,14 +486,14 @@ export default {
 Dùng camelCase lúc khai báo, kebab-case trong template
 
 ```js
-👎 Không chuẩn
+❌ Không ngon
 props: {
 	'greeting-text': String
 }
 
 <WelcomeMessage greetingText="hi"/>
 
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 props: {
 	greetingText: String
 }

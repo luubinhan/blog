@@ -17,7 +17,7 @@ Một trong những **món ăn** mà anh em lập trình chúng ta phải nhai �
 ## Điều kiện lồng vào nhau
 
 ```js
-👎 Tạm, chưa ngon
+❌ Tạm, chưa ngon
 let result;
 if(condition) {
 } else if(condition2) {
@@ -29,7 +29,7 @@ return result;
 Có vẻ không vấn đề nhỉ? Nhưng thật ra nó sẽ chạy y chang khi chúng ta viết thế này
 
 ```js
-👎 Không ngon
+❌ Không ngon
 let result;
 if(condition) {
 } else {
@@ -43,7 +43,7 @@ return result;
 Du là thế nào đi nữa, gặp lồng câu điều kiện `else...if...`  là phải tìm cách khử liền
 
 ```js
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 if (condition){
 }
 if(condition2) {
@@ -53,10 +53,10 @@ if(condition2) {
 ## Array.includes
 
 ```js
-👎 Không ngon
+❌ Không ngon
 if ( animal == 'dog' || animal == 'cat' || animal == 'turtle')
 
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 ['cat', 'dog', 'turtle'].includes(animal)
 hoặc
 ['cat', 'dog', 'turtle'].indexOf(animal) !== -1
@@ -65,7 +65,7 @@ hoặc
 ## return
 
 ```js
-👎 Không ngon
+❌ Không ngon
 const printAnimalDetails = animal => {
   let result;
   if (animal) {
@@ -92,7 +92,7 @@ const printAnimalDetails = animal => {
 Nếu bạn vẫn viết code thế này thì mình cũng lại!
 
 ```js
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 const printAnimalDetails = ({type, name, gender } = {}) => {
   if(!type) return 'No animal type';
   if(!name) return 'No animal name';
@@ -107,7 +107,7 @@ const printAnimalDetails = ({type, name, gender } = {}) => {
 Đoạn code return loại trái cây có màu sắc như điều kiện truyền vào
 
 ```js
-👎 Không ngon
+❌ Không ngon
 function printFruits(color) {
   switch (color) {
     case 'red':
@@ -125,7 +125,7 @@ function printFruits(color) {
 Code như trên không sai, mà nếu dùng object làm thì sẽ ngon hơn nhiều
 
 ```js
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 function printFruits(color) {
     const fruitColor = {
       red: ['apple', 'strawberry'],
@@ -139,7 +139,7 @@ function printFruits(color) {
 ## params mặc định và destructuring
 
 ```js
-👎 Không ngon
+❌ Không ngon
 function printVegetableName(vegetable) { 
    if (vegetable && vegetable.name) {
     console.log (vegetable.name);
@@ -150,7 +150,7 @@ function printVegetableName(vegetable) {
 ```
 
 ```js
-👍 Chuẩn cơm mẹ nấu
+✅ Chuẩn cơm mẹ nấu
 function printVegetableName({ name } = {}) {
   console.log (name || 'unknown');
 }
@@ -161,7 +161,7 @@ function printVegetableName({ name } = {}) {
 Đoạn code kiểm tra tất cả trái cây có màu đó
 
 ```js
-👎 Không ngon
+❌ Không ngon
 const fruits = [
   { name: 'apple', color: 'red' },
   { name: 'banana', color: 'yellow' },
