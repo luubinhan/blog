@@ -37,7 +37,7 @@ Module cũng sẽ giúp code dễ hiểu hơn, 1 function = 1 công dụng, *kh�
 
 Bên dưới chúng ta sẽ đề cập đến những nguyên lý nền tảng, mà kinh nghiệm thực tế đúc kết được, như sử dụng **immutable** thay vì **mutable**, viết **pure function**, chia nhỏ bằng đệ quy, là những **nguyên lý** nền tảng, không ám chỉ một ngôn ngữ cụ thể nào
 
-## Immutable
+## Immutable, sống kiên định thủy chung
 
 Nói đến lập trình function trước tiên phải nói về **immutable**
 
@@ -77,7 +77,7 @@ Cái gì cũng có giá của nó! Tùy vào ngôn ngữ và cục object bự c
 
 Khi bắt đầu dùng immutable, chúng ta phải tiếp cận khi viết code, phải suy nghĩ từng "cục" code nên làm thêm nào để *sạch* hơn, an toàn với sức khỏe bà mẹ và trẻ em hơn
 
-## Pure Function
+## Pure Function, sống nề nếp không ảnh hưởng đến nhà hàng xóm
 
 Thế nào là một **Function Sạch** ?
 
@@ -87,7 +87,7 @@ Nhờ vậy chúng ta có thể **cache** kết quả này, sử dụng kết qu
 
 > Race condition, mình giải thích nôm na thế này, bạn là chàng trai lắm em theo đuổi, người đến trước, kẻ đến sau, mức độ quyết liệt của mỗi em lại khác nhau không phụ thuộc ai trước, ai sau, em xuất phát sau quá quyết liệt, nên ngỏ lời đòi cưới trước, bạn đồng ý, sau đó em xuất phát trước, cuối cùng cũng chạy tới được nhà bạn, bạn lại đồng ý tiếp. Thế là tiêu đời bạn rồi.
 
-## Đệ quy
+## Đệ quy, sống luôn nhớ về ông bà tổ tiên
 
 Function gọi lại chính nó, không phụ thuộc biến đếm liên quan gì tới lập trình function?
 
