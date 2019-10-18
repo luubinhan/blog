@@ -59,18 +59,18 @@ describe("Wallet", function(){
 	   five = 5, ten = 10, twenty = 20, hundred = 100;
 	})
 	// test case 1
-	it(“should be able to add bills”, function(){
+	it("should be able to add bills", function(){
 		wallet.push(five, ten, twenty)
 		expect(wallet).toEqual([5, 10, 20])
 	})
 	// test case 2
-	it(“should be able to remove one bill”, function(){
+	it("should be able to remove one bill", function(){
 	    wallet.push(five, ten, twenty)
 	    wallet.splice(wallet.indexOf(5), 1)
 	    expect(wallet).toEqual([ 10, 20 ])
 	})
 	// test case 3
-	it(“should be able to calculate total”, function(){
+	it("should be able to calculate total", function(){
 	    wallet.push(five, ten, twenty, hundred, twenty, five)
 	    total = wallet.reduce((a,b) => a + b)
 	    expect(total).toEqual(160)
