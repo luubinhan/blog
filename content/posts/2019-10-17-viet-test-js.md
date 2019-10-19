@@ -10,6 +10,13 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [Spy một function](#spy-m%E1%BB%99t-function)
+- [Test các đoạn code bất đồng bộ](#test-c%C3%A1c-%C4%91o%E1%BA%A1n-code-b%E1%BA%A5t-%C4%91%E1%BB%93ng-b%E1%BB%99)
+
+<!-- /TOC -->
+
 Tại sao chúng ta phải viết test, trong khi code của chúng chạy đang ngon? Câu trả lời rất đơn giản, nó khiến chúng ta suy nghĩ cách chúng ta đang code, code như theo kiểu này hay kiểu kia thì hợp lý hơn, code sẽ *sạch* hơn, dễ bảo trì hơn
 
 Với một pure function siêu đơn giản
