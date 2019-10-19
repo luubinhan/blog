@@ -10,6 +10,17 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [Điều kiện lồng vào nhau](#%C4%91i%E1%BB%81u-ki%E1%BB%87n-l%E1%BB%93ng-v%C3%A0o-nhau)
+- [Array.includes](#arrayincludes)
+- [return](#return)
+- [Dùng Object thay cho switch...case](#d%C3%B9ng-object-thay-cho-switchcase)
+- [params mặc định và destructuring](#params-m%E1%BA%B7c-%C4%91%E1%BB%8Bnh-v%C3%A0-destructuring)
+- [Array.every, Array.some](#arrayevery-arraysome)
+
+<!-- /TOC -->
+
 Một trong những **món ăn** mà anh em lập trình chúng ta phải nhai đi nhai lại trong suốt cuộc đời, dù là bạn đang viết ngôn ngữ gì là **C U ĐIỀU KIỆN**. Nếu không khéo trong lúc **nấu code**, thì món ngon đó đôi khi trở thành món dỡ ẹt, người sau vào ăn không thấy ngon, chúng ta tự ăn cũng không thấy ngon.
 
 *Bài này được viết trong một chiều chủ nhật đang đói bụng*
@@ -140,7 +151,7 @@ function printFruits(color) {
 
 ```js
 ❌ Không ngon
-function printVegetableName(vegetable) { 
+function printVegetableName(vegetable) {
    if (vegetable && vegetable.name) {
     console.log (vegetable.name);
   } else {
