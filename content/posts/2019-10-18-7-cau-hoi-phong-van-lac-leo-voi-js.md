@@ -3,7 +3,7 @@ slug: "/2019-10-18-7-cau-hoi-phong-van-lac-leo-voi-js"
 date: "2019-10-18"
 title: "7 Câu hỏi phỏng vấn lắc léo với Javascript"
 desc: "Thử kiến thức javascript của bạn đã đủ cho cuộc phỏng vấn cam go sắp tới chưa"
-cover: ""
+cover: "https://dmitripavlutin.com/static/c4adb4f5373b24b71c1a3c87c806e39c/26b3e/people-at-interview.webp"
 type: "post"
 lesson: 0
 chapter: 0
