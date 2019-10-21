@@ -55,7 +55,7 @@ Vue không chỉ có thể đặt một mà đặt nhiều gạch, số lượng
 		    <h5>Fish and Chips</h5>
 		    <p>Super delicious tbh.</p>
 		</div>
-	</template>  
+	</template>
 </mother>
 ```
 
@@ -106,9 +106,9 @@ Component con sẽ nhận dữ liệu thông qua từ khóa `slot-scope`
 
 Lấy structure của bootstrap nhé, chúng ta sẽ cho Modal component có 3 chỗ có thể thay đổi là
 
-- <slot name="header" />
-- <slot name="body" />
-- <slot name="footer" />
+- `<slot name="header" />`
+- `<slot name="body" />`
+- `<slot name="footer" />`
 
 ```html{7,13,16}
 <!-- my-modal.vue -->
