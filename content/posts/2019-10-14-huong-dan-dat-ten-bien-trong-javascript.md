@@ -181,7 +181,7 @@ const DAY = SECONDS * MINUTES * HOURS;
 
 ## Dash
 
-Javascript không dùng ưa gì ký tự `-`, tránh sử dụng `-` khi khai báo
+Javascript không ưa gì ký tự `-`, tránh sử dụng `-` khi khai báo
 
 ```js
 ❌ Không ngon
