@@ -85,7 +85,11 @@ const myCar = new MuscleCar('blue', '300HP'); // `ReferenceError`
 
 Chúng ta phải dùng `this.` sau khi gọi `super`
 
-Với những cách khai báo cũ là `var`, `function` nó không chịu chung số phận phải sống trong khu tự trị, nó sẽ chịu khái niệm **hoisted**, nếu xã không giải quyết được, đưa lên quận giải quyết, quận ko giải quyết được đưa lên thành phố, quốc hội.
+Với những cách khai báo cũ là `var`, `function` nó không chịu chung số phận phải sống trong khu tự trị, nó sẽ chịu khái niệm **Hoisting**.
+
+Hoisting là một cơ chế hoạt động gây khó dễ anh em chúng ta đã bao nhiêu thập kỷ nay.
+
+Anh em ra đường gặp một em chưa hề quen biết, chúng ta nhẹ nhàng tới hỏi "Em nhà ở đâu thế?", nhận được câu trả lời anh lên phường tra cứu, lên đến phường, "chẳng ai biết ẻm là ai", phường chỉ lên quận tra cứu, *quận* lại bảo "có mà lên ủy ban thành phố chú ạ", lỡ mà xui xui chúng ta phải lên đến trung ương để biết rằng em đã đăng ký hộ khẩu ở đâu.
 
 ```js{2,5,9}
 // chạy như thường, nhưng đừng viết gì nhá
