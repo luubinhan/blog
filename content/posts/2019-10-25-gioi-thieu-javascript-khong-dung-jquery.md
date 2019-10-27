@@ -10,6 +10,23 @@ chapter: 0
 tags: ["javascript"]
 ---
 
+<!-- TOC -->
+
+- [Chọn element](#ch%e1%bb%8dn-element)
+- [Chạy function trên các element đã chọn](#ch%e1%ba%a1y-function-tr%c3%aan-c%c3%a1c-element-%c4%91%c3%a3-ch%e1%bb%8dn)
+- [Tìm element con bên trong element cha đã chọn](#t%c3%acm-element-con-b%c3%aan-trong-element-cha-%c4%91%c3%a3-ch%e1%bb%8dn)
+- [Di chuyển qua các element kề cận](#di-chuy%e1%bb%83n-qua-c%c3%a1c-element-k%e1%bb%81-c%e1%ba%adn)
+- [Gắn sự kiện](#g%e1%ba%afn-s%e1%bb%b1-ki%e1%bb%87n)
+- [Dispatch event](#dispatch-event)
+- [Styling cho element](#styling-cho-element)
+- [Ẩn hiện element](#%e1%ba%a8n-hi%e1%bb%87n-element)
+- [Document ready](#document-ready)
+- [Làm việc với class](#l%c3%a0m-vi%e1%bb%87c-v%e1%bb%9bi-class)
+- [Network request](#network-request)
+- [Tạo element](#t%e1%ba%a1o-element)
+
+<!-- /TOC -->
+
 Hiện giờ chúng ta đã làm việc nhiều với các framework *hại điện* hơn nhiều so với jQuery, nên rất ít chi đụng tới DOM thật, không còn ngày tháng *xào trộn* HTML bằng jQuery, chúng ta chỉ định nghĩa khi nào render, render cái gì. Tuy nhiên, kỹ năng *sờ mó* vào DOM là cần thiết cho mọi lập trình viên FE. Bây giờ muốn *sờ* vào DOM chúng ta cần nắm cách dùng javascript thuần.
 
 ## Chọn element

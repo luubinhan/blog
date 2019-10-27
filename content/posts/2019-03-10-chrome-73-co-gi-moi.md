@@ -3,7 +3,7 @@ slug: "/2019-03-10-chrome-73-co-gi-moi"
 date: "2019-03-10"
 title: "Chrome 73 có gì mới"
 desc: "Master chrome devtool là cần thiết cho một frontend developer, mình sẽ bắt đầu series cập nhập những tính năng mới nhất của Chrome, theo như lộ trình định sẵn thì cứ 6 tuần nó sẽ có bản cập nhập mới cho Chrome"
-cover: ""
+cover: "https://i.imgur.com/bj1kcFp.png"
 type: "post"
 lesson: 0
 chapter: 0
@@ -79,7 +79,7 @@ Code coverage là kết quả đánh giá có bao nhiêu phần trong code đã 
 - `text` là toàn bộ source code
 
 1. Đầu tiên gọi `Control + Shift + P` để mở cửa sổ Command
-2. 
+2.
 ![mở cửa sổ Command](https://developers.google.com/web/updates/images/2019/01/command-menu.png)
 
 2. Gõ vào đoạn text `coverage`
@@ -113,7 +113,7 @@ Nếu bạn chưa biết, contrast ratio là độ tương phản đề nghị c
 
 ## Lưu giá trị Geolocation đã thay đổi
 
-Mở cửa sổ **Sensors** Control + Shift + P, gõ tìm **Sensors** 
+Mở cửa sổ **Sensors** Control + Shift + P, gõ tìm **Sensors**
 
 ![Command Menu](https://developers.google.com/web/updates/images/2019/01/command-menu.png)
 ![Sensors tab](https://developers.google.com/web/updates/images/2019/01/sensors.png)
@@ -140,4 +140,3 @@ Cửa sổ **Frames** giờ đổi tên thành **Message**, nó chỉ có trong 
 
 
 [Xem video ở đây](https://www.youtube.com/watch?v=uddZX9ZK6wY&list=WL&index=2&t=0s)
-
