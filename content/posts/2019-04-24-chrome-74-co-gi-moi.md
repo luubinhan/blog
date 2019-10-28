@@ -3,7 +3,7 @@ slug: "/2019-04-24-chrome-74-co-gi-moi"
 date: "2019-04-24"
 title: "Có gì mới trong DevTools của Chrome 74"
 desc: "Master chrome devtool là cần thiết cho một frontend developer, mình sẽ bắt đầu series cập nhập những tính năng mới nhất của Chrome, theo như lộ trình định sẵn thì cứ 6 tuần nó sẽ có bản cập nhập mới cho Chrome"
-cover: ""
+cover: "https://i.imgur.com/bj1kcFp.png"
 type: "post"
 lesson: 0
 chapter: 0
@@ -27,7 +27,7 @@ Khi hover lên một property CSS, giao diện sẽ được highlight những e
 
 ![Highlight tất cả element đang áp dụng CSS](https://developers.google.com/web/updates/images/2019/03/highlight.png)
 
-## Lighthouse 
+## Lighthouse
 
 Thêm mục đánh giá [Tap targets are not sized appropriately](https://developers.google.com/web/tools/lighthouse/audits/tap-targets), đại khái là nó sẽ kiểm tra các element để user click, như là button, a, role=button, có được set kích thước phù hợp trên mobile hay chưa, các element có bị đặt gần nhau quá không, vì gần nhau quá user có thể vô tình click nhầm
 
@@ -89,5 +89,3 @@ Phần Timings cũng bổ sung mục **First Pain**
 
 <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=I14fXc7sXdU&list=WL&index=2&t=0s">What's New In DevTools (Chrome 74)
 </a>
-
-
