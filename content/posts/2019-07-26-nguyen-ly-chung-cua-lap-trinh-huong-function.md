@@ -58,7 +58,7 @@ Giá trị `x` tham chiếu đến một vùng nhớ khác khi viết `x = { nam
 
 Trường hợp 2 là chỉnh sửa giá một object có sẵn
 
-```js {4}
+```js{4}
 var x = { name: 'luckyluu' }
 var y = x
 
@@ -81,7 +81,7 @@ Khi bắt đầu dùng immutable, chúng ta phải tiếp cận khi viết code,
 
 Thế nào là một **Function Sạch** ?
 
-Đó giờ chúng ta vẫn viết function, lập trình hướng function thì có gì khác? **function** ở đây ám chỉ các hàm hoạt động như hàm toán học như `f(x) = x + 1`, những hàm toán học này rất đơn giản, nhận một giá trị, và trả về một giá trị, không chỉnh sửa giá trị bên ngoài, dù nó được truyền vào như tham số của hàm, nếu cùng tham số truyền vào, **luôn luôn** nhận được cùng kết quả trả về. Truyền vào cho `f(x) = x + 1` là 2 thì bất cứ lần nào cũng nhận được kết quả là 3. 
+Đó giờ chúng ta vẫn viết function, lập trình hướng function thì có gì khác? **function** ở đây ám chỉ các hàm hoạt động như hàm toán học như `f(x) = x + 1`, những hàm toán học này rất đơn giản, nhận một giá trị, và trả về một giá trị, không chỉnh sửa giá trị bên ngoài, dù nó được truyền vào như tham số của hàm, nếu cùng tham số truyền vào, **luôn luôn** nhận được cùng kết quả trả về. Truyền vào cho `f(x) = x + 1` là 2 thì bất cứ lần nào cũng nhận được kết quả là 3.
 
 Nhờ vậy chúng ta có thể **cache** kết quả này, sử dụng kết quả cache trong trường hợp có cùng input. Chúng ta cũng có thể gọi các function này trên nhiều luồng chạy song song mà không phải lo lắng gì. Nếu các function không phụ thuộc lẫn nhau, chúng ta cũng có thể gọi nó theo bất cứ thứ tự nào mà không quan tâm đến vấn đề **race condition**
 
@@ -126,7 +126,3 @@ Theo quan điểm cá nhân: lập trình function trở nên phổ biến bởi
 <a target="_blank" rel="noopener noreferrer" href="https://www.lucidchart.com/techblog/2017/11/29/functional-programming-principles-every-imperative-programmer-should-use/">FUNCTIONAL PROGRAMMING PRINCIPLES EVERY IMPERATIVE PROGRAMMER SHOULD USE</a>
 
 <a target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/questions/36504/why-functional-languages">Why functional languages? </a>
-
-
-
-
