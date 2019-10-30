@@ -1,5 +1,5 @@
 ---
-slug: "/2019-10-28-giai-thieu-ve-do-phuc-tap-cua-thuat-toan"
+slug: "/2019-10-28-gioi-thieu-ve-do-phuc-tap-cua-thuat-toan"
 date: "2019-10-28"
 title: "Độ phức tạp của thuật toán hay hàm"
 desc: "Một cách chuẩn hóa trong ngành lập trình để đánh giá độ phức tạp của giải thuật"
