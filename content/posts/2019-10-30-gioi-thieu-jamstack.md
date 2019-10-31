@@ -1,6 +1,6 @@
 ---
 slug: "/2019-10-30-gioi-thieu-jamstack"
-date: "2019-10-20"
+date: "2019-10-30"
 title: "JAMstack và ngành công nghiệp hủ tiếu gõ Việt Nam"
 desc: "Sau khi đọc bài này, bạn sẽ hiểu được JAMstack là gì, lợi lộc gì, để hiện thức hóa JAMstack bạn cần nghiên cứu những công cụ gì"
 cover: ""
@@ -16,19 +16,19 @@ Chữ **JAM** là viết tắt cho **JavaScript-APIs-Markup**. Còn *stack* là 
 
 ![JAMstack và ngành công nghiệp hủ tiếu gõ Việt Nam](https://monngonmoingay.com/wp-content/uploads/2015/08/9.banhmikepgakhia1.png)
 
-Ổ bánh mì Việt Nam, tùy thuộc vào cô bán, họ sẽ bỏ ít-hay-nhiều lớp thịt mỡ vào trong đó tùy thuộc vào giá tiền bạn bỏ ra.
+Lấy ví von ổ bánh mì Việt Nam là có lý do. Tùy thuộc vào cô bán, họ sẽ bỏ ít-hay-nhiều **lớp** thịt mỡ vào trong đó tùy thuộc vào giá tiền bạn bỏ ra.
 
-Bỏ qua chuyện ăn uống, quay lại với công nghệ, JAMstack là một cách kiến trúc các ứng dụng web với mục tiêu **tiết kiệm hơn**  trong triển khai, **bảo mật hơn**  trong lúc vận hành, **chạy lẹ hơn**  để đáp ứng nhu cầu cần là có liền của user, **dễ dàng nhân rộng** hơn khi số lượng khách hàng càng tăng dần (*hứa hẹn thật nhiều không biết có thất hứa nhiều ko*)
+Bỏ qua chuyện ăn uống, quay lại với công nghệ, JAMstack là một cách kiến trúc các ứng dụng web với mục tiêu **tiết kiệm hơn**  trong triển khai, **bảo mật hơn**  trong lúc vận hành, **chạy lẹ hơn** trong lúc đông khách (user), **dễ dàng nhân rộng** hơn khi số lượng khách hàng càng tăng dần (*hứa hẹn thật nhiều không biết có thất hứa nhiều ko*)
 
-JAMstack không bắt buộc bạn sử dụng một công nghệ nào cụ thể, bạn có thể dùng javascript thuần, typescript, Elm, Clojure, WebAssembly đều được. Bạn dùng javascript để `fetch` dữ liệu từ nguồn nào cũng được, thirt-party APIs, API ở server nhà bạn, các Serverless function, hoặc gôm 2 ba ông xài chung được luôn. Về mặt nội dung, bạn có thể chọn các kiểu tạo static site đang có, Hugo, GatsbyJS, Jekyll, Next.js, Nuxt.js, VuePress... Nói chúng đây là một kiến trúc không quan trọng cách bạn làm nó bằng gì, như thế nào, chỉ đặt yêu cầu đầu ra của bạn cần đạt được.
+JAMstack không bắt buộc bạn sử dụng một công nghệ nào cụ thể, bạn có thể dùng javascript thuần, typescript, Elm, Clojure, WebAssembly đều được. Bạn dùng javascript để `fetch` dữ liệu từ nguồn nào cũng được, thirt-party APIs, API ở server nhà bạn, các Serverless function, hoặc gôm 2 ba ông xài chung được luôn. Về mặt nội dung, bạn có thể chọn các kiểu tạo static site đang có, Hugo, GatsbyJS, Jekyll, Next.js, Nuxt.js, VuePress... Nói chung đây là một kiến trúc không quan trọng cách bạn làm nó bằng gì, như thế nào, chỉ đặt yêu cầu đầu ra của bạn cần đạt được.
 
 ## Vì sao lại có sự xuất hiện của mô hình kiến trúc này
 
-Có thể xem web truyền thống là mô hình bán hủ tiếu gia truyền, nhà nào bán, nhà đó làm hết tất cả các khâu, có một công thức nấu nước lèo riêng, bạn cần ước lượng để nấu nồi nước lèo ít nhất một 100 tô thì mới có lời. Khi bạn mở thành công một chi nhánh, việc mở thêm chi nhánh sẽ phức tạp hơn vì bạn chưa có kinh nghiệm nấu cho 10000 tô nước lèo một ngày, và còn vô số thứ khác bạn cần tính toán thật kỹ.
+*Có thể xem web truyền thống là mô hình bán hủ tiếu gia truyền, nhà nào bán, nhà đó làm hết tất cả các khâu, có một công thức nấu nước lèo riêng, bạn cần ước lượng để nấu nồi nước lèo ít nhất một 100 tô thì mới có lời. Khi bạn mở thành công một chi nhánh, việc mở thành một chuỗi cửa hàng hủ tiếu sẽ phức tạp hơn vì bạn chưa có kinh nghiệm nấu cho 10000 tô nước lèo một ngày, và còn vô số thứ khác bạn cần tính toán thật kỹ.*
 
 Các ứng dụng web truyền thống và CMS phụ thuộc vào code server side để render và return HTML trên từng request. Đa phần chúng ta cần database hoặc các loại lưu trữ dữ liệu động khác. Với hệ thống truyền thống, cần mở rộng nghĩa là cần nhiều server hơn, các kỹ thuật caching để khi dữ lớn cực lớn, web vẫn chạy nhanh.
 
-JAMstack mô hình bán hủ tiếu gõ ở Việt Nam, tất cả nước lèo được sản xuất công nghiệp ở một nhà máy, người bán có thể bán hủ tiếu, mì, bánh canh nui gì cũng được. Việc nhận rộng mô hình hủ tiếu gõ là vô cùng nhanh và dễ, người ta chỉ cần mua thứ nước đã nấu sẵn về là bán. Chi phí khi sản xuất công nghiệp bao giờ cũng xuống thấp hơn với nhà tự nấu, và nếu bạn ăn nên làm ra, việc mở rộng thành 10 quán hủ tiếu khắp phường 10 quận 8 sẽ không quá nhiều khó khăn.
+*JAMstack có thể hình dung là mô hình bán hủ tiếu gõ ở Việt Nam, tất cả nước lèo được sản xuất công nghiệp ở một nhà máy, người bán có thể bán hủ tiếu, mì, bánh canh nui gì cũng được. Việc nhân rộng mô hình hủ tiếu gõ là vô cùng nhanh và dễ, người ta chỉ cần mua thứ nước đã nấu sẵn về là bán. Chi phí khi sản xuất công nghiệp bao giờ cũng xuống thấp hơn với nhà tự nấu, và nếu bạn ăn nên làm ra, việc mở rộng thành 10 quán hủ tiếu khắp phường 10 quận 8 sẽ không quá nhiều khó khăn.*
 
 Theo cách tiếp cận của JAMstack, mỗi trang đã được build sẵn khi ứng dụng deploy. Toàn bộ HTML, JavaScript, CSS, hình cần thiết của ứng dụng đã được *nấu chính sẵn*. Mục tiêu là giảm số việc cần làm ở server xuống, việc truyền tất cả file dạng tĩnh bao giờ cũng đơn giản và nhanh hơn chạy server code.
 
@@ -45,9 +45,9 @@ Giảm xử lý trên server, tăng cường cung cấp file dạng static, rủ
 
 *2015* - static site xuất hiện trở lại, có sự phản bác nhẹ các hệ thống CMS đang thịnh hành
 
-*2016* - một bước lùi nhẹ, chưa có nhiều công cụ để làm static site *cool*, mọi thứ còn quá thô sơ. Một nhóm các lập trình viên *máu mặt* giới thiệu thuật ngữ JAMstack đến cộng đồng và lôi kéo vào nhóm phát triển để thúc đi sự đi lên cho JAMstack.
+*2016* - một bước lùi nhẹ, chưa có nhiều công cụ để làm static site *cool*, mọi thứ còn quá thô sơ. Một nhóm các lập trình viên *máu mặt* giới thiệu thuật ngữ JAMstack đến cộng đồng và lôi kéo vào nhóm phát triển để thúc đẩy sự đi lên cho JAMstack.
 
-*2017* - dụ dỗ thành công, xuất hiện cộng đồng làm static site, "static" không còn là "static" đúng nghĩa nữa, nhiều đồ chơi để build ra static xuất hiện. Một vài công ty tên tuổi bắt đầu áp dụng JAMstack như Sequoia Capital, Mailchimp & Red Bull.
+*2017* - dụ dỗ thành công, xuất hiện cộng đồng làm static site, "static" không còn là "static" đúng nghĩa nữa, nhiều đồ chơi để build ra static xuất hiện. Một vài công ty tên tuổi bắt đầu áp dụng JAMstack như [Sequoia Capital](https://www.sequoiacap.com/), [Mailchimp](https://mailchimp.com/) & [Red Bull](https://www.redbull.com/int-en/).
 
 *2018* - Năm bùng nổ của JAMstack, nhà nhà người người nói về nó, Gatsby, Netlify, Contentful những món đồ chơi xịn sò càng hoàn thiện.
 
@@ -72,7 +72,7 @@ Phía deploy, chúng ta có thể đặt code trên [GitHub pages](https://githu
 Với những tính năng phía backend có thể được outsource cho các dịch vụ SaaS.
 
 - [Foxy.io](https://snipcart.com/blog/foxycart-vs-snipcart-review), Snipcard, Moltin, nút mua của Shopify cho các tính năng e-commerce
-- FormKeep, [Typeform](https://www.typeform.com/), Formspree, Netlify để làm việc với form
+- FormKeep, [Typeform](https://www.typeform.com/), Formspree, [Netlify](https://www.netlify.com/) để làm việc với form
 - Algolia, Google Custom Search, Fuse.js, Lunr.js, List.js cho tính năng tìm kiếm
 - Disqus, [Staticman](https://staticman.net/) cho phần bình luận
 
@@ -90,7 +90,7 @@ Câu trả lời đang đợi anh em chúng ta, những câu khách hàng hay h�
 - Chị muốn quản lý và phần quyền user thì sao em à?
 
 
-** Tài liệu đã sử dụng tham khảo**
+**Tài liệu đã sử dụng tham khảo**
 
 [https://scotch.io/tutorials/secure-and-scalable-an-introduction-to-jamstack](https://scotch.io/tutorials/secure-and-scalable-an-introduction-to-jamstack)
 

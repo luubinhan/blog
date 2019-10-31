@@ -1,7 +1,7 @@
 ---
 slug: "/2019-10-28-gioi-thieu-ve-do-phuc-tap-cua-thuat-toan"
 date: "2019-10-28"
-title: "Độ phức tạp của thuật toán hay hàm"
+title: "Độ phức tạp của thuật toán"
 desc: "Một cách chuẩn hóa trong ngành lập trình để đánh giá độ phức tạp của giải thuật"
 cover: ""
 type: "post"
@@ -9,9 +9,6 @@ lesson: 0
 chapter: 0
 tags: ["javascript", "hoc-thuat"]
 ---
-
-
-# Đánh giá độ phức tạp trong Javascript
 
 Một **giải thuật** sẽ bao gồm **các bước tuần tự** để giải quyết một vấn đề, để đi qua các bước tuần tự này, sẽ tốn một **khoản thời gian** nhất định để hoàn thành. Thời gian tiêu tốn của một giải thuật để giải quyết vấn đề được gọi là **Độ phức tạp của thuật toán**
 
