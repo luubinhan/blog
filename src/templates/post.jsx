@@ -33,9 +33,6 @@ export default class PostTemplate extends React.Component {
           />
         </Helmet>
         <div className="inner">
-          <div className="mb-4">
-            <img src="/images/banner-blog.jpg" alt="Bánh tằm bì nước cốt dừa Sài Gòn"/>
-          </div>
           <SEO postPath={slug} postNode={postNode} postSEO />
           <div className="single-post">
             <div className="single-post-container">
