@@ -1,6 +1,6 @@
 ---
-slug: "/2019-11-09-lam-video-fullscreen-voi-react"
-date: "2019-11-09"
+slug: "/2019-11-12-lam-video-fullscreen-voi-react"
+date: "2019-11-12"
 title: "Gắn video làm background toàn màn hình"
 desc: "Chia sẽ kỹ thuật làm background video để chạy full màn hình"
 cover: ""
