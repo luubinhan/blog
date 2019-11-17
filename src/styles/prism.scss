@@ -19,7 +19,10 @@ https://prismjs.com/download.html#themes=prism-coy&languages=markup+css+clike+ja
   }
 }
 .gatsby-highlight-code-line {
-  background: #fdf9ea !important;
+  background: #ffe740 !important;
+  display: block;
+  margin-left: -75px;
+  padding-left: 75px;
 }
 code[class*="language-"],
 pre[class*="language-"] {
