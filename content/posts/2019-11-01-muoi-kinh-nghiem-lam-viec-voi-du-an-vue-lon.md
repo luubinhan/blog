@@ -10,6 +10,21 @@ chapter: 0
 tags: ["kinh-nghiem", "vuejs"]
 ---
 
+<!-- TOC -->
+
+- [Sử dụng `slot` để component dễ hiểu hơn và dễ tùy biến hơn](#s%e1%bb%ad-d%e1%bb%a5ng-slot-%c4%91%e1%bb%83-component-d%e1%bb%85-hi%e1%bb%83u-h%c6%a1n-v%c3%a0-d%e1%bb%85-t%c3%b9y-bi%e1%ba%bfn-h%c6%a1n)
+- [Tổ chức Vuex Store](#t%e1%bb%95-ch%e1%bb%a9c-vuex-store)
+- [Sử dụng action để lấy và gửi dữ liệu](#s%e1%bb%ad-d%e1%bb%a5ng-action-%c4%91%e1%bb%83-l%e1%ba%a5y-v%c3%a0-g%e1%bb%adi-d%e1%bb%af-li%e1%bb%87u)
+- [Sử dụng `mapState`, `mapGetters`, `mapMutations` và `mapActions`](#s%e1%bb%ad-d%e1%bb%a5ng-mapstate-mapgetters-mapmutations-v%c3%a0-mapactions)
+- [Sử dụng API Factories](#s%e1%bb%ad-d%e1%bb%a5ng-api-factories)
+- [Sử dụng `$config` để truy cập biến môi trường](#s%e1%bb%ad-d%e1%bb%a5ng-config-%c4%91%e1%bb%83-truy-c%e1%ba%adp-bi%e1%ba%bfn-m%c3%b4i-tr%c6%b0%e1%bb%9dng)
+- [Tuân theo một nguyên tắc chung khi viết commit](#tu%c3%a2n-theo-m%e1%bb%99t-nguy%c3%aan-t%e1%ba%afc-chung-khi-vi%e1%ba%bft-commit)
+- [Khi lên production, fix luôn các package version đang xài](#khi-l%c3%aan-production-fix-lu%c3%b4n-c%c3%a1c-package-version-%c4%91ang-x%c3%a0i)
+- [Sử dụng Virtual Scroller khi hiển thị nhiều dữ liệu](#s%e1%bb%ad-d%e1%bb%a5ng-virtual-scroller-khi-hi%e1%bb%83n-th%e1%bb%8b-nhi%e1%bb%81u-d%e1%bb%af-li%e1%bb%87u)
+- [Kiểm tra dung lượng package](#ki%e1%bb%83m-tra-dung-l%c6%b0%e1%bb%a3ng-package)
+
+<!-- /TOC -->
+
 ## Sử dụng `slot` để component dễ hiểu hơn và dễ tùy biến hơn
 
 Bài viết hướng dẫn chi tiết khái niệm và cách dùng `slot` bạn [đọc lại ở đây](/2019-10-20-huong-dan-ung-dung-tuyet-voi-cua-vue-renderless-component). Với việc sử dụng `slot` bạn sẽ có những component với khả năng *xào đi nấu lại* dễ hơn.

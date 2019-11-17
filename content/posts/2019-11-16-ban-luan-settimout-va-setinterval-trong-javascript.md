@@ -10,8 +10,12 @@ chapter: 0
 tags: ["hoc-thuat", "javascript"]
 ---
 
+<!-- TOC -->
 
-## setInterval và setTimeout
+- [setInterval](#setinterval)
+- [setTimeout](#settimeout)
+
+<!-- /TOC -->
 
 Nếu bạn cần gọi một hàm **lặp lại** theo một khoản thời gian nhất định trong javascript bạn sẽ dùng gì? Một là dùng `setInterval`  hay là đệ quy `setTimeout`
 
