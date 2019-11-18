@@ -10,6 +10,18 @@ chapter: 0
 tags: ["hoc-thuat", "react"]
 ---
 
+<!-- TOC -->
+
+- [Gọi hook thủ công/bằng code](#g%e1%bb%8di-hook-th%e1%bb%a7-c%c3%b4ngb%e1%ba%b1ng-code)
+- [Loading indicator](#loading-indicator)
+- [Handle Error](#handle-error)
+- [Fetch data với Form](#fetch-data-v%e1%bb%9bi-form)
+- [Custom hook để Fetch data](#custom-hook-%c4%91%e1%bb%83-fetch-data)
+- [Reducer hook](#reducer-hook)
+- [Bỏ qua việc fetch data](#b%e1%bb%8f-qua-vi%e1%bb%87c-fetch-data)
+
+<!-- /TOC -->
+
 
 Chúng ta có một component, dữ liệu của component này sẽ được lấy từ API
 
