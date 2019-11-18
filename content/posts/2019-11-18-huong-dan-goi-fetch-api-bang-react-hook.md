@@ -46,7 +46,7 @@ export default App;
 
 Chúng ta sẽ sử dụng axios để fetch dữ liệu, bạn thích xài cái khác thì cứ vô tư
 
-```jsx{7,12}
+```jsx{7-12}
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
