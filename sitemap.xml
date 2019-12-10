@@ -9,6 +9,7 @@
 <url> <loc>http://vuilaptrinh.com/2019-11-16-ban-luan-settimout-va-setinterval-trong-javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2019-11-12-lam-video-fullscreen-voi-react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2019-11-10-tai-sao-lai-viet-super-props</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://vuilaptrinh.com/2019-12-10-huong-dan-su-dung-v-model-tren-component-long-nhau</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2019-11-02-gioi-thieu-thuat-toan-quicksort</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2019-11-01-muoi-kinh-nghiem-lam-viec-voi-du-an-vue-lon</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2019-10-30-gioi-thieu-jamstack</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -232,8 +233,8 @@
 <url> <loc>http://vuilaptrinh.com/tags/thu-thuat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/tool</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/css</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>http://vuilaptrinh.com/tags/kinh-nghiem</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/vuejs</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://vuilaptrinh.com/tags/kinh-nghiem</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/chrome</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/ux-ui</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/step-by-step</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
