@@ -1,6 +1,6 @@
 ---
 slug: "/2019-12-10-huong-dan-su-dung-v-model-tren-component-long-nhau"
-date: "2019-11-10"
+date: "2019-12-10"
 title: "Sử dụng v-model trên component lồng nhau"
 desc: "Cách viết dùng v-model để tự đồng bộ giá trị khi lồng các component"
 cover: ""
