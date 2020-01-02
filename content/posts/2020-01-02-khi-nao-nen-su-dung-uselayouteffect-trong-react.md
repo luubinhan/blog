@@ -85,3 +85,6 @@ ReactDOM.render(
 
 Với cách dùng `useLayoutEffect` chúng ta chỉ cập nhập UI đúng **1** lần, trong khi component gọi render **2** lần.
 
+
+<a target="_blank" rel="noopener noreferrer" href="https://daveceddia.com/useeffect-vs-uselayouteffect/">📜 When to useLayoutEffect Instead of useEffect</a>
+
