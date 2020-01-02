@@ -1,6 +1,6 @@
 ---
-slug: "/2020-01-02-chi-dan-viet-redux-sao-cho-chuan"
-date: "2020-01-02"
+slug: "/2020-01-01-chi-dan-viet-redux-sao-cho-chuan"
+date: "2020-01-01"
 title: "Chỉ dẫn viết Redux sao cho chuẩn"
 desc: "Đây không phải là quan điểm cá nhân, bài viết được dịch thuật từ tài liệu chính thức của Redux"
 cover: ""
