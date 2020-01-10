@@ -11,14 +11,6 @@ tags: ["hoc-thuat", "react"]
 ---
 
 
----
-id: testing-recipes
-title: Phương thức Test
-permalink: docs/testing-recipes.html
-prev: testing.html
-next: testing-environments.html
----
-
 Một vài cách viết test phổ biến cho component React.
 
 
