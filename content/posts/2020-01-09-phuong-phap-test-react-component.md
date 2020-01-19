@@ -10,14 +10,26 @@ chapter: 0
 tags: ["hoc-thuat", "react"]
 ---
 
+<!-- TOC -->
+
+- [Cài đặt cụ thể {#setup--teardown}](#cài-đặt-cụ-thể-setup--teardown)
+- [`act()` {#act}](#act-act)
+- [Rendering {#rendering}](#rendering-rendering)
+- [Fetch dữ liệu {#data-fetching}](#fetch-dữ-liệu-data-fetching)
+- [Giả lập các module {#mocking-modules}](#giả-lập-các-module-mocking-modules)
+- [Event {#events}](#event-events)
+- [Timer {#timers}](#timer-timers)
+- [Snapshot Test {#snapshot-testing}](#snapshot-test-snapshot-testing)
+- [Multiple Renderer {#multiple-renderers}](#multiple-renderer-multiple-renderers)
+- [Còn thiếu gì đó? {#something-missing}](#còn-thiếu-gì-đó-something-missing)
+
+<!-- /TOC -->
 
 Một vài cách viết test phổ biến cho component React.
-
 
 > Lưu ý:
 >
 > Trang này mặc định bạn đang dùng [Jest](https://jestjs.io/) làm test runner. Nếu dùng một test runner khác, bạn cần thay đổi API cho phù hợp, giải pháp sẽ gần như nhau. Đọc thêm chi tiết cách cài đặt môi trường test ở [Môi trường Test](/docs/testing-environments.html).
-
 
 Trên trang này, chúng tôi sẽ tập chung vào function component. Tuy nhiên, cách để tiếp cận test không phụ thuộc vào phần hiện thực cụ thể, nó cũng sẽ làm việc tốt với class component.
 
@@ -36,9 +48,9 @@ Trên trang này, chúng tôi sẽ tập chung vào function component. Tuy nhi�
 
 ### Cài đặt cụ thể {#setup--teardown}
 
-Trên mỗi test, chúng ta thường muốn render React tree của chúng ta thành DOM element và chèn nó vào `document`. Chỉ như thế chúng ta mới nhận được các sự kiện trên DOM. Khi kết thúc một test, chúng ta muốn "dọn dẹp" và *gỡ bỏ* cây này khỏi DOM.
+Trên mỗi test, chúng ta thường muốn render React tree của chúng ta thành DOM element và chèn nó vào `document`. Chỉ như thế chúng ta mới nhận được các sự kiện trên DOM. Khi kết thúc một test, chúng ta muốn "dọn dẹp" và _gỡ bỏ_ cây này khỏi DOM.
 
-Một cách phổ biến để làm nó là sử dụng bộ đôi `beforeEach` và `afterEach`, để  chúng luôn chạy một cách độc lập và không ảnh hưởng đến test khác:
+Một cách phổ biến để làm nó là sử dụng bộ đôi `beforeEach` và `afterEach`, để chúng luôn chạy một cách độc lập và không ảnh hưởng đến test khác:
 
 ```jsx
 import { unmountComponentAtNode } from "react-dom";
@@ -58,7 +70,7 @@ afterEach(() => {
 });
 ```
 
-Bạn có thể sử dụng một cách khác, nhưng hãy nhớ chúng ta muốn chạy việc dọn dẹp ngay cả khi test *fail*. Nếu không, test có thể trở nên "bất ổn", và một test có thể ảnh hưởng đến hoạt động của test khác. Như vậy sẽ rất khó để debug.
+Bạn có thể sử dụng một cách khác, nhưng hãy nhớ chúng ta muốn chạy việc dọn dẹp ngay cả khi test _fail_. Nếu không, test có thể trở nên "bất ổn", và một test có thể ảnh hưởng đến hoạt động của test khác. Như vậy sẽ rất khó để debug.
 
 ---
 
@@ -148,7 +160,7 @@ it("renders with or without a name", () => {
 
 ### Fetch dữ liệu {#data-fetching}
 
-Thay vì gọi APIs thật trong test, chúng ta có thể giả lập các request này bằng dữ liệu giả. Giả lập dữ liệu với dữ liệu "fake" để tránh ảnh hưởng đến test khi backend không sử dụng được, và để nó chạy nhanh hơn. Lưu ý: bạn có thể muốn nó chạy danh sách các test con sử dụng framework ["end-to-end"](/docs/testing-environments.html#end-to-end-tests-aka-e2e-tests)  để xem toàn bộ ứng dụng có làm việc với nhau không.
+Thay vì gọi APIs thật trong test, chúng ta có thể giả lập các request này bằng dữ liệu giả. Giả lập dữ liệu với dữ liệu "fake" để tránh ảnh hưởng đến test khi backend không sử dụng được, và để nó chạy nhanh hơn. Lưu ý: bạn có thể muốn nó chạy danh sách các test con sử dụng framework ["end-to-end"](/docs/testing-environments.html#end-to-end-tests-aka-e2e-tests) để xem toàn bộ ứng dụng có làm việc với nhau không.
 
 ```jsx
 // user.js
@@ -278,7 +290,7 @@ function Contact(props) {
 }
 ```
 
-Nếu không muốn load component  `GoogleMap` trong test của chúng ta,  giả lập bằng một dummy component và chạy test:
+Nếu không muốn load component `GoogleMap` trong test của chúng ta, giả lập bằng một dummy component và chạy test:
 
 ```jsx{10-18}
 // contact.test.js
@@ -552,7 +564,7 @@ Bạn có thể giả lập thời gian trong một test. Ở trên, chúng ta b
 
 Framework như Jest cho chúng ta lưu "ảnh" với [`toMatchSnapshot` / `toMatchInlineSnapshot`](https://jestjs.io/docs/en/snapshot-testing). Với chúng, bạn có thể "lưu" một kết quả render và đảm bảo một thay đổi có thể làm thay đổi của kết quả snapshot.
 
-Trong ví dụ,  chúng ta render một component và định dạng HTML đã render với thư viện [`pretty`](https://www.npmjs.com/package/pretty), trước khi lưu nó như một snapshot inline:
+Trong ví dụ, chúng ta render một component và định dạng HTML đã render với thư viện [`pretty`](https://www.npmjs.com/package/pretty), trước khi lưu nó như một snapshot inline:
 
 ```jsx{29-31}
 // hello.test.js, again
@@ -631,5 +643,3 @@ expect(root).toMatchSnapshot();
 ### Còn thiếu gì đó? {#something-missing}
 
 Nếu các tình huống hay gặp không được đề cập ở đây, có thể liên hệ với chúng tôi qua [issue tracker](https://github.com/reactjs/reactjs.org/issues) cho toàn bộ tài liệu của website
-
-
