@@ -7,7 +7,7 @@ cover: "https://hackernoon.com/drafts/7m4a23g7.png"
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["hoc-thuat", "javascript"]
+tags: ["hoc-thuat", "javascript", "react", "vuejs"]
 ---
 
 
