@@ -12,9 +12,9 @@ tags: ["hoc-thuat", "react"]
 
 <!-- TOC -->
 
-- [0.1. Enhancer](#01-enhancer)
-- [0.2. Injector](#02-injector)
-- [0.3. Enhance + Inject](#03-enhance--inject)
+- [Enhancer](#enhancer)
+- [Injector](#injector)
+- [Enhance + Inject](#enhance--inject)
 
 <!-- /TOC -->
 
@@ -29,7 +29,7 @@ Trong phạm vi bài viết này, chúng ta sẽ chi ra 2 loại HOC, 2 cách l�
 
 Để phân biệt rõ hơn, bạn xem tiếp ví dụ bên dưới.
 
-## 0.1. Enhancer
+## Enhancer
 
 Chúng ta bắt đầu với Enhancer vì nó dễ viết `type` nhất. Ví dụ cơ bản nhất, bổ sung thêm prop `loading` vào component.
 
@@ -112,7 +112,7 @@ const withLoading = <P extends object>(
 
 Chúng ta gặp vấn đề tương tự khi sử dụng rest/spread object, chúng ta chỉ định kiểu return là `React.FC<P & WithLoadingProps>`, nhưng chỉ sử dụng `WithLoadingProps` bên trong function component
 
-## 0.2. Injector
+## Injector
 
 Kiểu _injector_ HOC sẽ hay gặp hơn, nhưng cũng khó set type hơn, bên cạnh việc _chích_ thêm một số prop vào cho component, trong đa số các trường hợp nó còn xóa những prop đã _chích_ vào khi nó bọc lại, như vậy những thằng từ bên ngoài không thể ghi đè lên. `connect` của react-redux là một ví dụ cho injector HOC. Chúng ta không sử dụng nó, vì quá phức tạp, dùng một ví dụ đơn giản hơn, HOC chích thêm giá trị `counter` và `callback` để tăng giảm giá trị.
 
@@ -212,7 +212,7 @@ Component được trả về từ HOC sẽ sử dụng [`Subtract`](https://git
 
 ![](https://miro.medium.com/max/451/1*xTKe3DWJdC7nAVQnM4bvbg.png)
 
-## 0.3. Enhance + Inject
+## Enhance + Inject
 
 Kết hợp cả 2 cách làm này lại, chúng ta sẽ có một component counter cho phép đưa giá trị minimum và maximum
 
