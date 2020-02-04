@@ -1,6 +1,6 @@
 ---
-slug: "/2020-01-29-nguyen-tac-thiet-ke-cua-vue-3"
-date: "2020-01-29"
+slug: "/2020-01-30-huong-dan-bat-su-kien-ben-ngoai-react.md"
+date: "2020-01-30"
 title: "Bắt sự kiện click bên ngoài Component React"
 desc: "Thủ thuật nhỏ để bắt sự kiện click có nằm ngoài component không"
 cover: ""
