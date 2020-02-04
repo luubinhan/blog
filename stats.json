@@ -13,8 +13,8 @@
       "path---2018-10-15-nhung-cau-nen-hoi-khi-di-phong-van-26f9f3288e820e4e7453.js.map"
     ],
     "path---tags-thu-thuat": [
-      "path---tags-thu-thuat-a8ccde5a5d84b001406b.js",
-      "path---tags-thu-thuat-a8ccde5a5d84b001406b.js.map"
+      "path---tags-thu-thuat-d3c80ac57c4f441e5348.js",
+      "path---tags-thu-thuat-d3c80ac57c4f441e5348.js.map"
     ],
     "path---2018-03-19-huong-dan-react-patterns-can-ban": [
       "path---2018-03-19-huong-dan-react-patterns-can-ban-18813e9215c48ddb528e.js",
@@ -353,8 +353,8 @@
       "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react-35a0201640ec01060c5d.js.map"
     ],
     "path---tags-react": [
-      "path---tags-react-69d12e7facb3d2a7e563.js",
-      "path---tags-react-69d12e7facb3d2a7e563.js.map"
+      "path---tags-react-ab3d0dda8fcb5d92e4d2.js",
+      "path---tags-react-ab3d0dda8fcb5d92e4d2.js.map"
     ],
     "path---tags-performance": [
       "path---tags-performance-249c8ace1e89f163c82a.js",
@@ -569,8 +569,8 @@
       "path---2018-07-02-huong-dan-javascript-modules-tren-web-2f8ade2873fe0b94493a.js.map"
     ],
     "path---index": [
-      "path---index-140d4463194e576c16d2.js",
-      "path---index-140d4463194e576c16d2.js.map"
+      "path---index-50869ecdcaa6d7832b9c.js",
+      "path---index-50869ecdcaa6d7832b9c.js.map"
     ],
     "path---2019-10-20-huong-dan-ung-dung-tuyet-voi-cua-vue-renderless-component": [
       "path---2019-10-20-huong-dan-ung-dung-tuyet-voi-cua-vue-renderless-component-7ffb19161e9e047ca600.js",
@@ -975,9 +975,9 @@
       "path---2018-08-12-huong-dan-con-duong-tro-thanh-developer-2018-a450ae4ec4950375c76d.js.map"
     ],
     "app": [
-      "app-976021596da58ba3ef6d.js",
+      "app-024db692907f75d6decf.js",
       "build-js-styles.css",
-      "app-976021596da58ba3ef6d.js.map",
+      "app-024db692907f75d6decf.js.map",
       "build-js-styles.css.map"
     ],
     "path---2018-08-21-huong-dan-su-dung-checkbox-va-toggle-switch": [
@@ -1147,6 +1147,10 @@
     "path---tags-githubpage": [
       "path---tags-githubpage-6504851521afadfb305d.js",
       "path---tags-githubpage-6504851521afadfb305d.js.map"
+    ],
+    "path---2020-01-30-huong-dan-bat-su-kien-ben-ngoai-react-md": [
+      "path---2020-01-30-huong-dan-bat-su-kien-ben-ngoai-react-md-652064ee116b606cc132.js",
+      "path---2020-01-30-huong-dan-bat-su-kien-ben-ngoai-react-md-652064ee116b606cc132.js.map"
     ],
     "path---2019-05-24-gioi-thieu-ve-request-animation": [
       "path---2019-05-24-gioi-thieu-ve-request-animation-804c7dc9f9633bb0df2e.js",

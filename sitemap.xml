@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url> <loc>http://vuilaptrinh.com/2020-02-03-huong-dan-cai-dat-eslint-react-javascript-typescript-vscode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2020-02-01-huong-dan-kieu-enum-trong-typescript-can-ban</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://vuilaptrinh.com/2020-01-30-huong-dan-bat-su-kien-ben-ngoai-react-md</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2020-01-29-nguyen-tac-thiet-ke-cua-vue-3</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2020-01-19-viet-type-cho-hoc-voi-typescript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2020-01-10-huong-dan-viet-lambda-function-voi-netlify</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -245,8 +246,8 @@
 <url> <loc>http://vuilaptrinh.com/tags/javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/typescript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>http://vuilaptrinh.com/tags/vuejs</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/thu-thuat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://vuilaptrinh.com/tags/vuejs</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/netlify</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/redux</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/tool</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
