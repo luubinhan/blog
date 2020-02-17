@@ -2,7 +2,7 @@
 slug: "/2020-02-15-7-ly-do-chinh-dang-khuyen-ban-khong-nen-dung-typescript"
 date: "2020-02-15"
 title: "7 lý do bạn không nên sử dụng TypeScript"
-desc: "TypeScript có phải là con ác chủ bài, ngôn ngữ của tương lại, viết TypeScript thì mọi thứ sẽ không thể nào còn lỗi, những lý do khiến bạn phải suy nghĩ lại những nhận định trên"
+desc: "TypeScript có phải là con ác chủ bài, ngôn ngữ của tương lai, viết TypeScript thì mọi thứ sẽ không thể nào còn lỗi, những lý do khiến bạn phải suy nghĩ lại những nhận định trên"
 cover: ""
 type: "post"
 lesson: 0
@@ -17,7 +17,7 @@ Rất nhiều người yêu TypeScript, nó *"giải quyết"* rất nhiều v�
 
 Tại sao lại mạo hiểm? Nếu TypeScript thêm định nghĩa type và kiểm tra lúc compile, IDE còn thông báo ngay lúc nếu kiểu dữ liệu không khớp. Chính xác đó là lý do. TypeScript chỉ kiểm tra kiểu dữ liệu lúc compile và *chỉ* sử dụng kiểu có định nghĩa. Tất cả các network call, API và thư viện bổ sung chưa có type sẽ không có cách nào tương tác với TypeScript.
 
-Nếu trong JS, chúng ta không đặt giả định về kiểu sẽ nhận được, không tự nhủ "cái này chắc chắn" sẽ trả về kiểu `string`, chúng ta luôn biết là cần phải kiểm tra giá trị thật sự của biến nhận được trước khi sử dụng. Hoặc, nếu chẳng cần quan tâm, chúng ta lơ luôn. Với TS, bạn phụ thuộc compiler làm việc này, nhưng sẽ có rất nhiều thứ phải làm. Bạn vừa phải bỏ thời gian viết định nghĩa cho từng tỉ tỉ thứ, rồi bỏ thêm mớ thời gian để đảm bảo các định nghĩa bạn viết ra phải đúng lúc chạy, vậy mục tiêu cuối cùng của tất cả những thứ đó là gì?
+Nếu trong JS, chúng ta không đặt giả định về kiểu sẽ nhận được, không tự nhủ "cái này chắc chắn" sẽ trả về kiểu `string`, chúng ta luôn biết phải kiểm tra giá trị thật sự của biến nhận được trước khi sử dụng. Với TS, bạn phụ thuộc compiler làm việc này, nhưng sẽ có rất nhiều thứ phải làm. Bạn vừa phải bỏ thời gian viết định nghĩa cho từng tỉ tỉ thứ, rồi bỏ thêm mớ thời gian để đảm bảo các định nghĩa bạn viết ra phải đúng lúc chạy, vậy mục tiêu cuối cùng của tất cả những thứ đó là gì?
 
 ## Quá rối rắm
 
@@ -27,18 +27,6 @@ Mặt trái của sự thật: một ngôn ngữ được kỳ vọng sẽ đem 
 // TODO: do this more elegantly
 ;((currentReducer as unknown) as Reducer<NewState,NewActions>) = nextReducer
 
-// HACK: Since TypeScript inherits static properties too, we have to
-// fight against TypeScript here so Subject can have a different static create signature
-/**
- * Creates a new cold Observable by calling the Observable constructor
- * @static true
- * @owner Observable
- * @method create
- * @param {Function} subscribe? the subscriber function to be passed to the Observable constructor
- * @return {Observable} a new cold observable
- * @nocollapse
- * @deprecated use new Observable() instead
- */
 static create: Function = <T>(subscribe?: (subscriber: Subscriber<T>) => TeardownLogic) => {
   return new Observable<T>(subscribe);
 }
@@ -48,7 +36,7 @@ static create: Function = <T>(subscribe?: (subscriber: Subscriber<T>) => Teardow
 
 ## Không giải quyết vấn đề
 
-TS kheo là giải quyết các vấn đề mà JS đang gặp. Nhưng sự thật là KHÔNG. Dynamic typing chưa bao giờ là vấn đề với những lập trình viên JS (có mình luôn), bạn sẽ phàn nàn vậy "NaN === NaN" không phải là vấn đề sau, việc có cũng được không có cũng được dấu chấm phẩy `;` không phải là vấn đề à,... một vài lý do khác nữa. TypeScript cũng chẳng giải quyết như bạn tưởng tượng đâu, nó chỉ giới thiệu một chuẩn mới, làm phân cực công đồng JS thêm thôi.
+TS bảo là giải quyết các vấn đề mà JS đang gặp. Nhưng sự thật là KHÔNG. Dynamic typing chưa bao giờ là vấn đề với những lập trình viên JS (có mình luôn), bạn sẽ phàn nàn vậy "NaN === NaN" không phải là vấn đề sau, việc có cũng được không có cũng được dấu chấm phẩy `;` không phải là vấn đề à,... một vài lý do khác nữa. TypeScript cũng chẳng giải quyết như bạn tưởng tượng đâu, nó chỉ giới thiệu một chuẩn mới, làm phân cực công đồng JS thêm thôi.
 
 Thậm chí, nếu việc thiếu type trong JS là một vấn đề, TS không giải quyết luôn. Những ngôn ngữ thật sự giải quyết nó là Java, C, C# và các ngôn ngữ `compiled`.
 
@@ -58,7 +46,7 @@ TS sau cùng cũng complie về JS, nó không hề là **một ngôn ngữ có 
 
 ## Mã nguồn mở, có thật vậy không?
 
-Nhiều lý do đưa ra khi sử dụng TS là vì nó mã nguồn mở. Đúng, nhưng chưa đủ. Nó vẫn chịu sự chi phối từ Microsoft, một tập đoàn độc quyền khổng lồ nổi tiếng nhất thế giới, Microsoft chia sẻ mã nguồn nó như một động thái tiếp thị và lôi kéo thêm lập trình viên. Đừng lẫn lộn giữa mã nguồn mở với sự dân chủ: Microsoft vẫn ở đây và có quyền làm mọi thứ với TS, bạn chẳng làm gì được ngoài việc đứng nhìn. JS, lại khác, được cộng đồng quốc tế đảm trách, sẽ không thay đổi bất cứ thứ gì nếu không được sự đồng ý từ số đông cộng đồng.
+Nhiều lý do đưa ra khi sử dụng TS là vì nó mã nguồn mở. Đúng, nhưng chưa đủ. Nó vẫn chịu sự chi phối từ Microsoft, một tập đoàn độc quyền khổng lồ nổi tiếng nhất thế giới, Microsoft chia sẻ mã nguồn nó như một động thái tiếp thị và lôi kéo thêm lập trình viên. Đừng lẫn lộn giữa mã nguồn mở với sự dân chủ: Microsoft vẫn ở đây và có quyền làm mọi thứ với TS, bạn chẳng làm gì được ngoài việc đứng nhìn. JS, lại khác, được cộng đồng đảm trách, sẽ không thay đổi bất cứ thứ gì nếu không được sự đồng ý từ số đông cộng đồng.
 
 ## Các công ty lớn sử dụng...
 
