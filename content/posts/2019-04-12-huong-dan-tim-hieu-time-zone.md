@@ -3,7 +3,7 @@ slug: "/2019-04-12-huong-dan-tim-hieu-time-zone"
 date: "2019-04-12"
 title: "Tìm hiểu về Time Zone"
 desc: "Cùng luận bàn những vấn đề liên quan đến time zone"
-cover: ""
+cover: "https://bs-uploads.toptal.io/blackfish-uploads/blog/article/content/cover_image_file/cover_image/11094/cover-Refresh-DateTimeManipulation-Luke_Newsletter-760e8d9895e845e072e65b1a7cc25c50.png"
 type: "post"
 lesson: 0
 chapter: 0
