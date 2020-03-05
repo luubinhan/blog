@@ -10,12 +10,23 @@ chapter: 0
 tags: ["dam-dao", "javascript", "typescript"]
 ---
 
+<!-- TOC -->
 
-Rất nhiều người yêu TypeScript, nó *"giải quyết"* rất nhiều vấn đề mà JS gặp phải, một ngôn ngữ *"thay thế"* cho JS, nó sẽ báo bạn ngay nếu code bạn có *vấn đề* và *dễ đọc* hơn. Có nhiều nhiều lý do được đưa ra để bạn nên dùng TypeScript, bài này ngược lại đưa cho bạn 7 lý do không nên dùng TypeScript
+- [Quá mạo hiểm](#quá-mạo-hiểm)
+- [Quá rối rắm](#quá-rối-rắm)
+- [Không giải quyết vấn đề](#không-giải-quyết-vấn-đề)
+- [Chẳng thay thế, chỉ là phần mở rộng](#chẳng-thay-thế-chỉ-là-phần-mở-rộng)
+- [Mã nguồn mở, có thật vậy không?](#mã-nguồn-mở-có-thật-vậy-không)
+- [Các công ty lớn sử dụng...](#các-công-ty-lớn-sử-dụng)
+- [Nhiều tính năng hơn](#nhiều-tính-năng-hơn)
+
+<!-- /TOC -->
+
+Rất nhiều người yêu TypeScript, nó _"giải quyết"_ rất nhiều vấn đề mà JS gặp phải, một ngôn ngữ _"thay thế"_ cho JS, nó sẽ báo bạn ngay nếu code bạn có _vấn đề_ và _dễ đọc_ hơn. Có nhiều nhiều lý do được đưa ra để bạn nên dùng TypeScript, bài này ngược lại đưa cho bạn 7 lý do không nên dùng TypeScript
 
 ## Quá mạo hiểm
 
-Tại sao lại mạo hiểm? Nếu TypeScript thêm định nghĩa type và kiểm tra lúc compile, IDE còn thông báo ngay lúc nếu kiểu dữ liệu không khớp. Chính xác đó là lý do. TypeScript chỉ kiểm tra kiểu dữ liệu lúc compile và *chỉ* sử dụng kiểu có định nghĩa. Tất cả các network call, API và thư viện bổ sung chưa có type sẽ không có cách nào tương tác với TypeScript.
+Tại sao lại mạo hiểm? Nếu TypeScript thêm định nghĩa type và kiểm tra lúc compile, IDE còn thông báo ngay lúc nếu kiểu dữ liệu không khớp. Chính xác đó là lý do. TypeScript chỉ kiểm tra kiểu dữ liệu lúc compile và _chỉ_ sử dụng kiểu có định nghĩa. Tất cả các network call, API và thư viện bổ sung chưa có type sẽ không có cách nào tương tác với TypeScript.
 
 Nếu trong JS, chúng ta không đặt giả định về kiểu sẽ nhận được, không tự nhủ "cái này chắc chắn" sẽ trả về kiểu `string`, chúng ta luôn biết phải kiểm tra giá trị thật sự của biến nhận được trước khi sử dụng. Với TS, bạn phụ thuộc compiler làm việc này, nhưng sẽ có rất nhiều thứ phải làm. Bạn vừa phải bỏ thời gian viết định nghĩa cho từng tỉ tỉ thứ, rồi bỏ thêm mớ thời gian để đảm bảo các định nghĩa bạn viết ra phải đúng lúc chạy, vậy mục tiêu cuối cùng của tất cả những thứ đó là gì?
 
@@ -59,4 +70,3 @@ Xưa rồi, khi TS được giới thiệu năm 2012, các tính năng như `cla
 Từ quan điểm của một cá nhân không thấy nhiều lợi ích mà TypeScript mang lại.
 
 [7 really good reasons not to use TypeScript](https://everyday.codes/javascript/7-really-good-reasons-not-to-use-typescript/)
-
