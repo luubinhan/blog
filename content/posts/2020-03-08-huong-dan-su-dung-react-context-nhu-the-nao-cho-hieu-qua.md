@@ -398,9 +398,9 @@ Hy vọng bài viết mang đến nhiều điều hữu ích cho bạn.
 
 [Code Sandbox cho bạn nào cần vọc vạch](https://codesandbox.io/s/react-codesandbox-je6cc)
 
-[https://kentcdodds.com/blog/how-to-use-react-context-effectively](https://kentcdodds.com/blog/how-to-use-react-context-effectively)
+[How to use React Context effectively](https://kentcdodds.com/blog/how-to-use-react-context-effectively)
 
-[https://kentcdodds.com/blog/application-state-management-with-react](https://kentcdodds.com/blog/application-state-management-with-react)
+[Application State Management with React](https://kentcdodds.com/blog/application-state-management-with-react)
 
-[https://kentcdodds.com/blog/how-to-optimize-your-context-value](https://kentcdodds.com/blog/how-to-optimize-your-context-value)
+[How to optimize your context value](https://kentcdodds.com/blog/how-to-optimize-your-context-value)
 
