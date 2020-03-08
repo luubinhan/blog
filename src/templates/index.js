@@ -31,9 +31,7 @@ class IndexPage extends React.Component {
         </Helmet>
         <main className="inner">
           <h1 style={{display: "none"}}>{config.siteTitle + ' - ' + config.siteDescription}</h1>
-          <div className="mb-4">
-            <img src="/images/banner-blog.jpg" alt="Bánh tằm bì nước cốt dừa Sài Gòn"/>
-          </div>
+          
           {!isEmpty(group) && <PostListing postEdges={group} />}
           <div className="pagination">
             <NavLink test={first} url={previousUrl} text="Trang Trước" />
