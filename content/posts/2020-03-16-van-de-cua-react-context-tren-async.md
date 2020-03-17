@@ -201,4 +201,12 @@ const CategoriesQuery = ({ children }) => {
 Có nhiều điểm cộng cho [react-sweet-state](https://atlassian.github.io/react-sweet-state/) như nó vẫn dùng Context API, nhưng an toàn hơn, các action sẽ dễ test hơn, làm việc được với Redux DevTools, đã xử lý những lỗi vẫn hay gặp với React Context. Và nhiều điều hay ho khác nữa. Các bạn nhớ like cho repo này trên github.
 
 
+Một số dẫn chứng khác để bạn tham khảo
+
+- [React Context **Không được thiết kế cho dữ liệu thường xuyên cập nhập**](https://twitter.com/dan_abramov/status/1109595839347990528)
+- [**Hạn chế hiệu năng** của React Context](https://github.com/facebook/react/issues/13739)
+- [React Context **Không hỗ trợ selector**](https://github.com/facebook/react/issues/14110)
+- [React Context **Không thể ngăn chặn việc re-render**](https://github.com/facebook/react/issues/15156)
+
+
 [The pitfalls of async operations via React Context API](https://medium.com/@albertogasparin/the-pitfalls-of-async-operations-via-react-context-api-ab987d4290e6)
