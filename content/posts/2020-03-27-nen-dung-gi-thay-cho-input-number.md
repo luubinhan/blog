@@ -10,12 +10,22 @@ chapter: 0
 tags: ["css", "thu-thuat"]
 ---
 
-Có thể bạn sẽ nghĩ ngay đến `<input type='number' />` khi muốn cho user nhập số. Tuy nhiên *đời không như là mơ*, nó có kha khá vấn đề, đôi khi có những giá trị nhìn thì như *số*, nhưng không phải (như credit card), hoặc một dạng chuỗi số.
+<!-- TOC -->
+
+- [tel](#tel)
+- [decimal](#decimal)
+- [Email](#email)
+- [Url](#url)
+- [Search](#search)
+
+<!-- /TOC -->
+
+Có thể bạn sẽ nghĩ ngay đến `<input type='number' />` khi muốn cho user nhập số. Tuy nhiên _đời không như là mơ_, nó có kha khá vấn đề, đôi khi có những giá trị nhìn thì như _số_, nhưng không phải (như credit card), hoặc một dạng chuỗi số.
 
 Trên Gov.uk họ dùng kiểu này
 
 ```html
-<input type="text" inputmode="numeric" pattern="[0-9]*">
+<input type="text" inputmode="numeric" pattern="[0-9]*" />
 ```
 
 Thuộc tính `inputmode` cũng khá hay ho, được đề cập rất cũ thể [ở đây](https://css-tricks.com/everything-you-ever-wanted-to-know-about-inputmode/)
@@ -43,7 +53,6 @@ Tóm tắt lại cho bạn nào lười đọc
 ```
 
 ![](https://i1.wp.com/css-tricks.com/wp-content/uploads/2019/05/inputmode-04.png?ssl=1)
-
 
 ### Url
 
@@ -74,7 +83,7 @@ Hoặc để nhập vào mã code xác thực, Twilio sử dụng định dạng
 />
 ```
 
-Với `autocomplete="one-time-code"` chúng ta sẽ có được *tính năng* tự điền như thế này
+Với `autocomplete="one-time-code"` chúng ta sẽ có được _tính năng_ tự điền như thế này
 
 ![iOS screen with a numeric input and a text message offering to auto-fill the two-factor auth](https://i1.wp.com/css-tricks.com/wp-content/uploads/2020/03/two-factor-input.png)
 

@@ -24,10 +24,10 @@ const date = new Date().toISOString();
 
 ```html
 <time datetime="2020-02-05T16:30:41.392Z">Published on ...</time>
-<meta property="article:published_time" content="2020-02-05T16:30:41.392Z">
+<meta property="article:published_time" content="2020-02-05T16:30:41.392Z" />
 ```
 
-Các công cụ tìm kiếm sẽ đọc các giá trị này một cách rất dễ dàng. Nhưng nếu là người bình thường chúng ta không *thích* như vậy, chuyển đổi qua lại giữa các định dạng theo từng khu vực là điều bắt buộc.
+Các công cụ tìm kiếm sẽ đọc các giá trị này một cách rất dễ dàng. Nhưng nếu là người bình thường chúng ta không _thích_ như vậy, chuyển đổi qua lại giữa các định dạng theo từng khu vực là điều bắt buộc.
 
 ```html
 <time datetime="2020-02-05T16:30:41.392Z">Pubblicato il 05 Febbraio 2020</time>
@@ -41,7 +41,6 @@ const options = { month: "long", day: "numeric", year: "numeric" };
 const date = new Date(isoString);
 const americanDate = new Intl.DateTimeFormat("en-US", options).format(date);
 ```
-
 
 ![Định dạng ngày tháng bằng Intl.DateTimeFormat](https://www.valentinog.com/blog/static/74b4c25784e69862e30d7bb492baa1a6/a6d36/intl-datetimeformat.png)
 
@@ -61,4 +60,3 @@ Cũng đáng nhắc đến, `format()` sẽ trả về ngày hiện tại nếu 
 `new Date()` hiển thị kết quả (**không phải trả về**) như thế này "Wed Feb 05 2020 18:46:03 GMT+0100 (Central European Standard Time)" khi gọi trong trình duyệt, cùng constructor đó gọi trong Node.js sẽ hiển thị (**không phải trả về**) chuỗi ISO "2020-02-05T17:47:03.065Z"
 
 [Formatting dates in JavaScript with Intl.DateTimeFormat](http://pop.frontendweekly.co/PnJd79)
-
