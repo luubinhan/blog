@@ -166,7 +166,7 @@ npm install @typescript-eslint/parser --save-dev
 
 > Parse làm nhiệm vụ đọc cài file input và tạo ra một _phiên bản_ mà ESLint hiểu được.
 
-KHai báo dùng parser này
+Khai báo dùng parser này
 
 ```yaml
 parser: "@typescript-eslint/parser"
@@ -180,7 +180,7 @@ parser: "@typescript-eslint/parser"
 }
 ```
 
-Tương tự như javascript, chúng ta cài đặt bộ thiết đặt sẵn của Airbnb
+Tương tự như javascript, chúng ta dùng bộ thiết đặt của Airbnb
 
 ```bash
 npx install-peerdeps --dev eslint-config-airbnb-typescript
