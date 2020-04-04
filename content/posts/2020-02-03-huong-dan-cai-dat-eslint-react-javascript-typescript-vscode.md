@@ -28,7 +28,7 @@ Nếu chưa rành, bạn cần đọc từ đầu tới cuối, nếu đã thàn
 
 Hướng dẫn này sử dụng bộ config của Airbnb, vì nó quá nổi tiếng và được sử dụng gần như là chuẩn. Tất nhiên, bạn có quyền thay đổi sao cho hợp _gu_
 
-Nếu chưa bao giờ _nghe_ đến hướng dẫn viết code sao cho chuẩn của Airbnb, tham khảo các bài viết sau
+Nếu chưa bao giờ _nghe_ đến hướng dẫn viết *code sao cho chuẩn* của Airbnb, tham khảo các bài viết sau
 
 - [Airbnb JavaScript style guide](https://github.com/airbnb/javascript/blob/master/README.md)
 - [Airbnb React style guide](https://github.com/airbnb/javascript/tree/master/react)
@@ -37,9 +37,9 @@ Nếu chưa bao giờ _nghe_ đến hướng dẫn viết code sao cho chuẩn c
 
 ## Tại sao dùng ESLint
 
-Hiện tại không có bất cứ một đối thủ nào xứng tầm với ESLint, nó là dự án đã và đang được bảo trì bởi cộng động rất rộng lớn. Hầu hết các chương trình viết code đều hỗ trợ thông qua plugin, chúng ta sẽ không gặp khó khăn trong việc sử dụng nó với VSCode, Vim, Emac, WebStorm, Sublime, Atom,...
+Hiện tại không có bất cứ một đối thủ nào *xứng tầm* với ESLint, nó là dự án đã và đang được bảo trì bởi cộng đồng rất rộng lớn. Hầu hết các chương trình viết code đều hỗ trợ, chúng ta sẽ không gặp khó khăn trong việc sử dụng nó với VSCode, Vim, Emac, WebStorm, Sublime, Atom,...
 
-Túm lại, ESLint là **nền tảng** xịn sò nhất để bạn dựa trên đó đưa ra thiết đặt chung.
+Túm lại, ESLint là **nền tảng** xịn sò nhất, bạn không cần lăng tăng tìm *người khác*.
 
 ## Cài đặt ESLint
 
@@ -48,11 +48,11 @@ Giống như bất kỳ package nào khác, ESLint có thể được cài đặ
 - _global_, cài luôn vào máy `npm -g`
 - đi theo từng project
 
-Việc cài đặt ESLint ở mức _global_ khá là hợp lý vì chúng ta muốn dùng nó ở mọi project. Tuy nhiên cũng hợp lý nếu cài riêng trên từng project, nếu bạn đang cần
+Việc cài đặt ESLint ở mức _global_ khá là hợp lý vì chúng ta muốn dùng nó ở mọi project. Tuy nhiên cũng _hợp lý_ nếu cài riêng trên từng project nếu bạn đang cần
 
 - Các phiên bản ESLint khác nhau trên từng dự án
-- Không ẩn việc phụ thuộc vào ESLint
-- Đồng nghiệp và các công cụ tự động ( như mấy thằng CI) sẽ cài ESlint có thể cài đặt nó như những package khác. Không cần thêm bất kỳ cài đặt và tài liệu nào khác.
+- Công khai bạn phụ thuộc vào ESLint cho project đó
+- Đồng nghiệp và các công cụ tự động (như mấy thằng CI) có thể cài đặt ESlint như những package khác.
 
 Cài đặt ESLint trong thư mục project
 
@@ -90,10 +90,10 @@ ESLint cho phép sử dụng nhiều kiểu file
 - JSON
 - YAML
 
-Kiểu YAML xài là _vui_ nhất. Tạo file tên `.eslintrc.yaml`
+Xài YAML trong ví dụ này. Tạo file tên `.eslintrc.yaml`, cái này nếu bạn chạy `eslint init` trong thư mục `src/` của dự án nó sẽ hỏi bạn có muốn tạo không, nó tạo dùm cho.
 
 ```bash
-touch .eslintrc.yaml
+eslint init
 ```
 
 > Nếu muốn thêm _logic_ bằng code, bạn cần dùng kiểu javascript
