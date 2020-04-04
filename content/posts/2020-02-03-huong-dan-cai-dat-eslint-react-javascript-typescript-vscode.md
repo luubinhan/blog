@@ -113,7 +113,7 @@ Với project là javascript thuần, toàn bộ file là `.js`, có thể tự 
 
 Rất nhiều các công ty lớn như [Google](https://github.com/google/eslint-config-google), [Airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb), [Facebook](https://github.com/facebook/fbjs/tree/master/packages/eslint-config-fbjs-opensource) bỏ ra cả tỉ tỉ thời gian để bảo trì và cập nhập mấy cài đặt này
 
-Sử dụng cài được vạn người yêu thích, Airbnb
+Sử dụng cài đặt vạn người yêu thích, Airbnb
 
 ```bash
 npx install-peerdeps --dev eslint-config-airbnb-base
