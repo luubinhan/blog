@@ -1,7 +1,7 @@
 ---
 slug: "/2019-07-13-nguyen-tac-moi-lap-trinh-vien-can-biet"
 date: "2019-07-13"
-title: "10 nguyên tắc lập trình nền tảng mà lập trình viên nào cũng cần biết"
+title: "10 nguyên lý lập trình nền tảng mà lập trình viên nào cũng cần biết"
 desc: "Nhớ thời đại học quá nên ôn lại kiến thức vở lòng mấy bạn ơi"
 cover: ""
 type: "post"
@@ -28,7 +28,7 @@ tags: ["javascript", "hoc-thuat", "kinh-nghiem"]
 
 
 
-Nếu bạn là người theo chủ nghĩa viết code sao cho *chạy được là đủ*, bạn không nên đọc bài này. Còn mục tiêu là viết code và **đặt cái tâm vào những gì mình viết ra** thì bạn nên biết các nguyên tắc nền tảng này.
+Nếu bạn là người theo chủ nghĩa viết code sao cho *chạy được là đủ*, bạn không nên đọc bài này. Còn mục tiêu là viết code và **đặt cái tâm vào những gì mình viết ra** thì bạn nên biết các nguyên lý nền tảng này.
 
 ## KISS
 
