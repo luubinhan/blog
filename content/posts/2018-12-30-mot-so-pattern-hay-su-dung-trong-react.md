@@ -1,7 +1,7 @@
 ---
 slug: "/2018-12-30-mot-so-pattern-hay-su-dung-trong-react"
 date: "2018-12-30"
-title: "6 pattern hay sử dụng trong React"
+title: "5 cách viết hay sử dụng trong React"
 desc: "Điểm qua 6 React Pattern hay gặp trong React"
 cover: ""
 type: "post"
@@ -14,7 +14,6 @@ tags: ["react"]
 
 - [Render theo điều kiện](#render-theo-điều-kiện)
 - [Truyền prop xuống các component children](#truyền-prop-xuống-các-component-children)
-- [Provider](#provider)
 - [Higher Order Component](#higher-order-component)
 - [Server-side rendering để tối ưu SEO](#server-side-rendering-để-tối-ưu-seo)
 - [Inline style và CSS Import](#inline-style-và-css-import)
@@ -92,64 +91,6 @@ const App = () => (
 		name="Alex"
 	/>
 );
-```
-
-## Provider
-
-Nếu chúng ta muốn gửi data thông qua prop cho các component con, thí dụ như 15 component con bên dưới? Không dùng Redux, chúng ta có thể dùng React Context, pattern sử dụng như bên dưới.
-
-```jsx
-class MousePositionProvider extends React.Component {
-	constructor() {
-		super();
-		this.state = {};
-		this.onMouseMove = this.onMouseMove.bind(this);
-	}
-
-	getChildContext() {
-		return {
-			posX: this.state.posX,
-			posY: this.state.posY
-		};
-	}
-
-	componentDidMount() {
-		window.addEventListener("mousemove", this.onMouseMove);
-	}
-
-	onMouseMove(e) {
-		this.setState({ posX: e.clientX, posY: e.clientY });
-	}
-
-	render() {
-		return this.props.children;
-	}
-}
-
-MousePositionProvider.childContextTypes = {
-	posX: PropTypes.number,
-	posY: PropTypes.number,
-};
-
-class MousePositionConsumer extends React.Component {
-	return() {
-		return (
-			<div>Your position is ( {this.context.posX},{this.context.posY} )</div>
-		)
-	}
-}
-
-MousePositionConsumer.contextTypes = {
-	posX: PropTypes.number,
-	posY: PropTypes.number
-}
-
-<MousePositionProvider>
-	<div>
-		<MousePositionConsumer/>
-		<MousePositionConsumer/>
-	</div>
-</MousePositionProvider>
 ```
 
 ## Higher Order Component
