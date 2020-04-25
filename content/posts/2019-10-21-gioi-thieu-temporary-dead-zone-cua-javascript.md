@@ -10,7 +10,7 @@ chapter: 0
 tags: ["javascript"]
 ---
 
-Khu vực tự trị, ngoài vòng pháp luật.
+Temporal Dead Zone - *Khu vực tự trị, ngoài vòng pháp luật*
 
 Đoạn code bên dưới sẽ cho kết quả thế nào, đố bạn
 
@@ -53,16 +53,19 @@ Trước khi có sự xuất hiện của `const white = '#FFFFFF'`, biến `whi
 Chúng ta không thể truy cập vào khu vực tự trị này, nên nó sẽ trả về lỗi `ReferenceError: Cannot access 'white' before initialization`
 
 
-![Giới thiệu Temporal Dead Zone trong javascript](https://dmitripavlutin.com/static/7973b25e51eb97f6d330c941600f7ad8/a8429/temporal-dead-zone-in-javascript.webp)
+![Giới thiệu Temporal Dead Zone trong javascript](https://dmitripavlutin.com/static/7973b25e51eb97f6d330c941600f7ad8/5722e/temporal-dead-zone-in-javascript.webp)
 
-Khái niệm này giúp tránh sự lằng nhằng trong javascript **trước đây**, được phép sử dụng trước khi khai báo. Vì nó chỉ được thêm vào *sau này*, nên chỉ có hiệu lực trên các từ khóa *sau này* mới có là `let`, `const`, `class`
+Khái niệm này giúp tránh sự *lằng nhằng* trong javascript **trước đây**, được phép sử dụng trước khi khai báo. Vì nó chỉ được thêm vào *sau này*, nên chỉ có hiệu lực trên các từ khóa *sau này* mới có là `let`, `const`, `class`
 
 ```js
-count; // throws `ReferenceError`
+// throws `ReferenceError`
+count;
 let count;
 count = 10;
 
-const myNissan = new Car('red'); // throws `ReferenceError`
+// throws `ReferenceError`
+const myNissan = new Car('red');
+
 class Car {
   constructor(color) {
     this.color = color;
@@ -112,7 +115,7 @@ import { myFunction } from './myModule';
 
 TDZ còn phụ thuộc vào từng *thành phố*, mỗi thành phố sẽ có khu vực tự trị khác nhau
 
-![Giới thiệu Temporal Dead Zone trong javascript](https://dmitripavlutin.com/static/bba73f7c82f4385bbd81ad4c3531217c/a8429/limits-of-temporal-dead-zone-javascript.webp)
+![Giới thiệu Temporal Dead Zone trong javascript](https://dmitripavlutin.com/static/bba73f7c82f4385bbd81ad4c3531217c/5722e/limits-of-temporal-dead-zone-javascript.webp)
 
 Lấy ví dụ
 
