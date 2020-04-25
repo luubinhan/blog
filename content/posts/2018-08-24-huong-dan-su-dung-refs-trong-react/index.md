@@ -1,8 +1,8 @@
 ---
 slug: "/2018-08-24-huong-dan-su-dung-refs-trong-react"
 date: "2018-08-24"
-title: "Cách sử dụng refs trong React"
-desc: "Refs dùng để truy cập trực tiếp đến DOM trong React, nó sẽ rất hữu dụng ví dụ trong trường hợp chúng ta muốn thay đổi value của input mà ko muốn ử dụng props hoặc re-render lại toàn bộ component"
+title: "Cách sử dụng ref trong React"
+desc: "Công dụng của ref là để truy cập đến DOM thật trong React, một vài tính huống sử dụng và dùng ref"
 cover: ""
 type: "post"
 lesson: 0
@@ -19,9 +19,9 @@ tags: ["react"]
 
 <!-- /TOC -->
 
-# Cách sử dụng Ref
+## Cách sử dụng Ref
 
-Trong bản React 16.3 chúng ta có thểm API là `createRef`
+Trong bản React 16.3 chúng ta có thêm API là `createRef`
 
 ```jsx
 class Example extends React.Component {
@@ -29,6 +29,7 @@ class Example extends React.Component {
     super(props)
     this.exampleRef = React.createRef()
   }
+
   render() {
     return (
       <div>
@@ -45,7 +46,7 @@ class Example extends React.Component {
 console.log(this.exampleRef.current)
 ```
 
-# Lưu giá trị của ref
+## Lưu giá trị của ref
 
 Nếu không dùng `createRef` thì chúng ta cũng có thể lưu giá trị ref này bằng một hàm callback
 
@@ -55,7 +56,7 @@ Nếu không dùng `createRef` thì chúng ta cũng có thể lưu giá trị re
 console.log(this.input)
 ```
 
-# Dùng string cho giá trị của ref
+## Dùng string cho giá trị của ref
 
 Cách sơ khai ban đầu, gán giá trị cho ref là một string
 
@@ -66,7 +67,7 @@ Cách sơ khai ban đầu, gán giá trị cho ref là một string
 console.log(this.refs.textInput);
 ```
 
-# Đưa ref từ component này sang component khác
+## Đưa ref từ component này sang component khác
 
 Ref chỉ có thể access được trong chính component đang khai báo, nếu muốn truyền ref qua component khác, chúng ta dùng `React.forwardRef()`
 
@@ -80,6 +81,7 @@ constructor(props) {
   super(props)
   this.inputRef = React.createRef();
 }
+
 render() {
   return (
     <div>
