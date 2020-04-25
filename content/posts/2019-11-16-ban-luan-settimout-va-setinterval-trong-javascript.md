@@ -23,7 +23,7 @@ Vì sao bạn nên cân nhắc trước khi sử dụng `setInterval`, nó đã 
 
 ```js
 window.onload = () => {
-  // đợi tính hiệu nào đó rồi thực thi một số việc 
+  // đợi tính hiệu nào đó rồi thực thi một số việc
   // sẽ luôn là lựa chọn tốt nhất
 };
 ```
@@ -38,11 +38,11 @@ Với `setInterval` nó sẽ tiếp tục chạy cho tới khi chúng ta ra lệ
 
 ![Bàn luận về setTimeout và setInterval trong javascript](https://miro.medium.com/max/1837/1*A138JkWveIfKajztvhu60g.png)
 
-Thời gian chạy của hàm `dummyMethod1` tốn nhiều thời gian hơn dự tính, lý do thì không rõ.
+Thời gian chạy của hàm `dummyMethod1` tốn nhiều thời gian hơn dự tính, *lý do thì không rõ*.
 
-> Nếu bạn chưa biết, javascript được thiết kế để chạy single thread, nghĩa là nó **không** thực hiện hai công việc cùng một lúc.
+> Javascript được thiết kế để chạy single thread, nó **không** thực hiện hai công việc cùng một lúc.
 
-Điều đó có nghĩa, các phương thức khác phía trên stack phải đợi cho đến khi `dummyMethod1` làm xong công chuyện của nó.
+Điều đó có nghĩa, các phương thức khác phía trên stack phải **đợi** cho đến khi `dummyMethod1` làm xong công chuyện của nó.
 
 Thêm một ví dụ khác, nếu hàm khai báo bên trong `setInterval` có thời gian chạy lớn hơn giá trị delay của `setInterval` (ví dụ như hàm gọi ajax), chúng ta sẽ có vấn đề như thế này
 
@@ -63,7 +63,7 @@ setInterval(function(){
 //insideSetInterval 14:13:51
 //returning from server 14:13:51
 //insideSetInterval 14:13:53
-//returning from server 14:13:53 
+//returning from server 14:13:53
 //insideSetInterval 14:13:55
 //returning from server 14:13:55
 ```
@@ -76,20 +76,16 @@ Giờ thử một xử lý tuần tự trong `setInterval`
 var counter = 0;
 
 var fakeTimeIntensiveOperation = function() {
-
     for (var i =0; i< 50000000; i++) {
         document.getElementById('random');
     }
 
     let insideTimeTakingFunction  = new Date().toLocaleTimeString();
-
     console.log('insideTimeTakingFunction', insideTimeTakingFunction);
 }
 
-var timer = setInterval(function(){ 
-
+var timer = setInterval(function(){
     let insideSetInterval = new Date().toLocaleTimeString();
-
     console.log('insideSetInterval', insideSetInterval);
 
     counter++;
@@ -110,7 +106,7 @@ var timer = setInterval(function(){
 //insideSetInterval 13:50:58
 ```
 
-Những gì đang diễn ra ở trên, với một thao tác tốn kha khá thời gian xử lý, nó mất hẳn đoạn code `console.log("insideSetInterval")`, nôm na là nó bị *đứt một nhịp*, tình huống này xảy ra với Chrome, nó tạo ra một *nhịp* mới.
+Những gì đang diễn ra ở trên, với một thao tác tốn *kha khá* thời gian xử lý, nó mất hẳn đoạn code `console.log("insideSetInterval")`, nôm na là nó bị *đứt một nhịp*, tình huống này xảy ra với Chrome, nó tạo ra một *nhịp* mới.
 
 Thay vì dùng `setInterval`, chúng ta có thể dùng đệ quy `setTimeout`
 
