@@ -1,8 +1,8 @@
 ---
 slug: "/2018-03-19-huong-dan-react-patterns-can-ban"
 date: "2018-03-19"
-title: "React Pattern căn bản"
-desc: "Một số Pattern hay sử dụng trong React"
+title: "Một số cách viết sử dụng trong React"
+desc: "Tổng hợp các cách làm phổ biến trong React"
 cover: ""
 type: "post"
 lesson: 0
@@ -73,103 +73,13 @@ class PlanetContainer extends React.Component {
 }
 ```
 
-Cách chia container và view thế này đang được sử dụng khá nhiều vì khả năng mở rộng sau này tốt, cái view chỉ cần quan tâm hiển thị dữ liệu như thế nào, phần xử lý logic sẽ do container đảm nhiệm.
+Cách chia container - dùng để xử lý logic và view - dùng để nhận và hiển thị dữ liệu có nhiều điểm hữu dụng, cái view bạn có thể dùng được nhiều lần hơn khi tách biệt nó khỏi phần xử lý business logic
 
-## Container / Branch / View
-
-```jsx
-const LoadingView = () => <div>Loading...</div>
-
-const ErrorView = () => <div>I'm sorry! Please try again.<div>;
-
-const PlanetView = ({ name, climate, terrain }) => (
-    <div>
-        <h2>{name}</h2>
-        <div>Climate: {climate}</div>
-        <div>Terrain: {terrain}</div>
-    </div>
-)
-
-const PlanetBranch = ({ loading, planet }) => {
-  if (loading) {
-    return <LoadingView />;
-  } else if (planet) {
-    return <PlanetView {...planet} />;
-  } else {
-    return <ErrorView />;
-  }
-};
-
-class PlanetContainer extends React.Component {
-  state = { loading: true };
-
-  componentDidMount() {
-    fetch("https://swapi.co/api/planets/5")
-      .then(res => res.json())
-      .then(
-        planet => this.setState({ loading: false, planet }),
-        error => this.setState({ loading: false, error })
-      );
-  }
-
-  render() {
-    return <PlanetBranch {...this.state} />;
-  }
-}
-
-export default PlanetContainer;
-```
-
-Chia cái View ra nhỏ hơn nữa thành Branch > View, việc quyết định chia nhỏ xuống bao nhiêu là vừa thì tùy theo trường hợp cụ thể để tính toán, với nguyên tắc bất di bất dịch anh ơi viết cho nó đơn giản dể hiểu chừng nào tốt chừng đấy, không phải ai cũng đủ trình thông minh để đọc hết code của anh.
-
-## Higher Order Components
+## Higher Order Component - HOC
 
 Cái này có bài viết rồi, đọc lại bài cũ [ở đây](https://luubinhan.github.io/blog/2018-03-02-gioi-thieu-higher-order-component-trong-react)
 
-## Stateless function
-
-Khuyến khích sử dụng vì có thể tái sử dụng component rất nhiều lần, trong component không được chứa `state`, chỉ nhận `prop` rồi return
-
-```jsx
-const Greeting = () => <div>Hi There!</div>
-```
-
-Với `props`
-
-```jsx
-const Greeting = (props, context) => 
-  <div style={{color: context.color}}>Hi {props.name}!</div>
-```
-
-Có thể khai báo biến
-
-```jsx
-const Greeting = (props, context) => {
-  const style = {
-    fontWeight: "bold",
-    color: context.color,
-  }
-
-  return <div style={style}>{props.name}</div>
-}
-```
-
-Có thể khai báo `defaultProps`, `propTypes`, `contextTypes` như thường
-
-
-```jsx
-Greeting.propTypes = {
-  name: PropTypes.string.isRequired
-}
-Greeting.defaultProps = {
-  name: "An.Luu"
-}
-Greeting.contextTypes = {
-  color: PropTypes.string
-}
-```
-
-## JSX spread attributes
+## JSX spread attribute
 
 Giống như cách viết `...` để spread object, 2 Cách viết sau sẽ cho cùng kết quả
 
@@ -225,37 +135,6 @@ Render với cập điều kiện đúng sai
 ```
 
 [Một số kiểu viết với rendẻ theo điều kiện](https://luubinhan.github.io/blog/2018-03-05-8-cach-render-component-trong-react)
-
-## Style component
-
-Tên này tự chế cái tên này thôi, cũng rất hay sử dụng nên viết ra nếu bạn nào chưa biết có thể tham khảo. Nếu sử dụng qua Bootstrap bạn sẽ biết nó viết CSS theo kiểu inherite, một button có thể có nhiều style 
-
-```html
-<button class="btn"></button>
-<button class="btn btn-primary"></button>
-<button class="btn btn-default"></button>
-```
-
-Để implement kiểu viết này, ta sử dụng thêm một thư viện `classnames`, viết thường cũng được mà dùng `classnames` tiện hơn
-
-```jsx
-import classnames from 'classnames'
-
-const PrimaryBtn = props =>
-  <Btn {...props} primary />
-
-const Btn = ({ className, primary, ...props }) =>
-  <button
-    type="button"
-    className={classnames(
-      "btn",
-      primary && "btn-primary",
-      className
-    )}
-    {...props}
-  />
-```
-
 
 ## Event switch
 
