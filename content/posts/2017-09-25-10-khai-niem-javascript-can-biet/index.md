@@ -2,7 +2,7 @@
 slug: "/2017-09-25-10-khai-niem-javascript-can-biet"
 date: "2017-09-25"
 title: "7 khái niệm JavaScript cần biết"
-desc: "Một vài khái niệm căn bản trong javascript cần nắm nếu là frontend developer"
+desc: "Một vài khái niệm căn bản trong javascript cần nắm nếu bạn là frontend developer"
 category: "javascript"
 cover: ""
 type: "post"
@@ -24,9 +24,9 @@ tags: ["javascript", "react"]
 
 <!-- /TOC -->
 
-# Giá trị vs. Tham chiếu
+## Giá trị # Tham chiếu
 
-5 kiểu dữ liệu được lưu trữ ở dạng **value** - giá trị: 
+5 kiểu dữ liệu được lưu trữ ở dạng **giá trị** - **primitive type**:
 
 - **Boolean**
 - **null**
@@ -34,7 +34,7 @@ tags: ["javascript", "react"]
 - **String**
 - **Number**
 
-Còn được gọi với tên khác là **primitive type**, khi copy giá trị của biến này cho biến khác, 2 giá trị này hoàn toàn độc lập không có liên hệ gì với nhau
+Khi *copy* giá trị của biến này cho biến khác, 2 giá trị này hoàn toàn độc lập không có liên hệ gì với nhau
 
 ```js
 var x = 10;
@@ -48,13 +48,13 @@ console.log(x)
 ```
 
 
-3 kiểu dữ liệu được lưu trữ ở dạng **reference** - tham chiếu:
+3 kiểu dữ liệu được lưu trữ ở dạng **tham chiếu** - **Object type**:
 
 - **Array**
 - **Function**
 - **Object**
 
-Gọi chung là kiểu *Object type*, nó không mang giá trị mà chỉ **tham chiếu** đến **vùng lưu trữ** của object đó trong bộ nhớ.
+Nó không mang giá trị mà chỉ **tham chiếu** đến **vùng lưu trữ** của đối tượng đó trong bộ nhớ.
 
 ```js
 var arr = [];
@@ -67,7 +67,7 @@ refArr.push(2);
 console.log(arr, refArrr)
 ```
 
-# So sánh `==` và `===`
+## So sánh `==` và `===`
 
 Khi thực hiện so sánh `=` trên biến kiểu tham chiếu, trả về `true` khi cả 2 biến số **cùng trỏ về một dùng nhớ** chứ không phải so sánh giá trị của 2 biến.
 
@@ -83,26 +83,26 @@ var arr2 = ['Hi!'];
 console.log(arr1 === arr2); // -> false
 ```
 
-# Scope
+## Scope - khu vực hoạt động, phạm vi lãnh thổ
 
-## Global Scope
+### Global Scope - công dân toàn cầu
 
-Biến toàn cục, trong javascript khi khai báo một biến không nằm trong một function nào cả, biến đó sẽ là biến toàn cục
+Nếu là một biến có phạm **lãnh thổ** là **global scope**, điều đó có nghĩa anh ấy là công dân toàn cầu, hàng ngôi sao quốc tế, ai cũng biết anh ấy là ai.
 
 ```js
-var name = "binh an";
+var name = "luckyluu";
 
-console.log(name); // binh an
+console.log(name); // luckyluu
 
 function logName(){
-    console.log(name); 
+    console.log(name);
 }
-logName(); // binh an
+logName(); // luckyluu
 ```
 
-## Local scope
+### Local scope
 
-Biến khai báo bên trong function chỉ có hiệu lực trong function đó
+Nếu anh bạn tên "biến" của chúng ta chỉ là vô danh tiểu tốt, local scope, thì anh ấy chỉ được biết đến bởi *dân địa phương*, nơi anh ấy đăng ký hộ khẩu thường trú.
 
 ```js
 // Global Scope
@@ -120,52 +120,54 @@ function anotherFunction() {
 // Global Scope
 ```
 
-# Block scope
+### Block scope
 
-Những câu khai báo như `if`, `switch`, `for`, `while` không giống như function, biến bên trong các câu khai báo này có phạm vi hoạt động trong function chứa nó.
+Những câu khai báo như `if`, `switch`, `for`, `while` không giống như `function` bình thường, anh bạn *biến* lúc này con được biết đến ở *toàn tỉnh* do nhà anh ấy nằm thuộc diện cocc
 
 ```js
 if (true) {
     // câu lệnh điều kiện 'if' không tạo ra một scope mới
-    var name = 'Hammad'; 
+    var name = 'Con ông If';
     // name vẫn là global scope
 }
 
-console.log(name); // logs 'Hammad'
+console.log(name); // logs 'Con ông If'
 ```
 
-Trong ES6, để tránh sự nhập nhằng này, khai báo biến bằng `let`,`const` để biến chỉ được hiểu bên trong các khối `{}`
+Trong ES6, để tránh sự nhập nhằn này, khai báo biến bằng `let`,`const` chớ có dại dùng `var` để khai báo.
 
 ```js
 if (true) {
     // name = global scope
-    var name = 'Hammad';
+    var name = 'Con ông If';
     // likes = local scope
-    let likes = 'Coding';
+    let likes = 'luckyluu';
     // skills = local scope
     const skills = 'JavaScript and PHP';
 }
 
-console.log(name); // 'Hammad'
-console.log(likes); 
+console.log(name); // 'Con ông If'
+console.log(likes);
 // Uncaught ReferenceError: likes is not defined
-console.log(skills); 
+console.log(skills);
 // Uncaught ReferenceError: skills is not defined
 ```
 
-# Hoisting
+## Hoisting
 
 Một đặc điểm của Javascript, biến có thể được **sử dụng trước, khai báo sau**! Viết như sau là hoàn toàn hợp lệ trong javascript
 
 ```js
-x = 5; // gán giá trị 5 cho biến x chưa được khai báo
+// gán giá trị 5 cho biến x chưa được khai báo
+x = 5;
 
 console.log(x);
 
-var x; // khai báo biến x
+// khai báo biến x
+var x;
 ```
 
-Do đó luôn như khai báo biến local trước khi sử dụng, nếu không có thể xảy ra trường hợp sau
+Do đó **luôn như khai báo biến trước khi sử dụng** là  nguyên tắc gối đầu của mọi frontend developer, nếu không có thể xảy ra trường hợp sau
 
 ```js
 ​var name = "Michael Jackson";
@@ -174,7 +176,7 @@ Do đó luôn như khai báo biến local trước khi sử dụng, nếu không
     console.log (name);
 }
 ​
-​function showOrdinaryPersonName () {   
+​function showOrdinaryPersonName () {
     name = "Johnny Evers";
     console.log (name);
 }
@@ -186,8 +188,8 @@ showOrdinaryPersonName (); // Johnny Evers​
 showCelebrityName (); // Johnny Evers​
 ​
 ​// luôn nhớ khai báo biến bằng var,let,const
-​function showOrdinaryPersonName () {   
-    var name = "Johnny Evers"; 
+​function showOrdinaryPersonName () {
+    var name = "Johnny Evers";
     console.log (name);
 }
 ```
@@ -196,7 +198,7 @@ Thậm chí khi khai báo biến kèm giá trị cho nó mà không dùng từ k
 
 ```js
 function showAge(){
-    age = 90;
+    age = 90; // nực cười chưa
     console.log(age);
 }
 
@@ -205,44 +207,43 @@ showAge(); // 90
 console.log(age) // 90
 ```
 
-# Closure
+## Closure
 
-Closure là một function bên trong một function khác truy cập tới các biến của function ngoài
+Closure ám chỉ một cơ chế hoạt động, một function bên trong một function khác lại **truy cập được** các biến của function ngoài, nghĩa là nó vi phạm nguyên lý biến không cùng **scope** thì KO được dò xét lẫn nhau, chuyện này lại **làm được** nếu 2 function nó là cha con với nhau.
 
 ```js
 function showName (firstName, lastName) {
-    ​var nameIntro = "Your name is ";        
-    ​function makeFullName () {        
-        ​return nameIntro + firstName + " " + lastName;    
+    ​var nameIntro = "Your name is ";
+    ​function makeFullName () {
+        ​return nameIntro + firstName + " " + lastName;
     }
     ​
     ​return makeFullName ();
 }
 ​
 showName ("Michael", "Jackson");
-// Your name is Michael Jackson 
+// Your name is Michael Jackson
 ```
 
-Function bên trong vẫn có thể truy cập đến giá trị của biến nằm ở function ngoài ngay cả khí function ngoài đã return giá trị.
-
+Như vậy chưa đủ quá đáng, nó còn có thể truy cập **ngay cả khi function ngoài (cha) đã return**
 
 ```js
 function celebrityName(firstName) {
-    var nameIntro = "This celebrity is ";
-    // this inner function has access to the outer function's variables, including the parameter​
-   function lastName(theLastName) {
-        return nameIntro + firstName + " " + theLastName;
-    }
-    return lastName;
+  var nameIntro = "This celebrity is ";
+  ​
+  function lastName(theLastName) {
+      return nameIntro + firstName + " " + theLastName;
+  }
+  return lastName;
 }
 ​
-​var mjName = celebrityName("Michael"); 
+​var mjName = celebrityName("Michael");
 ​
-var result = mjName("Jackson"); 
+var result = mjName("Jackson");
 // This celebrity is Michael Jackson
 ```
 
-Tận dụng đặc điểm này của closure function chỉ lưu tham chiếu đến biến của function ngoài mà không lưu giá trị, ta có thể viết một function như class thế này
+Tận dụng đặc điểm này của closure function, tạm gọi là cha truyền con nối, lưu tham chiếu đến biến của function ngoài mà không lưu giá trị, ta có thể viết một function như class thế này
 
 ```js
 function celebrityID(){
@@ -263,4 +264,4 @@ myID.setID(567);
 myID.getID(); // return 567
 ```
 
-Đọc thêm chi tiết về bài viết clusure của mình trên mozilla.org  https://developer.mozilla.org/vi/docs/Web/JavaScript/Closures
+Đọc thêm chi tiết về bài viết clusure của mình trên [mozilla.org](https://developer.mozilla.org/vi/docs/Web/JavaScript/Closures)
