@@ -168,7 +168,6 @@
 <url> <loc>http://vuilaptrinh.com/2018-09-12-huong-dan-build-notify-system-voi-react-redux</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-09-11-huong-dan-giai-thich-dependency-injection-cho-nguoi-moi-bat-dau-khong-biet-gi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-09-10-huong-dan-lam-viec-voi-flow-react-type-checking</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>http://vuilaptrinh.com/2018-08-24-huong-dan-su-dung-refs-trong-react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-08-21-huong-dan-su-dung-checkbox-va-toggle-switch</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-08-19-huong-dan-viet-query-data-tren-firestore</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-08-17-huong-dan-viet-dieu-kien-security-rules-cho-cloud-firetore</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -224,7 +223,6 @@
 <url> <loc>http://vuilaptrinh.com/2018-03-06-huong-dan-redux-van-hanh-nhu-the-nao-kem-vi-du</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-03-05-8-huong-dan-cach-render-component-trong-react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-03-02-huong-dan-gioi-thieu-higher-order-component-trong-react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>http://vuilaptrinh.com/2018-02-27-huong-dan-dung-ui-voi-pure-function-va-ket-hop-nhieu-function</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-02-14-huong-dan-redux-la-gi-tai-sao-phai-dung</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-01-12-huong-dan-react-router-dom-gioi-thieu-react-router-4</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2018-01-01-huong-dan-mot-so-resource-de-hoc-javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
