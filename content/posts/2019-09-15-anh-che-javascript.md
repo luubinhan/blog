@@ -11,9 +11,7 @@ tags: ["javascript", "hoc-thuat"]
 ---
 
 
-Ảnh chế Javascript
-
-Vô tình lụm xem được cái hình này trên Reddit
+Bộ ảnh thú vị mô tả kể chuyện so sánh trong Javascript, vô tình lụm xem được cái hình này trên Reddit
 
 ![Nguyên tắc bắt cầu javascript](https://miro.medium.com/max/500/0*kjcbVX8Y9TFoHGDO.png)
 
@@ -34,13 +32,13 @@ Chuyện gì đã xảy ra vậy?
 0 == '0' // => true
 ```
 
-Với các ngôn ngữ lập trình khác thì chưa biết, nhưng với javascript `==` sẽ tự ý chuyển 2 giá trị muốn so sánh về cùng một kiểu, hay người ta vẫn gọi là ko quan tâm đến kiểu dữ liệu khi so sánh.
+Với các ngôn ngữ lập trình khác thì chưa biết, nhưng với javascript `==` sẽ tự ý **chuyển 2 giá trị muốn so sánh về cùng một kiểu**, hay người ta vẫn gọi là ko quan tâm đến kiểu dữ liệu khi so sánh.
 
 Trong nhiều trường hợp chúng ta cũng có thể sử dụng cách so sánh `==` để tiện, javascript tự động chuyển về một kiểu, tuy nhiên sẽ ko khuyến khích cách này
 
 Theo như [specify](https://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3)
 
-> Nếu x = Number, y = String, trả về x == ToNumber(y), 
+> Nếu x = Number, y = String, trả về x == ToNumber(y),
 
 Nó đưa giá trị bên phải về number mà không báo cho ai biết hết
 
@@ -62,12 +60,12 @@ ToPrimitive(y) ở đây, JS sẽ gọi vào hàm `.toString` để convert về
 [1, 2, 3].toString();
 // => "1,2,3"
 ['hello','world'].toString();
-// => "hello,world
+// => "hello,world"
 [].toString();
 // => ""
 ```
 
-Toàn bộ những điều vô lý này đã được đưa vào [văn bản chính quy](https://www.ecma-international.org/ecma-262/5.1/#sec-8.12.8)
+Toàn bộ những điều vô lý này đã được đưa vào [văn bản chính quy!](https://www.ecma-international.org/ecma-262/5.1/#sec-8.12.8)
 
 ```js
 '0' == []
@@ -79,5 +77,4 @@ Cứ theo nguyên tắc đã quy định mà làm
 
 > Nếu x là String hoặc Number, y là Object, trả về x == ToPrimitive(y)
 
-Bước một `ToPrimitive([])` => chúng ta sẽ trở thành so sánh `'0' == ''`, khác nhau rõ ràng hé.
-
+Bước một `ToPrimitive([])` => chúng ta sẽ trở thành so sánh `'0' == ""`, khác nhau rõ ràng hé.
