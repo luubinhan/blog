@@ -3,7 +3,7 @@ slug: "/2019-10-18-7-cau-hoi-phong-van-lac-leo-voi-js"
 date: "2019-10-18"
 title: "7 Câu hỏi phỏng vấn lắc léo với Javascript"
 desc: "Thử kiến thức javascript của bạn đã đủ cho cuộc phỏng vấn cam go sắp tới chưa"
-cover: "https://dmitripavlutin.com/static/c4adb4f5373b24b71c1a3c87c806e39c/26b3e/people-at-interview.webp"
+cover: ""
 type: "post"
 lesson: 0
 chapter: 0
@@ -26,7 +26,7 @@ typeof a; // => ???
 typeof b; // => ???
 ```
 
-Đáp án
+_Đáp án_
 
 Lắc léo là ở chổ `let a = b = 0`. Câu này khai báo một biến cục bộ `a`, **đồng thời khai báo một biến toàn cục `b`**
 
@@ -34,7 +34,7 @@ Vì không có một khai báo nào của `b`, javascript tự hiểu b chính l
 
 Trường hợp này gọi là *vô tình* tạo ra một biến toàn cục, sự *vô tình* này còn có thể thấy ở
 
-![](https://dmitripavlutin.com/static/41b7ea0d888dd9b298e41b9ff9bf4590/a8429/accitental-global-variables.webp)
+![](https://dmitripavlutin.com/static/41b7ea0d888dd9b298e41b9ff9bf4590/f8b1b/accitental-global-variables.webp)
 
 Trình duyệt sẽ  chạy đoạn code trên như thế này
 
@@ -66,7 +66,7 @@ clothes.length = 0;
 clothes[0]; // => ???
 ```
 
-Lắc léo ở giá trị `length` của một array là một giá trị đặc biệt, đặc biệt ở chổ nó tạo ra side-effect, nếu thay đổi giá trị này sẽ ảnh hưởng trực tiếp đến array đó. 😂😂
+Lắc léo ở giá trị `length` của một array là một giá trị đặc biệt, đặc biệt ở chổ _nó tạo ra side-effect_, nếu thay đổi giá trị này sẽ ảnh hưởng trực tiếp đến array đó. 😂😂
 
 Trong trường hợp trên, với việc `clothes.length = 0` chúng ta đã xóa toàn bộ item trong array clothes
 
@@ -88,7 +88,7 @@ numbers; // => ???
 
 Lắc léo là ở chổ `;`, nếu bạn ko để ý kỹ.
 
-![The null statement effect](https://dmitripavlutin.com/static/edd9c7bd7fa83cc909f5b7694686bdfd/89df5/for-and-null-statement-pitfall-4.png)
+![The null statement effect](https://dmitripavlutin.com/static/edd9c7bd7fa83cc909f5b7694686bdfd/f8b1b/for-and-null-statement-pitfall-4.webp)
 
 Đoạn `for` chạy 4 lần mà không làm gì cả vì `;` 😂😂
 
@@ -132,7 +132,7 @@ Javascript tự động thêm dấu `;` vào sau câu `return` 😂😂
 
 ```javascript{2}
 function arrayFromValue(item) {
-  return;  
+  return;
   [items];
 }
 
@@ -149,12 +149,13 @@ Kết quả của `console.log`
 let i;
 for (i = 0; i < 3; i++) {
   const log = () => {
-    console.log(i);  }
+    console.log(i);
+  }
   setTimeout(log, 100);
 }
 ```
 
-Nếu câu trả lời của bạn là 0, 1, 2 thì xin chúc mừng, bạn đã sai. 😂😂
+Nếu câu trả lời của bạn là 0, 1, 2 thì xin chúc mừng, _bạn đã sai_. 😂😂
 
 Có 2 quá trình xảy ra với đoạn code trên, lắc léo là ở chổ `setTimeout`
 
@@ -165,7 +166,7 @@ Có 2 quá trình xảy ra với đoạn code trên, lắc léo là ở chổ `s
 
 **Quá trình 2**
 
-Sau 100ms, nó thực hiện bước 2, 3 hàm `log()` đã đưa vào queue sẽ lần lượt được gọi, lúc này này `i` đang là 3
+Sau 100ms, nó thực hiện bước 2, ba hàm `log()` đã đưa vào queue sẽ lần lượt được gọi, lúc này này `i` đang là 3
 
 ✅ Kết quả log ra là 3, 3, 3
 
@@ -200,7 +201,7 @@ myConst; // => ???
 var myVar = 'value';
 const myConst = 3.14;
 ```
-![](https://dmitripavlutin.com/static/670c31f21f45e9b8a453e726293f4de0/a8429/temporal-dead-zone-and-hoisting-javascript.webp)
+![](https://dmitripavlutin.com/static/670c31f21f45e9b8a453e726293f4de0/f8b1b/temporal-dead-zone-and-hoisting-javascript.webp)
 
 ✅ Hoisting và temporal dead zone là 2 khái niệm quan trọng ảnh hưởng tới vòng đời của một biến trong javascript
 
@@ -210,7 +211,7 @@ Tuy nhiên, nếu truy cập `myConst` trước khi khai báo sẽ trả về `R
 
 ## Kết luận
 
-Bạn sẽ thắc mắc, có những câu hỏi chả bao giờ sử dụng trong quá trình làm việc, mình cũng có cảm giác tương tự như vậy khi được hỏi những câu lắc léo thế này. Nhưng thực tế vẫn bị hỏi khi phỏng vấn.
+Bạn sẽ thắc mắc, có những câu hỏi chả bao giờ sử dụng trong quá trình làm việc, mình cũng có cảm giác tương tự như vậy khi được hỏi những câu lắc léo thế này. _Nhưng thực tế vẫn bị hỏi khi phỏng vấn_.
 
 Các bạn có nghĩ những câu hỏi *lắc léo* như vậy có cần thiết trong lúc phỏng vấn không? Viết bình luận ở dưới nhé.
 
