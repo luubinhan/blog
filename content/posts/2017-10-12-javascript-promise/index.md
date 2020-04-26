@@ -20,15 +20,15 @@ fetch('/user/1')
     })
 ```
 
-Đoạn code nằm bên trong `.then` sẽ chạy **sau khi** nhận dữ liệu trả về từ server trước khi chạy tiếp. `Promise` một kiểu **abstraction** cho phép các đoạn code chạy bất tuần tự
+Đoạn code nằm bên trong `.then` sẽ chạy **sau khi** nhận dữ liệu trả về từ server trước khi chạy tiếp. `Promise` là một dạng cho phép các đoạn code chạy **bất tuần tự** như vậy. Không hề nhầm lẫn chữ bất tuần tự đâu nhé bạn, bạn hãy hình dung code của chúng ta có rất nhiều thứ khác nữa cần chạy, đoạn code bên trong `then` chỉ chạy **sau khi**, tức là không theo thứ tự lúc được viết ra.
 
-Nếu không tin bạn thử check kiểu của Promise sẽ thấy
+Nếu check `typeof` của Promise chúng ta sẽ nhận được một `object`
 
 ```js
 typeof new Promise((resolve, reject) => {}) === 'object' // true
 ```
 
-Để mình nhắc lại lần nữa để bạn không bị cái tên hoa mĩ *Promise* lừa tình, **Promise chỉ đơn thuần là một object**. Để có thể đợi trả về từ server, trước khi thực hiện chạy đoạn code trong `.then()`, function của bạn **BUỘC PHẢI** trả về một *Promise*. Function `fetch` được viết như sau
+Để mình nhắc lại lần nữa để bạn không bị cái tên hoa mĩ *Promise* lừa tình, **Promise chỉ đơn thuần là một object**. Để có thể đợi trả về từ server (như trong ví dụ), trước khi thực hiện chạy đoạn code trong `.then()`, function của bạn **BUỘC PHẢI** trả về một *Promise*. Function `fetch` được viết như sau
 
 ```js
 cost fetch = function(url) {
@@ -90,7 +90,7 @@ class SimplePromise {
 }
 ```
 
-Khi khởi tạo một Promise `new Promise((resolve, reject) =>{...} )` chúng ta truyền vào một callback function, function này sẽ nhận 2 tham số truyền vào là 2 function internal của Promise `onResolve` và `onReject`
+Khi khởi tạo một Promise `new Promise((resolve, reject) =>{...} )` chúng ta truyền vào một `callback function`, function này sẽ nhận 2 tham số truyền vào là 2 function internal của Promise `onResolve` và `onReject`
 
 Bên trong constructor đồng thời khởi tạo mảng `promiseChain` và hàm `handleError`, khi thêm một hoặc một mớ `.then()`, các hàm này sẽ được tuần tự đưa vào mảng `promiseChain`, hàm `.catch()` thì được map với hàm `handleError` trong Promise.
 
