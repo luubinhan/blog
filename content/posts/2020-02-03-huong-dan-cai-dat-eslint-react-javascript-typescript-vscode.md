@@ -93,7 +93,7 @@ ESLint cho phép sử dụng nhiều kiểu file
 Xài YAML trong ví dụ này. Tạo file tên `.eslintrc.yaml`, cái này nếu bạn chạy `eslint init` trong thư mục `src/` của dự án nó sẽ hỏi bạn có muốn tạo không, nó tạo dùm cho.
 
 ```bash
-eslint init
+eslint --init
 ```
 
 > Nếu muốn thêm _logic_ bằng code, bạn cần dùng kiểu javascript
