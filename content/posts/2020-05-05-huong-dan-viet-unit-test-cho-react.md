@@ -10,12 +10,28 @@ chapter: 0
 tags: ["react"]
 ---
 
+<!-- TOC -->
+
+- [Tại sao phải test?](#tại-sao-phải-test)
+- [Test cái gì?](#test-cái-gì)
+- [Không test cái gì](#không-test-cái-gì)
+- [Một vài triết lý cá nhân khi test](#một-vài-triết-lý-cá-nhân-khi-test)
+- [Shallow vs mount](#shallow-vs-mount)
+- [Enzyme](#enzyme)
+  - [Cài đặt](#cài-đặt)
+- [Thực hiện test chi tiết với Enzyme](#thực-hiện-test-chi-tiết-với-enzyme)
+- [React-testing-library](#react-testing-library)
+  - [useState](#usestate)
+  - [useReducer](#usereducer)
+  - [useContext](#usecontext)
+
+<!-- /TOC -->
 
 [Toàn bộ project để bạn tham khảo](https://github.com/iqbal125/react-hooks-testing-complete)
 
 ## Tại sao phải test?
 
-Rất hiển nhiên là chúng ta viết test nhằm mục đích hạn chế được càng nhiều lõi càng tốt, đảm bảo những gì chúng ta viết ra chạy đúng như chúng ta mong muốn. Một vài *điểm trừ* khi chúng ta *phải* viết test
+Rất hiển nhiên là chúng ta viết test nhằm mục đích hạn chế được càng nhiều lõi càng tốt, đảm bảo những gì chúng ta viết ra chạy đúng như chúng ta mong muốn. Một vài _điểm trừ_ khi chúng ta _phải_ viết test
 
 1. Là nó tốn thời gian và tương đối khó khăn (dù là lập trình viên kinh nghiệm cũng gặp không ít vất vả khi mới bắt đầu viết test)
 2. Test pass không có nghĩa ứng dụng, function của chúng ta chạy đúng 100%
@@ -36,17 +52,17 @@ Các thư viện của người khác viết cũng là thứ không cần thiế
 
 > Nhiều integration test, không dùng snapshot test, vài unit test, vài e-to-e test.
 
-Hãy viết thật nhiều integration test, unit test thì tốt nhưng nó không thật sự là cách mà người dùng sử dụng  ứng dụng. Việc test chi tiết code hiện thực ra sao với unit test rất dễ.
+Hãy viết thật nhiều integration test, unit test thì tốt nhưng nó không thật sự là cách mà người dùng sử dụng ứng dụng. Việc test chi tiết code hiện thực ra sao với unit test rất dễ.
 
 Integration test nên dùng mock (dữ liệu giả lập) ít nhất có thể
 
-Không nên test những cái tiểu tiết như *tên hàm, tên biến, cách khai báo biến số, hằng số* có hợp lý.
+Không nên test những cái tiểu tiết như _tên hàm, tên biến, cách khai báo biến số, hằng số_ có hợp lý.
 
 Lấy ví dụ, nếu chúng ta test một button và thay đổi tên function xử lý `onClick` từ `increment` sang `handleClick`, test sẽ fail nhưng mọi thứ vẫn hoạt động bình thường.
 
 ## Shallow vs mount
 
-Mount là phần html, css, js thật sự khi chạy, như cách mà browser sẽ *thấy*, nhưng theo cách **giả lập**. Nó không có render, paint bất cứ thứ gì lên UI, nhưng làm *như thể* nó là browser thật sự và chạy code ngầm bên dưới.
+Mount là phần html, css, js thật sự khi chạy, như cách mà browser sẽ _thấy_, nhưng theo cách **giả lập**. Nó không có render, paint bất cứ thứ gì lên UI, nhưng làm _như thể_ nó là browser thật sự và chạy code ngầm bên dưới.
 
 Không bỏ thời gian ra để paint ra UI giúp test chạy nhanh hơn. Tuy nhiên nó vẫn chưa nhanh bằng shallow render
 
@@ -59,47 +75,47 @@ Kiểu shallow render sẽ chỉ render ra một component đang test mà không
 Lấy ví dụ như component cha, con như sau
 
 ```jsx
-import React from 'react'
+import React from "react";
 
 const App = () => {
-    return (
-        <div>
-            <ChildComponent />
-        </div>
-    )
-}
+  return (
+    <div>
+      <ChildComponent />
+    </div>
+  );
+};
 
 const ChildComponent = () => {
-    return (
-        <div>
-            <p>Child component</p>
-        </div>
-    )
-}
+  return (
+    <div>
+      <p>Child component</p>
+    </div>
+  );
+};
 ```
 
 Nếu chúng ta dùng shallow render component `App`, chúng ta sẽ nhận được DOM như sau, phần `ChildComponent` sẽ không bao gồm bộ "ruột" bên trong
 
 ```html
 <App>
-  <div> 
-    <ChildComponent /> 
+  <div>
+    <ChildComponent />
   </div>
-</App> 
+</App>
 ```
 
 Với mount, thì chúng ta có
 
 ```html
 <App>
-  <div> 
-    <ChildComponent> 
+  <div>
+    <ChildComponent>
       <div>
-       <p> Child components</p>
+        <p>Child components</p>
       </div>
     </ChildComponent>
-   </div>
-</App> 
+  </div>
+</App>
 ```
 
 **react-testing-library** là một thư viện khá ổn cho việc viết unit test react, tuy nhiên **Enzyme** là nền tảng cần nắm chắc, chúng ta sẽ đề cập nó trước
@@ -115,15 +131,15 @@ npm install enzyme enzyme-to-json enzyme-adapter-react-16
 Sơ qua những gì chúng ta sẽ import
 
 ```jsx
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Basic from '../basic_test'
+import React from "react";
+import ReactDOM from "react-dom";
+import Basic from "../basic_test";
 
-import Enzyme, { shallow, render, mount } from 'enzyme';
-import toJson from 'enzyme-to-json'
-import Adapter from 'enzyme-adapter-react-16'
+import Enzyme, { shallow, render, mount } from "enzyme";
+import toJson from "enzyme-to-json";
+import Adapter from "enzyme-adapter-react-16";
 
-Enzyme.configure({ adapter: new Adapter() })
+Enzyme.configure({ adapter: new Adapter() });
 ```
 
 3 cái import đầu tiên là cho React và component đang test, sau đó đến phần của Enzyme, `toJson` là để chuyển shallow component của chúng ta ra thành JSON để lưu thành snapshot
@@ -135,20 +151,20 @@ Cuối cùng là Adapter để làm việc được với react 16
 Chúng ta sẽ lấy một ví dụ tại sao ko nên test việc hiện thực chi tiết, với một component `<Counter />` như thế này
 
 ```jsx
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class Counter extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       count: 0
-    }
+    };
   }
 
   increment = () => {
-    this.setState({count: this.state.count + 1})
-  }
+    this.setState({ count: this.state.count + 1 });
+  };
 
   // đoạn code này mặc dù ko đúng, nhưng khi test vẫn cho kết quả pass
   // <button onClick={this.incremen}>
@@ -162,7 +178,8 @@ class Counter extends Component {
           Clicked: {this.state.count}
         </button>
       </div>
-  )}
+    );
+  }
 }
 
 export default Counter;
@@ -194,9 +211,9 @@ test('increment method increments count', (
 ) => {})
 ```
 
-Thứ nhất là cách viết test như vậy có vấn đề, chúng **ko mô phỏng** cách mà user sẽ sử dụng, chúng ta gọi thẳng  `increment()`.
+Thứ nhất là cách viết test như vậy có vấn đề, chúng **ko mô phỏng** cách mà user sẽ sử dụng, chúng ta gọi thẳng `increment()`.
 
-Nếu bạn simulate việc click nút button `wrapper.find('button.counter-button').simulate('click')` thay vì gọi `increment()`, test sẻ pass, nhưng *lỡ đâu*, một lần cập nhập nào đó bạn thay đổi `className` cho button, mà ko cập nhập lại test thì cũng *toang*.
+Nếu bạn simulate việc click nút button `wrapper.find('button.counter-button').simulate('click')` thay vì gọi `increment()`, test sẻ pass, nhưng _lỡ đâu_, một lần cập nhập nào đó bạn thay đổi `className` cho button, mà ko cập nhập lại test thì cũng _toang_.
 
 **Vậy người nông dân biết phải làm sao?**
 
@@ -213,34 +230,28 @@ Hãy tâm niệm nguyên lý này trong đầu, chúng ta sẽ còn bàn tiếp 
 Hay bắt đầu test React hook, chúng ta đã và đang sử dụng nó nhiều hơn là class component
 
 ```jsx
-import React, { useState } from 'react';
-
+import React, { useState } from "react";
 
 const TestHook = (props) => {
-  const [state, setState] = useState("Initial State")
+  const [state, setState] = useState("Initial State");
 
   const changeState = () => {
-    setState("Initial State Changed")
-  }
+    setState("Initial State Changed");
+  };
 
   const changeNameToSteve = () => {
-    props.changeName()
-  }
+    props.changeName();
+  };
 
   return (
-  <div>
-    <button onClick={changeState}>
-      State Change Button
-    </button>
-    <p>{state}</p>
-    <button onClick={changeNameToSteve}>
-       Change Name
-    </button>
-    <p>{props.name}</p>
-  </div>
-  )
-}
-
+    <div>
+      <button onClick={changeState}>State Change Button</button>
+      <p>{state}</p>
+      <button onClick={changeNameToSteve}>Change Name</button>
+      <p>{props.name}</p>
+    </div>
+  );
+};
 
 export default TestHook;
 ```
@@ -263,14 +274,14 @@ Prop sẽ được nhận từ component cha là `App`
          <Counter />
         <h1> Basic Hook useState </h1>
          <TestHook name={name} changeName={changeName}/>
-    ...     
+    ...
 ```
 
 Với nguyên lý như đã nói, chúng ta sẽ thực hiện test như thế nào
 
 Cách mà user sử dụng ứng dụng sẽ là: họ thấy một đoạn text trên UI Button, click vào, rồi thấy một kết quả sau khi click đó, một text mới xuất hiện chẳng hạn
 
-Chúng ta cài đặt thư viện `@testing-library/react` (không phải `react-testing-library`  nhé)
+Chúng ta cài đặt thư viện `@testing-library/react` (không phải `react-testing-library` nhé)
 
 ```bash
 npm install @testing-library/react
@@ -289,9 +300,9 @@ afterEach(cleanup)
 
 it('text in state is changed when button clicked', () => {
     const { getByText } = render(<TestHook />)
-    
+
     expect(getByText(/Initial/i).textContent).toBe("Init State");
-    
+
     fireEvent.click(getByText("State change Button"))
 
     expect(getByText(/Initial/i).textContent).toBe("Initial State Changed"))
@@ -319,76 +330,76 @@ Vì không sử dụng shallow render, nên chúng ta phải gọi `afterEach(cl
 Reducer chúng ta sẽ test
 
 ```js
-import * as ACTIONS from './actions'
+import * as ACTIONS from "./actions";
 
 export const initialState = {
-    stateprop1: false,
-}
+  stateprop1: false
+};
 
 export const Reducer1 = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case "SUCCESS":
       return {
         ...state,
-        stateprop1: true,
-      }
+        stateprop1: true
+      };
     case "FAILURE":
       return {
         ...state,
-        stateprop1: false,
-      }
+        stateprop1: false
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 ```
 
 Action
 
 ```js
 export const SUCCESS = {
-  type: 'SUCCESS'
-}
+  type: "SUCCESS"
+};
 
 export const FAILURE = {
-  type: 'FAILURE'
-}
+  type: "FAILURE"
+};
 ```
 
 Cuối cùng là component sử dụng action và reducer đã định nghĩa
 
 ```jsx
-import React, { useReducer } from 'react';
-import * as ACTIONS from '../store/actions'
-import * as Reducer from '../store/reducer'
-
+import React, { useReducer } from "react";
+import * as ACTIONS from "../store/actions";
+import * as Reducer from "../store/reducer";
 
 const TestHookReducer = () => {
-  const [reducerState, dispatch] = useReducer(Reducer.Reducer1, Reducer.initialState)
+  const [reducerState, dispatch] = useReducer(
+    Reducer.Reducer1,
+    Reducer.initialState
+  );
 
   const dispatchActionSuccess = () => {
-    dispatch(ACTIONS.SUCCESS)
-  }
+    dispatch(ACTIONS.SUCCESS);
+  };
 
   const dispatchActionFailure = () => {
-    dispatch(ACTIONS.FAILURE)
-  }
-
+    dispatch(ACTIONS.FAILURE);
+  };
 
   return (
     <div>
-       <div>
-        {reducerState.stateprop1
-           ? <p>stateprop1 is true</p>
-           : <p>stateprop1 is false</p>}
-       </div>
-       <button onClick={dispatchActionSuccess}>
-         Dispatch Success
-       </button>
+      <div>
+        {reducerState.stateprop1 ? (
+          <p>stateprop1 is true</p>
+        ) : (
+          <p>stateprop1 is false</p>
+        )}
+      </div>
+      <button onClick={dispatchActionSuccess}>Dispatch Success</button>
     </div>
-  )
-}
-
+  );
+};
 
 export default TestHookReducer;
 ```
@@ -398,36 +409,38 @@ Component này sẽ đổi giá trị của `stateprop` từ `false` sang `true`
 Thực hiện test
 
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TestHookReducer from '../test_hook_reducer.js';
-import {render, fireEvent, cleanup} from '@testing-library/react';
-import * as Reducer from '../../store/reducer';
-import * as ACTIONS from '../../store/actions';
+import React from "react";
+import ReactDOM from "react-dom";
+import TestHookReducer from "../test_hook_reducer.js";
+import { render, fireEvent, cleanup } from "@testing-library/react";
+import * as Reducer from "../../store/reducer";
+import * as ACTIONS from "../../store/actions";
 
-afterEach(cleanup)
+afterEach(cleanup);
 
-describe('test the reducer and action', () => {
-    import { render } from "ejs";
+describe("test the reducer and action", () => {
+  import { render } from "ejs";
 
-    it('should return the initial state', () => {
-      expect(Reducer.initialState).toEqual({ stateprop1: false })
+  it("should return the initial state", () => {
+    expect(Reducer.initialState).toEqual({ stateprop1: false });
+  });
+
+  it("should change stateprop1 from false to true", () => {
+    expect(Reducer.Reducer1(Reducer.initialState, ACTIONS.SUCCESS)).toEqual({
+      stateprop1: true
     });
+  });
+});
 
-    it('should change stateprop1 from false to true', () => {
-      expect(Reducer.Reducer1(Reducer.initialState, ACTIONS.SUCCESS )).toEqual({ stateprop1: true })
-    })
-})
+it("reducer changes stateprop1 from fals to true", () => {
+  const { container, getByText } = render(<TestHookReducer />);
 
-it('reducer changes stateprop1 from fals to true', () => {
-  const { container, getByText } = render(<TestHookReducer />)
+  expect(getByText(/stateprop1 is/i).textContent).toBe("stateprop1 is false");
 
-  expect(getByText(/stateprop1 is/i).textContent).toBe("stateprop1 is false")
+  fireEvent.click(getByText("Dispatch success"));
 
-  fireEvent.click(getByText("Dispatch success"))
-
-  expect(getByText(/stateprop1 is/i).textContent).toBe("stateprop1 is true")
-})
+  expect(getByText(/stateprop1 is/i).textContent).toBe("stateprop1 is true");
+});
 ```
 
 Trước tiên chúng ta test cái reducer bên trong khối `describe`, thực hiện một test đơn giản với giá trị initial state và sau khi có action success.
@@ -443,43 +456,39 @@ Giờ chúng ta đi đến việc test một component con có thể cập nhậ
 Thường thì context sẽ được khởi tạo trong một file riêng
 
 ```js
-import React from 'react'
+import React from "react";
 
-const Context = React.createContext()
+const Context = React.createContext();
 
-export default Context
+export default Context;
 ```
 
 Chúng ta sẽ cần một component cha, nắm giữ Context provider. Giá trị truyền vào cho provider sẽ là giá trị `state` và hàm `setState`
 
 ```js
-import React, { useState } from 'react';
-import TestHookContext from './components/react-testing-lib/test_hook_context';
+import React, { useState } from "react";
+import TestHookContext from "./components/react-testing-lib/test_hook_context";
 
-
-import Context from './components/store/context';
-
+import Context from "./components/store/context";
 
 const App = () => {
-  const [state, setState] = useState("Some Text")
-  
+  const [state, setState] = useState("Some Text");
 
   const changeText = () => {
-    setState("Some Other Text")
-  }
-
+    setState("Some Other Text");
+  };
 
   return (
     <div className="App">
-    <h1> Basic Hook useContext</h1>
-     <Context.Provider value={{changeTextProp: changeText,
-                               stateProp: state
-                                 }} >
+      <h1> Basic Hook useContext</h1>
+      <Context.Provider
+        value={{ changeTextProp: changeText, stateProp: state }}
+      >
         <TestHookContext />
-     </Context.Provider>
+      </Context.Provider>
     </div>
   );
-}
+};
 
 export default App;
 ```
@@ -487,23 +496,20 @@ export default App;
 Component con, đây là component chúng ta muốn test
 
 ```js
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 
-import Context from '../store/context';
+import Context from "../store/context";
 
 const TestHookContext = () => {
-  const context = useContext(Context)
+  const context = useContext(Context);
 
   return (
     <div>
-    <button onClick={context.changeTextProp}>
-        Change Text
-    </button>
+      <button onClick={context.changeTextProp}>Change Text</button>
       <p>{context.stateProp}</p>
     </div>
-  )
-}
-
+  );
+};
 
 export default TestHookContext;
 ```
@@ -511,29 +517,31 @@ export default TestHookContext;
 Lưu ý: các giá trị của `state`, khởi tạo, cập nhập điều nằm trong `App.js`, chúng ta chỉ truyền giá trị này xuống các component con thông qua context, mọi thứ điều thực hiện ở `App`, cái này quan trọng cần nhớ để hiểu lúc test
 
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TestHookContext from '../test_hook_context.js';
-import {act, render, fireEvent, cleanup} from '@testing-library/react';
-import App from '../../../App'
+import React from "react";
+import ReactDOM from "react-dom";
+import TestHookContext from "../test_hook_context.js";
+import { act, render, fireEvent, cleanup } from "@testing-library/react";
+import App from "../../../App";
 
-import Context from '../../store/context';
+import Context from "../../store/context";
 
-afterEach(cleanup)
+afterEach(cleanup);
 
-it('context value is updated by child component', () => {
-    const { container, getByText } = render(<App>
+it("context value is updated by child component", () => {
+  const { container, getByText } = render(
+    <App>
       <Context.Provider>
         <TestHookContext />
       </Context.Provider>
-    </App>)
+    </App>
+  );
 
-    expect(getByText(/Some/i).textContent).toBe("Some text")
+  expect(getByText(/Some/i).textContent).toBe("Some text");
 
-    fireEvent.click(getByText("Change text"))
+  fireEvent.click(getByText("Change text"));
 
-    expect(getByText(/Some/i).textContent).toBe("Some other text")
-  })
+  expect(getByText(/Some/i).textContent).toBe("Some other text");
+});
 ```
 
 Với context chúng ta cũng không hề thay đổi cách làm như với `useState`, vẫn là tìm và đặt expect thông qua kết quả nhận được cuối cùng.
@@ -541,7 +549,7 @@ Với context chúng ta cũng không hề thay đổi cách làm như với `use
 Bên trong render function, chúng ta có include `<Context.Provider/>` và `<TestHookContext/>` để code dễ đọc hơn, chứ thật sự chúng ta không cần chúng. Test sẽ vẫn chạy nếu truyền vào `<App />` bên trong render function
 
 ```jsx
-const { container, getByText } = render(<App />)
+const { container, getByText } = render(<App />);
 ```
 
 Tại sao lại như vậy?
@@ -549,4 +557,3 @@ Tại sao lại như vậy?
 Hãy nghĩ lại một chút về context, tất cả những state của context được handle bên trong `App.js`, vì lý do đó, đây là component chính chúng ta test, mặc dù trông thì có vẻ chúng ta test một child component sử dụng `useContext` hook. Chúng ta lại không thực hiện shallow render, mà render luôn các component con, nên dĩ nhiên `<Context.Provider />` và `<TestHookContext />` đều được render vì nó là con của `<App />`
 
 [How to Test React Components: the Complete Guide](https://www.freecodecamp.org/news/testing-react-hooks/)
-
