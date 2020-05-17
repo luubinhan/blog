@@ -31,6 +31,8 @@ Trình duyệt Safari trên iOS là người tiên phong sử dụng luôn một
 ```css
 .my-element {
   height: 100vh; /* fallback khi trình duyệt không hỗ trợ biến css */
+  /* cái này chỉ có trên webkit */
+  min-height: -webkit-fill-available;
   height: calc(var(--vh, 1vh) * 100);
 }
 ```
