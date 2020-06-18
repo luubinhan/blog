@@ -1,35 +1,44 @@
 ---
-slug: "/2020-05-30-5-diem-khac-nhau-giua-arrow-function-va-function-thong-thuong"
-date: "2020-05-30"
-title: "5 điểm khác nhau giữa function thường và arrow function"
-desc: "Lựa chọn cách viết nào cho phù hợp theo tính huống đang cần là cái chúng ta sẽ có được câu trả lời khi đi qua 5 điểm khác biệt này"
-cover: ""
-type: "post"
+slug: '/2020-05-30-5-diem-khac-nhau-giua-arrow-function-va-function-thong-thuong'
+date: '2020-05-30'
+title: '5 điểm khác nhau giữa function thường và arrow function'
+desc: 'Lựa chọn cách viết nào cho phù hợp theo tính huống đang cần là cái chúng ta sẽ có được câu trả lời khi đi qua 5 điểm khác biệt này'
+cover: ''
+type: 'post'
 lesson: 0
 chapter: 0
-tags: ["javascript"]
+tags: ['javascript']
 ---
+
+<!-- TOC -->
+
+- [1. giá trị của `this`](#1-giá-trị-của-this)
+- [2. Constructor](#2-constructor)
+- [3. Object `arguments`](#3-object-arguments)
+- [4. Ngầm định có `return`](#4-ngầm-định-có-return)
+- [5. Phương thức](#5-phương-thức)
+
+<!-- /TOC -->
 
 Function _thường_ là những function được khai báo ở 2 dạng sau
 
 ```js
 function hello() {
-    return 'hello';
+  return 'hello';
 }
 
 const hello = function() {
-    return 'hello'
-}
+  return 'hello';
+};
 ```
 
 Còn arrow function là dạng chắc ai cũng biết
 
 ```js
 const hello = () => {
-    return 'hello'
-}
+  return 'hello';
+};
 ```
-
 
 ## 1. giá trị của `this`
 
@@ -40,7 +49,7 @@ function myFunction() {
   console.log(this);
 }
 
-myFunction(); 
+myFunction();
 // => global object (window)
 ```
 
@@ -53,7 +62,7 @@ const myObject = {
   }
 };
 
-myObject.method(); 
+myObject.method();
 // => "myObject"
 ```
 
@@ -70,7 +79,7 @@ const myObject = {
   }
 };
 
-myObject.myMethod([1, 2, 3]); 
+myObject.myMethod([1, 2, 3]);
 ```
 
 Đây là một đặc tính giúp chúng ta không còn dùng đến `self = this` hay `callback.bind(this)`
@@ -81,7 +90,7 @@ myObject.myMethod([1, 2, 3]);
 
 ```js
 function Car(color) {
-    this.color = color;
+  this.color = color;
 }
 
 const redCar = new Car('red');
@@ -96,7 +105,7 @@ const Car = (color) => {
 };
 
 const redCar = new Car('red');
-// => TypeError: Car is not a constructor 
+// => TypeError: Car is not a constructor
 ```
 
 ## 3. Object `arguments`
@@ -108,7 +117,7 @@ function myFunction() {
   console.log(arguments);
 }
 
-myFunction('a', 'b'); 
+myFunction('a', 'b');
 // => { 0: 'a', 1: 'b'}
 ```
 
@@ -118,16 +127,16 @@ Arrow function sẽ không có object này, và nếu bạn đặt nó vào tron
 function myRegularFunction() {
   const myArrowFunction = () => {
     console.log(arguments);
-  }
+  };
 
   myArrowFunction('c', 'd');
 }
 
-myRegularFunction('a', 'b'); 
+myRegularFunction('a', 'b');
 // => { 0: 'a', 1: 'b' }
 ```
 
-## 4.  Ngầm định có `return`
+## 4. Ngầm định có `return`
 
 Với function thông thường, chúng ta phải rất _rõ ràng_ là `return` về cái gì
 
@@ -136,7 +145,7 @@ function myFunction() {
   return 42;
 }
 
-myFunction(); 
+myFunction();
 // => 42
 
 function myEmptyFunction() {
@@ -148,9 +157,9 @@ function myEmptyFunction2() {
   return;
 }
 
-myEmptyFunction();  
+myEmptyFunction();
 // => undefined
-myEmptyFunction2(); 
+myEmptyFunction2();
 // => undefined
 ```
 
@@ -159,7 +168,7 @@ Với arrow function nó có hơi đặc biệt, nếu chỉ có một _expressi
 ```js
 const increment = (num) => num + 1;
 
-increment(41); 
+increment(41);
 // => 42
 ```
 
@@ -191,11 +200,10 @@ class Hero {
 
   logName = () => {
     console.log(this.heroName);
-  }
+  };
 }
 
 const batman = new Hero('Batman');
 ```
-
 
 https://dmitripavlutin.com/differences-between-arrow-and-regular-functions/
