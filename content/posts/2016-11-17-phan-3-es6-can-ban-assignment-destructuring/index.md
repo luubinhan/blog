@@ -197,7 +197,7 @@ Ví dụ ta có hàm `random` để tạo một con số ngẫu nhiên nào đó
 
 ```js
 function random({min = 1, max = 10} = {}) {
- return Match.floor(Math.random() * (max - min)) + min
+ return Math.floor(Math.random() * (max - min)) + min
 }
 console.log( random() )
 console.log( random({max: 24}) )
