@@ -1,0 +1,26 @@
+{
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  // auto sort imports
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true,
+    // For ESLint
+    "source.fixAll.eslint": true,
+    // For TSLint
+    "source.fixAll.tslint": true,
+    // For Stylelint
+    "source.fixAll.stylelint": true
+  },
+  "editor.formatOnSave": true,
+  "files.eol": "\n",
+  "editor.tabSize": 2,
+  "prettier.eslintIntegration": true,
+  "prettier.trailingComma": "es5",
+  "prettier.singleQuote": true,
+  "eslint.validate": [
+    "html",
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ]
+}

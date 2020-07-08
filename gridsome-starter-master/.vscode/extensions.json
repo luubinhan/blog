@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "msjsdiag.debugger-for-chrome",
+    "streetsidesoftware.code-spell-checker",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "sibiraj-s.vscode-scss-formatter"
+  ]
+}
