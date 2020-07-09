@@ -18,7 +18,9 @@
     "gridsome-plugin-flexsearch": "^0.1.20",
     "gridsome-plugin-pwa": "^0.0.17",
     "gridsome-plugin-rss": "^1.2.0",
-    "vue-disqus": "^4.0.1"
+    "vue-analytics": "^5.22.1",
+    "vue-disqus": "^4.0.1",
+    "vue-facebook": "^1.1.0"
   },
   "devDependencies": {
     "node-sass": "^4.12.0",
