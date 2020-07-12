@@ -1,8 +1,8 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { random, isEmpty } from "lodash";
+import { isEmpty } from "lodash";
 import Link from "gatsby-link";
-
+import Search from "../components/Search/Search";
 import PostListing from "../components/PostListing/PostListing";
 import config from "../../data/SiteConfig";
 
@@ -19,8 +19,8 @@ const NavLink = props => {
 
 class IndexPage extends React.Component {
   render() {
-    const { data, pathContext } = this.props;
-    const { group, index, first, last, pageCount } = pathContext;
+    const { pathContext } = this.props;
+    const { group, index, first, last } = pathContext;
     const previousUrl = (index - 1 === 1) ? "" : (index - 1).toString();
     const nextUrl = (index + 1).toString();
     return (
@@ -30,8 +30,8 @@ class IndexPage extends React.Component {
           <meta name="description" content="Nơi mình chia sẽ kiến thức frontend, css, html, javascript, các framework như React, Vuejs, React Native" />
         </Helmet>
         <main className="inner">
+          <Search />
           <h1 style={{display: "none"}}>{config.siteTitle + ' - ' + config.siteDescription}</h1>
-          
           {!isEmpty(group) && <PostListing postEdges={group} />}
           <div className="pagination">
             <NavLink test={first} url={previousUrl} text="Trang Trước" />

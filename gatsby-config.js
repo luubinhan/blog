@@ -1,5 +1,5 @@
 const config = require("./data/SiteConfig");
-require('dotenv').config();
+require("dotenv").config();
 
 const pathPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix;
 
@@ -120,7 +120,7 @@ module.exports = {
           {
             serialize(ctx) {
               const rssMetadata = ctx.query.site.siteMetadata.rssMetadata;
-              return ctx.query.allMarkdownRemark.edges.map(edge => ({
+              return ctx.query.allMarkdownRemark.edges.map((edge) => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.frontmatter.date,
                 title: edge.node.frontmatter.title,
@@ -156,6 +156,45 @@ module.exports = {
             }
           `,
             output: config.siteRss
+          }
+        ]
+      }
+    },
+    {
+      resolve: "gatsby-plugin-flexsearch",
+      options: {
+        languages: ["vi"],
+        type: "MarkdownRemark",
+        fields: [
+          {
+            name: "title",
+            indexed: true,
+            resolver: "frontmatter.title",
+            attributes: {
+              encode: "balance",
+              tokenize: "strict",
+              threshold: 6,
+              depth: 3
+            },
+            store: true
+          },
+          {
+            name: "desc",
+            indexed: true,
+            resolver: "frontmatter.desc",
+            attributes: {
+              encode: "balance",
+              tokenize: "strict",
+              threshold: 6,
+              depth: 3
+            },
+            store: false
+          },
+          {
+            name: "url",
+            indexed: false,
+            resolver: "fields.slug",
+            store: true
           }
         ]
       }
