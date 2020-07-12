@@ -171,8 +171,8 @@ module.exports = {
             indexed: true,
             resolver: "frontmatter.title",
             attributes: {
-              encode: "balance",
-              tokenize: "strict",
+              encode: "simple",
+              tokenize: "full",
               threshold: 6,
               depth: 3
             },
@@ -183,8 +183,8 @@ module.exports = {
             indexed: true,
             resolver: "frontmatter.desc",
             attributes: {
-              encode: "balance",
-              tokenize: "strict",
+              encode: "simple",
+              tokenize: "full",
               threshold: 6,
               depth: 3
             },
