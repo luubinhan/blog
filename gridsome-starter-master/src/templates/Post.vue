@@ -41,8 +41,8 @@ export default {
       title: this.$page.post.title,
       meta: [
         {
-          name: "description",
-          content: this.$page.post.description
+          name: "desc",
+          content: this.$page.post.desc
         }
       ]
     };
@@ -56,7 +56,7 @@ query Post ($id: ID!) {
     title
     path
     date (format: "MMMM D, YYYY")
-    description
+    desc
     content
   }
 }
