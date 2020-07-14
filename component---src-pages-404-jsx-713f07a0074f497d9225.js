@@ -1,6 +1,6 @@
 webpackJsonp([183328146348521],{
 
-/***/ 934:
+/***/ 936:
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -11,7 +11,7 @@ webpackJsonp([183328146348521],{
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _gatsbyLink = __webpack_require__(15);
+	var _gatsbyLink = __webpack_require__(10);
 	
 	var _gatsbyLink2 = _interopRequireDefault(_gatsbyLink);
 	

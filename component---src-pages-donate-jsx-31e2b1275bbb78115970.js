@@ -42,14 +42,14 @@ webpackJsonp([39067687067054],{
 
 /***/ }),
 
-/***/ 1812:
+/***/ 1814:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/qr.a1462f9d.png";
 
 /***/ }),
 
-/***/ 936:
+/***/ 938:
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -70,7 +70,7 @@ webpackJsonp([39067687067054],{
 	
 	var _data = __webpack_require__(45);
 	
-	var _qr = __webpack_require__(1812);
+	var _qr = __webpack_require__(1814);
 	
 	var _qr2 = _interopRequireDefault(_qr);
 	
