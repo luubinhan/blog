@@ -15,10 +15,10 @@ export default class TagTemplate extends React.Component {
           <meta name="description" content="Nơi mình chia sẽ kiến thức frontend, css, html, javascript, các framework như React, Vuejs, React Native" />
         </Helmet>
         <div className="inner">
-          <Search />
           <PostListing postEdges={postEdges} />
         </div>
         <div className="aside">
+          <Search />
           <div className="company-info tag">
             <div className="company-name">TAGS</div>
           </div>

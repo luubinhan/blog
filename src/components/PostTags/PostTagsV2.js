@@ -1,14 +1,14 @@
 import React from "react";
 import Link from "gatsby-link";
 
-import "./PostTags.scss";
+import "./PostTagsV2.scss";
 
 export default function PostTags({ list = [] }) {
   return (
-    <ul className="tag-list">
+    <ul className="tag-list-2">
       {React.Children.toArray(list.map(tag => (
-        <li key={tag}>
-          <Link to={`/tags/${tag}`}>{tag.name ? tag.name : tag}</Link>
+        <li>
+          <Link to={`/tags/${tag.key}`}>{tag.name}</Link>
         </li>
       )))}
     </ul>

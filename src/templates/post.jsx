@@ -1,6 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { random } from "lodash";
+import Search from "../components/Search/Search";
 import { Comments, FacebookProvider } from "react-facebook";
 
 import Bio from "../components/Bio";
@@ -26,7 +26,10 @@ export default class PostTemplate extends React.Component {
       <div className="master">
         <Helmet>
           <title>{`${post.title} | ${config.siteTitle} | ${config.siteDescription}`}</title>
-          <meta name="description" content={`${post.desc} || ${post.title} || ${config.siteDescription}`} />
+          <meta
+            name="description"
+            content={`${post.desc} || ${post.title} || ${config.siteDescription}`}
+          />
           <meta
             name="keywords"
             content="frontend,developer,javascript,wordpress,react,hochiminh,web-developer"
@@ -75,13 +78,10 @@ export default class PostTemplate extends React.Component {
                 <SocialLinks postPath={slug} postNode={postNode} />
               </div>
             </div>
-            
-            <div id="post-comments" className='fb-comments'>
+
+            <div id="post-comments" className="fb-comments">
               <FacebookProvider appId={config.siteFBAppID}>
-                <Comments
-                  href={`${config.siteUrl}/${slug}`}
-                  width="100%"
-                />
+                <Comments href={`${config.siteUrl}/${slug}`} width="100%" />
               </FacebookProvider>
             </div>
             <Disqus postNode={postNode} />
@@ -115,7 +115,8 @@ export default class PostTemplate extends React.Component {
           </div>
         </div>
         <div className="aside">
-          <div className="beatiful-post-name" data-text-shadow={post.title}>
+          <Search />
+          <div className="beautiful-post-name" data-text-shadow={post.title}>
             {post.title}
           </div>
         </div>
