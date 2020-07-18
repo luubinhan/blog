@@ -2,7 +2,7 @@
 slug: "/2019-10-20-huong-dan-ung-dung-tuyet-voi-cua-vue-renderless-component"
 date: "2019-10-20"
 title: "Những ứng dụng tuyệt vời của Renderless component trong Vue"
-desc: "Để tái sử dụng component trong Vue mà không biết tới slot thì quá thiếu sót. Một vài ví dụ để bạn sử dụng slot nhiều hơn."
+desc: "Cùng điểm qua các phương pháp để giải quyết bài toán 'DRY' trong Vue, các bạn sẽ biết thêm các kỹ thuật tương đối nâng cao để lên bật Vue lão làng."
 cover: ""
 type: "post"
 lesson: 0
@@ -24,14 +24,17 @@ tags: ["vuejs"]
 
 <!-- /TOC -->
 
-## Slot
+Để tái sử dụng component trong Vue cũng có lắm ngã dăm ba đường y như React có HOC, render prop, hook. Điểm qua những kỹ thuật/cách làm tương tự trong Vue
 
-Slot trong vue là dạng "đặt gạch" trong component, sau này khi sử dụng ta có thể đưa nội dung khác vào những vị trí đã *đặt gạch*
+## Kỹ thuật dùng Slot
 
-Vue không chỉ có thể đặt một mà đặt nhiều gạch, số lượng tùy thích, viên gạch đó được Vue gọi tên là `slot`
+Khái niệm **Slot** trong vue là dạng "đặt gạch" trong component, sau này khi sử dụng ta có thể đưa nội dung khác vào những vị trí đã *đặt gạch*
+
+Vue không giới hạn số lượng *gạch* muốn đặt, số lượng tùy thích
 
 ```html
-<!-- mother.vue --> Mẹ đặt gạch 2 chỗ header và body cho con nha
+<!-- mother.vue -->
+Mẹ đặt gạch 2 chỗ header và body cho con nha
 <template>
   <div class="card">
     <div class="card-header">
@@ -45,12 +48,13 @@ Vue không chỉ có thể đặt một mà đặt nhiều gạch, số lượng
 ```
 
 ```html
-<!-- con.vue: Cho con dùng 2 chỗ header và body bằng nội dung mới nhé-->
+<!-- con.vue:
+Cho con dùng 2 chỗ header và body bằng nội dung mới nhé-->
 <mother>
-	<template #header>
+	<template slot="header">
 	  <h1>Special Features</h1>
 	</template>
-	<template #body>
+	<template slot="body">
 		<div>
 		    <h5>Fish and Chips</h5>
 		    <p>Super delicious tbh.</p>
@@ -59,7 +63,9 @@ Vue không chỉ có thể đặt một mà đặt nhiều gạch, số lượng
 </mother>
 ```
 
-Đây là những viên gạch có đặt tên `<slot name="header"/>`, có một viên gạch không cần đặt tên, chỉ cần `<slot />`, khi đó component *ném gạch* sẽ được viết
+Đây là những viên gạch có đặt tên `<slot name="header"/>`
+
+Nếu bạn không khai báo tên cho `<slot />`, khi đó component *ném gạch* sẽ được viết (children trong React đấy mà)
 
 ```html
 <mother>
@@ -67,9 +73,13 @@ Vue không chỉ có thể đặt một mà đặt nhiều gạch, số lượng
 </mother>
 ```
 
-## Slot scope
+> bạn có thể viết tắt `slot="header"` thành `#header`
 
-Đề **truyền dữ liệu** từ mẹ sang con, chúng ta bind dữ liệu muốn truyền qua slot `<slot :ten-bien="du-lieu"/>`
+Ngoài như cầu đặt gạch, bạn sẽ có thêm nhu cầu truyền tải thêm ít dữ liệu qua lại giữa mẹ và con
+
+### Khái niệm Slot scope
+
+Đề **truyền dữ liệu** từ mẹ sang con, chúng ta bind dữ liệu muốn truyền qua slot `<slot :ten-bien="gia-tri"/>`
 
 ```html
 <!-- mother.vue -->
@@ -102,9 +112,9 @@ Component con sẽ nhận dữ liệu thông qua từ khóa `slot-scope`
 </mother>
 ```
 
-## Sử dụng làm modal
+Ứng dụng các khái niệm `slot`, `slot-scope` vào component modal
 
-Lấy structure của bootstrap nhé, chúng ta sẽ cho Modal component có 3 chỗ có thể thay đổi là
+Lấy cấu trúc html của bootstrap, chúng ta sẽ cho Modal component có 3 chỗ có thể thay đổi là
 
 - `<slot name="header" />`
 - `<slot name="body" />`
@@ -153,45 +163,13 @@ Với 3 cục gạch đã đặt sẵn trong `my-modal.vue`,
 </template>
 ```
 
-Bổ sung thêm một tính năng năng nữa cho component `<my-modal/>`, mặc định khi click nút close, nó sẽ gọi đến hàm close bên trong component `<my-modal/>`, chúng ta dùng scope slot để thằng con có thể truyền vào một function khác, đè lên function nhận được (tức không gọi hàm `closeModal` bên trong `<my-modal/>`)
 
-```jsx{16,27}
-<!-- my-modal.vue -->
-<template>
-<div class="modal" tabindex="-1" role="dialog">
-	//...
-	<div class="modal-footer">
-	  <slot name="footer" :closeModal="closeModal"></slot>
-	</div>
-	//...
-</div>
-</template>
 
-<script>
-export default {
-  //...
-  methods: {
-	closeModal () {	}
-  }
-}
-</script>
-```
+## Kỹ thuật dùng Component Composition (siêu nhân hợp thể)
 
-Chúng ta có thể truyền hàm `closeModal` khác
+Sự kết hợp của nhiều component thành một component mới, dữ dội hơn, như siêu nhân GAO, được gọi là hợp thể component. Từ khoa học của nó là Component Composition (trong React cũng có cách làm này)
 
-```html
-<template #footer="{closeModal}">
-	<button @click="closeModal">
-		I'm here
-	</button>
-</template>
-```
-
-## Composing Component (siêu nhân hợp thể)
-
-Sự kết hợp của nhiều component thành một component mới, dữ dội hơn, như siêu nhân GAO, được gọi là hợp thể component. Từ khoa học của nó là **Composing Components**
-
-### Tại sao cần hợp thể?
+### Lý do phải hợp thể?
 
 Component được sinh ra là để chúng ta **nhai đi nhai lại**
 
