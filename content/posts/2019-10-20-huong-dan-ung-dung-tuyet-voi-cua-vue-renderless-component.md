@@ -402,7 +402,7 @@ Renderless component `<DataList/>` sẽ làm nhiệm vụ `fetch` dữ liệu t�
 
 ```html
 <data-list endpoint="posts">
-	<div slot-scope="{ data: posts, error, laoding }">
+	<div slot-scope="{ data: posts, error, loading }">
 		<span v-if="loading">Loading...</span>
 		<span v-else-if="error">Error while fetching data!</span>
 		<ul v-else>
@@ -419,7 +419,7 @@ Thêm phần phân trang, chúng ta dùng giá trị filter
 
 ```html
 <data-list endpoint="posts" :filter="{ page }">
-	<div slot-scope="{ data: posts, error, laoding }">
+	<div slot-scope="{ data: posts, error, loading }">
 		<span v-if="loading">Loading...</span>
 		<span v-else-if="error">Error while fetching data!</span>
 		<ul v-else>
