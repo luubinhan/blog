@@ -1,7 +1,7 @@
 ---
 slug: "/2018-11-14-chi-dan-thiet-ke-form-cua-google"
 date: "2018-11-14"
-title: "Chỉ dẫn thiết kế form từ Google"
+title: "Kim chỉ nam khi thiết kế form từ Google"
 desc: "Bài này nằm trong loạt bài chuẩn kiến thức để đi thi web mobile specialist của google. Một vài điểm cần nhớ khi thiết kế và làm việc với form"
 cover: ""
 type: "post"
@@ -58,12 +58,12 @@ Ta muốn autocomplete giá trị gì thì báo với trình duyệt luôn, ho�
 Chuẩn này đã được [WHATWG HTML Standard.](https://html.spec.whatwg.org/multipage/forms.html#autofill) đặt ra ko phải mình
 
 
-|  Trường | Giá trị name  |  
+|  Trường | Giá trị name  |
 |---|---|
 | Name  | name fname mname lname  |
 |  Email |  email |
-| Address  | address city region province state zip zip2 postal country  | 
-|  Phone | phone mobile country-code area-code exchange suffix ext  | 
+| Address  | address city region province state zip zip2 postal country  |
+|  Phone | phone mobile country-code area-code exchange suffix ext  |
 |  Credit Card |  ccname cardnumber cvc ccmonth ccyear exp-date card-type |
 |  Usernames | username  |
 | Passwords  | password  |
@@ -95,7 +95,7 @@ Chuỗi bắt đầu phải là 'http://', 'ftp://', 'mailto:'
 ### `type='tel'`
 
 Ko có ép một syntax hay validation nào cả, giúp hiện thì bàn phím điện thoại trên mobile
- 
+
 ![ko có ép một syntax hay validation nào cả, giúp hiện thì bàn phím điện thoại trên mobile](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/tel-android.png)
 
 ### `type='email'`

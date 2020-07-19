@@ -1,8 +1,8 @@
 ---
 slug: "/2020-01-29-nguyen-tac-thiet-ke-cua-vue-3"
 date: "2020-01-29"
-title: "Những nguyên tắc chung mà Vue 3 đã áp dụng khi thiết kế"
-desc: "Nguyên tắc (principle) được áp dụng khi cần đưa ra một quyết định kỹ thuật trước vô vàng các lựa chọn. Nếu bạn đã biết được mọi thứ vận hành như thế nào, thì đã đến lúc bạn tiến một bước xa hơn, trả lời cho câu hỏi tại sao"
+title: "Kim chỉ nam mà Vue 3 đã áp dụng khi thiết kế"
+desc: "Kim chỉ nam (principle) được áp dụng khi cần đưa ra một quyết định kỹ thuật trước vô vàng các lựa chọn. Nếu bạn đã biết được mọi thứ vận hành như thế nào, thì đã đến lúc bạn tiến một bước xa hơn, trả lời cho câu hỏi tại sao"
 cover: ""
 type: "post"
 lesson: 0
@@ -12,7 +12,7 @@ tags: ["hoc-thuat", "vuejs"]
 
 
 *Một phút quảng cáo*
-  
+
 Thời điểm hiện có khoảng **1 triệu người đang sử dụng** [add-on Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) của Chrome, đây là con số phản ánh có bao nhiêu lập trình viên đang *thực sự* sử dụng Vue, một con số không hề nhỏ. Còn trên Github, **Vue đã vượt mặt React** để trở thành bộ [công cụ phổ biến nhất của Frontend](https://risingstars.js.org/2019/en/), +31.4k lượt thích so với +22.9k của React, riêng bộ Vue Element Admin cũng có tới +22.7k lượt thích.
 
 Nhiều thương hiệu và tên tuổi lớn tin tưởng sử dụng Vue, trong đó có Lois Vuitton (Vue + Nuxt), một phần newsfeed của Facebook, Netflix, Adobe, Grammarly, GitLab, Behance [Danh sách 13 công ty sử dụng Vue.js](https://www.netguru.com/blog/13-top-companies-that-have-trusted-vue.js-examples-of-applications)
@@ -66,7 +66,8 @@ Vấn đề của Option API
 
 - Rất trực quan, dễ tiếp cận    
 - Khi bắt đầu có những component thực sự lớn, mọi thứ trở nên khó kiểm soát. Trong lúc viết các ứng dụng lớn, component lớn, bạn buộc phải chia các tính năng của component ra ở nhiều chỗ khác nhau, một component có thể có rất rất nhiều logic bên trong
-    
+  
+
 Với Composition API
 
 - Không cần phải viết lại toàn bộ ứng dụng, bạn có thể tiếp tục sử dụng bộ codebase đang chạy. Nó có thể được sử dụng cùng với option API
@@ -83,14 +84,15 @@ TypeScript có thật sự cần thiết không? Bạn có cần học TypeScrip
 
 - Các IDE hỗ trợ xuất sắc trọng việc tự động nhắc lệnh và cung cấp thông tin về type. Một function cần bạn truyền vào những gì, nó sẽ trả về những gì, tất cả điều minh bạch    
 - Tự tin khi cần refactor code cũ trong một dự án lớn. Nếu như bạn biết dự án đó sẽ tiếp tục kéo dài quá trình phát triển trong vòng 2, 3 năm tới, bạn sẽ tự tin hơn khi nhìn lại code của chính mình viết cách đây một năm về trước. Bạn sẽ biết được mình đã làm cái khỉ khô gì trước đây vậy.
-    
+  
+
 **Đánh đổi**
 
 - Tốn thời gian học. Để thực sự trở thành developer thành thạo TypeScript hay bất cứ ngôn ngữ nào khác, bạn cần thời gian học nó một cách bài bản. Ví dụ khi bạn sử dụng các API của Vue, bạn sẽ thấy rất tường minh dễ hiểu, nhưng khi nhìn vào code bên trong của các API này, bạn sẽ không dễ gì hiểu được những gì đang xảy ra.
 - Thời gian chạy dự án lâu. Khi viết TypeScript, bạn bắt buộc phải nghĩ bạn sẽ dùng kiểu gì ngay từ đầu, bạn sẽ tốn thời gian để *nghĩ* những gì mình viết hơi lâu một chút
 
 Bạn đừng đi vào kết luận dùng TypeScript là đúng hay sai, nó là kiểu lựa chọn sao cho phù hợp với dự án đang thực hiện
- 
+
 
 ### Template vs JSX
 

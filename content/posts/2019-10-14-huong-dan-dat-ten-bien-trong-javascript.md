@@ -2,7 +2,7 @@
 slug: "/2019-10-14-huong-dan-dat-ten-bien-trong-javascript"
 date: "2019-10-14"
 title: "Đặt tên sao cho đẹp trong javascript"
-desc: "Cách nguyên tắc chung khi đặt tên trong javascript"
+desc: "Kim chỉ nam khi đặt tên trong javascript, nếu thật sự ban quan tâm những gì mình đang viết"
 cover: ""
 type: "post"
 lesson: 0
