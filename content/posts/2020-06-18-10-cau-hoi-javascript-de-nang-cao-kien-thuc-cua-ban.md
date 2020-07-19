@@ -10,20 +10,9 @@ chapter: 0
 tags: ['javascript']
 ---
 
-<!-- TOC -->
+[TOC]
 
-- [1. So sánh sort của Array](#1-so-sánh-sort-của-array)
-- [2. Set của các Object](#2-set-của-các-object)
-- [3. Mutate một object](#3-mutate-một-object)
-- [4. prototype inheritance](#4-prototype-inheritance)
-- [5. Thứ tự resolve Promise.all](#5-thứ-tự-resolve-promiseall)
-- [6. Tính toán với reduce](#6-tính-toán-với-reduce)
-- [7. Điều kiện rút rọn (short-circuit)](#7-điều-kiện-rút-rọn-short-circuit)
-- [8. Spread và Rename](#8-spread-và-rename)
-- [9. Binding cho phương thức array](#9-binding-cho-phương-thức-array)
-- [10. Đặt unique và sắp xếp](#10-đặt-unique-và-sắp-xếp)
 
-<!-- /TOC -->
 
 ## 1. So sánh sort của Array
 
