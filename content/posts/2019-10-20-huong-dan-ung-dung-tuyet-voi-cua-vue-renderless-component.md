@@ -10,19 +10,7 @@ chapter: 0
 tags: ["vuejs"]
 ---
 
-<!-- TOC -->
-
-- [Slot](#slot)
-- [Slot scope](#slot-scope)
-- [Sử dụng làm modal](#s%E1%BB%AD-d%E1%BB%A5ng-l%C3%A0m-modal)
-- [Composing Component (siêu nhân hợp thể)](#composing-component-si%C3%AAu-nh%C3%A2n-h%E1%BB%A3p-th%E1%BB%83)
-  - [Tại sao cần hợp thể?](#t%E1%BA%A1i-sao-c%E1%BA%A7n-h%E1%BB%A3p-th%E1%BB%83)
-  - [Một cách nấu khác với slot](#m%E1%BB%99t-c%C3%A1ch-n%E1%BA%A5u-kh%C3%A1c-v%E1%BB%9Bi-slot)
-- [Renderless Component (người vô hình chỉ mang logic)](#renderless-component-ng%C6%B0%E1%BB%9Di-v%C3%B4-h%C3%ACnh-ch%E1%BB%89-mang-logic)
-  - [Ứng dụng renderless component làm ổ cắm mạng cấp dữ liệu internet](#%E1%BB%A9ng-d%E1%BB%A5ng-renderless-component-l%C3%A0m-%E1%BB%95-c%E1%BA%AFm-m%E1%BA%A1ng-c%E1%BA%A5p-d%E1%BB%AF-li%E1%BB%87u-internet)
-- [Tài liệu tham khảo](#t%C3%A0i-li%E1%BB%87u-tham-kh%E1%BA%A3o)
-
-<!-- /TOC -->
+[TOC]
 
 Để tái sử dụng component trong Vue cũng có lắm ngã dăm ba đường y như React có HOC, render prop, hook. Điểm qua những kỹ thuật/cách làm tương tự trong Vue
 
