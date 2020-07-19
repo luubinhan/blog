@@ -167,11 +167,9 @@ Với 3 cục gạch đã đặt sẵn trong `my-modal.vue`,
 
 ## Kỹ thuật dùng Component Composition (siêu nhân hợp thể)
 
-Sự kết hợp của nhiều component thành một component mới, dữ dội hơn, như siêu nhân GAO, được gọi là hợp thể component. Từ khoa học của nó là Component Composition (trong React cũng có cách làm này)
+Sự kết hợp của nhiều component thành một component mới, dữ dội hơn, như siêu nhân GAO, được gọi là hợp thể component. Từ *"khoa học"* của nó là Component Composition (trong React cũng có cách làm này)
 
 ### Lý do phải hợp thể?
-
-Component được sinh ra là để chúng ta **nhai đi nhai lại**
 
 ```html
 <!-- BaseButton.vue -->
@@ -188,7 +186,7 @@ export default {
 </script>
 ```
 
-Nhu cầu thêm mắm, bớt muối cho một món phải nhai đi nhai lại là có. Giả dụ ta đã có sẵn một component `BaseIcon` để làm chuyện hiển thị icon, giờ cái Button cùng  muốn thêm chút icon cho đời tươi mới, chúng ta **xào chung** hai món lại để nhai
+Nhu cầu thêm mắm, bớt muối cho một món phải *nhai đi nhai lại* là có. Giả dụ, ta đã có sẵn một component `BaseIcon` để hiển thị icon, giờ cái Button cùng  muốn thêm chút icon cho đời tươi mới, chúng ta **xào chung** hai món lại để nhai
 
 ```html
 <template>
@@ -208,7 +206,7 @@ export default {
 
 Trong đó chúng ta đã thêm hai điều kiện để đặt icon nằm bên trái hay bên phải. Component `Button` bây giờ cũng được thêm 2 prop `rightIcon`, `leftIcon`.
 
-Thí dụ như có thêm yêu cầu đưa cái spinner vào trong button, khi nào đang loading thì hiện cái spinner này
+Mọi thứ sẽ rối rắm lên khi có thêm nhu cầu đưa cái spinner vào trong button, khi nào đang loading thì hiện cái spinner này
 
 ```html
 <template>
@@ -223,11 +221,13 @@ Thí dụ như có thêm yêu cầu đưa cái spinner vào trong button, khi n�
 </template>
 ```
 
-Chỉ mới thêm chút đường sữa thôi, mà món ăn sắp thành cháo heo thập cẩm khó nuốt. Với nhiều **gia vị** được yêu cầu bỏ vào của bọn khách hàng không biết gì về nấu nướng. Món ngon bây giờ thành **đặc sản** mà đứa nào đó muốn nấu tiếp, sửa đổi do quá mặn, thì cũng bất lực vì không biết đã thêm quá nhiều muối hay nhiều nước mắm.
+Chỉ mới thêm chút đường sữa thôi, mà món ăn sắp thành cháo heo thập cẩm khó nuốt.
+
+Với nhiều **gia vị** được yêu cầu bỏ vào của bọn khách hàng không biết gì về nấu nướng. Món ngon bây giờ thành **đặc sản** mà đứa nào đó muốn nấu tiếp, sửa đổi do quá mặn, thì cũng bất lực vì không biết đã thêm quá nhiều muối hay nhiều nước mắm.
 
 ### Một cách nấu khác với slot
 
-Trong cuốn bí kíp 100 cách nấu ngon của Vue.js, nó cho chúng ta cách làm khác gọi là `slot`
+Trong cuốn bí kíp 100 cách nấu ngon của Vue.js, nó cho chúng ta cách làm khác đã đề cập ở trên là `slot`
 
 ```html
 <template>
@@ -246,7 +246,9 @@ Trong cuốn bí kíp 100 cách nấu ngon của Vue.js, nó cho chúng ta cách
 </BaseButton>
 ```
 
-Việc này tạo ra một tranh cãi trong giới đầu bếp, nếu tao phải phục vụ món ăn đó cho một trăm thực khách, tức là tao phải lặp lại việc order 100 gia vị `Button` về rồi tự nấu thêm 100 lần nữa, vi phạm nguyên tắc nghề nghiệp **DRY** (DON'T REPEAT YOURSELF) của tao. Đúng là vi phạm nguyên tắc nghề, nhưng nó lại đảm bảo **KISS** (Keep it simple stupid - NGU NHẤT CÓ THỂ)
+Việc này cũng có ít *tranh cãi trong giới đầu bếp*, nếu tao phải phục vụ món ăn đó cho một trăm thực khách, tức là tao phải lặp lại việc order 100 gia vị `Button` về rồi tự nấu thêm 100 lần nữa? vi phạm nguyên tắc nghề nghiệp **DRY** (DON'T REPEAT YOURSELF).
+
+Đúng là vi phạm nguyên tắc nghề, nhưng nó lại đảm bảo **KISS** (Keep it simple stupid - ĐƠN GIẢN NHẤT CÓ THỂ). Nói chung các bạn cũng phải thõa hiệp được này mất kia.
 
 
 ```html
@@ -261,9 +263,11 @@ Việc này tạo ra một tranh cãi trong giới đầu bếp, nếu tao phả
 </template>
 ```
 
-## Renderless Component (người vô hình chỉ mang logic)
+## Kỹ thuật Renderless Component (người vô hình chỉ mang logic)
 
-Một component trong Vue có thể không render bất cứ gì cả, nếu chỉ đơn giản là chứa các function, thực hiện logic tính toán. Nó giống như cái ổ điện, nó chỉ biết làm một chuyện là cấp điện cho chui cắm, còn cái chui đó nối tới bóng đèn, máy tính, tủ lạnh, máy quạt là chuyện của người cắm điện.
+Một component trong Vue có thể không render bất cứ gì cả, nếu chỉ đơn giản là chứa các function, thực hiện logic tính toán.
+
+Nó giống như cái ổ điện, nó chỉ biết làm một chuyện là cấp điện cho chui cắm, còn cái chui đó nối tới bóng đèn, máy tính, tủ lạnh, máy quạt là chuyện của người cắm điện.
 
 ```jsx
 <template>
@@ -297,13 +301,23 @@ Vue.component('renderless-component-example', {
 })
 ```
 
-Tại sao dùng **Renderless component** mà không dùng `mixin` hay `directive`?
+> Tại sao dùng **Renderless component** mà không dùng `mixin` hay `directive`?
 
-Để **tái sử dụng** code trong Vue, ngoài renderless component ra còn có thể dùng Mixin hoặc 1 custom Directive. Cả 3 cách đều có thể dùng thay thế cho nhau được, vấn đề là mức độ tường minh của 3 thằng khác nhau, thằng directive là kém tường minh nhất, với mixin và renderless component chúng ta import độc lập trên từng component muốn xài, xem như bằng nhau. Mixin thì bị vấn đề, nếu khai báo một số `state`, hoặc hàm bên trong mixin, sau đó *trộn* chung với 1 component, không rõ ràng trực quan như là dùng một renderless component với `prop`
+Để **tái sử dụng** code trong Vue, ngoài renderless component ra còn có thể dùng [mixin](https://vuejs.org/v2/guide/mixins.html) hoặc  [custom directive](https://vuejs.org/v2/guide/custom-directive.html). Cả 3 cách đều có thể dùng thay thế cho nhau được, vấn đề là **mức độ tường minh** của 3 thằng khác nhau.
 
-### Ứng dụng renderless component làm ổ cắm mạng cấp dữ liệu internet
+Xét theo thứ tự tường mình từ thấp đến cao:
 
-Chúng ta thường xuyên làm việc này,  tạo một network request lúc component `mounted()` để lấy dữ liệu, chúng ta tạo ra một component chuyên làm nhiệm vụ này
+1. Custom directive 
+2. Mixin
+3. renderless component
+
+Mixin thì bị vấn đề, nếu khai báo một số `state`, hoặc phương thức bên trong mixin, sau đó *trộn* chung với 1 component, không rõ ràng trực quan như là dùng một renderless component với `prop`
+
+### Ứng dụng renderless component làm *ổ cắm mạng cấp dữ liệu internet*
+
+Nhu cầu này sẽ rất quen thuộc,  tạo một network request lúc component `mounted()` để lấy dữ liệu.
+
+Chúng ta tạo ra một component chuyên làm nhiệm vụ này
 
 ```jsx
 // src/components/DataList.js
