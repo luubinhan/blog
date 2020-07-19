@@ -265,6 +265,8 @@ Việc này cũng có ít *tranh cãi trong giới đầu bếp*, nếu tao ph�
 
 ## Kỹ thuật Renderless Component (người vô hình chỉ mang logic)
 
+>Nếu bạn đã viết React, nó cũng có khái niệm tương tự chính là render prop
+
 Một component trong Vue có thể không render bất cứ gì cả, nếu chỉ đơn giản là chứa các function, thực hiện logic tính toán.
 
 Nó giống như cái ổ điện, nó chỉ biết làm một chuyện là cấp điện cho chui cắm, còn cái chui đó nối tới bóng đèn, máy tính, tủ lạnh, máy quạt là chuyện của người cắm điện.
