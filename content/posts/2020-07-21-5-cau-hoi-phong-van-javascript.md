@@ -16,13 +16,11 @@ tags: ['javascript']
 
 Dù là quan điểm nào đi nữa, nhưng phỏng vấn thì coding challenge vẫn là một phần quan trọng trong phỏng vấn.
 
-Trước khi đi vào chi tiết chúng ta xem xét
+## Xác định chuỗi đối xứng (palindrome)
 
-## Xác định chuỗi đối xứng
+Chuỗi đối xứng là chuỗi khi đảo ký tự từ trái qua phải và từ phải qua trái không thay đổi, như chữ "racecar", "anna", "tenet". (Film tenet không biết khi nào mới chiếu, nghe đâu hoãn dài hơi vì covid)
 
-Chuỗi đối xứng khi đảo ký tự từ trái qua phải và từ phải qua trái không thay đổi, như chữ "racecar", "anna", các chữ này là đối xứng ấy, "table", "john" thì không phải.
-
-Yêu cầu là, cho bạn một chuỗi, xác định nó phải là palindrome không
+Yêu cầu, cho bạn một chuỗi, xác định nó phải là đối xứng không
 
 ```js
 isPalindrome('racecar') === true
@@ -43,6 +41,7 @@ const palindrome = str => {
 ## FizzBuzz
 
 Yêu cầu: viết một function đáp ứng những chuyện sau
+
 - log ra các số từ 1 đến n, n là một parameter truyền vào
 - log ra chữ `fizz` nếu là bội số của 3
 - log ra buzz nếu là bội số của 5
@@ -87,21 +86,58 @@ const fizzBuzz = num => {
 
 ## Đảo chữ
 
-Yêu cầu: viết một function, params truyền vào 2 chuỗi, trả về true, false nếu 2 chuỗi này là dạng đảo của nhau. 2 chuỗi gọi là đảo nhau nếu số ký tự hoàn toàn giống nhau (không kể hoa thường), chỉ khác thứ tự
+Yêu cầu: viết một function, params truyền vào 2 chuỗi, trả về `true` nếu 2 chuỗi này là dạng đảo của nhau và `false` cho trường hợp ngược lại.
+
+2 chuỗi gọi là đảo nhau nếu số ký tự hoàn toàn giống nhau (không kể hoa thường), chỉ khác thứ tự.
 
 ```js
 anagram('finder', 'Friend')  --> true
 anagram('hello', 'bye') --> false
 ```
 
-Đáp án
+Đây là một cách làm
 
 ```js
+// hàm helper để build một object làm nơi lưu trữ
+const buildCharObject = str => {
+  const charObj = {}
+  for(let char of str.replace(/[^\w]/g).toLowerCase()) {
+    // nếu object đã chứa giá trị đang loop qua
+    // tăng giá trị nó lên 1,
+    // ngược lại, thêm mới ký tự này vào object với giá trị = 1
+    charObj[char] = charObj[char] + 1 || 1
+  }
+  return charObj
+}
+
+// hàm chính
+const anagram = (strA, strB) => {
+  // lưu giá trị của strA vào object
+  const aCharObject = buildCharObject(strA)
+  // lưu giá trị strB vào object
+  const bCharObject = buildCharObject(strB)
+
+  // so sánh độ dài giữa 2 object
+  if(Object.keys(aCharObject).length !== Object.keys(bCharObject).length) {
+    return false
+  }
+  // đã chắc chắn về length giống nhau
+  // kiểm tra tiếp số lượng các ký tự có giống nhau
+  for(let char in aCharObject) {
+    if(aCharObject[char] !== bCharObject[char]) {
+      return false
+    }
+  }
+
+  return true
+}
 ```
 
 ## Đếm số nguyên âm
 
-Nguyên âm: anh-ôm-em-ú-ì, `a`, `o`, `e`, `u`, `i`. Function nhận vào string, trả về số lượng nguyên âm có trong string
+Nguyên âm: anh-ôm-em-ú-ì, `a`, `o`, `e`, `u`, `i`.
+
+Viết một function nhận vào string, trả về số lượng nguyên âm có trong string
 
 ```js
 findVowels('hello') // --> 2
@@ -134,7 +170,9 @@ const findVowels = str => {
 
 ## Fibonacci
 
-Kinh điển. Mọi dân lập trình đều đụng tới dãy số fibonacci, thật thiếu sót nếu không đề cập ở đây. Số bên phải là tổng 2 số đứng bên trái. Như thế này: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+Cái này kinh điển. Mọi dân lập trình đều đụng tới dãy số fibonacci, thật thiếu sót nếu không đề cập ở đây.
+
+Fibonacci là dãy số, mà số bên phải = tổng 2 số đứng bên trái. Như thế này: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
 
 Yêu cầu: một function nhận params là n, trả về giá trị `n` trong dãy fibonacci
 
@@ -170,5 +208,7 @@ const fibonacci = num => {
 	return fibonacci(num-1) + fibonacci(num-2)
 }
 ```
+
+Chúc các bạn phỏng vấn vui vẻ!
 
 [How to Beat 5 Common JavaScript Interview Challenges](https://www.sitepoint.com/5-common-coding-interview-challenges/)
