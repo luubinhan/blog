@@ -1,7 +1,7 @@
 ---
 slug: '/2020-07-22-su-dung-ellipsis-text-voi-flexbox'
 date: '2020-07-22'
-title: ' Sử dụng ellipsis text với flexbox'
+title: 'Sử dụng ellipsis text với flexbox'
 desc: 'Câu chuyển cắt chuỗi khi quá dài bằng CSS, trong tình huống sau, cái tên file của bạn quá dài, nhưng bạn không muốn cắt ở cuối chuỗi, mà cắt ở giữa để vẫn thấy được file extension'
 cover: ''
 type: 'post'
