@@ -117,8 +117,8 @@
       "path---2020-01-08-su-dung-context-de-lam-global-store-trong-react-4a82ed2ef3e65a25d9a5.js.map"
     ],
     "path---4": [
-      "path---4-3fe54790bb4d580c697a.js",
-      "path---4-3fe54790bb4d580c697a.js.map"
+      "path---4-893fb959fdc9a971c7a8.js",
+      "path---4-893fb959fdc9a971c7a8.js.map"
     ],
     "path---2018-10-03-huong-dan-reactjs-table-du-lieu-lon": [
       "path---2018-10-03-huong-dan-reactjs-table-du-lieu-lon-adab8a2fa710a4d787d1.js",
@@ -232,6 +232,10 @@
       "path---2018-12-20-su-dung-computed-setter-voi-vuex-614757ed3fc8d7c4c112.js",
       "path---2018-12-20-su-dung-computed-setter-voi-vuex-614757ed3fc8d7c4c112.js.map"
     ],
+    "path---2020-07-30-phan-biet-su-khac-nhau-giua-await-return-await": [
+      "path---2020-07-30-phan-biet-su-khac-nhau-giua-await-return-await-13edebcd700d2e76df2d.js",
+      "path---2020-07-30-phan-biet-su-khac-nhau-giua-await-return-await-13edebcd700d2e76df2d.js.map"
+    ],
     "path---2018-12-19-tim-hieu-curring-function-trong-javascript": [
       "path---2018-12-19-tim-hieu-curring-function-trong-javascript-2ae03cd64974b23372f4.js",
       "path---2018-12-19-tim-hieu-curring-function-trong-javascript-2ae03cd64974b23372f4.js.map"
@@ -281,8 +285,8 @@
       "path---2019-09-20-gioi-thieu-iife-cua-javascript-42b29a74a1b77836da3a.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-a9abb1cc157a7a2c7679.js",
-      "path---tags-javascript-a9abb1cc157a7a2c7679.js.map"
+      "path---tags-javascript-6cfbaa430783f659885a.js",
+      "path---tags-javascript-6cfbaa430783f659885a.js.map"
     ],
     "path---2019-05-15-huong-dan-layout-masonry-bang-flexbox": [
       "path---2019-05-15-huong-dan-layout-masonry-bang-flexbox-c4c12ffb796ac49101ec.js",
@@ -357,8 +361,8 @@
       "path---2019-03-12-su-khac-nhau-giua-function-component-va-class-component-trong-react-de6e1ae386e5af3abb64.js.map"
     ],
     "path---5": [
-      "path---5-2df9a5ce3b4cba242f44.js",
-      "path---5-2df9a5ce3b4cba242f44.js.map"
+      "path---5-679d76bcfe9494295be3.js",
+      "path---5-679d76bcfe9494295be3.js.map"
     ],
     "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react": [
       "path---2018-07-20-huong-dan-tao-animation-cho-component-voi-react-a008956f6a206234c642.js",
@@ -387,6 +391,10 @@
     "path---2019-12-14-thu-thuat-tang-toc-bang-json-parse": [
       "path---2019-12-14-thu-thuat-tang-toc-bang-json-parse-b91e8b58b22eab1ff88d.js",
       "path---2019-12-14-thu-thuat-tang-toc-bang-json-parse-b91e8b58b22eab1ff88d.js.map"
+    ],
+    "path---2020-07-22-su-dung-ellipsis-text-voi-flexbox": [
+      "path---2020-07-22-su-dung-ellipsis-text-voi-flexbox-242768c9017e5e323468.js",
+      "path---2020-07-22-su-dung-ellipsis-text-voi-flexbox-242768c9017e5e323468.js.map"
     ],
     "path---2018-05-21-huong-dan-thuoc-tinh-counter-increment-va-counter-reset": [
       "path---2018-05-21-huong-dan-thuoc-tinh-counter-increment-va-counter-reset-fd83dedf1bb5ae1193b6.js",
@@ -529,8 +537,8 @@
       "path---2018-08-13-huong-dan-con-dong-hoc-lap-trinh-react-native-2f47cebe38b508a069ba.js.map"
     ],
     "path---8": [
-      "path---8-0a30cdf760fe618c4150.js",
-      "path---8-0a30cdf760fe618c4150.js.map"
+      "path---8-720fcc9982de54f98dc0.js",
+      "path---8-720fcc9982de54f98dc0.js.map"
     ],
     "path---2019-05-12-7-thu-thuat-trong-javascript": [
       "path---2019-05-12-7-thu-thuat-trong-javascript-58bde34df889819936e4.js",
@@ -565,8 +573,8 @@
       "path---tags-gatsby-39c92a812255f25524aa.js.map"
     ],
     "path---7": [
-      "path---7-cb46f39dcff9f0ecd3e0.js",
-      "path---7-cb46f39dcff9f0ecd3e0.js.map"
+      "path---7-b9e67edf36d39739d397.js",
+      "path---7-b9e67edf36d39739d397.js.map"
     ],
     "path---2020-02-26-dinh-dang-ngay-thang-bang-intl-date-time-format": [
       "path---2020-02-26-dinh-dang-ngay-thang-bang-intl-date-time-format-fe1d141dab0d7bd9d00d.js",
@@ -593,8 +601,8 @@
       "path---2018-07-02-huong-dan-javascript-modules-tren-web-e0eb596a8b50c9554bd1.js.map"
     ],
     "path---index": [
-      "path---index-3cecdeb9961642a82421.js",
-      "path---index-3cecdeb9961642a82421.js.map"
+      "path---index-ec018ae1f29d205461bf.js",
+      "path---index-ec018ae1f29d205461bf.js.map"
     ],
     "path---2019-10-20-huong-dan-ung-dung-tuyet-voi-cua-vue-renderless-component": [
       "path---2019-10-20-huong-dan-ung-dung-tuyet-voi-cua-vue-renderless-component-7726de00b75010645bf5.js",
@@ -673,8 +681,8 @@
       "path---2019-07-03-huong-dan-su-dung-react-hook-effect-f757ef552b927c68392b.js.map"
     ],
     "path---2": [
-      "path---2-7cc1ec756fb0169b605c.js",
-      "path---2-7cc1ec756fb0169b605c.js.map"
+      "path---2-42f1a84ae126509ad25e.js",
+      "path---2-42f1a84ae126509ad25e.js.map"
     ],
     "path---2018-03-29-huong-dan-query-string-voi-react-router": [
       "path---2018-03-29-huong-dan-query-string-voi-react-router-509961a6be911bf3ca6f.js",
@@ -689,8 +697,8 @@
       "path---2019-03-10-chrome-73-co-gi-moi-5e3f9fcacda0ebea7fe2.js.map"
     ],
     "path---6": [
-      "path---6-2fa11c4b71dd60c0a4a7.js",
-      "path---6-2fa11c4b71dd60c0a4a7.js.map"
+      "path---6-73ca82252f1e06c271a2.js",
+      "path---6-73ca82252f1e06c271a2.js.map"
     ],
     "path---2017-10-27-react-children-react-clone-element": [
       "path---2017-10-27-react-children-react-clone-element-f72b6783bcbad55ff960.js",
@@ -819,8 +827,8 @@
       "path---2019-08-07-nguyen-tac-chung-cua-thiet-ke-e30dc8bd5dac6965d7bd.js.map"
     ],
     "path---3": [
-      "path---3-ab150194810632953dc6.js",
-      "path---3-ab150194810632953dc6.js.map"
+      "path---3-2647446a4f1b05467b33.js",
+      "path---3-2647446a4f1b05467b33.js.map"
     ],
     "component---src-pages-404-jsx": [
       "component---src-pages-404-jsx-713f07a0074f497d9225.js",
@@ -927,8 +935,8 @@
       "path---2019-02-26-chan-import-bang-eslint-f57d4cc9110745161d29.js.map"
     ],
     "path---tags-css": [
-      "path---tags-css-debf036e30e8d19d12c6.js",
-      "path---tags-css-debf036e30e8d19d12c6.js.map"
+      "path---tags-css-db5e24c44bee8a02719e.js",
+      "path---tags-css-db5e24c44bee8a02719e.js.map"
     ],
     "path---tags-security": [
       "path---tags-security-ae1c50e0685e2a87b90f.js",
@@ -955,8 +963,8 @@
       "path---tags-seo-cb30cc4648fc0e8c7521.js.map"
     ],
     "path---9": [
-      "path---9-4ed085cc6ffcad11f873.js",
-      "path---9-4ed085cc6ffcad11f873.js.map"
+      "path---9-c72125828d6d73e8372d.js",
+      "path---9-c72125828d6d73e8372d.js.map"
     ],
     "path---2016-11-20-phan-6-es-6-can-ban-khai-bao-let-const": [
       "path---2016-11-20-phan-6-es-6-can-ban-khai-bao-let-const-c32b011c645a7426bf73.js",
@@ -1023,9 +1031,9 @@
       "path---2018-08-12-huong-dan-con-duong-tro-thanh-developer-2018-a450ae4ec4950375c76d.js.map"
     ],
     "app": [
-      "app-1cc9749171d26b4a7991.js",
+      "app-aa78ef3ab33139f1aaad.js",
       "build-js-styles.css",
-      "app-1cc9749171d26b4a7991.js.map",
+      "app-aa78ef3ab33139f1aaad.js.map",
       "build-js-styles.css.map"
     ],
     "path---2018-08-21-huong-dan-su-dung-checkbox-va-toggle-switch": [
