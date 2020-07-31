@@ -82,7 +82,7 @@ export const RickRoll = () =>
     React.createElement(
       "div",
       {
-        className: "wrapper"
+        className: "wrapper",
       },
       React.createElement(
         "ul",
@@ -90,7 +90,7 @@ export const RickRoll = () =>
         React.createElement(
           Li,
           {
-            color: "red"
+            color: "red",
           },
           "Never give you up"
         )

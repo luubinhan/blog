@@ -10,7 +10,7 @@ chapter: 0
 tags: ["css", "dam-dao"]
 ---
 
-**Anh technical leader: em biết sao không, anh đã không viết code từ năm 2016 tới giờ, công việc của anh giờ chỉ toàn làm chính trị trong công ty thôi. Giờ em thấy cái dự án này công ty mình mới lấy về, họ muốn thêm phần giao diện cho nó khác đi, sửa responsive lại chút** 
+**Anh technical leader: em biết sao không, anh đã không viết code từ năm 2016 tới giờ, công việc của anh giờ chỉ toàn làm chính trị trong công ty thôi. Giờ em thấy cái dự án này công ty mình mới lấy về, họ muốn thêm phần giao diện cho nó khác đi, sửa responsive lại chút**
 
 Ngon ăn đấy anh, nhận đi.
 
@@ -137,4 +137,3 @@ Nhưng đó là những gì đang hót nhất mà anh, anh thấy không hót h�
 **Anh nghĩ mình nên để yên cái project này và không thêm thắt gì nữa đi em, nó như vậy là đẹp rồi**
 
 https://dev.to/madarsbiss/how-it-feels-like-to-style-things-in-2020-21cm
-

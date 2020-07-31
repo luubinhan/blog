@@ -1,13 +1,13 @@
 ---
-slug: '/2020-07-30-phan-biet-su-khac-nhau-giua-await-return-await'
-date: '2020-07-30'
-title: 'Phân biệt sự khác nhau giữa await-return-return await'
-desc: 'Nắm rõ async không bao giờ là một kiến thức thừa.'
-cover: ''
-type: 'post'
+slug: "/2020-07-30-phan-biet-su-khac-nhau-giua-await-return-await"
+date: "2020-07-30"
+title: "Phân biệt sự khác nhau giữa await-return-return await"
+desc: "Nắm rõ async không bao giờ là một kiến thức thừa."
+cover: ""
+type: "post"
 lesson: 0
 chapter: 0
-tags: ['javascript']
+tags: ["javascript"]
 ---
 
 Khi viết một async function, có sự khác nhau giữa `await` và `return` và `return await`, các bạn nên biết để sử dụng cho đúng
@@ -16,28 +16,27 @@ Chúng ta có một async function `waitAndMaybeReject`
 
 ```js
 async function waitAndMaybeReject() {
-	// wait 1 giây
-	await new Promise(r => setTimeout(r, 1000));
-	
-	const isHeads = Boolean(Math.round(Math.random()));
+  // wait 1 giây
+  await new Promise((r) => setTimeout(r, 1000));
 
-	if (isHeads) return 'Thành công zòi';
-	throw Error('Xui thôi!');
+  const isHeads = Boolean(Math.round(Math.random()));
+
+  if (isHeads) return "Thành công zòi";
+  throw Error("Xui thôi!");
 }
 ```
 
-Sau 1 giây, nó sẽ trả về một `Promise`,  *hên hên* thì resolve cho giá trị *Thành công zòi*, xui xui thì cho giá trị *Xui thôi!*.
+Sau 1 giây, nó sẽ trả về một `Promise`, _hên hên_ thì resolve cho giá trị _Thành công zòi_, xui xui thì cho giá trị _Xui thôi!_.
 
 Giờ khi chúng ta gọi hàm `waitAndMaybeReject()`
 
 ```js
 async function test() {
-	try {
-		waitAndMaybeReject();
-	}
-	catch (e) {
-		return 'Oh No!';
-	}
+  try {
+    waitAndMaybeReject();
+  } catch (e) {
+    return "Oh No!";
+  }
 }
 ```
 
@@ -51,16 +50,15 @@ Rồi giờ chúng ta sẽ **await** trên kết quả của hàm `waitAndMaybeR
 async function test() {
   try {
     await waitAndMaybeReject();
-  }
-  catch (e) {
-    return 'Oh No!';
+  } catch (e) {
+    return "Oh No!";
   }
 }
 ```
 
 Hàm này khi thực thi nó sẽ chạy như sau, **đợi 1 giây**, sau đó hoặc là trả về **fulfill với undefined**, hoặc **fulfill với 'Oh No!'**
 
-Bởi vì chúng ta *chỉ await trên `waitAndMaybeReject()`*, việc *xui xui* bị reject trong `waitAndMaybeReject` sẽ throw ra lỗi và được túm lấy trong hàm `test`. Và vì không làm gì hết khi `waitAndMaybeReject()` khi được resolve, nên chúng ta nhận về *undefined*
+Bởi vì chúng ta _chỉ await trên `waitAndMaybeReject()`_, việc _xui xui_ bị reject trong `waitAndMaybeReject` sẽ throw ra lỗi và được túm lấy trong hàm `test`. Và vì không làm gì hết khi `waitAndMaybeReject()` khi được resolve, nên chúng ta nhận về _undefined_
 
 Rồi, giờ tới trường hợp `return`
 
@@ -68,9 +66,8 @@ Rồi, giờ tới trường hợp `return`
 async function test() {
   try {
     return waitAndMaybeReject();
-  }
-  catch (e) {
-    return 'Oh No!';
+  } catch (e) {
+    return "Oh No!";
   }
 }
 ```
@@ -85,9 +82,8 @@ Với việc `return waitAndMaybeReject`, chúng ta đã chuyển tiếp hết k
 async function test() {
   try {
     return await waitAndMaybeReject();
-  }
-  catch (e) {
-    return 'Oh No!';
+  } catch (e) {
+    return "Oh No!";
   }
 }
 ```
@@ -103,9 +99,8 @@ async function test() {
   try {
     const fulfilledValue = await waitAndMaybeReject();
     return fulfilledValue;
-  }
-  catch (e) {
-    return 'Oh No!';
+  } catch (e) {
+    return "Oh No!";
   }
 }
 ```
