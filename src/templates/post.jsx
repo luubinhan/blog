@@ -116,9 +116,6 @@ export default class PostTemplate extends React.Component {
         </div>
         <div className="aside">
           <Search />
-          <div className="beautiful-post-name" data-text-shadow={post.title}>
-            {post.title}
-          </div>
         </div>
       </div>
     );
