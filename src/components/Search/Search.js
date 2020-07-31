@@ -11,7 +11,7 @@ const LIST_TAGS = [
   },
   {
     key: 'dam-dao',
-    name: 'Đàm đạo chém gió nghề nghiệp'
+    name: 'Đàm đạo chém gió chuyện nghề'
   },
   {
     key: 'css',
@@ -23,7 +23,7 @@ const LIST_TAGS = [
   },
   {
     key: 'hoc-thuat',
-    name: 'Kiến thức phổ thông'
+    name: 'Kiến thức nền tảng'
   },
   {
     key: 'react',
