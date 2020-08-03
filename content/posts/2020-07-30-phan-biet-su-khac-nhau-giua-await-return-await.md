@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript"]
+tags: ["javascript", "hoc-thuat"]
 ---
 
 Khi viết một async function, có sự khác nhau giữa `await` và `return` và `return await`, các bạn nên biết để sử dụng cho đúng
