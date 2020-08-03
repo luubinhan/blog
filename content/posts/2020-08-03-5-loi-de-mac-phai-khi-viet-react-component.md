@@ -10,11 +10,9 @@ chapter: 0
 tags: ["react"]
 ---
 
-Đây cũng chẳng phải là những lỗi *bắt buộc* phải sữa, thoạt nhìn bạn cũng sẽ ko biết được nó có bị sai gì không, cũng không ảnh hưởng đến performance hay gì.
+Đây cũng chẳng phải là những lỗi *bắt buộc* phải sửa, thoạt nhìn bạn cũng sẽ ko biết được nó có bị sai gì không, cũng không ảnh hưởng đến performance hay gì. Tuy nhiên mỗi người sẽ có ý kiến khác nhau trên một vấn đề, có người sẽ bắt fix, người thì cho là ko cần thiết, rất mong các bạn bổ sung cho quan điểm của mình.
 
-Tuy nhiên mỗi người sẽ có ý kiến khác nhau trên một vấn đề, rất mong các bạn bổ sung cho quan điểm của mình
-
-## Sử dụng useState khi không thực sự cần thiết
+## Sử dụng `useState` khi không thực sự cần thiết
 
 Đôi khi chúng ta sử dụng `useState` trong nhiều trường hợp không cần thiết, đưa những giá trị vào `state` không thực sự ảnh hưởng đến việc cập nhập component.
 
@@ -43,7 +41,7 @@ function ClickButton(props) {
 }
 ```
 
-Nhìn chung code này cũng sẽ ko có lỗi gì đâu, chỉ là nếu để ý bạn sẽ thấy khi state thay đổi, component re-render, nhưng rõ ràng việc re-render cũng chẳng thay đổi gì, vì chúng ta không hiển thị giá trị `count` ra giao diện
+Nhìn chung code này cũng sẽ ko có lỗi gì đâu, chỉ là nếu để ý bạn sẽ thấy khi state thay đổi, component *re-render*, nhưng rõ ràng việc *re-render* cũng chẳng thay đổi gì, vì chúng ta không hiển thị giá trị `count` ra giao diện
 
 ✅ Cách làm đề nghị như sau
 
@@ -68,11 +66,11 @@ function ClickButton(props) {
 }
 ```
 
-Ở đây chúng ta dùng `useRef`, giá trị của useRef dù có thay đổi cũng không ảnh hưởng đến việc re-render.
+Ở đây chúng ta dùng `useRef`, giá trị của `useRef` dù có thay đổi cũng không ảnh hưởng đến việc *re-render*.
 
 ## Sử dụng `router.push` thay vì link
 
-Ví dụ nếu chúng ta muốn navigate đến một trang nào đó khi user click vào
+Ví dụ nếu chúng ta muốn *navigate* đến một trang nào đó khi user click vào
 
 ❌
 
