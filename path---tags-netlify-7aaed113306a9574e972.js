@@ -1,6 +1,6 @@
 webpackJsonp([14944814222437],{
 
-/***/ 1669:
+/***/ 1673:
 /***/ (function(module, exports) {
 
 	module.exports = {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/2020-01-10-huong-dan-viet-lambda-function-voi-netlify"},"excerpt":"Lambda function là gì? Giải thích về Serverless bạn đọc bài trước có đăng Nếu bạn chỉ có một trang blog như thế này, viết bằng Gatsby, không…","timeToRead":4,"frontmatter":{"title":"Viết và Deploy một Lambda Function trên Netlify","tags":["netlify","thu-thuat"],"date":"2020-01-10","desc":""}}}]}},"pathContext":{"post":[{"frontmatter":{"title":"Viết và Deploy một Lambda Function trên Netlify","desc":"","type":"post","category":null,"tags":["netlify","thu-thuat"],"date":"2020-01-10","cover":""},"fields":{"slug":"/2020-01-10-huong-dan-viet-lambda-function-voi-netlify"}}],"tag":"netlify"}}
