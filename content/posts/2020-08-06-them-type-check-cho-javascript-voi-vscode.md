@@ -8,7 +8,6 @@ type: "post"
 lesson: 0
 chapter: 0
 tags: ["javascript","thu-thuat"]
-
 ---
 
 VS Code có một công cụ không thể tuyệt vời hơn cho các bạn viết JS một cách an toàn ko sợ sai type. Túm gọn chỉ bằng một comment thần thánh
