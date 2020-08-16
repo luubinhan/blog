@@ -10,8 +10,6 @@ chapter: 0
 tags: ["javascript"]
 ---
 
-
-
 Phương thức `**slice**` (copy cho em một miếng) có thể sử dụng trên 2 kiểu `String` và `Array`	
 
 Cách sử dụng cơ bản thì ta có thể truyền vào index bắt đầu, và index kết thúc (*kết quả tả về không bao gồm index kết thúc*)
