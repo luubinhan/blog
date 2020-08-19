@@ -4,4 +4,5 @@ Chào mừng bạn đã ghé vào *nhà mình*, mong muốn được chia sẽ k
 
 Lại ông đi qua, lại dì đi lại, nếu thấy blog mình hữu ích, tiện tay bấm cái like cho lên tinh thần đóng góp.
 
-gatsby build --prefix-paths --no-uglify && gh-pages -d public
+1. gatsby build --prefix-paths --no-uglify
+2. npm run deploy:gh
