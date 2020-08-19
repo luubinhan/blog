@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>http://vuilaptrinh.com/2020-08-19-tim-hieu-cac-thuat-toan-sap-xep-va-hien-thuc-bang-javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://vuilaptrinh.com/2020-08-16-tim-hieu-functional-programming</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2020-08-14-tim-hieu-phuong-thuc-slice-trọng-javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2020-08-06-them-type-check-cho-javascript-voi-vscode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2020-08-05-gioi-thieu-yaml-cho-nguoi-moi-bat-dau</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -265,8 +267,8 @@
 <url> <loc>http://vuilaptrinh.com/2016-11-07-wordpress-va-google-accelerated-mobile-pages-amp-tat-ca-nhung-gi-ban-can-biet</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/2016-04-12-front-end-developer-2016-nen-hoc-gi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>http://vuilaptrinh.com/tags/thu-thuat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/hoc-thuat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://vuilaptrinh.com/tags/thu-thuat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/css</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://vuilaptrinh.com/tags/dam-dao</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
