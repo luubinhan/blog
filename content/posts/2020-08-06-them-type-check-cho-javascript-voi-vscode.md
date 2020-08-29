@@ -7,13 +7,12 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript","thu-thuat"]
+tags: ["javascript", "thu-thuat"]
 ---
 
 VS Code có một công cụ không thể tuyệt vời hơn cho các bạn viết JS một cách an toàn ko sợ sai type. Túm gọn chỉ bằng một comment thần thánh
 
 > @ts-check
-
 
 Ví dụ, bạn muốn nghiêm cấm việc thay đổi type của một biến đã gán sẵn giá trị trước đó
 
@@ -30,7 +29,7 @@ var foo = 3;
 foo = false; // indicates error
 ```
 
-VS Code sẽ thông báo cho bạn một lỗi rất *dễ thương* như thế này
+VS Code sẽ thông báo cho bạn một lỗi rất _dễ thương_ như thế này
 
 > Type `false` is not assignable to type `Number`
 
@@ -43,10 +42,10 @@ function add(a, b) {
   return a + b;
 }
 
-add(1,2,3);
+add(1, 2, 3);
 ```
 
-Code trên vẫn ko sai nhé, mặc dù chúng ta không hề khai báo param thứ 3. Thêm // @ts-check để thông báo khi *vô tình* truyền nhiều hơn số param cần thiết
+Code trên vẫn ko sai nhé, mặc dù chúng ta không hề khai báo param thứ 3. Thêm // @ts-check để thông báo khi _vô tình_ truyền nhiều hơn số param cần thiết
 
 > Expected 0-2 arguments but got 3
 
@@ -56,7 +55,7 @@ function add(a, b) {
   return a + b;
 }
 
-add(1,2,3); // complains about the `3`
+add(1, 2, 3); // complains about the `3`
 ```
 
 ## Kiểm tra Object
@@ -69,9 +68,9 @@ let gameObject = {
   width: 100,
   height: 100,
   getArea() {
-    return this.width * this.height
-  }
-}
+    return this.width * this.height;
+  },
+};
 
 gameObject.z;
 ```
@@ -90,9 +89,9 @@ let gameObject = {
   width: 100,
   height: 100,
   getArea() {
-    return this.width * this.height
-  }
-}
+    return this.width * this.height;
+  },
+};
 
 gameObject.z;
 ```
@@ -109,7 +108,7 @@ function doSomething(config) {
 }
 
 doSomething();
-doSomething({ shouldRun: true })
+doSomething({ shouldRun: true });
 ```
 
 Chỗ này chúng ta cũng cần sự hỗ trợ của JsDoc như trường hợp trên
@@ -126,19 +125,19 @@ function doSomething(config) {
   }
 }
 
-doSomething({ canRun: false}); // this now indicates an error
-doSomething({ shouldRun: true })
+doSomething({ canRun: false }); // this now indicates an error
+doSomething({ shouldRun: true });
 ```
 
 Với cách thiết đặt như vậy, chúng ta sẽ nhận được cảnh báo khi truyền vào một `object` mà không có giá trị `shouldRun`
 
 ## Ngoại lệ
 
-Nếu có trường hợp ngoại lệ nào đó bạn muốn bỏ qua việc kiểm tra tính *chuẩn mực* của type, dùng thần chú `//@ts-ignore` hoặc `//@ts-nocheck`
+Nếu có trường hợp ngoại lệ nào đó bạn muốn bỏ qua việc kiểm tra tính _chuẩn mực_ của type, dùng thần chú `//@ts-ignore` hoặc `//@ts-nocheck`
 
 ```js
 //@ts-ignore
-doSomething({ canRun: false});
+doSomething({ canRun: false });
 ```
 
 Sau nhiều năm chinh chiến, mình ngộ ra rằng TypeScript cũng tốt, nhưng nó không dành cho tất cả mọi người, tất cả dự án. Những cái kiểm tra nhỏ nhỏ như vậy đôi khi lại mang khác biệt đủ lớn khi bạn viết code.

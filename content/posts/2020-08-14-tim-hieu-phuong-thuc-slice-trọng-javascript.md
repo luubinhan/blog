@@ -10,13 +10,13 @@ chapter: 0
 tags: ["javascript"]
 ---
 
-Phương thức `**slice**` (copy cho em một miếng) có thể sử dụng trên 2 kiểu `String` và `Array`	
+Phương thức `**slice**` (copy cho em một miếng) có thể sử dụng trên 2 kiểu `String` và `Array`
 
-Cách sử dụng cơ bản thì ta có thể truyền vào index bắt đầu, và index kết thúc (*kết quả tả về không bao gồm index kết thúc*)
+Cách sử dụng cơ bản thì ta có thể truyền vào index bắt đầu, và index kết thúc (_kết quả tả về không bao gồm index kết thúc_)
 
-![](https://res.cloudinary.com/practicaldev/image/fetch/s--OINYunXY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://foxbits.dev/sites/default/files/inline-images/array-slice-example-fruits-for-fact-0.jpg)
+![Tìm hiểu phương thức slice của mảng trong javascript](https://res.cloudinary.com/practicaldev/image/fetch/s--OINYunXY--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://foxbits.dev/sites/default/files/inline-images/array-slice-example-fruits-for-fact-0.jpg)
 
-Index kết thúc cũng có thể *bỏ qua*, lúc này nó sẽ hiểu là lấy hết luôn các phần tử còn lại.
+Index kết thúc cũng có thể _bỏ qua_, lúc này nó sẽ hiểu là lấy hết luôn các phần tử còn lại.
 
 [![Javascript Array Slice Method: The default end parameter is length of the array](https://res.cloudinary.com/practicaldev/image/fetch/s--z2KQG8vX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://foxbits.dev/sites/default/files/inline-images/xxjavascript-array-slice-method-foxbits-fact-2.jpg)](https://res.cloudinary.com/practicaldev/image/fetch/s--z2KQG8vX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://foxbits.dev/sites/default/files/inline-images/xxjavascript-array-slice-method-foxbits-fact-2.jpg)
 
@@ -40,15 +40,13 @@ Index bắt đầu lớn hơn độ dài của array? Nó sẽ cho ta kết qua 
 
 [![Negative Indexing of array elements in Javascript](https://res.cloudinary.com/practicaldev/image/fetch/s--Z0m01uqP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://foxbits.dev/sites/default/files/inline-images/array-slice-example-fruits-for-fact-negative-index.jpg)](https://res.cloudinary.com/practicaldev/image/fetch/s--Z0m01uqP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://foxbits.dev/sites/default/files/inline-images/array-slice-example-fruits-for-fact-negative-index.jpg)
 
-Lúc này nó sẽ được tính theo cơ chế *index ngược*, các giá trị *âm* sẽ được tính theo index: thằng cuối cùng là -1, áp cuối là -2, và cứ tiếp tục đi ngược lên.
+Lúc này nó sẽ được tính theo cơ chế _index ngược_, các giá trị _âm_ sẽ được tính theo index: thằng cuối cùng là -1, áp cuối là -2, và cứ tiếp tục đi ngược lên.
 
 [![Slice method with negative index works fine](https://res.cloudinary.com/practicaldev/image/fetch/s--9QHx20P0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://foxbits.dev/sites/default/files/inline-images/array-slice-example-fruits-for-fact-8.jpg)](https://res.cloudinary.com/practicaldev/image/fetch/s--9QHx20P0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://foxbits.dev/sites/default/files/inline-images/array-slice-example-fruits-for-fact-8.jpg)
 
 Chúng ta có thể dùng nó để lấy các phần tử từ phải qua trái (2 phần tử cuối, 3 phần tử cuối, ví dụ vậy)
 
 [![Using Slice with negative index to fetch last 4 elements of an array](https://res.cloudinary.com/practicaldev/image/fetch/s--VkOdOPne--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://foxbits.dev/sites/default/files/inline-images/array-slice-example-fruits-for-fact-9.jpg)](https://res.cloudinary.com/practicaldev/image/fetch/s--VkOdOPne--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://foxbits.dev/sites/default/files/inline-images/array-slice-example-fruits-for-fact-9.jpg)
-
-
 
 Đối với String thì cũng cách dùng cũng tương tự như Array (mai quá!)
 

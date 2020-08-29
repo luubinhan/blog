@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript","hoc-thuat"]
+tags: ["javascript", "hoc-thuat"]
 ---
 
 File này được dùng khá nhiều cho việc thiết đặt và cấu hình. Mà nhiều nhất là dùng cho các thiết đặt CI/CD. Ngày xưa, khi chưa có Yaml, sau khi quá mệt mỏi với việc mỗi người mỗi ý trong việc viết file cấu hình, nổ ra cái ý tưởng hồi năm 2001
@@ -50,7 +50,7 @@ compilerOptions:
   noImplicitAny: true
   removeComments: true
   preserveConstEnums: true
-  outFile: '../../built/local/tsc.js'
+  outFile: "../../built/local/tsc.js"
   sourceMap: false
   types:
     - node
@@ -60,10 +60,10 @@ include:
   - src/**/*
 exclude:
   - node_modules
-  - '**/*.spec.ts'
+  - "**/*.spec.ts"
 ```
 
-*lưu ý đây chỉ là ví dụ, bạn không thể viết `tsconfig` bằng YAML, buồn thay*
+_lưu ý đây chỉ là ví dụ, bạn không thể viết `tsconfig` bằng YAML, buồn thay_
 
 Một số nguyên tắc-cú pháp cần nắm
 
@@ -84,7 +84,7 @@ person: # I'm also a comment
 Có 2 cách biết, như đã nói là superset của json, nên chúng ta có cách thứ nhất i như json
 
 ```yaml
-people: ['Anne', 'John', 'Max']
+people: ["Anne", "John", "Max"]
 ```
 
 Khuyến khích cách này hơn
@@ -103,7 +103,7 @@ Trong JSON bạn chỉ một cách viết giá trị dạng `String` là đưa n
 ```yaml
 company: Google # Single words, no quotes
 full_name: John Foo Bar Doe # Full sentence, no quotes
-name: 'John' # Using single quotes
+name: "John" # Using single quotes
 surname: "Christian Meyer" # Using double quotes
 ```
 
@@ -118,11 +118,11 @@ nodeVersion: 10.8 # Float
 
 **Con trỏ**
 
-Khái niệm *con trỏ* xem như bạn đã biết nhé, mình không giải thích, cái này các bạn đi học chắc các thầy dạy kỹ lắm rồi.
+Khái niệm _con trỏ_ xem như bạn đã biết nhé, mình không giải thích, cái này các bạn đi học chắc các thầy dạy kỹ lắm rồi.
 
-Ví dụ như bạn đang viết một số config cho môi trường `production` và `staging`, tức nhiên là một config là giống nhau thôi, nên chúng ta chỉ cần *trỏ* nó qua một chỗ
+Ví dụ như bạn đang viết một số config cho môi trường `production` và `staging`, tức nhiên là một config là giống nhau thôi, nên chúng ta chỉ cần _trỏ_ nó qua một chỗ
 
-Đây là không *trỏ* qua mà *copy/paste* huyền thoại
+Đây là không _trỏ_ qua mà _copy/paste_ huyền thoại
 
 ```json
 {
@@ -147,7 +147,7 @@ Ví dụ như bạn đang viết một số config cho môi trường `productio
 }
 ```
 
-Để dùng con trỏ, chúng ta tạo trước một cái *neo* để sau này trỏ vào cái *neo* này
+Để dùng con trỏ, chúng ta tạo trước một cái _neo_ để sau này trỏ vào cái _neo_ này
 
 ```yaml
 base-config: &base # tên cái neo
@@ -232,4 +232,3 @@ Hy vọng các bạn đã hiểu chút đỉnh về YAML và cảm thấy đọc
 [https://learnxinyminutes.com/docs/yaml/](https://learnxinyminutes.com/docs/yaml/)
 
 [Yaml for Web Developers](https://dev.to/raulfdm/yaml-for-web-developers-559n)
-

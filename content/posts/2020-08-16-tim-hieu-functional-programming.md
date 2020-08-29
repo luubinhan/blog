@@ -55,8 +55,6 @@ Một số *programming paradigm*  liên quan
 | **Imperative**: tập các lệnh được đưa ra theo thứ tự cố định | **Declarative**: tui muốn cái này, bạn làm sao đưa ra kết quả như mong muốn |
 | **Object-Oriented**: imperative cool, nhưng nếu có nhiều state và phải quản lý toàn bộ nó, hãy chia nó ra thành từng **object** làm nhiệm vụ quản lý `state` này và chương trình là sự kết hợp các object **truyền/nhận** thông tin | **Functional**: một dạng sub-paradigm (con cùng cha chú) với declarative |
 
-
-
 Ý tưởng FP không qua cao siêu, chỉ gói gọn trong một câu
 
 > Pure Function: chỉ phụ thuộc vào input truyền vào, chỉ trả về output không làm gì khác cả
