@@ -10,7 +10,7 @@ chapter: 0
 tags: ["javascript", "hoc-thuat"]
 ---
 
-Trên wiki: DRY là nguyên tắc bạn đừng viết lặp lại một đoạn code 
+Trên wiki: DRY là nguyên tắc bạn đừng viết lặp lại một đoạn code
 
 Bạn: Ok, những phần code bị trùng mình sẽ chuyển thành abstraction
 
@@ -41,12 +41,22 @@ Bạn hãy nhớ
 
 > Cái giả phải trả cho duplicate vẫn rẻ hơn nhiều cho một abstract viết sai
 
-Ví dụ bạn viết một ứng dụng, bạn dựng ra một component tên `Button` để sử dụng nhiều nơi, nghe rất hợp lý. Một yêu cầu mới xuất hiện, ở trang landing page họ muốn có một nút bấm rất *fancy* và không giống với tất cả những nút bấm trước đây.
+Ví dụ bạn viết một ứng dụng, bạn dựng ra một component tên `Button` để sử dụng nhiều nơi, nghe rất hợp lý. Một yêu cầu mới xuất hiện, ở trang landing page họ muốn có một nút bấm rất _fancy_ và không giống với tất cả những nút bấm trước đây.
 
 Ok, thay đổi cũng nhỏ thôi, chỉ cần thêm tí điều kiện `if..else`, 90% phần code là của `Button` và 10% code là của `FancyButton`
 
 Sự thật đáng buồn là sẽ có rất nhiều những thay đổi như thế xuất hiện và khả năng rất cao là bạn không đủ kinh nghiệm để có hiện thực những abstraction đủ dễ hiểu, dễ maintain.
 
 Lời khuyên? **Copy copy code đó ra, đừng ngần ngại**
+
+Bạn thấy quan điểm của mình _bậy quá bậy!_, bạn có thể tham khảo thêm quan điểm của Dan Abramov
+
+[The WET Codebase](https://overreacted.io/the-wet-codebase/)
+
+> In this talk, my aim was to show why strict adherence to writing code that is free of duplication inevitably leads to software we can’t understand
+
+Tạm dịch, tuân thủ nghiêm ngặc quy tắc DRY sẽ dẫn đến một phần mềm mà chúng ta không hiểu nổi nó.
+
+[Watch: The Wet Codebase](https://www.deconstructconf.com/2019/dan-abramov-the-wet-codebase)
 
 [When DRY Doesn't Work, Go WET - Tác giả Nick Bull JS](https://dev.to/bulljsdev/when-dry-doesn-t-work-go-wet-4536)
