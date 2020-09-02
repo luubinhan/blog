@@ -1,3 +1,15 @@
+---
+slug: "/2020-09-01-phan-biet-giua-npm-va-npx"
+date: "2020-09-01"
+title: "Sự khác nhau giữa npm và npx?"
+desc: "Bài viết này sẽ giải thích ngắn gọn nhất có thể cho bạn sự khác nhau về mục đích của 2 thằng này"
+cover: ""
+type: "post"
+lesson: 0
+chapter: 0
+tags: ["hoc-thuat"]
+---
+
 Về phân biệt giữa lệnh `npm` và `npx` các bạn có thể tìm thấy trên mạng khá nhiều, chủ yếu là dịch từ [freeCodeCamp](https://www.freecodecamp.org/news/npm-vs-npx-whats-the-difference/), mình đọc thấy cũng khá dài dòng nhưng có nhiều chổ không ưng, hy vọng thông qua ngôn ngữ của một lập trình viên là mình các bạn có thể dễ đọc, dễ hiểu, tóm gọn hơn là các bạn marketing dịch.
 
 Nói một cách ngắn gọn nhất, để bạn dễ nhớ thì hãy nhớ đến tên đầy đủ của từng thằng để hình dung công dụng của nó
