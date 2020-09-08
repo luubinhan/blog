@@ -18,7 +18,7 @@ Giải pháp trông có vẻ hiển nhiên đúng, nhưng không, abstraction c�
 
 Đây là lý do tại sao:
 
-1. Bạn thì code bị duplicate
+1. Bạn thấy code bị duplicate
 2. Bạn đưa đoạn duplicate ra thành một abstract (method, class)
 3. Bạn thay thể toàn bộ phần duplicate bằng abstraction mới
 4. Bạn nghĩ code đã hoàn hảo
@@ -39,11 +39,11 @@ Như cách chơi chữ đã thể hiện, nó là trường phái đối nghịc
 
 Bạn hãy nhớ
 
-> Cái giả phải trả cho duplicate vẫn rẻ hơn nhiều cho một abstract viết sai
+> Cái giá phải trả cho duplicate vẫn rẻ hơn nhiều cho một abstract viết sai
 
 Ví dụ bạn viết một ứng dụng, bạn dựng ra một component tên `Button` để sử dụng nhiều nơi, nghe rất hợp lý. Một yêu cầu mới xuất hiện, ở trang landing page họ muốn có một nút bấm rất _fancy_ và không giống với tất cả những nút bấm trước đây.
 
-Ok, thay đổi cũng nhỏ thôi, chỉ cần thêm tí điều kiện `if..else`, 90% phần code là của `Button` và 10% code là của `FancyButton`
+Ok, thay đổi cũng nhỏ thôi, chỉ cần thêm tí điều kiện `if...else`, 90% phần code là của `Button` và 10% code là của `FancyButton`
 
 Sự thật đáng buồn là sẽ có rất nhiều những thay đổi như thế xuất hiện và khả năng rất cao là bạn không đủ kinh nghiệm để có hiện thực những abstraction đủ dễ hiểu, dễ maintain.
 
