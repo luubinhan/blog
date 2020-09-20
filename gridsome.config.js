@@ -6,7 +6,7 @@
 
 module.exports = {
   siteUrl: 'https://vuilaptrinh.com',
-  pathPrefix: '/',
+  pathPrefix: '/blog',
   siteName: 'VuiLapTrinh.com',
   siteDescription: 'Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui',
 
