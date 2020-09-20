@@ -5,10 +5,10 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteUrl: 'http://vuilaptrinh.com',
+  siteUrl: 'https://vuilaptrinh.com',
   pathPrefix: '/',
   siteName: 'VuiLapTrinh.com',
-  siteDescription: 'A simple, hackable & minimalistic starter for Gridsome that uses Markdown for content.',
+  siteDescription: 'Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui',
 
   templates: {
     Post: '/:title',
