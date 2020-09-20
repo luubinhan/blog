@@ -1,22 +1,18 @@
 ---
 slug: "/2018-11-13-copy-mot-object-trong-javascript"
 date: "2018-11-13"
-title: "Copy object trong javascript"
+title: Copy object trong javascript
 desc: "Luận bàn các cách mà chúng ta copy một object trong javascript, shallow copy và deep copy"
-cover: ""
-type: "post"
-lesson: 0
-chapter: 0
+canonical_url: false
 tags: ["javascript"]
 ---
-
 
 Chúng ta đã biết object trong javascript là một con trỏ đến địa chỉ trên memory, copy 1 object sẽ là 2 biến trỏ tới cùng một địa chỉ memory
 
 ```js
 var foo = {
-    a: "luubinhan"
-}
+  a: "luubinhan",
+};
 console.log(foo.a); // luubinhan
 var bar = foo;
 console.log(bar.a); // luubinhan
@@ -48,8 +44,8 @@ var copy2 = Object.assign({}, obj);
 Nếu bên trong object là một tham chiếu khác, thì việc copy này sẽ cũng tương tự như `var bar = foo`
 
 ```js
-var foo = {a: 0, b: {c: 0}};
-var copy = {...foo};
+var foo = { a: 0, b: { c: 0 } };
+var copy = { ...foo };
 
 copy.a = 1;
 copy.b.c = 2;
@@ -63,10 +59,9 @@ console.dir(copy); // {a:1, b: {c: 2}}
 Để tránh tình huống này xảy ra, chúng ta sẽ muốn thực hiện cái gọi là deep copy, trước tiên là serialize thành string rồi deserialize ngược lại
 
 ```js
-var obj = {a: 0, b: {c: 0}};
+var obj = { a: 0, b: { c: 0 } };
 var copy = JSON.parse(JSON.stringify(obj));
 ```
-
 
 Lại tuy nhiên, nếu bên trong object là một giá trị không thể serialize như `Date` object, ko thực hiện được.
 
@@ -90,7 +85,7 @@ function deepClone(obj) {
   if (obj instanceof Array) {
     copy = [];
     for (var i = 0, len = obj.length; i < len; i++) {
-        copy[i] = clone(obj[i]);
+      copy[i] = clone(obj[i]);
     }
     return copy;
   }
@@ -99,24 +94,23 @@ function deepClone(obj) {
   if (obj instanceof Function) {
     copy = function() {
       return obj.apply(this, arguments);
-    }
+    };
     return copy;
   }
 
   // kiểu Object
   if (obj instanceof Object) {
-      copy = {};
-      for (var attr in obj) {
-          if (obj.hasOwnProperty(attr)) copy[attr] = clone(obj[attr]);
-      }
-      return copy;
+    copy = {};
+    for (var attr in obj) {
+      if (obj.hasOwnProperty(attr)) copy[attr] = clone(obj[attr]);
+    }
+    return copy;
   }
 
-  throw new Error("Unable to copy obj as type isn't supported " + obj.constructor.name);
+  throw new Error(
+    "Unable to copy obj as type isn't supported " + obj.constructor.name
+  );
 }
-``` 
-
+```
 
 <a href="https://smalldata.tech/blog/2018/11/01/copying-objects-in-javascript" target="_blank" rel="noopener noreferrer">COPYING OBJECTS IN JAVASCRIPT</a>
-
-

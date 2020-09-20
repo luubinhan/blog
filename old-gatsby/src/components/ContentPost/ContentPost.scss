@@ -1,0 +1,43 @@
+// Variables
+@import '../../styles/_variables';
+
+/* content-post.php
+-------------------------------------------------------------- */
+$innerGlutter: 40px;
+.item-post {
+  padding: 35px 0;
+  border-bottom: 1px solid $border-color;
+  .heading-post { 
+    padding-bottom: 20px;
+    font-size: 30px;
+    line-height: 1.2em;
+    color: rgba(0,0,0,.9);
+    font-family: "avo_bold", $serif;
+    a:hover,
+    a:focus {
+      text-decoration: none;
+      color: $primary-color;
+    }
+  }
+  .the-post-thumbnail + .the-post-content {
+    overflow: hidden;
+  }
+  .post-excert {
+    font-size: 21px;
+    padding-bottom: 20px;
+  }   
+}
+@media (max-width: $breakpoint-xs) {
+  .item-post{
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    padding-top: 0;
+    .post-excert {
+      display: none;
+    }
+    .heading-post {
+      font-size: 18px;
+    }
+  } 
+}
+/* content-post.php -------------------------------------------- */

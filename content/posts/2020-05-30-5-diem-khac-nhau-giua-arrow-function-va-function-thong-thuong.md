@@ -1,13 +1,13 @@
 ---
-slug: '/2020-05-30-5-diem-khac-nhau-giua-arrow-function-va-function-thong-thuong'
-date: '2020-05-30'
-title: '5 điểm khác nhau giữa function thường và arrow function'
-desc: 'Lựa chọn cách viết nào cho phù hợp theo tính huống đang cần là cái chúng ta sẽ có được câu trả lời khi đi qua 5 điểm khác biệt này'
-cover: ''
-type: 'post'
+slug: "/2020-05-30-5-diem-khac-nhau-giua-arrow-function-va-function-thong-thuong"
+date: "2020-05-30"
+title: "5 điểm khác nhau giữa function thường và arrow function"
+desc: "Lựa chọn cách viết nào cho phù hợp theo tính huống đang cần là cái chúng ta sẽ có được câu trả lời khi đi qua 5 điểm khác biệt này"
+cover: ""
+type: "post"
 lesson: 0
 chapter: 0
-tags: ['javascript']
+tags: ["javascript"]
 ---
 
 <!-- TOC -->
@@ -24,11 +24,11 @@ Function _thường_ là những function được khai báo ở 2 dạng sau
 
 ```js
 function hello() {
-  return 'hello';
+  return "hello";
 }
 
 const hello = function() {
-  return 'hello';
+  return "hello";
 };
 ```
 
@@ -36,7 +36,7 @@ Còn arrow function là dạng chắc ai cũng biết
 
 ```js
 const hello = () => {
-  return 'hello';
+  return "hello";
 };
 ```
 
@@ -59,7 +59,7 @@ Giá trị nó sẽ tùy thuộc vào **ngữ cảnh**, như trong trường h�
 const myObject = {
   method() {
     console.log(this);
-  }
+  },
 };
 
 myObject.method();
@@ -76,7 +76,7 @@ const myObject = {
       console.log(this); // "myObject"
     };
     items.forEach(callback);
-  }
+  },
 };
 
 myObject.myMethod([1, 2, 3]);
@@ -93,7 +93,7 @@ function Car(color) {
   this.color = color;
 }
 
-const redCar = new Car('red');
+const redCar = new Car("red");
 redCar instanceof Car; // => true
 ```
 
@@ -104,7 +104,7 @@ const Car = (color) => {
   this.color = color;
 };
 
-const redCar = new Car('red');
+const redCar = new Car("red");
 // => TypeError: Car is not a constructor
 ```
 
@@ -117,7 +117,7 @@ function myFunction() {
   console.log(arguments);
 }
 
-myFunction('a', 'b');
+myFunction("a", "b");
 // => { 0: 'a', 1: 'b'}
 ```
 
@@ -129,10 +129,10 @@ function myRegularFunction() {
     console.log(arguments);
   };
 
-  myArrowFunction('c', 'd');
+  myArrowFunction("c", "d");
 }
 
-myRegularFunction('a', 'b');
+myRegularFunction("a", "b");
 // => { 0: 'a', 1: 'b' }
 ```
 
@@ -187,7 +187,7 @@ class Hero {
   }
 }
 
-const batman = new Hero('Batman');
+const batman = new Hero("Batman");
 ```
 
 Nhưng khi bạn không muốn thay đổi giá trị của `this`, arrow function sẽ là lựa chọn hợp lý hơn
@@ -203,7 +203,7 @@ class Hero {
   };
 }
 
-const batman = new Hero('Batman');
+const batman = new Hero("Batman");
 ```
 
 https://dmitripavlutin.com/differences-between-arrow-and-regular-functions/

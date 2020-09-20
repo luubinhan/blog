@@ -1,12 +1,9 @@
 ---
 slug: "/2018-11-05-moi-so-loi-javascript-lam-anh-huong-perfomance"
 date: "2018-11-05"
-title: "3 lỗi javascript thường mắc phải làm ảnh hưởng perfomance"
+title: 3 lỗi javascript thường mắc phải làm ảnh hưởng perfomance
 desc: "Bài viết dành cho những người nghiện tốc độ, nghiện cách viết ES6"
-cover: ""
-type: "post"
-lesson: 0
-chapter: 0
+canonical_url: false
 tags: ["javascript"]
 ---
 
@@ -18,12 +15,11 @@ tags: ["javascript"]
 
 <!-- /TOC -->
 
-
 ## 1. loop qua một array
 
 Chúng ta thử xem thời gian tiêu tốn cho việc loop qua 10k item trong array
 
-- `for`:  ~10 microseconds
+- `for`: ~10 microseconds
 - `while`: ~11 microseconds
 - `forEach`: ~77 microseconds
 - `for-of`: ~110 microseconds
@@ -51,12 +47,8 @@ Như vậy 2 phương thức cũ như dưa mắm `concat` và `slice` vẫn dàn
 - `Object.keys(obj)` sau đó for each: ~294 microseconds
 - `Object.entries(obj)` sau đó for of: ~535 microseconds
 
-
 Ở hai cách làm bên dưới, do phải tạo thêm một mảng chứa key, rồi mới loop qua mảng này object nên nó chậm.
 
 <div class="note">Đừng mù quáng xài cách viết mới nếu không phù hợp với ứng dụng đang viết</div>
 
-
-<a href="https://hackernoon.com/3-javascript-performance-mistakes-you-should-stop-doing-ebf84b9de951" target="_blank" rel="noopener noreferrer">3 JavaScript Performance Mistakes You Should Stop Doing  </a
-
-
+<a href="https://hackernoon.com/3-javascript-performance-mistakes-you-should-stop-doing-ebf84b9de951" target="_blank" rel="noopener noreferrer">3 JavaScript Performance Mistakes You Should Stop Doing </a

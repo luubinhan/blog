@@ -1,13 +1,13 @@
 ---
-slug: '/2020-06-18-10-cau-hoi-javascript-de-nang-cao-kien-thuc-cua-ban'
-date: '2020-06-18'
-title: '10 câu hỏi javascript để nâng cao trình độ'
-desc: 'Cùng ôn luyện kiến thức javascript bằng 10 câu hỏi lắc léo'
-cover: ''
-type: 'post'
+slug: "/2020-06-18-10-cau-hoi-javascript-de-nang-cao-kien-thuc-cua-ban"
+date: "2020-06-18"
+title: "10 câu hỏi javascript để nâng cao trình độ"
+desc: "Cùng ôn luyện kiến thức javascript bằng 10 câu hỏi lắc léo"
+cover: ""
+type: "post"
 lesson: 0
 chapter: 0
-tags: ['javascript']
+tags: ["javascript"]
 ---
 
 <!-- TOC -->
@@ -69,15 +69,15 @@ Với đoạn code sau, kết quả log ra sẽ được gì
 
 ```js
 const user = {
-  name: 'Joe',
+  name: "Joe",
   age: 25,
   pet: {
-    type: 'dog',
-    name: 'kitty kitty'
-  }
+    type: "dog",
+    name: "kitty kitty",
+  },
 };
 Object.freeze(user);
-user.pet.name = 'meo meo';
+user.pet.name = "meo meo";
 
 console.log(user.pet.name);
 ```
@@ -94,14 +94,14 @@ Chúng ta có một constructor function `Dog`. Giá trị log sẽ là gì
 function Dog(name) {
   this.name = name;
   this.speak = function() {
-    return 'woof';
+    return "woof";
   };
 }
 
-const dog = new Dog('Pogo');
+const dog = new Dog("Pogo");
 
 Dog.prototype.speak = function() {
-  return 'chihuahua';
+  return "chihuahua";
 };
 
 console.log(dog.speak());
@@ -124,7 +124,7 @@ const timer = (a) => {
   );
 };
 
-const all = Promise.all([timer('first'), timer('second')]).then((data) =>
+const all = Promise.all([timer("first"), timer("second")]).then((data) =>
   console.log(data)
 );
 ```
@@ -161,7 +161,7 @@ Kết quả log ra là...
 ```js
 const notifications = 1;
 console.log(
-  `You have ${notifications} notifications${notifications !== 1 && 's'}`
+  `You have ${notifications} notifications${notifications !== 1 && "s"}`
 );
 ```
 
@@ -174,9 +174,9 @@ Cầu điều kiện rút gọn `notifications !== 1 && 's'` sẽ return `false`
 Chuyện gì xảy ra khi chúng ta spread mảng ra và thay đổi giá trị của object đầu tiên
 
 ```js
-const arr1 = [{ firstName: 'luckyluu' }];
+const arr1 = [{ firstName: "luckyluu" }];
 const arr2 = [...arr1];
-arr2[0].firstName = 'vuilaptrinh';
+arr2[0].firstName = "vuilaptrinh";
 
 console.log(arr1);
 ```
@@ -190,7 +190,7 @@ Spread chỉ tạo một shallow copy, nghĩa là object bên trong mảng ban �
 Kết quả log ra là gì
 
 ```js
-const map = ['a', 'b', 'c'].map.bind([1, 2, 3]);
+const map = ["a", "b", "c"].map.bind([1, 2, 3]);
 map((el) => console.log(el));
 ```
 

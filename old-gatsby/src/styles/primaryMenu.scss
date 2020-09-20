@@ -1,0 +1,93 @@
+// Variables
+@import './_variables';
+
+.primary-menu {
+	list-style: none;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	li {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		position: relative;
+		&:before {
+			position: absolute;
+			display: block;
+			content: '';
+			width: 0;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+			top: 0;
+			bottom: 0;
+			background: rgba(255,255,255,0);
+			z-index: 0;
+			-webkit-transition: all 0.2s ease-in-out;
+			-moz-transition: all 0.2s ease-in-out;
+			-ms-transition: all 0.2s ease-in-out;
+			-o-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
+		}
+		&:hover {
+			&:before {
+				width: 100%;
+				background: rgba(255,255,255,0.1);
+			}
+		}
+		&.javascript {
+			svg { color: $yellow; }
+			a:hover {
+	  		color: $yellow;
+	  	}
+		}
+		&.react {
+			svg { color: $cyan; }
+			a:hover {
+	  		color: $cyan;
+	  	}
+		}
+		&.wordpress {
+			svg { color: $blue; }
+			a:hover {
+	  		color: $blue;
+	  	}
+		}
+		&.htmlCss {
+			svg { color: $orange; }
+			a:hover {
+	  		color: $orange;
+	  	}
+		}
+		&.uxUi {
+			svg { color: $google; }
+			a:hover {
+	  		color: $google;
+	  	}
+		}
+		a {
+			display: flex;
+			align-items: center;
+	    color: #f2f2f2;
+	    font-family: "avo_bold", $san-serif;
+	    padding: 9px 0 12px;
+			line-height: 1;
+			font-size: $font-size-base;
+			position: relative;
+			z-index: 1;
+			-webkit-transition: all 0.1s ease-in-out;
+			-moz-transition: all 0.1s ease-in-out;
+			-ms-transition: all 0.1s ease-in-out;
+			-o-transition: all 0.1s ease-in-out;
+			transition: all 0.1s ease-in-out;
+	    svg {
+	    	padding-right: 7px;	    	
+	    }
+	    &.active {
+	    	color: $primary-color;
+	    }
+	  }
+	  a:hover,
+	  a:focus{
+			background: transparent;
+			padding-left: 10px;
+	  }
+	}
+}

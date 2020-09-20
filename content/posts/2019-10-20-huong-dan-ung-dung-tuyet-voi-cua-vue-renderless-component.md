@@ -2,7 +2,7 @@
 slug: "/2019-10-20-huong-dan-ung-dung-tuyet-voi-cua-vue-renderless-component"
 date: "2019-10-20"
 title: "Những ứng dụng tuyệt vời của Renderless component trong Vue"
-desc: "Để tái sử dụng component trong Vue mà không biết tới slot thì quá thiếu sót. Một vài ví dụ để bạn sử dụng slot nhiều hơn."
+desc: "Cùng điểm qua các phương pháp để giải quyết bài toán 'DRY' trong Vue, các bạn sẽ biết thêm các kỹ thuật tương đối nâng cao để lên bật Vue lão làng."
 cover: ""
 type: "post"
 lesson: 0
@@ -10,28 +10,19 @@ chapter: 0
 tags: ["vuejs"]
 ---
 
-<!-- TOC -->
+[TOC]
 
-- [Slot](#slot)
-- [Slot scope](#slot-scope)
-- [Sử dụng làm modal](#s%E1%BB%AD-d%E1%BB%A5ng-l%C3%A0m-modal)
-- [Composing Component (siêu nhân hợp thể)](#composing-component-si%C3%AAu-nh%C3%A2n-h%E1%BB%A3p-th%E1%BB%83)
-  - [Tại sao cần hợp thể?](#t%E1%BA%A1i-sao-c%E1%BA%A7n-h%E1%BB%A3p-th%E1%BB%83)
-  - [Một cách nấu khác với slot](#m%E1%BB%99t-c%C3%A1ch-n%E1%BA%A5u-kh%C3%A1c-v%E1%BB%9Bi-slot)
-- [Renderless Component (người vô hình chỉ mang logic)](#renderless-component-ng%C6%B0%E1%BB%9Di-v%C3%B4-h%C3%ACnh-ch%E1%BB%89-mang-logic)
-  - [Ứng dụng renderless component làm ổ cắm mạng cấp dữ liệu internet](#%E1%BB%A9ng-d%E1%BB%A5ng-renderless-component-l%C3%A0m-%E1%BB%95-c%E1%BA%AFm-m%E1%BA%A1ng-c%E1%BA%A5p-d%E1%BB%AF-li%E1%BB%87u-internet)
-- [Tài liệu tham khảo](#t%C3%A0i-li%E1%BB%87u-tham-kh%E1%BA%A3o)
+Để tái sử dụng component trong Vue cũng có lắm ngã dăm ba đường y như React có HOC, render prop, hook. Điểm qua những kỹ thuật/cách làm tương tự trong Vue
 
-<!-- /TOC -->
+## Kỹ thuật dùng Slot
 
-## Slot
+Khái niệm **Slot** trong vue là dạng "đặt gạch" trong component, sau này khi sử dụng ta có thể đưa nội dung khác vào những vị trí đã *đặt gạch*
 
-Slot trong vue là dạng "đặt gạch" trong component, sau này khi sử dụng ta có thể đưa nội dung khác vào những vị trí đã *đặt gạch*
-
-Vue không chỉ có thể đặt một mà đặt nhiều gạch, số lượng tùy thích, viên gạch đó được Vue gọi tên là `slot`
+Vue không giới hạn số lượng *gạch* muốn đặt, số lượng tùy thích
 
 ```html
-<!-- mother.vue --> Mẹ đặt gạch 2 chỗ header và body cho con nha
+<!-- mother.vue -->
+Mẹ đặt gạch 2 chỗ header và body cho con nha
 <template>
   <div class="card">
     <div class="card-header">
@@ -45,12 +36,13 @@ Vue không chỉ có thể đặt một mà đặt nhiều gạch, số lượng
 ```
 
 ```html
-<!-- con.vue: Cho con dùng 2 chỗ header và body bằng nội dung mới nhé-->
+<!-- con.vue:
+Cho con dùng 2 chỗ header và body bằng nội dung mới nhé-->
 <mother>
-	<template #header>
+	<template slot="header">
 	  <h1>Special Features</h1>
 	</template>
-	<template #body>
+	<template slot="body">
 		<div>
 		    <h5>Fish and Chips</h5>
 		    <p>Super delicious tbh.</p>
@@ -59,7 +51,9 @@ Vue không chỉ có thể đặt một mà đặt nhiều gạch, số lượng
 </mother>
 ```
 
-Đây là những viên gạch có đặt tên `<slot name="header"/>`, có một viên gạch không cần đặt tên, chỉ cần `<slot />`, khi đó component *ném gạch* sẽ được viết
+Đây là những viên gạch có đặt tên `<slot name="header"/>`
+
+Nếu bạn không khai báo tên cho `<slot />`, khi đó component *ném gạch* sẽ được viết (children trong React đấy mà)
 
 ```html
 <mother>
@@ -67,9 +61,13 @@ Vue không chỉ có thể đặt một mà đặt nhiều gạch, số lượng
 </mother>
 ```
 
-## Slot scope
+> bạn có thể viết tắt `slot="header"` thành `#header`
 
-Đề **truyền dữ liệu** từ mẹ sang con, chúng ta bind dữ liệu muốn truyền qua slot `<slot :ten-bien="du-lieu"/>`
+Ngoài như cầu đặt gạch, bạn sẽ có thêm nhu cầu truyền tải thêm ít dữ liệu qua lại giữa mẹ và con
+
+### Khái niệm Slot scope
+
+Đề **truyền dữ liệu** từ mẹ sang con, chúng ta bind dữ liệu muốn truyền qua slot `<slot :ten-bien="gia-tri"/>`
 
 ```html
 <!-- mother.vue -->
@@ -102,9 +100,9 @@ Component con sẽ nhận dữ liệu thông qua từ khóa `slot-scope`
 </mother>
 ```
 
-## Sử dụng làm modal
+Ứng dụng các khái niệm `slot`, `slot-scope` vào component modal
 
-Lấy structure của bootstrap nhé, chúng ta sẽ cho Modal component có 3 chỗ có thể thay đổi là
+Lấy cấu trúc html của bootstrap, chúng ta sẽ cho Modal component có 3 chỗ có thể thay đổi là
 
 - `<slot name="header" />`
 - `<slot name="body" />`
@@ -153,47 +151,13 @@ Với 3 cục gạch đã đặt sẵn trong `my-modal.vue`,
 </template>
 ```
 
-Bổ sung thêm một tính năng năng nữa cho component `<my-modal/>`, mặc định khi click nút close, nó sẽ gọi đến hàm close bên trong component `<my-modal/>`, chúng ta dùng scope slot để thằng con có thể truyền vào một function khác, đè lên function nhận được (tức không gọi hàm `closeModal` bên trong `<my-modal/>`)
 
-```jsx{16,27}
-<!-- my-modal.vue -->
-<template>
-<div class="modal" tabindex="-1" role="dialog">
-	//...
-	<div class="modal-footer">
-	  <slot name="footer" :closeModal="closeModal"></slot>
-	</div>
-	//...
-</div>
-</template>
 
-<script>
-export default {
-  //...
-  methods: {
-	closeModal () {	}
-  }
-}
-</script>
-```
+## Kỹ thuật dùng Component Composition (siêu nhân hợp thể)
 
-Chúng ta có thể truyền hàm `closeModal` khác
+Sự kết hợp của nhiều component thành một component mới, dữ dội hơn, như siêu nhân GAO, được gọi là hợp thể component. Từ *"khoa học"* của nó là Component Composition (trong React cũng có cách làm này)
 
-```html
-<template #footer="{closeModal}">
-	<button @click="closeModal">
-		I'm here
-	</button>
-</template>
-```
-
-## Composing Component (siêu nhân hợp thể)
-
-Sự kết hợp của nhiều component thành một component mới, dữ dội hơn, như siêu nhân GAO, được gọi là hợp thể component. Từ khoa học của nó là **Composing Components**
-
-### Tại sao cần hợp thể?
-
-Component được sinh ra là để chúng ta **nhai đi nhai lại**
+### Lý do phải hợp thể?
 
 ```html
 <!-- BaseButton.vue -->
@@ -210,7 +174,7 @@ export default {
 </script>
 ```
 
-Nhu cầu thêm mắm, bớt muối cho một món phải nhai đi nhai lại là có. Giả dụ ta đã có sẵn một component `BaseIcon` để làm chuyện hiển thị icon, giờ cái Button cùng  muốn thêm chút icon cho đời tươi mới, chúng ta **xào chung** hai món lại để nhai
+Nhu cầu thêm mắm, bớt muối cho một món phải *nhai đi nhai lại* là có. Giả dụ, ta đã có sẵn một component `BaseIcon` để hiển thị icon, giờ cái Button cùng  muốn thêm chút icon cho đời tươi mới, chúng ta **xào chung** hai món lại để nhai
 
 ```html
 <template>
@@ -230,7 +194,7 @@ export default {
 
 Trong đó chúng ta đã thêm hai điều kiện để đặt icon nằm bên trái hay bên phải. Component `Button` bây giờ cũng được thêm 2 prop `rightIcon`, `leftIcon`.
 
-Thí dụ như có thêm yêu cầu đưa cái spinner vào trong button, khi nào đang loading thì hiện cái spinner này
+Mọi thứ sẽ rối rắm lên khi có thêm nhu cầu đưa cái spinner vào trong button, khi nào đang loading thì hiện cái spinner này
 
 ```html
 <template>
@@ -245,11 +209,13 @@ Thí dụ như có thêm yêu cầu đưa cái spinner vào trong button, khi n�
 </template>
 ```
 
-Chỉ mới thêm chút đường sữa thôi, mà món ăn sắp thành cháo heo thập cẩm khó nuốt. Với nhiều **gia vị** được yêu cầu bỏ vào của bọn khách hàng không biết gì về nấu nướng. Món ngon bây giờ thành **đặc sản** mà đứa nào đó muốn nấu tiếp, sửa đổi do quá mặn, thì cũng bất lực vì không biết đã thêm quá nhiều muối hay nhiều nước mắm.
+Chỉ mới thêm chút đường sữa thôi, mà món ăn sắp thành cháo heo thập cẩm khó nuốt.
+
+Với nhiều **gia vị** được yêu cầu bỏ vào của bọn khách hàng không biết gì về nấu nướng. Món ngon bây giờ thành **đặc sản** mà đứa nào đó muốn nấu tiếp, sửa đổi do quá mặn, thì cũng bất lực vì không biết đã thêm quá nhiều muối hay nhiều nước mắm.
 
 ### Một cách nấu khác với slot
 
-Trong cuốn bí kíp 100 cách nấu ngon của Vue.js, nó cho chúng ta cách làm khác gọi là `slot`
+Trong cuốn bí kíp 100 cách nấu ngon của Vue.js, nó cho chúng ta cách làm khác đã đề cập ở trên là `slot`
 
 ```html
 <template>
@@ -268,7 +234,9 @@ Trong cuốn bí kíp 100 cách nấu ngon của Vue.js, nó cho chúng ta cách
 </BaseButton>
 ```
 
-Việc này tạo ra một tranh cãi trong giới đầu bếp, nếu tao phải phục vụ món ăn đó cho một trăm thực khách, tức là tao phải lặp lại việc order 100 gia vị `Button` về rồi tự nấu thêm 100 lần nữa, vi phạm nguyên tắc nghề nghiệp **DRY** (DON'T REPEAT YOURSELF) của tao. Đúng là vi phạm nguyên tắc nghề, nhưng nó lại đảm bảo **KISS** (Keep it simple stupid - NGU NHẤT CÓ THỂ)
+Việc này cũng có ít *tranh cãi trong giới đầu bếp*, nếu tao phải phục vụ món ăn đó cho một trăm thực khách, tức là tao phải lặp lại việc order 100 gia vị `Button` về rồi tự nấu thêm 100 lần nữa? vi phạm nguyên tắc nghề nghiệp **DRY** (DON'T REPEAT YOURSELF).
+
+Đúng là vi phạm nguyên tắc nghề, nhưng nó lại đảm bảo **KISS** (Keep it simple stupid - ĐƠN GIẢN NHẤT CÓ THỂ). Nói chung các bạn cũng phải thõa hiệp được này mất kia.
 
 
 ```html
@@ -283,9 +251,13 @@ Việc này tạo ra một tranh cãi trong giới đầu bếp, nếu tao phả
 </template>
 ```
 
-## Renderless Component (người vô hình chỉ mang logic)
+## Kỹ thuật Renderless Component (người vô hình chỉ mang logic)
 
-Một component trong Vue có thể không render bất cứ gì cả, nếu chỉ đơn giản là chứa các function, thực hiện logic tính toán. Nó giống như cái ổ điện, nó chỉ biết làm một chuyện là cấp điện cho chui cắm, còn cái chui đó nối tới bóng đèn, máy tính, tủ lạnh, máy quạt là chuyện của người cắm điện.
+>Nếu bạn đã viết React, nó cũng có khái niệm tương tự chính là render prop
+
+Một component trong Vue có thể không render bất cứ gì cả, nếu chỉ đơn giản là chứa các function, thực hiện logic tính toán.
+
+Nó giống như cái ổ điện, nó chỉ biết làm một chuyện là cấp điện cho chui cắm, còn cái chui đó nối tới bóng đèn, máy tính, tủ lạnh, máy quạt là chuyện của người cắm điện.
 
 ```jsx
 <template>
@@ -319,13 +291,23 @@ Vue.component('renderless-component-example', {
 })
 ```
 
-Tại sao dùng **Renderless component** mà không dùng `mixin` hay `directive`?
+> Tại sao dùng **Renderless component** mà không dùng `mixin` hay `directive`?
 
-Để **tái sử dụng** code trong Vue, ngoài renderless component ra còn có thể dùng Mixin hoặc 1 custom Directive. Cả 3 cách đều có thể dùng thay thế cho nhau được, vấn đề là mức độ tường minh của 3 thằng khác nhau, thằng directive là kém tường minh nhất, với mixin và renderless component chúng ta import độc lập trên từng component muốn xài, xem như bằng nhau. Mixin thì bị vấn đề, nếu khai báo một số `state`, hoặc hàm bên trong mixin, sau đó *trộn* chung với 1 component, không rõ ràng trực quan như là dùng một renderless component với `prop`
+Để **tái sử dụng** code trong Vue, ngoài renderless component ra còn có thể dùng [mixin](https://vuejs.org/v2/guide/mixins.html) hoặc  [custom directive](https://vuejs.org/v2/guide/custom-directive.html). Cả 3 cách đều có thể dùng thay thế cho nhau được, vấn đề là **mức độ tường minh** của 3 thằng khác nhau.
 
-### Ứng dụng renderless component làm ổ cắm mạng cấp dữ liệu internet
+Xét theo thứ tự tường mình từ thấp đến cao:
 
-Chúng ta thường xuyên làm việc này,  tạo một network request lúc component `mounted()` để lấy dữ liệu, chúng ta tạo ra một component chuyên làm nhiệm vụ này
+1. Custom directive 
+2. Mixin
+3. renderless component
+
+Mixin thì bị vấn đề, nếu khai báo một số `state`, hoặc phương thức bên trong mixin, sau đó *trộn* chung với 1 component, không rõ ràng trực quan như là dùng một renderless component với `prop`
+
+### Ứng dụng renderless component làm *ổ cắm mạng cấp dữ liệu internet*
+
+Nhu cầu này sẽ rất quen thuộc,  tạo một network request lúc component `mounted()` để lấy dữ liệu.
+
+Chúng ta tạo ra một component chuyên làm nhiệm vụ này
 
 ```jsx
 // src/components/DataList.js
@@ -402,7 +384,7 @@ Renderless component `<DataList/>` sẽ làm nhiệm vụ `fetch` dữ liệu t�
 
 ```html
 <data-list endpoint="posts">
-	<div slot-scope="{ data: posts, error, laoding }">
+	<div slot-scope="{ data: posts, error, loading }">
 		<span v-if="loading">Loading...</span>
 		<span v-else-if="error">Error while fetching data!</span>
 		<ul v-else>
@@ -419,7 +401,7 @@ Thêm phần phân trang, chúng ta dùng giá trị filter
 
 ```html
 <data-list endpoint="posts" :filter="{ page }">
-	<div slot-scope="{ data: posts, error, laoding }">
+	<div slot-scope="{ data: posts, error, loading }">
 		<span v-if="loading">Loading...</span>
 		<span v-else-if="error">Error while fetching data!</span>
 		<ul v-else>

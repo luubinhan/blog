@@ -1,27 +1,30 @@
 ---
 slug: "/2018-11-14-chi-dan-thiet-ke-form-cua-google"
 date: "2018-11-14"
-title: "Chỉ dẫn thiết kế form từ Google"
+title: "Kim chỉ nam khi thiết kế form từ Google"
 desc: "Bài này nằm trong loạt bài chuẩn kiến thức để đi thi web mobile specialist của google. Một vài điểm cần nhớ khi thiết kế và làm việc với form"
-cover: ""
-type: "post"
-lesson: 0
-chapter: 0
+canonical_url: false
 tags: ["ux-ui", "mobile-web-specialist"]
 ---
 
 <!-- TOC -->
 
 - [Tránh lặp lại](#tránh-lặp-lại)
-  - [Credit Card](#credit-card)
-  - [Name](#name)
-  - [Email](#email)
-  - [Address](#address)
-  - [Phone](#phone)
-  - [Payment](#payment)
-- [How far I go?](#how-far-i-go)
-- [Field ngày tháng](#field-ngày-tháng)
+- [Tôi đang đứng ở bước nào?](#tôi-đang-đứng-ở-bước-nào)
+- [Giá trị ngày tháng](#giá-trị-ngày-tháng)
 - [Sử dụng input type phù hợp](#sử-dụng-input-type-phù-hợp)
+  - [`type='url'`](#typeurl)
+  - [`type='tel'`](#typetel)
+  - [`type='email'`](#typeemail)
+  - [`type='search'`](#typesearch)
+  - [`type='number'`](#typenumber)
+  - [`type='range'`](#typerange)
+  - [`type='datetime-local'`](#typedatetime-local)
+  - [`type='datetime'`](#typedatetime)
+  - [`type='time'`](#typetime)
+  - [`type='week'`](#typeweek)
+  - [`type='month'`](#typemonth)
+  - [`type='color'`](#typecolor)
 - [Gợi ý thông qua trường `datalist`](#gợi-ý-thông-qua-trường-datalist)
 - [auto focus khi cần thiết](#auto-focus-khi-cần-thiết)
 - [Hãy tin vào Chrome](#hãy-tin-vào-chrome)
@@ -38,7 +41,6 @@ Nguyên tắc chung
 
 - Bật autofill trên form đề trình duyệt của user có thể tự điền các field đã biết, hiển thị lại những giá trị mà user đã nhập
 - Label rõ ràng để user biết mình đang nhập cái gì, ở đâu.
-
 
 ## Tránh lặp lại
 
@@ -57,18 +59,15 @@ Ta muốn autocomplete giá trị gì thì báo với trình duyệt luôn, ho�
 
 Chuẩn này đã được [WHATWG HTML Standard.](https://html.spec.whatwg.org/multipage/forms.html#autofill) đặt ra ko phải mình
 
-
-|  Trường | Giá trị name  |  
-|---|---|
-| Name  | name fname mname lname  |
-|  Email |  email |
-| Address  | address city region province state zip zip2 postal country  | 
-|  Phone | phone mobile country-code area-code exchange suffix ext  | 
-|  Credit Card |  ccname cardnumber cvc ccmonth ccyear exp-date card-type |
-|  Usernames | username  |
-| Passwords  | password  |
-
-
+| Trường      | Giá trị name                                               |
+| ----------- | ---------------------------------------------------------- |
+| Name        | name fname mname lname                                     |
+| Email       | email                                                      |
+| Address     | address city region province state zip zip2 postal country |
+| Phone       | phone mobile country-code area-code exchange suffix ext    |
+| Credit Card | ccname cardnumber cvc ccmonth ccyear exp-date card-type    |
+| Usernames   | username                                                   |
+| Passwords   | password                                                   |
 
 ## Tôi đang đứng ở bước nào?
 
@@ -95,7 +94,7 @@ Chuỗi bắt đầu phải là 'http://', 'ftp://', 'mailto:'
 ### `type='tel'`
 
 Ko có ép một syntax hay validation nào cả, giúp hiện thì bàn phím điện thoại trên mobile
- 
+
 ![ko có ép một syntax hay validation nào cả, giúp hiện thì bàn phím điện thoại trên mobile](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/tel-android.png)
 
 ### `type='email'`
@@ -110,7 +109,7 @@ Bàn phím search chuẩn trên từng thiết bị
 
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/plain-ios.png)
 
-### `type='number'` 
+### `type='number'`
 
 iOS yêu cầu có thêm `pattern='\d*'` để hiển thị bàn phím số
 
@@ -122,7 +121,7 @@ Hiển thị kiếu slider control
 
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/range-ios.png)
 
-### `type='datetime-local'` 
+### `type='datetime-local'`
 
 Giá trị ngày tháng có timezone
 
@@ -134,7 +133,7 @@ Giá trị ngày tháng ko có timezone
 
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/date-android.png)
 
-### `type='time'` 
+### `type='time'`
 
 Chỉ có giá trị giờ
 
@@ -152,7 +151,7 @@ Chỉ có giá trị tháng
 
 ![Một số gợi ý khi thiết kế form](https://developers.google.com/web/fundamentals/design-and-ux/input/forms/imgs/month-ios.png)
 
-### `type='color'` 
+### `type='color'`
 
 Bảng màu để chọn
 
@@ -164,15 +163,11 @@ Bảng màu để chọn
 
 ```html
 <label for="frmFavChocolate">Favorite Type of Chocolate</label>
-<input 
-type="text" 
-name="fav-choc" 
-id="frmFavChocolate" 
-list="chocType">
+<input type="text" name="fav-choc" id="frmFavChocolate" list="chocType" />
 <datalist id="chocType">
-  <option value="white">
-  <option value="milk">
-  <option value="dark">
+  <option value="white"> </option>
+  <option value="milk"> </option>
+  <option value="dark"> </option>
 </datalist>
 ```
 
@@ -185,7 +180,7 @@ list="chocType">
 Trên thẻ input, nếu muốn input được focus ngay lập tức khi vừa vào trang, như login, focus vào ô username. Thuộc tính `autofocus` này sẽ tự động bị ignore trên mobile để tránh xuất hiện bàn phím ko cần thiết.
 
 ```html
-<input type="text" autofocus ...>
+<input type="text" autofocus ... />
 ```
 
 ## Hãy tin vào Chrome
@@ -213,5 +208,3 @@ Bài này đọc lại [ở đây](/2018-11-02-validate-form-voi-html-5)
 <a href="https://developers.google.com/web/fundamentals/design-and-ux/input/forms/" target="_blank" rel="noopener noreferrer">Create Amazing Forms</a>
 
 <a href="https://developers.google.com/web/updates/2015/06/checkout-faster-with-autofill" target="_blank" rel="noopener noreferrer">Help users checkout faster with Autofill</a>
-
-

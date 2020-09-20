@@ -1,15 +1,11 @@
 ---
 slug: "/2018-11-11-huong-dan-two-way-data-binding-voi-vue-vuex"
 date: "2018-11-11"
-title: "Cách làm two-way data binding cho form field trong Vue và Vuex"
+title: Cách làm two-way data binding cho form field trong Vue và Vuex
 desc: "Two-way data binding trong Vue và Vuex làm như thế nào cho đúng mà nhanh"
-cover: ""
-type: "post"
-lesson: 0
-chapter: 0
+canonical_url: false
 tags: ["vuejs"]
 ---
-
 
 Sử dụng directive `v-model`, chúng có thể dễ dàng thực hiện two-way data binding cho element, một trong những tính năng rất hay ho mà Vue cung cấp.
 
@@ -134,27 +130,26 @@ export default {
 Ngoài ra `vuex-map-fields` cũng cung cấp các hàm `getters` và hàm `mutations` cho dữ liệu
 
 ```jsx
-import { getField, updateField } from 'vuex-map-fields';
+import { getField, updateField } from "vuex-map-fields";
 
 export default new Vuex.Store({
   strict: true,
   state: {
     form: {
-      firstName: '',
-      lastName: '',
-      message: '',
-    }
+      firstName: "",
+      lastName: "",
+      message: "",
+    },
   },
   getters: {
     getField,
   },
   mutations: {
     updateField,
-  }
-})
+  },
+});
 ```
 
 Mọi thứ cứ để `vuex-map-fields` lo! Bạn không cần tự viết mấy hàm getters và mutations đơn giản quá làm gì, trừ trường hợp bạn muốn bổ sung một số logic đặc biệt
 
 <a href="https://markus.oberlehner.net/blog/form-fields-two-way-data-binding-and-vuex/" target="_blank" rel="noopener noreferrer">Bài giới thiệu của tác giả library</a>
-

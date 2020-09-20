@@ -63,11 +63,54 @@ Bạn truyền nó vào như thế này, với hy vọng mọi thứ chạy ngon
 </script>
 ```
 
-Nhưng không 😭 nó sẽ thông báo trong console, “Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. “
+Nhưng không 😭 nó sẽ thông báo trong console
 
-Về nguyên tắc, chúng ta ko được thay đổi giá trị của `prop`, nếu không lúc re-render nó sẽ ko còn đúng nữa
+> “Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. “
 
-Để nó chạy ngon lành, chúng ta không dùng `prop`. Khi sử dụng `v-model` nó làm cho chúng ta 2 việc, bind giá trị vào biến `value`, gắn handle cho sự kiện `v-on:input`. Túm lại chúng ta ko cần dùng prop làm gì cả, chỉ việc dùng lùng `value` bên trong component
+Về nguyên tắc, chúng ta ko được thay đổi giá trị truyền vào từ `prop`, nếu không lúc re-render nó sẽ ko còn đúng nữa.
+
+**`v-model` về bản chất nó là gì?**
+
+`v-model` nó làm cho chúng ta 2 việc
+
+1. bind giá trị vào biến `value`
+2. bind handle cho sự kiện `v-on:input`.
+
+```jsx
+// Form.vue
+<template>
+    <form>
+        <input name="name" v-model="name">
+        <input name="email" v-model="email">
+        <mailing-address
+            :value="address"
+            @input="(newAddress) => {address = newAddress}"
+        />
+    </form>
+</template>
+<script>
+    import MailingAddress from './Address.vue';
+    export default {
+        components: { MailingAddress },
+        data() {
+            return {
+                name: '',
+                email: '',
+                address: {
+                    street: '',
+                    city: '',
+                    state: '',
+                    zip: ''
+                }
+            }
+        }
+    }
+</script>
+```
+
+
+
+Cập nhập lại component Address của chúng ta
 
 ```html
 // Address.vue
@@ -96,11 +139,7 @@ Về nguyên tắc, chúng ta ko được thay đổi giá trị của `prop`, n
 </script>
 ```
 
-Khi sử dụng
 
-```html
-<mailing-address v-model="address" />
-```
 
 Nếu nó thêm một cấp nữa thì sao? Ví dụ bên trong `Address.vue` chúng ta nhét thêm một component cháu nội của `Form` nữa
 
