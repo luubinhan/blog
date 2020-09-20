@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Sử dụng useReducer và useContext để làm global state - VuiLapTrinh.com</title><meta name="gridsome:hash" content="2220dd7e21ec580c079d73e55205e2a635c3762b"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="A simple, hackable &amp; minimalistic starter for Gridsome that uses Markdown for content."><meta data-vue-tag="ssr" name="desc" content=""><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/blog/assets/static/favicon.ce0531f.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/blog/assets/static/favicon.ac8d93a.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/blog/assets/static/favicon.b9532cc.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/blog/assets/static/favicon.f22e9f3.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/blog/assets/static/favicon.62d22cb.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/blog/assets/static/favicon.1539b60.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/blog/assets/static/favicon.dc0cdc5.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/blog/assets/static/favicon.7b22250.9bb7ffafafc09ac851d81afb65b8ef59.png"><link rel="preload" href="/blog/assets/css/0.styles.9ab035e6.css" as="style"><link rel="preload" href="/blog/assets/js/app.24a01750.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.1906fe28.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.267eee57.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.12682fb0.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.9ab035e6.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Sử dụng useReducer và useContext để làm global state</h1><div class="post-meta">
+   Posted 2020-01-08.
+   <strong>3 min read.</strong></div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><p>Thông thường chúng ta sẽ dùng một <em>nhà kho</em> để chứa dữ liệu <code class="language-text">state</code> như <em>Redux</em>, một component container bọc ở nút đầu tiên trong app, các component con bên trong có thể truy xuất và cập nhập các dữ liệu một cách dễ dàng</p>
+<p>Với các API mới được React bổ sung là <code class="language-text">useState</code>, <code class="language-text">createContext</code>, <code class="language-text">useContext</code> chúng ta có <em>thêm một lựa chọn</em> để làm <em>nhà kho</em> mà ko cần dùng đến Redux</p>
+<p>Ví dụ chúng ta có 3 dữ liệu như bên dưới</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">const</span> teamMembersNames <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"John"</span><span class="token punctuation">,</span> <span class="token string">"Mary"</span><span class="token punctuation">,</span> <span class="token string">"Jason"</span><span class="token punctuation">,</span> <span class="token string">"David"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">[</span>sharing<span class="token punctuation">,</span> setSharing<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token maybe-class-name">React</span><span class="token punctuation">.</span><span class="token method function property-access">useState</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">[</span>help<span class="token punctuation">,</span> setHelp<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token maybe-class-name">React</span><span class="token punctuation">.</span><span class="token method function property-access">useState</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">[</span>pairing<span class="token punctuation">,</span> setPairing<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token maybe-class-name">React</span><span class="token punctuation">.</span><span class="token method function property-access">useState</span><span class="token punctuation">(</span>teamMembersNames<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Câu hỏi là làm sao chúng ta đưa dữ liệu vào <em>nhà kho</em>. Chúng ta sẽ dùng API <code class="language-text">createContext</code> (tạo em cái kho)</p>
+<p>Khi sử dụng <code class="language-text">React.createContext</code> chúng ta sẽ nhận về 2 component là <code class="language-text">Provider</code> (anh tung) và <code class="language-text">Consumer</code> (em hứng).</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token comment">// ./src/utils/store.js</span>
+<span class="token keyword module">export</span> <span class="token keyword">const</span> <span class="token maybe-class-name">StoreContext</span> <span class="token operator">=</span> <span class="token maybe-class-name">React</span><span class="token punctuation">.</span><span class="token method function property-access">createContext</span><span class="token punctuation">(</span><span class="token keyword null nil">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> children <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// các em đã vào nhà kho</span>
+  <span class="token keyword">const</span> teamMembersNames <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"John"</span><span class="token punctuation">,</span> <span class="token string">"Mary"</span><span class="token punctuation">,</span> <span class="token string">"Jason"</span><span class="token punctuation">,</span> <span class="token string">"David"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>sharing<span class="token punctuation">,</span> setSharing<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token maybe-class-name">React</span><span class="token punctuation">.</span><span class="token method function property-access">useState</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>help<span class="token punctuation">,</span> setHelp<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token maybe-class-name">React</span><span class="token punctuation">.</span><span class="token method function property-access">useState</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>pairing<span class="token punctuation">,</span> setPairing<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token maybe-class-name">React</span><span class="token punctuation">.</span><span class="token method function property-access">useState</span><span class="token punctuation">(</span>teamMembersNames<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token punctuation">{</span>
+    sharing<span class="token operator">:</span> <span class="token punctuation">[</span>sharing<span class="token punctuation">,</span> setSharing<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    help<span class="token operator">:</span> <span class="token punctuation">[</span>help<span class="token punctuation">,</span> setHelp<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    pairing<span class="token operator">:</span> <span class="token punctuation">[</span>pairing<span class="token punctuation">,</span> setPairing<span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">StoreContext.Provider</span></span> <span class="token attr-name">value</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>store<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">StoreContext.Provider</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>Để các component bên trong <code class="language-text">&lt;App/&gt;</code> đều dùng được <code class="language-text">&lt;Consumer /&gt;</code></p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token comment">// ./index.js</span>
+<span class="token keyword module">import</span> <span class="token maybe-class-name">React</span> <span class="token keyword module">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token maybe-class-name">ReactDOM</span> <span class="token keyword module">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">import</span> <span class="token maybe-class-name">App</span> <span class="token keyword module">from</span> <span class="token string">"./App"</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token maybe-class-name">StoreProvider</span> <span class="token keyword module">from</span> <span class="token string">"./utils/store"</span><span class="token punctuation">;</span>
+
+<span class="token maybe-class-name">ReactDOM</span><span class="token punctuation">.</span><span class="token method function property-access">render</span><span class="token punctuation">(</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">StoreProvider</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">App</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">StoreProvider</span></span><span class="token punctuation">></span></span><span class="token punctuation">,</span>
+  <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"root"</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Với bất kỳ component nào muốn sử dụng, để lấy được dữ liệu trong store, chúng ta sử dụng <code class="language-text">useContext</code></p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword module">import</span> <span class="token maybe-class-name">React</span> <span class="token keyword module">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">StoreContext</span> <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">"../utils/store"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function"><span class="token maybe-class-name">SomeComponent</span></span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// dữ liệu dùng chung</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> sharing <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token maybe-class-name">React</span><span class="token punctuation">.</span><span class="token method function property-access">useContext</span><span class="token punctuation">(</span><span class="token maybe-class-name">StoreContext</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>Hoặc nếu thích dùng cách viết render props, có thể dùng luôn component <code class="language-text">&lt;Consumer/&gt;</code></p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">StoreContext.Consumer</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+  </span><span class="token punctuation">{</span><span class="token parameter">store</span> <span class="token arrow operator">=></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">InputComponent</span></span> <span class="token attr-name">store</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>store<span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token punctuation">}</span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">StoreContext.Consumer</span></span><span class="token punctuation">></span></span></code></pre>
+<h2 id="ứng-dụng-làm-useauth"><a href="#%E1%BB%A9ng-d%E1%BB%A5ng-l%C3%A0m-useauth" aria-hidden="true"><span class="icon icon-link"></span></a>Ứng dụng làm <code class="language-text">useAuth</code></h2>
+<p>Một trong những ví dụ dễ thấy, phần dữ liệu nên đưa vào <em>nhà kho chung</em> là phần thông tin user đang đăng nhập</p>
+<p>Chúng ta sẽ cần 3 phần</p>
+<ol>
+<li>Khai báo một nhà kho bằng <code class="language-text">createContext</code></li>
+<li>Bộ <code class="language-text">reducer</code> làm nhiệm vụ cập nhập xử lý <code class="language-text">state</code></li>
+<li>Một hook tùy biến <code class="language-text">useAuth</code> cung cấp các API cần thiết để tương tác với <em>nhà kho chung</em> đã khai báo</li>
+</ol>
+<p>1) <strong>AuthProvider.js</strong> Khai báo nhà kho (bản rút gọn)</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token comment">// AuthProvider.js</span>
+<span class="token keyword module">import</span> authReducer <span class="token keyword module">from</span> <span class="token string">"authReducer"</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword">const</span> <span class="token maybe-class-name">AuthContext</span> <span class="token operator">=</span> <span class="token maybe-class-name">React</span><span class="token punctuation">.</span><span class="token method function property-access">createContext</span><span class="token punctuation">(</span><span class="token keyword null nil">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword">const</span> <span class="token function-variable function"><span class="token maybe-class-name">AuthProvider</span></span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> children <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// khởi tạo</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>state<span class="token punctuation">,</span> dispatch<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useReducer</span><span class="token punctuation">(</span>authReducer<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">AuthContext.Provider</span></span> <span class="token attr-name">value</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">[</span>state<span class="token punctuation">,</span> dispatch<span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">AuthContext.Provider</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<ol start="2">
+<li><strong>authReducer.js</strong> (bản rút gọn)</li>
+</ol>
+<pre class="language-js"><code class="language-js"><span class="token comment">// authReducer.js</span>
+<span class="token keyword">function</span> <span class="token function">authReducer</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token property-access">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">"login"</span><span class="token operator">:</span>
+      <span class="token keyword">const</span> <span class="token punctuation">{</span> authResult<span class="token punctuation">,</span> user <span class="token punctuation">}</span> <span class="token operator">=</span> action<span class="token punctuation">;</span>
+      <span class="token keyword">const</span> expiresAt <span class="token operator">=</span> authResult<span class="token punctuation">.</span><span class="token property-access">expiresIn</span> <span class="token operator">*</span> <span class="token number">1000</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token dom variable">localStorage</span><span class="token punctuation">.</span><span class="token method function property-access">setItem</span><span class="token punctuation">(</span><span class="token string">"expires_at"</span><span class="token punctuation">,</span> <span class="token known-class-name class-name">JSON</span><span class="token punctuation">.</span><span class="token method function property-access">stringify</span><span class="token punctuation">(</span>expiresAt<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token dom variable">localStorage</span><span class="token punctuation">.</span><span class="token method function property-access">setItem</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">,</span> <span class="token known-class-name class-name">JSON</span><span class="token punctuation">.</span><span class="token method function property-access">stringify</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span> user<span class="token punctuation">,</span> expiresAt <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">"logout"</span><span class="token operator">:</span>
+      <span class="token dom variable">localStorage</span><span class="token punctuation">.</span><span class="token method function property-access">removeItem</span><span class="token punctuation">(</span><span class="token string">"expires_at"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token dom variable">localStorage</span><span class="token punctuation">.</span><span class="token method function property-access">removeItem</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span> user<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> expiresAt<span class="token operator">:</span> <span class="token keyword null nil">null</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword module">default</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<ol start="3">
+<li>Một hook tùy biến <strong><code class="language-text">useAuth</code></strong></li>
+</ol>
+<pre class="language-js"><code class="language-js"><span class="token comment">// useAuth.js</span>
+<span class="token keyword module">import</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">AuthProvider</span> <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">"AuthProvider"</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword">const</span> <span class="token function-variable function">useAuth</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> state<span class="token punctuation">,</span> dispatch <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">userContext</span><span class="token punctuation">(</span><span class="token maybe-class-name">AuthContext</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">login</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+        <span class="token comment">// làm gì đó ở đây</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">logout</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+        <span class="token comment">// làm gì đó ở đây</span>
+        <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"logout"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// ...  còn một số thức khác</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">isAuthenticated</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> state<span class="token punctuation">.</span><span class="token property-access">expiresAt</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> state<span class="token punctuation">.</span><span class="token property-access">expiresAt</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token comment">// ...  còn một số thức khác</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        isAuthenticated<span class="token punctuation">,</span>
+        user<span class="token operator">:</span> state<span class="token punctuation">.</span><span class="token property-access">user</span><span class="token punctuation">,</span>
+        userId<span class="token operator">:</span> state<span class="token punctuation">.</span><span class="token property-access">user</span> <span class="token operator">?</span> state<span class="token punctuation">.</span><span class="token property-access">user</span> <span class="token operator">:</span> <span class="token keyword null nil">null</span><span class="token punctuation">;</span>
+        login<span class="token punctuation">,</span>
+        logout<span class="token punctuation">,</span>
+        handleAuthentication
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Với cách làm này, bất kỳ component nào sử dụng <code class="language-text">useAuth</code> đều sẽ truy xuất đến một kho dữ liệu <em>chung</em></p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword module">import</span> useAuth <span class="token keyword module">from</span> <span class="token string">"useAuth"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function"><span class="token maybe-class-name">MyCom</span></span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* quá trời thứ linh tinh trả về */</span>
+  <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useAuth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//...</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p><a href="https://swizec.com/blog/usereducer-usecontext-for-easy-global-state-without-libraries/swizec/9182" target="_blank" rel="nofollow noopener noreferrer">useReducer + useContext for easy global state without libraries</a></p>
+<p><a href="https://dev.to/nazmifeeroz/using-usecontext-and-usestate-hooks-as-a-store-mnm" target="_blank" rel="nofollow noopener noreferrer">Using useContext and useState hooks as a store</a></p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/thu-thuat/" class="post-tags__link"><span>#</span> thu-thuat
+		</a><a href="/blog/tag/react/" class="post-tags__link"><span>#</span> react
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020. </span><span class="footer__links">Powered by <a href="//gridsome.org"> Gridsome </a></span></footer></div>
+    <script src="/blog/assets/js/app.24a01750.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" defer></script>
+  </body>
+</html>

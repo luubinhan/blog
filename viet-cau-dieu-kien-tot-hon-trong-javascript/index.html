@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Viết câu điều kiện tốt hơn trong javascript - VuiLapTrinh.com</title><meta name="gridsome:hash" content="2220dd7e21ec580c079d73e55205e2a635c3762b"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="A simple, hackable &amp; minimalistic starter for Gridsome that uses Markdown for content."><meta data-vue-tag="ssr" name="desc" content="Xem xét một trong những câu lệnh được sử dụng nhiều nhất trong lập trình: câu điều kiện"><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/blog/assets/static/favicon.ce0531f.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/blog/assets/static/favicon.ac8d93a.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/blog/assets/static/favicon.b9532cc.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/blog/assets/static/favicon.f22e9f3.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/blog/assets/static/favicon.62d22cb.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/blog/assets/static/favicon.1539b60.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/blog/assets/static/favicon.dc0cdc5.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/blog/assets/static/favicon.7b22250.9bb7ffafafc09ac851d81afb65b8ef59.png"><link rel="preload" href="/blog/assets/css/0.styles.9ab035e6.css" as="style"><link rel="preload" href="/blog/assets/js/app.24a01750.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.1906fe28.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.267eee57.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.12682fb0.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.9ab035e6.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Viết câu điều kiện tốt hơn trong javascript</h1><div class="post-meta">
+   Posted 2019-10-13.
+   <strong>2 min read.</strong></div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#%C4%91i%E1%BB%81u-ki%E1%BB%87n-l%E1%BB%93ng-v%C3%A0o-nhau">Điều kiện lồng vào nhau</a></li>
+<li><a href="#arrayincludes">Array.includes</a></li>
+<li><a href="#return">return</a></li>
+<li><a href="#d%C3%B9ng-object-thay-cho-switchcase">Dùng Object thay cho switch...case</a></li>
+<li><a href="#params-m%E1%BA%B7c-%C4%91%E1%BB%8Bnh-v%C3%A0-destructuring">params mặc định và destructuring</a></li>
+<li><a href="#arrayevery-arraysome">Array.every, Array.some</a></li>
+</ul>
+<!-- /TOC -->
+<p>Một trong những <strong>món ăn</strong> mà anh em lập trình chúng ta phải nhai đi nhai lại trong suốt cuộc đời, dù là bạn đang viết ngôn ngữ gì là <strong>C U ĐIỀU KIỆN</strong>. Nếu không khéo trong lúc <strong>nấu code</strong>, thì món ngon đó đôi khi trở thành món dỡ ẹt, người sau vào ăn không thấy ngon, chúng ta tự ăn cũng không thấy ngon.</p>
+<p><em>Bài này được viết trong một chiều chủ nhật đang đói bụng</em></p>
+<h2 id="điều-kiện-lồng-vào-nhau"><a href="#%C4%91i%E1%BB%81u-ki%E1%BB%87n-l%E1%BB%93ng-v%C3%A0o-nhau" aria-hidden="true"><span class="icon icon-link"></span></a>Điều kiện lồng vào nhau</h2>
+<pre class="language-js"><code class="language-js">❌ <span class="token constant">T</span>ạm<span class="token punctuation">,</span> chưa ngon
+<span class="token keyword">let</span> result<span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>condition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>condition2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span> result<span class="token punctuation">;</span></code></pre>
+<p>Có vẻ không vấn đề nhỉ? Nhưng thật ra nó sẽ chạy y chang khi chúng ta viết thế này</p>
+<pre class="language-js"><code class="language-js">❌ <span class="token maybe-class-name">Không</span> ngon
+<span class="token keyword">let</span> result<span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>condition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>condition2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">return</span> result<span class="token punctuation">;</span></code></pre>
+<p>Du là thế nào đi nữa, gặp lồng câu điều kiện <code class="language-text">else...if...</code>  là phải tìm cách khử liền</p>
+<pre class="language-js"><code class="language-js">✅ <span class="token maybe-class-name">Chuẩn</span> cơm mẹ nấu
+<span class="token keyword">if</span> <span class="token punctuation">(</span>condition<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>condition2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="arrayincludes"><a href="#arrayincludes" aria-hidden="true"><span class="icon icon-link"></span></a>Array.includes</h2>
+<pre class="language-js"><code class="language-js">❌ <span class="token maybe-class-name">Không</span> ngon
+<span class="token keyword">if</span> <span class="token punctuation">(</span> animal <span class="token operator">==</span> <span class="token string">'dog'</span> <span class="token operator">||</span> animal <span class="token operator">==</span> <span class="token string">'cat'</span> <span class="token operator">||</span> animal <span class="token operator">==</span> <span class="token string">'turtle'</span><span class="token punctuation">)</span>
+
+✅ <span class="token maybe-class-name">Chuẩn</span> cơm mẹ nấu
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token string">'turtle'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token method function property-access">includes</span><span class="token punctuation">(</span>animal<span class="token punctuation">)</span>
+hoặc
+<span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">,</span> <span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token string">'turtle'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token method function property-access">indexOf</span><span class="token punctuation">(</span>animal<span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span></code></pre>
+<h2 id="return"><a href="#return" aria-hidden="true"><span class="icon icon-link"></span></a>return</h2>
+<pre class="language-js"><code class="language-js">❌ <span class="token maybe-class-name">Không</span> ngon
+<span class="token keyword">const</span> <span class="token function-variable function">printAnimalDetails</span> <span class="token operator">=</span> <span class="token parameter">animal</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> result<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>animal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>animal<span class="token punctuation">.</span><span class="token property-access">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>animal<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>animal<span class="token punctuation">.</span><span class="token property-access">gender</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          result <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>animal<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is a </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>animal<span class="token punctuation">.</span><span class="token property-access">gender</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>animal<span class="token punctuation">.</span><span class="token property-access">type</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          result <span class="token operator">=</span> <span class="token string">"No animal gender"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        result <span class="token operator">=</span> <span class="token string">"No animal name"</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      result <span class="token operator">=</span> <span class="token string">"No animal type"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    result <span class="token operator">=</span> <span class="token string">"No animal"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>Nếu bạn vẫn viết code thế này thì mình cũng lại!</p>
+<pre class="language-js"><code class="language-js">✅ <span class="token maybe-class-name">Chuẩn</span> cơm mẹ nấu
+<span class="token keyword">const</span> <span class="token function-variable function">printAnimalDetails</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>type<span class="token punctuation">,</span> name<span class="token punctuation">,</span> gender <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>type<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token string">'No animal type'</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>name<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token string">'No animal name'</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>gender<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token string">'No animal gender'</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>animal<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is a </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>animal<span class="token punctuation">.</span><span class="token property-access">gender</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>animal<span class="token punctuation">.</span><span class="token property-access">type</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="dùng-object-thay-cho-switchcase"><a href="#d%C3%B9ng-object-thay-cho-switchcase" aria-hidden="true"><span class="icon icon-link"></span></a>Dùng Object thay cho switch...case</h2>
+<p>Đoạn code return loại trái cây có màu sắc như điều kiện truyền vào</p>
+<pre class="language-js"><code class="language-js">❌ <span class="token maybe-class-name">Không</span> ngon
+<span class="token keyword">function</span> <span class="token function">printFruits</span><span class="token punctuation">(</span><span class="token parameter">color</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>color<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">'red'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token string">'apple'</span><span class="token punctuation">,</span> <span class="token string">'strawberry'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">'yellow'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token string">'banana'</span><span class="token punctuation">,</span> <span class="token string">'pineapple'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">'purple'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token string">'grape'</span><span class="token punctuation">,</span> <span class="token string">'plum'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword module">default</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Code như trên không sai, mà nếu dùng object làm thì sẽ ngon hơn nhiều</p>
+<pre class="language-js"><code class="language-js">✅ <span class="token maybe-class-name">Chuẩn</span> cơm mẹ nấu
+<span class="token keyword">function</span> <span class="token function">printFruits</span><span class="token punctuation">(</span><span class="token parameter">color</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> fruitColor <span class="token operator">=</span> <span class="token punctuation">{</span>
+      red<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'apple'</span><span class="token punctuation">,</span> <span class="token string">'strawberry'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      yellow<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'banana'</span><span class="token punctuation">,</span> <span class="token string">'pineapple'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      purple<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'grape'</span><span class="token punctuation">,</span> <span class="token string">'plum'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> fruitColor<span class="token punctuation">[</span>color<span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="params-mặc-định-và-destructuring"><a href="#params-m%E1%BA%B7c-%C4%91%E1%BB%8Bnh-v%C3%A0-destructuring" aria-hidden="true"><span class="icon icon-link"></span></a>params mặc định và destructuring</h2>
+<pre class="language-js"><code class="language-js">❌ <span class="token maybe-class-name">Không</span> ngon
+<span class="token keyword">function</span> <span class="token function">printVegetableName</span><span class="token punctuation">(</span><span class="token parameter">vegetable</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>vegetable <span class="token operator">&amp;&amp;</span> vegetable<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span> <span class="token punctuation">(</span>vegetable<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+   <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'unknown'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-js"><code class="language-js">✅ <span class="token maybe-class-name">Chuẩn</span> cơm mẹ nấu
+<span class="token keyword">function</span> <span class="token function">printVegetableName</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> name <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span> <span class="token punctuation">(</span>name <span class="token operator">||</span> <span class="token string">'unknown'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="arrayevery-arraysome"><a href="#arrayevery-arraysome" aria-hidden="true"><span class="icon icon-link"></span></a>Array.every, Array.some</h2>
+<p>Đoạn code kiểm tra tất cả trái cây có màu đó</p>
+<pre class="language-js"><code class="language-js">❌ <span class="token maybe-class-name">Không</span> ngon
+<span class="token keyword">const</span> fruits <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'apple'</span><span class="token punctuation">,</span> color<span class="token operator">:</span> <span class="token string">'red'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'banana'</span><span class="token punctuation">,</span> color<span class="token operator">:</span> <span class="token string">'yellow'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'grape'</span><span class="token punctuation">,</span> color<span class="token operator">:</span> <span class="token string">'purple'</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> isAllRed <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> f <span class="token keyword">of</span> fruits<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isAllRed<span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+    isAllRed <span class="token operator">=</span> <span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token property-access">color</span> <span class="token operator">==</span> <span class="token string">'red'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>isAllRed<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Thay vì dùng vòng lặp for, có thể dùng <code class="language-text">Array.every</code></p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> isAllRed <span class="token operator">=</span> fruits<span class="token punctuation">.</span><span class="token method function property-access">every</span><span class="token punctuation">(</span><span class="token parameter">f</span> <span class="token arrow operator">=></span> f<span class="token punctuation">.</span><span class="token property-access">color</span> <span class="token operator">==</span> <span class="token string">'red'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>isAllRed<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Chỉ cần vài item trong đó thỏa điều kiện là được, ta dùng <code class="language-text">Array.some</code></p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> isAllRed <span class="token operator">=</span> fruits<span class="token punctuation">.</span><span class="token method function property-access">some</span><span class="token punctuation">(</span><span class="token parameter">f</span> <span class="token arrow operator">=></span> f<span class="token punctuation">.</span><span class="token property-access">color</span> <span class="token operator">==</span> <span class="token string">'red'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a target="_blank" rel="noopener noreferrer" href="https://dev.to/hellomeghna/tips-to-write-better-conditionals-in-javascript-2189">📜 Tips to write better Conditionals in JavaScript</a></p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/javascript/" class="post-tags__link"><span>#</span> javascript
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020. </span><span class="footer__links">Powered by <a href="//gridsome.org"> Gridsome </a></span></footer></div>
+    <script src="/blog/assets/js/app.24a01750.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" defer></script>
+  </body>
+</html>

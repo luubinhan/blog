@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Câu điều kiện trong javascript - VuiLapTrinh.com</title><meta name="gridsome:hash" content="2220dd7e21ec580c079d73e55205e2a635c3762b"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="A simple, hackable &amp; minimalistic starter for Gridsome that uses Markdown for content."><meta data-vue-tag="ssr" name="desc" content="Nắm vững conditional expression trong javascript để viết code sạch sẽ hơn"><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/blog/assets/static/favicon.ce0531f.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/blog/assets/static/favicon.ac8d93a.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/blog/assets/static/favicon.b9532cc.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/blog/assets/static/favicon.f22e9f3.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/blog/assets/static/favicon.62d22cb.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/blog/assets/static/favicon.1539b60.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/blog/assets/static/favicon.dc0cdc5.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/blog/assets/static/favicon.7b22250.9bb7ffafafc09ac851d81afb65b8ef59.png"><link rel="preload" href="/blog/assets/css/0.styles.9ab035e6.css" as="style"><link rel="preload" href="/blog/assets/js/app.24a01750.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.1906fe28.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.267eee57.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.12682fb0.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.9ab035e6.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Câu điều kiện trong javascript</h1><div class="post-meta">
+   Posted 2018-11-16.
+   <strong>4 min read.</strong></div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#ph%C3%A2n-bi%E1%BB%87t-expression-v%C3%A0-statement">Phân biệt Expression và Statement</a></li>
+<li><a href="#ph%C3%A2n-bi%E1%BB%87t-truefalse-truthyfalsy">Phân biệt <code class="language-text">true/false</code>, <code class="language-text">truthy/falsy</code></a></li>
+<li><a href="#ph%C3%A2n-bi%E1%BB%87t-to%C3%A1n-t%E1%BB%AD-and--v%C3%A0-or-">Phân biệt toán tử AND <code class="language-text">&amp;&amp;</code> và OR <code class="language-text">||</code></a></li>
+<li><a href="#thay-statement-b%E1%BA%B1ng-expression">Thay statement bằng expression</a></li>
+<li><a href="#m%E1%BB%99t-s%E1%BB%91-c%C3%A1ch-vi%E1%BA%BFt-t%E1%BA%AFt-v%C3%A0-l%C6%B0u-%C3%BD">Một số cách viết tắt và lưu ý</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="phân-biệt-expression-và-statement"><a href="#ph%C3%A2n-bi%E1%BB%87t-expression-v%C3%A0-statement" aria-hidden="true"><span class="icon icon-link"></span></a>Phân biệt Expression và Statement</h2>
+<p>Trước tiên chúng ta ôn lại expression và statement trong javascript.</p>
+<div class="note">An expression is any phrase that the JavaScript engine can evaluate to <strong>produce a value.</strong></div>
+<p>Expression là một đoạn code luôn trả về 1 giá trị.
+Bên dưới là expression</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// number</span>
+<span class="token number">0xFF</span>
+
+<span class="token comment">// array</span>
+<span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token comment">// object</span>
+<span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">// regexp</span>
+<span class="token operator">/</span><span class="token operator">^</span>\d<span class="token operator">+</span>$<span class="token operator">/</span>
+
+<span class="token comment">// logical AND operation</span>
+<span class="token punctuation">(</span>x <span class="token operator">&amp;&amp;</span> y<span class="token punctuation">)</span>
+
+<span class="token comment">// bitwise XOR operation</span>
+<span class="token punctuation">(</span>x <span class="token operator">^</span> y<span class="token punctuation">)</span>
+
+<span class="token comment">// ternary operation</span>
+<span class="token punctuation">(</span>x <span class="token operator">?</span> y <span class="token operator">:</span> z<span class="token punctuation">)</span>
+
+<span class="token comment">// arithmetic operation</span>
+<span class="token punctuation">(</span>x <span class="token operator">+</span> y<span class="token punctuation">)</span> <span class="token operator">/</span> z
+
+<span class="token comment">// assignment</span>
+x <span class="token operator">=</span> <span class="token string">'string'</span>
+
+<span class="token comment">// function expression</span>
+<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">x</span><span class="token punctuation">(</span><span class="token parameter">y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// function invocation</span>
+<span class="token function">x</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+
+<span class="token comment">// object property access</span>
+obj<span class="token punctuation">.</span><span class="token property-access">students</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token property-access">name</span></code></pre>
+<div class="note">
+A statement is any sentence or command that the JavaScript engine can execute to make <strong>something happen</strong> or cause some <strong>side-effect</strong>.
+</div>
+<p>Statement là lệnh, tập lệnh thực hiện một hành động.</p>
+<p>Câu điều kiện, khai báo biến, khai báo hàm, loop, throw, try/catch/finally là  statement</p>
+<h2 id="phân-biệt-truefalse-truthyfalsy"><a href="#ph%C3%A2n-bi%E1%BB%87t-truefalse-truthyfalsy" aria-hidden="true"><span class="icon icon-link"></span></a>Phân biệt <code class="language-text">true/false</code>, <code class="language-text">truthy/falsy</code></h2>
+<p>Tất cả giá trị trong javascript đều có thể phân thành <strong>truthy</strong> hoặc <strong>falsy</strong> ( không phải true/false)</p>
+<p>Các giá trị sau được xếp vào <strong>falsy</strong></p>
+<div class="note">
+  '', "", ``, 0, -0, null, undefined, NaN, false
+</div>
+<p>Các giá trị còn lại được coi là <strong>truthy</strong>. Khi nào javascript cần giá trị là <code class="language-text">Boolean</code>, nó sẽ tự động đưa những giá trị trong nhóm truthy thành <code class="language-text">true</code>, nhóm falsy thành <code class="language-text">false</code></p>
+<p>Nếu không tin, bạn có thể kiểm tra</p>
+<pre class="language-js"><code class="language-js"><span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token keyword null nil">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// null</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token known-class-name class-name">Boolean</span><span class="token punctuation">(</span><span class="token keyword null nil">null</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span></code></pre>
+<p>Hoặc bạn có thể dùng operator <code class="language-text">!!</code> để chuyển một giá trị thành boolean.</p>
+<pre class="language-js"><code class="language-js"><span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token keyword null nil">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// null</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">(</span><span class="token keyword null nil">null</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span></code></pre>
+<h2 id="phân-biệt-toán-tử-and--và-or-"><a href="#ph%C3%A2n-bi%E1%BB%87t-to%C3%A1n-t%E1%BB%AD-and--v%C3%A0-or-" aria-hidden="true"><span class="icon icon-link"></span></a>Phân biệt toán tử AND <code class="language-text">&amp;&amp;</code> và OR <code class="language-text">||</code></h2>
+<p>Operator <code class="language-text">&amp;&amp;</code> và <code class="language-text">||</code> sẽ cho kết quả là một boolean. Lưu ý là <code class="language-text">&amp;&amp;</code> sẽ ưu tiên chạy trước <code class="language-text">||</code>, nếu muốn thay đổi thứ tự ưu tiên thì phải dùng <code class="language-text">()</code></p>
+<pre class="language-js"><code class="language-js"><span class="token boolean">false</span> <span class="token operator">&amp;&amp;</span> <span class="token boolean">true</span> <span class="token operator">||</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+<span class="token boolean">false</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token boolean">true</span> <span class="token operator">||</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span></code></pre>
+<p>2 toán tử AND và OR có một đặc điểm: thằng đứng trước luôn được tính giá trị, thằng thứ 2 có thể sẽ không được đếm xỉa luôn. </p>
+<p><code class="language-text">&amp;&amp;</code> và <code class="language-text">||</code> <strong>không phải lúc nào cũng trả về kết quả boolean</strong> (true, false), nó thích trả về gì là nó trả thôi.</p>
+<div class="note">Nếu mệnh đề đầu của <code>&&</code> nó trả về <strong>truthy</strong> nó tính kết quả và trả về mệnh đề 2, nếu mệnh đề đầu là <strong>falsy</strong> thì bỏ qua mệnh đề 2. </div>
+<pre class="language-js"><code class="language-js"><span class="token comment">// 'a' là 'truthy', nên 'a' &amp;&amp; 'b' sẽ trả về 'b'</span>
+<span class="token punctuation">(</span><span class="token string">'a'</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'b'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'a'</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+<span class="token punctuation">(</span><span class="token string">'a'</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'b'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'b'</span><span class="token punctuation">;</span> <span class="token comment">// true</span></code></pre>
+<div class="note">Nếu mệnh đề đầu của <code>||</code> trả về <strong>truthy</strong>, nó ko quan tâm đến mệnh đề 2, nếu mệnh đề đầu là <strong>falsy</strong> nó sẽ tính và trả về giá trị mệnh đề 2</div>
+<pre class="language-js"><code class="language-js"><span class="token punctuation">(</span>a <span class="token operator">||</span> b<span class="token punctuation">)</span> <span class="token operator">===</span> a<span class="token punctuation">;</span> <span class="token comment">// true</span>
+<span class="token punctuation">(</span>a <span class="token operator">||</span> b<span class="token punctuation">)</span> <span class="token operator">===</span> b<span class="token punctuation">;</span> <span class="token comment">// false</span></code></pre>
+<h2 id="thay-statement-bằng-expression"><a href="#thay-statement-b%E1%BA%B1ng-expression" aria-hidden="true"><span class="icon icon-link"></span></a>Thay statement bằng expression</h2>
+<pre class="language-js"><code class="language-js"><span class="token comment">// viết kiểu statement</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>user <span class="token operator">&amp;&amp;</span> user<span class="token punctuation">.</span><span class="token property-access">canDeletePost</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">deletePost</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// viết kiểu expresion</span>
+user <span class="token operator">&amp;&amp;</span> user<span class="token punctuation">.</span><span class="token property-access">canDeletePost</span> <span class="token operator">&amp;&amp;</span> <span class="token function">deletePost</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Một câu if...else... đơn giản như kiểm tra độ mạnh mật khẩu</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> strength <span class="token operator">=</span> <span class="token keyword null nil">null</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>password<span class="token punctuation">.</span><span class="token property-access">length</span> <span class="token operator">></span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  strength <span class="token operator">=</span> <span class="token string">'Strong'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  strength <span class="token operator">=</span> <span class="token string">'Weak'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// viết kiểu expresion,</span>
+<span class="token keyword">const</span> strength <span class="token operator">=</span> <span class="token punctuation">(</span>password<span class="token punctuation">.</span><span class="token property-access">length</span> <span class="token operator">></span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'Strong'</span> <span class="token operator">||</span> <span class="token string">'Weak'</span><span class="token punctuation">;</span>
+<span class="token comment">// khuyên dùng ternary operator trong trường hợp này</span>
+<span class="token keyword">const</span> strength <span class="token operator">=</span> <span class="token punctuation">(</span>password<span class="token punctuation">.</span><span class="token property-access">length</span> <span class="token operator">></span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">'Strong'</span> <span class="token operator">:</span> <span class="token string">'Weak'</span><span class="token punctuation">;</span></code></pre>
+<p>ternary operator là kiểu viết thế này, nếu bạn có quên</p>
+<pre class="language-js"><code class="language-js">condition <span class="token operator">?</span> <span class="token constant">A</span> <span class="token operator">:</span> <span class="token constant">B</span></code></pre>
+<p>Trong nhiều trường hợp như ví dụ bên dưới, việc sử dụng expression sẽ vô vùng nguy hiểm</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> xmlhttp <span class="token operator">=</span> <span class="token keyword null nil">null</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">XMLHttpRequest</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+  <span class="token comment">// Modern browsers</span>
+  xmlhttp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ActiveXObject</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+  <span class="token comment">// Older versions of Internet Explorer (IE &lt;= 6)</span>
+  xmlhttp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ActiveXObject</span><span class="token punctuation">(</span><span class="token string">'Microsoft.XMLHTTP'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token punctuation">}</span></code></pre>
+<p>Nếu chúng ta viết bằng expression</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> xmlhttp <span class="token operator">=</span> <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">XMLHttpRequest</span></span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token operator">||</span> <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ActiveXObject</span></span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">new</span> <span class="token class-name">ActiveXObject</span><span class="token punctuation">(</span><span class="token string">'Microsoft.XMLHTTP'</span><span class="token punctuation">)</span>
+  <span class="token operator">||</span> <span class="token keyword null nil">null</span><span class="token punctuation">;</span></code></pre>
+<p>Lạm dụng expression như vậy là không nên, chúng ta nên viết một cách rõ ràng hơn bằng ternary operator</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> xmlhttp <span class="token operator">=</span> <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">XMLHttpRequest</span></span>
+  <span class="token operator">?</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token operator">:</span> <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ActiveXObject</span></span>
+    <span class="token operator">?</span> <span class="token keyword">new</span> <span class="token class-name">ActiveXObject</span><span class="token punctuation">(</span><span class="token string">'Microsoft.XMLHTTP'</span><span class="token punctuation">)</span>
+    <span class="token operator">:</span> <span class="token keyword null nil">null</span><span class="token punctuation">;</span></code></pre>
+<h2 id="một-số-cách-viết-tắt-và-lưu-ý"><a href="#m%E1%BB%99t-s%E1%BB%91-c%C3%A1ch-vi%E1%BA%BFt-t%E1%BA%AFt-v%C3%A0-l%C6%B0u-%C3%BD" aria-hidden="true"><span class="icon icon-link"></span></a>Một số cách viết tắt và lưu ý</h2>
+<p>Luật De Morgan</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// là như nhau</span>
+<span class="token operator">!</span><span class="token constant">A</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token constant">B</span> <span class="token operator">==</span> <span class="token operator">!</span><span class="token punctuation">(</span><span class="token constant">A</span> <span class="token operator">||</span> <span class="token constant">B</span><span class="token punctuation">)</span>
+
+<span class="token comment">// như nhau luôn</span>
+<span class="token operator">!</span><span class="token constant">A</span> <span class="token operator">||</span> <span class="token operator">!</span><span class="token constant">B</span> <span class="token operator">==</span> <span class="token operator">!</span><span class="token punctuation">(</span><span class="token constant">A</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">B</span><span class="token punctuation">)</span></code></pre>
+<p>Nếu <code class="language-text">A</code>, <code class="language-text">B</code>, <code class="language-text">C</code> là các giá trị Boolean</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// chuyển AND qua OR</span>
+<span class="token constant">A</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">B</span> <span class="token operator">==</span> <span class="token operator">!</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token constant">A</span> <span class="token operator">||</span> <span class="token operator">!</span><span class="token constant">B</span><span class="token punctuation">)</span>
+
+<span class="token comment">// chuyển OR qua AND</span>
+<span class="token constant">A</span> <span class="token operator">||</span> <span class="token constant">B</span> <span class="token operator">==</span> <span class="token operator">!</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token constant">A</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token constant">B</span><span class="token punctuation">)</span>
+
+<span class="token comment">// bỏ nested AND</span>
+<span class="token constant">A</span> <span class="token operator">||</span> <span class="token punctuation">(</span><span class="token constant">B</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">C</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token constant">A</span> <span class="token operator">||</span> <span class="token constant">B</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">C</span>
+
+<span class="token comment">// bỏ nested OR</span>
+<span class="token constant">A</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token constant">B</span> <span class="token operator">||</span> <span class="token constant">C</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">!</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token constant">A</span> <span class="token operator">||</span> <span class="token operator">!</span><span class="token constant">B</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token constant">C</span><span class="token punctuation">)</span></code></pre>
+<p>Chúng ta có ví dụ ở trên sử dụng ternary operator để giải quyết các câu if lồng vào nhau.</p>
+<p>ternary operator có độ ưu tiên thấp hơn các xử lý logic và tính toán  khác</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// câu này</span>
+<span class="token constant">A</span> <span class="token operator">?</span> <span class="token constant">B</span> <span class="token operator">+</span> <span class="token constant">C</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">D</span> <span class="token operator">:</span> <span class="token constant">E</span> <span class="token operator">||</span> <span class="token constant">F</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">G</span>
+
+<span class="token comment">// sẽ chạy theo thứ tự sao</span>
+<span class="token constant">A</span> <span class="token operator">?</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token constant">B</span><span class="token operator">+</span><span class="token constant">C</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">D</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token punctuation">(</span><span class="token constant">E</span> <span class="token operator">||</span> <span class="token punctuation">(</span><span class="token constant">F</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">G</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p>Nếu lồng nhiều ternary operator vào nhau nó sẽ chạy từ <strong>phải qua trái</strong></p>
+<pre class="language-js"><code class="language-js"><span class="token constant">A</span> <span class="token operator">?</span> <span class="token constant">B</span> <span class="token operator">:</span> <span class="token constant">C</span> <span class="token operator">?</span> <span class="token constant">D</span> <span class="token operator">:</span> <span class="token constant">E</span> <span class="token operator">?</span> <span class="token constant">F</span> <span class="token operator">:</span> <span class="token constant">G</span>
+
+<span class="token comment">// sẽ chạy theo thứ tự</span>
+<span class="token punctuation">(</span><span class="token constant">A</span> <span class="token operator">?</span> <span class="token constant">B</span> <span class="token operator">:</span> <span class="token punctuation">(</span><span class="token constant">C</span> <span class="token operator">?</span> <span class="token constant">D</span> <span class="token operator">:</span> <span class="token punctuation">(</span><span class="token constant">E</span> <span class="token operator">?</span> <span class="token constant">F</span> <span class="token operator">:</span> <span class="token constant">G</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p>Để thay đổi độ ưu tiên của nó trong expression chúng ta phải dùng dấu <code class="language-text">()</code></p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// expresion</span>
+<span class="token constant">A</span> <span class="token operator">?</span> <span class="token constant">B</span> <span class="token operator">:</span> <span class="token punctuation">(</span><span class="token constant">C</span> <span class="token operator">?</span> <span class="token constant">D</span> <span class="token operator">:</span> <span class="token constant">E</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token constant">F</span> <span class="token operator">:</span> <span class="token constant">G</span>
+
+<span class="token comment">// ưu tiên chạy sẽ là</span>
+<span class="token punctuation">(</span><span class="token constant">A</span> <span class="token operator">?</span> <span class="token constant">B</span> <span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token constant">C</span> <span class="token operator">?</span> <span class="token constant">D</span> <span class="token operator">:</span> <span class="token constant">E</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token constant">F</span> <span class="token operator">:</span> <span class="token constant">G</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<p>Rất vui là bạn cũng đọc được tới đây của bài viết, nếu bạn đã hiểu hết những gì mình trình bày, Bravo, bạn là chuyên gia rồi, nếu chưa hiểu hết bạn nên đọc lại vài lần vì cách viết câu điều kiện và hiểu cách nó chạy như thế nào, thứ tự ra sao là kiến thức cực kỳ quan trọng để bạn đọc hiểu đưọc những đoạn code quá xá phức tạp của mấy bác Senior</p>
+<p><a href="https://hackernoon.com/conditional-javascript-for-experts-d2â456è67c" target="_blank" rel="noopener noreferrer">Conditional JavaScript for Experts</a></p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/javascript/" class="post-tags__link"><span>#</span> javascript
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020. </span><span class="footer__links">Powered by <a href="//gridsome.org"> Gridsome </a></span></footer></div>
+    <script src="/blog/assets/js/app.24a01750.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" defer></script>
+  </body>
+</html>

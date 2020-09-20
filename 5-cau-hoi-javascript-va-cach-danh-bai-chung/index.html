@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>5 câu hỏi javascript và cách đánh bại chúng - VuiLapTrinh.com</title><meta name="gridsome:hash" content="2220dd7e21ec580c079d73e55205e2a635c3762b"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="A simple, hackable &amp; minimalistic starter for Gridsome that uses Markdown for content."><meta data-vue-tag="ssr" name="desc" content="Mỗi công ty mỗi kiểu phỏng vấn, điều hay bị phàn nàn trong các buổi phỏng vấn là phần lớn nó không liên quan tới những công việc hằng ngày mà vị trí đó đòi hỏi."><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/blog/assets/static/favicon.ce0531f.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/blog/assets/static/favicon.ac8d93a.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/blog/assets/static/favicon.b9532cc.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/blog/assets/static/favicon.f22e9f3.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/blog/assets/static/favicon.62d22cb.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/blog/assets/static/favicon.1539b60.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/blog/assets/static/favicon.dc0cdc5.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/blog/assets/static/favicon.7b22250.9bb7ffafafc09ac851d81afb65b8ef59.png"><link rel="preload" href="/blog/assets/css/0.styles.9ab035e6.css" as="style"><link rel="preload" href="/blog/assets/js/app.24a01750.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.1906fe28.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.267eee57.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.12682fb0.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.9ab035e6.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">5 câu hỏi javascript và cách đánh bại chúng</h1><div class="post-meta">
+   Posted 2020-07-21.
+   <strong>4 min read.</strong></div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#x%C3%A1c-%C4%91%E1%BB%8Bnh-chu%E1%BB%97i-%C4%91%E1%BB%91i-x%E1%BB%A9ng-palindrome">Xác định chuỗi đối xứng (palindrome)</a></li>
+<li><a href="#fizzbuzz">FizzBuzz</a></li>
+<li><a href="#%C4%91%E1%BA%A3o-ch%E1%BB%AF">Đảo chữ</a></li>
+<li><a href="#%C4%91%E1%BA%BFm-s%E1%BB%91-nguy%C3%AAn-%C3%A2m">Đếm số nguyên âm</a></li>
+<li><a href="#fibonacci">Fibonacci</a></li>
+</ul>
+<!-- /TOC -->
+<p>Có những lúc thấy các vấn đề liên quan trực tiếp tới frontend như các sự kiện của DOM, tương thích trên các trình duyệt khác nhau, phương pháp làm layout lại không được hỏi. Những người đứng vị trí tuyển dụng sẽ nhìn nhận như thế này</p>
+<blockquote>
+<p>Chúng tôi thích thuê những người thông minh, chứ không thích người biết rõ về một kỹ thuật nào đó, nhưng lại thiếu sáng tạo, thiếu logic và thiếu biện chứng.</p>
+</blockquote>
+<p>Dù là quan điểm nào đi nữa, nhưng phỏng vấn thì coding challenge vẫn là một phần quan trọng trong phỏng vấn.</p>
+<h2 id="xác-định-chuỗi-đối-xứng-palindrome"><a href="#x%C3%A1c-%C4%91%E1%BB%8Bnh-chu%E1%BB%97i-%C4%91%E1%BB%91i-x%E1%BB%A9ng-palindrome" aria-hidden="true"><span class="icon icon-link"></span></a>Xác định chuỗi đối xứng (palindrome)</h2>
+<p>Chuỗi đối xứng là chuỗi khi đảo ký tự từ trái qua phải và từ phải qua trái không thay đổi, như chữ "racecar", "anna", "tenet". (Film tenet không biết khi nào mới chiếu, nghe đâu hoãn dài hơi vì covid)</p>
+<p>Yêu cầu, cho bạn một chuỗi, xác định nó phải là đối xứng không</p>
+<pre class="language-js"><code class="language-js"><span class="token function">isPalindrome</span><span class="token punctuation">(</span><span class="token string">"racecar"</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token function">isPalindrome</span><span class="token punctuation">(</span><span class="token string">"table"</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">;</span></code></pre>
+<p>Đáp án</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">palindrome</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// chuyển qua lowercase trước</span>
+  str <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token method function property-access">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// chuyển thành array, reverse rồi so sánh</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    str <span class="token operator">===</span>
+    str
+      <span class="token punctuation">.</span><span class="token method function property-access">split</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token method function property-access">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token method function property-access">join</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<h2 id="fizzbuzz"><a href="#fizzbuzz" aria-hidden="true"><span class="icon icon-link"></span></a>FizzBuzz</h2>
+<p>Yêu cầu: viết một function đáp ứng những chuyện sau</p>
+<ul>
+<li>log ra các số từ 1 đến n, n là một parameter truyền vào</li>
+<li>log ra chữ <code class="language-text">fizz</code> nếu là bội số của 3</li>
+<li>log ra buzz nếu là bội số của 5</li>
+<li>log ra fizzbuzz nếu là bội số của cả 3 và 5</li>
+</ul>
+<pre class="language-js"><code class="language-js"><span class="token function">fizzBuzz</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 1</span>
+<span class="token comment">// 2</span>
+<span class="token comment">// fizz</span>
+<span class="token comment">// 4</span>
+<span class="token comment">// buzz</span></code></pre>
+<p>Để giải quyết bài toán này, chúng ta cần nhớ đến cách dùng <code class="language-text">%</code> để biết được số dư của phép chia, trả về 0 là chia hết, ngược lại thì không chia hết</p>
+<pre class="language-js"><code class="language-js"><span class="token number">12</span> <span class="token operator">%</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token comment">// 2 -> 12 không phải bội số của 5</span>
+<span class="token number">12</span> <span class="token operator">%</span> <span class="token number">3</span><span class="token punctuation">;</span> <span class="token comment">// 0 -> 12 là bộ số của 3</span></code></pre>
+<p>Đáp án</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">fizzBuzz</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> num<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// kiểm tra xem có là bội số của cả 3 và 5</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> i <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"fizzbuzz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token comment">// có phải là bội số của 3</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"fizz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token comment">// có phải là bội số của 5</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"buzz"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<h2 id="đảo-chữ"><a href="#%C4%91%E1%BA%A3o-ch%E1%BB%AF" aria-hidden="true"><span class="icon icon-link"></span></a>Đảo chữ</h2>
+<p>Yêu cầu: viết một function, params truyền vào 2 chuỗi, trả về <code class="language-text">true</code> nếu 2 chuỗi này là dạng đảo của nhau và <code class="language-text">false</code> cho trường hợp ngược lại.</p>
+<p>2 chuỗi gọi là đảo nhau nếu số ký tự hoàn toàn giống nhau (không kể hoa thường), chỉ khác thứ tự.</p>
+<pre class="language-js"><code class="language-js"><span class="token function">anagram</span><span class="token punctuation">(</span><span class="token string">'finder'</span><span class="token punctuation">,</span> <span class="token string">'Friend'</span><span class="token punctuation">)</span>  <span class="token operator">--</span><span class="token operator">></span> <span class="token boolean">true</span>
+<span class="token function">anagram</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">,</span> <span class="token string">'bye'</span><span class="token punctuation">)</span> <span class="token operator">--</span><span class="token operator">></span> <span class="token boolean">false</span></code></pre>
+<p>Đây là một cách làm</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// hàm helper để build một object làm nơi lưu trữ</span>
+<span class="token keyword">const</span> <span class="token function-variable function">buildCharObject</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> charObj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> char <span class="token keyword">of</span> str<span class="token punctuation">.</span><span class="token method function property-access">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token language-regex"><span class="token charset"><span class="token charset-punctuation punctuation">[</span><span class="token charset-negation operator">^</span><span class="token charclass class-name">\w</span><span class="token charset-punctuation punctuation">]</span></span></span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// nếu object đã chứa giá trị đang loop qua</span>
+    <span class="token comment">// tăng giá trị nó lên 1,</span>
+    <span class="token comment">// ngược lại, thêm mới ký tự này vào object với giá trị = 1</span>
+    charObj<span class="token punctuation">[</span>char<span class="token punctuation">]</span> <span class="token operator">=</span> charObj<span class="token punctuation">[</span>char<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">||</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> charObj<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// hàm chính</span>
+<span class="token keyword">const</span> <span class="token function-variable function">anagram</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">strA<span class="token punctuation">,</span> strB</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// lưu giá trị của strA vào object</span>
+  <span class="token keyword">const</span> aCharObject <span class="token operator">=</span> <span class="token function">buildCharObject</span><span class="token punctuation">(</span>strA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// lưu giá trị strB vào object</span>
+  <span class="token keyword">const</span> bCharObject <span class="token operator">=</span> <span class="token function">buildCharObject</span><span class="token punctuation">(</span>strB<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// so sánh độ dài giữa 2 object</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">keys</span><span class="token punctuation">(</span>aCharObject<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">length</span> <span class="token operator">!==</span> <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">keys</span><span class="token punctuation">(</span>bCharObject<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// đã chắc chắn về length giống nhau</span>
+  <span class="token comment">// kiểm tra tiếp số lượng các ký tự có giống nhau</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> char <span class="token keyword">in</span> aCharObject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>aCharObject<span class="token punctuation">[</span>char<span class="token punctuation">]</span> <span class="token operator">!==</span> bCharObject<span class="token punctuation">[</span>char<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<h2 id="đếm-số-nguyên-âm"><a href="#%C4%91%E1%BA%BFm-s%E1%BB%91-nguy%C3%AAn-%C3%A2m" aria-hidden="true"><span class="icon icon-link"></span></a>Đếm số nguyên âm</h2>
+<p>Nguyên âm: anh-ôm-em-ú-ì, <code class="language-text">a</code>, <code class="language-text">o</code>, <code class="language-text">e</code>, <code class="language-text">u</code>, <code class="language-text">i</code>.</p>
+<p>Viết một function nhận vào string, trả về số lượng nguyên âm có trong string</p>
+<pre class="language-js"><code class="language-js"><span class="token function">findVowels</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// --> 2</span>
+<span class="token function">findVowels</span><span class="token punctuation">(</span><span class="token string">"why"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// --> 0</span></code></pre>
+<p>Đáp án</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">findVowels</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> vowels <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"o"</span><span class="token punctuation">,</span> <span class="token string">"e"</span><span class="token punctuation">,</span> <span class="token string">"u"</span><span class="token punctuation">,</span> <span class="token string">"i"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> char <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token property-access">length</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>vowels<span class="token punctuation">.</span><span class="token method function property-access">includes</span><span class="token punctuation">(</span>char<span class="token punctuation">.</span><span class="token method function property-access">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      count<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> count<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>Có thể dùng regular expression</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">findVowels</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> matched <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token method function property-access">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token language-regex"><span class="token charset"><span class="token charset-punctuation punctuation">[</span>aeiou<span class="token charset-punctuation punctuation">]</span></span></span><span class="token regex-delimiter">/</span><span class="token regex-flags">gi</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> matched <span class="token operator">?</span> matches<span class="token punctuation">.</span><span class="token property-access">length</span> <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<h2 id="fibonacci"><a href="#fibonacci" aria-hidden="true"><span class="icon icon-link"></span></a>Fibonacci</h2>
+<p>Cái này kinh điển. Mọi dân lập trình đều đụng tới dãy số fibonacci, thật thiếu sót nếu không đề cập ở đây.</p>
+<p>Fibonacci là dãy số, mà số bên phải = tổng 2 số đứng bên trái. Như thế này: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34</p>
+<p>Yêu cầu: một function nhận params là n, trả về giá trị <code class="language-text">n</code> trong dãy fibonacci</p>
+<pre class="language-js"><code class="language-js"><span class="token function">fibonacci</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// --> 2</span></code></pre>
+<p>Đáp án</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">fibonacci</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> num<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> prevNum1 <span class="token operator">=</span> result<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> prevNum2 <span class="token operator">=</span> result<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    result<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span>prevNum1 <span class="token operator">+</span> prevNum2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> result<span class="token punctuation">[</span>num<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>hoặc dùng đệ quy</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">fibonacci</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">num</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// nếu là 1 hoặc 0</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> num<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// từ 2 trở lên</span>
+  <span class="token keyword">return</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>num <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>num <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>Chúc các bạn phỏng vấn vui vẻ!</p>
+<p><a href="https://www.sitepoint.com/5-common-coding-interview-challenges/" target="_blank" rel="nofollow noopener noreferrer">How to Beat 5 Common JavaScript Interview Challenges</a></p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/javascript/" class="post-tags__link"><span>#</span> javascript
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020. </span><span class="footer__links">Powered by <a href="//gridsome.org"> Gridsome </a></span></footer></div>
+    <script src="/blog/assets/js/app.24a01750.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" defer></script>
+  </body>
+</html>

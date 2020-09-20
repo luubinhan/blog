@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Hello, world! - VuiLapTrinh.com</title><meta name="gridsome:hash" content="2220dd7e21ec580c079d73e55205e2a635c3762b"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="A simple, hackable &amp; minimalistic starter for Gridsome that uses Markdown for content."><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/blog/assets/static/favicon.ce0531f.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/blog/assets/static/favicon.ac8d93a.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/blog/assets/static/favicon.b9532cc.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/blog/assets/static/favicon.f22e9f3.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/blog/assets/static/favicon.62d22cb.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/blog/assets/static/favicon.1539b60.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/blog/assets/static/favicon.dc0cdc5.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/blog/assets/static/favicon.7b22250.9bb7ffafafc09ac851d81afb65b8ef59.png"><link rel="preload" href="/blog/assets/css/0.styles.9ab035e6.css" as="style"><link rel="preload" href="/blog/assets/js/app.24a01750.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-tag-vue.12682fb0.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.1906fe28.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.267eee57.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-post-vue.da685d0f.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.9ab035e6.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><h1 class="tag-title text-center space-bottom"># vuejs</h1><div class="posts"><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Kim chỉ nam mà Vue 3 đã áp dụng khi thiết kế</h2><p class="post-card__description">Kim chỉ nam (principle) được áp dụng khi cần đưa ra một quyết định kỹ thuật trước vô vàng các lựa chọn. Nếu bạn đã biết được mọi thứ vận hành như thế nào, thì đã đến lúc bạn tiến một bước xa hơn, trả lời cho câu hỏi tại sao</p><div class="post-meta post-card__meta">
+   Posted 29. January 2020.
+   <strong>8 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/blog/kim-chi-nam-ma-vue-3-da-ap-dung-khi-thiet-ke/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Sử dụng v-model trên component lồng nhau</h2><p class="post-card__description">Cách viết dùng v-model để tự đồng bộ giá trị khi lồng các component</p><div class="post-meta post-card__meta">
+   Posted 10. December 2019.
+   <strong>3 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/blog/su-dung-v-model-tren-component-long-nhau/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Lựa chọn framework frontend nào trong thời điểm hiện tại</h2><p class="post-card__description">Đây không phải là một bài so sánh đâu mới là framework chạy nhanh nhất</p><div class="post-meta post-card__meta">
+   Posted 24. November 2019.
+   <strong>9 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/blog/lua-chon-framework-frontend-nao-trong-thoi-diem-hien-tai/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">10 kinh nghiệm khi làm việc với các dự án lớn viết bằng Vue.js</h2><p class="post-card__description">Đây là 10 kinh nghiệm được đúc kết trong lúc làm việc với các bộ source lớn. Vấn đề với tất cả các bộ source lớn là nó rất khó để bảo trì.</p><div class="post-meta post-card__meta">
+   Posted 1. November 2019.
+   <strong>6 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/blog/10-kinh-nghiem-khi-lam-viec-voi-cac-du-an-lon-viet-bang-vue-js/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Những ứng dụng tuyệt vời của Renderless component trong Vue</h2><p class="post-card__description">Cùng điểm qua các phương pháp để giải quyết bài toán 'DRY' trong Vue, các bạn sẽ biết thêm các kỹ thuật tương đối nâng cao để lên bật Vue lão làng.</p><div class="post-meta post-card__meta">
+   Posted 20. October 2019.
+   <strong>12 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/blog/nhung-ung-dung-tuyet-voi-cua-renderless-component-trong-vue/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Sử dụng flat state trong Vue Store</h2><p class="post-card__description">Nhét những tập dữ liệu lớn trong Vuex store, đặc biệt là các cấu trúc dữ liệu lồng nhau luôn gây ra vấn đề không sớm thì muộn. Bài viết giới thiệu cách tiếp cận với flat state trong Vuex store</p><div class="post-meta post-card__meta">
+   Posted 12. October 2019.
+   <strong>4 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/blog/su-dung-flat-state-trong-vue-store/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Viết Unit Test cho Vue component cho người mới bắt đầu</h2><p class="post-card__description">Cái nhìn về unit test cho component, test cái gì, cái gì không test khi viết unit test</p><div class="post-meta post-card__meta">
+   Posted 5. October 2019.
+   <strong>7 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/blog/viet-unit-test-cho-vue-component-cho-nguoi-moi-bat-dau/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Bộ guide để viết code sạch dành riêng cho Vue</h2><p class="post-card__description">Được đề xuất chính thức bởi Vue team</p><div class="post-meta post-card__meta">
+   Posted 4. October 2019.
+   <strong>7 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/blog/bo-guide-de-viet-code-sach-danh-rieng-cho-vue/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Tại sao các bạn nên học Vue</h2><p class="post-card__description">Một vài suy nghĩ cá nhân của mình về mấy cái hay ho của Vue</p><div class="post-meta post-card__meta">
+   Posted 16. August 2019.
+   <strong>5 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/blog/tai-sao-cac-ban-nen-hoc-vue/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Function Component trong Vue</h2><p class="post-card__description">Không được xuất chúng như là function component của React, nên function component trong Vue không có nhiều người để ý. Hy vọng tương lai nó sẽ được nâng cấp để cạnh tranh với bên React đang quảng bá quá rầm rộ.</p><div class="post-meta post-card__meta">
+   Posted 21. July 2019.
+   <strong>2 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/blog/function-component-trong-vue/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Viết component gọn gàng hơn với Computed Setter</h2><p class="post-card__description">Một gợi ý để sử dụng computed setter với các dữ liệu bên ngoài component như Vuex</p><div class="post-meta post-card__meta">
+   Posted 20. December 2018.
+   <strong>2 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/blog/viet-component-gon-gang-hon-voi-computed-setter/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Authentication với Vue và Vuex</h2><p class="post-card__description">Khi bắt đầu một dự án, việc chúng ta làm đầu tiên, luôn là trang đăng ký đăng nhập, hoặc gọi là xử lý luồng authen cho ngầu.</p><div class="post-meta post-card__meta">
+   Posted 6. December 2018.
+   <strong>3 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/blog/authentication-voi-vue-va-vuex/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Dựng component layout với Vue</h2><p class="post-card__description">Khi mình nói đến layout, là ám chỉ đến những phần giống nhau trên trang, như cái sườn chính của website là header, footer sẽ giống nhau trên tất cả trang, chỉ phần bên trong là khác nhau.</p><div class="post-meta post-card__meta">
+   Posted 21. November 2018.
+   <strong>6 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/blog/dung-component-layout-voi-vue/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Viết animation cho Vue Component</h2><p class="post-card__description">Làm một số animation đơn giản bằng công cụ có sẵn của Vue</p><div class="post-meta post-card__meta">
+   Posted 17. November 2018.
+   <strong>4 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/blog/viet-animation-cho-vue-component/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Hổ trợ v-model trên một custom Vue component</h2><p class="post-card__description">Hướng dẫn cách viết một component để có thể dùng v-model</p><div class="post-meta post-card__meta">
+   Posted 15. November 2018.
+   <strong>1 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/blog/ho-tro-v-model-tren-mot-custom-vue-component/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Cách làm two-way data binding cho form field trong Vue và Vuex</h2><p class="post-card__description">Two-way data binding trong Vue và Vuex làm như thế nào cho đúng mà nhanh</p><div class="post-meta post-card__meta">
+   Posted 11. November 2018.
+   <strong>2 min read.</strong></div><div class="post-tags post-card__tags"></div><a href="/blog/cach-lam-two-way-data-binding-cho-form-field-trong-vue-va-vuex/" class="post-card__link">Link</a></div></div></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020. </span><span class="footer__links">Powered by <a href="//gridsome.org"> Gridsome </a></span></footer></div>
+    <script src="/blog/assets/js/app.24a01750.js" defer></script><script src="/blog/assets/js/page--src-templates-tag-vue.12682fb0.js" defer></script>
+  </body>
+</html>

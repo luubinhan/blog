@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Viết React Higher-Order Component bằng TypeScript - VuiLapTrinh.com</title><meta name="gridsome:hash" content="2220dd7e21ec580c079d73e55205e2a635c3762b"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="A simple, hackable &amp; minimalistic starter for Gridsome that uses Markdown for content."><meta data-vue-tag="ssr" name="desc" content="Cuộc sống đưa đẩy bạn phải viết TypeScript, thì bài này sẽ giúp bạn chút ít khi viết type với HOC"><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/blog/assets/static/favicon.ce0531f.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/blog/assets/static/favicon.ac8d93a.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/blog/assets/static/favicon.b9532cc.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/blog/assets/static/favicon.f22e9f3.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/blog/assets/static/favicon.62d22cb.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/blog/assets/static/favicon.1539b60.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/blog/assets/static/favicon.dc0cdc5.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/blog/assets/static/favicon.7b22250.9bb7ffafafc09ac851d81afb65b8ef59.png"><link rel="preload" href="/blog/assets/css/0.styles.9ab035e6.css" as="style"><link rel="preload" href="/blog/assets/js/app.24a01750.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.1906fe28.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.267eee57.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.12682fb0.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.9ab035e6.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Viết React Higher-Order Component bằng TypeScript</h1><div class="post-meta">
+   Posted 2020-01-19.
+   <strong>6 min read.</strong></div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#enhancer">Enhancer</a></li>
+<li><a href="#injector">Injector</a></li>
+<li><a href="#enhance--inject">Enhance + Inject</a></li>
+</ul>
+<!-- /TOC -->
+<blockquote>
+<p>Từ React 16.8.0, chúng ta có React Hook, nó giải quyết toàn bộ những trường hợp chúng ta phải sử dụng higher-order component và giảm đáng kể độ phức tạp của việc set type so với HOC. Bạn sử dụng hook trong mọi tình huống có thể. Nếu gơi cảnh <em>ngặt nghèo</em>, anh lead của bạn <em>ko rõ lý do gì</em> bắt xài HOC với TypeScript. Thì bài viết này để giúp biết biết cách set type cho HOC.</p>
+</blockquote>
+<p>HOC trong React là <em>công cụ</em> để chúng ta sử dụng nhiều đoạn code giống nhau trên các component khác nhau. Tuy nhiên khi dùng chung với TypeScript thì <strong>triệu triệu</strong> developer gặp không ít khó khăn khi set type cho nó. Bao gồm luôn mình trong đó.</p>
+<p>Trong phạm vi bài viết này, chúng ta sẽ chi ra 2 loại HOC, 2 cách làm HOC phổ biến hiện nay, tạm gọi là <strong>enhancer</strong> và <strong>injector</strong></p>
+<ul>
+<li><strong>Enhancer</strong>: bọc một component, bổ sung thêm các hàm hoặc prop</li>
+<li><strong>Injector</strong>: <em>bơm/chích</em> thêm prop vào một component</li>
+</ul>
+<p>Để phân biệt rõ hơn, bạn xem tiếp ví dụ bên dưới.</p>
+<h2 id="enhancer"><a href="#enhancer" aria-hidden="true"><span class="icon icon-link"></span></a>Enhancer</h2>
+<p>Chúng ta bắt đầu với Enhancer vì nó dễ viết <code class="language-text">type</code> nhất. Ví dụ cơ bản nhất, bổ sung thêm prop <code class="language-text">loading</code> vào component.</p>
+<p>Không bao gồm <code class="language-text">type</code></p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">const</span> <span class="token function-variable function">withLoading</span> <span class="token operator">=</span> <span class="token parameter"><span class="token maybe-class-name">Component</span></span> <span class="token arrow operator">=></span>
+  <span class="token keyword">class</span> <span class="token class-name">WithLoading</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> <span class="token punctuation">{</span> loading<span class="token punctuation">,</span> <span class="token spread operator">...</span>props <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">props</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> loading <span class="token operator">?</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">LoadingSpinner</span></span> <span class="token punctuation">/></span></span> <span class="token operator">:</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Component</span></span> <span class="token spread"><span class="token punctuation">{</span><span class="token punctuation">...</span><span class="token attr-value">props</span><span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>... và với <code class="language-text">type</code></p>
+<pre class="language-tsx"><code class="language-tsx"><span class="token keyword">interface</span> <span class="token class-name">WithLoadingProps</span> <span class="token punctuation">{</span>
+  loading<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> withLoading <span class="token operator">=</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">P</span></span> <span class="token attr-name">extends</span> <span class="token attr-name">object</span><span class="token punctuation">></span></span><span class="token plain-text">(Component: React.ComponentType</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">P</span></span><span class="token punctuation">></span></span><span class="token plain-text">) => </span><span class="token punctuation">{</span>
+  <span class="token keyword">class</span> <span class="token class-name">WithLoading</span> <span class="token keyword">extends</span> <span class="token class-name">React</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Component</span></span><span class="token operator">&lt;</span><span class="token constant">P</span> <span class="token operator">&amp;</span> <span class="token maybe-class-name">WithLoadingProps</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> <span class="token punctuation">{</span> loading<span class="token punctuation">,</span> <span class="token spread operator">...</span>props <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">props</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> loading <span class="token operator">?</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">LoadingSpinner</span></span> <span class="token punctuation">/></span></span> <span class="token operator">:</span> <span class="token operator">&lt;</span><span class="token maybe-class-name">Component</span> <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token punctuation">(</span>props <span class="token keyword">as</span> <span class="token constant">P</span><span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token plain-text">;</span></code></pre>
+<p>Có vài thứ cần giải thích ở đoạn trên, từng bước một nhé</p>
+<pre class="language-tsx"><code class="language-tsx"><span class="token keyword">interface</span> <span class="token class-name">WithLoadingProps</span> <span class="token punctuation">{</span>
+  loading<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Đây là <code class="language-text">interface</code> khai báo các prop và <code class="language-text">type</code> sẽ được thêm vào (<strong>enhance</strong>)</p>
+<pre class="language-tsx"><code class="language-tsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">P</span></span> <span class="token attr-name">extends</span> <span class="token attr-name">object</span><span class="token punctuation">></span></span><span class="token plain-text">(Component: React.ComponentType</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">P</span></span><span class="token punctuation">></span></span><span class="token plain-text">)</span></code></pre>
+<p>Chúng ta đang sử dụng một <a href="https://www.typescriptlang.org/docs/handbook/generics.html" target="_blank" rel="nofollow noopener noreferrer"><code class="language-text">generic</code></a>, <code class="language-text">P</code> là ký tự dùng để đại diện cho toàn bộ prop của component khi truyền cho HOC. <code class="language-text">React.ComponentType&lt;P&gt;</code> là một type viết tắt cho cả hai <code class="language-text">React.FC&lt;P&gt;</code> và <code class="language-text">React.ClassComponent&lt;P&gt;</code>, nghĩa là một component truyền vào cho HOC này có thể là function cũng được, class component cũng được.</p>
+<pre class="language-tsx"><code class="language-tsx"><span class="token keyword">class</span> <span class="token class-name">WithLoading</span> <span class="token keyword">extends</span> <span class="token class-name">React</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Component</span></span><span class="token operator">&lt;</span><span class="token constant">P</span> <span class="token operator">&amp;</span> <span class="token maybe-class-name">WithLoadingProps</span><span class="token operator">></span></code></pre>
+<p>Đây là đoạn chúng ta component sẽ <code class="language-text">return</code> từ HOC, nó chỉ định là component này sẽ bao gồm toàn bộ prop từ component (<code class="language-text">P</code>) và prop của chính thằng HOC (<code class="language-text">WithLoadingProps</code>), nó được <em>cộng dồn</em> bằng toán tử <code class="language-text">&amp;</code></p>
+<pre class="language-tsx"><code class="language-tsx"><span class="token keyword">const</span> <span class="token punctuation">{</span> loading<span class="token punctuation">,</span> <span class="token spread operator">...</span>props <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">props</span><span class="token punctuation">;</span></code></pre>
+<blockquote>
+<p>Với phiên bản cũ của TypeScript, có thể chúng ta phải <em>ép kiểu</em> <code class="language-text">this.props</code> như thế này <code class="language-text">this.props as WithLoadingProps</code></p>
+</blockquote>
+<p>Cuối cùng chúng ta sử dụng prop <code class="language-text">loading</code> để đặt điều kiện hiển thị cái <em>Spinner</em></p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">return</span> loading <span class="token operator">?</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">LoadingSpinner</span></span> <span class="token punctuation">/></span></span> <span class="token operator">:</span> <span class="token operator">&lt;</span><span class="token maybe-class-name">Component</span> <span class="token punctuation">{</span><span class="token spread operator">...</span>props <span class="token keyword module">as</span> <span class="token constant">P</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">;</span></code></pre>
+<blockquote>
+<p>ép kiểu <code class="language-text">props as P</code> là bắt buộc từ TypeScript 3.2, đây là bug của TypeScript</p>
+</blockquote>
+<p>Với HOC <code class="language-text">withLoading</code> cũng có thể được viết để return một function component thay vì class</p>
+<pre class="language-tsx"><code class="language-tsx"><span class="token keyword">const</span> withLoading <span class="token operator">=</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">P</span></span> <span class="token attr-name">extends</span> <span class="token attr-name">object</span><span class="token punctuation">></span></span><span class="token plain-text">(
+  Component: React.ComponentType</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">P</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+): React.FC&lt;P &amp; WithLoadingProps> => ({
+  loading,
+  ...props
+}: WithLoadingProps) =>
+  loading ? </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">LoadingSpinner</span></span> <span class="token punctuation">/></span></span><span class="token plain-text"> : &lt;Component </span><span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token punctuation">(</span>props <span class="token keyword">as</span> <span class="token constant">P</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text"> />;</span></code></pre>
+<p>Chúng ta gặp vấn đề tương tự khi sử dụng rest/spread object, chúng ta chỉ định kiểu return là <code class="language-text">React.FC&lt;P &amp; WithLoadingProps&gt;</code>, nhưng chỉ sử dụng <code class="language-text">WithLoadingProps</code> bên trong function component</p>
+<h2 id="injector"><a href="#injector" aria-hidden="true"><span class="icon icon-link"></span></a>Injector</h2>
+<p>Kiểu <em>injector</em> HOC sẽ hay gặp hơn, nhưng cũng khó set type hơn, bên cạnh việc <em>chích</em> thêm một số prop vào cho component, trong đa số các trường hợp nó còn xóa những prop đã <em>chích</em> vào khi nó bọc lại, như vậy những thằng từ bên ngoài không thể ghi đè lên. <code class="language-text">connect</code> của react-redux là một ví dụ cho injector HOC. Chúng ta không sử dụng nó, vì quá phức tạp, dùng một ví dụ đơn giản hơn, HOC chích thêm giá trị <code class="language-text">counter</code> và <code class="language-text">callback</code> để tăng giảm giá trị.</p>
+<pre class="language-tsx"><code class="language-tsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Subtract</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"utility-types"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">InjectedCounterProps</span> <span class="token punctuation">{</span>
+  value<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  <span class="token function">onIncrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+  <span class="token function">onDecrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">MakeCounterState</span> <span class="token punctuation">{</span>
+  value<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> makeCounter <span class="token operator">=</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">P</span></span> <span class="token attr-name">extends</span> <span class="token attr-name">InjectedCounterProps</span><span class="token punctuation">></span></span><span class="token plain-text">(
+  Component: React.ComponentType</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">P</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+) =>
+  class MakeCounter extends React.Component&lt;
+    Subtract&lt;P, InjectedCounterProps>,
+    MakeCounterState
+  > </span><span class="token punctuation">{</span>
+    state<span class="token operator">:</span> <span class="token maybe-class-name">MakeCounterState</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+      value<span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token function-variable function">increment</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">setState</span><span class="token punctuation">(</span><span class="token parameter">prevState</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+        value<span class="token operator">:</span> prevState<span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">+</span> <span class="token number">1</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token function-variable function">decrement</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">setState</span><span class="token punctuation">(</span><span class="token parameter">prevState</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+        value<span class="token operator">:</span> prevState<span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">-</span> <span class="token number">1</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span><span class="token maybe-class-name">Component</span>
+          <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">props</span> <span class="token keyword">as</span> <span class="token constant">P</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+          value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">}</span>
+          onIncrement<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">increment</span><span class="token punctuation">}</span>
+          onDecrement<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">decrement</span><span class="token punctuation">}</span>
+        <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token plain-text">;</span></code></pre>
+<p>Một vài điểm khác nhau</p>
+<pre class="language-tsx"><code class="language-tsx"><span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">InjectedCounterProps</span> <span class="token punctuation">{</span>
+  value<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  <span class="token function">onIncrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+  <span class="token function">onDecrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Khai báo một interface để chỉ định những prop nào sẽ được <em>chích</em>, đồng thời export luôn để component nào dùng HOC có thể lấy xài.</p>
+<pre class="language-tsx"><code class="language-tsx"><span class="token keyword">import</span> makeCounter<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">InjectedCounterProps</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./makeCounter"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">CounterProps</span> <span class="token keyword">extends</span> <span class="token class-name">InjectedCounterProps</span> <span class="token punctuation">{</span>
+  style<span class="token operator">?</span><span class="token operator">:</span> <span class="token maybe-class-name">React</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">CSSProperties</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Counter</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">props<span class="token operator">:</span> <span class="token maybe-class-name">CounterProps</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>props<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>props<span class="token punctuation">.</span><span class="token property-access">onDecrement</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text"> - </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token punctuation">{</span>props<span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>props<span class="token punctuation">.</span><span class="token property-access">onIncrement</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text"> + </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">makeCounter</span><span class="token punctuation">(</span><span class="token maybe-class-name">Counter</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="language-tsx"><code class="language-tsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">P</span></span> <span class="token attr-name">extends</span> <span class="token attr-name">InjectedCounterProps</span><span class="token punctuation">></span></span><span class="token plain-text">(Component: React.ComponentType</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">P</span></span><span class="token punctuation">></span></span><span class="token plain-text">)</span></code></pre>
+<p>Một lần nữa chúng ta dùng một <code class="language-text">generic</code>, nhưng lần này để đảm bảo component sử dụng HOC có bao gồm các prop đã được chích, nếu không thì báo lỗi.</p>
+<pre class="language-tsx"><code class="language-tsx"><span class="token keyword">class</span> <span class="token class-name">MakeCounter</span> <span class="token keyword">extends</span> <span class="token class-name">React</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Component</span></span><span class="token operator">&lt;</span>
+  <span class="token maybe-class-name">Subtract</span><span class="token operator">&lt;</span><span class="token constant">P</span><span class="token punctuation">,</span> <span class="token maybe-class-name">InjectedCounterProps</span><span class="token operator">></span><span class="token punctuation">,</span>
+  <span class="token maybe-class-name">MakeCounterState</span>
+<span class="token operator">></span></code></pre>
+<p>Component được trả về từ HOC sẽ sử dụng <a href="https://github.com/piotrwitek/utility-types" target="_blank" rel="nofollow noopener noreferrer"><code class="language-text">Subtract</code></a>, nó sẽ tách hết những prop đã chích thêm, nghĩa là nếu ai đó set lại từ kết quả trả về từ HOC, nó sẽ lỗi</p>
+<p><img src="https://miro.medium.com/max/451/1*xTKe3DWJdC7nAVQnM4bvbg.png"></p>
+<h2 id="enhance--inject"><a href="#enhance--inject" aria-hidden="true"><span class="icon icon-link"></span></a>Enhance + Inject</h2>
+<p>Kết hợp cả 2 cách làm này lại, chúng ta sẽ có một component counter cho phép đưa giá trị minimum và maximum</p>
+<pre class="language-tsx"><code class="language-tsx"><span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">InjectedCounterProps</span> <span class="token punctuation">{</span>
+  value<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  <span class="token function">onIncrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+  <span class="token function">onDecrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">MakeCounterProps</span> <span class="token punctuation">{</span>
+  minValue<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  maxValue<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">MakeCounterState</span> <span class="token punctuation">{</span>
+  value<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> makeCounter <span class="token operator">=</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">P</span></span> <span class="token attr-name">extends</span> <span class="token attr-name">InjectedCounterProps</span><span class="token punctuation">></span></span><span class="token plain-text">(
+  Component: React.ComponentType</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">P</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+) =>
+  class MakeCounter extends React.Component&lt;
+    Subtract&lt;P, InjectedCounterProps> &amp; MakeCounterProps,
+    MakeCounterState
+  > </span><span class="token punctuation">{</span>
+    state<span class="token operator">:</span> <span class="token maybe-class-name">MakeCounterState</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+      value<span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token function-variable function">increment</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">setState</span><span class="token punctuation">(</span><span class="token parameter">prevState</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+        value<span class="token operator">:</span>
+          prevState<span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">===</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">props</span><span class="token punctuation">.</span><span class="token property-access">maxValue</span>
+            <span class="token operator">?</span> prevState<span class="token punctuation">.</span><span class="token property-access">value</span>
+            <span class="token operator">:</span> prevState<span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">+</span> <span class="token number">1</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token function-variable function">decrement</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">setState</span><span class="token punctuation">(</span><span class="token parameter">prevState</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+        value<span class="token operator">:</span>
+          prevState<span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">===</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">props</span><span class="token punctuation">.</span><span class="token property-access">minValue</span>
+            <span class="token operator">?</span> prevState<span class="token punctuation">.</span><span class="token property-access">value</span>
+            <span class="token operator">:</span> prevState<span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">-</span> <span class="token number">1</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> <span class="token punctuation">{</span> minValue<span class="token punctuation">,</span> maxValue<span class="token punctuation">,</span> <span class="token spread operator">...</span>props <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">props</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span><span class="token maybe-class-name">Component</span>
+          <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token punctuation">(</span>props <span class="token keyword">as</span> <span class="token constant">P</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+          value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">}</span>
+          onIncrement<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">increment</span><span class="token punctuation">}</span>
+          onDecrement<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">decrement</span><span class="token punctuation">}</span>
+        <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token plain-text">;</span></code></pre>
+<p><code class="language-text">Subtract</code> được sử dụng để kết hợp cả những prop của chính component và prop của HOC</p>
+<pre class="language-tsx"><code class="language-tsx"><span class="token maybe-class-name">Subtract</span><span class="token operator">&lt;</span><span class="token constant">P</span><span class="token punctuation">,</span> <span class="token maybe-class-name">InjectedCounterProps</span><span class="token operator">></span> <span class="token operator">&amp;</span> <span class="token maybe-class-name">MakeCounterProps</span></code></pre>
+<p>Ngoài ra không còn gì thật sự khác nhau giữa 2 cách làm này cần phải nói thêm.</p>
+<p><a href="https://medium.com/@jrwebdev/react-higher-order-component-patterns-in-typescript-42278f7590fb" target="_blank" rel="nofollow noopener noreferrer">https://medium.com/@jrwebdev/react-higher-order-component-patterns-in-typescript-42278f7590fb</a></p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/hoc-thuat/" class="post-tags__link"><span>#</span> hoc-thuat
+		</a><a href="/blog/tag/react/" class="post-tags__link"><span>#</span> react
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020. </span><span class="footer__links">Powered by <a href="//gridsome.org"> Gridsome </a></span></footer></div>
+    <script src="/blog/assets/js/app.24a01750.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" defer></script>
+  </body>
+</html>

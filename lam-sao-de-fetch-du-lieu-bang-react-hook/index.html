@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Làm sao để fetch dữ liệu bằng React Hook - VuiLapTrinh.com</title><meta name="gridsome:hash" content="2220dd7e21ec580c079d73e55205e2a635c3762b"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="A simple, hackable &amp; minimalistic starter for Gridsome that uses Markdown for content."><meta data-vue-tag="ssr" name="desc" content="Trong bài này chúng ta sẽ sử dụng React.useState, React.useEffect, React.useReducer để fetch dữ liệu từ API, đồng thời cũng viết một custom hook để có thể sử dụng ở bất kỳ đâu"><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/blog/assets/static/favicon.ce0531f.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/blog/assets/static/favicon.ac8d93a.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/blog/assets/static/favicon.b9532cc.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/blog/assets/static/favicon.f22e9f3.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/blog/assets/static/favicon.62d22cb.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/blog/assets/static/favicon.1539b60.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/blog/assets/static/favicon.dc0cdc5.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/blog/assets/static/favicon.7b22250.9bb7ffafafc09ac851d81afb65b8ef59.png"><link rel="preload" href="/blog/assets/css/0.styles.9ab035e6.css" as="style"><link rel="preload" href="/blog/assets/js/app.24a01750.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.1906fe28.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.267eee57.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.12682fb0.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.9ab035e6.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Làm sao để fetch dữ liệu bằng React Hook</h1><div class="post-meta">
+   Posted 2019-11-18.
+   <strong>11 min read.</strong></div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#g%e1%bb%8di-hook-th%e1%bb%a7-c%c3%b4ngb%e1%ba%b1ng-code">Gọi hook thủ công/bằng code</a></li>
+<li><a href="#loading-indicator">Loading indicator</a></li>
+<li><a href="#handle-error">Handle Error</a></li>
+<li><a href="#fetch-data-v%e1%bb%9bi-form">Fetch data với Form</a></li>
+<li><a href="#custom-hook-%c4%91%e1%bb%83-fetch-data">Custom hook để Fetch data</a></li>
+<li><a href="#reducer-hook">Reducer hook</a></li>
+<li><a href="#b%e1%bb%8f-qua-vi%e1%bb%87c-fetch-data">Bỏ qua việc fetch data</a></li>
+</ul>
+<!-- /TOC -->
+<p>Chúng ta có một component, dữ liệu của component này sẽ được lấy từ API</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword module">import</span> <span class="token maybe-class-name">React</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function"><span class="token maybe-class-name">App</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>data<span class="token punctuation">,</span> setData<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> hits<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>data<span class="token punctuation">.</span><span class="token property-access">hits</span><span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span><span class="token property-access">objectID</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span><span class="token property-access">url</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token punctuation">{</span>item<span class="token punctuation">.</span><span class="token property-access">title</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+      <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token maybe-class-name">App</span><span class="token punctuation">;</span></code></pre>
+<p>Chúng ta sẽ sử dụng axios để fetch dữ liệu, bạn thích xài cái khác thì cứ vô tư</p>
+<pre class="language-jsx{7-12}"><code class="language-jsx{7-12}">import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+function App() {
+  const [data, setData] = useState({ hits: [] });
+  
+  useEffect(async () => {
+    const result = await axios(
+      'https://hn.algolia.com/api/v1/search?query=redux',
+    );
+    setData(result.data);
+  });
+
+  return (
+    <ul>
+      {data.hits.map(item => (
+        <li key={item.objectID}>
+          <a href={item.url}>{item.title}</a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+export default App;</code></pre>
+<p>Bên trong <code class="language-text">React.useEffect</code> chúng ta sẽ thực hiện việc fetch data từ API, sau khi nhận được dữ liệu gán giá trị nhận được cho giá trị của state <code class="language-text">data</code></p>
+<p>Nếu dừng ở đây, khi chạy bạn sẽ thấy một vòng lặp vô tận của việc gọi fetch data. Effect sẽ chạy không chỉ ở lúc component mount mà còn ở các lần update tiếp theo. Bởi vì chúng ta gán giá trị state trên mỗi lần fetch, component lại được update và effect lại được gọi lại để chạy. Chúng ta chỉ muốn <strong>fetch data khi component mount lần đầu tiên</strong>. Đó là lý do chúng ta phải thêm một mảng rỗng vào tham số thứ hai của effect, như vậy các lần update tiếp theo nó sẽ không được gọi.</p>
+<pre class="language-js{12}"><code class="language-js{12}">import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+function App() {
+  const [data, setData] = useState({ hits: [] });
+  
+  useEffect(async () => {
+    const result = await axios(
+      'https://hn.algolia.com/api/v1/search?query=redux',
+    );
+    setData(result.data);
+  }, []);
+  
+  return (
+    <ul>
+      {data.hits.map(item => (
+        <li key={item.objectID}>
+          <a href={item.url}>{item.title}</a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+export default App;</code></pre>
+<p>Tham số thứ 2 truyền vào cho effect này là danh sách những giá trị nào mà hook phụ thuộc, tức nếu các giá trị này thay đổi thì effect được gọi lại. Bỏ array trống sẽ không còn chuyện chạy ở lần update.</p>
+<p>Trong đoạn code trên vẫn còn một chỗ phải chỉnh sửa, chúng ta sử dụng <code class="language-text">async/await</code>, <em>theo như định nghĩa</em>, tất cả những hàm nào là <code class="language-text">async</code> sẽ được ngầm hiểu là trả về một <code class="language-text">Promise</code>. Tuy nhiên, cũng <em>theo như định nghĩa</em> effect hook không được trả về gì cả, hoặc một function để clean up (xem lại bài nói về Hook Effect, có giải thích 2 loại Effect Hook).</p>
+<p>Nên bạn mà copy đoạn trên mà chạy thì sẽ nhận thông báo bên dưới console. Không thể sử dụng async function bên trong <code class="language-text">React.useEffect</code>, chúng ta sửa lại</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">fetchData</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">axios</span><span class="token punctuation">(</span>
+      <span class="token string">'https://hn.algolia.com/api/v1/search?query=redux'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">setData</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token property-access">data</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Để fetch dữ liệu bằng <code class="language-text">React.useEffect</code> có thể tóm gọn như ở trên. Chúng ta sẽ tiếp tục xem cách handle error, loading indicator, gọi fetch từ form và làm thế nào tái sử dụng hook để fetch</p>
+<h2 id="gọi-hook-thủ-côngbằng-code"><a href="#g%E1%BB%8Di-hook-th%E1%BB%A7-c%C3%B4ngb%E1%BA%B1ng-code" aria-hidden="true"><span class="icon icon-link"></span></a>Gọi hook thủ công/bằng code</h2>
+<p>Chúng ta đã xong phần fetch dữ liệu một lần lúc component mount. Nhưng làm thế nào để fetch dữ liệu khi có sự kiện từ user, ví dụ ô search, khi user nhập lấy danh sách kết quả tìm kiếm. Ví dụ bên dưới mặc định sẽ hiển thị kết quả cho từ khóa <code class="language-text">redux</code>, nếu user nhập vào một giá trị khác, chúng ta cần làm sao để chạy <code class="language-text">useEffect</code> một lần nữa</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword module">import</span> <span class="token maybe-class-name">React</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Fragment</span><span class="token punctuation">,</span> useState<span class="token punctuation">,</span> useEffect <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> axios <span class="token keyword module">from</span> <span class="token string">'axios'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function"><span class="token maybe-class-name">App</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>data<span class="token punctuation">,</span> setData<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> hits<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>query<span class="token punctuation">,</span> setQuery<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token string">'redux'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">fetchData</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">axios</span><span class="token punctuation">(</span>
+        <span class="token string">'https://hn.algolia.com/api/v1/search?query=redux'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">setData</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token property-access">data</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">fetchData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Fragment</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+        <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>
+        <span class="token attr-name">value</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>query<span class="token punctuation">}</span></span>
+        <span class="token attr-name">onChange</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token parameter">event</span> <span class="token arrow operator">=></span> <span class="token function">setQuery</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span><span class="token property-access">target</span><span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+      <span class="token punctuation">/></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token punctuation">{</span>data<span class="token punctuation">.</span><span class="token property-access">hits</span><span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span><span class="token property-access">objectID</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span><span class="token property-access">url</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token punctuation">{</span>item<span class="token punctuation">.</span><span class="token property-access">title</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Fragment</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token maybe-class-name">App</span><span class="token punctuation">;</span></code></pre>
+<p>Với nhu cầu như trên, chúng ta cần cập nhập lại <code class="language-text">useEffect</code></p>
+<pre class="language-js{4}"><code class="language-js{4}">useEffect(() => {
+  const fetchData = async () => {
+    const result = await axios(
+      `http://hn.algolia.com/api/v1/search?query=${query}`,
+    );
+    setData(result.data);
+  };
+  fetchData();
+}, []);</code></pre>
+<p>Tuy nhiên, nếu chỉ như vậy, hàm <code class="language-text">fetchData</code> sẽ không được gọi khi user input một giá trị mới vào ô tìm kiếm. Vì chúng ta đã truyền vào một mảng rỗng vào cho giá trị <code class="language-text">depend</code> của effect, nên nó chỉ chạy lần đầu mount</p>
+<pre class="language-js{9}"><code class="language-js{9}">useEffect(() => {
+  const fetchData = async () => {
+    const result = await axios(
+      `http://hn.algolia.com/api/v1/search?query=${query}`,
+    );
+    setData(result.data);
+  };
+  fetchData();
+}, [query]);</code></pre>
+<p>Có một vấn đề khác, user cứ nhập một ký tự, câu <code class="language-text">fetchData</code> lại được gọi, gọi liên tục như vậy không hay, thêm vào một nút để user click vào mới thực hiện search thì sao</p>
+<pre class="language-jsx{4,23,24,25}"><code class="language-jsx{4,23,24,25}">function App() {
+  const [data, setData] = useState({ hits: [] });
+  const [query, setQuery] = useState('redux');
+  const [search, setSearch] = useState('');
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(
+        `http://hn.algolia.com/api/v1/search?query=${query}`,
+      );
+      setData(result.data);
+    };
+    fetchData();
+  }, [query]);
+  
+  return (
+    <Fragment>
+      <input
+        type="text"
+        value={query}
+        onChange={event => setQuery(event.target.value)}
+      />
+      <button type="button" onClick={() => setSearch(query)}>
+        Search
+      </button>
+      <ul>
+        {data.hits.map(item => (
+          <li key={item.objectID}>
+            <a href={item.url}>{item.title}</a>
+          </li>
+        ))}
+      </ul>
+    </Fragment>
+  );
+}</code></pre>
+<p>Giờ effect phải phụ thuộc vào <code class="language-text">search</code>, không chạy khi user nhập vào input</p>
+<pre class="language-js{4,9,14}"><code class="language-js{4,9,14}">function App() {
+  const [data, setData] = useState({ hits: [] });
+  const [query, setQuery] = useState('redux');
+  const [search, setSearch] = useState('redux');
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(
+        `http://hn.algolia.com/api/v1/search?query=${search}`,
+      );
+      setData(result.data);
+    };
+    fetchData();
+  }, [search]);
+  
+  return (
+    ...
+  );
+}</code></pre>
+<p>Nhưng nếu sửa như vậy, trường hợp component được mount lần đầu, nó sẽ không có hiển thị kết quả cho từ khóa <code class="language-text">redux</code> nữa. Nếu dùng thềm một <code class="language-text">useEffect</code> khác cho trường hợp chạy lúc đầu sẽ gây nhầm lẫn, không rõ ràng, thay vào đó nếu chúng ta xem search state là nguyên cái <code class="language-text">url</code> sẽ đơn giản hơn</p>
+<pre class="language-jsx{4,5,6,10,16,28}"><code class="language-jsx{4,5,6,10,16,28}">function App() {
+  const [data, setData] = useState({ hits: [] });
+  const [query, setQuery] = useState('redux');
+  const [url, setUrl] = useState(
+    'https://hn.algolia.com/api/v1/search?query=redux',
+  );
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(url);
+      
+      setData(result.data);
+    };
+    
+    fetchData();
+  }, [url]);
+  
+  return (
+    <Fragment>
+      <input
+        type="text"
+        value={query}
+        onChange={event => setQuery(event.target.value)}
+      />
+      <button
+        type="button"
+        onClick={() =>
+          setUrl(`http://hn.algolia.com/api/v1/search?query=${query}`)
+        }
+      >
+        Search
+      </button>
+      <ul>
+        {data.hits.map(item => (
+          <li key={item.objectID}>
+            <a href={item.url}>{item.title}</a>
+          </li>
+        ))}
+      </ul>
+    </Fragment>
+  );
+}</code></pre>
+<h2 id="loading-indicator"><a href="#loading-indicator" aria-hidden="true"><span class="icon icon-link"></span></a>Loading indicator</h2>
+<p>Một nhu cầu khác cũng hay gặp là trong lúc fetch data từ API, chúng ta cần biết trạng thái loading tới đâu rồi, chúng ta sẽ bổ sung thêm state <code class="language-text">isLoading</code></p>
+<pre class="language-jsx{7,11,16}"><code class="language-jsx{7,11,16}">function App() {
+  const [data, setData] = useState({ hits: [] });
+  const [query, setQuery] = useState('redux');
+  const [url, setUrl] = useState(
+    'https://hn.algolia.com/api/v1/search?query=redux',
+  );
+  const [isLoading, setIsLoading] = useState(false);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      
+      const result = await axios(url);
+      
+      setData(result.data);
+      setIsLoading(false);
+    };
+    fetchData();
+  }, [url]);
+  
+  return (
+    <Fragment>
+      <input
+        type="text"
+        value={query}
+        onChange={event => setQuery(event.target.value)}
+      />
+      <button
+        type="button"
+        onClick={() =>
+          setUrl(`http://hn.algolia.com/api/v1/search?query=${query}`)
+        }
+      >
+        Search
+      </button>
+      {isLoading ? (
+        <div>Loading ...</div>
+      ) : (
+        <ul>
+          {data.hits.map(item => (
+            <li key={item.objectID}>
+              <a href={item.url}>{item.title}</a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </Fragment>
+  );
+}
+export default App;</code></pre>
+<h2 id="handle-error"><a href="#handle-error" aria-hidden="true"><span class="icon icon-link"></span></a>Handle Error</h2>
+<p>Cũng tương tự như loading, chúng ta sẽ bổ sung thêm state <code class="language-text">isError</code> để xác định việc fetch dữ liệu có bị lỗi không</p>
+<pre class="language-jsx{8,12,20}"><code class="language-jsx{8,12,20}">function App() {
+  const [data, setData] = useState({ hits: [] });
+  const [query, setQuery] = useState('redux');
+  const [url, setUrl] = useState(
+    'https://hn.algolia.com/api/v1/search?query=redux',
+  );
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsError(false);
+      setIsLoading(true);
+      
+      try {
+        const result = await axios(url);
+        
+        setData(result.data);
+      } catch (error) {
+        setIsError(true);
+      }
+      
+      setIsLoading(false);
+    };
+    fetchData();
+  }, [url]);
+  return (
+    <Fragment>
+      <input
+        type="text"
+        value={query}
+        onChange={event => setQuery(event.target.value)}
+      />
+      <button
+        type="button"
+        onClick={() =>
+          setUrl(`http://hn.algolia.com/api/v1/search?query=${query}`)
+        }
+      >
+        Search
+      </button>
+      {isError && <div>Something went wrong ...</div>}
+      {isLoading ? (
+        <div>Loading ...</div>
+      ) : (
+        <ul>
+          {data.hits.map(item => (
+            <li key={item.objectID}>
+              <a href={item.url}>{item.title}</a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </Fragment>
+  );
+}</code></pre>
+<h2 id="fetch-data-với-form"><a href="#fetch-data-v%E1%BB%9Bi-form" aria-hidden="true"><span class="icon icon-link"></span></a>Fetch data với Form</h2>
+<p>Nãy giờ chúng ta chỉ fetch data với bằng input và button. Khi có nhiều element hơn, chúng ta sẽ đưa nó vào <code class="language-text">form</code> để có thể trigger form submit bằng cách nhấn Enter</p>
+<pre class="language-jsx{5,6,7,8,9,10,16,17}"><code class="language-jsx{5,6,7,8,9,10,16,17}">function App() {
+  ...
+  return (
+    <Fragment>
+      <form
+        onSubmit={event =>
+          setUrl(`http://hn.algolia.com/api/v1/search?query=${query}`)
+          event.preventDefault();
+        }
+      >
+        <input
+          type="text"
+          value={query}
+          onChange={event => setQuery(event.target.value)}
+        />
+        <button type="submit">Search</button>
+      </form>
+      {isError && <div>Something went wrong ...</div>}
+      ...
+    </Fragment>
+  );
+}</code></pre>
+<h2 id="custom-hook-để-fetch-data"><a href="#custom-hook-%C4%91%E1%BB%83-fetch-data" aria-hidden="true"><span class="icon icon-link"></span></a>Custom hook để Fetch data</h2>
+<p>Để tái sử dụng được các đoạn code liên quan đến việc fetch data, chúng ta sẽ đưa nó ra thành một custom hook, các giá trị liên quan trực tiếp đến việc fetch data, cụ thể là loading, error chúng ta cũng đưa vào trong custom hook</p>
+<pre class="language-js{1,24}"><code class="language-js{1,24}">const useHackerNewsApi = () => {
+  const [data, setData] = useState({ hits: [] });
+  const [url, setUrl] = useState(
+    'https://hn.algolia.com/api/v1/search?query=redux',
+  );
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsError(false);
+      setIsLoading(true);
+      try {
+        const result = await axios(url);
+        setData(result.data);
+      } catch (error) {
+        setIsError(true);
+      }
+      setIsLoading(false);
+    };
+    
+    fetchData();
+  }, [url]);
+  
+  return [{ data, isLoading, isError }, setUrl];
+}</code></pre>
+<p>Sử dụng bên trong App Component</p>
+<pre class="language-jsx{3,8}"><code class="language-jsx{3,8}">function App() {
+  const [query, setQuery] = useState('redux');
+  const [{ data, isLoading, isError }, doFetch] = useHackerNewsApi();
+  
+  return (
+    <Fragment>
+      <form onSubmit={event => {
+        doFetch(`http://hn.algolia.com/api/v1/search?query=${query}`);
+        event.preventDefault();
+      }}>
+        <input
+          type="text"
+          value={query}
+          onChange={event => setQuery(event.target.value)}
+        />
+        <button type="submit">Search</button>
+      </form>
+      ...
+    </Fragment>
+  );
+}</code></pre>
+<p>Giá trị state lúc khởi tạo của thể đưa vào như một tham số truyền vào cho custom hook luôn</p>
+<pre class="language-jsx{5,6}"><code class="language-jsx{5,6}">import React, { Fragment, useState, useEffect } from 'react';
+import axios from 'axios';
+
+const useDataApi = (initialUrl, initialData) => {
+  const [data, setData] = useState(initialData);
+  const [url, setUrl] = useState(initialUrl);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsError(false);
+      setIsLoading(true);
+      try {
+        const result = await axios(url);
+        setData(result.data);
+      } catch (error) {
+        setIsError(true);
+      }
+      setIsLoading(false);
+    };
+    
+    fetchData();
+  }, [url]);
+  
+  return [{ data, isLoading, isError }, setUrl];
+};
+
+function App() {
+  const [query, setQuery] = useState('redux');
+  const [{ data, isLoading, isError }, doFetch] = useDataApi(
+    'https://hn.algolia.com/api/v1/search?query=redux',
+    { hits: [] },
+  );
+  
+  return (
+    <Fragment>
+      <form
+        onSubmit={event => {
+          doFetch(
+            `http://hn.algolia.com/api/v1/search?query=${query}`,
+          );
+          event.preventDefault();
+        }}
+      >
+        <input
+          type="text"
+          value={query}
+          onChange={event => setQuery(event.target.value)}
+        />
+        <button type="submit">Search</button>
+      </form>
+      {isError && <div>Something went wrong ...</div>}
+      {isLoading ? (
+        <div>Loading ...</div>
+      ) : (
+        <ul>
+          {data.hits.map(item => (
+            <li key={item.objectID}>
+              <a href={item.url}>{item.title}</a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </Fragment>
+  );
+}
+export default App;</code></pre>
+<h2 id="reducer-hook"><a href="#reducer-hook" aria-hidden="true"><span class="icon icon-link"></span></a>Reducer hook</h2>
+<p>Với cái custom hook để fetch data như ở trên, chúng ta thấy có 2 state <code class="language-text">isLoading</code>, <code class="language-text">isError</code> quan hệ khá <em>mật thiết</em> với nhau, có thể hợp nhất 2 đứa nó lại bằng <code class="language-text">React.useReducer</code></p>
+<pre class="language-jsx{5,9,10,11,16,17,18,19}"><code class="language-jsx{5,9,10,11,16,17,18,19}">import React, {
+  Fragment,
+  useState,
+  useEffect,
+  useReducer,
+} from 'react';
+import axios from 'axios';
+
+const dataFetchReducer = (state, action) => {
+  ...
+};
+
+const useDataApi = (initialUrl, initialData) => {
+  const [url, setUrl] = useState(initialUrl);
+  
+  const [state, dispatch] = useReducer(dataFetchReducer, {
+    isLoading: false,
+    isError: false,
+    data: initialData,
+  });
+  ...
+};</code></pre>
+<p><code class="language-text">React.useReducer</code> sẽ nhận vào một hàm reducer (công dụng tương tự như hàm reducer của redux ấy) và các giá trị khởi tạo của state, trong trường hợp của chúng ta là <code class="language-text">isLoading</code> và <code class="language-text">isError</code>. Việc này chẳng qua là gom tất cả state liên quan vào một object cho nó <em>tinh tế</em> thôi, thay vì từng state riêng biệt như sử dụng <code class="language-text">useState</code></p>
+<pre class="language-js{16,19,21}"><code class="language-js{16,19,21}">const dataFetchReducer = (state, action) => {
+  ...
+};
+
+const useDataApi = (initialUrl, initialData) => {
+  const [url, setUrl] = useState(initialUrl);
+  
+  const [state, dispatch] = useReducer(dataFetchReducer, {
+    isLoading: false,
+    isError: false,
+    data: initialData,
+  });
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      dispatch({ type: 'FETCH_INIT' });
+      try {
+        const result = await axios(url);
+        dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
+      } catch (error) {
+        dispatch({ type: 'FETCH_FAILURE' });
+      }
+    };
+    fetchData();
+  }, [url]);
+  
+  ...
+};</code></pre>
+<p>Mình đã bảo rồi, nó sẽ giống như cái reducer trong redux thôi, chúng ta <code class="language-text">dispatch</code> một object gồm <code class="language-text">type</code> và <code class="language-text">payload</code>, căn cứ vào payload mà chúng ta xử lý, cập nhập state</p>
+<p>Cuối cùng chúng ta cập nhập lại giá trị trả về của custom hook nữa</p>
+<pre class="language-jsx{12}"><code class="language-jsx{12}">const useDataApi = (initialUrl, initialData) => {
+  const [url, setUrl] = useState(initialUrl);
+  
+  const [state, dispatch] = useReducer(dataFetchReducer, {
+    isLoading: false,
+    isError: false,
+    data: initialData,
+  });
+  
+  ...
+  
+  return [state, setUrl];
+};</code></pre>
+<p>Cuối cùng, không kém phần quan trọng, phần code thực hiện bên trong <code class="language-text">dataFetchReducer</code></p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">dataFetchReducer</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token property-access">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">'FETCH_INIT'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token spread operator">...</span>state<span class="token punctuation">,</span>
+        isLoading<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        isError<span class="token operator">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">'FETCH_SUCCESS'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token spread operator">...</span>state<span class="token punctuation">,</span>
+        isLoading<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        isError<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        data<span class="token operator">:</span> action<span class="token punctuation">.</span><span class="token property-access">payload</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">'FETCH_FAILURE'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token spread operator">...</span>state<span class="token punctuation">,</span>
+        isLoading<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        isError<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword module">default</span><span class="token operator">:</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<h2 id="bỏ-qua-việc-fetch-data"><a href="#b%E1%BB%8F-qua-vi%E1%BB%87c-fetch-data" aria-hidden="true"><span class="icon icon-link"></span></a>Bỏ qua việc fetch data</h2>
+<p>Tình huống là khi user chuyển qua một route khác, khi đang fetch data, việc gọi fetch ko cần thiết và có thể bỏ qua</p>
+<pre class="language-jsx{11,17,21,29}"><code class="language-jsx{11,17,21,29}">const useDataApi = (initialUrl, initialData) => {
+  const [url, setUrl] = useState(initialUrl);
+  
+  const [state, dispatch] = useReducer(dataFetchReducer, {
+    isLoading: false,
+    isError: false,
+    data: initialData,
+  });
+  
+  useEffect(() => {
+    let didCancel = false;
+    
+    const fetchData = async () => {
+      dispatch({ type: 'FETCH_INIT' });
+      try {
+        const result = await axios(url);
+        if (!didCancel) {
+          dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
+        }
+      } catch (error) {
+        if (!didCancel) {
+          dispatch({ type: 'FETCH_FAILURE' });
+        }
+      }
+    };
+    
+    fetchData();
+    
+    return () => {
+      didCancel = true;
+    };
+    
+  }, [url]);
+  
+  return [state, setUrl];
+};</code></pre>
+<p>Với việc return một function ở cuối của <code class="language-text">React.useEffect</code>, tên gọi các bạn React đặt là clean up function, nằm trong kiểu effect cần clean up - nói thật mình phát mệt với việc các bạn trong team React cứ thích <em>chế</em> thêm liên tục như vậy.</p>
+<blockquote>
+<p>Nói theo cách của mình đi, nếu bạn return một function ở cuối của <code class="language-text">React.useEffect</code> nó sẽ chạy khi component bị unmount.</p>
+</blockquote>
+<p>Source code có thể tham khảo đầy đủ <a href="https://github.com/the-road-to-learn-react/use-data-api/blob/master/src/index.js" target="_blank" rel="nofollow noopener noreferrer">ở đây</a></p>
+<p><a href="https://www.robinwieruch.de/react-hooks-fetch-data" target="_blank" rel="nofollow noopener noreferrer">https://www.robinwieruch.de/react-hooks-fetch-data</a></p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/hoc-thuat/" class="post-tags__link"><span>#</span> hoc-thuat
+		</a><a href="/blog/tag/react/" class="post-tags__link"><span>#</span> react
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020. </span><span class="footer__links">Powered by <a href="//gridsome.org"> Gridsome </a></span></footer></div>
+    <script src="/blog/assets/js/app.24a01750.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" defer></script>
+  </body>
+</html>

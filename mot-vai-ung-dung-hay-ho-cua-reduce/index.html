@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Một vài ứng dụng hay ho của reduce - VuiLapTrinh.com</title><meta name="gridsome:hash" content="2220dd7e21ec580c079d73e55205e2a635c3762b"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="A simple, hackable &amp; minimalistic starter for Gridsome that uses Markdown for content."><meta data-vue-tag="ssr" name="desc" content="Hãy học sử dụng reduce, vượt qua những ví vụ căn bản bằng cộng, trừ, nhân, chia"><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/blog/assets/static/favicon.ce0531f.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/blog/assets/static/favicon.ac8d93a.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/blog/assets/static/favicon.b9532cc.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/blog/assets/static/favicon.f22e9f3.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/blog/assets/static/favicon.62d22cb.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/blog/assets/static/favicon.1539b60.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/blog/assets/static/favicon.dc0cdc5.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/blog/assets/static/favicon.7b22250.9bb7ffafafc09ac851d81afb65b8ef59.png"><link rel="preload" href="/blog/assets/css/0.styles.9ab035e6.css" as="style"><link rel="preload" href="/blog/assets/js/app.24a01750.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.1906fe28.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.267eee57.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.12682fb0.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.9ab035e6.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Một vài ứng dụng hay ho của reduce</h1><div class="post-meta">
+   Posted 2019-05-26.
+   <strong>5 min read.</strong></div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><p>Khi đọc tài liệu trên <a href="https://developer.mozilla.org/vi/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" rel="nofollow noopener noreferrer">MDN về Array.prototype.reduce()</a> chúng ta sẽ có cái nhìn khá tổng quát về <code class="language-text">.reduce()</code>, những ví dụ cộng, nhân số cơ bản để chúng ta dễ nắm cách hàm <code class="language-text">.reduce()</code> chạy. Tuy nhiên vì nó quá căn bản, nên bạn sẽ không thể thấy hết được sự <strong>lợi hại</strong> của <code class="language-text">.reduce()</code></p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">multiply</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> a <span class="token operator">*</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> sampleArray <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> sum <span class="token operator">=</span> sampleArray<span class="token punctuation">.</span><span class="token method function property-access">reduce</span><span class="token punctuation">(</span>add<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Tổng:'</span><span class="token punctuation">,</span> sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// ⦘ Tổng: 10</span>
+
+<span class="token keyword">const</span> product <span class="token operator">=</span> sampleArray<span class="token punctuation">.</span><span class="token method function property-access">reduce</span><span class="token punctuation">(</span>multiply<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Nhân lại bằng:'</span><span class="token punctuation">,</span> product<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// ⦘ Nhân lại bằng: 24</span></code></pre>
+<p>Có thể nhiều người không để ý, biến tích lũy (accumulator = tham số đầu tiên) và giá trị hiện tại (tham số thứ 2) không nhất thiết phải giống nhau.</p>
+<p>Chúng ta có thể khai báo một hàm reducer như sau là hoàn toàn hợp lệ</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fizzBuzzReducer</span><span class="token punctuation">(</span><span class="token parameter">acc<span class="token punctuation">,</span> element</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>element <span class="token operator">%</span> <span class="token number">15</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>acc<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">Fizz Buzz\n</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>element <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>acc<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">Fizz\n</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>element <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>acc<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">Buzz\n</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>acc<span class="token interpolation-punctuation punctuation">}</span></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>element<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">\n</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span>
+    <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">15</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token method function property-access">reduce</span><span class="token punctuation">(</span>fizzBuzzReducer<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Với bài viết này chúng ta cũng xem xét những ứng dụng khác, <strong>cao cấp</strong> hơn của <code class="language-text">.reduce()</code>, sử dụng việc thay đổi <em>kiểu</em> của biến tích lũy như ví dụ trên, mở ra nhiều ứng dụng bảo đảm là <strong>hay</strong></p>
+<h2 id="chuyển-một-array-sang-object"><a href="#chuy%E1%BB%83n-m%E1%BB%99t-array-sang-object" aria-hidden="true"><span class="icon icon-link"></span></a>Chuyển một array sang object</h2>
+<p>Chúng ta có một array thế này</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> peopleArr  <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        username<span class="token operator">:</span>    <span class="token string">'glestrade'</span><span class="token punctuation">,</span>
+        displayname<span class="token operator">:</span> <span class="token string">'Inspector Lestrade'</span><span class="token punctuation">,</span>
+        email<span class="token operator">:</span>       <span class="token string">'glestrade@met.police.uk'</span><span class="token punctuation">,</span>
+        authHash<span class="token operator">:</span>    <span class="token string">'bdbf9920f42242defd9a7f76451f4f1d'</span><span class="token punctuation">,</span>
+        lastSeen<span class="token operator">:</span>    <span class="token string">'2019-05-13T11:07:22+00:00'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        username<span class="token operator">:</span>    <span class="token string">'mholmes'</span><span class="token punctuation">,</span>
+        displayname<span class="token operator">:</span> <span class="token string">'Mycroft Holmes'</span><span class="token punctuation">,</span>
+        email<span class="token operator">:</span>       <span class="token string">'mholmes@gov.uk'</span><span class="token punctuation">,</span>
+        authHash<span class="token operator">:</span>    <span class="token string">'b4d04ad5c4c6483cfea030ff4e7c70bc'</span><span class="token punctuation">,</span>
+        lastSeen<span class="token operator">:</span>    <span class="token string">'2019-05-10T11:21:36+00:00'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        username<span class="token operator">:</span>    <span class="token string">'iadler'</span><span class="token punctuation">,</span>
+        displayname<span class="token operator">:</span> <span class="token string">'Irene Adler'</span><span class="token punctuation">,</span>
+        email<span class="token operator">:</span>       <span class="token keyword null nil">null</span><span class="token punctuation">,</span>
+        authHash<span class="token operator">:</span>    <span class="token string">'319d55944f13760af0a07bf24bd1de28'</span><span class="token punctuation">,</span>
+        lastSeen<span class="token operator">:</span>    <span class="token string">'2019-05-17T11:12:12+00:00'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
+<p>Nếu cần chuyển nó qua dạng object, lấy giá trị <code class="language-text">username</code> làm key</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">keyByUsernameReducer</span><span class="token punctuation">(</span><span class="token parameter">acc<span class="token punctuation">,</span> person</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token spread operator">...</span>acc<span class="token punctuation">,</span> <span class="token punctuation">[</span>person<span class="token punctuation">.</span><span class="token property-access">username</span><span class="token punctuation">]</span><span class="token operator">:</span> person <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> peopleObj <span class="token operator">=</span> peopleArr<span class="token punctuation">.</span><span class="token method function property-access">reduce</span><span class="token punctuation">(</span>keyByUsernameReducer<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// ⦘ {</span>
+<span class="token comment">//     "glestrade": {</span>
+<span class="token comment">//         "username":    "glestrade",</span>
+<span class="token comment">//         "displayname": "Inspector Lestrade",</span>
+<span class="token comment">//         "email":       "glestrade@met.police.uk",</span>
+<span class="token comment">//         "authHash":    "bdbf9920f42242defd9a7f76451f4f1d",</span>
+<span class="token comment">//          "lastSeen":    "2019-05-13T11:07:22+00:00"</span>
+<span class="token comment">//     },</span>
+<span class="token comment">//     "mholmes": {</span>
+<span class="token comment">//         "username":    "mholmes",</span>
+<span class="token comment">//         "displayname": "Mycroft Holmes",</span>
+<span class="token comment">//         "email":       "mholmes@gov.uk",</span>
+<span class="token comment">//         "authHash":    "b4d04ad5c4c6483cfea030ff4e7c70bc",</span>
+<span class="token comment">//          "lastSeen":    "2019-05-10T11:21:36+00:00"</span>
+<span class="token comment">//     },</span>
+<span class="token comment">//     "iadler":{</span>
+<span class="token comment">//         "username":    "iadler",</span>
+<span class="token comment">//         "displayname": "Irene Adler",</span>
+<span class="token comment">//         "email":       null,</span>
+<span class="token comment">//         "authHash":    "319d55944f13760af0a07bf24bd1de28",</span>
+<span class="token comment">//          "lastSeen":    "2019-05-17T11:12:12+00:00"</span>
+<span class="token comment">//     }</span>
+<span class="token comment">// }</span></code></pre>
+<h2 id="chuyển-một-array-thành-một-array-khác"><a href="#chuy%E1%BB%83n-m%E1%BB%99t-array-th%C3%A0nh-m%E1%BB%99t-array-kh%C3%A1c" aria-hidden="true"><span class="icon icon-link"></span></a>Chuyển một array thành một array khác</h2>
+<p>Bình thường khi nghĩ tới <code class="language-text">.reduce()</code> chúng ta nghĩ tới viết lấy một mảng sau đó đưa nó về 1 giá trị bằng biến tích lũy, giá trị này hoàn toàn có thể là một array khác.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> fileLines <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token string">'Inspector Algar,Inspector Bardle,Mr. Barker,Inspector Barton'</span><span class="token punctuation">,</span>
+    <span class="token string">'Inspector Baynes,Inspector Bradstreet,Inspector Sam Brown'</span><span class="token punctuation">,</span>
+    <span class="token string">'Monsieur Dubugue,Birdy Edwards,Inspector Forbes,Inspector Forrester'</span><span class="token punctuation">,</span>
+    <span class="token string">'Inspector Gregory,Inspector Tobias Gregson,Inspector Hill'</span><span class="token punctuation">,</span>
+    <span class="token string">'Inspector Stanley Hopkins,Inspector Athelney Jones'</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">splitLineReducer</span><span class="token punctuation">(</span><span class="token parameter">acc<span class="token punctuation">,</span> line</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> acc<span class="token punctuation">.</span><span class="token method function property-access">concat</span><span class="token punctuation">(</span>line<span class="token punctuation">.</span><span class="token method function property-access">split</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token language-regex">,</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> investigators <span class="token operator">=</span> fileLines<span class="token punctuation">.</span><span class="token method function property-access">reduce</span><span class="token punctuation">(</span>splitLineReducer<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [</span>
+<span class="token comment">//   "Inspector Algar",</span>
+<span class="token comment">//   "Inspector Bardle",</span>
+<span class="token comment">//   "Mr. Barker",</span>
+<span class="token comment">//   "Inspector Barton",</span>
+<span class="token comment">//   "Inspector Baynes",</span>
+<span class="token comment">//   "Inspector Bradstreet",</span>
+<span class="token comment">//   "Inspector Sam Brown",</span>
+<span class="token comment">//   "Monsieur Dubugue",</span>
+<span class="token comment">//   "Birdy Edwards",</span>
+<span class="token comment">//   "Inspector Forbes",</span>
+<span class="token comment">//   "Inspector Forrester",</span>
+<span class="token comment">//   "Inspector Gregory",</span>
+<span class="token comment">//   "Inspector Tobias Gregson",</span>
+<span class="token comment">//   "Inspector Hill",</span>
+<span class="token comment">//   "Inspector Stanley Hopkins",</span>
+<span class="token comment">//   "Inspector Athelney Jones"</span>
+<span class="token comment">// ]</span></code></pre>
+<p>Tất nhiên trong điều kiện có thể sử dụng <code class="language-text">.flatMap()</code> (  không hỗ trợ trên edge và IE) thì nên dùng <code class="language-text">.flatMap()</code> thay cho reduce</p>
+<h2 id="thực-hiện-2-tính-toán-cùng-lúc"><a href="#th%E1%BB%B1c-hi%E1%BB%87n-2-t%C3%ADnh-to%C3%A1n-c%C3%B9ng-l%C3%BAc" aria-hidden="true"><span class="icon icon-link"></span></a>Thực hiện 2 tính toán cùng lúc</h2>
+<p>Nếu cần thực hiện 2 tính toán dựa trên 1 array, ví dụ lấy giá trị nhỏ nhất và lớn nhất trong dãy số</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> readings <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">1.2</span><span class="token punctuation">,</span> <span class="token number">3.4</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">3.2</span><span class="token punctuation">,</span> <span class="token number">5.5</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> maxReading <span class="token operator">=</span> readings<span class="token punctuation">.</span><span class="token method function property-access">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">max</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token known-class-name class-name">Number</span><span class="token punctuation">.</span><span class="token constant">MIN_VALUE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> minReading <span class="token operator">=</span> readings<span class="token punctuation">.</span><span class="token method function property-access">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">min</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token known-class-name class-name">Number</span><span class="token punctuation">.</span><span class="token constant">MAX_VALUE</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><code class="language-text">.reduce</code> không chỉ có thể trả về number, nó có thể trả về bất cứ kiểu gì, chúng ta có thể đưa 2 giá trị này vào một object</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">minMaxReducer</span><span class="token punctuation">(</span><span class="token parameter">acc<span class="token punctuation">,</span> reading</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        minReading<span class="token operator">:</span> <span class="token maybe-class-name">Match</span><span class="token punctuation">.</span><span class="token method function property-access">min</span><span class="token punctuation">(</span>acc<span class="token punctuation">.</span><span class="token property-access">minReading</span><span class="token punctuation">,</span> reading<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        maxReading<span class="token operator">:</span> <span class="token maybe-class-name">Match</span><span class="token punctuation">.</span><span class="token method function property-access">max</span><span class="token punctuation">(</span>acc<span class="token punctuation">.</span><span class="token property-access">maxReading</span><span class="token punctuation">,</span> reading<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> initMinMax <span class="token operator">=</span> <span class="token punctuation">{</span>
+    minReading<span class="token operator">:</span> <span class="token known-class-name class-name">Number</span><span class="token punctuation">.</span><span class="token constant">MAX_VALUE</span><span class="token punctuation">,</span>
+    maxReading<span class="token operator">:</span> <span class="token known-class-name class-name">Number</span><span class="token punctuation">.</span><span class="token constant">MIN_VALUE</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> minMax <span class="token operator">=</span> readings<span class="token punctuation">.</span><span class="token method function property-access">reduce</span><span class="token punctuation">(</span>minMaxReducer<span class="token punctuation">,</span> initMinMax<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Vấn đề duy nhất của cách thứ 2 này là performance không tốt.</p>
+<h2 id="kết-hợp-map-và-filter-cùng-lúc"><a href="#k%E1%BA%BFt-h%E1%BB%A3p-map-v%C3%A0-filter-c%C3%B9ng-l%C3%BAc" aria-hidden="true"><span class="icon icon-link"></span></a>Kết hợp map và filter cùng lúc</h2>
+<p>Lấy lại ví dụ với mảng <code class="language-text">peopleArr</code> ở trên, chúng ta lấy người vừa đăng nhập sau cùng, không tính các user không có email. Cách thứ nhất để làm là tách ra làm 3 bước</p>
+<ul>
+<li>Lọc hết các user không có email</li>
+<li>Lấy giá trị <code class="language-text">lastSeen</code></li>
+<li>Tìm giá trị lớn nhất</li>
+</ul>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">notEmptyEmail</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> <span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token property-access">email</span> <span class="token operator">!==</span> <span class="token keyword null nil">null</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token property-access">email</span> <span class="token operator">!==</span> <span class="token keyword nil">undefined</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">getLastSeen</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> x<span class="token punctuation">.</span><span class="token property-access">lastSeen</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">greater</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>a <span class="token operator">></span> b<span class="token punctuation">)</span> <span class="token operator">?</span> a <span class="token operator">:</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> peopleWithEmail <span class="token operator">=</span> peopleArr<span class="token punctuation">.</span><span class="token method function property-access">filter</span><span class="token punctuation">(</span>notEmptyEmail<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> lastSeenDates   <span class="token operator">=</span> peopleWithEmail<span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span>getLastSeen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> mostRecent      <span class="token operator">=</span> lastSeenDates<span class="token punctuation">.</span><span class="token method function property-access">reduce</span><span class="token punctuation">(</span>greater<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Một cách khác để làm với <code class="language-text">reduce</code></p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">notEmptyEmail</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token property-access">email</span> <span class="token operator">!==</span> <span class="token keyword null nil">null</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token property-access">email</span> <span class="token operator">!==</span> <span class="token keyword nil">undefined</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">greater</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>a <span class="token operator">></span> b<span class="token punctuation">)</span> <span class="token operator">?</span> a <span class="token operator">:</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">notEmptyMostRecent</span><span class="token punctuation">(</span><span class="token parameter">currentRecent<span class="token punctuation">,</span> person</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token function">notEmptyEmail</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token function">greater</span><span class="token punctuation">(</span>currentRecent<span class="token punctuation">,</span> person<span class="token punctuation">.</span><span class="token property-access">lastSeen</span><span class="token punctuation">)</span> <span class="token operator">:</span> currentRecent<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mostRecent <span class="token operator">=</span> peopleArr<span class="token punctuation">.</span><span class="token method function property-access">reduce</span><span class="token punctuation">(</span>notEmptyMostRecent<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="chạy-các-phương-thức-async-theo-hàng-đợi"><a href="#ch%E1%BA%A1y-c%C3%A1c-ph%C6%B0%C6%A1ng-th%E1%BB%A9c-async-theo-h%C3%A0ng-%C4%91%E1%BB%A3i" aria-hidden="true"><span class="icon icon-link"></span></a>Chạy các phương thức async theo hàng đợi</h2>
+<p>Rất hữu ích khi cần giới hạn số lượng request API, hoặc lấy kết quả của một Promise truyền cho thằng kế tiếp. Ví dụ lấy message cho tất cả user trong mảng <code class="language-text">peopleArr</code></p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fetchMessages</span><span class="token punctuation">(</span><span class="token parameter">username</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://example.com/api/messages/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>username<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token parameter">response</span> <span class="token arrow operator">=></span> response<span class="token punctuation">.</span><span class="token method function property-access">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">getUsername</span><span class="token punctuation">(</span><span class="token parameter">person</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> person<span class="token punctuation">.</span><span class="token property-access">username</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">chainedFetchMessages</span><span class="token punctuation">(</span><span class="token parameter">p<span class="token punctuation">,</span> username</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// p là một promise</span>
+    <span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token keyword">await</span> p<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetchMessages</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token spread operator">...</span>obj<span class="token punctuation">,</span> <span class="token punctuation">[</span>username<span class="token punctuation">]</span><span class="token operator">:</span> data <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> msgObj <span class="token operator">=</span> peopleArr
+    <span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span>getUsername<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token method function property-access">reduce</span><span class="token punctuation">(</span>chainedFetchMessages<span class="token punctuation">,</span> <span class="token known-class-name class-name">Promise</span><span class="token punctuation">.</span><span class="token method function property-access">resolve</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token property-access">log</span><span class="token punctuation">)</span></code></pre>
+<p><a target="_blank" rel="noopener noreferrer" href="https://jrsinclair.com/articles/2019/functional-js-do-more-with-reduce/">FUNCTIONAL JAVASCRIPT: HOW TO USE ARRAY REDUCE FOR MORE THAN JUST NUMBERS
+</a></p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/javascript/" class="post-tags__link"><span>#</span> javascript
+		</a><a href="/blog/tag/thu-thuat/" class="post-tags__link"><span>#</span> thu-thuat
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020. </span><span class="footer__links">Powered by <a href="//gridsome.org"> Gridsome </a></span></footer></div>
+    <script src="/blog/assets/js/app.24a01750.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" defer></script>
+  </body>
+</html>

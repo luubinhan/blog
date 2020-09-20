@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Phương pháp test React Component - VuiLapTrinh.com</title><meta name="gridsome:hash" content="2220dd7e21ec580c079d73e55205e2a635c3762b"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="A simple, hackable &amp; minimalistic starter for Gridsome that uses Markdown for content."><meta data-vue-tag="ssr" name="desc" content="Bài viết được dịch từ tài liệu chính thức của React"><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/blog/assets/static/favicon.ce0531f.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/blog/assets/static/favicon.ac8d93a.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/blog/assets/static/favicon.b9532cc.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/blog/assets/static/favicon.f22e9f3.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/blog/assets/static/favicon.62d22cb.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/blog/assets/static/favicon.1539b60.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/blog/assets/static/favicon.dc0cdc5.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/blog/assets/static/favicon.7b22250.9bb7ffafafc09ac851d81afb65b8ef59.png"><link rel="preload" href="/blog/assets/css/0.styles.9ab035e6.css" as="style"><link rel="preload" href="/blog/assets/js/app.24a01750.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.1906fe28.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.267eee57.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.12682fb0.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.9ab035e6.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Phương pháp test React Component</h1><div class="post-meta">
+   Posted 2020-01-09.
+   <strong>11 min read.</strong></div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#c%C3%A0i-%C4%91%E1%BA%B7t-c%E1%BB%A5-th%E1%BB%83-setup--teardown">Cài đặt cụ thể {#setup--teardown}</a></li>
+<li><a href="#act-act"><code class="language-text">act()</code> {#act}</a></li>
+<li><a href="#rendering-rendering">Rendering {#rendering}</a></li>
+<li><a href="#fetch-d%E1%BB%AF-li%E1%BB%87u-data-fetching">Fetch dữ liệu {#data-fetching}</a></li>
+<li><a href="#gi%E1%BA%A3-l%E1%BA%ADp-c%C3%A1c-module-mocking-modules">Giả lập các module {#mocking-modules}</a></li>
+<li><a href="#event-events">Event {#events}</a></li>
+<li><a href="#timer-timers">Timer {#timers}</a></li>
+<li><a href="#snapshot-test-snapshot-testing">Snapshot Test {#snapshot-testing}</a></li>
+<li><a href="#multiple-renderer-multiple-renderers">Multiple Renderer {#multiple-renderers}</a></li>
+<li><a href="#c%C3%B2n-thi%E1%BA%BFu-g%C3%AC-%C4%91%C3%B3-something-missing">Còn thiếu gì đó? {#something-missing}</a></li>
+</ul>
+<!-- /TOC -->
+<p>Một vài cách viết test phổ biến cho component React.</p>
+<blockquote>
+<p>Lưu ý:</p>
+<p>Trang này mặc định bạn đang dùng <a href="https://jestjs.io/" target="_blank" rel="nofollow noopener noreferrer">Jest</a> làm test runner. Nếu dùng một test runner khác, bạn cần thay đổi API cho phù hợp, giải pháp sẽ gần như nhau. Đọc thêm chi tiết cách cài đặt môi trường test ở <a href="/docs/testing-environments.html">Môi trường Test</a>.</p>
+</blockquote>
+<p>Trên trang này, chúng tôi sẽ tập chung vào function component. Tuy nhiên, cách để tiếp cận test không phụ thuộc vào phần hiện thực cụ thể, nó cũng sẽ làm việc tốt với class component.</p>
+<ul>
+<li><a href="#setup--teardown">Cài đặt cụ thể</a></li>
+<li><a href="#act"><code class="language-text">act()</code></a></li>
+<li><a href="#rendering">Rendering</a></li>
+<li><a href="#data-fetching">Data Fetching</a></li>
+<li><a href="#mocking-modules">Mocking Modules</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#timers">Timers</a></li>
+<li><a href="#snapshot-testing">Snapshot Testing</a></li>
+<li><a href="#multiple-renderers">Multiple Renderers</a></li>
+<li><a href="#something-missing">Something Missing?</a></li>
+</ul>
+<hr>
+<h3 id="cài-đặt-cụ-thể-setup--teardown"><a href="#c%C3%A0i-%C4%91%E1%BA%B7t-c%E1%BB%A5-th%E1%BB%83-setup--teardown" aria-hidden="true"><span class="icon icon-link"></span></a>Cài đặt cụ thể {#setup--teardown}</h3>
+<p>Trên mỗi test, chúng ta thường muốn render React tree của chúng ta thành DOM element và chèn nó vào <code class="language-text">document</code>. Chỉ như thế chúng ta mới nhận được các sự kiện trên DOM. Khi kết thúc một test, chúng ta muốn "dọn dẹp" và <em>gỡ bỏ</em> cây này khỏi DOM.</p>
+<p>Một cách phổ biến để làm nó là sử dụng bộ đôi <code class="language-text">beforeEach</code> và <code class="language-text">afterEach</code>, để chúng luôn chạy một cách độc lập và không ảnh hưởng đến test khác:</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword module">import</span> <span class="token punctuation">{</span> unmountComponentAtNode <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">"react-dom"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> container <span class="token operator">=</span> <span class="token keyword null nil">null</span><span class="token punctuation">;</span>
+<span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// cài đặt một DOM element như là target cho render</span>
+  container <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">createElement</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token method function property-access">appendChild</span><span class="token punctuation">(</span>container<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// dọn dẹp lúc thoát</span>
+  <span class="token function">unmountComponentAtNode</span><span class="token punctuation">(</span>container<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  container<span class="token punctuation">.</span><span class="token method function property-access">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  container <span class="token operator">=</span> <span class="token keyword null nil">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Bạn có thể sử dụng một cách khác, nhưng hãy nhớ chúng ta muốn chạy việc dọn dẹp ngay cả khi test <em>fail</em>. Nếu không, test có thể trở nên "bất ổn", và một test có thể ảnh hưởng đến hoạt động của test khác. Như vậy sẽ rất khó để debug.</p>
+<hr>
+<h3 id="act-act"><a href="#act-act" aria-hidden="true"><span class="icon icon-link"></span></a><code class="language-text">act()</code> {#act}</h3>
+<p>Khi viết UI test, công việc như render, sự kiện từ user, hoặc fetch dữ liệu có thể được xem như một "đơn vị" tương tác với giao diện người dùng. React cung cấp một hàm trợ giúp <code class="language-text">act()</code> để đảm bảo tất cả mọi cập nhập liên quan đến "đơn vị" đã được thực thi và áp dụng đến DOM trước khi chúng ta xác nhận kết quả:</p>
+<pre class="language-js"><code class="language-js"><span class="token function">act</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// render component</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// xác nhận kết quả</span></code></pre>
+<p>Nó giúp test chạy giống nhất với những gì user nhận được khi sử dụng ứng dụng. Tất cả những ví dụ bên dưới sử dụng <code class="language-text">act()</code> để đảm bảo điều này.</p>
+<p>Bạn có thể thấy sử dụng <code class="language-text">act()</code> trực tiếp rất rườm rà. Để tránh rườm rà, bạn có thể sử dụng một thư viện như <a href="https://testing-library.com/react" target="_blank" rel="nofollow noopener noreferrer">React Testing Library</a>, các hàm hỗ trợ đã được wrap lại sẵn trong <code class="language-text">act()</code>.</p>
+<blockquote>
+<p>Lưu ý:</p>
+<p>Tên <code class="language-text">act</code> có nguồn gốc từ cách làm <a href="http://wiki.c2.com/?ArrangeActAssert" target="_blank" rel="nofollow noopener noreferrer">Arrange-Act-Assert</a>.</p>
+</blockquote>
+<hr>
+<h3 id="rendering-rendering"><a href="#rendering-rendering" aria-hidden="true"><span class="icon icon-link"></span></a>Rendering {#rendering}</h3>
+<p>Thường thì, chúng ta muốn test xem một component render đúng hay không với các prop nhận được. Xem xét một component đơn giản sẽ render một thông tin dựa vào prop:</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token comment">// hello.js</span>
+
+<span class="token keyword module">import</span> <span class="token maybe-class-name">React</span> <span class="token keyword module">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token keyword">function</span> <span class="token function"><span class="token maybe-class-name">Hello</span></span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>props<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">Hello, </span><span class="token punctuation">{</span>props<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">}</span><span class="token plain-text">!</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span><span class="token plain-text">Hey, stranger</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Chúng ta có thể viết test cho component:</p>
+<pre class="language-jsx{24-27}"><code class="language-jsx{24-27}">// hello.test.js
+
+import React from "react";
+import { render, unmountComponentAtNode } from "react-dom";
+import { act } from "react-dom/test-utils";
+
+import Hello from "./hello";
+
+let container = null;
+beforeEach(() => {
+  // cài đặt một DOM element như là target cho render
+  container = document.createElement("div");
+  document.body.appendChild(container);
+});
+
+afterEach(() => {
+  // dọn dẹp lúc thoát
+  unmountComponentAtNode(container);
+  container.remove();
+  container = null;
+});
+
+it("renders with or without a name", () => {
+  act(() => {
+    render(<Hello />, container);
+  });
+  expect(container.textContent).toBe("Hey, stranger");
+
+  act(() => {
+    render(<Hello name="Jenny" />, container);
+  });
+  expect(container.textContent).toBe("Hello, Jenny!");
+
+  act(() => {
+    render(<Hello name="Margaret" />, container);
+  });
+  expect(container.textContent).toBe("Hello, Margaret!");
+});</code></pre>
+<hr>
+<h3 id="fetch-dữ-liệu-data-fetching"><a href="#fetch-d%E1%BB%AF-li%E1%BB%87u-data-fetching" aria-hidden="true"><span class="icon icon-link"></span></a>Fetch dữ liệu {#data-fetching}</h3>
+<p>Thay vì gọi APIs thật trong test, chúng ta có thể giả lập các request này bằng dữ liệu giả. Giả lập dữ liệu với dữ liệu "fake" để tránh ảnh hưởng đến test khi backend không sử dụng được, và để nó chạy nhanh hơn. Lưu ý: bạn có thể muốn nó chạy danh sách các test con sử dụng framework <a href="/docs/testing-environments.html#end-to-end-tests-aka-e2e-tests">"end-to-end"</a> để xem toàn bộ ứng dụng có làm việc với nhau không.</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token comment">// user.js</span>
+
+<span class="token keyword module">import</span> <span class="token maybe-class-name">React</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> useState<span class="token punctuation">,</span> useEffect <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token keyword">function</span> <span class="token function"><span class="token maybe-class-name">User</span></span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>user<span class="token punctuation">,</span> setUser<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token keyword null nil">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">fetchUserData</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"/"</span> <span class="token operator">+</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">setUser</span><span class="token punctuation">(</span><span class="token keyword">await</span> response<span class="token punctuation">.</span><span class="token method function property-access">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token function">fetchUserData</span><span class="token punctuation">(</span>props<span class="token punctuation">.</span><span class="token property-access">id</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>props<span class="token punctuation">.</span><span class="token property-access">id</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">"loading..."</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>details</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>summary</span><span class="token punctuation">></span></span><span class="token punctuation">{</span>user<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>summary</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span><span class="token punctuation">{</span>user<span class="token punctuation">.</span><span class="token property-access">age</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span><span class="token plain-text"> years old
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span><span class="token plain-text">
+      lives in </span><span class="token punctuation">{</span>user<span class="token punctuation">.</span><span class="token property-access">address</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>details</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Bạn có thể viết test cho nó:</p>
+<pre class="language-jsx{23-33,44-45}"><code class="language-jsx{23-33,44-45}">// user.test.js
+
+import React from "react";
+import { render, unmountComponentAtNode } from "react-dom";
+import { act } from "react-dom/test-utils";
+import User from "./user";
+
+let container = null;
+beforeEach(() => {
+  // cài đặt một DOM element như là target cho render
+  container = document.createElement("div");
+  document.body.appendChild(container);
+});
+
+afterEach(() => {
+  // dọn dẹp lúc thoát
+  unmountComponentAtNode(container);
+  container.remove();
+  container = null;
+});
+
+it("renders user data", async () => {
+  const fakeUser = {
+    name: "Joni Baez",
+    age: "32",
+    address: "123, Charming Avenue"
+  };
+
+  jest.spyOn(global, "fetch").mockImplementation(() =>
+    Promise.resolve({
+      json: () => Promise.resolve(fakeUser)
+    })
+  );
+
+  // sử dụng một phiên bản async để áp dụng resolved promise
+  await act(async () => {
+    render(<User id="123" />, container);
+  });
+
+  expect(container.querySelector("summary").textContent).toBe(fakeUser.name);
+  expect(container.querySelector("strong").textContent).toBe(fakeUser.age);
+  expect(container.textContent).toContain(fakeUser.address);
+
+  // xóa giả lập để đảm bảo test chạy tách biệt
+  global.fetch.mockRestore();
+});</code></pre>
+<hr>
+<h3 id="giả-lập-các-module-mocking-modules"><a href="#gi%E1%BA%A3-l%E1%BA%ADp-c%C3%A1c-module-mocking-modules" aria-hidden="true"><span class="icon icon-link"></span></a>Giả lập các module {#mocking-modules}</h3>
+<p>Một vài module không làm việc tốt trong môi trường test, hoặc không cần thiết cho test đó. Giả lập các module này bằng dummy để dễ dàng test hơn phần code của chúng ta.</p>
+<p>Component <code class="language-text">Contact</code> có nhúng một component third-party <code class="language-text">GoogleMap</code>:</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token comment">// map.js</span>
+
+<span class="token keyword module">import</span> <span class="token maybe-class-name">React</span> <span class="token keyword module">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">import</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">LoadScript</span><span class="token punctuation">,</span> <span class="token maybe-class-name">GoogleMap</span> <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">"react-google-maps"</span><span class="token punctuation">;</span>
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token keyword">function</span> <span class="token known-class-name class-name">Map</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">LoadScript</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>script-loader<span class="token punctuation">"</span></span> <span class="token attr-name">googleMapsApiKey</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>YOUR_API_KEY<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">GoogleMap</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>example-map<span class="token punctuation">"</span></span> <span class="token attr-name">center</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>props<span class="token punctuation">.</span><span class="token property-access">center</span><span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">LoadScript</span></span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// contact.js</span>
+
+<span class="token keyword module">import</span> <span class="token maybe-class-name">React</span> <span class="token keyword module">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token known-class-name class-name">Map</span> <span class="token keyword module">from</span> <span class="token string">"./map"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function"><span class="token maybe-class-name">Contact</span></span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>address</span><span class="token punctuation">></span></span><span class="token plain-text">
+        Contact </span><span class="token punctuation">{</span>props<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">}</span><span class="token plain-text"> via</span><span class="token punctuation">{</span><span class="token string">" "</span><span class="token punctuation">}</span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">data-testid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">"mailto:"</span> <span class="token operator">+</span> props<span class="token punctuation">.</span><span class="token property-access">email</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          email
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token plain-text">
+        or on their </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">data-testid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>site<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>props<span class="token punctuation">.</span><span class="token property-access">site</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          website
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token plain-text">.
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>address</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Map</span></span> <span class="token attr-name">center</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>props<span class="token punctuation">.</span><span class="token property-access">center</span><span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Nếu không muốn load component <code class="language-text">GoogleMap</code> trong test của chúng ta, giả lập bằng một dummy component và chạy test:</p>
+<pre class="language-jsx{10-18}"><code class="language-jsx{10-18}">// contact.test.js
+
+import React from "react";
+import { render, unmountComponentAtNode } from "react-dom";
+import { act } from "react-dom/test-utils";
+
+import Contact from "./contact";
+import MockedMap from "./map";
+
+jest.mock("./map", () => {
+  return function DummyMap(props) {
+    return (
+      <div data-testid="map">
+        {props.center.lat}:{props.center.long}
+      </div>
+    );
+  };
+});
+
+let container = null;
+beforeEach(() => {
+  // cài đặt một DOM element như là target cho render
+  container = document.createElement("div");
+  document.body.appendChild(container);
+});
+
+afterEach(() => {
+  // dọn dẹp lúc thoát
+  unmountComponentAtNode(container);
+  container.remove();
+  container = null;
+});
+
+it("should render contact information", () => {
+  const center = { lat: 0, long: 0 };
+  act(() => {
+    render(
+      <Contact
+        name="Joni Baez"
+        email="test@example.com"
+        site="http://test.com"
+        center={center}
+      />,
+      container
+    );
+  });
+
+  expect(
+    container.querySelector("[data-testid='email']").getAttribute("href")
+  ).toEqual("mailto:test@example.com");
+
+  expect(
+    container.querySelector('[data-testid="site"]').getAttribute("href")
+  ).toEqual("http://test.com");
+
+  expect(container.querySelector('[data-testid="map"]').textContent).toEqual(
+    "0:0"
+  );
+});</code></pre>
+<hr>
+<h3 id="event-events"><a href="#event-events" aria-hidden="true"><span class="icon icon-link"></span></a>Event {#events}</h3>
+<p>Chúng tôi khuyến nghị dispatch một event DOM thật trên DOM element, và đặt phần xác nhận kết quả. Xem một component <code class="language-text">Toggle</code>:</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token comment">// toggle.js</span>
+
+<span class="token keyword module">import</span> <span class="token maybe-class-name">React</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token keyword">function</span> <span class="token function"><span class="token maybe-class-name">Toggle</span></span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>state<span class="token punctuation">,</span> setState<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span>
+      <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+        <span class="token function">setState</span><span class="token punctuation">(</span><span class="token parameter">previousState</span> <span class="token arrow operator">=></span> <span class="token operator">!</span>previousState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        props<span class="token punctuation">.</span><span class="token method function property-access">onChange</span><span class="token punctuation">(</span><span class="token operator">!</span>state<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">}</span></span>
+      <span class="token attr-name">data-testid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>toggle<span class="token punctuation">"</span></span>
+    <span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>state <span class="token operator">===</span> <span class="token boolean">true</span> <span class="token operator">?</span> <span class="token string">"Turn off"</span> <span class="token operator">:</span> <span class="token string">"Turn on"</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Chúng ta có thể viết test cho nó:</p>
+<pre class="language-jsx{13-14,35,43}"><code class="language-jsx{13-14,35,43}">// toggle.test.js
+
+import React from "react";
+import { render, unmountComponentAtNode } from "react-dom";
+import { act } from "react-dom/test-utils";
+
+import Toggle from "./toggle";
+
+let container = null;
+beforeEach(() => {
+  // cài đặt một DOM element như là target cho render
+  container = document.createElement("div");
+  // container *phải* được chèn vào document để event chạy đúng.
+  document.body.appendChild(container);
+});
+
+afterEach(() => {
+  // dọn dẹp lúc thoát
+  unmountComponentAtNode(container);
+  container.remove();
+  container = null;
+});
+
+it("changes value when clicked", () => {
+  const onChange = jest.fn();
+  act(() => {
+    render(<Toggle onChange={onChange} />, container);
+  });
+
+  // lấy toàn bộ các element, và trigger một vài sự kiện click
+  const button = document.querySelector("[data-testid=toggle]");
+  expect(button.innerHTML).toBe("Turn on");
+
+  act(() => {
+    button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
+
+  expect(onChange).toHaveBeenCalledTimes(1);
+  expect(button.innerHTML).toBe("Turn off");
+
+  act(() => {
+    for (let i = 0; i < 5; i++) {
+      button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    }
+  });
+
+  expect(onChange).toHaveBeenCalledTimes(6);
+  expect(button.innerHTML).toBe("Turn on");
+});</code></pre>
+<p>Các event DOM và thuộc tính được mô tả trong <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent" target="_blank" rel="nofollow noopener noreferrer">MDN</a>. Lưu ý bạn phải truyền vào <code class="language-text">{ bubbles: true }</code> trên từng event bạn tạo cho nó để đến React listener vì React tự động truyền các event này đến document.</p>
+<blockquote>
+<p>Lưu ý:</p>
+<p>React Testing Library cung cấp <a href="https://testing-library.com/docs/dom-testing-library/api-events" target="_blank" rel="nofollow noopener noreferrer">một số hàm hỗ trợ</a> cho việc bắn sự kiện.</p>
+</blockquote>
+<hr>
+<h3 id="timer-timers"><a href="#timer-timers" aria-hidden="true"><span class="icon icon-link"></span></a>Timer {#timers}</h3>
+<p>Code có thể sử dụng hàm liên quan thời gian như <code class="language-text">setTimeout</code> để lên lịch các công việc sẽ thực hiện trong tương lai. Trong ví dụ, một cửa sổ nhiều lựa chọn đợi cho đến khi có lựa chọn, nếu sau 5 giây sẽ không thể chọn:</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token comment">// card.js</span>
+
+<span class="token keyword module">import</span> <span class="token maybe-class-name">React</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> useEffect <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token keyword">function</span> <span class="token function"><span class="token maybe-class-name">Card</span></span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> timeoutID <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+      props<span class="token punctuation">.</span><span class="token method function property-access">onSelect</span><span class="token punctuation">(</span><span class="token keyword null nil">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+      <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timeoutID<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>props<span class="token punctuation">.</span><span class="token property-access">onSelect</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token parameter">choice</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span>
+      <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>choice<span class="token punctuation">}</span></span>
+      <span class="token attr-name">data-testid</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>choice<span class="token punctuation">}</span></span>
+      <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> props<span class="token punctuation">.</span><span class="token method function property-access">onSelect</span><span class="token punctuation">(</span>choice<span class="token punctuation">)</span><span class="token punctuation">}</span></span>
+    <span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>choice<span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Chúng ta có thể viết test cho component bằng cách dùng <a href="https://jestjs.io/docs/en/timer-mocks" target="_blank" rel="nofollow noopener noreferrer">Jest's timer mocks</a> và test sự khác nhau của state.</p>
+<pre class="language-jsx{7,31,37,49,59}"><code class="language-jsx{7,31,37,49,59}">// card.test.js
+
+import React from "react";
+import { render, unmountComponentAtNode } from "react-dom";
+import { act } from "react-dom/test-utils";
+
+jest.useFakeTimers();
+
+let container = null;
+beforeEach(() => {
+  // cài đặt một DOM element như là target cho render
+  container = document.createElement("div");
+  document.body.appendChild(container);
+});
+
+afterEach(() => {
+  // dọn dẹp lúc thoát
+  unmountComponentAtNode(container);
+  container.remove();
+  container = null;
+});
+
+it("should select null after timing out", () => {
+  const onSelect = jest.fn();
+  act(() => {
+    render(<Card onSelect={onSelect} />, container);
+  });
+
+  // chạy đến lúc 100ms
+  act(() => {
+    jest.advanceTimersByTime(100);
+  });
+  expect(onSelect).not.toHaveBeenCalled();
+
+  // và chạy đến lúc 5 giây
+  act(() => {
+    jest.advanceTimersByTime(5000);
+  });
+  expect(onSelect).toHaveBeenCalledWith(null);
+});
+
+it("should cleanup on being removed", () => {
+  const onSelect = jest.fn();
+  act(() => {
+    render(<Card onSelect={onSelect} />, container);
+  });
+
+  act(() => {
+    jest.advanceTimersByTime(100);
+  });
+  expect(onSelect).not.toHaveBeenCalled();
+
+  // unmount app
+  act(() => {
+    render(null, container);
+  });
+
+  act(() => {
+    jest.advanceTimersByTime(5000);
+  });
+  expect(onSelect).not.toHaveBeenCalled();
+});
+
+it("should accept selections", () => {
+  const onSelect = jest.fn();
+  act(() => {
+    render(<Card onSelect={onSelect} />, container);
+  });
+
+  act(() => {
+    container
+      .querySelector("[data-testid='2']")
+      .dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
+
+  expect(onSelect).toHaveBeenCalledWith(2);
+});</code></pre>
+<p>Bạn có thể giả lập thời gian trong một test. Ở trên, chúng ta bật lên bằng cách gọi <code class="language-text">jest.useFakeTimers()</code>. Ưu điểm chính của chúng cho ta là test không cần thực sự đợi đến 5 giây để chạy, và bạn cũng không cần thay đổi component để phục vụ việc test.</p>
+<hr>
+<h3 id="snapshot-test-snapshot-testing"><a href="#snapshot-test-snapshot-testing" aria-hidden="true"><span class="icon icon-link"></span></a>Snapshot Test {#snapshot-testing}</h3>
+<p>Framework như Jest cho chúng ta lưu "ảnh" với <a href="https://jestjs.io/docs/en/snapshot-testing" target="_blank" rel="nofollow noopener noreferrer"><code class="language-text">toMatchSnapshot</code> / <code class="language-text">toMatchInlineSnapshot</code></a>. Với chúng, bạn có thể "lưu" một kết quả render và đảm bảo một thay đổi có thể làm thay đổi của kết quả snapshot.</p>
+<p>Trong ví dụ, chúng ta render một component và định dạng HTML đã render với thư viện <a href="https://www.npmjs.com/package/pretty" target="_blank" rel="nofollow noopener noreferrer"><code class="language-text">pretty</code></a>, trước khi lưu nó như một snapshot inline:</p>
+<pre class="language-jsx{29-31}"><code class="language-jsx{29-31}">// hello.test.js, again
+
+import React from "react";
+import { render, unmountComponentAtNode } from "react-dom";
+import { act } from "react-dom/test-utils";
+import pretty from "pretty";
+
+import Hello from "./hello";
+
+let container = null;
+beforeEach(() => {
+  // cài đặt một DOM element như là target cho render
+  container = document.createElement("div");
+  document.body.appendChild(container);
+});
+
+afterEach(() => {
+  // dọn dẹp lúc thoát
+  unmountComponentAtNode(container);
+  container.remove();
+  container = null;
+});
+
+it("should render a greeting", () => {
+  act(() => {
+    render(<Hello />, container);
+  });
+
+  expect(
+    pretty(container.innerHTML)
+  ).toMatchInlineSnapshot(); /* ... được tự động điền bởi jest ... */
+
+  act(() => {
+    render(<Hello name="Jenny" />, container);
+  });
+
+  expect(
+    pretty(container.innerHTML)
+  ).toMatchInlineSnapshot(); /* ... được tự động điền bởi jest ... */
+
+  act(() => {
+    render(<Hello name="Margaret" />, container);
+  });
+
+  expect(
+    pretty(container.innerHTML)
+  ).toMatchInlineSnapshot(); /* ... được tự động điền bởi jest ... */
+});</code></pre>
+<p>Thường sẽ tốt hơn nếu chỉ rõ kết quả muốn nhận được thay vì snapshot. Những kiểu test này bao gồm phần hiện thực chi tiết để chúng dễ dàng bị fail. Chọn <a href="#mocking-modules">giả lập một vài component con</a> có thể giúp giảm kích thước snapshot và giữ chúng dễ độc lúc review code.</p>
+<hr>
+<h3 id="multiple-renderer-multiple-renderers"><a href="#multiple-renderer-multiple-renderers" aria-hidden="true"><span class="icon icon-link"></span></a>Multiple Renderer {#multiple-renderers}</h3>
+<p>Trong những tình huống hiếm, bạn có thể chạy một test trên một component sử dụng multiple renderer. Lấy ví dụ, bạn có thể chạy snapshot test trên một component với <code class="language-text">react-test-renderer</code>, bên trong đó nó dùng <code class="language-text">ReactDOM.render</code>trong một child component để render một vài nội dung. Tình huống đó, bạn có thể wrap phần cập nhập với <code class="language-text">act()</code> ứng với từng renderer</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword module">import</span> <span class="token punctuation">{</span> act <span class="token keyword module">as</span> domAct <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">"react-dom/test-utils"</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token punctuation">{</span> act <span class="token keyword module">as</span> testAct<span class="token punctuation">,</span> create <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">"react-test-renderer"</span><span class="token punctuation">;</span>
+<span class="token comment">// ...</span>
+<span class="token keyword">let</span> root<span class="token punctuation">;</span>
+<span class="token function">domAct</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token function">testAct</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    root <span class="token operator">=</span> <span class="token function">create</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">App</span></span> <span class="token punctuation">/></span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">expect</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">toMatchSnapshot</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<hr>
+<h3 id="còn-thiếu-gì-đó-something-missing"><a href="#c%C3%B2n-thi%E1%BA%BFu-g%C3%AC-%C4%91%C3%B3-something-missing" aria-hidden="true"><span class="icon icon-link"></span></a>Còn thiếu gì đó? {#something-missing}</h3>
+<p>Nếu các tình huống hay gặp không được đề cập ở đây, có thể liên hệ với chúng tôi qua <a href="https://github.com/reactjs/reactjs.org/issues" target="_blank" rel="nofollow noopener noreferrer">issue tracker</a> cho toàn bộ tài liệu của website</p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/hoc-thuat/" class="post-tags__link"><span>#</span> hoc-thuat
+		</a><a href="/blog/tag/react/" class="post-tags__link"><span>#</span> react
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020. </span><span class="footer__links">Powered by <a href="//gridsome.org"> Gridsome </a></span></footer></div>
+    <script src="/blog/assets/js/app.24a01750.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" defer></script>
+  </body>
+</html>

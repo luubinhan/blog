@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Functional programing nên và không nên - VuiLapTrinh.com</title><meta name="gridsome:hash" content="2220dd7e21ec580c079d73e55205e2a635c3762b"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="A simple, hackable &amp; minimalistic starter for Gridsome that uses Markdown for content."><meta data-vue-tag="ssr" name="desc" content=""><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="16x16" href="/blog/assets/static/favicon.ce0531f.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="32x32" href="/blog/assets/static/favicon.ac8d93a.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="icon" type="image/png" sizes="96x96" href="/blog/assets/static/favicon.b9532cc.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="76x76" href="/blog/assets/static/favicon.f22e9f3.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="152x152" href="/blog/assets/static/favicon.62d22cb.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="120x120" href="/blog/assets/static/favicon.1539b60.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="167x167" href="/blog/assets/static/favicon.dc0cdc5.9bb7ffafafc09ac851d81afb65b8ef59.png"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/png" sizes="180x180" href="/blog/assets/static/favicon.7b22250.9bb7ffafafc09ac851d81afb65b8ef59.png"><link rel="preload" href="/blog/assets/css/0.styles.9ab035e6.css" as="style"><link rel="preload" href="/blog/assets/js/app.24a01750.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.1906fe28.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.267eee57.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.12682fb0.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.9ab035e6.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Functional programing nên và không nên</h1><div class="post-meta">
+   Posted 2020-05-17.
+   <strong>3 min read.</strong></div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#lu%C3%B4n-tr%E1%BA%A3-v%E1%BB%81-gi%C3%A1-tr%E1%BB%8B">Luôn trả về giá trị</a></li>
+<li><a href="#module-h%C3%B3a">Module hóa</a></li>
+<li><a href="#h%E1%BB%A3p-th%E1%BB%83-ko-k%E1%BA%BF-th%E1%BB%ABa-composition-vs-inheritance">Hợp thể ko kế thừa (composition vs. inheritance)</a></li>
+<li><a href="#ghi-nh%E1%BB%9B-khi-c%E1%BA%A7n-thi%E1%BA%BFt">Ghi nhớ khi cần thiết</a></li>
+<li><a href="#kh%C3%B4ng-thay-%C4%91%E1%BB%95i-gi%C3%A1-tr%E1%BB%8B-g%E1%BB%91c">Không thay đổi giá trị gốc</a></li>
+<li><a href="#kh%C3%B4ng-d%C3%B9ng-v%C3%B2ng-l%E1%BA%B7p-for">Không dùng vòng lặp <code class="language-text">for</code></a></li>
+<li><a href="#kh%C3%B4ng-d%C3%B9ng-switchcase">Không dùng <code class="language-text">switch...case</code></a></li>
+<li><a href="#trycatch">Try...catch</a></li>
+<li><a href="#undefined-v%C3%A0-null">Undefined và null</a></li>
+<li><a href="#class">Class</a></li>
+<li><a href="#%C4%91%E1%BA%B7t-t%C3%AAn-function">Đặt tên function</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="luôn-trả-về-giá-trị"><a href="#lu%C3%B4n-tr%E1%BA%A3-v%E1%BB%81-gi%C3%A1-tr%E1%BB%8B" aria-hidden="true"><span class="icon icon-link"></span></a>Luôn trả về giá trị</h2>
+<p><strong>Luôn trả về giá trị</strong>, kể cả nhưng hàm chỉ tạo side-effect, ngoài ra giá trị trả về còn nên cố định luôn một kiểu, không nên lúc kiểu này lúc kiểu khác, giữ giá trị thô, đừng lưu giá trị đã định dạng (như format tiền tệ, ngày tháng), dùng tham số, đừng hard-code</p>
+<p>❌ Không ngon</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  result <span class="token operator">*=</span> i<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"Fact of 5: "</span><span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>✅ Chuẩn cơm mẹ nấu</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">fact</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span>n <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token operator">:</span> n <span class="token operator">*</span> <span class="token function">fact</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"Fact of 5: "</span><span class="token punctuation">,</span> <span class="token function">fact</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="module-hóa"><a href="#module-h%C3%B3a" aria-hidden="true"><span class="icon icon-link"></span></a>Module hóa</h2>
+<p>Tách bạch một module chỉ làm một việc, và làm thật tốt việc đó</p>
+<h2 id="hợp-thể-ko-kế-thừa-composition-vs-inheritance"><a href="#h%E1%BB%A3p-th%E1%BB%83-ko-k%E1%BA%BF-th%E1%BB%ABa-composition-vs-inheritance" aria-hidden="true"><span class="icon icon-link"></span></a>Hợp thể ko kế thừa (composition vs. inheritance)</h2>
+<p>Kế thừa <strong>KHÔNG</strong> phải là cách chúng ta xử lý dữ liệu, behavior trong functional programing</p>
+<h2 id="ghi-nhớ-khi-cần-thiết"><a href="#ghi-nh%E1%BB%9B-khi-c%E1%BA%A7n-thi%E1%BA%BFt" aria-hidden="true"><span class="icon icon-link"></span></a>Ghi nhớ khi cần thiết</h2>
+<p>Với pure function, việc ghi nhớ (memoize) kết quả được xem là an toàn vì cùng input-cùng output.</p>
+<p>Ví dụ dùng hàm <code class="language-text">memize</code> của thư viện Ramda</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> fact <span class="token operator">=</span> <span class="token function">memoize</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">===</span> n <span class="token operator">?</span> <span class="token number">1</span> <span class="token operator">:</span> n <span class="token operator">*</span> <span class="token function">fact</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">fact</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Calculates fact for 5, 4, 3 ...</span>
+<span class="token function">fact</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Instantaneous</span>
+<span class="token function">fact</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Instantaneous</span></code></pre>
+<h2 id="không-thay-đổi-giá-trị-gốc"><a href="#kh%C3%B4ng-thay-%C4%91%E1%BB%95i-gi%C3%A1-tr%E1%BB%8B-g%E1%BB%91c" aria-hidden="true"><span class="icon icon-link"></span></a>Không thay đổi giá trị gốc</h2>
+<p>❌ Không ngon</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> approved <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> approved<span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>users<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token property-access">score</span> <span class="token operator">>=</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    approved<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span>approved<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>✅ Chuẩn cơm mẹ nấu</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> approved <span class="token operator">=</span> <span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">user</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> user<span class="token punctuation">.</span><span class="token property-access">score</span> <span class="token operator">>=</span> <span class="token number">7</span><span class="token punctuation">,</span> users<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="không-dùng-vòng-lặp-for"><a href="#kh%C3%B4ng-d%C3%B9ng-v%C3%B2ng-l%E1%BA%B7p-for" aria-hidden="true"><span class="icon icon-link"></span></a>Không dùng vòng lặp <code class="language-text">for</code></h2>
+<p>Mặc dù vòng lặp <code class="language-text">for</code> nhanh nhất trong các vòng lặp, tuy nhiên nghiêm cấm sử dụng để tránh gây ra một side-effect không cố ý.</p>
+<p>❌ Không ngon</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> even <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">300</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    even<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>even<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [0, 2, 4, 6, 8 ...]</span></code></pre>
+<p>✅ Chuẩn cơm mẹ nấu</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token punctuation">{</span> filter<span class="token punctuation">,</span> range <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">"ramda"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> even <span class="token operator">=</span> <span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> n <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token function">even</span><span class="token punctuation">(</span><span class="token function">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [0, 2, 4, 6, 8 ...]</span></code></pre>
+<h2 id="không-dùng-switchcase"><a href="#kh%C3%B4ng-d%C3%B9ng-switchcase" aria-hidden="true"><span class="icon icon-link"></span></a>Không dùng <code class="language-text">switch...case</code></h2>
+<p>❌ Không ngon</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">"Wesley"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> result<span class="token punctuation">;</span>
+
+<span class="token keyword">switch</span> <span class="token punctuation">(</span>person<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">case</span> <span class="token string">"Dayana"</span><span class="token operator">:</span>
+    result <span class="token operator">=</span> person<span class="token punctuation">.</span><span class="token property-access">name</span> <span class="token operator">+</span> <span class="token string">" is cool!"</span><span class="token punctuation">;</span>
+    <span class="token keyword">break</span><span class="token punctuation">;</span>
+  <span class="token keyword">case</span> <span class="token string">"Wesley"</span><span class="token operator">:</span>
+    result <span class="token operator">=</span> person<span class="token punctuation">.</span><span class="token property-access">name</span> <span class="token operator">+</span> <span class="token string">" likes farting"</span><span class="token punctuation">;</span>
+    <span class="token keyword">break</span><span class="token punctuation">;</span>
+  <span class="token keyword module">default</span><span class="token operator">:</span>
+    result <span class="token operator">=</span> <span class="token string">"Who is "</span> <span class="token operator">+</span> person<span class="token punctuation">.</span><span class="token property-access">name</span> <span class="token operator">+</span> <span class="token string">"?"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Wesley likes farting</span></code></pre>
+<p>✅ Chuẩn cơm mẹ nấu</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token punctuation">{</span> <span class="token constant">T</span><span class="token punctuation">,</span> cond<span class="token punctuation">,</span> propEq <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">"ramda"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> getDescription <span class="token operator">=</span> <span class="token function">cond</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token punctuation">[</span><span class="token function">propEq</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"Dayana"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> name <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is cool!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token function">propEq</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"Wesley"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> name <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> likes farting</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token constant">T</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> name <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Who is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">?</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token function">getDescription</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">"Wesley"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Wesley likes farting</span></code></pre>
+<h2 id="trycatch"><a href="#trycatch" aria-hidden="true"><span class="icon icon-link"></span></a>Try...catch</h2>
+<p>❌ Không ngon</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">try</span> <span class="token punctuation">{</span>
+  <span class="token keyword nil">undefined</span><span class="token punctuation">.</span><span class="token property-access">property</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>✅ Chuẩn cơm mẹ nấu</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token punctuation">{</span> tryCatch <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">"ramda"</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Either</span> <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">"ramda-fantasy"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> computation <span class="token operator">=</span> <span class="token function">tryCatch</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token keyword nil">undefined</span><span class="token punctuation">.</span><span class="token property-access">property</span><span class="token punctuation">,</span>
+  <span class="token maybe-class-name">Either</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Right</span></span><span class="token punctuation">,</span>
+  <span class="token maybe-class-name">Either</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Left</span></span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token function">computation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Left&lt;TypeError></span></code></pre>
+<h2 id="undefined-và-null"><a href="#undefined-v%C3%A0-null" aria-hidden="true"><span class="icon icon-link"></span></a>Undefined và null</h2>
+<p>Không có giá trị (undefined, null) dẫn đến chuyện phải verify khá nhiều thứ và điều kiện nối điều kiện. Sử dụng <code class="language-text">Maybe</code></p>
+<p>❌ Không ngon</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">safeDiv</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>b <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword nil">undefined</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> a <span class="token operator">/</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token function">safeDiv</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Ops</span></code></pre>
+<p>✅ Chuẩn cơm mẹ nấu</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Maybe</span> <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">"ramda-fantasy"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">safeDiv</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">===</span> b <span class="token operator">?</span> <span class="token maybe-class-name">Maybe</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Nothing</span></span> <span class="token operator">:</span> <span class="token maybe-class-name">Maybe</span><span class="token punctuation">.</span><span class="token method function property-access"><span class="token maybe-class-name">Just</span></span><span class="token punctuation">(</span>a <span class="token operator">/</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">safeDiv</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">chain</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>result <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Never falls here</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="class"><a href="#class" aria-hidden="true"><span class="icon icon-link"></span></a>Class</h2>
+<p>Nói chung, sử dụng <code class="language-text">class</code> chúng ép buộc phải tạo ra effect và thao tác trực tiếp đến đối tượng gốc.</p>
+<p>❌ Không ngon</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+  <span class="token function">setName</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">name</span> <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+person<span class="token punctuation">.</span><span class="token method function property-access">setName</span><span class="token punctuation">(</span><span class="token string">"Cassandra"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>✅ Chuẩn cơm mẹ nấu</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token punctuation">{</span> lensProp<span class="token punctuation">,</span> prop<span class="token punctuation">,</span> set <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">"ramda"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> setName <span class="token operator">=</span> <span class="token function">set</span><span class="token punctuation">(</span><span class="token function">lensProp</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> getName <span class="token operator">=</span> <span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> person <span class="token operator">=</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"Cassandra"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="đặt-tên-function"><a href="#%C4%91%E1%BA%B7t-t%C3%AAn-function" aria-hidden="true"><span class="icon icon-link"></span></a>Đặt tên function</h2>
+<ul>
+<li>Có một <strong>động từ</strong> mô tả cái nó sẽ làm</li>
+<li>Mô tả được bên trong nó làm cái gì (tất nhiên là ngắn gọn nhất có thể)</li>
+<li>Nếu có cùng concept, sử dụng một từ chung</li>
+<li>Chỉ làm một việc duy nhất</li>
+<li>Không mô tả nó làm như thế nào</li>
+<li>Nếu gặp khó khăn trong việc đặt tên function, có thể bạn đã không đúng khi gom quá nhiều xử lý vào nó (ôm đồm xử lý)</li>
+</ul>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/javascript/" class="post-tags__link"><span>#</span> javascript
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020. </span><span class="footer__links">Powered by <a href="//gridsome.org"> Gridsome </a></span></footer></div>
+    <script src="/blog/assets/js/app.24a01750.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.da685d0f.js" defer></script>
+  </body>
+</html>
