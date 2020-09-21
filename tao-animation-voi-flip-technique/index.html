@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Tạo animation với flip technique - VuiLapTrinh.com</title><meta name="gridsome:hash" content="0ea6a5c7ec18fcd2d372c0c225289996c79af9fc"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui"><meta data-vue-tag="ssr" name="desc" content="Trong bài này chúng ta sẽ tìm hiểu kỹ thuật FLIP có thể sử dụng để animate position và kích thước của bất kỳ DOM element nào"><link rel="preload" href="/blog/assets/css/0.styles.d493c61a.css" as="style"><link rel="preload" href="/blog/assets/js/app.f8d91bd5.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.b044eecd.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.bd4a2964.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.4999789e.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.d493c61a.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Tạo animation với flip technique</h1><div class="post-meta">
+  Đăng ngày 2018-07-25.
+  
+    Mất khoảng
+    <strong>5 phút</strong> để đọc.
+  </div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><h1 id="tại-sao-sử-dụng-flip-technique"><a href="#t%E1%BA%A1i-sao-s%E1%BB%AD-d%E1%BB%A5ng-flip-technique" aria-hidden="true"><span class="icon icon-link"></span></a>Tại sao sử dụng FLIP technique</h1>
+<p>Đã bao lần bạn cần làm animate cho các property <code class="language-text">height</code>, <code class="language-text">width</code>, <code class="language-text">top</code>, <code class="language-text">left</code>? Bạn có để ý là những animate như vậy thường sẽ hơi khực khực. Lý do? những property này trigger <strong>layout change</strong>, trình duyệt sẽ xem xét các element khác có cần thay đổi gì không, việc này sẽ tiêu tốn công sức của trình duyệt khá nhiều trong đa số các trường hợp. Trong bài viết <a href="https://aerotwist.com/blog/pixels-are-expensive/" target="_blank" rel="nofollow noopener noreferrer">Pixel are Expensive</a> tác giả Paul Lewis sẽ nói rõ hơn.</p>
+<p>Nói một cách khác, chúng ta muốn việc tính toán này hạn chế ở mức tối đa, nhanh nhất có thể. Mục tiêu là chúng ta chỉ animate trên <code class="language-text">transform</code> và <code class="language-text">opacity</code>. FLIP giải thích làm sao để chúng ta có thể đạt được layout change với chỉ property <code class="language-text">transform</code></p>
+<h1 id="flip-là-gì"><a href="#flip-l%C3%A0-g%C3%AC" aria-hidden="true"><span class="icon icon-link"></span></a>FLIP là gì</h1>
+<p>FLIP là viết tắt của <strong>First, Last, Invert, Play</strong></p>
+<ul>
+<li><strong>First</strong> trước khi mọi thứ bắt đầu, lưu lại giá trị position và kích thước của element muốn transition. Có thể sử dụng <code class="language-text">element.getBoundingClientRect()</code></li>
+<li><strong>Last</strong> thực thi đoạn code sẽ gây ra transition trong khoản thời gian gần như là tức thì, lưu lại giá trị position và kích thước của element lúc đó.</li>
+<li><strong>Invert</strong> do element đang ở vị trí cuối cùng, chúng ta muốn user nghĩ đó là ví trí đầu tiên, bằng cách sử dụng <code class="language-text">transform</code> để thay đổi lại position và kích thước. Tính toán xíu, nhưng không thành vấn đề.</li>
+<li><strong>Play</strong> với element đã bị <em>invert</em>, chúng ta lại move nó lại vào vị trí cuối một lần nữa bằng <code class="language-text">transform: none</code></li>
+</ul>
+<p>Implement bên dưới sử dụng Web Animation API</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> elm <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'.some-element'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> first <span class="token operator">=</span> elm<span class="token punctuation">.</span><span class="token method function property-access">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// chạy đoạn script thực hiện change layout</span>
+<span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// last: lấy giá trị cuối</span>
+<span class="token keyword">const</span> last <span class="token operator">=</span> elm<span class="token punctuation">.</span><span class="token method function property-access">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// invert: xác định sự khác nhau giữa giá trị first và last để mà invert</span>
+<span class="token keyword">const</span> deltaX <span class="token operator">=</span> first<span class="token punctuation">.</span><span class="token property-access">left</span> <span class="token operator">-</span> last<span class="token punctuation">.</span><span class="token property-access">left</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> deltaY <span class="token operator">=</span> first<span class="token punctuation">.</span><span class="token property-access">top</span> <span class="token operator">-</span> last<span class="token punctuation">.</span><span class="token property-access">top</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> deltaW <span class="token operator">=</span> first<span class="token punctuation">.</span><span class="token property-access">width</span> <span class="token operator">/</span> last<span class="token punctuation">.</span><span class="token property-access">width</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> deltaH <span class="token operator">=</span> first<span class="token punctuation">.</span><span class="token property-access">height</span> <span class="token operator">/</span> last<span class="token punctuation">.</span><span class="token property-access">height</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Play</span>
+elm<span class="token punctuation">.</span><span class="token method function property-access">animate</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+  transformOrigin<span class="token operator">:</span> <span class="token string">'top left'</span><span class="token punctuation">,</span>
+  transform<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    translate(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>deltaX<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>deltaY<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px)
+    scale(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>deltaW<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>deltaH<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">)
+  </span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  transformOrigin<span class="token operator">:</span> <span class="token string">'top left'</span><span class="token punctuation">,</span>
+  transform<span class="token operator">:</span> <span class="token string">'none'</span>
+<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  duration<span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span>
+  easing<span class="token operator">:</span> <span class="token string">'ease-in-out'</span><span class="token punctuation">,</span>
+  fill<span class="token operator">:</span> <span class="token string">'both'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Lưu ý Web Animation API chưa support bởi tất cả trình duyệt, dùng <a href="https://github.com/web-animations/web-animations-js" target="_blank" rel="nofollow noopener noreferrer">polyfill</a></p>
+<p data-height="265" data-theme-id="0" data-slug-hash="EbwrQQ" data-default-tab="css,result" data-user="davidkpiano" data-pen-title="How the FLIP technique works" class="codepen">See the Pen <a href="https://codepen.io/davidkpiano/pen/EbwrQQ/">How the FLIP technique works</a> by David Khourshid (<a href="https://codepen.io/davidkpiano">@davidkpiano</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<p>Có 2 điểm quan trọng cần lưu ý</p>
+<ul>
+<li>Khi element thay đổi kích thước, khi dùng <code class="language-text">scale</code> sẽ không ảnh hưởng performance, tuy nhiên nhớ đặt <code class="language-text">transformOrigin: &#39;top left&#39;</code></li>
+<li>Đang sử dụng Web Animation API, nhưng ý tưởng này có thể hiện thực bằng GSAP, Anime, Velocity, Just-Animate, Mo.j hoặc bất kỳ thư viện animation khác</li>
+</ul>
+<h1 id="shared-element-transition"><a href="#shared-element-transition" aria-hidden="true"><span class="icon icon-link"></span></a>Shared element transition</h1>
+<p>Một trường hợp trong transition là element giữa các view hoặc giữa các trạng thái của trang, không phải lúc nào element ở lúc cuối cũng giống như element lúc khởi tạo.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> firstElm <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'.first-element'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// First</span>
+<span class="token keyword">const</span> first <span class="token operator">=</span> firstElm<span class="token punctuation">.</span><span class="token method function property-access">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+firstElm<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token method function property-access">setProperty</span><span class="token punctuation">(</span><span class="token string">'visibility'</span><span class="token punctuation">,</span> <span class="token string">'hidden'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// chạy đoạn script thực hiện change layout</span>
+<span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Last</span>
+<span class="token keyword">const</span> lastElm <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'.last-element'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> last <span class="token operator">=</span> lastElm<span class="token punctuation">.</span><span class="token method function property-access">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// giống như các bước ở trên</span>
+<span class="token comment">// ở đây chúng ta đang animate lastElm, không phải firstElm</span></code></pre>
+<h1 id="parent-child-transition"><a href="#parent-child-transition" aria-hidden="true"><span class="icon icon-link"></span></a>Parent-child transition</h1>
+<p>Với ví dụ trên, chúng ta đo element với <code class="language-text">window</code>, trong đa số các trường hợp thì ok, tuy nhiên xét thử tình huống</p>
+<ul>
+<li>Element thay đổi vị trí và cần transition</li>
+<li>Element chứa đóng element con, các element con này cũng cần transition vị trí mới theo vị trí của parent</li>
+</ul>
+<p>Để giải quyết, chúng ta cần đảm bảo việc tính toán theo giá trị relative với parent</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> parentElm <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'.parent'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> childElm <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'.parent > .child'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// First: parent, child</span>
+<span class="token keyword">const</span> parentFirst <span class="token operator">=</span> parentElm<span class="token punctuation">.</span><span class="token method function property-access">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> childFirst <span class="token operator">=</span> childElm<span class="token punctuation">.</span><span class="token method function property-access">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Last: parent and child</span>
+<span class="token keyword">const</span> parentLast <span class="token operator">=</span> parentElm<span class="token punctuation">.</span><span class="token method function property-access">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> childLast <span class="token operator">=</span> childElm<span class="token punctuation">.</span><span class="token method function property-access">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Invert: parent</span>
+<span class="token keyword">const</span> parentDeltaX <span class="token operator">=</span> parentFirst<span class="token punctuation">.</span><span class="token property-access">left</span> <span class="token operator">-</span> parentLast<span class="token punctuation">.</span><span class="token property-access">left</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> parentDeltaY <span class="token operator">=</span> parentFirst<span class="token punctuation">.</span><span class="token property-access">top</span> <span class="token operator">-</span> parentLast<span class="token punctuation">.</span><span class="token property-access">top</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Invert: child relative to parent</span>
+<span class="token keyword">const</span> childDeltaX <span class="token operator">=</span> <span class="token punctuation">(</span>childFirst<span class="token punctuation">.</span><span class="token property-access">left</span> <span class="token operator">-</span> parentFirst<span class="token punctuation">.</span><span class="token property-access">left</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span> <span class="token punctuation">(</span>childLast<span class="token punctuation">.</span><span class="token property-access">left</span> <span class="token operator">-</span> parentLast<span class="token punctuation">.</span><span class="token property-access">left</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> childDeltaY <span class="token operator">=</span> <span class="token punctuation">(</span>childFirst<span class="token punctuation">.</span><span class="token property-access">top</span> <span class="token operator">-</span> parentFirst<span class="token punctuation">.</span><span class="token property-access">top</span><span class="token punctuation">)</span>
+  <span class="token operator">-</span> <span class="token punctuation">(</span>childLast<span class="token punctuation">.</span><span class="token property-access">top</span> <span class="token operator">-</span> parentLast<span class="token punctuation">.</span><span class="token property-access">top</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Play: dùng WAAPI</span>
+parentElm<span class="token punctuation">.</span><span class="token method function property-access">animate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> transform<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">translate(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>parentDeltaX<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>parentDeltaY<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px)</span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> transform<span class="token operator">:</span> <span class="token string">'none'</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> duration<span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span> easing<span class="token operator">:</span> <span class="token string">'ease-in-out'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+childElm<span class="token punctuation">.</span><span class="token method function property-access">animate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> transform<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">translate(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>childDeltaX<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>childDeltaY<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px)</span><span class="token template-punctuation string">`</span></span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> transform<span class="token operator">:</span> <span class="token string">'none'</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> duration<span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span> easing<span class="token operator">:</span> <span class="token string">'ease-in-out'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Một vài điểm cần lưu ý</p>
+<ul>
+<li>Giá trị thời gian cho parent và child (duration, easing) không nhất thiết phải khớp, tự do sáng tạo đi!</li>
+<li>Thay đổi kích thước ở parent hoặc child (width, height) không sử dụng ở đây để tránh phức tạp quá ví dụ này</li>
+<li>Có thể kết hợp giữa shared element và parent child cho kết quả dữ dội hơn</li>
+</ul>
+<h1 id="sử-dụng-flippingjs"><a href="#s%E1%BB%AD-d%E1%BB%A5ng-flippingjs" aria-hidden="true"><span class="icon icon-link"></span></a>Sử dụng Flipping.js</h1>
+<p>Những kỹ thuật trình bày ở trên rất dễ hiểu, tuy nhiên sẽ hơi rối nếu chúng ta phải từ mò và theo dõi từng element. Tác giả bài viết này đã tạo ra một thư viện là <a href="https://github.com/davidkpiano/flipping" target="_blank" rel="nofollow noopener noreferrer">Flipping.js</a> để chúng ta xài cho sướng. Thêm vào <code class="language-text">data-flip-key=&quot;...&quot;</code> vào element làm animate, chúng ta dễ dàng theo dõi được những element có thể thay đổi</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>gallery<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>photo-1<span class="token punctuation">"</span></span> <span class="token attr-name">data-flip-key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>photo-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/photo-1<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>photo-2<span class="token punctuation">"</span></span> <span class="token attr-name">data-flip-key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>photo-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/photo-2<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>photo-3<span class="token punctuation">"</span></span> <span class="token attr-name">data-flip-key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>photo-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/photo-3<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>details<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>photo<span class="token punctuation">"</span></span> <span class="token attr-name">data-flip-key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>photo-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/photo-1<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Lorem ipsum dolor sit amet...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></code></pre>
+<p><a href="https://css-tricks.com/animating-layouts-with-the-flip-technique/" target="_blank" rel="nofollow noopener noreferrer">Link bài gốc</a></p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/css/" class="post-tags__link"><span>#</span> css
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020.</span><span class="footer__links">luckyluu</span></footer></div>
+    <script src="/blog/assets/js/app.f8d91bd5.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" defer></script>
+  </body>
+</html>

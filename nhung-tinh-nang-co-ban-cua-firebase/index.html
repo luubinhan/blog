@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Những tính năng cở bản của Firebase - VuiLapTrinh.com</title><meta name="gridsome:hash" content="0ea6a5c7ec18fcd2d372c0c225289996c79af9fc"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui"><meta data-vue-tag="ssr" name="desc" content="Năm 2016 google giới thiệu Firebase. Khi bắt đầu phát triển ứng dụng điện thoại, bạn sẽ cần đến server và một developer để làm việc với server"><link rel="preload" href="/blog/assets/css/0.styles.d493c61a.css" as="style"><link rel="preload" href="/blog/assets/js/app.f8d91bd5.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.b044eecd.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.bd4a2964.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.4999789e.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.d493c61a.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Những tính năng cở bản của Firebase</h1><div class="post-meta">
+  Đăng ngày 2018-08-06.
+  
+    Mất khoảng
+    <strong>2 phút</strong> để đọc.
+  </div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#firebase-analytics">Firebase Analytics</a></li>
+<li><a href="#realtime-database">Realtime Database</a></li>
+<li><a href="#authentication">Authentication</a></li>
+<li><a href="#crash-reporting">Crash Reporting</a></li>
+<li><a href="#cloud-messaging">Cloud Messaging</a></li>
+<li><a href="#remote-config">Remote Config</a></li>
+<li><a href="#app-indexing">App Indexing</a></li>
+<li><a href="#invites">Invites</a></li>
+<li><a href="#admob">AdMob</a></li>
+</ul>
+<!-- /TOC -->
+<p>Firebase cung cấp những tính năng chúng ta cần ở server, thêm vào đó là realtime database, storage, hosting, authentications, analytics, notifications, crash report,...</p>
+<h1 id="firebase-analytics"><a href="#firebase-analytics" aria-hidden="true"><span class="icon icon-link"></span></a>Firebase Analytics</h1>
+<p>Firebase Analytics cho phép bạn analyse các thao tác của user trên app, miễn phí cho 500 sự kiện khác nhau.</p>
+<p>Với kết quả analyse này chúng ta có thể biết được người dùng cần gì, sử dụng app ra sau, chúng ta nên nâng cấp những tính năng nào</p>
+<h1 id="realtime-database"><a href="#realtime-database" aria-hidden="true"><span class="icon icon-link"></span></a>Realtime Database</h1>
+<p>Firebase cung cấp NoSQL realtime cloud database. Lưu trữ dữ liệu ở dạng JSON và cho phép đồng bộ với client</p>
+<p>Khi kết nối Realtime Database với Android, iOS, Javascript SDK, một realtime database sẽ được tạo ra và dùng chung cho tất cả user. Tất cả client sẽ nhận được update khi có sự thay đổi của dữ liệu</p>
+<h1 id="authentication"><a href="#authentication" aria-hidden="true"><span class="icon icon-link"></span></a>Authentication</h1>
+<p>Sử dụng Firebase Authentication user sẽ xác thực tài khoản bằng nhiều cách, email, Facebook, Twitter, Google hay Github.</p>
+<p>Firebase Authentication  cho phép tạo một user mới lưu xác thực của user xuống Firebase Database, không còn cực khổ đi config ở phía server</p>
+<p>Thậm chí chúng ta còn có thể gởi confirm email sau khi đăng ký và forget password.</p>
+<h1 id="crash-reporting"><a href="#crash-reporting" aria-hidden="true"><span class="icon icon-link"></span></a>Crash Reporting</h1>
+<p>Một tính năng hữu ích cho mội developer, với Firebase Crash Reporting chúng ta sẽ có tất tần tật log từ thông tin OS đến chi tiết lỗi nếu xảy ra</p>
+<h1 id="cloud-messaging"><a href="#cloud-messaging" aria-hidden="true"><span class="icon icon-link"></span></a>Cloud Messaging</h1>
+<p>Với Firebase Cloud Messaging(FCM) chúng ta có thể tương tác với user theo một khoảng thời gian chỉ định, notify user những thay đổi đã xảy ra.</p>
+<p>Sử dụng FCM để chạy quảng cáo, khuyến mãi, miễn là nó dưới 4KB</p>
+<h1 id="remote-config"><a href="#remote-config" aria-hidden="true"><span class="icon icon-link"></span></a>Remote Config</h1>
+<p>Remote config theo các developer là tính năng xịn nhất của Firebase, cho phép thực hiện những thay đổi mà không cần chạy lại build. User sẽ có được những thay đổi đổi mới nhất mà không cần update lại app (thiệt ko ta?)</p>
+<h1 id="app-indexing"><a href="#app-indexing" aria-hidden="true"><span class="icon icon-link"></span></a>App Indexing</h1>
+<p>Nếu google tìm thấy bất kỳ từ khóa tìm kiếm nào khớp với app của chúng ta và nếu app được cài rồi, user sẽ ngay lập tức thấy kết quả có app của chúng ta</p>
+<h1 id="invites"><a href="#invites" aria-hidden="true"><span class="icon icon-link"></span></a>Invites</h1>
+<p>Nếu app có nội dung tốt, được nhiều người thích thú, user có thể share nó với người khác sử dụng Firebase Invites</p>
+<h1 id="admob"><a href="#admob" aria-hidden="true"><span class="icon icon-link"></span></a>AdMob</h1>
+<p>Sau tất cả cố gắng để build app, chúng ta cần đến AdMob để kiếm chút đỉnh từ quảng cáo.</p>
+<p><a href="http://www.androidgig.com/getting-started-with-firebase-android/" target="_blank" rel="nofollow noopener noreferrer">Link bài gốc</a></p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/javascript/" class="post-tags__link"><span>#</span> javascript
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020.</span><span class="footer__links">luckyluu</span></footer></div>
+    <script>window.__INITIAL_STATE__={"data":{"post":{"title":"Những tính năng cở bản của Firebase","path":"\u002Fnhung-tinh-nang-co-ban-cua-firebase\u002F","date":"2018-08-06","timeToRead":2,"tags":[{"id":"javascript","title":"javascript","path":"\u002Ftag\u002Fjavascript\u002F"}],"desc":"Năm 2016 google giới thiệu Firebase. Khi bắt đầu phát triển ứng dụng điện thoại, bạn sẽ cần đến server và một developer để làm việc với server","content":"\u003C!-- TOC --\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Ca href=\"#firebase-analytics\"\u003EFirebase Analytics\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#realtime-database\"\u003ERealtime Database\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#authentication\"\u003EAuthentication\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#crash-reporting\"\u003ECrash Reporting\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#cloud-messaging\"\u003ECloud Messaging\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#remote-config\"\u003ERemote Config\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#app-indexing\"\u003EApp Indexing\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#invites\"\u003EInvites\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#admob\"\u003EAdMob\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003C!-- \u002FTOC --\u003E\n\u003Cp\u003EFirebase cung cấp những tính năng chúng ta cần ở server, thêm vào đó là realtime database, storage, hosting, authentications, analytics, notifications, crash report,...\u003C\u002Fp\u003E\n\u003Ch1 id=\"firebase-analytics\"\u003E\u003Ca href=\"#firebase-analytics\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EFirebase Analytics\u003C\u002Fh1\u003E\n\u003Cp\u003EFirebase Analytics cho phép bạn analyse các thao tác của user trên app, miễn phí cho 500 sự kiện khác nhau.\u003C\u002Fp\u003E\n\u003Cp\u003EVới kết quả analyse này chúng ta có thể biết được người dùng cần gì, sử dụng app ra sau, chúng ta nên nâng cấp những tính năng nào\u003C\u002Fp\u003E\n\u003Ch1 id=\"realtime-database\"\u003E\u003Ca href=\"#realtime-database\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003ERealtime Database\u003C\u002Fh1\u003E\n\u003Cp\u003EFirebase cung cấp NoSQL realtime cloud database. Lưu trữ dữ liệu ở dạng JSON và cho phép đồng bộ với client\u003C\u002Fp\u003E\n\u003Cp\u003EKhi kết nối Realtime Database với Android, iOS, Javascript SDK, một realtime database sẽ được tạo ra và dùng chung cho tất cả user. Tất cả client sẽ nhận được update khi có sự thay đổi của dữ liệu\u003C\u002Fp\u003E\n\u003Ch1 id=\"authentication\"\u003E\u003Ca href=\"#authentication\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EAuthentication\u003C\u002Fh1\u003E\n\u003Cp\u003ESử dụng Firebase Authentication user sẽ xác thực tài khoản bằng nhiều cách, email, Facebook, Twitter, Google hay Github.\u003C\u002Fp\u003E\n\u003Cp\u003EFirebase Authentication  cho phép tạo một user mới lưu xác thực của user xuống Firebase Database, không còn cực khổ đi config ở phía server\u003C\u002Fp\u003E\n\u003Cp\u003EThậm chí chúng ta còn có thể gởi confirm email sau khi đăng ký và forget password.\u003C\u002Fp\u003E\n\u003Ch1 id=\"crash-reporting\"\u003E\u003Ca href=\"#crash-reporting\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003ECrash Reporting\u003C\u002Fh1\u003E\n\u003Cp\u003EMột tính năng hữu ích cho mội developer, với Firebase Crash Reporting chúng ta sẽ có tất tần tật log từ thông tin OS đến chi tiết lỗi nếu xảy ra\u003C\u002Fp\u003E\n\u003Ch1 id=\"cloud-messaging\"\u003E\u003Ca href=\"#cloud-messaging\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003ECloud Messaging\u003C\u002Fh1\u003E\n\u003Cp\u003EVới Firebase Cloud Messaging(FCM) chúng ta có thể tương tác với user theo một khoảng thời gian chỉ định, notify user những thay đổi đã xảy ra.\u003C\u002Fp\u003E\n\u003Cp\u003ESử dụng FCM để chạy quảng cáo, khuyến mãi, miễn là nó dưới 4KB\u003C\u002Fp\u003E\n\u003Ch1 id=\"remote-config\"\u003E\u003Ca href=\"#remote-config\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003ERemote Config\u003C\u002Fh1\u003E\n\u003Cp\u003ERemote config theo các developer là tính năng xịn nhất của Firebase, cho phép thực hiện những thay đổi mà không cần chạy lại build. User sẽ có được những thay đổi đổi mới nhất mà không cần update lại app (thiệt ko ta?)\u003C\u002Fp\u003E\n\u003Ch1 id=\"app-indexing\"\u003E\u003Ca href=\"#app-indexing\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EApp Indexing\u003C\u002Fh1\u003E\n\u003Cp\u003ENếu google tìm thấy bất kỳ từ khóa tìm kiếm nào khớp với app của chúng ta và nếu app được cài rồi, user sẽ ngay lập tức thấy kết quả có app của chúng ta\u003C\u002Fp\u003E\n\u003Ch1 id=\"invites\"\u003E\u003Ca href=\"#invites\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EInvites\u003C\u002Fh1\u003E\n\u003Cp\u003ENếu app có nội dung tốt, được nhiều người thích thú, user có thể share nó với người khác sử dụng Firebase Invites\u003C\u002Fp\u003E\n\u003Ch1 id=\"admob\"\u003E\u003Ca href=\"#admob\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EAdMob\u003C\u002Fh1\u003E\n\u003Cp\u003ESau tất cả cố gắng để build app, chúng ta cần đến AdMob để kiếm chút đỉnh từ quảng cáo.\u003C\u002Fp\u003E\n\u003Cp\u003E\u003Ca href=\"http:\u002F\u002Fwww.androidgig.com\u002Fgetting-started-with-firebase-android\u002F\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003ELink bài gốc\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n","cover_image":""}},"context":{}};(function(){var s;(s=document.currentScript||document.scripts[document.scripts.length-1]).parentNode.removeChild(s);}());</script><script src="/blog/assets/js/app.f8d91bd5.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Điểm qua các kiểu navigator của thư viện react-navigation - VuiLapTrinh.com</title><meta name="gridsome:hash" content="0ea6a5c7ec18fcd2d372c0c225289996c79af9fc"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui"><meta data-vue-tag="ssr" name="desc" content="Chúng ta cùng liệt kê qua các dạng navigator, khi nào, dùng ở đâu là hợp lý"><link rel="preload" href="/blog/assets/css/0.styles.d493c61a.css" as="style"><link rel="preload" href="/blog/assets/js/app.f8d91bd5.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.b044eecd.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.bd4a2964.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.4999789e.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.d493c61a.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Điểm qua các kiểu navigator của thư viện react-navigation</h1><div class="post-meta">
+  Đăng ngày 2018-09-27.
+  
+    Mất khoảng
+    <strong>3 phút</strong> để đọc.
+  </div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#stack">Stack</a></li>
+<li><a href="#switch">Switch</a></li>
+<li><a href="#drawer">Drawer</a></li>
+<li><a href="#bottom-tab">Bottom Tab</a></li>
+<li><a href="#material-top-tab">Material Top Tab</a></li>
+</ul>
+<!-- /TOC -->
+<p>Có rất nhiều thư viện khác nhau để làm navigation với React native, mình khuyến khích các bạn dùng <strong>react-navigation</strong> của Facebook phát triển cho React Native, nói chung cái gì đã có bản official của chính người sáng lập thì mình cứ đè nó ra xài</p>
+<h1 id="stack"><a href="#stack" aria-hidden="true"><span class="icon icon-link"></span></a>Stack</h1>
+<p><img src="https://i.stack.imgur.com/25MyO.jpg" alt="Điểm qua các kiểu navigator của thư viện react-navigation"></p>
+<p>Khi mở một màn hình mới, nó sẽ sếp chồng lên trên màn hình trước đó. Kiếu sếp bánh tráng.</p>
+<p>Theo mặc định, màn hình mới chạy từ cạnh phải -> qua trái màn hình trong iOS, mờ -> đến rõ dần từ dưới lên trong android</p>
+<p>API</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token function">createStackNavigator</span><span class="token punctuation">(</span><span class="token maybe-class-name">RouteConfigs</span><span class="token punctuation">,</span> <span class="token maybe-class-name">StackNavigatorConfig</span><span class="token punctuation">)</span></code></pre>
+<p>Ví dụ</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">const</span> <span class="token maybe-class-name">StackScreens</span> <span class="token operator">=</span> <span class="token function">createStackNavigator</span><span class="token punctuation">(</span>
+  <span class="token punctuation">{</span>
+    <span class="token maybe-class-name">Main</span><span class="token operator">:</span> <span class="token punctuation">{</span> screen<span class="token operator">:</span> <span class="token maybe-class-name">Main</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token maybe-class-name">Login</span><span class="token operator">:</span> <span class="token punctuation">{</span> screen<span class="token operator">:</span> <span class="token maybe-class-name">Login</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    headerMode<span class="token operator">:</span> <span class="token string">'none'</span><span class="token punctuation">,</span>
+    mode<span class="token operator">:</span> <span class="token string">'modal'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h1 id="switch"><a href="#switch" aria-hidden="true"><span class="icon icon-link"></span></a>Switch</h1>
+<p>Với Swtich Navigator chỉ hiển thị 1 màn hình, không có <code class="language-text">goBack()</code>, phù hợp nhất với flow Authentication, flow này thường sẽ là</p>
+<ul>
+<li>User mở ứng dụng</li>
+<li>Ứng dụng load dữ liệu authentication (nếu có) trong <code class="language-text">AsyncStorage</code></li>
+<li>Sau khi load, hiển thị trang chính hoặc màn hình đăng nhập</li>
+<li>Sau khi user sign out, hiển thị màn hình đăng nhập</li>
+</ul>
+<p>API</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token function">createSwitchNavigator</span><span class="token punctuation">(</span><span class="token maybe-class-name">RouteConfigs</span><span class="token punctuation">,</span> <span class="token maybe-class-name">SwitchNavigatorConfig</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Ví dụ</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword module">import</span> <span class="token punctuation">{</span> createSwitchNavigator<span class="token punctuation">,</span> createStackNavigator <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'react-navigation'</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">import</span> <span class="token punctuation">{</span><span class="token maybe-class-name">HomeScreen</span><span class="token punctuation">,</span> <span class="token maybe-class-name">SignInScreen</span><span class="token punctuation">,</span> <span class="token maybe-class-name">OtherScreen</span><span class="token punctuation">,</span> <span class="token maybe-class-name">AuthLoadingScreen</span><span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'./screens'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token maybe-class-name">AppStack</span> <span class="token operator">=</span> <span class="token function">createStackNavigator</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token maybe-class-name">Home</span><span class="token operator">:</span> <span class="token maybe-class-name">HomeScreen</span><span class="token punctuation">,</span> <span class="token maybe-class-name">Other</span><span class="token operator">:</span> <span class="token maybe-class-name">OtherScreen</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token maybe-class-name">AuthStack</span> <span class="token operator">=</span> <span class="token function">createStackNavigator</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token maybe-class-name">SignIn</span><span class="token operator">:</span> <span class="token maybe-class-name">SignInScreen</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token function">createSwitchNavigator</span><span class="token punctuation">(</span>
+  <span class="token punctuation">{</span>
+    <span class="token maybe-class-name">AuthLoading</span><span class="token operator">:</span> <span class="token maybe-class-name">AuthLoadingScreen</span><span class="token punctuation">,</span>
+    <span class="token maybe-class-name">App</span><span class="token operator">:</span> <span class="token maybe-class-name">AppStack</span><span class="token punctuation">,</span>
+    <span class="token maybe-class-name">Auth</span><span class="token operator">:</span> <span class="token maybe-class-name">AuthStack</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    initialRouteName<span class="token operator">:</span> <span class="token string">'AuthLoading'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Tham khảo thêm <a href="https://reactnavigation.org/docs/en/auth-flow.html" target="_blank" rel="nofollow noopener noreferrer">cách implement Authentication Flow</a></p>
+<h1 id="drawer"><a href="#drawer" aria-hidden="true"><span class="icon icon-link"></span></a>Drawer</h1>
+<p>Kiểu menu trượt từ bên trái thấy trong Android</p>
+<p><img src="https://github.com/xke/SimpleReactDrawerNavigationExample/raw/master/SimpleReactDrawerNavigationExample.gif" alt="Điểm qua các kiểu navigator của thư viện react-navigation"></p>
+<p>API</p>
+<pre class="language-js"><code class="language-js"><span class="token function">createDrawerNavigator</span><span class="token punctuation">(</span><span class="token maybe-class-name">RouteConfigs</span><span class="token punctuation">,</span> <span class="token maybe-class-name">DrawerNavigatorConfig</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Ví dụ</p>
+<ol>
+<li><code class="language-text">TouchableMenuIcon</code> là component luôn hiển thị ở gốc trái của ứng dụng</li>
+<li>Chạm vào icon, <code class="language-text">SideMenu</code> component được hiển thị, style tùy thích</li>
+<li><code class="language-text">RootStack</code> là một Stack Navigator chứa các màn hình chính của ứng dụng</li>
+<li><code class="language-text">MyDrawerNavigator</code> tạo ra từ <code class="language-text">createDrawerNavigator()</code>, sẽ đảm nhiệm việc show side menu, để ý cái <code class="language-text">props</code> <strong>contentComponent</strong></li>
+</ol>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword module">import</span> <span class="token maybe-class-name">React</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Component</span> <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Button</span><span class="token punctuation">,</span> <span class="token maybe-class-name">View</span><span class="token punctuation">,</span> <span class="token maybe-class-name">Text</span><span class="token punctuation">,</span> <span class="token maybe-class-name">Image</span><span class="token punctuation">,</span> <span class="token maybe-class-name">TouchableOpacity</span> <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'react-native'</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token punctuation">{</span> createStackNavigator<span class="token punctuation">,</span> createDrawerNavigator <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'react-navigation'</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">import</span> <span class="token punctuation">{</span><span class="token maybe-class-name">RootStackScreen1</span><span class="token punctuation">,</span> <span class="token maybe-class-name">RootStackScreen2</span><span class="token punctuation">,</span> <span class="token maybe-class-name">RootStackScreen3</span><span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'./screens'</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">// 1) `TouchableMenuIcon` là component luôn hiển thị ở gốc trái của ứng dụng</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TouchableMenuIcon</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+
+  <span class="token function-variable function">toggleDrawer</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token arrow operator">=></span><span class="token punctuation">{</span>    
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">props</span><span class="token punctuation">.</span><span class="token property-access">navigationProps</span><span class="token punctuation">.</span><span class="token method function property-access">toggleDrawer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">View</span></span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>flexDirection<span class="token operator">:</span> <span class="token string">'row'</span><span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">TouchableOpacity</span></span> <span class="token attr-name">onPress</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">toggleDrawer</span><span class="token punctuation">.</span><span class="token method function property-access">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span> <span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Image</span></span>
+            <span class="token attr-name">source</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>uri <span class="token operator">:</span> <span class="token string">'https://reactnativecode.com/wp-content/uploads/2018/04/hamburger_icon.png'</span><span class="token punctuation">}</span><span class="token punctuation">}</span></span>
+            <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> width<span class="token operator">:</span> <span class="token number">25</span><span class="token punctuation">,</span> height<span class="token operator">:</span> <span class="token number">25</span><span class="token punctuation">,</span> marginLeft<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">}</span></span>
+          <span class="token punctuation">/></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">TouchableOpacity</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">View</span></span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 2) Chạm vào icon, `SideMenu` component được hiển thị, style tùy thích</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SideMenu</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">View</span></span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>flex<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> backgroundColor<span class="token operator">:</span> <span class="token string">'white'</span><span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">View</span></span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>flexDirection<span class="token operator">:</span> <span class="token string">'column'</span><span class="token punctuation">,</span> marginTop<span class="token operator">:</span><span class="token number">30</span><span class="token punctuation">,</span> justifyContent<span class="token operator">:</span> <span class="token string">'space-around'</span><span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+         </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Button</span></span>
+              <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Screen 1<span class="token punctuation">"</span></span>
+              <span class="token attr-name">onPress</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">props</span><span class="token punctuation">.</span><span class="token property-access">navigation</span><span class="token punctuation">.</span><span class="token method function property-access">navigate</span><span class="token punctuation">(</span><span class="token string">'RootStackScreen1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">props</span><span class="token punctuation">.</span><span class="token property-access">navigation</span><span class="token punctuation">.</span><span class="token method function property-access">closeDrawer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+              <span class="token punctuation">}</span><span class="token punctuation">}</span></span>
+          <span class="token punctuation">/></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Button</span></span>
+              <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Screen 2<span class="token punctuation">"</span></span>
+              <span class="token attr-name">onPress</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">props</span><span class="token punctuation">.</span><span class="token property-access">navigation</span><span class="token punctuation">.</span><span class="token method function property-access">navigate</span><span class="token punctuation">(</span><span class="token string">'RootStackScreen2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">props</span><span class="token punctuation">.</span><span class="token property-access">navigation</span><span class="token punctuation">.</span><span class="token method function property-access">closeDrawer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+              <span class="token punctuation">}</span><span class="token punctuation">}</span></span>
+            <span class="token punctuation">/></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Button</span></span>
+              <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Screen 3<span class="token punctuation">"</span></span>
+              <span class="token attr-name">onPress</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">props</span><span class="token punctuation">.</span><span class="token property-access">navigation</span><span class="token punctuation">.</span><span class="token method function property-access">navigate</span><span class="token punctuation">(</span><span class="token string">'RootStackScreen3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">props</span><span class="token punctuation">.</span><span class="token property-access">navigation</span><span class="token punctuation">.</span><span class="token method function property-access">closeDrawer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+              <span class="token punctuation">}</span><span class="token punctuation">}</span></span>
+            <span class="token punctuation">/></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">View</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">View</span></span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 3) `RootStack` là một Stack Navigator chứa các màn hình chính của ứng dụng</span>
+<span class="token keyword">const</span> <span class="token maybe-class-name">RootStack</span> <span class="token operator">=</span> <span class="token function">createStackNavigator</span><span class="token punctuation">(</span>
+  <span class="token punctuation">{</span>
+    <span class="token maybe-class-name">RootStackScreen1</span><span class="token operator">:</span> <span class="token maybe-class-name">RootStackScreen1</span><span class="token punctuation">,</span>
+    <span class="token maybe-class-name">RootStackScreen2</span><span class="token operator">:</span> <span class="token maybe-class-name">RootStackScreen2</span><span class="token punctuation">,</span>
+    <span class="token maybe-class-name">RootStackScreen3</span><span class="token operator">:</span> <span class="token maybe-class-name">RootStackScreen3</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    initialRouteName<span class="token operator">:</span> <span class="token string">'RootStackScreen1'</span><span class="token punctuation">,</span>  
+    <span class="token function-variable function">navigationOptions</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> navigation <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+      title<span class="token operator">:</span> <span class="token string">"Root Stack"</span><span class="token punctuation">,</span> 
+      headerLeft<span class="token operator">:</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">TouchableMenuIcon</span></span> <span class="token attr-name">navigationProps</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span> navigation <span class="token punctuation">}</span></span><span class="token punctuation">/></span></span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+
+<span class="token comment">// 4) `MyDrawerNavigator` tạo ra từ `createDrawerNavigator()`, sẽ đảm nhiệm việc show side menu, để ý cái `props` **contentComponent**</span>
+
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token maybe-class-name">MyDrawerNavigator</span> <span class="token operator">=</span> <span class="token function">createDrawerNavigator</span><span class="token punctuation">(</span>  
+  <span class="token punctuation">{</span>
+    <span class="token maybe-class-name">RootStack</span><span class="token operator">:</span> <span class="token maybe-class-name">RootStack</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    contentComponent<span class="token operator">:</span> <span class="token maybe-class-name">SideMenu</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h1 id="bottom-tab"><a href="#bottom-tab" aria-hidden="true"><span class="icon icon-link"></span></a>Bottom Tab</h1>
+<p>Kiểu tab bar nằm ở dưới màn hình, các màn hình sẽ không được render cho đến khi user focus</p>
+<p><img src="https://raw.githubusercontent.com/xotahal/react-native-material-ui-demo-app/master/resources/bottom-navigation-1.gif" alt="Điểm qua các kiểu navigator của thư viện react-navigation"></p>
+<p>API</p>
+<pre class="language-js"><code class="language-js"><span class="token function">createBottomTabNavigator</span><span class="token punctuation">(</span><span class="token maybe-class-name">RouteConfigs</span><span class="token punctuation">,</span> <span class="token maybe-class-name">BottomTabNavigatorConfig</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h1 id="material-top-tab"><a href="#material-top-tab" aria-hidden="true"><span class="icon icon-link"></span></a>Material Top Tab</h1>
+<p>Hoạt động tương tự như Bottom Tab, chỉ là menu tab đặt ở phía dưới màn hình</p>
+<p><img src="https://i.stack.imgur.com/tGJ0l.png" alt="Điểm qua các kiểu navigator của thư viện react-navigation"></p>
+<p>API</p>
+<pre class="language-js"><code class="language-js"><span class="token function">createMaterialTopTabNavigator</span><span class="token punctuation">(</span><span class="token maybe-class-name">RouteConfigs</span><span class="token punctuation">,</span> <span class="token maybe-class-name">TabNavigatorConfig</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Ví dụ lấy từ <a href="https://reactnavigation.org/docs/" target="_blank" rel="nofollow noopener noreferrer">https://reactnavigation.org/docs/</a></p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/javascript/" class="post-tags__link"><span>#</span> javascript
+		</a><a href="/blog/tag/react-native/" class="post-tags__link"><span>#</span> react-native
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020.</span><span class="footer__links">luckyluu</span></footer></div>
+    <script src="/blog/assets/js/app.f8d91bd5.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" defer></script>
+  </body>
+</html>

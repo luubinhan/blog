@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Các vấn đề khi làm việc với ngày tháng trong javascript - VuiLapTrinh.com</title><meta name="gridsome:hash" content="0ea6a5c7ec18fcd2d372c0c225289996c79af9fc"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui"><meta data-vue-tag="ssr" name="desc" content="Bỏ túi kỹ năng thiết yếu khi đụng đến xử lý ngày tháng"><link rel="preload" href="/blog/assets/css/0.styles.d493c61a.css" as="style"><link rel="preload" href="/blog/assets/js/app.f8d91bd5.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.b044eecd.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.bd4a2964.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.4999789e.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.d493c61a.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Các vấn đề khi làm việc với ngày tháng trong javascript</h1><div class="post-meta">
+  Đăng ngày 2018-07-29.
+  
+    Mất khoảng
+    <strong>6 phút</strong> để đọc.
+  </div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#kh%E1%BB%9Fi-t%E1%BA%A1o-date-object">Khởi tạo Date Object</a></li>
+<li><a href="#timezone---khu-v%E1%BB%B1c">Timezone - Khu vực</a></li>
+<li><a href="#convert-v%C3%A0-format-ki%E1%BB%83u-date">Convert và Format kiểu Date</a></li>
+<li><a href="#c%C3%A1c-ph%C6%B0%C6%A1ng-th%E1%BB%A9c-c%E1%BB%A7a-date-object-%C4%91%E1%BB%83-l%E1%BA%A5y-gi%C3%A1-tr%E1%BB%8B">Các phương thức của Date Object để lấy giá trị</a></li>
+<li><a href="#thay-%C4%91%E1%BB%95i-gi%C3%A1-tr%E1%BB%8B">Thay đổi giá trị</a></li>
+<li><a href="#l%E1%BA%A5y-gi%C3%A1-tr%E1%BB%8B-timestamp-hi%E1%BB%87n-t%E1%BA%A1i">Lấy giá trị timestamp hiện tại</a></li>
+<li><a href="#javascript-t%E1%BB%B1-%C4%91%E1%BB%99ng-c%E1%BB%99ng-th%C3%AAm-gi%C3%A1-tr%E1%BB%8B-ng%C3%A0y-gi%E1%BB%9D">Javascript tự động cộng thêm giá trị ngày giờ</a></li>
+<li><a href="#%C4%91%E1%BB%8Bnh-d%E1%BA%A1ng-ng%C3%A0y-gi%E1%BB%9D-theo-v%C3%B9ng-mi%E1%BB%81n">Định dạng ngày giờ theo vùng miền</a></li>
+<li><a href="#so-s%C3%A1nh-2-gi%C3%A1-tr%E1%BB%8B-ng%C3%A0y-gi%E1%BB%9D">So sánh 2 giá trị ngày giờ</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="khởi-tạo-date-object"><a href="#kh%E1%BB%9Fi-t%E1%BA%A1o-date-object" aria-hidden="true"><span class="icon icon-link"></span></a>Khởi tạo Date Object</h2>
+<p>Mặc dù chỉ gọi là <strong>Date</strong> (ngày), nhưng nó đã bao gồm luôn các API về thời gian</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// ngày giờ hiện tại</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// nếu truyền vào 0, chúng ta có giá trị Jan 1st 1970 (UTC)</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>UNIX timestamp là giá trị bằng số ( tính đến giây) của Date</p>
+<blockquote>
+<p>LƯU Ý: UNIX timestamp tính theo giây. Date của JavaScript tính theo <strong>milli giây</strong></p>
+</blockquote>
+<p>Nếu có giá trị UNIX timestamp, khởi tạo một Date Object bằng cách nhân với 1000</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> timestamp <span class="token operator">=</span> <span class="token number">1530826365</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>timestamp <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Nếu truyền vào một <code class="language-text">string</code>, thay vì number, gọi <code class="language-text">Date(string)</code> sẽ <code class="language-text">parse</code> giá trị đó, hay ho là ở chỗ nó tự <strong>đoán mò</strong> xem <code class="language-text">string</code> truyền vào đang theo định dạng nào.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"2018-07-22"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"2018-07"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//July 1st 2018, 00:00:00</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"2018"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//Jan 1st 2018, 00:00:00</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"07/22/2018"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"2018/07/22"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"2018/7/22"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"July 22, 2018"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"July 22, 2018 07:22:13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"2018-07-22 07:22:13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"2018-07-22T07:22:13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"25 March 2018"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"25 Mar 2018"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"25 March, 2018"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"March 25, 2018"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"March 25 2018"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"March 2018"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//Mar 1st 2018, 00:00:00</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"2018 March"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//Mar 1st 2018, 00:00:00</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"2018 MARCH"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//Mar 1st 2018, 00:00:00</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"2018 march"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//Mar 1st 2018, 00:00:00</span></code></pre>
+<p>Việc này có một nguy hiểm, thứ tự ngày tháng có thể không đúng như chúng ta mong đợi.</p>
+<p>Tốt nhất là cứ theo chuẩn quốc tế ISO 8601, string dạng thế này</p>
+<pre class="language-js"><code class="language-js"><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">YYYY-MM-DDTHH:mm:ss:sssZ</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span></code></pre>
+<p>Điểm lưu ý duy nhất của string này là chữ Z cuối cùng, nó đại diện cho UTC, nếu không có, tức là đang dùng giờ địa phương.</p>
+<p>Dùng <code class="language-text">Date.parse</code>, sẽ trả về timestamp (<strong>milli giây</strong>)</p>
+<pre class="language-js"><code class="language-js"><span class="token known-class-name class-name">Date</span><span class="token punctuation">.</span><span class="token method function property-access">parse</span><span class="token punctuation">(</span><span class="token string">"2018-07-22"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token known-class-name class-name">Date</span><span class="token punctuation">.</span><span class="token method function property-access">parse</span><span class="token punctuation">(</span><span class="token string">"2018-07"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//July 1st 2018, 00:00:00</span>
+<span class="token known-class-name class-name">Date</span><span class="token punctuation">.</span><span class="token method function property-access">parse</span><span class="token punctuation">(</span><span class="token string">"2018"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//Jan 1st 2018, 00:00:00</span>
+<span class="token known-class-name class-name">Date</span><span class="token punctuation">.</span><span class="token method function property-access">parse</span><span class="token punctuation">(</span><span class="token string">"07/22/2018"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token known-class-name class-name">Date</span><span class="token punctuation">.</span><span class="token method function property-access">parse</span><span class="token punctuation">(</span><span class="token string">"2018/07/22"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token known-class-name class-name">Date</span><span class="token punctuation">.</span><span class="token method function property-access">parse</span><span class="token punctuation">(</span><span class="token string">"2018/7/22"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token known-class-name class-name">Date</span><span class="token punctuation">.</span><span class="token method function property-access">parse</span><span class="token punctuation">(</span><span class="token string">"July 22, 2018"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token known-class-name class-name">Date</span><span class="token punctuation">.</span><span class="token method function property-access">parse</span><span class="token punctuation">(</span><span class="token string">"July 22, 2018 07:22:13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token known-class-name class-name">Date</span><span class="token punctuation">.</span><span class="token method function property-access">parse</span><span class="token punctuation">(</span><span class="token string">"2018-07-22 07:22:13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token known-class-name class-name">Date</span><span class="token punctuation">.</span><span class="token method function property-access">parse</span><span class="token punctuation">(</span><span class="token string">"2018-07-22T07:22:13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Hoặc là truyền theo dạng <strong>năm, tháng (từ 0), ngày, giờ, phút, giây, mili giây</strong></p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">2018</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">2018</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="timezone---khu-vực"><a href="#timezone---khu-v%E1%BB%B1c" aria-hidden="true"><span class="icon icon-link"></span></a>Timezone - Khu vực</h2>
+<p>Khi khởi tạo một giá trị ngày giờ chúng ta có thể truyền thêm tham số <em>timezone</em>, nếu không muốn dùng UTC</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// bằng cách thêm +HOURS</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"July 22, 2018 07:22:13 +0700"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// bằng cách thêm tên , ICT gồm Campuchia, Lào, Thái Lan, Việt Nam</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"July 22, 2018 07:22:13 (ICT)"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Nếu truyền sai giá trị timezone, javascript sẽ dùng UTC, không quăng lỗi. Nếu giá trị date đưa đưa vào sai, quăng lỗi 'Invalid Date'</p>
+<p>Để tìm hiểu kỹ hơn timezone, đọc thêm bài này <a href="http://vuilaptrinh.com/2019-04-12-huong-dan-tim-hieu-time-zone/" target="_blank" rel="nofollow noopener noreferrer">http://vuilaptrinh.com/2019-04-12-huong-dan-tim-hieu-time-zone/</a></p>
+<h2 id="convert-và-format-kiểu-date"><a href="#convert-v%C3%A0-format-ki%E1%BB%83u-date" aria-hidden="true"><span class="icon icon-link"></span></a>Convert và Format kiểu Date</h2>
+<p>Với một Date object, chúng ta có khá nhiều lựa chọn để chuyển giá trị <em>Date => string</em></p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"July 22, 2018 07:22:13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+date<span class="token punctuation">.</span><span class="token method function property-access">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// "Sun Jul 22 2018 07:22:13 GMT+0200 (Central European Summer Time)"</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">toTimeString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"07:22:13 GMT+0200 (Central European Summer Time)"</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">toUTCString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"Sun, 22 Jul 2018 05:22:13 GMT"</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">toDateString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"Sun Jul 22 2018"</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">toISOString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"2018-07-22T05:22:13.000Z" (ISO 8601 format)</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">toLocaleString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"22/07/2018, 07:22:13"</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">toLocaleTimeString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//"07:22:13"</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//1532236933000</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//1532236933000</span></code></pre>
+<h2 id="các-phương-thức-của-date-object-để-lấy-giá-trị"><a href="#c%C3%A1c-ph%C6%B0%C6%A1ng-th%E1%BB%A9c-c%E1%BB%A7a-date-object-%C4%91%E1%BB%83-l%E1%BA%A5y-gi%C3%A1-tr%E1%BB%8B" aria-hidden="true"><span class="icon icon-link"></span></a>Các phương thức của Date Object để lấy giá trị</h2>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"July 22, 2018 07:22:13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+date<span class="token punctuation">.</span><span class="token method function property-access">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//22</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//0 (0 là chủ nhật, 1 là thứ 2..)</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//2018</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//6 (Bắt đầu từ 0)</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getHours</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//7</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getMinutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//22</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getSeconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//13</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getMilliseconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//0 (không xác định)</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//1532236933000</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getTimezoneOffset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//-120 (Tùy theo khu vực và vùng miền).</span></code></pre>
+<p>Các phương thức trên sẽ có thêm phiên bản UTC, trả về giá trị UTC không phụ thuộc vào giá trị timezone hiện tại</p>
+<pre class="language-js"><code class="language-js">date<span class="token punctuation">.</span><span class="token method function property-access">getUTCDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//22</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getUTCDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//0 (0 means sunday, 1 means monday..)</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getUTCFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//2018</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getUTCMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//6 (starts from 0)</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getUTCHours</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//5 (not 7 like above)</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getUTCMinutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//22</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getUTCSeconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//13</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">getUTCMilliseconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//0 (not specified)</span></code></pre>
+<h2 id="thay-đổi-giá-trị"><a href="#thay-%C4%91%E1%BB%95i-gi%C3%A1-tr%E1%BB%8B" aria-hidden="true"><span class="icon icon-link"></span></a>Thay đổi giá trị</h2>
+<p>Các phương thức để cập nhập lại giá trị của Date</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"July 22, 2018 07:22:13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+date<span class="token punctuation">.</span><span class="token method function property-access">setDate</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">setDay</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">setFullYear</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//note: đừng dùng setYear(), bỏ rồi</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">setMonth</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">setHours</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">setMinutes</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">setSeconds</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">setMilliseconds</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">setTime</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">setTimezoneOffset</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<blockquote>
+<p>Lưu ý, nếu ta dùng <code class="language-text">date.setHours(48)</code> sẽ vẫn ok, nó sẽ tự động cộng lên thành một ngày mới, tương tự cho <code class="language-text">setMinutes</code>, <code class="language-text">setSeconds</code></p>
+</blockquote>
+<p>Với <code class="language-text">setHours()</code> chúng ta có thể truyền tham số kiểu <code class="language-text">setHours(0,0,0,0)</code> để cập nhập giờ-phút-giây-mili giây.</p>
+<p>Phiên bản UTC</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"July 22, 2018 07:22:13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+date<span class="token punctuation">.</span><span class="token method function property-access">setUTCDate</span><span class="token punctuation">(</span>newalue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">setUTCDay</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">setUTCFullYear</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">setUTCMonth</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">setUTCHours</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">setUTCMinutes</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">setUTCSeconds</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+date<span class="token punctuation">.</span><span class="token method function property-access">setUTCMilliseconds</span><span class="token punctuation">(</span>newValue<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="lấy-giá-trị-timestamp-hiện-tại"><a href="#l%E1%BA%A5y-gi%C3%A1-tr%E1%BB%8B-timestamp-hi%E1%BB%87n-t%E1%BA%A1i" aria-hidden="true"><span class="icon icon-link"></span></a>Lấy giá trị timestamp hiện tại</h2>
+<p>Nếu muốn lấy timestamp hiện tại (mili giây)</p>
+<pre class="language-js"><code class="language-js"><span class="token known-class-name class-name">Date</span><span class="token punctuation">.</span><span class="token method function property-access">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// tương tự như viết</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="javascript-tự-động-cộng-thêm-giá-trị-ngày-giờ"><a href="#javascript-t%E1%BB%B1-%C4%91%E1%BB%99ng-c%E1%BB%99ng-th%C3%AAm-gi%C3%A1-tr%E1%BB%8B-ng%C3%A0y-gi%E1%BB%9D" aria-hidden="true"><span class="icon icon-link"></span></a>Javascript tự động cộng thêm giá trị ngày giờ</h2>
+<p>Nếu chúng ta đưa vào giá trị ngày lớn hơn 31, javascript sẽ cộng lên thành tháng tiếp theo, chứ không báo lỗi (không rõ là nên vui hay buồn với tính năng này)</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">2018</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//Thu Aug 09 2018 00:00:00 GMT+0200</span></code></pre>
+<h2 id="định-dạng-ngày-giờ-theo-vùng-miền"><a href="#%C4%91%E1%BB%8Bnh-d%E1%BA%A1ng-ng%C3%A0y-gi%E1%BB%9D-theo-v%C3%B9ng-mi%E1%BB%81n" aria-hidden="true"><span class="icon icon-link"></span></a>Định dạng ngày giờ theo vùng miền</h2>
+<p>Nếu trình duyệt hỗ trợ <code class="language-text">Intl</code>, ta có thể sử dụng để bản địa hóa các giá trị number, string, currencies, date</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// "12/22/2017"</span>
+<span class="token keyword">const</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"July 22, 2018 07:22:13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">format</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// định dạng kiểu Mỹ</span>
+<span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"en-US"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">format</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//"7/22/2018"</span>
+
+<span class="token comment">// đưa thêm option để customize lại output</span>
+<span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">{</span>
+  year<span class="token operator">:</span> <span class="token string">"numeric"</span><span class="token punctuation">,</span>
+  month<span class="token operator">:</span> <span class="token string">"numeric"</span><span class="token punctuation">,</span>
+  day<span class="token operator">:</span> <span class="token string">"numeric"</span><span class="token punctuation">,</span>
+  hour<span class="token operator">:</span> <span class="token string">"numeric"</span><span class="token punctuation">,</span>
+  minute<span class="token operator">:</span> <span class="token string">"numeric"</span><span class="token punctuation">,</span>
+  second<span class="token operator">:</span> <span class="token string">"numeric"</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"en-US"</span><span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">format</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//"7/22/2018, 7:22:13 AM"</span>
+<span class="token keyword">new</span> <span class="token class-name">Intl<span class="token punctuation">.</span>DateTimeFormat</span><span class="token punctuation">(</span><span class="token string">"it-IT"</span><span class="token punctuation">,</span> options2<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">format</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//"22/7/2018, 07:22:13"</span></code></pre>
+<h2 id="so-sánh-2-giá-trị-ngày-giờ"><a href="#so-s%C3%A1nh-2-gi%C3%A1-tr%E1%BB%8B-ng%C3%A0y-gi%E1%BB%9D" aria-hidden="true"><span class="icon icon-link"></span></a>So sánh 2 giá trị ngày giờ</h2>
+<p>Sử dụng <code class="language-text">Date.getTime()</code> để tính toán sự giá trị ngày tháng, chính xác tới mili giây nhé</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> date1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"July 10, 2018 07:22:13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> date2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"July 22, 2018 07:22:13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> diff <span class="token operator">=</span> date2<span class="token punctuation">.</span><span class="token method function property-access">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> date1<span class="token punctuation">.</span><span class="token method function property-access">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Kiểm tra 2 giá trị Date có bằng nhau không</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> date1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"July 10, 2018 07:22:13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> date2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"July 10, 2018 07:22:13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>date2<span class="token punctuation">.</span><span class="token method function property-access">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> date1<span class="token punctuation">.</span><span class="token method function property-access">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//dates are equal</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>Lưu ý là đang so sánh đến mili giây, nên nếu so sánh 2 giá trị <code class="language-text">July 10, 2018 07:22:13</code> và <code class="language-text">July 10, 2018</code> thì nó sẽ không bằng nhau.</p>
+</blockquote>
+<p><a href="https://flaviocopes.com/javascript-dates/" target="_blank" rel="nofollow noopener noreferrer">The definitive guide to JavaScript Dates</a></p>
+<p><a href="https://www.toptal.com/software/definitive-guide-to-datetime-manipulation" target="_blank" rel="nofollow noopener noreferrer">https://www.toptal.com/software/definitive-guide-to-datetime-manipulation</a></p>
+<p><a href="https://css-tricks.com/everything-you-need-to-know-about-date-in-javascript/" target="_blank" rel="nofollow noopener noreferrer">https://css-tricks.com/everything-you-need-to-know-about-date-in-javascript/</a></p>
+<p><a href="https://www.digitalocean.com/community/tutorials/understanding-date-and-time-in-javascript" target="_blank" rel="nofollow noopener noreferrer">https://www.digitalocean.com/community/tutorials/understanding-date-and-time-in-javascript</a></p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/javascript/" class="post-tags__link"><span>#</span> javascript
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020.</span><span class="footer__links">luckyluu</span></footer></div>
+    <script src="/blog/assets/js/app.f8d91bd5.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" defer></script>
+  </body>
+</html>

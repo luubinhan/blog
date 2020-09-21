@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Kinh nghiệm tổ chức Vuex cho ứng dụng lớn - VuiLapTrinh.com</title><meta name="gridsome:hash" content="0ea6a5c7ec18fcd2d372c0c225289996c79af9fc"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui"><meta data-vue-tag="ssr" name="desc" content="Nếu bạn đã sử dụng thông thạo Vuex để tạo các ứng dụng be bé như ToDo list, Shopping Cart, hãy nâng trình của mình lên bằng các ứng dụng có nhiều dữ liệu hơn."><link rel="preload" href="/blog/assets/css/0.styles.d493c61a.css" as="style"><link rel="preload" href="/blog/assets/js/app.f8d91bd5.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.b044eecd.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.bd4a2964.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.4999789e.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.d493c61a.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Kinh nghiệm tổ chức Vuex cho ứng dụng lớn</h1><div class="post-meta">
+  Đăng ngày 2018-11-10.
+  
+    Mất khoảng
+    <strong>6 phút</strong> để đọc.
+  </div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#srcstoreindexjs">src/store/index.js</a></li>
+<li><a href="#srcstoremodulesforms">src/store/modules/forms</a></li>
+<li><a href="#srcstoremodulescustomerjs">src/store/modules/customer.js</a></li>
+<li><a href="#pagecustomervue">PageCustomer.vue</a></li>
+<li>
+<p><a href="#t%E1%BB%95ng-k%E1%BA%BFt">Tổng kết</a></p>
+<ul>
+<li><a href="#ch%E1%BB%A7-%C4%91%E1%BB%99ng-load-c%C3%A1c-module">Chủ động load các module</a></li>
+<li><a href="#t%E1%BB%91i-%C4%91a-vi%E1%BB%87c-t%C3%A1i-s%E1%BB%AD-d%E1%BB%A5ng">Tối đa việc tái sử dụng</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<p><a href="https://d33wubrfki0l68.cloudfront.net/696421d01191c8c515704cbbec42120ce807c38c/fc4e4/videos/2018-02-04/vuex-store-api-model-mapping.mp4" target="_blank" rel="noopener noreferrer">Video demo ứng dụng  </a></p>
+<p>Trong bài này chúng ta sẽ build 2 màn hình, màn hình Customer và màn hình shipping address</p>
+<p>Codebase sẽ được tổ chức như sau</p>
+<pre class="language-text"><code class="language-text">src
+├── App.vue
+├── ...
+├── store
+│   ├── action-types.js
+│   ├── index.js
+│   ├── modules
+│   │   ├── customer.js
+│   │   ├── forms
+│   │   │   ├── address.js
+│   │   │   ├── contact.js
+│   │   │   └── name.js
+│   │   └── shipping-address.js
+│   └── mutation-types.js
+└── ...</code></pre>
+<h2 id="srcstoreindexjs"><a href="#srcstoreindexjs" aria-hidden="true"><span class="icon icon-link"></span></a>src/store/index.js</h2>
+<pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token maybe-class-name">Vue</span> <span class="token keyword module">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token maybe-class-name">Vuex</span> <span class="token keyword module">from</span> <span class="token string">'vuex'</span><span class="token punctuation">;</span>
+
+<span class="token maybe-class-name">Vue</span><span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Vuex</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// bật strict mode trên môi trường dev</span>
+  strict<span class="token operator">:</span> process<span class="token punctuation">.</span><span class="token property-access">env</span><span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">!==</span> <span class="token string">'production'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>File này sẽ ko có gì nhiều, mọi logic xử lý được tách thành từng modules</p>
+<div class="note">Cho phép reuse lại một số đoạn code, và chủ động các module khi cần.</div>
+<h2 id="srcstoremodulesforms"><a href="#srcstoremodulesforms" aria-hidden="true"><span class="icon icon-link"></span></a>src/store/modules/forms</h2>
+<p>Trên màn hình Customer: chúng ta có 3 dữ liệu: name, contact, address.</p>
+<p>Trên màn hình Shipping Address: chúng ta có 2 dữ liệu: contact, address.
+Chúng ta có thể tái sử dụng data của 2 màn hình này. Đó là lý do bên trong forms chúng ta có 3 file: <code class="language-text">contact.js</code>, <code class="language-text">address.js</code>, <code class="language-text">name.js</code></p>
+<p>File contact.js</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// src/store/modules/forms/contact.js</span>
+
+<span class="token keyword module">import</span> <span class="token punctuation">{</span> getField<span class="token punctuation">,</span> updateField <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'vuex-map-fields'</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">import</span> <span class="token punctuation">{</span> <span class="token constant">ADD_ROW</span> <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'../../mutation-types'</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Contact</span> <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'../../../models/Contact'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> mutations <span class="token operator">=</span> <span class="token punctuation">{</span>
+  updateField<span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token constant">ADD_ROW</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token parameter">state</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// cho phép thêm nhiều row mới.</span>
+    state<span class="token punctuation">.</span><span class="token property-access">rows</span><span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Contact</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> getters <span class="token operator">=</span> <span class="token punctuation">{</span>
+  getField<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// state phải return 1 function</span>
+<span class="token comment">// để có thể reuse module.</span>
+<span class="token comment">// Xem: https://vuex.vuejs.org/en/modules.html#module-reuse</span>
+<span class="token keyword">const</span> <span class="token function-variable function">state</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// tạo 1 row rỗng</span>
+  rows<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">Contact</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token punctuation">{</span>
+  <span class="token comment">// chúng ta sử dụng namespacing</span>
+  <span class="token comment">// trên tất cả modules.</span>
+  namespaced<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  mutations<span class="token punctuation">,</span>
+  getters<span class="token punctuation">,</span>
+  state<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<h2 id="srcstoremodulescustomerjs"><a href="#srcstoremodulescustomerjs" aria-hidden="true"><span class="icon icon-link"></span></a>src/store/modules/customer.js</h2>
+<p>Module này khá là nhiều, nên chúng ta sẽ giải thích một cách từ từ.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> <span class="token punctuation">{</span> createHelpers <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'vuex-map-fields'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// API được dùng để gửi</span>
+<span class="token comment">// dữ liệu user nhập vào lên server.</span>
+<span class="token keyword module">import</span> api <span class="token keyword module">from</span> <span class="token string">'../../utils/api'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Models của data để gửi lên API</span>
+<span class="token keyword module">import</span> <span class="token punctuation">{</span> createCustomer <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'../../models/Customer'</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token punctuation">{</span> createRequest <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'../../models/Request'</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">import</span> <span class="token punctuation">{</span> <span class="token constant">SUBMIT</span> <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'../action-types'</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token punctuation">{</span> <span class="token constant">ERROR</span><span class="token punctuation">,</span> <span class="token constant">SUCCESS</span> <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'../mutation-types'</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">import</span> address <span class="token keyword module">from</span> <span class="token string">'./forms/address'</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> contact <span class="token keyword module">from</span> <span class="token string">'./forms/contact'</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> name <span class="token keyword module">from</span> <span class="token string">'./forms/name'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// ...</span></code></pre>
+<p>Chúng ta sử dụng model để map dữ liệu từ store thành một structure chúng ta sẽ gửi lên API. Nếu muốn xem chi tiết phần này bạn xem trên <a href="https://github.com/maoberlehner/how-to-structure-a-complex-vuex-store/tree/master/src/models" target="_blank" rel="nofollow noopener noreferrer">Github</a></p>
+<p>Phần action của module customer</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// src/store/modules/customer.js</span>
+
+<span class="token comment">// ...</span>
+
+<span class="token keyword">const</span> actions <span class="token operator">=</span> <span class="token punctuation">{</span>
+  async <span class="token punctuation">[</span><span class="token constant">SUBMIT</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> commit<span class="token punctuation">,</span> state <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> customerData <span class="token operator">=</span> <span class="token function">createCustomer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token comment">// Chúng ta chỉ cho user nhập</span>
+        <span class="token comment">// một địa chỉ</span>
+        <span class="token comment">// (hoặc tên).</span>
+        address<span class="token operator">:</span> state<span class="token punctuation">.</span><span class="token property-access">address</span><span class="token punctuation">.</span><span class="token property-access">rows</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token comment">// Cho phép user nhập vào nhiều contact        </span>
+        contacts<span class="token operator">:</span> state<span class="token punctuation">.</span><span class="token property-access">contact</span><span class="token punctuation">.</span><span class="token property-access">rows</span><span class="token punctuation">,</span>
+        name<span class="token operator">:</span> state<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">.</span><span class="token property-access">rows</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> requestData <span class="token operator">=</span> <span class="token function">createRequest</span><span class="token punctuation">(</span>customerData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">await</span> <span class="token function">api</span><span class="token punctuation">(</span>requestData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token function">commit</span><span class="token punctuation">(</span><span class="token constant">SUCCESS</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">commit</span><span class="token punctuation">(</span><span class="token constant">ERROR</span><span class="token punctuation">,</span> error<span class="token punctuation">.</span><span class="token property-access">message</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// ...</span></code></pre>
+<p><code class="language-text">SUBMIT</code> action ở trên chịu trách nhiệm gửi data lên API, xử lý status trả về. <code class="language-text">createCustomer</code> là function sẽ giúp transform data mà API yêu cầu.</p>
+<p>Chúng ta cần 2 mutation cho màn customer form:
+1. <code class="language-text">ERROR</code> để set state error khi request bị fail
+2. <code class="language-text">SUCCESS</code> cho trường hợp thành công</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// src/store/modules/customer.js</span>
+
+<span class="token comment">// ...</span>
+
+<span class="token keyword">const</span> mutations <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span><span class="token constant">ERROR</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    state<span class="token punctuation">.</span><span class="token property-access">error</span> <span class="token operator">=</span> error<span class="token punctuation">;</span>
+    state<span class="token punctuation">.</span><span class="token property-access">success</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token constant">SUCCESS</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token parameter">state</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    state<span class="token punctuation">.</span><span class="token property-access">error</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    state<span class="token punctuation">.</span><span class="token property-access">success</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// ...</span></code></pre>
+<p>Tới đây chúng ta có thể define object state cần có</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// src/store/modules/customer.js</span>
+
+<span class="token comment">// ...</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">state</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+  error<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  success<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> modules <span class="token operator">=</span> <span class="token punctuation">{</span>
+  address<span class="token punctuation">,</span>
+  contact<span class="token punctuation">,</span>
+  name<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// ...</span></code></pre>
+<p>Để thuận tiện hơn trong lúc code, chúng ta đang sử dụng một số hàm helper của <code class="language-text">vuex-map-fields</code></p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// src/store/modules/customer.js</span>
+
+<span class="token comment">// ...</span>
+
+<span class="token comment">// Để mapping form fields qua Vuex.</span>
+<span class="token comment">// Xem: https://github.com/maoberlehner/vuex-map-fields#custom-getters-and-mutations</span>
+<span class="token keyword module">export</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> mapFields<span class="token operator">:</span> mapAddressFields <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">createHelpers</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  getterType<span class="token operator">:</span> <span class="token string">'customer/address/getField'</span><span class="token punctuation">,</span>
+  mutationType<span class="token operator">:</span> <span class="token string">'customer/address/updateField'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> mapMultiRowFields<span class="token operator">:</span> mapContactMultiRowFields <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">createHelpers</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  getterType<span class="token operator">:</span> <span class="token string">'customer/contact/getField'</span><span class="token punctuation">,</span>
+  mutationType<span class="token operator">:</span> <span class="token string">'customer/contact/updateField'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword">const</span> <span class="token punctuation">{</span> mapFields<span class="token operator">:</span> mapNameFields <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">createHelpers</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  getterType<span class="token operator">:</span> <span class="token string">'customer/name/getField'</span><span class="token punctuation">,</span>
+  mutationType<span class="token operator">:</span> <span class="token string">'customer/name/updateField'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">export</span> <span class="token keyword">const</span> customer <span class="token operator">=</span> <span class="token punctuation">{</span>
+  namespaced<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  actions<span class="token punctuation">,</span>
+  mutations<span class="token punctuation">,</span>
+  state<span class="token punctuation">,</span>
+  modules<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<h2 id="pagecustomervue"><a href="#pagecustomervue" aria-hidden="true"><span class="icon icon-link"></span></a>PageCustomer.vue</h2>
+<pre class="language-jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$options.name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">New Customer</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">
+
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>success<span class="token punctuation">"</span></span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>success<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      SUCCESS!
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>error<span class="token punctuation">"</span></span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>error<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      ERROR: </span><span class="token punctuation">{</span><span class="token punctuation">{</span> error <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span class="token plain-text">
+
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>!success<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-sections<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-section<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>firstName<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-label<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">First name:</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>firstName<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>firstName<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lastName<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-label<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">Last name:</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lastName<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>lastName<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span><span class="token plain-text">
+
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-section<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-repeatable<span class="token punctuation">"</span></span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(contact, index) in contacts<span class="token punctuation">"</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+              </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-label<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">E-Mail:</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><span class="token plain-text">
+              </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contact.email<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+              </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>phone<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-label<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">Phone:</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><span class="token plain-text">
+              </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>phone<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>contact.phone<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+          &lt;button class="form-button" @click="addContact">Add contact</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span><span class="token plain-text">
+
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-section<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>zip<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-label<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">ZIP:</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>zip<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>zip<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>town<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-label<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">Town:</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>town<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>town<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-element<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>street<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-label<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">Street:</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>street<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>street<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+
+      &lt;button class="form-button" @click="submit">
+        Submit
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span><span class="token plain-text">
+
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token plain-text">
+import { createNamespacedHelpers } from 'vuex';
+
+import { SUBMIT } from '../../store/action-types';
+import { ADD_ROW } from '../../store/mutation-types';
+
+import store from '../../store';
+import {
+  customer,
+  mapAddressFields,
+  mapContactMultiRowFields,
+  mapNameFields,
+} from '../../store/modules/customer';
+
+// chủ động đăng ký `customer` module 
+// chỉ load module này khi cần thiết
+
+// trước khi đăng ký module
+// kiểm tra xem nó được đăng ký chưa 
+if (!store.state.customer) {
+  store.registerModule('customer', customer);
+}
+
+const {
+  mapActions: mapCustomerActions,
+  mapState: mapCustomerState,
+} = createNamespacedHelpers('customer');
+const {
+  mapMutations: mapContactMutations,
+} = createNamespacedHelpers('customer/contact');
+
+export default {
+  name: 'PageCustomer',
+  // Here we're wiring everything up.
+  computed: {
+    ...mapCustomerState(['error', 'success']),
+    // Đọc thêm về mapping field value
+    // https://markus.oberlehner.net/blog/form-fields-two-way-data-binding-and-vuex/
+    // https://markus.oberlehner.net/blog/how-to-handle-multi-row-forms-with-vue-vuex-and-vuex-map-fields/
+    ...mapNameFields(['rows[0].firstName', 'rows[0].lastName']),
+    ...mapContactMultiRowFields({ contacts: 'rows' }),
+    ...mapAddressFields(['rows[0].zip', 'rows[0].town', 'rows[0].street']),
+  },
+  methods: {
+    ...mapContactMutations({
+      addContact: ADD_ROW,
+    }),
+    ...mapCustomerActions({
+      submit: SUBMIT,
+    }),
+  },
+};
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>Bạn có thể thấy là không có xử lý logic bên trong component. Tất cả những gì làm ở component là map các action, field, mutation, field từ store module vào component.</p>
+<h2 id="tổng-kết"><a href="#t%E1%BB%95ng-k%E1%BA%BFt" aria-hidden="true"><span class="icon icon-link"></span></a>Tổng kết</h2>
+<p>Để tổng kết lại chúng ta cũng nhìn lại chúng ta đạt được gì và cách tiếp cận structure như thế này trong Vuex store khác gì so với cách truyền thống</p>
+<h3 id="chủ-động-load-các-module"><a href="#ch%E1%BB%A7-%C4%91%E1%BB%99ng-load-c%C3%A1c-module" aria-hidden="true"><span class="icon icon-link"></span></a>Chủ động load các module</h3>
+<p>Bởi vì chúng ta không đăng ký tất cả các module một cách globally, no cho phép sử dụng tính năng webpack splitting code hoạt động với vue-router.</p>
+<h3 id="tối-đa-việc-tái-sử-dụng"><a href="#t%E1%BB%91i-%C4%91a-vi%E1%BB%87c-t%C3%A1i-s%E1%BB%AD-d%E1%BB%A5ng" aria-hidden="true"><span class="icon icon-link"></span></a>Tối đa việc tái sử dụng</h3>
+<p>Với cách thiết kế store như thế này, chúng ta có thể sử dụng lại một số module. Chìa khóa để đạt được chính là đặt tên theo rule cố định và cách structure module, luôn tuân thủ các quy định giúp chúng ta có thể đoán được.</p>
+<p><a href="https://markus.oberlehner.net/blog/how-to-structure-a-complex-vuex-store/" target="_blank" rel="noopener noreferrer">Bài viết gốc  </a></p>
+<p><a href="https://how-to-structure-a-complex-vuex-store.netlify.com/" target="_blank" rel="noopener noreferrer">Demo </a></p>
+<p><a href="https://github.com/maoberlehner/how-to-structure-a-complex-vuex-store" target="_blank" rel="noopener noreferrer">Toàn bộ source code  </a></p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/vuejs/" class="post-tags__link"><span>#</span> vuejs
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020.</span><span class="footer__links">luckyluu</span></footer></div>
+    <script src="/blog/assets/js/app.f8d91bd5.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Giải thích Javascript Reactivity - VuiLapTrinh.com</title><meta name="gridsome:hash" content="0ea6a5c7ec18fcd2d372c0c225289996c79af9fc"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui"><meta data-vue-tag="ssr" name="desc" content="Rất nhiều thư viện Javascript như Angular, React, Vue sử dụng Reactivity, hiểu được reactivity là gì và cách nó chạy sẽ giúp nâng cao kỹ năng lập trình"><link rel="preload" href="/blog/assets/css/0.styles.d493c61a.css" as="style"><link rel="preload" href="/blog/assets/js/app.f8d91bd5.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.b044eecd.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.bd4a2964.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.4999789e.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.d493c61a.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Giải thích Javascript Reactivity</h1><div class="post-meta">
+  Đăng ngày 2018-07-17.
+  
+    Mất khoảng
+    <strong>5 phút</strong> để đọc.
+  </div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#m%E1%BB%99t-v%C3%AD-d%E1%BB%A5-v%E1%BB%81-reactivity-c%E1%BB%A7a-vue">Một ví dụ về Reactivity của Vue</a></li>
+<li><a href="#v%E1%BA%A5n-%C4%91%E1%BB%81-v%C3%A0-gi%E1%BA%A3i-ph%C3%A1p">Vấn đề và giải pháp</a></li>
+<li><a href="#gi%E1%BA%A3i-ph%C3%A1p-t%E1%BB%95ng-qu%C3%A1t-h%C6%A1n">Giải pháp tổng quát hơn</a></li>
+<li><a href="#t%C3%A1ch-dep-cho-m%E1%BB%97i-bi%E1%BA%BFn">Tách Dep cho mỗi biến</a></li>
+<li><a href="#t%E1%BB%95ng-h%E1%BB%A3p-c%C3%A1c-%C3%BD-t%C6%B0%E1%BB%9Fng-ch%C3%ADnh">Tổng hợp các ý tưởng chính</a></li>
+</ul>
+<!-- /TOC -->
+<h1 id="một-ví-dụ-về-reactivity-của-vue"><a href="#m%E1%BB%99t-v%C3%AD-d%E1%BB%A5-v%E1%BB%81-reactivity-c%E1%BB%A7a-vue" aria-hidden="true"><span class="icon icon-link"></span></a>Một ví dụ về Reactivity của Vue</h1>
+<pre class="language-jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>app<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">Price: $</span><span class="token punctuation">{</span><span class="token punctuation">{</span> price <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">Total: $</span><span class="token punctuation">{</span><span class="token punctuation">{</span> price <span class="token operator">*</span> quantity <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">Taxes: $</span><span class="token punctuation">{</span><span class="token punctuation">{</span> totalPriceWithTax <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    price<span class="token operator">:</span> <span class="token number">5.00</span><span class="token punctuation">,</span>
+    quantity<span class="token operator">:</span> <span class="token number">2</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">totalPriceWithTax</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">quantity</span> <span class="token operator">*</span> <span class="token number">1.03</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>Ở đây khi chúng ta thay đổi giá trị của <code class="language-text">price</code>, thằng Vue nó sẽ làm 3 thứ</p>
+<ol>
+<li>Cập nhập lại giá trị <code class="language-text">price</code></li>
+<li>Tính lại giá trị <code class="language-text">total</code></li>
+<li>Gọi lại hàm <code class="language-text">totalPriceWithTax</code> và cập nhập lại giá trị</li>
+</ol>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*t8enMn6h0gjY6HNKoSVC1g.jpeg"></p>
+<p>Thấy hết sức bình thường, nhưng đó <strong>KHÔNG PHẢI LÀ CÁCH CHẠY BÌNH THƯỜNG CỦA JAVASCRIPT</strong></p>
+<p>Ví dụ với javascript bình thường</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> price <span class="token operator">=</span> <span class="token number">5</span>
+<span class="token keyword">let</span> quantity <span class="token operator">=</span> <span class="token number">2</span>
+<span class="token keyword">let</span> total <span class="token operator">=</span> price <span class="token operator">*</span> quantity <span class="token comment">// kết quả sẽ là 10</span>
+price <span class="token operator">=</span> <span class="token number">20</span> <span class="token comment">// gán lại giá trị của price</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">total is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>total<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span></code></pre>
+<p>Bạn hãy đoán xem kết quả log ra là mấy? Sẽ là <strong>10</strong> chứ không phải <strong>40</strong> đâu.</p>
+<h1 id="vấn-đề-và-giải-pháp"><a href="#v%E1%BA%A5n-%C4%91%E1%BB%81-v%C3%A0-gi%E1%BA%A3i-ph%C3%A1p" aria-hidden="true"><span class="icon icon-link"></span></a>Vấn đề và giải pháp</h1>
+<p>Vấn đề là chúng ta cần phải lưu cái cách tính <code class="language-text">price * quantity</code> này lại ở đâu đó, để chúng ta re-run cách tính này khi gọi lại <code class="language-text">total</code>, nó sẽ không nên là biến số mà là thành hàm, thì khi đó nếu giá trị <code class="language-text">price</code> hoặc <code class="language-text">quantity</code> thay đổi chúng ta sẽ có kết quả <code class="language-text">total</code> thay đổi theo.</p>
+<p>Chúng ta cần một nơi để <strong>lưu</strong> phần code tính toán kiểu như vậy lại ở đâu đó, để khi <code class="language-text">price</code> hoặc <code class="language-text">quantity</code> thay đổi, chúng ta sẽ chạy lại tất cả những gì <strong>đã lưu</strong></p>
+<p><img src="https://cdn-images-1.medium.com/max/800/0*Nh-FQoHiDHncmQSi.png"></p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> price <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> quantity <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> total <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token function-variable function">target</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span> total <span class="token operator">=</span> price <span class="token operator">*</span> quantity <span class="token punctuation">}</span>
+
+<span class="token function">record</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// lưu lại đâu đó để re-run sau này</span>
+
+<span class="token function">target</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// </span></code></pre>
+<p>Hàm record chúng ta sẽ implement nó như sau</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> storage <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// đưa toàn bộ các hàm muốn re-run vào mảng này</span>
+
+<span class="token keyword">function</span> <span class="token function">record</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  storage<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// hàm để chạy lại tất cả những thứ đã lưu trong store</span>
+<span class="token keyword">function</span> <span class="token function">replay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  storage<span class="token punctuation">.</span><span class="token method function property-access">forEach</span><span class="token punctuation">(</span><span class="token parameter">run</span> <span class="token arrow operator">=></span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h1 id="giải-pháp-tổng-quát-hơn"><a href="#gi%E1%BA%A3i-ph%C3%A1p-t%E1%BB%95ng-qu%C3%A1t-h%C6%A1n" aria-hidden="true"><span class="icon icon-link"></span></a>Giải pháp tổng quát hơn</h1>
+<p>Nếu đã nắm được ý tưởng chính để giải quyết bài toán ban đầu, giờ chúng ta sẽ hiện thực hóa nó bẳng observer pattern, tạo một <code class="language-text">class</code> để quản lý những chuyện đó</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Dep</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// thay vì là starage, thiên hạ đã thống nhất lấy cái tên subscribers</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">subscribers</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span>
+  <span class="token function">depend</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>target <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">subscribers</span><span class="token punctuation">.</span><span class="token method function property-access">includes</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// chỉ thêm vào nếu chưa có hoặc không trùng</span>
+      thiss<span class="token punctuation">.</span><span class="token property-access">subscribers</span><span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">notify</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// run tất cả target, tên gọi khác là observer</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">subscribers</span><span class="token punctuation">.</span><span class="token method function property-access">forEach</span><span class="token punctuation">(</span><span class="token parameter">sub</span> <span class="token arrow operator">=></span> <span class="token function">sub</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Code lại ví dụ trên sử dụng <code class="language-text">class</code> mới tạo này</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> dep <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> price <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> quantity <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> total <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token function-variable function">target</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span> total <span class="token operator">=</span> price <span class="token operator">*</span> quantity <span class="token punctuation">}</span>
+dep<span class="token punctuation">.</span><span class="token method function property-access">depend</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">target</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>total<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 10</span>
+price <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>total<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 10</span>
+dep<span class="token punctuation">.</span><span class="token method function property-access">notify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>total<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 40</span></code></pre>
+<p>Chúng ta vẫn còn có thể nâng cấp đoạn code trên, thay vì</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> <span class="token function-variable function">target</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span> total <span class="token operator">=</span> price <span class="token operator">*</span> quantity <span class="token punctuation">}</span>
+dep<span class="token punctuation">.</span><span class="token method function property-access">depend</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">target</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>... chúng ta đóng gói nó vào một <strong>watcher</strong>, sau đó chỉ cần gọi</p>
+<pre class="language-js"><code class="language-js"><span class="token function">watcher</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  total <span class="token operator">=</span> price <span class="token operator">*</span> quantity
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>Implement cái function watcher này như bên dưới</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">watcher</span><span class="token punctuation">(</span><span class="token parameter">myFunc</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  target <span class="token operator">=</span> myFunc<span class="token punctuation">;</span> <span class="token comment">// active target, target ở đây là global variable</span>
+  dep<span class="token punctuation">.</span><span class="token method function property-access">depend</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// đưa target vào dependency</span>
+  <span class="token function">target</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// gọi hàm target</span>
+  target <span class="token operator">=</span> <span class="token keyword null nil">null</span><span class="token punctuation">;</span> <span class="token comment">// reset</span>
+<span class="token punctuation">}</span></code></pre>
+<h1 id="tách-dep-cho-mỗi-biến"><a href="#t%C3%A1ch-dep-cho-m%E1%BB%97i-bi%E1%BA%BFn" aria-hidden="true"><span class="icon icon-link"></span></a>Tách Dep cho mỗi biến</h1>
+<p>Chúng ta sẽ muốn mỗi một biến có một <code class="language-text">Dep</code> riêng, trước tiên ta đưa <code class="language-text">price</code> và <code class="language-text">quantity</code> thành property của <code class="language-text">data</code></p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token punctuation">{</span>price<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> quantity<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">}</span></code></pre>
+<p>Chúng ta sẽ có các Dep khác nhau cho <code class="language-text">price</code> và <code class="language-text">quantity</code></p>
+<p><img src="https://cdn-images-1.medium.com/max/800/0*kV4iCRoguwO5C_JQ.png"></p>
+<p>watcher phụ thuộc cả 2 biến</p>
+<pre class="language-js"><code class="language-js"><span class="token function">watcher</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  total <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token operator">*</span> data<span class="token punctuation">.</span><span class="token property-access">quantity</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://cdn-images-1.medium.com/max/800/0*E-_YXfn3vJe7S_Ry.png"></p>
+<p>watcher chỉ phụ thuộc biến <code class="language-text">price</code></p>
+<pre class="language-js"><code class="language-js"><span class="token function">watcher</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  salePrice <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token operator">*</span> <span class="token number">0.9</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p><img src="https://cdn-images-1.medium.com/max/800/0*wefv6my2WWLW2385.png"></p>
+<p>Chúng ta muốn khi giá trị <code class="language-text">price</code> bị thay đổi, hàm <code class="language-text">dep.notify</code> của <code class="language-text">price store</code> sẽ được gọi</p>
+<pre class="language-js"><code class="language-js"><span class="token operator">>></span> total
+<span class="token number">10</span>
+<span class="token operator">>></span> price <span class="token operator">=</span> <span class="token number">20</span> <span class="token comment">// lúc này thằng notify của price sẽ được gọi liên luôn</span>
+<span class="token operator">>></span> total
+<span class="token number">40</span></code></pre>
+<p>Đọc thêm tài liệu về <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="nofollow noopener noreferrer">Object.defineProperty</a> nếu chưa biết. Áp dụng nó trong ví dụ này</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token punctuation">{</span>price<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> quantity<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> internalValue <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token property-access">price</span><span class="token punctuation">;</span> <span class="token comment">// giá trị khởi tạo</span>
+
+<span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">defineProperty</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token string">'price'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token comment">// chỉ cho thằng Price Property</span>
+  <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Em bị access'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> internalValue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">set</span><span class="token punctuation">(</span>newVal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Em bị thay đổi'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    internalvalue <span class="token operator">=</span> newVal<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+data<span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token comment">// call get()</span>
+data<span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token operator">=</span> <span class="token number">20</span> <span class="token comment">// call set()</span>
+
+total <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token operator">*</span> data<span class="token punctuation">.</span><span class="token property-access">quantity</span><span class="token punctuation">;</span>
+data<span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span></code></pre>
+<p>Với cách này, chúng ta có thể chạy kèm một hàm nào đó khi giá trị <code class="language-text">price</code> được <strong>get</strong> hoặc <strong>set</strong>. Với idea là như thế chúng ta tổng quát quá lên cho nhiều biến</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token punctuation">{</span>price<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> quantity<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">}</span>
+
+<span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">keys</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">forEach</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> intervalvalue <span class="token operator">=</span> data<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">defineProperty</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token comment">// chỉ cho thằng Price Property</span>
+    <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Em bị access'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> internalValue<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">set</span><span class="token punctuation">(</span>newVal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Em bị thay đổi'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      internalvalue <span class="token operator">=</span> newVal<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+total <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token operator">*</span> data<span class="token punctuation">.</span><span class="token property-access">quantity</span><span class="token punctuation">;</span>
+data<span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span></code></pre>
+<h1 id="tổng-hợp-các-ý-tưởng-chính"><a href="#t%E1%BB%95ng-h%E1%BB%A3p-c%C3%A1c-%C3%BD-t%C6%B0%E1%BB%9Fng-ch%C3%ADnh" aria-hidden="true"><span class="icon icon-link"></span></a>Tổng hợp các ý tưởng chính</h1>
+<pre class="language-js"><code class="language-js">total <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token operator">*</span> data<span class="token punctuation">.</span><span class="token property-access">quantity</span></code></pre>
+<p>Khi một đoạn code như vậy được chạy, nó sẽ <code class="language-text">get</code> giá trị của <code class="language-text">price</code>, chúng ta muốn thẳng <code class="language-text">price</code> khi bị thay đổi hoặc gọi, nó sẽ re-run một function</p>
+<ul>
+<li>Ở <strong>Get</strong>: nhớ dùm cái function này, bọn tao sẽ nhờ mày chạy lại</li>
+<li>Ở <strong>Set</strong>: chạy cái function mày đã giữ hộ ấy, thay đổi giá trị luôn nhé</li>
+</ul>
+<p>Và đây là toàn bộ code</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token punctuation">{</span>price<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> quantity<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> target <span class="token operator">=</span> <span class="token keyword null nil">null</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Dep không thay đổi gì so với ở trên</span>
+<span class="token keyword">class</span> <span class="token class-name">Dep</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// thay vì là starage, thiên hạ đã thống nhất lấy cái tên subscribers</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">subscribers</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span>
+  <span class="token function">depend</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>target <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">subscribers</span><span class="token punctuation">.</span><span class="token method function property-access">includes</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// chỉ thêm vào nếu chưa có hoặc không trùng</span>
+      thiss<span class="token punctuation">.</span><span class="token property-access">subscribers</span><span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">notify</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// run tất cả target, tên gọi khác là observer</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">subscribers</span><span class="token punctuation">.</span><span class="token method function property-access">forEach</span><span class="token punctuation">(</span><span class="token parameter">sub</span> <span class="token arrow operator">=></span> <span class="token function">sub</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// chạy qua từng data của property</span>
+<span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">keys</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">forEach</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> intervalvalue <span class="token operator">=</span> data<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// mỗi em một Dep</span>
+  <span class="token keyword">const</span> dep <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">defineProperty</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token comment">// chỉ cho thằng Price Property</span>
+    <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      dep<span class="token punctuation">.</span><span class="token method function property-access">depend</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// lưu hộ tao cái</span>
+      <span class="token keyword">return</span> internalValue<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">set</span><span class="token punctuation">(</span>newVal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      internalvalue <span class="token operator">=</span> newVal<span class="token punctuation">;</span>
+      dep<span class="token punctuation">.</span><span class="token method function property-access">notify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// re-run đi em</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// watcher sẽ không còn gọi dep.depend nữa</span>
+<span class="token keyword">function</span> <span class="token function">watcher</span><span class="token punctuation">(</span><span class="token parameter">myFunc</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  target <span class="token operator">=</span> myFunc<span class="token punctuation">;</span>
+  <span class="token function">target</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  target <span class="token operator">=</span> <span class="token keyword null nil">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">watcher</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  data<span class="token punctuation">.</span><span class="token property-access">total</span> <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token property-access">price</span> <span class="token operator">*</span> data<span class="token punctuation">.</span><span class="token property-access">quantity</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>Kết quả nè</p>
+<p><img src="https://cdn-images-1.medium.com/max/800/0*mgmRTNK_n0i2AFK2.png"></p>
+<p>Hình mình họa lấy từ Vue</p>
+<p><img src="https://cdn-images-1.medium.com/max/800/0*tB3MJCzh_cB6i3mS.png"></p>
+<p><a href="https://medium.com/vue-mastery/the-best-explanation-of-javascript-reactivity-fea6112dd80d" target="_blank" rel="nofollow noopener noreferrer">Link bài gốc</a></p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/javascript/" class="post-tags__link"><span>#</span> javascript
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020.</span><span class="footer__links">luckyluu</span></footer></div>
+    <script src="/blog/assets/js/app.f8d91bd5.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" defer></script>
+  </body>
+</html>

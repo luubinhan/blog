@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Con đường để trở thành React developer ( phiên bản 2018) - VuiLapTrinh.com</title><meta name="gridsome:hash" content="0ea6a5c7ec18fcd2d372c0c225289996c79af9fc"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui"><meta data-vue-tag="ssr" name="desc" content="Hướng dẫn, soi sáng cho các bạn muốn trở thành FrontEnd Developer. Nếu đã chọn FrontEnd làm nghiệp, React làm món ăn mỗi sáng, mà chưa biết cần học cái gì, hy vọng bài viết này sẽ có ích cho các bạn còn đang ko biết học cái gì"><link rel="preload" href="/blog/assets/css/0.styles.d493c61a.css" as="style"><link rel="preload" href="/blog/assets/js/app.f8d91bd5.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.b044eecd.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.bd4a2964.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.4999789e.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.d493c61a.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Con đường để trở thành React developer ( phiên bản 2018)</h1><div class="post-meta">
+  Đăng ngày 2018-08-12.
+  
+    Mất khoảng
+    <strong>1 phút</strong> để đọc.
+  </div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#b%E1%BA%AFt-bu%E1%BB%99c-ph%E1%BA%A3i-h%E1%BB%8Dc">Bắt buộc phải học</a></li>
+<li><a href="#k%E1%BB%B9-n%C4%83ng-development">Kỹ năng Development</a></li>
+<li>
+<p><a href="#react-v%C3%A0-h%E1%BB%87-sinh-th%C3%A1i-nghe-k%C3%AAu-gh%C3%AA-ch%C6%B0a">React và hệ sinh thái (nghe kêu ghê chưa)</a></p>
+<ul>
+<li><a href="#css">CSS</a></li>
+<li><a href="#build-tools">Build tools</a></li>
+<li><a href="#state-management">State management</a></li>
+<li><a href="#type-checkers">Type Checkers</a></li>
+<li><a href="#routing">Routing</a></li>
+<li><a href="#api-clients">API clients</a></li>
+<li><a href="#th%C6%B0-vi%E1%BB%87n-ti%E1%BB%87n-%C3%ADch">Thư viện tiện ích</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#static-site-generator">Static Site Generator</a></li>
+<li><a href="#i18n">i18n</a></li>
+<li><a href="#server-side-rendering">Server Side Rendering</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<p>Cái nào <strong>in đậm</strong> là bắt buộc, <em>để nghiêng</em> biết thì tốt, <del>gạch ngang</del> là ko cần học luôn</p>
+<h1 id="bắt-buộc-phải-học"><a href="#b%E1%BA%AFt-bu%E1%BB%99c-ph%E1%BA%A3i-h%E1%BB%8Dc" aria-hidden="true"><span class="icon icon-link"></span></a>Bắt buộc phải học</h1>
+<ul>
+<li><strong>HTML</strong>: căn bản html, cách viết semantic html, cách structure DOM, tập trung nhiều vào cách structure</li>
+<li><strong>CSS</strong>: học CSS căn bản, Flexbox, Responsive Web Design, Media Queries</li>
+<li>
+<p><strong>JS căn bản</strong>: Hoisting, Event Bubbling, Prototyping, AJAX (XHR), thao tác trên DOM, ECMA 6</p>
+<ul>
+<li><a href="http://www.learn-js.org/" target="_blank" rel="nofollow noopener noreferrer">learn-js.org</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="nofollow noopener noreferrer">Mozilla developer Network</a></li>
+<li><a href="https://channel9.msdn.com/Series/Javascript-Fundamentals-Development-for-Absolute-Beginners" target="_blank" rel="nofollow noopener noreferrer">Microsoft’s Virtual Academy</a></li>
+</ul>
+</li>
+<li><del>jQuery</del>: có thể bỏ qua không cần học</li>
+</ul>
+<h1 id="kỹ-năng-development"><a href="#k%E1%BB%B9-n%C4%83ng-development" aria-hidden="true"><span class="icon icon-link"></span></a>Kỹ năng Development</h1>
+<ul>
+<li><strong>GIT, Github, Bitbucket, Gitlab</strong></li>
+<li><strong>HTTP/HTTPS</strong></li>
+<li><strong>Kỹ năng search google</strong></li>
+<li><strong>Dùng terminal</strong></li>
+<li><strong>Data structure và Algorithms</strong></li>
+<li><strong>Design pattern</strong></li>
+</ul>
+<h1 id="react-và-hệ-sinh-thái-nghe-kêu-ghê-chưa"><a href="#react-v%C3%A0-h%E1%BB%87-sinh-th%C3%A1i-nghe-k%C3%AAu-gh%C3%AA-ch%C6%B0a" aria-hidden="true"><span class="icon icon-link"></span></a>React và hệ sinh thái (nghe kêu ghê chưa)</h1>
+<h2 id="css"><a href="#css" aria-hidden="true"><span class="icon icon-link"></span></a>CSS</h2>
+<ul>
+<li>
+<p>CSS Preprocessor</p>
+<ul>
+<li><strong>Sass/SCSS, PostCSS</strong></li>
+<li><del>less</del></li>
+<li><del>stylus</del></li>
+</ul>
+</li>
+<li>CSS Framworks: <strong>Bootstrap</strong>, <em>Semantic UI</em></li>
+<li>
+<p>CSS Architecture</p>
+<ul>
+<li><strong>BEM</strong></li>
+<li><em>CSS modules</em></li>
+</ul>
+</li>
+<li>
+<p><strong>CSS in JS</strong></p>
+<ul>
+<li><em>styled components</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="build-tools"><a href="#build-tools" aria-hidden="true"><span class="icon icon-link"></span></a>Build tools</h2>
+<ul>
+<li>
+<p>package manager</p>
+<ul>
+<li><strong>npm</strong></li>
+<li><em>yarn</em></li>
+</ul>
+</li>
+<li><strong>webpack</strong></li>
+<li>task runner: chỉ cần nghiên cứu <strong>npm scripts</strong></li>
+</ul>
+<h2 id="state-management"><a href="#state-management" aria-hidden="true"><span class="icon icon-link"></span></a>State management</h2>
+<ul>
+<li><strong>Component state / context</strong></li>
+<li>
+<p><strong>Redux</strong></p>
+<ul>
+<li>async actions: <strong>redux thunk</strong>, <em>redux saga, redux observable</em></li>
+<li>helpers: <em>rematch, reselect</em></li>
+<li>
+<p>Form helpers</p>
+<ul>
+<li><em>redux form</em></li>
+<li><em>formik</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Mobx</em></li>
+</ul>
+<h2 id="type-checkers"><a href="#type-checkers" aria-hidden="true"><span class="icon icon-link"></span></a>Type Checkers</h2>
+<p>Bắt buộc: <strong>PropTypes</strong>, biết thì tốt: <em>TypeScript</em>, <em>Flow</em></p>
+<h2 id="routing"><a href="#routing" aria-hidden="true"><span class="icon icon-link"></span></a>Routing</h2>
+<p>Chỉ có <strong>React-Router</strong> là bắt buộc</p>
+<h2 id="api-clients"><a href="#api-clients" aria-hidden="true"><span class="icon icon-link"></span></a>API clients</h2>
+<ul>
+<li>
+<p><strong>REST</strong></p>
+<ul>
+<li><strong>fetch</strong> (cái này của browser)</li>
+<li><em>axios</em></li>
+</ul>
+</li>
+<li>GraphQL (có thể trong tương lai sẽ phổ biến hơn, giờ chưa bắt buộc)</li>
+</ul>
+<h2 id="thư-viện-tiện-ích"><a href="#th%C6%B0-vi%E1%BB%87n-ti%E1%BB%87n-%C3%ADch" aria-hidden="true"><span class="icon icon-link"></span></a>Thư viện tiện ích</h2>
+<ul>
+<li><strong>Lodash</strong></li>
+<li><strong>Moment</strong></li>
+<li><strong>Classnames</strong></li>
+<li><em>Numeral</em></li>
+<li><em>RxJS</em></li>
+</ul>
+<h2 id="testing"><a href="#testing" aria-hidden="true"><span class="icon icon-link"></span></a>Testing</h2>
+<ul>
+<li>
+<p>Unit testing</p>
+<ul>
+<li><strong>Jest</strong></li>
+<li><strong>Enzyme</strong></li>
+<li><strong>Sinon</strong></li>
+<li><em>Macha</em></li>
+<li><em>Chai</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="static-site-generator"><a href="#static-site-generator" aria-hidden="true"><span class="icon icon-link"></span></a>Static Site Generator</h2>
+<p>Hiện giờ chỉ có <em>Gatsby</em></p>
+<h2 id="i18n"><a href="#i18n" aria-hidden="true"><span class="icon icon-link"></span></a>i18n</h2>
+<ul>
+<li><strong>React Intl</strong></li>
+<li><em>React i18next</em></li>
+</ul>
+<h2 id="server-side-rendering"><a href="#server-side-rendering" aria-hidden="true"><span class="icon icon-link"></span></a>Server Side Rendering</h2>
+<ul>
+<li><em>Next.js</em></li>
+</ul>
+<p>Đấy chỉ có bấy nhiếu thôi, nếu đã xong hết thì làm tiếp luôn cái React Native và hệ sinh thái của nó nữa là ngon lành. :Đ</p>
+<p><a href="https://raw.githubusercontent.com/adam-golab/react-developer-roadmap/master/roadmap.png" target="_blank" rel="nofollow noopener noreferrer">Link file gốc của tác giả Adam Golab</a></p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/react/" class="post-tags__link"><span>#</span> react
+		</a><a href="/blog/tag/javascript/" class="post-tags__link"><span>#</span> javascript
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020.</span><span class="footer__links">luckyluu</span></footer></div>
+    <script>window.__INITIAL_STATE__={"data":{"post":{"title":"Con đường để trở thành React developer ( phiên bản 2018)","path":"\u002Fcon-duong-de-tro-thanh-react-developer-phien-ban-2018\u002F","date":"2018-08-12","timeToRead":1,"tags":[{"id":"react","title":"react","path":"\u002Ftag\u002Freact\u002F"},{"id":"javascript","title":"javascript","path":"\u002Ftag\u002Fjavascript\u002F"}],"desc":"Hướng dẫn, soi sáng cho các bạn muốn trở thành FrontEnd Developer. Nếu đã chọn FrontEnd làm nghiệp, React làm món ăn mỗi sáng, mà chưa biết cần học cái gì, hy vọng bài viết này sẽ có ích cho các bạn còn đang ko biết học cái gì","content":"\u003C!-- TOC --\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Ca href=\"#b%E1%BA%AFt-bu%E1%BB%99c-ph%E1%BA%A3i-h%E1%BB%8Dc\"\u003EBắt buộc phải học\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#k%E1%BB%B9-n%C4%83ng-development\"\u003EKỹ năng Development\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\n\u003Cp\u003E\u003Ca href=\"#react-v%C3%A0-h%E1%BB%87-sinh-th%C3%A1i-nghe-k%C3%AAu-gh%C3%AA-ch%C6%B0a\"\u003EReact và hệ sinh thái (nghe kêu ghê chưa)\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Ca href=\"#css\"\u003ECSS\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#build-tools\"\u003EBuild tools\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#state-management\"\u003EState management\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#type-checkers\"\u003EType Checkers\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#routing\"\u003ERouting\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#api-clients\"\u003EAPI clients\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#th%C6%B0-vi%E1%BB%87n-ti%E1%BB%87n-%C3%ADch\"\u003EThư viện tiện ích\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#testing\"\u003ETesting\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#static-site-generator\"\u003EStatic Site Generator\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#i18n\"\u003Ei18n\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"#server-side-rendering\"\u003EServer Side Rendering\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003C!-- \u002FTOC --\u003E\n\u003Cp\u003ECái nào \u003Cstrong\u003Ein đậm\u003C\u002Fstrong\u003E là bắt buộc, \u003Cem\u003Eđể nghiêng\u003C\u002Fem\u003E biết thì tốt, \u003Cdel\u003Egạch ngang\u003C\u002Fdel\u003E là ko cần học luôn\u003C\u002Fp\u003E\n\u003Ch1 id=\"bắt-buộc-phải-học\"\u003E\u003Ca href=\"#b%E1%BA%AFt-bu%E1%BB%99c-ph%E1%BA%A3i-h%E1%BB%8Dc\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EBắt buộc phải học\u003C\u002Fh1\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Cstrong\u003EHTML\u003C\u002Fstrong\u003E: căn bản html, cách viết semantic html, cách structure DOM, tập trung nhiều vào cách structure\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cstrong\u003ECSS\u003C\u002Fstrong\u003E: học CSS căn bản, Flexbox, Responsive Web Design, Media Queries\u003C\u002Fli\u003E\n\u003Cli\u003E\n\u003Cp\u003E\u003Cstrong\u003EJS căn bản\u003C\u002Fstrong\u003E: Hoisting, Event Bubbling, Prototyping, AJAX (XHR), thao tác trên DOM, ECMA 6\u003C\u002Fp\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Ca href=\"http:\u002F\u002Fwww.learn-js.org\u002F\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003Elearn-js.org\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"https:\u002F\u002Fdeveloper.mozilla.org\u002Fen-US\u002Fdocs\u002FWeb\u002FJavaScript\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003EMozilla developer Network\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Ca href=\"https:\u002F\u002Fchannel9.msdn.com\u002FSeries\u002FJavascript-Fundamentals-Development-for-Absolute-Beginners\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003EMicrosoft’s Virtual Academy\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cdel\u003EjQuery\u003C\u002Fdel\u003E: có thể bỏ qua không cần học\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003Ch1 id=\"kỹ-năng-development\"\u003E\u003Ca href=\"#k%E1%BB%B9-n%C4%83ng-development\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EKỹ năng Development\u003C\u002Fh1\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Cstrong\u003EGIT, Github, Bitbucket, Gitlab\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cstrong\u003EHTTP\u002FHTTPS\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cstrong\u003EKỹ năng search google\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cstrong\u003EDùng terminal\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cstrong\u003EData structure và Algorithms\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cstrong\u003EDesign pattern\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003Ch1 id=\"react-và-hệ-sinh-thái-nghe-kêu-ghê-chưa\"\u003E\u003Ca href=\"#react-v%C3%A0-h%E1%BB%87-sinh-th%C3%A1i-nghe-k%C3%AAu-gh%C3%AA-ch%C6%B0a\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EReact và hệ sinh thái (nghe kêu ghê chưa)\u003C\u002Fh1\u003E\n\u003Ch2 id=\"css\"\u003E\u003Ca href=\"#css\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003ECSS\u003C\u002Fh2\u003E\n\u003Cul\u003E\n\u003Cli\u003E\n\u003Cp\u003ECSS Preprocessor\u003C\u002Fp\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Cstrong\u003ESass\u002FSCSS, PostCSS\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cdel\u003Eless\u003C\u002Fdel\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cdel\u003Estylus\u003C\u002Fdel\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003C\u002Fli\u003E\n\u003Cli\u003ECSS Framworks: \u003Cstrong\u003EBootstrap\u003C\u002Fstrong\u003E, \u003Cem\u003ESemantic UI\u003C\u002Fem\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\n\u003Cp\u003ECSS Architecture\u003C\u002Fp\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Cstrong\u003EBEM\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cem\u003ECSS modules\u003C\u002Fem\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003C\u002Fli\u003E\n\u003Cli\u003E\n\u003Cp\u003E\u003Cstrong\u003ECSS in JS\u003C\u002Fstrong\u003E\u003C\u002Fp\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Cem\u003Estyled components\u003C\u002Fem\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003Ch2 id=\"build-tools\"\u003E\u003Ca href=\"#build-tools\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EBuild tools\u003C\u002Fh2\u003E\n\u003Cul\u003E\n\u003Cli\u003E\n\u003Cp\u003Epackage manager\u003C\u002Fp\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Cstrong\u003Enpm\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cem\u003Eyarn\u003C\u002Fem\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cstrong\u003Ewebpack\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003Etask runner: chỉ cần nghiên cứu \u003Cstrong\u003Enpm scripts\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003Ch2 id=\"state-management\"\u003E\u003Ca href=\"#state-management\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EState management\u003C\u002Fh2\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Cstrong\u003EComponent state \u002F context\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\n\u003Cp\u003E\u003Cstrong\u003ERedux\u003C\u002Fstrong\u003E\u003C\u002Fp\u003E\n\u003Cul\u003E\n\u003Cli\u003Easync actions: \u003Cstrong\u003Eredux thunk\u003C\u002Fstrong\u003E, \u003Cem\u003Eredux saga, redux observable\u003C\u002Fem\u003E\u003C\u002Fli\u003E\n\u003Cli\u003Ehelpers: \u003Cem\u003Erematch, reselect\u003C\u002Fem\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\n\u003Cp\u003EForm helpers\u003C\u002Fp\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Cem\u003Eredux form\u003C\u002Fem\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cem\u003Eformik\u003C\u002Fem\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cem\u003EMobx\u003C\u002Fem\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003Ch2 id=\"type-checkers\"\u003E\u003Ca href=\"#type-checkers\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EType Checkers\u003C\u002Fh2\u003E\n\u003Cp\u003EBắt buộc: \u003Cstrong\u003EPropTypes\u003C\u002Fstrong\u003E, biết thì tốt: \u003Cem\u003ETypeScript\u003C\u002Fem\u003E, \u003Cem\u003EFlow\u003C\u002Fem\u003E\u003C\u002Fp\u003E\n\u003Ch2 id=\"routing\"\u003E\u003Ca href=\"#routing\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003ERouting\u003C\u002Fh2\u003E\n\u003Cp\u003EChỉ có \u003Cstrong\u003EReact-Router\u003C\u002Fstrong\u003E là bắt buộc\u003C\u002Fp\u003E\n\u003Ch2 id=\"api-clients\"\u003E\u003Ca href=\"#api-clients\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EAPI clients\u003C\u002Fh2\u003E\n\u003Cul\u003E\n\u003Cli\u003E\n\u003Cp\u003E\u003Cstrong\u003EREST\u003C\u002Fstrong\u003E\u003C\u002Fp\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Cstrong\u003Efetch\u003C\u002Fstrong\u003E (cái này của browser)\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cem\u003Eaxios\u003C\u002Fem\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003C\u002Fli\u003E\n\u003Cli\u003EGraphQL (có thể trong tương lai sẽ phổ biến hơn, giờ chưa bắt buộc)\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003Ch2 id=\"thư-viện-tiện-ích\"\u003E\u003Ca href=\"#th%C6%B0-vi%E1%BB%87n-ti%E1%BB%87n-%C3%ADch\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EThư viện tiện ích\u003C\u002Fh2\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Cstrong\u003ELodash\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cstrong\u003EMoment\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cstrong\u003EClassnames\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cem\u003ENumeral\u003C\u002Fem\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cem\u003ERxJS\u003C\u002Fem\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003Ch2 id=\"testing\"\u003E\u003Ca href=\"#testing\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003ETesting\u003C\u002Fh2\u003E\n\u003Cul\u003E\n\u003Cli\u003E\n\u003Cp\u003EUnit testing\u003C\u002Fp\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Cstrong\u003EJest\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cstrong\u003EEnzyme\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cstrong\u003ESinon\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cem\u003EMacha\u003C\u002Fem\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cem\u003EChai\u003C\u002Fem\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003Ch2 id=\"static-site-generator\"\u003E\u003Ca href=\"#static-site-generator\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EStatic Site Generator\u003C\u002Fh2\u003E\n\u003Cp\u003EHiện giờ chỉ có \u003Cem\u003EGatsby\u003C\u002Fem\u003E\u003C\u002Fp\u003E\n\u003Ch2 id=\"i18n\"\u003E\u003Ca href=\"#i18n\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003Ei18n\u003C\u002Fh2\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Cstrong\u003EReact Intl\u003C\u002Fstrong\u003E\u003C\u002Fli\u003E\n\u003Cli\u003E\u003Cem\u003EReact i18next\u003C\u002Fem\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003Ch2 id=\"server-side-rendering\"\u003E\u003Ca href=\"#server-side-rendering\" aria-hidden=\"true\"\u003E\u003Cspan class=\"icon icon-link\"\u003E\u003C\u002Fspan\u003E\u003C\u002Fa\u003EServer Side Rendering\u003C\u002Fh2\u003E\n\u003Cul\u003E\n\u003Cli\u003E\u003Cem\u003ENext.js\u003C\u002Fem\u003E\u003C\u002Fli\u003E\n\u003C\u002Ful\u003E\n\u003Cp\u003EĐấy chỉ có bấy nhiếu thôi, nếu đã xong hết thì làm tiếp luôn cái React Native và hệ sinh thái của nó nữa là ngon lành. :Đ\u003C\u002Fp\u003E\n\u003Cp\u003E\u003Ca href=\"https:\u002F\u002Fraw.githubusercontent.com\u002Fadam-golab\u002Freact-developer-roadmap\u002Fmaster\u002Froadmap.png\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003ELink file gốc của tác giả Adam Golab\u003C\u002Fa\u003E\u003C\u002Fp\u003E\n","cover_image":""}},"context":{}};(function(){var s;(s=document.currentScript||document.scripts[document.scripts.length-1]).parentNode.removeChild(s);}());</script><script src="/blog/assets/js/app.f8d91bd5.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" defer></script>
+  </body>
+</html>

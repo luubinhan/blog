@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Hello, world! - VuiLapTrinh.com</title><meta name="gridsome:hash" content="0ea6a5c7ec18fcd2d372c0c225289996c79af9fc"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui"><link rel="preload" href="/blog/assets/css/0.styles.d493c61a.css" as="style"><link rel="preload" href="/blog/assets/js/app.f8d91bd5.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-tag-vue.4999789e.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.b044eecd.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.bd4a2964.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-post-vue.980fbd47.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.d493c61a.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><h1 class="tag-title text-center space-bottom"># performance</h1><div class="posts"><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Đo thời gian render bằng Chrome</h2><p class="post-card__description">Bàn luận kỹ thuật để đo chính xác thời gian render</p><div class="post-meta post-card__meta">
+  Đăng ngày 23. October 2018.
+  
+    Mất khoảng
+    <strong>1 phút</strong> để đọc.
+  </div><div class="post-tags post-card__tags"></div><a href="/blog/do-thoi-gian-render-bang-chrome/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Hướng dẫn kiểm tra performace với Chrome DevTools</h2><p class="post-card__description">Học cách sử dụng tab Network Chrome DevTools để biết tại sao một trang load chậm, hướng dẫn từng bước một.</p><div class="post-meta post-card__meta">
+  Đăng ngày 20. October 2018.
+  
+    Mất khoảng
+    <strong>2 phút</strong> để đọc.
+  </div><div class="post-tags post-card__tags"></div><a href="/blog/huong-dan-kiem-tra-performace-voi-chrome-dev-tools/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Hướng dẫn lazy load component trong React</h2><p class="post-card__description">Sự là hôm rồi đi phỏng vấn, được hỏi câu này mà mình đó giờ chưa làm nên không biết, nay có thời gian rảnh rỗi tìm hiểu, chia sẻ lại cho các bạn chưa biết.</p><div class="post-meta post-card__meta">
+  Đăng ngày 7. October 2018.
+  
+    Mất khoảng
+    <strong>4 phút</strong> để đọc.
+  </div><div class="post-tags post-card__tags"></div><a href="/blog/huong-dan-lazy-load-component-trong-react/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Nâng cao tốc độ Component</h2><p class="post-card__description">Bài viết của team làm Facebook Ads chia sẽ, cùng điểm qua các vấn đề căn bản để tối ưu component</p><div class="post-meta post-card__meta">
+  Đăng ngày 6. October 2018.
+  
+    Mất khoảng
+    <strong>3 phút</strong> để đọc.
+  </div><div class="post-tags post-card__tags"></div><a href="/blog/nang-cao-toc-do-component/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Làm việc với Redux trong ứng dụng lớn</h2><p class="post-card__description">Cùng thảo luận xung quanh vấn đề ứng dụng thiên về dữ liệu lớn, rất lớn</p><div class="post-meta post-card__meta">
+  Đăng ngày 4. October 2018.
+  
+    Mất khoảng
+    <strong>8 phút</strong> để đọc.
+  </div><div class="post-tags post-card__tags"></div><a href="/blog/lam-viec-voi-redux-trong-ung-dung-lon/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Xử lý tập dữ liệu lớn trong React</h2><p class="post-card__description">Tình huống: bạn có một table với rất nhiều dữ liệu đổ vào, nếu bạn thấy component đó render chậm trên màn hình, đó là lúc cần tái cấu trúc</p><div class="post-meta post-card__meta">
+  Đăng ngày 3. October 2018.
+  
+    Mất khoảng
+    <strong>2 phút</strong> để đọc.
+  </div><div class="post-tags post-card__tags"></div><a href="/blog/xu-ly-tap-du-lieu-lon-trong-react/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Giới thiệu React Profiler</h2><p class="post-card__description">Từ version React 16.5 bổ sung thêm một plugin DevTool profiler. Plugin này được dùng để thu thập các thông tin về thời gian render một component, xác định nguyên nhân làm trì trệ performance.</p><div class="post-meta post-card__meta">
+  Đăng ngày 19. September 2018.
+  
+    Mất khoảng
+    <strong>2 phút</strong> để đọc.
+  </div><div class="post-tags post-card__tags"></div><a href="/blog/gioi-thieu-react-profiler/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Nâng cao tốc độ website với Chrome DevTools</h2><p class="post-card__description">Hướng dẫn sử dụng Chrome DevTools để phân tích và tối ưu hóa tốc độ website</p><div class="post-meta post-card__meta">
+  Đăng ngày 9. July 2018.
+  
+    Mất khoảng
+    <strong>6 phút</strong> để đọc.
+  </div><div class="post-tags post-card__tags"></div><a href="/blog/nang-cao-toc-do-website-voi-chrome-dev-tools/" class="post-card__link">Link</a></div></div><div class="post-card content-box"><div class="post-card__header"><!----></div><div class="post-card__content"><h2 class="post-card__title">Cải thiện performance của React App</h2><p class="post-card__description">Trong bài này, chúng ta cùng đi qua các bước để fix những issue liên quan đến performance thường thấy.</p><div class="post-meta post-card__meta">
+  Đăng ngày 1. May 2018.
+  
+    Mất khoảng
+    <strong>7 phút</strong> để đọc.
+  </div><div class="post-tags post-card__tags"></div><a href="/blog/cai-thien-performance-cua-react-app/" class="post-card__link">Link</a></div></div></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020.</span><span class="footer__links">luckyluu</span></footer></div>
+    <script src="/blog/assets/js/app.f8d91bd5.js" defer></script><script src="/blog/assets/js/page--src-templates-tag-vue.4999789e.js" defer></script>
+  </body>
+</html>

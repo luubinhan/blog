@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>React Authentication với Amazon Cognito - Phần 1 - VuiLapTrinh.com</title><meta name="gridsome:hash" content="0ea6a5c7ec18fcd2d372c0c225289996c79af9fc"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui"><meta data-vue-tag="ssr" name="desc" content="Implement authentication 2 factor sử dụng React, React Router, Amazon Cognito"><link rel="preload" href="/blog/assets/css/0.styles.d493c61a.css" as="style"><link rel="preload" href="/blog/assets/js/app.f8d91bd5.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.b044eecd.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.bd4a2964.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.4999789e.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.d493c61a.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">React Authentication với Amazon Cognito - Phần 1</h1><div class="post-meta">
+  Đăng ngày 2018-03-16.
+  
+    Mất khoảng
+    <strong>5 phút</strong> để đọc.
+  </div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#m%C3%A0n-h%C3%ACnh-%C4%91%C4%83ng-k%C3%BD">Màn hình đăng ký</a></li>
+<li><a href="#sign-in">Sign In</a></li>
+</ul>
+<!-- /TOC -->
+<p>Trong demo chúng ta sẽ sử dụng</p>
+<ul>
+<li>Create React App</li>
+<li>Glamor</li>
+<li>React Router</li>
+<li>Amazon Cognito để authentication</li>
+<li>AWS amplify để tương tác với AWS Services</li>
+</ul>
+<h1 id="setup"><a href="#setup" aria-hidden="true"><span class="icon icon-link"></span></a>Setup</h1>
+<p>Khởi tạo project và các thư viện sẽ sử dụng</p>
+<pre class="language-shell"><code class="language-shell">create-react-app react-auth
+<span class="token builtin class-name">cd</span> react-auth
+
+<span class="token function">npm</span> i react-router-dom glamor --save</code></pre>
+<p>Cài AWSMobile CLI</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">npm</span> i -g awsmobile-cli</code></pre>
+<p>Khởi tạo config AWS IAM</p>
+<pre class="language-shell"><code class="language-shell">awsmobile configure
+awsmobile init</code></pre>
+<p>Nó sẽ tạo project Mobile Hub và file aws-exports.js trong thư mục src. Tiếp theo, thêm user-signin và deploy các config mới</p>
+<pre class="language-shell"><code class="language-shell">awsmobile user-signin <span class="token builtin class-name">enable</span>
+awsmobile push</code></pre>
+<p><code class="language-text">awsmobile user-signin enable</code> sẽ bật Amazon Congito trong project với các thiết đặt mặc định, bao gồm 2 factor authentication với SMS (sẽ thêm TOTP sau). Nếu muôn can thiệp các thiệt đặt, vào trực tiếp <a href="https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fcognito%2Fhome%3Fregion%3Dus-east-1%26state%3DhashArgs%2523%26isauthcode%3Dtrue&#x26;client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fcognito&#x26;forceMobileApp=0" target="_blank" rel="nofollow noopener noreferrer">Amazon Cognito</a> để chỉnh</p>
+<h1 id="màn-hình-đăng-ký"><a href="#m%C3%A0n-h%C3%ACnh-%C4%91%C4%83ng-k%C3%BD" aria-hidden="true"><span class="icon icon-link"></span></a>Màn hình đăng ký</h1>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*U_Oa4dWFeIqJ9TPJFx9lmQ.jpeg"></p>
+<p>Để tương tác với Amazon Cognito, chúng ta sẽ sử các hàm trong class <code class="language-text">Auth</code> từ thư viện <code class="language-text">aws-amplify</code>:</p>
+<p><code class="language-text">signUp</code> - tạo user mới</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token function">signUp</span><span class="token punctuation">(</span>username<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> password<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> attributes<span class="token operator">?</span><span class="token operator">:</span> object<span class="token punctuation">)</span></code></pre>
+<p><code class="language-text">confirmSignUp</code> - để xác nhận đăng ký thành công</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token function">confirmSignUp</span><span class="token punctuation">(</span>username<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> authenticationCode<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span></code></pre>
+<p><code class="language-text">signIn</code> - đăng nhập</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token function">signIn</span><span class="token punctuation">(</span>username<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> password<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span></code></pre>
+<p><code class="language-text">confirmSignIn</code> - xác nhận đăng nhập</p>
+<pre class="language-typescript"><code class="language-typescript"><span class="token function">confirmSignIn</span><span class="token punctuation">(</span>user<span class="token operator">:</span> object<span class="token punctuation">,</span> authenticationCode<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span></code></pre>
+<p>Trong file root của project, thường là <code class="language-text">index.js</code> </p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token comment">// một số import khác</span>
+<span class="token comment">// </span>
+<span class="token keyword module">import</span> config <span class="token keyword module">from</span> <span class="token string">'./aws-exports'</span>
+<span class="token keyword module">import</span> <span class="token maybe-class-name">Amplify</span> <span class="token keyword module">from</span> <span class="token string">'aws-amplify'</span>
+
+<span class="token maybe-class-name">Amplify</span><span class="token punctuation">.</span><span class="token method function property-access">configure</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span>
+
+<span class="token maybe-class-name">ReactDOM</span><span class="token punctuation">.</span><span class="token method function property-access">render</span><span class="token punctuation">(</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">App</span></span> <span class="token punctuation">/></span></span><span class="token punctuation">,</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token function">registerServiceWorker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Screen <code class="language-text">SignUp.js</code></p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword module">import</span> <span class="token maybe-class-name">React</span> <span class="token keyword module">from</span> <span class="token string">'react'</span>
+<span class="token keyword module">import</span> <span class="token punctuation">{</span> css <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'glamor'</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SignUp</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  state <span class="token operator">=</span> <span class="token punctuation">{</span>
+    username<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    password<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    email<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    phone_number<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    authCode<span class="token operator">:</span> <span class="token string">''</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token method function property-access">css</span><span class="token punctuation">(</span>styles<span class="token punctuation">.</span><span class="token property-access">container</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span><span class="token plain-text">SignUp</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> styles <span class="token operator">=</span> <span class="token punctuation">{</span>
+  container<span class="token operator">:</span> <span class="token punctuation">{</span>
+    display<span class="token operator">:</span> <span class="token string">'flex'</span><span class="token punctuation">,</span>
+    flexDirection<span class="token operator">:</span> <span class="token string">'column'</span><span class="token punctuation">,</span>
+    alignItems<span class="token operator">:</span> <span class="token string">'center'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Flow sẽ như thế này, sau khi user cung cấp các thông tin trong form signup, chúng ta gọi đến phương thức <code class="language-text">signUp</code>, user sẽ nhận được một mã code để verify quá SMS, user điền mã code này vào form verify, chúng ta verify cái mã code này bằng phương thức 'confirmSignUp'</p>
+<p><img src="https://cdn-images-1.medium.com/max/1000/1*Z1sFmf-KG7iiHG_-VMieQw.jpeg"></p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword module">import</span> <span class="token maybe-class-name">React</span> <span class="token keyword module">from</span> <span class="token string">'react'</span>
+<span class="token keyword module">import</span> <span class="token punctuation">{</span> css <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'glamor'</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SignUp</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  state <span class="token operator">=</span> <span class="token punctuation">{</span>
+    username<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    password<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    email<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    phone_number<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    authCode<span class="token operator">:</span> <span class="token string">''</span>
+  <span class="token punctuation">}</span>
+  <span class="token function-variable function">onChange</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">key<span class="token punctuation">,</span> value</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token operator">:</span> value <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token method function property-access">css</span><span class="token punctuation">(</span>styles<span class="token punctuation">.</span><span class="token property-access">container</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span><span class="token plain-text">Sign Up</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+        <span class="token operator">&lt;</span>input
+          <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token method function property-access">css</span><span class="token punctuation">(</span>styles<span class="token punctuation">.</span><span class="token property-access">input</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+          placeholder<span class="token operator">=</span><span class="token string">'Username'</span>
+          onChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">evt</span> <span class="token arrow operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">onChange</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">,</span> evt<span class="token punctuation">.</span><span class="token property-access">target</span><span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>input
+          <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token method function property-access">css</span><span class="token punctuation">(</span>styles<span class="token punctuation">.</span><span class="token property-access">input</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+          placeholder<span class="token operator">=</span><span class="token string">'Password'</span>
+          type<span class="token operator">=</span><span class="token string">'password'</span>
+          onChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">evt</span> <span class="token arrow operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">onChange</span><span class="token punctuation">(</span><span class="token string">'password'</span><span class="token punctuation">,</span> evt<span class="token punctuation">.</span><span class="token property-access">target</span><span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>input
+          <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token method function property-access">css</span><span class="token punctuation">(</span>styles<span class="token punctuation">.</span><span class="token property-access">input</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+          placeholder<span class="token operator">=</span><span class="token string">'Email'</span>
+          onChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">evt</span> <span class="token arrow operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">onChange</span><span class="token punctuation">(</span><span class="token string">'email'</span><span class="token punctuation">,</span> evt<span class="token punctuation">.</span><span class="token property-access">target</span><span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>input
+          <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token method function property-access">css</span><span class="token punctuation">(</span>styles<span class="token punctuation">.</span><span class="token property-access">input</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+          placeholder<span class="token operator">=</span><span class="token string">'Phone Number'</span>
+          onChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">evt</span> <span class="token arrow operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">onChange</span><span class="token punctuation">(</span><span class="token string">'phone_number'</span><span class="token punctuation">,</span> evt<span class="token punctuation">.</span><span class="token property-access">target</span><span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>div <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token method function property-access">css</span><span class="token punctuation">(</span>styles<span class="token punctuation">.</span><span class="token property-access">button</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span><span class="token plain-text">Sign Up</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        
+        <span class="token operator">&lt;</span>input
+          <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token method function property-access">css</span><span class="token punctuation">(</span>styles<span class="token punctuation">.</span><span class="token property-access">input</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+          placeholder<span class="token operator">=</span><span class="token string">'Authentication Code'</span>
+          onChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">evt</span> <span class="token arrow operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">onChange</span><span class="token punctuation">(</span><span class="token string">'authCode'</span><span class="token punctuation">,</span> evt<span class="token punctuation">.</span><span class="token property-access">target</span><span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>div <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token method function property-access">css</span><span class="token punctuation">(</span>styles<span class="token punctuation">.</span><span class="token property-access">button</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span><span class="token plain-text">Confirm Sign Up</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> styles <span class="token operator">=</span> <span class="token punctuation">{</span>
+  container<span class="token operator">:</span> <span class="token punctuation">{</span>
+    display<span class="token operator">:</span> <span class="token string">'flex'</span><span class="token punctuation">,</span>
+    flexDirection<span class="token operator">:</span> <span class="token string">'column'</span><span class="token punctuation">,</span>
+    alignItems<span class="token operator">:</span> <span class="token string">'center'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  button<span class="token operator">:</span> <span class="token punctuation">{</span>
+    width<span class="token operator">:</span> <span class="token string">'170px'</span><span class="token punctuation">,</span>
+    padding<span class="token operator">:</span> <span class="token string">'10px 0px'</span><span class="token punctuation">,</span>
+    backgroundColor<span class="token operator">:</span> <span class="token string">'#ddd'</span><span class="token punctuation">,</span>
+    cursor<span class="token operator">:</span> <span class="token string">'pointer'</span><span class="token punctuation">,</span>
+    borderRadius<span class="token operator">:</span> <span class="token string">'3px'</span><span class="token punctuation">,</span>
+    <span class="token string">':hover'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      backgroundColor<span class="token operator">:</span> <span class="token string">'#ededed'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  input<span class="token operator">:</span> <span class="token punctuation">{</span>
+    height<span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">,</span>
+    marginBottom<span class="token operator">:</span> <span class="token string">'10px'</span><span class="token punctuation">,</span>
+    border<span class="token operator">:</span> <span class="token string">'none'</span><span class="token punctuation">,</span>
+    outline<span class="token operator">:</span> <span class="token string">'none'</span><span class="token punctuation">,</span>
+    borderBottom<span class="token operator">:</span> <span class="token string">'2px solid #4CAF50'</span><span class="token punctuation">,</span>
+    fontSize<span class="token operator">:</span> <span class="token string">'16px'</span><span class="token punctuation">,</span>
+    <span class="token string">'::placeholder'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      color<span class="token operator">:</span> <span class="token string">'rgba(0, 0, 0, .3)'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token maybe-class-name">SignUp</span></code></pre>
+<p>Xong cái UI, giờ ta sử dụng 2 phương thức class <code class="language-text">Auth</code></p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token comment">// previous imports omitted</span>
+
+  <span class="token keyword module">import</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Auth</span> <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'aws-amplify'</span>
+
+  <span class="token comment">// previously shown code omitted</span>
+  <span class="token function-variable function">signUp</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> username<span class="token punctuation">,</span> password<span class="token punctuation">,</span> email<span class="token punctuation">,</span> phone_number <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span>
+    <span class="token maybe-class-name">Auth</span><span class="token punctuation">.</span><span class="token method function property-access">signUp</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      username<span class="token punctuation">,</span>
+      password<span class="token punctuation">,</span>
+      attributes<span class="token operator">:</span> <span class="token punctuation">{</span>
+        email<span class="token punctuation">,</span>
+        phone_number
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'successful sign up!'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token method function property-access">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token arrow operator">=></span> <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'error signing up: '</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function-variable function">confirmSignUp</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token maybe-class-name">Auth</span><span class="token punctuation">.</span><span class="token method function property-access">confirmSignUp</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">username</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">authCode</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'successful confirm sign up!'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token method function property-access">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token arrow operator">=></span> <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'error confirming signing up: '</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// </span>
+    <span class="token comment">// here we need to update the buttons to attach class methods to onClick event</span>
+    <span class="token operator">&lt;</span>div <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token method function property-access">css</span><span class="token punctuation">(</span>styles<span class="token punctuation">.</span><span class="token property-access">button</span><span class="token punctuation">)</span><span class="token punctuation">}</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">signUp</span><span class="token punctuation">}</span><span class="token operator">></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span><span class="token plain-text">Sign Up</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+    <span class="token operator">&lt;</span>input
+      <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token method function property-access">css</span><span class="token punctuation">(</span>styles<span class="token punctuation">.</span><span class="token property-access">input</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+      placeholder<span class="token operator">=</span><span class="token string">'Authentication Code'</span>
+      onChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token parameter">evt</span> <span class="token arrow operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">onChange</span><span class="token punctuation">(</span><span class="token string">'authCode'</span><span class="token punctuation">,</span> evt<span class="token punctuation">.</span><span class="token property-access">target</span><span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+    <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>div <span class="token punctuation">{</span><span class="token spread operator">...</span><span class="token method function property-access">css</span><span class="token punctuation">(</span>styles<span class="token punctuation">.</span><span class="token property-access">button</span><span class="token punctuation">)</span><span class="token punctuation">}</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">confirmSignUp</span><span class="token punctuation">}</span><span class="token operator">></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span><span class="token plain-text">Confirm Sign Up</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token punctuation">}</span></code></pre>
+<p>Cuối cùng import và sử dụng component trong <code class="language-text">App.js</code></p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword module">import</span> <span class="token maybe-class-name">React</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Component</span> <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> logo <span class="token keyword module">from</span> <span class="token string">'./logo.svg'</span><span class="token punctuation">;</span>
+<span class="token keyword module">import</span> <span class="token string">'./App.css'</span><span class="token punctuation">;</span>
+
+<span class="token keyword module">import</span> <span class="token maybe-class-name">SignUp</span> <span class="token keyword module">from</span> <span class="token string">'./SignUp'</span>
+
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>App<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>App-header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>logo<span class="token punctuation">}</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>App-logo<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>logo<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>App-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">Welcome to React</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SignUp</span></span> <span class="token punctuation">/></span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token maybe-class-name">App</span><span class="token punctuation">;</span></code></pre>
+<p>Các thông tin của user sẽ được lại trong 'Manage your User Pools', vào Amazon Coginito dashboard, chọn ứng dụng đã setup, chọn mục 'Users and Settings'</p>
+<p><img src="https://cdn-images-1.medium.com/max/1000/1*XQfNfYhaGlkD0wxEPtr8bQ.jpeg"></p>
+<h1 id="sign-in"><a href="#sign-in" aria-hidden="true"><span class="icon icon-link"></span></a>Sign In</h1>
+<p>Sign in thì cũng tương tự như signup, chúng ta sử dụng <code class="language-text">Auth.signIn(username, password)</code>, trả về object nếu thành công, sau đó nó sẽ gửi SMS tới user với code xác nhận lần nữa, verify bằng <code class="language-text">confirmSignIn</code></p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token function">signIn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token maybe-class-name">Auth</span><span class="token punctuation">.</span><span class="token method function property-access">signIn</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">username</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">password</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token parameter">user</span> <span class="token arrow operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> user <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token method function property-access">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token arrow operator">=></span> <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'error signing in! :'</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">confirmSignIn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token maybe-class-name">Auth</span><span class="token punctuation">.</span><span class="token method function property-access">confirmSignIn</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">user</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">authCode</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token parameter">userData</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'userdata: '</span><span class="token punctuation">,</span> userData<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token method function property-access">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token arrow operator">=></span> <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'error confirming sign in!: '</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>User data nằm trong cục dữ liệu trả về sau khi gọi hàm <code class="language-text">confirmSignIn</code></p>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*yBT-_MdRPCIj5KN3PnyFmw.png"></p>
+<p>Có rất nhiều cách để lấy thông tin user đang đăng nhập, có thể dùng <code class="language-text">Auth.currentAuthenticatedUser()</code> là dễ nhất, toàn bộ API có thể tham khảo <a href="https://aws.github.io/aws-amplify/api/classes/authclass.html" target="_blank" rel="nofollow noopener noreferrer">ở đây</a></p>
+<p>Kết thúc phần 1 ở đây, phần 2 tiếp tục với Routing và TOTP để có thể làm Google Authenticator.</p>
+<hr>
+<p>Bài dịch từ tác giả Nader Dabit trên HackerNoon</p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/javascript/" class="post-tags__link"><span>#</span> javascript
+		</a><a href="/blog/tag/react/" class="post-tags__link"><span>#</span> react
+		</a><a href="/blog/tag/security/" class="post-tags__link"><span>#</span> security
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020.</span><span class="footer__links">luckyluu</span></footer></div>
+    <script src="/blog/assets/js/app.f8d91bd5.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" defer></script>
+  </body>
+</html>

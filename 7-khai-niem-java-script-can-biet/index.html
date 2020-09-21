@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>7 khái niệm JavaScript cần biết - VuiLapTrinh.com</title><meta name="gridsome:hash" content="0ea6a5c7ec18fcd2d372c0c225289996c79af9fc"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui"><meta data-vue-tag="ssr" name="desc" content="Một vài khái niệm căn bản trong javascript cần nắm nếu bạn là frontend developer"><link rel="preload" href="/blog/assets/css/0.styles.d493c61a.css" as="style"><link rel="preload" href="/blog/assets/js/app.f8d91bd5.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.b044eecd.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.bd4a2964.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.4999789e.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.d493c61a.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">7 khái niệm JavaScript cần biết</h1><div class="post-meta">
+  Đăng ngày 2017-09-25.
+  
+    Mất khoảng
+    <strong>4 phút</strong> để đọc.
+  </div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#gi%C3%A1-tr%E1%BB%8B-vs-tham-chi%E1%BA%BFu">Giá trị vs. Tham chiếu</a></li>
+<li><a href="#so-s%C3%A1nh--v%C3%A0-">So sánh <code class="language-text">==</code> và <code class="language-text">===</code></a></li>
+<li>
+<p><a href="#scope">Scope</a></p>
+<ul>
+<li><a href="#global-scope">Global Scope</a></li>
+<li><a href="#local-scope">Local scope</a></li>
+</ul>
+</li>
+<li><a href="#block-scope">Block scope</a></li>
+<li><a href="#hoisting">Hoisting</a></li>
+<li><a href="#closure">Closure</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="giá-trị--tham-chiếu"><a href="#gi%C3%A1-tr%E1%BB%8B--tham-chi%E1%BA%BFu" aria-hidden="true"><span class="icon icon-link"></span></a>Giá trị # Tham chiếu</h2>
+<p>5 kiểu dữ liệu được lưu trữ ở dạng <strong>giá trị</strong> - <strong>primitive type</strong>:</p>
+<ul>
+<li><strong>Boolean</strong></li>
+<li><strong>null</strong></li>
+<li><strong>undefined</strong></li>
+<li><strong>String</strong></li>
+<li><strong>Number</strong></li>
+</ul>
+<p>Khi <em>copy</em> giá trị của biến này cho biến khác, 2 giá trị này hoàn toàn độc lập không có liên hệ gì với nhau</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> a <span class="token operator">=</span> x<span class="token punctuation">;</span>
+
+a <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></code></pre>
+<p>3 kiểu dữ liệu được lưu trữ ở dạng <strong>tham chiếu</strong> - <strong>Object type</strong>:</p>
+<ul>
+<li><strong>Array</strong></li>
+<li><strong>Function</strong></li>
+<li><strong>Object</strong></li>
+</ul>
+<p>Nó không mang giá trị mà chỉ <strong>tham chiếu</strong> đến <strong>vùng lưu trữ</strong> của đối tượng đó trong bộ nhớ.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> refArr <span class="token operator">=</span> arr<span class="token punctuation">;</span>
+
+refArr<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> refArrr<span class="token punctuation">)</span></code></pre>
+<h2 id="so-sánh--và-"><a href="#so-s%C3%A1nh--v%C3%A0-" aria-hidden="true"><span class="icon icon-link"></span></a>So sánh <code class="language-text">==</code> và <code class="language-text">===</code></h2>
+<p>Khi thực hiện so sánh <code class="language-text">=</code> trên biến kiểu tham chiếu, trả về <code class="language-text">true</code> khi cả 2 biến số <strong>cùng trỏ về một dùng nhớ</strong> chứ không phải so sánh giá trị của 2 biến.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> arrRef <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Hi!'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> arrRef2 <span class="token operator">=</span> arrRef<span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>arrRef <span class="token operator">===</span> arrRef2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// -> true</span>
+
+<span class="token keyword">var</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Hi!'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> arr2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Hi!'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>arr1 <span class="token operator">===</span> arr2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// -> false</span></code></pre>
+<h2 id="scope---khu-vực-hoạt-động-phạm-vi-lãnh-thổ"><a href="#scope---khu-v%E1%BB%B1c-ho%E1%BA%A1t-%C4%91%E1%BB%99ng-ph%E1%BA%A1m-vi-l%C3%A3nh-th%E1%BB%95" aria-hidden="true"><span class="icon icon-link"></span></a>Scope - khu vực hoạt động, phạm vi lãnh thổ</h2>
+<h3 id="global-scope---công-dân-toàn-cầu"><a href="#global-scope---c%C3%B4ng-d%C3%A2n-to%C3%A0n-c%E1%BA%A7u" aria-hidden="true"><span class="icon icon-link"></span></a>Global Scope - công dân toàn cầu</h3>
+<p>Nếu là một biến có phạm <strong>lãnh thổ</strong> là <strong>global scope</strong>, điều đó có nghĩa anh ấy là công dân toàn cầu, hàng ngôi sao quốc tế, ai cũng biết anh ấy là ai.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">"luckyluu"</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// luckyluu</span>
+
+<span class="token keyword">function</span> <span class="token function">logName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">logName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// luckyluu</span></code></pre>
+<h3 id="local-scope"><a href="#local-scope" aria-hidden="true"><span class="icon icon-link"></span></a>Local scope</h3>
+<p>Nếu anh bạn tên "biến" của chúng ta chỉ là vô danh tiểu tốt, local scope, thì anh ấy chỉ được biết đến bởi <em>dân địa phương</em>, nơi anh ấy đăng ký hộ khẩu thường trú.</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Global Scope</span>
+<span class="token keyword">function</span> <span class="token function">someFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Local Scope #1</span>
+    <span class="token keyword">function</span> <span class="token function">someOtherFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Local Scope #2</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Global Scope</span>
+<span class="token keyword">function</span> <span class="token function">anotherFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Local Scope #3</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// Global Scope</span></code></pre>
+<h3 id="block-scope"><a href="#block-scope" aria-hidden="true"><span class="icon icon-link"></span></a>Block scope</h3>
+<p>Những câu khai báo như <code class="language-text">if</code>, <code class="language-text">switch</code>, <code class="language-text">for</code>, <code class="language-text">while</code> không giống như <code class="language-text">function</code> bình thường, anh bạn <em>biến</em> lúc này con được biết đến ở <em>toàn tỉnh</em> do nhà anh ấy nằm thuộc diện cocc</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// câu lệnh điều kiện 'if' không tạo ra một scope mới</span>
+    <span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">'Con ông If'</span><span class="token punctuation">;</span>
+    <span class="token comment">// name vẫn là global scope</span>
+<span class="token punctuation">}</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// logs 'Con ông If'</span></code></pre>
+<p>Trong ES6, để tránh sự nhập nhằn này, khai báo biến bằng <code class="language-text">let</code>,<code class="language-text">const</code> chớ có dại dùng <code class="language-text">var</code> để khai báo.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// name = global scope</span>
+    <span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">'Con ông If'</span><span class="token punctuation">;</span>
+    <span class="token comment">// likes = local scope</span>
+    <span class="token keyword">let</span> likes <span class="token operator">=</span> <span class="token string">'luckyluu'</span><span class="token punctuation">;</span>
+    <span class="token comment">// skills = local scope</span>
+    <span class="token keyword">const</span> skills <span class="token operator">=</span> <span class="token string">'JavaScript and PHP'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'Con ông If'</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>likes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Uncaught ReferenceError: likes is not defined</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>skills<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Uncaught ReferenceError: skills is not defined</span></code></pre>
+<h2 id="hoisting"><a href="#hoisting" aria-hidden="true"><span class="icon icon-link"></span></a>Hoisting</h2>
+<p>Một đặc điểm của Javascript, biến có thể được <strong>sử dụng trước, khai báo sau</strong>! Viết như sau là hoàn toàn hợp lệ trong javascript</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// gán giá trị 5 cho biến x chưa được khai báo</span>
+x <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// khai báo biến x</span>
+<span class="token keyword">var</span> x<span class="token punctuation">;</span></code></pre>
+<p>Do đó <strong>luôn như khai báo biến trước khi sử dụng</strong> là  nguyên tắc gối đầu của mọi frontend developer, nếu không có thể xảy ra trường hợp sau</p>
+<pre class="language-js"><code class="language-js">​<span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">"Michael Jackson"</span><span class="token punctuation">;</span>
+​
+​<span class="token keyword">function</span> <span class="token function">showCelebrityName</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span> <span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+​
+​<span class="token keyword">function</span> <span class="token function">showOrdinaryPersonName</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    name <span class="token operator">=</span> <span class="token string">"Johnny Evers"</span><span class="token punctuation">;</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span> <span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">showCelebrityName</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Michael Jackson​​</span>
+​
+<span class="token function">showOrdinaryPersonName</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Johnny Evers​</span>
+​
+<span class="token comment">// biến toàn cục name giờ đây sẽ bị change giá trị thành Johnny Evers ​</span>
+<span class="token function">showCelebrityName</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Johnny Evers​</span>
+​
+​<span class="token comment">// luôn nhớ khai báo biến bằng var,let,const</span>
+​<span class="token keyword">function</span> <span class="token function">showOrdinaryPersonName</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">"Johnny Evers"</span><span class="token punctuation">;</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span> <span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Thậm chí khi khai báo biến kèm giá trị cho nó mà không dùng từ khóa <code class="language-text">var</code>, biến đó sẽ trở thành biến toàn cục</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">showAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    age <span class="token operator">=</span> <span class="token number">90</span><span class="token punctuation">;</span> <span class="token comment">// nực cười chưa</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">showAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 90</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span> <span class="token comment">// 90</span></code></pre>
+<h2 id="closure"><a href="#closure" aria-hidden="true"><span class="icon icon-link"></span></a>Closure</h2>
+<p>Closure ám chỉ một cơ chế hoạt động, một function bên trong một function khác lại <strong>truy cập được</strong> các biến của function ngoài, nghĩa là nó vi phạm nguyên lý biến không cùng <strong>scope</strong> thì KO được dò xét lẫn nhau, chuyện này lại <strong>làm được</strong> nếu 2 function nó là cha con với nhau.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">showName</span> <span class="token punctuation">(</span><span class="token parameter">firstName<span class="token punctuation">,</span> lastName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ​<span class="token keyword">var</span> nameIntro <span class="token operator">=</span> <span class="token string">"Your name is "</span><span class="token punctuation">;</span>
+    ​<span class="token keyword">function</span> <span class="token function">makeFullName</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ​<span class="token keyword">return</span> nameIntro <span class="token operator">+</span> firstName <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> lastName<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    ​
+    ​<span class="token keyword">return</span> <span class="token function">makeFullName</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+​
+<span class="token function">showName</span> <span class="token punctuation">(</span><span class="token string">"Michael"</span><span class="token punctuation">,</span> <span class="token string">"Jackson"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Your name is Michael Jackson</span></code></pre>
+<p>Như vậy chưa đủ quá đáng, nó còn có thể truy cập <strong>ngay cả khi function ngoài (cha) đã return</strong></p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">celebrityName</span><span class="token punctuation">(</span><span class="token parameter">firstName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> nameIntro <span class="token operator">=</span> <span class="token string">"This celebrity is "</span><span class="token punctuation">;</span>
+  ​
+  <span class="token keyword">function</span> <span class="token function">lastName</span><span class="token punctuation">(</span><span class="token parameter">theLastName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> nameIntro <span class="token operator">+</span> firstName <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> theLastName<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> lastName<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+​
+​<span class="token keyword">var</span> mjName <span class="token operator">=</span> <span class="token function">celebrityName</span><span class="token punctuation">(</span><span class="token string">"Michael"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+​
+<span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token function">mjName</span><span class="token punctuation">(</span><span class="token string">"Jackson"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// This celebrity is Michael Jackson</span></code></pre>
+<p>Tận dụng đặc điểm này của closure function, tạm gọi là cha truyền con nối, lưu tham chiếu đến biến của function ngoài mà không lưu giá trị, ta có thể viết một function như class thế này</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">celebrityID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> celebrityID <span class="token operator">=</span> <span class="token number">999</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">{</span>
+        <span class="token function-variable function">getID</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> celebrityID<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">setID</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">theNewID</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            celebrityID <span class="token operator">=</span> theNewID<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> myID <span class="token operator">=</span> <span class="token function">celebrityID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myID<span class="token punctuation">.</span><span class="token method function property-access">getID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// return 999</span>
+myID<span class="token punctuation">.</span><span class="token method function property-access">setID</span><span class="token punctuation">(</span><span class="token number">567</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myID<span class="token punctuation">.</span><span class="token method function property-access">getID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// return 567</span></code></pre>
+<p>Đọc thêm chi tiết về bài viết clusure của mình trên <a href="https://developer.mozilla.org/vi/docs/Web/JavaScript/Closures" target="_blank" rel="nofollow noopener noreferrer">mozilla.org</a></p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/javascript/" class="post-tags__link"><span>#</span> javascript
+		</a><a href="/blog/tag/react/" class="post-tags__link"><span>#</span> react
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020.</span><span class="footer__links">luckyluu</span></footer></div>
+    <script src="/blog/assets/js/app.f8d91bd5.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Sử dụng Middleware với Redux dành cho người mới bắt đầu - VuiLapTrinh.com</title><meta name="gridsome:hash" content="0ea6a5c7ec18fcd2d372c0c225289996c79af9fc"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui"><meta data-vue-tag="ssr" name="desc" content="Nếu đã nắm rõ redux, bước tiếp theo phải tìm hiểu là middleware"><link rel="preload" href="/blog/assets/css/0.styles.d493c61a.css" as="style"><link rel="preload" href="/blog/assets/js/app.f8d91bd5.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.b044eecd.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.bd4a2964.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.4999789e.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.d493c61a.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">Sử dụng Middleware với Redux dành cho người mới bắt đầu</h1><div class="post-meta">
+  Đăng ngày 2018-06-18.
+  
+    Mất khoảng
+    <strong>4 phút</strong> để đọc.
+  </div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#middleware-l%C3%A0-g%C3%AC">Middleware là gì</a></li>
+<li><a href="#t%E1%BA%A1i-sao-v%C3%A0-t%E1%BA%A1i-sao">Tại sao và tại sao</a></li>
+<li>
+<p><a href="#m%E1%BB%99t-s%E1%BB%91-%E1%BB%A9ng-d%E1%BB%A5ng-c%E1%BB%A7a-middleware">Một số ứng dụng của Middleware</a></p>
+<ul>
+<li><a href="#loging">Loging</a></li>
+<li><a href="#%C4%91%E1%BB%A3i-user-confirm">Đợi user confirm</a></li>
+</ul>
+</li>
+<li><a href="#m%E1%BB%99t-s%E1%BB%91-l%E1%BB%B1a-ch%E1%BB%8Dn">Một số lựa chọn</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="middleware-là-gì"><a href="#middleware-l%C3%A0-g%C3%AC" aria-hidden="true"><span class="icon icon-link"></span></a>Middleware là gì</h2>
+<p>Nghe tên thì hơi phức tạp nhưng thực sự nó đơn giản lắm, nó là một hàm sẽ modify và được gọi trước khi action được dispatch.</p>
+<p>Mô phỏng quá trình hoạt động không có middleware</p>
+<p><img src="https://viblo.asia/uploads/5c72ff3e-859a-457a-ae11-e1392baa90af.gif"></p>
+<p>và khi áp dụng middleware</p>
+<p><img src="https://viblo.asia/uploads/8ff8bd43-308a-47da-b382-891adae237d2.gif"></p>
+<h2 id="tại-sao-và-tại-sao"><a href="#t%E1%BA%A1i-sao-v%C3%A0-t%E1%BA%A1i-sao" aria-hidden="true"><span class="icon icon-link"></span></a>Tại sao và tại sao</h2>
+<p>Trong thế giới của Rect, Redux là lựa chọn được ưa chuộng để có một container chứa chỉ chứa state. Ý tưởng chính của redux là tất cả những logic của app thì đưa vào <strong>reducers</strong>, là những function nhận vào 1 <code class="language-text">state</code>, 1 <code class="language-text">action</code> và trả về <code class="language-text">state</code> mới. <strong>Reducers</strong> buộc phải là <em>pure function</em> không phụ thuộc và chỉnh sửa global state, để mà dễ test, dể refactor, performance tốt hơn.</p>
+<p>Thí dụ 1 redux store lưu giá trị counter</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> redux <span class="token keyword module">from</span> <span class="token string">'redux'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">counter</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token property-access">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token string">'INCREMENT'</span><span class="token operator">:</span>
+            <span class="token keyword">return</span> state <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> store <span class="token operator">=</span> redux<span class="token punctuation">.</span><span class="token method function property-access">createStore</span><span class="token punctuation">(</span>counter<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Nếu để ý chúng ta có thể thấy redux có 2 ràng buộc</p>
+<ol>
+<li><strong>Reducers</strong> PHẢI là hàm sync, trả về <code class="language-text">state</code> mới</li>
+<li>Do không được thay đổi global state, reducers không được sử dụng những hàm như <code class="language-text">setInterval()</code></li>
+</ol>
+<p>Thí dụ chúng ta làm một cái app để bấm thời gian, sau khi user bấm stop hiển thị giá trị thời gian đã chạy và sau đó lưu lại trên server bằng HTTP request. Chuyện gì sẽ xảy ra khi ta đang muốn quăng một hàm chạy async?</p>
+<p>Reducer của chúng ta cần listen 3 actions:</p>
+<ol>
+<li><code class="language-text">START_TIMER</code>, khi bắt đầu tính thời gian</li>
+<li><code class="language-text">STICK</code>, khi ta thay đổi giá trị hiện tại</li>
+<li><code class="language-text">STOP_TIMER</code> khi chúng ta không nhận được action <code class="language-text">TICK</code> nào nữa</li>
+</ol>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">stopWatch</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token property-access">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token string">'START_TIMMER'</span><span class="token operator">:</span>
+            <span class="token keyword">return</span> <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span>startTime<span class="token operator">:</span> action<span class="token punctuation">.</span><span class="token property-access">currentTime</span><span class="token punctuation">,</span> elapsed<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword">case</span> <span class="token string">'TICK'</span><span class="token operator">:</span>
+            <span class="token keyword">return</span> <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span>elapsed<span class="token operator">:</span> action<span class="token punctuation">.</span><span class="token property-access">currentTime</span> <span class="token operator">-</span> state<span class="token punctuation">.</span><span class="token property-access">startTime</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token string">'STOP_TIMER'</span><span class="token operator">:</span>
+            <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> store <span class="token operator">=</span> redux<span class="token punctuation">.</span><span class="token method function property-access">createStore</span><span class="token punctuation">(</span>stopWatch<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Khi user click button start, chúng ta dispatch event <code class="language-text">START_TIMER</code>, khi user click stop, ta dispatch <code class="language-text">STOP_TIMMER</code></p>
+<p>Vấn đề là làm sao dispatch <code class="language-text">TICK</code>, nếu chúng ta gọi <code class="language-text">setInterval()</code> trong <code class="language-text">START_TIMER</code> thì lúc đó chúng ta đã thay đổi global state và vi phạm best practices của redux. Chổ thích hợp nhất để dispatch <code class="language-text">TICK</code> là ở middleware</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">timerMiddleware</span> <span class="token operator">=</span> <span class="token parameter">store</span> <span class="token arrow operator">=></span> <span class="token parameter">next</span> <span class="token arrow operator">=></span> <span class="token parameter">action</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token property-access">type</span> <span class="token operator">===</span> <span class="token string">'START_TIMER'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        action<span class="token punctuation">.</span><span class="token property-access">interval</span> <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> store<span class="token punctuation">.</span><span class="token method function property-access">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'TICK'</span><span class="token punctuation">,</span> currentTime<span class="token operator">:</span> <span class="token known-class-name class-name">Date</span><span class="token punctuation">.</span><span class="token method function property-access">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token property-access">type</span> <span class="token operator">===</span> <span class="token string">'STOP_TIMER'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">clearInterval</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token property-access">interval</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">next</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> <span class="token function-variable function">stopWatch</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token property-access">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">'START_TIMER'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        startTime<span class="token operator">:</span> action<span class="token punctuation">.</span><span class="token property-access">currentTime</span><span class="token punctuation">,</span>
+        elapsed<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        interval<span class="token operator">:</span> action<span class="token punctuation">.</span><span class="token property-access">interval</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">'TICK'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span> elapsed<span class="token operator">:</span> action<span class="token punctuation">.</span><span class="token property-access">currentTime</span> <span class="token operator">-</span> state<span class="token punctuation">.</span><span class="token property-access">startTime</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">'STOP_TIMER'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span> interval<span class="token operator">:</span> <span class="token keyword null nil">null</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> middleware <span class="token operator">=</span> redux<span class="token punctuation">.</span><span class="token method function property-access">applyMiddleware</span><span class="token punctuation">(</span>timerMiddleware<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> store <span class="token operator">=</span> redux<span class="token punctuation">.</span><span class="token method function property-access">createStore</span><span class="token punctuation">(</span>stopWatch<span class="token punctuation">,</span> middleware<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Syntax của redux middleware là điều cần phải bàn tới: 1 middleware function là 1 function return 1 function return 1 function. Nhất đầu ghê chưa. Thật ra đang dùng currying function trong javascript (<a href="https://luubinhan.github.io/blog/2018-03-02-gioi-thieu-higher-order-component-trong-react" target="_blank" rel="nofollow noopener noreferrer">đọc cà-ri function ở đây</a>). Function đầu tiên nhận vào <code class="language-text">store</code> làm parameter, function thứ 2 sẽ nhận function <code class="language-text">next</code> làm parameter, và function thứ 3 nhận dispatch <code class="language-text">action</code> làm parameter. <code class="language-text">store</code> và <code class="language-text">action</code> là giá trị store và dispatch action hiện tại. Chiếc đũa thuần kỳ ở đây chính là function <code class="language-text">next</code>, bạn có thể gọi nó là "sau khi middleware chạy xong, truyền cái cái action này cho middleware kế tiếp". Nói cách khác, middleware có thể là hàm async.</p>
+<p>Tiếp theo chúng ta sẽ lưu giá trị sau khi user click stop lên server.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">promiseMiddleware</span> <span class="token operator">=</span> <span class="token parameter">store</span> <span class="token arrow operator">=></span> <span class="token parameter">next</span> <span class="token arrow operator">=></span> <span class="token parameter">action</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token comment">// kiểm tra payload nếu là promise thì đợi nó resolve</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token property-access">payload</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> action<span class="token punctuation">.</span><span class="token property-access">payload</span><span class="token punctuation">.</span><span class="token property-access">then</span> <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        action<span class="token punctuation">.</span><span class="token property-access">payload</span><span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span>
+            <span class="token parameter">res</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span> action<span class="token punctuation">.</span><span class="token property-access">payload</span> <span class="token operator">=</span> res<span class="token punctuation">;</span> <span class="token function">next</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token parameter">err</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span> action<span class="token punctuation">.</span><span class="token property-access">error</span> <span class="token operator">=</span> err<span class="token punctuation">;</span> <span class="token function">next</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">next</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> middleware <span class="token operator">=</span> redux<span class="token punctuation">.</span><span class="token method function property-access">applyMiddleware</span><span class="token punctuation">(</span>timerMiddleware<span class="token punctuation">,</span> promiseMiddleware<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> store <span class="token operator">=</span> redux<span class="token punctuation">.</span><span class="token method function property-access">createStore</span><span class="token punctuation">(</span>stopWatch<span class="token punctuation">,</span> middleware<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Khi gởi lên một HTTP request, chúng ta sẽ gởi request này ở dạng <code class="language-text">promise</code>, <code class="language-text">promiseMiddelware</code> sẽ đứng đợi promise này có giá trị trả về thì mới gọi <code class="language-text">next(action)</code></p>
+<p>Ta sẽ gởi lên server bằng <code class="language-text">axios</code></p>
+<pre class="language-js"><code class="language-js"><span class="token keyword module">import</span> axios <span class="token keyword module">from</span> <span class="token string">'axios'</span><span class="token punctuation">;</span>
+
+store<span class="token punctuation">.</span><span class="token method function property-access">dispatch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'SAVE_TIME'</span><span class="token punctuation">,</span> payload<span class="token operator">:</span> axios<span class="token punctuation">.</span><span class="token method function property-access">post</span><span class="token punctuation">(</span><span class="token string">'/save'</span><span class="token punctuation">,</span> store<span class="token punctuation">.</span><span class="token method function property-access">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Reducer listen <code class="language-text">SAVE_TIME</code></p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">stopwatch</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token property-access">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">'START_TIMER'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        startTime<span class="token operator">:</span> action<span class="token punctuation">.</span><span class="token property-access">currentTime</span><span class="token punctuation">,</span>
+        elapsed<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        interval<span class="token operator">:</span> action<span class="token punctuation">.</span><span class="token property-access">interval</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">'TICK'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span> elapsed<span class="token operator">:</span> action<span class="token punctuation">.</span><span class="token property-access">currentTime</span> <span class="token operator">-</span> state<span class="token punctuation">.</span><span class="token property-access">startTime</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">'STOP_TIMER'</span><span class="token operator">:</span>
+      <span class="token keyword">return</span> <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span> interval<span class="token operator">:</span> <span class="token keyword null nil">null</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token string">'SAVE_TIME'</span><span class="token operator">:</span>
+      <span class="token comment">// If there was an error, set the error property on the state</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token property-access">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span> error<span class="token operator">:</span> action<span class="token punctuation">.</span><span class="token property-access">error</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">// Otherwise, clear all the timer state</span>
+      <span class="token keyword">return</span> <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span> startTime<span class="token operator">:</span> <span class="token keyword null nil">null</span><span class="token punctuation">,</span> elapsed<span class="token operator">:</span> <span class="token keyword null nil">null</span><span class="token punctuation">,</span> error<span class="token operator">:</span> <span class="token keyword null nil">null</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<h2 id="một-số-ứng-dụng-của-middleware"><a href="#m%E1%BB%99t-s%E1%BB%91-%E1%BB%A9ng-d%E1%BB%A5ng-c%E1%BB%A7a-middleware" aria-hidden="true"><span class="icon icon-link"></span></a>Một số ứng dụng của Middleware</h2>
+<h3 id="loging"><a href="#loging" aria-hidden="true"><span class="icon icon-link"></span></a>Loging</h3>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">loggerMiddleware</span> <span class="token operator">=</span> <span class="token parameter">store</span> <span class="token arrow operator">=></span> <span class="token parameter">next</span> <span class="token arrow operator">=></span> <span class="token parameter">action</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token property-access">type</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">next</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="đợi-user-confirm"><a href="#%C4%91%E1%BB%A3i-user-confirm" aria-hidden="true"><span class="icon icon-link"></span></a>Đợi user confirm</h3>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">confirmationMiddleware</span> <span class="token operator">=</span> <span class="token parameter">store</span> <span class="token arrow operator">=></span> <span class="token parameter">next</span> <span class="token arrow operator">=></span> <span class="token parameter">action</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token property-access">shouldConfirm</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">confirm</span><span class="token punctuation">(</span><span class="token string">'Are you sure?'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">next</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">next</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="một-số-lựa-chọn"><a href="#m%E1%BB%99t-s%E1%BB%91-l%E1%BB%B1a-ch%E1%BB%8Dn" aria-hidden="true"><span class="icon icon-link"></span></a>Một số lựa chọn</h2>
+<p>Một số thư viện để làm việc với middleware cho Redux rất phổ biến có thể tham khảo là <code class="language-text">redux-thunk</code>, <code class="language-text">redux-saga</code>, <code class="language-text">redux-observable</code></p>
+<p><a href="https://www.codementor.io/vkarpov/beginner-s-guide-to-redux-middleware-du107uyud" target="_blank" rel="nofollow noopener noreferrer">Link bài gốc của tác giả Vkarpov</a></p>
+<p>Tham khảo thêm:</p>
+<ul>
+<li><a href="https://github.com/gothinkster/react-redux-realworld-example-app/blob/master/src/middleware.js" target="_blank" rel="nofollow noopener noreferrer">Realworld example sử dụng redux, middleware</a></li>
+<li><a href="https://medium.com/@meagle/understanding-87566abcfb7a" target="_blank" rel="nofollow noopener noreferrer">Tìm hiểu Middleware của tác giả Mark</a></li>
+<li><a href="https://redux.js.org/api-reference/applymiddleware" target="_blank" rel="nofollow noopener noreferrer">applyMiddleware</a></li>
+</ul>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/react/" class="post-tags__link"><span>#</span> react
+		</a><a href="/blog/tag/redux/" class="post-tags__link"><span>#</span> redux
+		</a><a href="/blog/tag/javascript/" class="post-tags__link"><span>#</span> javascript
+		</a><a href="/blog/tag/middleware/" class="post-tags__link"><span>#</span> middleware
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020.</span><span class="footer__links">luckyluu</span></footer></div>
+    <script src="/blog/assets/js/app.f8d91bd5.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" defer></script>
+  </body>
+</html>

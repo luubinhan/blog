@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>8 câu điều kiện khi render trong React - VuiLapTrinh.com</title><meta name="gridsome:hash" content="0ea6a5c7ec18fcd2d372c0c225289996c79af9fc"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.21"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" data-key="description" name="description" content="Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui"><meta data-vue-tag="ssr" name="desc" content="Tutorial này sẽ cover những câu điều kiện dùng để render component phổ biến nhất"><link rel="preload" href="/blog/assets/css/0.styles.d493c61a.css" as="style"><link rel="preload" href="/blog/assets/js/app.f8d91bd5.js" as="script"><link rel="preload" href="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" as="script"><link rel="prefetch" href="/blog/assets/js/page--node-modules-gridsome-app-pages-404-vue.b044eecd.js"><link rel="prefetch" href="/blog/assets/js/page--src-pages-index-vue.bd4a2964.js"><link rel="prefetch" href="/blog/assets/js/page--src-templates-tag-vue.4999789e.js"><link rel="stylesheet" href="/blog/assets/css/0.styles.d493c61a.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute('data-theme', newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem('theme');
+        } catch (err) { }
+
+        window.__setPreferredTheme = function(newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', newTheme);
+          } catch (err) {}
+        }
+
+        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true"><header class="header"><div class="header__left"><a href="/blog/" class="logo active"><span class="logo__text">
+    ← VuiLapTrinh.com
+  </span></a></div><div class="header__right"><button role="button" aria-label="Toggle dark/light" class="toggle-theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></header><main class="main"><div class="post-title"><h1 class="post-title__text">8 câu điều kiện khi render trong React</h1><div class="post-meta">
+  Đăng ngày 2018-03-05.
+  
+    Mất khoảng
+    <strong>3 phút</strong> để đọc.
+  </div></div><div class="post content-box"><div class="post__header"><!----></div><div class="post__content"><!-- TOC -->
+<ul>
+<li><a href="#ifelse">If/Else</a></li>
+<li><a href="#ko-render-v%E1%BB%9Bi-null">Ko render với <code class="language-text">null</code></a></li>
+<li><a href="#%C4%91%E1%BA%B7t-bi%E1%BA%BFn-cho-element">Đặt biến cho element</a></li>
+<li><a href="#c%C3%A2u-%C4%91i%E1%BB%81u-ki%E1%BB%87n-r%C3%BAt-g%E1%BB%8Dn">Câu điều kiện rút gọn</a></li>
+<li><a href="#short-circuit-operator-">Short-circuit operator (&#x26;&#x26;)</a></li>
+<li><a href="#immediately-invoked-function-expressions-iife">Immediately-invoked function expressions (IIFE)</a></li>
+<li><a href="#subcomponents">Subcomponents</a></li>
+<li><a href="#higher-order-component-hoc">Higher-Order Component (HOC)</a></li>
+</ul>
+<!-- /TOC -->
+<h1 id="ifelse"><a href="#ifelse" aria-hidden="true"><span class="icon icon-link"></span></a>If/Else</h1>
+<p>Dễ nhất và căn bản nhất</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">mode</span> <span class="token operator">===</span> <span class="token string">'view'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token punctuation">/></span></span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token punctuation">/></span></span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h1 id="ko-render-với-null"><a href="#ko-render-v%E1%BB%9Bi-null" aria-hidden="true"><span class="icon icon-link"></span></a>Ko render với <code class="language-text">null</code></h1>
+<p>Nếu không muốn render một component, trong hàm return trả về giá trị <code class="language-text">null</code>, lưu ý khi return null nhưng hàm render vẫn được gọi.</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">mode</span> <span class="token operator">===</span> <span class="token string">'view'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token punctuation">/></span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token keyword null nil">null</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h1 id="đặt-biến-cho-element"><a href="#%C4%91%E1%BA%B7t-bi%E1%BA%BFn-cho-element" aria-hidden="true"><span class="icon icon-link"></span></a>Đặt biến cho element</h1>
+<p>Giờ nếu không muốn thêm câu <code class="language-text">else</code></p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> input<span class="token punctuation">;</span>
+    
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">mode</span> <span class="token operator">!==</span> <span class="token string">'view'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      input <span class="token operator">=</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">/></span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+      
+    <span class="token keyword">return</span> input<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h1 id="câu-điều-kiện-rút-gọn"><a href="#c%C3%A2u-%C4%91i%E1%BB%81u-ki%E1%BB%87n-r%C3%BAt-g%E1%BB%8Dn" aria-hidden="true"><span class="icon icon-link"></span></a>Câu điều kiện rút gọn</h1>
+<p>Thay gì <code class="language-text">if/else</code>, có thể dùng câu điều kiện rút gọn để render luôn</p>
+<pre class="language-text"><code class="language-text">điều kiện ? nếu true : nếu false</code></pre>
+<p>Sử dụng với ví dụ trên</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token punctuation">(</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">mode</span> <span class="token operator">===</span> <span class="token string">'view'</span> <span class="token operator">?</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text"> : null}
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+    )
+}</span></code></pre>
+<p>Gọn gàng sạch sẽ hơn, tuy nhiên cũng đừng lạm dụng quá, có anh bạn làm chung với mình, lạm dụng cách này quá lố, đến nổi mỗi lần đọc code của anh ấy là cơn ác mộng, mặc dù không sai, nhưng thằng nào code sau mở lên đọc tội nó lắm.</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">return</span> <span class="token punctuation">(</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token punctuation">{</span> condition1
+      <span class="token operator">?</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Component1</span></span> <span class="token punctuation">/></span></span>
+      <span class="token operator">:</span> <span class="token punctuation">(</span> condition2
+        <span class="token operator">?</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Component2</span></span> <span class="token punctuation">/></span></span>
+        <span class="token operator">:</span> <span class="token punctuation">(</span> condition3
+          <span class="token operator">?</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Component3</span></span> <span class="token punctuation">/></span></span>
+          <span class="token operator">:</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Component</span></span> <span class="token attr-name">4</span> <span class="token punctuation">/></span></span>
+        <span class="token punctuation">)</span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h1 id="short-circuit-operator-"><a href="#short-circuit-operator-" aria-hidden="true"><span class="icon icon-link"></span></a>Short-circuit operator (&#x26;&#x26;)</h1>
+<p>Trong trường hợp trên, rõ ràng việc trả về <code class="language-text">null</code> cũng hơi dư thừa, có thể sử dụng ngắn-hơn-cả-ngắn với cú pháp <code class="language-text">&amp;&amp;</code>. Cũng như câu điều kiện rút gọn, tuy nhiên nó sẽ chỉ render nếu <code class="language-text">true</code>, con <code class="language-text">false</code> nó sẽ không làm gì cả</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token punctuation">(</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">mode</span> <span class="token operator">===</span> <span class="token string">'view'</span> <span class="token operator">&amp;&amp;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">}
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+    )
+}</span></code></pre>
+<h1 id="immediately-invoked-function-expressions-iife"><a href="#immediately-invoked-function-expressions-iife" aria-hidden="true"><span class="icon icon-link"></span></a>Immediately-invoked function expressions (IIFE)</h1>
+<p>IIFE như tên gọi nó đã nói lên tất cả, hàm sẽ thực thi ngay khi nó được định nghĩa.</p>
+<p>Bình thường</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+<span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Để biến nó thành IIFE, convert nó qua thành một expression</p>
+<pre class="language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token comment">/* tham số*/</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">(</span> <span class="token comment">/* tham số*/</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// viêt như vầy cũng được nha</span>
+<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token comment">/* tham số*/</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span> <span class="token comment">/* tham số*/</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// hoặc bỏ luôn tên</span>
+<span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token comment">/* tham số*/</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span> <span class="token comment">/* tham số*/</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// hoặc dùng luôn arrow function cho máu</span>
+<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token comment">/* tham số*/</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span> <span class="token comment">/* tham số*/</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Giờ thì dùng IIFE với component</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token punctuation">(</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token punctuation">{</span>
+              <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+                <span class="token keyword">const</span> handler <span class="token operator">=</span> view 
+                    <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">handleEdit</span> 
+                    <span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">handleSave</span><span class="token punctuation">;</span>
+                <span class="token keyword">const</span> label <span class="token operator">=</span> view <span class="token operator">?</span> <span class="token string">'Edit'</span> <span class="token operator">:</span> <span class="token string">'Save'</span><span class="token punctuation">;</span>
+              
+                <span class="token keyword">return</span> <span class="token punctuation">(</span>
+                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>handler<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+                    </span><span class="token punctuation">{</span>label<span class="token punctuation">}</span><span class="token plain-text">
+                  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+                <span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token plain-text">  
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<h1 id="subcomponents"><a href="#subcomponents" aria-hidden="true"><span class="icon icon-link"></span></a>Subcomponents</h1>
+<p>Nếu thấy dùng IFEE có vẻ hơi khó chịu, chúng ta đang làm React, tất cả hãy đưa về component, tách phần logic của component và phần render cái view ra luôn là đều được khuyến cáo, declarative vs. imperative programing</p>
+<p>Vậy nên chuyển các điều kiện này sang một sub component để render dựa trên <code class="language-text">props</code> luôn là ý hay.</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token function">render</span><span class="token punctuation">(</span>
+    <span class="token keyword">const</span> view <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">mode</span> <span class="token operator">===</span> <span class="token string">'view'</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span><span class="token punctuation">(</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+            </span><span class="token punctuation">{</span>
+              view
+                <span class="token operator">?</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">EditComponent</span></span> <span class="token attr-name">handleEdit</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">handleEdit</span><span class="token punctuation">}</span></span>  <span class="token punctuation">/></span></span>
+                <span class="token operator">:</span> <span class="token punctuation">(</span>
+                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">SaveComponent</span></span> 
+                   <span class="token attr-name">handleChange</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">handleChange</span><span class="token punctuation">}</span></span>
+                   <span class="token attr-name">handleSave</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">handleSave</span><span class="token punctuation">}</span></span>
+                   <span class="token attr-name">text</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">inputText</span><span class="token punctuation">}</span></span>
+                 <span class="token punctuation">/></span></span>
+                <span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token plain-text"> 
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">)</span></code></pre>
+<p>Hoặc trong React-Router-4 mỗi route là một <code class="language-text">If component</code> với cách thức vận hành như sao</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">If</span></span>
+    <span class="token attr-name">condition</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span> view <span class="token punctuation">}</span></span>
+    <span class="token attr-name">then</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span> editComponent <span class="token punctuation">}</span></span>
+    <span class="token attr-name">else</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span> editComponent <span class="token punctuation">}</span></span>
+<span class="token punctuation">/></span></span>
+
+<span class="token comment">// Component Route trong React-Router</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Route</span></span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/<span class="token punctuation">'</span></span> <span class="token attr-name">component</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token maybe-class-name">Home</span><span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span></code></pre>
+<p>Đọc thêm về <a href="/2018-01-12-react-router-dom-gioi-thieu-react-router-4">React-Router-4</a></p>
+<h1 id="higher-order-component-hoc"><a href="#higher-order-component-hoc" aria-hidden="true"><span class="icon icon-link"></span></a>Higher-Order Component (HOC)</h1>
+<p>Sử dụng HOC để truyền xuống một <code class="language-text">prop</code> dựa trên kiểm tra logic</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="token keyword">function</span> <span class="token function">higherOrderComponent</span><span class="token punctuation">(</span><span class="token parameter"><span class="token maybe-class-name">Component</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function"><span class="token maybe-class-name">EnhancedComponent</span></span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>condition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">AnotherComponent</span></span> <span class="token spread"><span class="token punctuation">{</span> <span class="token punctuation">...</span><span class="token attr-value">props</span> <span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">AnotherComponent</span></span> <span class="token spread"><span class="token punctuation">{</span> <span class="token punctuation">...</span><span class="token attr-value">props</span> <span class="token punctuation">}</span></span> <span class="token punctuation">/></span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Đọc thêm về <a href="/2018-03-02-gioi-thieu-higher-order-component-trong-react">HOCs tại đây</a></p>
+</div><div class="post__footer"><div class="post-tags"><a href="/blog/tag/react/" class="post-tags__link"><span>#</span> react
+		</a><a href="/blog/tag/javascript/" class="post-tags__link"><span>#</span> javascript
+		</a></div></div></div><div class="post-comments"></div><div class="author post-author"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/blog/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript><!----><p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p></div></main><footer class="footer"><span class="footer__copyright">Copyright © 2020.</span><span class="footer__links">luckyluu</span></footer></div>
+    <script src="/blog/assets/js/app.f8d91bd5.js" defer></script><script src="/blog/assets/js/page--src-templates-post-vue.980fbd47.js" defer></script>
+  </body>
+</html>
