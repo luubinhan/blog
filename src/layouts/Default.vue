@@ -9,7 +9,6 @@
         <ToggleTheme />
       </div>
     </header>
-    <PrimaryNav />
     <main class="main">
       <slot />
     </main>

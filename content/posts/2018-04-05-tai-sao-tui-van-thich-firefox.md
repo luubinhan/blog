@@ -3,20 +3,18 @@ slug: "/2018-04-05-huong-dan-tai-sao-tui-van-thich-firefox"
 date: "2018-04-05"
 title: "Chém gió: Tại sao tui vẫn thích Firefox"
 desc: "Không biết bạn sinh ra từ thuở nào, nhưng tui là thế hệ 8x, thời điểm mà Firefox nổi lên - rồi chìm xuống"
-cover: ""
+cover_image: "https://cdn-images-1.medium.com/max/1000/1*Gd9wkMJQxrCi8UNZWRgx-Q.png"
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["ux-ui"]
+tags: ["ux-ui", "dam-dao"]
 ---
-
-![](https://cdn-images-1.medium.com/max/1000/1*Gd9wkMJQxrCi8UNZWRgx-Q.png)
 
 Ngày xưa khi Firefox ra đời đánh dấu sự tàn lụi của IE6, với những tính năng siêu ngầu như: cho phép user cài thêm **extensions**, thay **theme** như thay áo. Ai cũng khoái.
 
 Vài năm sau, dân chơi thứ thiệt bước vào cuộc đấu, cái tên ai cũng biết là ai đấy - **Chrome**. Khi vừa xuất hiện thực sự Chrome trở thành cơn địa chấn, số lượng người dùng lúc ban đầu nhiều không tưởng, và không ngừng tăng, bởi vì nó được chống lưng bởi Google, con ác chủ bài để Google có thể chiếm hết thị phần trình duyệt. Chắc chắn bạn cũng đang dùng Chrome để đọc blog này!
 
-Web *bây giờ* khác xưa nhiều rồi, công nghệ tân thời tốn điện hơn xưa, à ko, tốn RAM và CPU hơn, web ko còn là những trang tin đơn giản, nó còn là những ứng dụng phức tạp chạy trên trình duyệt bằng những công nghệ, ngôn ngữ không ngừng thay đổi để **thõa mãn** thú tính của người sử dụng, chúng ta đấy.
+Web _bây giờ_ khác xưa nhiều rồi, công nghệ tân thời tốn điện hơn xưa, à ko, tốn RAM và CPU hơn, web ko còn là những trang tin đơn giản, nó còn là những ứng dụng phức tạp chạy trên trình duyệt bằng những công nghệ, ngôn ngữ không ngừng thay đổi để **thõa mãn** thú tính của người sử dụng, chúng ta đấy.
 
 > Tui một developer chạy con Macbook Pro cấu hình cao nhất, mới nhất. Khi bắt đầu lập trình và bật Chrome DevTools lên, pin tụt nhanh như chó phóng qua hàng rào
 
@@ -26,7 +24,7 @@ Rồi bạn nghe đâu với bản [Firefox Quantum](https://blog.mozilla.org/bl
 
 Năm 2017 Quantum chạy chính thức trên Android, Linux, iOS, Mac, Windows, nói chung chạy tuốt, phải hơn sau 10 năm từ ngày phiên bản đầu tiên, phiên bản đã giết chết IE mới có một cập nhập thực sự đáng đồng tiền bát cháo.
 
-![](https://www.mozilla.org/media/img/firefox/home/hero-laptop.cd8ad96e2fbc.png)
+![Chém gió: Tại sao tui vẫn thích Firefox](https://www.mozilla.org/media/img/firefox/home/hero-laptop.cd8ad96e2fbc.png)
 
 Bên cạnh giao diện cool mới, nó load web nhanh hơn gấp đôi so với phiên bản Firefox 6, sử dụng ít hơn 30% RAM so với Chrome.
 
