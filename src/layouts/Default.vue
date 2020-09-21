@@ -9,7 +9,7 @@
         <ToggleTheme />
       </div>
     </header>
-
+    <PrimaryNav />
     <main class="main">
       <slot />
     </main>
@@ -24,6 +24,7 @@
 <script>
 import Logo from "~/components/Logo.vue";
 import ToggleTheme from "~/components/ToggleTheme.vue";
+import PrimaryNav from "~/components/PrimaryNav.vue";
 
 export default {
   props: {
@@ -32,6 +33,7 @@ export default {
   components: {
     Logo,
     ToggleTheme,
+    PrimaryNav
   },
 };
 </script>

@@ -12,6 +12,14 @@ module.exports = {
 
   icon: './src/assets/luckyluu.svg',
 
+  chainWebpack: config => {
+    const svgRule = config.module.rule('svg')
+    svgRule.uses.clear()
+    svgRule
+      .use('vue-svg-loader')
+      .loader('vue-svg-loader')
+  },
+
   templates: {
     Post: '/:title',
     Tag: '/tag/:id'
