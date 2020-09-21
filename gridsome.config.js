@@ -10,6 +10,8 @@ module.exports = {
   siteName: 'VuiLapTrinh.com',
   siteDescription: 'Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui',
 
+  icon: './src/assets/luckyluu.svg',
+
   templates: {
     Post: '/:title',
     Tag: '/tag/:id'
