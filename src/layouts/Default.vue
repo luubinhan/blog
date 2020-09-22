@@ -8,7 +8,6 @@
       <div class="header__right">
         <ToggleTheme />
       </div>
-      <PrimaryNav />
     </header>
     <main class="main">
       <slot />

@@ -1,28 +1,39 @@
 <template>
   <Layout>
-    <div class="post-title">
-      <h1 class="post-title__text">{{ $page.post.title }}</h1>
+    <div class="single-post">
+      <div class="single-post-container">
+        <article>
+          <header>
+               
+          <div class="post-title">
+            <h1 class="post-title__text single-post-title">{{ $page.post.title }}</h1>
 
-      <PostMeta :post="$page.post" />
-    </div>
+            <PostMeta :post="$page.post" />
+          </div>
+           </header>
 
-    <div class="post content-box">
-      <div class="post__header">
-        <g-image alt="Cover image" v-if="$page.post.cover_image" :src="$page.post.cover_image" />
+          <div class="post content-box">
+            <div class="post__header">
+              <g-image alt="Cover image" v-if="$page.post.cover_image" :src="$page.post.cover_image" />
+            </div>
+            <div className="blog-post">
+              <div class="post-content">
+              <div class="post__content" v-html="$page.post.content" />
+              </div>
+            </div>
+            <div class="post__footer">
+              <PostTags :post="$page.post" />
+            </div>
+          </div>
+
+          <div class="post-comments">
+            <!-- Add comment widgets here -->
+          </div>
+
+          <Author class="post-author" />
+        </article>
       </div>
-
-      <div class="post__content" v-html="$page.post.content" />
-
-      <div class="post__footer">
-        <PostTags :post="$page.post" />
-      </div>
     </div>
-
-    <div class="post-comments">
-      <!-- Add comment widgets here -->
-    </div>
-
-    <Author class="post-author" />
   </Layout>
 </template>
 
@@ -124,4 +135,5 @@ query Post ($id: ID!) {
 .post-author {
   margin-top: calc(var(--space) / 2);
 }
+
 </style>

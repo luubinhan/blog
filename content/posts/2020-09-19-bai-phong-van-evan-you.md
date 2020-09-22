@@ -48,23 +48,6 @@ _Đề xuất Function-based component API trong Vue 3 nhận được khá nhi�
 
 Điều có thể rút ra là, chúng ta cần biết người dùng cần gì - thường không dễ để biết được và phải đi theo những cách rất khó khăn, và bạn cần sẵn sàng lắng nghe một cách tích cực chủ động.
 
-<<<<<<< HEAD
-*Vue được sử dụng trong các doanh nghiệp nhỏ, vừa và thậm chí các công ty triệu đô. Louis Vuitton and NASA đang sử dụng Vue. Có ví dụ nào anh đề nghị mọi người nên tham khảo như một ví dụ sử dụng thực tế*
-
-Vấn đề là các dự án thực tế đủ phức tạp lại không phải open-source. Tôi nghĩ có thể xem source của Vue DevTools và Vue CLI UI nếu bạn cần một ví dụ đủ phức tạp, cả hai đều có giao diện không bình thường được viết bằng Vue, mặc dù nó không phải vấn đề mà các web app thường gặp.
-
-
-
-Bài phỏng vấn của [evrone](https://evrone.com/evan-you-interview)
-
-
-
-> Users don’t like things being taken away. The takeaway is you need to understand what your users want — it’s not that easy and sometimes you will get that information the hard way, but you need to be willing to listen regardless. 
-
-
-
-
-=======
 _Vue được sử dụng trong các doanh nghiệp nhỏ, vừa và thậm chí các công ty triệu đô. Louis Vuitton and NASA đang sử dụng Vue. Có ví dụ nào anh đề nghị mọi người nên tham khảo như một ví dụ sử dụng thực tế_
 
 Vấn đề là các dự án thực tế đủ phức tạp lại không phải open-source. Tôi nghĩ có thể xem source của Vue DevTools và Vue CLI UI nếu bạn cần một ví dụ đủ phức tạp, cả hai đều có giao diện không bình thường được viết bằng Vue, mặc dù nó không phải vấn đề mà các web app thường gặp.
@@ -72,4 +55,3 @@ Vấn đề là các dự án thực tế đủ phức tạp lại không phải
 Bài phỏng vấn của [evrone](https://evrone.com/evan-you-interview)
 
 > Users don’t like things being taken away. The takeaway is you need to understand what your users want — it’s not that easy and sometimes you will get that information the hard way, but you need to be willing to listen regardless.
->>>>>>> feature/switch-to-gridsome
