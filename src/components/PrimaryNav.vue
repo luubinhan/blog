@@ -1,16 +1,10 @@
 <template>
   <div class="sidebar">
     <div class="sidebar__inner">
-      <g-link to="/" class="go-home">
-        VuiLapTrinh.com
-      </g-link>
+      <g-link to="/" class="go-home">VuiLapTrinh.com</g-link>
       <div class="navigation-component">
         <ul class="nav primary-menu" :class="collapsed && 'collapsed'">
-          <li
-            v-for="(m, index) in menus"
-            :key="index"
-            :class="camelCase(m.name)"
-          >
+          <li v-for="(m, index) in menus" :key="index" :class="camelCase(m.name)">
             <g-link
               :aria-label="`Kiến thức ${m.name}`"
               :title="`Kiến thức ${m.name}`"
@@ -18,18 +12,29 @@
               exact-active-class="active"
               :target="m.target || ''"
             >
-              <span class="primary-menu__icon" v-if="m.icon === 'js'"><IconJs /></span>
-              <span class="primary-menu__icon" v-if="m.icon === 'nodejs'"><React /></span>
-              <span class="primary-menu__icon" v-if="m.icon === 'react-native'"><Native /></span>
-              <span class="primary-menu__icon" v-if="m.icon === 'html5'"><Html /></span>
-              <span class="primary-menu__icon" v-if="m.icon === 'vue'"><Vue /></span>
+              <span class="primary-menu__icon" v-if="m.icon === 'js'">
+                <IconJs />
+              </span>
+              <span class="primary-menu__icon" v-if="m.icon === 'nodejs'">
+                <React />
+              </span>
+              <span class="primary-menu__icon" v-if="m.icon === 'react-native'">
+                <Native />
+              </span>
+              <span class="primary-menu__icon" v-if="m.icon === 'html5'">
+                <Html />
+              </span>
+              <span class="primary-menu__icon" v-if="m.icon === 'vue'">
+                <Vue />
+              </span>
+              <span class="primary-menu__icon" v-if="m.icon === 'paint'">
+                <Paint />
+              </span>
               <span class="primary-menu__label">{{m.name}}</span>
             </g-link>
           </li>
           <li class="about">
-            <a href="https://luubinhan.github.io/" target="_blank">
-              About
-            </a>
+            <a href="https://luubinhan.github.io/" target="_blank">About</a>
           </li>
         </ul>
       </div>
@@ -44,12 +49,10 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Youtube /> Youtube
+              <Youtube />Youtube
             </a>
           </div>
-          <div class="credit">
-            Copyright © 2019. luckyluu
-          </div>
+          <div class="credit">Copyright © 2019. luckyluu</div>
         </section>
       </footer>
     </div>
@@ -57,51 +60,53 @@
 </template>
 
 <script>
-import IconJs from '~/assets/images/js.svg';
-import Youtube from '~/assets/images/youtube.svg';
-import React from '~/assets/images/react.svg';
-import Native from '~/assets/images/native.svg';
-import Html from '~/assets/images/html.svg';
-import Vue from '~/assets/images/vue.svg';
-import { camelCase } from 'lodash';
+import IconJs from "~/assets/images/js.svg";
+import Youtube from "~/assets/images/youtube.svg";
+import React from "~/assets/images/react.svg";
+import Native from "~/assets/images/native.svg";
+import Html from "~/assets/images/html.svg";
+import Vue from "~/assets/images/vue.svg";
+import Paint from "~/assets/images/paint.svg";
+import { camelCase } from "lodash";
 
 export default {
   data: () => ({
+    collapsed: false,
     menus: [
       {
-        name: 'Javascript',
-        href: '/tag/javascript',
-        icon: 'js'
+        name: "Javascript",
+        href: "/tag/javascript",
+        icon: "js",
       },
       {
-        name: 'React',
-        href: '/tag/react',
-        icon: 'nodejs'
+        name: "React",
+        href: "/tag/react",
+        icon: "nodejs",
       },
       {
-        name: 'React native',
-        href: '/tag/react-native',
-        icon: 'react-native'
+        name: "React native",
+        href: "/tag/react-native",
+        icon: "react-native",
       },
       {
-        name: 'Vue',
-        href: '/tag/vuejs',
-        icon: 'vue'
+        name: "Vue",
+        href: "/tag/vuejs",
+        icon: "vue",
       },
       {
-        name: 'HTML/CSS',
-        href: '/tag/css',
-        icon: 'html5'
+        name: "HTML/CSS",
+        href: "/tag/css",
+        icon: "html5",
       },
       {
-        name: 'UX/UI',
-        href: '/tag/ux-ui',
-        icon: 'compass'
-      }
-    ]
+        name: "UX/UI",
+        href: "/tag/ux-ui",
+        icon: "paint",
+      },
+    ],
   }),
   methods: {
-    camelCase
+    camelCase,
   },
   components: {
     IconJs,
@@ -109,112 +114,121 @@ export default {
     React,
     Html,
     Native,
-    Vue
-  }
+    Vue,
+    Paint,
+  },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .primary-menu {
-	list-style: none;
+  list-style: none;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   &__label {
-
   }
   &__icon {
-    flex-basis: 30px;
-    min-width: 30px;
+    flex-basis: 33px;
+    min-width: 33px;
     svg {
-      height: 40px;
+      height: 25px;
     }
   }
-	li {
-		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-		position: relative;
-		&:before {
-			position: absolute;
-			display: block;
-			content: '';
-			width: 0;
-			left: 0;
-			right: 0;
-			margin-left: auto;
-			margin-right: auto;
-			top: 0;
-			bottom: 0;
-			background: rgba(255,255,255,0);
-			z-index: 0;
-			-webkit-transition: all 0.2s ease-in-out;
-			-moz-transition: all 0.2s ease-in-out;
-			-ms-transition: all 0.2s ease-in-out;
-			-o-transition: all 0.2s ease-in-out;
-			transition: all 0.2s ease-in-out;
-		}
-		&:hover {
-			&:before {
-				width: 100%;
-				background: rgba(255,255,255,0.1);
-			}
-		}
-		&.javascript {
-			svg { color: $yellow; }
-			a:hover {
-	  		color: $yellow;
-	  	}
-		}
-		&.react {
-			svg { color: $cyan; }
-			a:hover {
-	  		color: $cyan;
-	  	}
-		}
-		&.wordpress {
-			svg { color: $blue; }
-			a:hover {
-	  		color: $blue;
-	  	}
-		}
-		&.htmlCss {
-			svg { color: $orange; }
-			a:hover {
-	  		color: $orange;
-	  	}
-		}
-		&.uxUi {
-			svg { color: $google; }
-			a:hover {
-	  		color: $google;
-	  	}
-		}
-		a {
-			display: flex;
-			align-items: center;
-	    color: #f2f2f2;
-	    font-family: "avo_bold", $san-serif;
-	    padding: 9px 0 12px;
-			line-height: 1;
-			font-size: $font-size-base;
-			position: relative;
-			z-index: 1;
-			-webkit-transition: all 0.1s ease-in-out;
-			-moz-transition: all 0.1s ease-in-out;
-			-ms-transition: all 0.1s ease-in-out;
-			-o-transition: all 0.1s ease-in-out;
-			transition: all 0.1s ease-in-out;
-	    svg {
-	    	padding-right: 7px;	    	
-	    }
-	    &.active {
-	    	color: $primary-color;
+  li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    &:before {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 0;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      top: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0);
+      z-index: 0;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+    &:hover {
+      &:before {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.1);
       }
-      
-	  }
-	  a:hover,
-	  a:focus{
-			background: transparent;
-			padding-left: 10px;
-	  }
-	}
+    }
+    &.javascript {
+      svg {
+        fill: $yellow;
+      }
+      a:hover {
+        color: $yellow;
+      }
+    }
+    &.react {
+      svg {
+        fill: $cyan;
+      }
+      a:hover {
+        color: $cyan;
+      }
+    }
+    &.wordpress {
+      svg {
+        fill: $blue;
+      }
+      a:hover {
+        color: $blue;
+      }
+    }
+    &.htmlCss {
+      svg {
+        fill: $orange;
+      }
+      a:hover {
+        color: $orange;
+      }
+    }
+    &.uxUi {
+      svg {
+        fill: $google;
+      }
+      a:hover {
+        color: $google;
+      }
+    }
+    a {
+      display: flex;
+      align-items: center;
+      color: #f2f2f2;
+      font-family: "avo_bold", $san-serif;
+      padding: 9px 0 12px;
+      line-height: 1;
+      font-size: $font-size-base;
+      position: relative;
+      z-index: 1;
+      -webkit-transition: all 0.1s ease-in-out;
+      -moz-transition: all 0.1s ease-in-out;
+      -ms-transition: all 0.1s ease-in-out;
+      -o-transition: all 0.1s ease-in-out;
+      transition: all 0.1s ease-in-out;
+      svg {
+        padding-right: 7px;
+      }
+      &.active {
+        color: $primary-color;
+      }
+    }
+    a:hover,
+    a:focus {
+      background: transparent;
+      padding-left: 10px;
+    }
+  }
 }
 
 .sidebar {
@@ -348,4 +362,65 @@ export default {
     right: 0;
   }
 }
+.social-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.social-links > div {
+  margin: 5px 15px;
+}
+
+.share-count {
+  text-align: center;
+}
+
+/* Footer
+-------------------------------------------------------------- */
+.footer {
+  color: #f2f2f2;
+  font-family: $monospace;
+  line-height: 20px;
+  position: absolute;
+  font-size: $font-size-base;
+  bottom: 0;
+  width: 100%;
+  .footer-inner {
+    padding: $glutter 0;
+    a {
+      color: #f2f2f2;
+    }
+    .link-youtube {
+      color: $google;
+      font-weight: bold;
+      font-family: $san-serif;
+    }
+  }
+  .copyright {
+    float: left;
+    width: 50%;
+  }
+  .credit {
+    float: right;
+    width: 50%;
+    text-align: right;
+  }
+}
+@media (max-width: $breakpoint-xs) {
+  .footer {
+    .copyright,
+    .credit {
+      float: none;
+      width: auto;
+      text-align: center;
+      font-size: $font-size-small;
+    }
+  }
+}
+/* Footer --------------------------------------------- */
 </style>

@@ -8,15 +8,11 @@
       <div class="header__right">
         <ToggleTheme />
       </div>
+      <PrimaryNav />
     </header>
     <main class="main">
       <slot />
     </main>
-
-    <footer class="footer">
-      <span class="footer__copyright">Copyright © {{ new Date().getFullYear() }}.</span>
-      <span class="footer__links">luckyluu</span>
-    </footer>
   </div>
 </template>
 
@@ -32,7 +28,7 @@ export default {
   components: {
     Logo,
     ToggleTheme,
-    PrimaryNav
+    PrimaryNav,
   },
 };
 </script>
@@ -63,22 +59,5 @@ export default {
 .main {
   margin: 0 auto;
   padding: 1.5vw 15px 0;
-}
-
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: calc(var(--space) / 2);
-  text-align: center;
-  font-size: 0.8em;
-
-  > span {
-    margin: 0 0.35em;
-  }
-
-  a {
-    color: currentColor;
-  }
 }
 </style>
