@@ -3,6 +3,18 @@
 
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
+const path = require('path');
+
+function addStyleResource (rule) {
+  rule.use('style-resource')
+    .loader('style-resources-loader')
+    .options({
+      patterns: [
+        path.resolve(__dirname, './src/assets/style/_variables.scss'),
+      ],
+    })
+}
+
 
 module.exports = {
   siteUrl: 'https://vuilaptrinh.com',
@@ -18,6 +30,14 @@ module.exports = {
     svgRule
       .use('vue-svg-loader')
       .loader('vue-svg-loader')
+    
+    // Load variables for all vue-files
+    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
+
+    // or if you use scss
+    types.forEach(type => {
+      addStyleResource(config.module.rule('scss').oneOf(type))
+    })
   },
 
   templates: {

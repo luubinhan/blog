@@ -1,3 +1,7 @@
+:root {
+	--sidebar-color: #252525;
+}
+
 // Default variables
 html {
 	--base-font-size: 20px;
@@ -40,3 +44,50 @@ body[data-theme="dark"] {
  	--title-color: #fff;
  	--link-color: #af9cef;
 }
+
+/*-----------------------------
+# [Color codes]
+----------------------------- */
+$primary-color: #01A1B1;
+$secondary-color: #acbd01;
+$link-color: #222;
+$link-color-hover: #000;
+$primary-text-color: rgba(0, 0, 0, 0.8);
+$bg-dark: #252525;
+$bg-gray: #f2f2f2;
+$bg-lighter: #f8f8f8;
+$muted: #464646;
+$border-color: #e1e3ea;
+$input-border-color: #e5e5e5;
+$red: #e41919;
+$black: #000;
+$orange: #f47631;
+$yellow: #ffce02;
+$cyan: #27c5c3;
+$blue: #43a5de;
+$green: #D6E9C6;
+
+$facebook: #3F5C99;
+$twitter: #1DA0F2;
+$google: #DC4A38;
+$instagram: #A4785B;
+
+/*-----------------------------
+# [Size]
+----------------------------- */
+$glutter: 10px;
+$breakpoint-sm: 768px;
+$breakpoint-xs: 560px;
+$footer-height: 40px;
+$header-height: 50px;
+
+/*-----------------------------
+# [Typography]
+----------------------------- */
+
+$font-size-base: 1.2em;
+$font-size-large: $font-size-base*2;
+$font-size-small: 0.9em;
+$san-serif: "avo", arial, sans-serif;
+$serif: 'Lora', 'Times New Roman', Times, serif;
+$monospace: "Lucida Console", "Courier", monospace;

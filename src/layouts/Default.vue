@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="layout-blog">
     <header class="header">
       <div class="header__left">
         <Logo v-if="showLogo" />
