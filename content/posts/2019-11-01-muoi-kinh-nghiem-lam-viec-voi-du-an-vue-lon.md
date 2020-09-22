@@ -12,22 +12,22 @@ tags: ["kinh-nghiem", "vuejs"]
 
 <!-- TOC -->
 
-- [Sử dụng `slot` để component dễ hiểu hơn và dễ tùy biến hơn](#s%e1%bb%ad-d%e1%bb%a5ng-slot-%c4%91%e1%bb%83-component-d%e1%bb%85-hi%e1%bb%83u-h%c6%a1n-v%c3%a0-d%e1%bb%85-t%c3%b9y-bi%e1%ba%bfn-h%c6%a1n)
-- [Tổ chức Vuex Store](#t%e1%bb%95-ch%e1%bb%a9c-vuex-store)
-- [Sử dụng action để lấy và gửi dữ liệu](#s%e1%bb%ad-d%e1%bb%a5ng-action-%c4%91%e1%bb%83-l%e1%ba%a5y-v%c3%a0-g%e1%bb%adi-d%e1%bb%af-li%e1%bb%87u)
-- [Sử dụng `mapState`, `mapGetters`, `mapMutations` và `mapActions`](#s%e1%bb%ad-d%e1%bb%a5ng-mapstate-mapgetters-mapmutations-v%c3%a0-mapactions)
-- [Sử dụng API Factories](#s%e1%bb%ad-d%e1%bb%a5ng-api-factories)
-- [Sử dụng `$config` để truy cập biến môi trường](#s%e1%bb%ad-d%e1%bb%a5ng-config-%c4%91%e1%bb%83-truy-c%e1%ba%adp-bi%e1%ba%bfn-m%c3%b4i-tr%c6%b0%e1%bb%9dng)
-- [Tuân theo một nguyên tắc chung khi viết commit](#tu%c3%a2n-theo-m%e1%bb%99t-nguy%c3%aan-t%e1%ba%afc-chung-khi-vi%e1%ba%bft-commit)
-- [Khi lên production, fix luôn các package version đang xài](#khi-l%c3%aan-production-fix-lu%c3%b4n-c%c3%a1c-package-version-%c4%91ang-x%c3%a0i)
-- [Sử dụng Virtual Scroller khi hiển thị nhiều dữ liệu](#s%e1%bb%ad-d%e1%bb%a5ng-virtual-scroller-khi-hi%e1%bb%83n-th%e1%bb%8b-nhi%e1%bb%81u-d%e1%bb%af-li%e1%bb%87u)
-- [Kiểm tra dung lượng package](#ki%e1%bb%83m-tra-dung-l%c6%b0%e1%bb%a3ng-package)
+- [Sử dụng `slot` để component dễ hiểu hơn và dễ tùy biến hơn](#sử-dụng-slot-để-component-dễ-hiểu-hơn-và-dễ-tùy-biến-hơn)
+- [Tổ chức Vuex Store](#tổ-chức-vuex-store)
+- [Sử dụng action để lấy và gửi dữ liệu](#sử-dụng-action-để-lấy-và-gửi-dữ-liệu)
+- [Sử dụng `mapState`, `mapGetters`, `mapMutations` và `mapActions`](#sử-dụng-mapstate-mapgetters-mapmutations-và-mapactions)
+- [Sử dụng API Factories](#sử-dụng-api-factories)
+- [Sử dụng `$config` để truy cập biến môi trường](#sử-dụng-config-để-truy-cập-biến-môi-trường)
+- [Tuân theo một nguyên tắc chung khi viết commit](#tuân-theo-một-nguyên-tắc-chung-khi-viết-commit)
+- [Khi lên production, fix luôn các package version đang xài](#khi-lên-production-fix-luôn-các-package-version-đang-xài)
+- [Sử dụng Virtual Scroller khi hiển thị nhiều dữ liệu](#sử-dụng-virtual-scroller-khi-hiển-thị-nhiều-dữ-liệu)
+- [Kiểm tra dung lượng package](#kiểm-tra-dung-lượng-package)
 
 <!-- /TOC -->
 
 ## Sử dụng `slot` để component dễ hiểu hơn và dễ tùy biến hơn
 
-Bài viết hướng dẫn chi tiết khái niệm và cách dùng `slot` bạn [đọc lại ở đây](/2019-10-20-huong-dan-ung-dung-tuyet-voi-cua-vue-renderless-component). Với việc sử dụng `slot` bạn sẽ có những component với khả năng *xào đi nấu lại* dễ hơn.
+Bài viết hướng dẫn chi tiết khái niệm và cách dùng `slot` bạn [đọc lại ở đây](/2019-10-20-huong-dan-ung-dung-tuyet-voi-cua-vue-renderless-component). Với việc sử dụng `slot` bạn sẽ có những component với khả năng _xào đi nấu lại_ dễ hơn.
 
 Một ví dụ để thấy lợi ích của slot trong thực tế.
 
@@ -46,7 +46,7 @@ Nhưng sau một thời gian, bên design họ vẽ vời thêm một mớ mới
     </div>
     <div class="c-base-popup__body">
       <h1>{{ title }}</h1>
-      <p v-if="description">{{ description }}</p>
+      <p v-if="desc">{{ desc }}</p>
     </div>
     <div v-if="$slot.actions" class="c-base-popup__actions">
       <slot name="actions">
@@ -124,16 +124,16 @@ export default {
     ...mapGetters("my_module", ["property"]),
     // truy cập các properties khác
     ...mapState("my_module", {
-      property: state => state.object.nested.property
-    })
+      property: (state) => state.object.nested.property,
+    }),
   },
 
   methods: {
     // truy cập actions
     ...mapActions("my_module", ["myAction"]),
     // truy cập mutations
-    ...mapMutations("my_module", ["myMutation"])
-  }
+    ...mapMutations("my_module", ["myMutation"]),
+  },
 };
 ```
 
@@ -210,7 +210,7 @@ Tội đồ là cái prefix `^` này. Xóa hết nó khi lên production
     "imagemin-mozjpeg": "8.0.0",
     "imagemin-pngquant": "8.0.0",
     "imagemin-svgo": "7.0.0",
-    "nuxt": "2.8.1",
+    "nuxt": "2.8.1"
   },
 
   "devDependencies": {
@@ -226,7 +226,6 @@ Tội đồ là cái prefix `^` này. Xóa hết nó khi lên production
 
 [Xem Nguyên tắc đặt version](https://semver.org/)
 
-
 ## Sử dụng Virtual Scroller khi hiển thị nhiều dữ liệu
 
 Khi cần hiển thị một số lượng lớn các hàng dữ liệu trên mộ trang, việc loop qua toàn bộ dữ liệu và render sẽ bị chậm. Dùng [vue-virtual-scroller](https://github.com/Akryum/vue-virtual-scroller)
@@ -235,7 +234,7 @@ Khi cần hiển thị một số lượng lớn các hàng dữ liệu trên m�
 npm install vue-virtual-scroller
 ```
 
-Nó sẽ chỉ render các dữ liệu có thể vừa vặn trong viewport, phần dữ liệu chưa hiển thị trên viewport sẽ được *lazy* render khi cuộn tới, tăng tốc độ đáng kể
+Nó sẽ chỉ render các dữ liệu có thể vừa vặn trong viewport, phần dữ liệu chưa hiển thị trên viewport sẽ được _lazy_ render khi cuộn tới, tăng tốc độ đáng kể
 
 ```html
 <template>
@@ -255,13 +254,10 @@ Nó sẽ chỉ render các dữ liệu có thể vừa vặn trong viewport, ph�
 
 ## Kiểm tra dung lượng package
 
-Bộ source lớn thường đồng nghĩa sử dụng nhiều package *lụm* được trên mạng, nếu không để ý, việc cài đặt bừa bãi các package này dễ dẫn đến việc dung lượng tăng vọt
+Bộ source lớn thường đồng nghĩa sử dụng nhiều package _lụm_ được trên mạng, nếu không để ý, việc cài đặt bừa bãi các package này dễ dẫn đến việc dung lượng tăng vọt
 
 [Visual Studio Code có công cụ để kiểm tra dung lượng import](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) hoặc chạy công cụ [Webpack Bundle Analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer)
-
 
 **Bài viết sử dụng tham khảo**
 
 [https://www.telerik.com/blogs/10-good-practices-building-maintaining-large-vuejs-projects](https://www.telerik.com/blogs/10-good-practices-building-maintaining-large-vuejs-projects)
-
-

@@ -1,0 +1,78 @@
+@import '../../styles/variables';
+
+/* MYSTYLE: Post meta 
+---------------------------------------*/
+.post-meta {
+  color: $muted;
+  margin-bottom: 7px;
+  font-family: $monospace;
+	.post-date {
+    display: inline-block;        
+    padding-right: 10px;
+		.dateline {
+
+		}
+	}
+	.post-category {
+		display: inline-block;
+    color: $muted;
+    a {   
+      text-transform: uppercase;    
+      background: $bg-gray;
+      border-radius: 3px 0 0 3px;
+      color: $muted;
+      display: inline-block;
+      height: 20px;
+      font-size: 12px;
+      line-height: 20px;
+      padding: 0 20px 0 23px;
+      position: relative;
+      margin: 0 10px 0 0;
+      text-decoration: none;
+      -webkit-transition: color 0.2s;
+      &.active {
+        color: #000;
+        &:before {
+          background: $primary-color;
+        }
+      }
+      &:before{
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+        content: '';
+        height: 6px;
+        left: 10px;
+        position: absolute;
+        width: 6px;
+        top: 7px;
+      }
+      &:after {
+        background: #fff;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid $bg-gray;
+        border-top: 10px solid transparent;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      &:hover{
+        background: #e5e5e5;
+        color: #000;
+        &:after {
+          border-left-color: #e5e5e5; 
+        }
+      }
+    }
+	}
+}
+@media (max-width: $breakpoint-xs){
+  .post-meta {
+    font-size: 11px;
+    .post-date {
+      margin-bottom: 5px;
+    }
+  }
+}
+/* MYSTYLE: Post meta ---------------------------------------*/
