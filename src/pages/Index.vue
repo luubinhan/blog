@@ -50,7 +50,7 @@ export default {
     Pager,
   },
   metaInfo: {
-    title: "Hello, world!",
+    title: "Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover",
   },
 };
 </script>
