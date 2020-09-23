@@ -4,19 +4,22 @@
       <div class="single-post-container">
         <article>
           <header>
-               
-          <div class="post-title">
-            <h1 class="post-title__text single-post-title">{{ $page.post.title }}</h1>
-  
-            <PostMeta :post="$page.post" />
-          </div>
-           </header>
+            <div class="post-title">
+              <h1 class="post-title__text single-post-title">{{ $page.post.title }}</h1>
+
+              <PostMeta :post="$page.post" />
+            </div>
+          </header>
 
           <div class="post content-box">
             <div class="post__header">
-              <g-image alt="Cover image" v-if="$page.post.cover_image" :src="$page.post.cover_image" />
+              <g-image
+                alt="Cover image"
+                v-if="$page.post.cover_image"
+                :src="$page.post.cover_image"
+              />
             </div>
-            <div className="blog-post">
+            <div class="blog-post">
               <div class="post-content" v-html="$page.post.content" />
             </div>
             <div class="post__footer">
@@ -38,10 +41,15 @@
               </ShareNetwork>
             </div>
           </div>
-          
 
           <div class="post-comments">
-            <!-- Add comment widgets here -->
+            <div
+              class="fb-comments"
+              :data-href="$page.post.path"
+              data-numposts="10"
+              data-width="100%"
+            ></div>
+            <Disqus shortname="luckyluu-blog" />
           </div>
 
           <Author class="post-author" />
@@ -52,29 +60,61 @@
 </template>
 
 <script>
-import { ShareNetwork } from 'vue-social-sharing';
+import { Disqus } from "vue-disqus";
+import { ShareNetwork } from "vue-social-sharing";
 import PostMeta from "~/components/PostMeta";
 import PostTags from "~/components/PostTags";
 import Author from "~/components/Author.vue";
 
 export default {
-  data () {
+  data() {
     return {
       networks: [
-        { network: 'email', name: 'Email', icon: 'mst-icon icon-mail', color: '#333333' },
-        { network: 'facebook', name: 'Facebook', icon: 'mst-icon icon-facebook', color: '#1877f2' },
-        { network: 'linkedin', name: 'LinkedIn', icon: 'mst-icon icon-linkedin', color: '#007bb5' },
-        { network: 'pocket', name: 'Pocket', icon: 'mst-icon icon-get-pocket', color: '#ef4056' },
-        { network: 'skype', name: 'Skype', icon: 'mst-icon icon-skype', color: '#00aff0' },
-        { network: 'twitter', name: 'Twitter', icon: 'mst-icon icon-twitter', color: '#1da1f2' },
-      ]
-    }
+        {
+          network: "email",
+          name: "Email",
+          icon: "mst-icon icon-mail",
+          color: "#333333",
+        },
+        {
+          network: "facebook",
+          name: "Facebook",
+          icon: "mst-icon icon-facebook",
+          color: "#1877f2",
+        },
+        {
+          network: "linkedin",
+          name: "LinkedIn",
+          icon: "mst-icon icon-linkedin",
+          color: "#007bb5",
+        },
+        {
+          network: "pocket",
+          name: "Pocket",
+          icon: "mst-icon icon-get-pocket",
+          color: "#ef4056",
+        },
+        {
+          network: "skype",
+          name: "Skype",
+          icon: "mst-icon icon-skype",
+          color: "#00aff0",
+        },
+        {
+          network: "twitter",
+          name: "Twitter",
+          icon: "mst-icon icon-twitter",
+          color: "#1da1f2",
+        },
+      ],
+    };
   },
   components: {
     Author,
     PostMeta,
     PostTags,
-    ShareNetwork
+    ShareNetwork,
+    Disqus,
   },
   metaInfo() {
     return {
@@ -247,7 +287,13 @@ query Post ($id: ID!) {
 
         z-index: -1;
 
-        background: repeating-linear-gradient(-55deg, #fff, #fff 1px, rgba(0, 0, 0, 0.2) 2px, rgba(0, 0, 0, 0.2) 3px);
+        background: repeating-linear-gradient(
+          -55deg,
+          #fff,
+          #fff 1px,
+          rgba(0, 0, 0, 0.2) 2px,
+          rgba(0, 0, 0, 0.2) 3px
+        );
         background-size: 100% 100%;
       }
     }

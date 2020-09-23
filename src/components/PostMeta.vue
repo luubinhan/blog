@@ -1,6 +1,11 @@
 <template>
   <div class="post-meta">
-    Đăng ngày {{ post.date }}.
+    Đăng ngày
+    <time
+      :dateTime="post.date"
+      itemprop="dateModified"
+      :content="post.date"
+    >{{ post.date }}</time>.
     <template v-if="post.timeToRead">
       Mất khoảng
       <strong>{{ post.timeToRead }} phút</strong> để đọc.

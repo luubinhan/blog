@@ -6,7 +6,7 @@
         <slot />
       </main>
     </div>
-    <div className="aside">
+    <div class="aside">
       <!-- search -->
     </div>
   </div>
@@ -30,8 +30,4 @@ export default {
 </script>
 
 <style lang="scss">
-.main {
-  margin: 0 auto;
-  padding: 1.5vw 15px 0;
-}
 </style>

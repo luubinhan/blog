@@ -27,19 +27,12 @@ export default class PostTemplate extends React.Component {
         <div className="inner">
           <SEO postPath={slug} postNode={postNode} postSEO />
           <div className="single-post">
-            <div className="single-post-container">
-
-              <div className="post-meta">
-                <SocialLinks postPath={slug} postNode={postNode} />
-              </div>
-            </div>
-
             <div id="post-comments" className="fb-comments">
               <FacebookProvider appId={config.siteFBAppID}>
                 <Comments href={`${config.siteUrl}/${slug}`} width="100%" />
               </FacebookProvider>
             </div>
-            <Disqus postNode={postNode} />
+
             <div className="section section-below-post">
               <div className="inner">
                 <div id="disqus_thread" />
