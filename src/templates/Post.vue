@@ -112,7 +112,7 @@ query Post ($id: ID!) {
 <style lang="scss">
 .single-post {
   &__share {
-    padding-top: 10px;
+    padding-top: 30px;
     a {
       cursor: pointer;
       margin-right: 10px;
