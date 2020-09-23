@@ -69,6 +69,9 @@ $innerGlutter: 40px;
       color: $primary-color;
     }
   }
+  .the-post-thumbnail {
+    margin-bottom: 20px;
+  }
   .the-post-thumbnail + .the-post-content {
     overflow: hidden;
   }

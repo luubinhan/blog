@@ -11,7 +11,7 @@
 
     <h1 v-if="showTitle" class="author__site-title">{{ $static.metadata.siteName }}</h1>
 
-    <p class="author__intro">Hiện tại site đang nâng cấp, các bạn xài tạm</p>
+    <p class="author__intro">Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover</p>
   </div>
 </template>
 

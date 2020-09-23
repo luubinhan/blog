@@ -11,6 +11,7 @@ function addStyleResource (rule) {
     .options({
       patterns: [
         path.resolve(__dirname, './src/assets/style/_variables.scss'),
+        path.resolve(__dirname, './src/assets/style/_function.scss'),
       ],
     })
 }
