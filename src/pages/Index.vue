@@ -1,10 +1,13 @@
 <template>
   <Layout :show-logo="false">
-    <!-- Author intro -->
-    <Author :show-title="true" />
+    
+    <h1 style="display: none">
+      Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover - 
+      Nơi mình chia sẽ kiến thức frontend, css, html, javascript, các framework như React, Vuejs
+    </h1>
 
     <!-- List posts -->
-    <div class="posts">
+    <div class="posts-list">
       <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
       <Pager :info="$page.posts.pageInfo" />
     </div>
@@ -51,6 +54,7 @@ export default {
   },
   metaInfo: {
     title: "Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover",
+    description: "Nơi mình chia sẽ kiến thức frontend, css, html, javascript, các framework như React, Vuejs"
   },
 };
 </script>

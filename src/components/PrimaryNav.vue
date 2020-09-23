@@ -49,7 +49,10 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Youtube />Youtube
+              <span class="link-youtube__icon">
+                <Youtube />
+              </span>
+              Youtube
             </a>
           </div>
           <div class="credit">Copyright © 2019. luckyluu</div>
@@ -124,8 +127,6 @@ export default {
 .primary-menu {
   list-style: none;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  &__label {
-  }
   &__icon {
     flex-basis: 33px;
     min-width: 33px;
@@ -396,9 +397,15 @@ export default {
       color: #f2f2f2;
     }
     .link-youtube {
+      display: inline-flex;
       color: $google;
       font-weight: bold;
       font-family: $san-serif;
+      &__icon {
+        flex-basis: 25px;
+        min-width: 25px;
+        margin-right: 10px;
+      }
     }
   }
   .copyright {
