@@ -22,7 +22,23 @@
             <div class="post__footer">
               <PostTags :post="$page.post" />
             </div>
+            <div class="single-post__share">
+              <ShareNetwork
+                v-for="network in networks"
+                :network="network.network"
+                :key="network.network"
+                :style="{backgroundColor: network.color}"
+                :url="$page.post.path"
+                :title="$page.post.title"
+                :description="$page.post.desc"
+                hashtags="frontend,developer,javascript,wordpress,react,hochiminh,web-developer"
+              >
+                <i :class="network.icon"></i>
+                <span>{{ network.name }}</span>
+              </ShareNetwork>
+            </div>
           </div>
+          
 
           <div class="post-comments">
             <!-- Add comment widgets here -->
@@ -36,15 +52,29 @@
 </template>
 
 <script>
+import { ShareNetwork } from 'vue-social-sharing';
 import PostMeta from "~/components/PostMeta";
 import PostTags from "~/components/PostTags";
 import Author from "~/components/Author.vue";
 
 export default {
+  data () {
+    return {
+      networks: [
+        { network: 'email', name: 'Email', icon: 'mst-icon icon-mail', color: '#333333' },
+        { network: 'facebook', name: 'Facebook', icon: 'mst-icon icon-facebook', color: '#1877f2' },
+        { network: 'linkedin', name: 'LinkedIn', icon: 'mst-icon icon-linkedin', color: '#007bb5' },
+        { network: 'pocket', name: 'Pocket', icon: 'mst-icon icon-get-pocket', color: '#ef4056' },
+        { network: 'skype', name: 'Skype', icon: 'mst-icon icon-skype', color: '#00aff0' },
+        { network: 'twitter', name: 'Twitter', icon: 'mst-icon icon-twitter', color: '#1da1f2' },
+      ]
+    }
+  },
   components: {
     Author,
     PostMeta,
     PostTags,
+    ShareNetwork
   },
   metaInfo() {
     return {
@@ -80,6 +110,21 @@ query Post ($id: ID!) {
 </page-query>
 
 <style lang="scss">
+.single-post {
+  &__share {
+    padding-top: 10px;
+    a {
+      cursor: pointer;
+      margin-right: 10px;
+      color: white;
+      padding: 2px 10px 2px 4px;
+      border-radius: 15px;
+      span {
+        padding-left: 4px;
+      }
+    }
+  }
+}
 .post-content {
   > ul:first-child {
     background: $bg-gray;
@@ -144,6 +189,9 @@ query Post ($id: ID!) {
   }
   ul {
     list-style: disc;
+  }
+  ol {
+    list-style: decimal;
   }
 }
 .single-post-container {
@@ -294,6 +342,9 @@ query Post ($id: ID!) {
     font-size: 21px;
     line-height: 1.58;
     letter-spacing: -0.003em;
+    em {
+      font-style: italic;
+    }
     .note {
       padding: 20px;
       background: #fff9c4;

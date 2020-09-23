@@ -24,56 +24,11 @@ export default class PostTemplate extends React.Component {
     }
     return (
       <div className="master">
-        <Helmet>
-          <title>{`${post.title} | ${config.siteTitle} | ${config.siteDescription}`}</title>
-          <meta
-            name="description"
-            content={`${post.desc} || ${post.title} || ${config.siteDescription}`}
-          />
-          <meta
-            name="keywords"
-            content="frontend,developer,javascript,wordpress,react,hochiminh,web-developer"
-          />
-        </Helmet>
         <div className="inner">
           <SEO postPath={slug} postNode={postNode} postSEO />
           <div className="single-post">
             <div className="single-post-container">
-              <article>
-                <header>
-                  <h1 className="single-post-title">{post.title}</h1>
-                </header>
-                <div className="post-excert">{post.desc}</div>
-                {post.cover && (
-                  <figure
-                    className="the-post-thumbnail"
-                    aria-label="media"
-                    role="group"
-                    itemProp="associatedMedia"
-                    itemID={post.cover}
-                    itemType="http://schema.org/ImageObject"
-                  >
-                    <img
-                      src={post.cover}
-                      alt={post.title}
-                      itemProp="thumbnailUrl"
-                    />
-                  </figure>
-                )}
-                <div className="blog-post">
-                  <div
-                    className="post-content"
-                    dangerouslySetInnerHTML={{ __html: postNode.html }}
-                  />
-                </div>
-              </article>
-              <PostTags list={post.tags || []} />
 
-              <Bio
-                name={config.siteTitle}
-                desc={config.siteTitleAlt}
-                href="about"
-              />
               <div className="post-meta">
                 <SocialLinks postPath={slug} postNode={postNode} />
               </div>

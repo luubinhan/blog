@@ -1,14 +1,15 @@
 <template>
   <div class="author">
-    <g-image
-      alt="Author image"
-      class="author__image"
-      src="~/assets/images/author.jpg"
-      width="180"
-      height="180"
-      blur="5"
-    />
-
+    <a href="https://luubinhan.github.io/" target="_blank">
+      <g-image
+        alt="Author image"
+        class="author__image"
+        src="~/assets/images/author.jpg"
+        width="180"
+        height="180"
+        blur="5"
+      />
+    </a>
     <h1 v-if="showTitle" class="author__site-title">{{ $static.metadata.siteName }}</h1>
 
     <p class="author__intro">Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover</p>
