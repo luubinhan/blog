@@ -14,16 +14,14 @@
     "@gridsome/remark-prismjs": "^0.2.0",
     "@gridsome/source-filesystem": "^0.6.0",
     "@gridsome/transformer-remark": "^0.3.0",
-    "@microflash/gridsome-plugin-feed": "^1.1.7",
     "buefy": "^0.9.3",
     "gh-pages": "^3.1.0",
     "gridsome": "^0.7.0",
     "gridsome-plugin-flexsearch": "^1.0.4",
-    "gridsome-plugin-pwa": "^0.0.18",
     "gridsome-plugin-recommender": "^1.0.7",
+    "gridsome-plugin-rss": "^1.2.0",
     "lodash": "^4.17.20",
     "vue-disqus": "^4.0.1",
-    "vue-facebook": "^1.1.0",
     "vue-social-sharing": "^3.0.0-beta.11"
   },
   "devDependencies": {

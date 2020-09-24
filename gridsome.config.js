@@ -87,60 +87,41 @@ module.exports = {
       }
     },
     {
-      use: '@microflash/gridsome-plugin-feed',
+      use: "gridsome-plugin-recommender",
       options: {
-
-        // (required) Provide GraphQL collection types
-        contentTypes: ['BlogPost'],
-
-        // (optional) Properties used by feed API
-        // See https://github.com/jpmonette/feed#example for all options
-        feedOptions: {
-          title: 'vuilaptrinh.com một trang web của luckyluu',
-          description: 'Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui'
-        },
-
-        // Available options with their default values
-
-        // (optional) Options for feed formats
-        // RSS is enabled by default
-        rss: {
-          enabled: true,
-          output: '/feed.xml'
-        },
-        atom: {
-          enabled: false,
-          output: '/feed.atom'
-        },
-        json: {
-          enabled: false,
-          output: '/feed.json'
-        },
-
-        // (optional) number of items to include in a feed
-        maxItems: 25,
-
-        // (optional) an array of properties to be parsed as HTML
-        // Converts relative URLs to absolute URLs
-        // You can disable this by omitting the option
-        htmlFields: ['content'],
-
-        // (optional) appends a trailing slash to the URLs
-        enforceTrailingSlashes: false,
-
-        // (optional) a function to filter out the nodes
-        // e.g., filter out all outdated posts, filterNodes: (node) => !!node.outdated
-        filterNodes: (node) => true,
-
-        // (optional) sets the properties on each feed item
-        // See https://github.com/jpmonette/feed#example for all options
-        nodeToFeedItem: (node) => ({
-          title: node.title,
-          date: node.date,
-          content: node.content
-        })
-      },      
+        enabled: true,
+        typeName: 'Post',
+        field: 'title',
+        relatedFieldName: 'related',
+        minScore: 0.1,
+        maxScore: 1,
+        minRelations:3,
+        maxRelations: 10,
+        fillWithRandom: true,
+        debug: true
+      }
     },
+    /* {
+      use: 'gridsome-plugin-rss',
+      options: {
+        contentTypeName: 'Post',
+        feedOptions: {
+          title: 'VuiLapTrinh.com',
+          feed_url: 'https://superblog.com/rss.xml',
+          site_url: 'https://superblog.com'
+        },
+        feedItemOptions: node => ({
+          title: node.title,
+          description: node.description,
+          url: 'https://superblog.com/post/' + node.slug,
+          author: node.fields.author
+        }),
+        output: {
+          dir: './static',
+          name: 'rss.xml'
+        }
+      }
+    }, */
     {
       use: 'gridsome-plugin-flexsearch',
       options: {
@@ -154,65 +135,7 @@ module.exports = {
         ]
       }
     },
-    {
-      use: 'gridsome-plugin-pwa',
-      options: {
-          // Service Worker Options
-          disableServiceWorker: false,
-          serviceWorkerPath: 'service-worker.js',
-          cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg,gif',
-          disableTemplatedUrls: false,       // Optional
-
-          // Manifest Options (https://developer.mozilla.org/en-US/docs/Web/Manifest)
-          manifestPath: 'manifest.json',
-          title: 'Gridsome',
-          startUrl: '/',
-          display: 'standalone',
-          statusBarStyle: 'default',
-          themeColor: '#666600',
-          backgroundColor: '#ffffff',
-          icon: '',
-          shortName: 'Gridsome',              // Optional
-          description: 'Gridsome is awesome!',// Optional
-          categories: ['education'],          // Optional
-          lang: 'en-GB',                      // Optional
-          dir: 'auto',                        // Optional
-          maskableIcon: true,                 // Optional
-          screenshots: [                      // Optional
-              {
-                  src: 'src/screenshot1.png',
-                  sizes: '1280x720',
-                  type: 'image/png',
-              },
-          ],
-          // gcmSenderId: undefined,             // Optional
-
-          // Standard Meta Tags
-          svgFavicon: 'favicon.svg',          // Optional. Requires favicon.ico fallback
-
-          // Microsoft Windows Meta Tags
-          msTileColor: '#666600',             // Optional
-
-          // Apple MacOS Meta Tags
-          appleMaskIcon: 'favicon.svg',       // Optional
-          appleMaskIconColor: '#666600',      // Optional
-      }
-    },
-    {
-      use: "gridsome-plugin-recommender",
-      options: {
-        enabled: true,
-        typeName: 'Post',
-        field: 'title',
-        relatedFieldName: 'related',
-        minScore: 0.01,
-        maxScore: 1,
-        minRelations:3,
-        maxRelations: 10,
-        fillWithRandom:false,
-        debug: false
-      }
-    }
+    
   ],
 
   transformers: {
