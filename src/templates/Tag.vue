@@ -2,7 +2,7 @@
   <Layout>
     <h1 class="tag-title text-center space-bottom"># {{ $page.tag.title }}</h1>
 
-    <div class="posts">
+    <div class="posts-list">
       <PostCard v-for="edge in $page.tag.belongsTo.edges" :key="edge.node.id" :post="edge.node" />
     </div>
   </Layout>
@@ -16,12 +16,14 @@ query Tag ($id: ID!) {
       edges {
         node {
           ...on Post {
+            id
             title
             path
-            date (format: "D. MMMM YYYY")
+            date (format: "YYYY-MM-DD")
             timeToRead
             desc
             content
+            cover_image
           }
         }
       }
@@ -40,7 +42,8 @@ export default {
     PostCard,
   },
   metaInfo: {
-    title: "Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover",
+    title:
+      "Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover",
   },
 };
 </script>
