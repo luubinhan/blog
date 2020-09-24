@@ -45,10 +45,11 @@
           <div class="post-comments">
             <div
               class="fb-comments"
-              :data-href="$page.post.path"
+              :data-href="`https://vuilaptrinh.com${$page.post.path}`"
               data-numposts="10"
               data-width="100%"
             ></div>
+            <fb-comment :url="`https://vuilaptrinh.com${$page.post.path}`" />
             <Disqus shortname="luckyluu-blog" />
           </div>
 
@@ -163,6 +164,9 @@ query Post ($id: ID!) {
         padding-left: 4px;
       }
     }
+  }
+  .post-comments {
+    padding-top: 20px;
   }
 }
 .post-content {
