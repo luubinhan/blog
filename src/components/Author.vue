@@ -12,7 +12,9 @@
     </a>
     <h1 v-if="showTitle" class="author__site-title">{{ $static.metadata.siteName }}</h1>
 
-    <p class="author__intro">Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover</p>
+    <p
+      class="author__intro"
+    >Nếu đọc bài viết thấy hay, bạn xài bớt cái bọc ni lông, ra chợ mua dùm cô bác cái bánh cam, bánh ít là đã cảm ơn mình</p>
   </div>
 </template>
 

@@ -117,20 +117,11 @@ class Search extends Component {
       <div className="search-wrapper">
         <PostTags list={LIST_TAGS} />
         <div className={`search__container ${this.props.classNames}`}>
-          <input
-            className="search__input"
-            type="text"
-            onChange={this.search}
-            placeholder={"Tìm bài viết"}
-          />
           {this.state.query !== "" && (
             <button className="search_clear" onClick={this.handleClear}>
               X
             </button>
           )}
-          <div className="search__list">
-            <ResultList />
-          </div>
         </div>
       </div>
     );
