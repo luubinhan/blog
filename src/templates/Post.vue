@@ -41,7 +41,8 @@
               </ShareNetwork>
             </div>
           </div>
-
+        </article>
+        <div class="section-below-post">
           <div class="post-comments">
             <div
               class="fb-comments"
@@ -53,7 +54,7 @@
           </div>
 
           <Author class="post-author" />
-        </article>
+        </div>
       </div>
     </div>
     <template #aside>
