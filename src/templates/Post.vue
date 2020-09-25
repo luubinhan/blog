@@ -207,6 +207,16 @@ query Post ($id: ID!) {
 </page-query>
 
 <style lang="scss">
+.section-below-post {
+  background: $bg-gray;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  padding-left: 75px;
+  padding-right: 75px;
+  margin-left: -75px;
+  margin-right: -75px;
+  margin-top: 30px;
+}
 .related-posts {
   padding: 40px 35px 30px;
   background-color: #fafffe;
@@ -317,7 +327,6 @@ query Post ($id: ID!) {
   }
 }
 .single-post-container {
-  padding-bottom: 80px;
   padding-top: 60px;
   position: relative;
   .post-title {

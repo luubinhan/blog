@@ -92,7 +92,6 @@ export default {
     }
   }
   &__aside {
-    min-height: 100vh;
     z-index: 1;
     flex-grow: 1;
     @media (max-width: 980px) {
@@ -102,7 +101,9 @@ export default {
       display: flex;
       flex-direction: column;
       padding: 30px;
-      height: 100%;
+      height: 100vh;
+      overflow-y: auto;
+      @include scroll;
     }
     &-footer {
       margin-top: auto;

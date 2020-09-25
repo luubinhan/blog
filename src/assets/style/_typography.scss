@@ -2,8 +2,10 @@
 @font-face {
   font-family: "avo";
   src: url("fonts/Vf-Avo_n.eot");
-  src: url("fonts/Vf-Avo_n.eot?#iefix") format("embedded-opentype"), url("fonts/Vf-Avo_n.woff") format("woff"),
-    url("fonts/Vf-Avo_n.ttf") format("truetype"), url("fonts/Vf-Avo_n.svg#avo") format("svg");
+  src: url("fonts/Vf-Avo_n.eot?#iefix") format("embedded-opentype"),
+    url("fonts/Vf-Avo_n.woff") format("woff"),
+    url("fonts/Vf-Avo_n.ttf") format("truetype"),
+    url("fonts/Vf-Avo_n.svg#avo") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -11,13 +13,14 @@
 @font-face {
   font-family: "avo_bold";
   src: url("fonts/Vf-Avo_b.eot");
-  src: url("fonts/Vf-Avo_b.eot?#iefix") format("embedded-opentype"), url("fonts/Vf-Avo_b.woff") format("woff"),
-    url("fonts/Vf-Avo_b.ttf") format("truetype"), url("fonts/Vf-Avo_b.svg#avo_bold") format("svg");
+  src: url("fonts/Vf-Avo_b.eot?#iefix") format("embedded-opentype"),
+    url("fonts/Vf-Avo_b.woff") format("woff"),
+    url("fonts/Vf-Avo_b.ttf") format("truetype"),
+    url("fonts/Vf-Avo_b.svg#avo_bold") format("svg");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
-
 
 @media (min-width: 768px) {
   .navbar-toggle {
@@ -744,85 +747,7 @@ table.normal tr td {
 
 /* READ NEXT
 ---------------------------------------*/
-.section-below-post {
-  background: $bg-gray;
-  padding-top: 30px;
-  padding-bottom: 40px;
-  padding-left: 75px;
-  padding-right: 75px;
-  margin-left: -75px;
-  margin-right: -75px;
-}
 
-.read-next {
-  -moz-box-align: stretch;
-  align-items: stretch;
-  display: flex;
-}
-.read-next-story {
-  -moz-box-flex: 1;
-  background: #fff;
-  display: flex;
-  flex-grow: 1;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-  margin: 8px;
-  width: 50%;
-  .post {
-    padding: 3rem 20px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 7;
-  }
-  h2 {
-    margin-top: 1rem;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 1.1;
-    --x-height-multiplier: 0.363 !important;
-    --baseline-multiplier: 0.157 !important;
-    letter-spacing: -0.02em !important;
-    font-weight: 700 !important;
-    font-style: normal !important;
-  }
-}
-.read-this-next,
-.you-might-enjoy {
-  display: inline-block;
-  margin: 0 auto;
-  padding: 10px 15px;
-  border: 1px solid $border-color;
-  text-transform: uppercase;
-  margin-bottom: 0px;
-  line-height: 1;
-  font-size: $font-size-small;
-}
-@media (max-width: $breakpoint-xs) {
-  $san-serif: "Lora", arial, sans-serif;
-  .read-next {
-    flex-direction: column;
-    .link {
-      margin: 0 0 10px;
-    }
-  }
-  .read-next-story {
-    width: 100%;
-    h2 {
-      font-size: 18px;
-      font-family: $serif;
-    }
-    .post {
-      padding-top: 20px;
-      padding-bottom: 20px;
-    }
-  }
-}
-/* READ NEXT ---------------------------------------*/
 .nav {
   margin: 0;
 }
@@ -919,8 +844,6 @@ table.normal tr td {
 }
 
 $backgroundSidebar: #252525;
-
-
 
 .fourzerofour {
   margin-left: 320px;

@@ -26,12 +26,6 @@ query {
 }
 </static-query>
 
-<script>
-export default {
-  props: ["showTitle"],
-};
-</script>
-
 <style lang="scss">
 .author {
   margin: 0 auto;
@@ -52,6 +46,7 @@ export default {
 
   &__site-title {
     font-size: 1.5em;
+    margin-bottom: 10px;
   }
 }
 </style>
