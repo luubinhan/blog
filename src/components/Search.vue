@@ -1,5 +1,35 @@
-@import "../../styles/_variables";
-@import "../../styles/_function";
+<template>
+  <div class="search-wrapper">
+    <div class="search__container">
+    <input
+      id="search"
+      v-model="searchTerm"
+      class="search__input"
+      type="text"
+      placeholder="Tìm bài viết">
+      </div>
+    <div class="search__list">
+    {{ searchResults }}
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data: () => ({
+    searchTerm: ''
+  }),
+  computed: {
+    searchResults () {
+      const searchTerm = this.searchTerm
+      if (searchTerm.length < 3) return []
+      return this.$search.search({ query: searchTerm, limit: 5 })
+    }
+  }
+}
+</script>
+
+<style lang="scss">
 
 .search-wrapper {
   position: absolute;
@@ -57,3 +87,5 @@
     color: $primary-color;
   }
 }
+
+</style>
