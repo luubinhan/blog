@@ -138,8 +138,42 @@ export default {
       title: this.$page.post.title,
       meta: [
         {
-          name: "desc",
+          name: "description",
           content: this.$page.post.desc,
+        },
+        {
+          property: "og:type",
+          content: "article",
+        },
+        {
+          property: "og:title",
+          content: this.$page.post.title,
+        },
+        {
+          property: "og:description",
+          cotent: this.$page.post.desc,
+        },
+        {
+          property: "og:image",
+          content: this.$page.post.cover_image || "",
+        },
+        {
+          property: "image",
+          content: this.$page.post.cover_image || "",
+        },
+        {
+          name: "twitter:card",
+          content: this.$page.post.cover_image
+            ? "summary_large_image"
+            : "summary",
+        },
+        {
+          name: "twitter:creator",
+          content: "@luubinhan",
+        },
+        {
+          name: "fb:app_id",
+          content: "445556375516928",
         },
       ],
     };
