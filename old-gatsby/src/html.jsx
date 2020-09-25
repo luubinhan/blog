@@ -1,32 +1,6 @@
-/* eslint import/no-unresolved:"off" */
-/* eslint import/extensions:"off" */
-/* eslint global-require:"off" */
-import React from "react";
-import favi32 from "./images/favi32.png";
-import favi128 from "./images/favi128.png";
-
-let inlinedStyles = "";
-if (process.env.NODE_ENV === "production") {
-  try {
-    /* eslint import/no-webpack-loader-syntax: off */
-    inlinedStyles = require("!raw-loader!../public/styles.css");
-  } catch (e) {
-    /* eslint no-console: "off" */
-    console.warn(e);
-  }
-}
 
 export default class HTML extends React.Component {
   render() {
-    let css;
-    if (process.env.NODE_ENV === "production") {
-      css = (
-        <style
-          id="gatsby-inlined-css"
-          dangerouslySetInnerHTML={{ __html: inlinedStyles }}
-        />
-      );
-    }
     return (
       <html lang="vi">
         <head>
@@ -38,7 +12,6 @@ export default class HTML extends React.Component {
             content="width=device-width, initial-scale=1.0"
           />
           <link rel="manifest" href="https://luubinhan.github.io/blog/manifest.json"/>
-          {this.props.headComponents}
           <link
             rel="author"
             type="text/plain"
@@ -58,16 +31,7 @@ export default class HTML extends React.Component {
           <meta name="apple-mobile-web-app-title" content="vuilaptrinh"/>
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <script src="http://vuilaptrinh.com/facebookcomment.js"></script>
-       
-          {css}
         </head>
-        <body>
-          <div
-            id="___gatsby"
-            dangerouslySetInnerHTML={{ __html: this.props.body }}
-          />
-          {this.props.postBodyComponents}
-        </body>
       </html>
     );
   }
