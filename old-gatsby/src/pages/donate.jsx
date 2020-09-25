@@ -1,27 +1,10 @@
 import React from "react";
-import Helmet from "react-helmet";
-import config from "../../data/SiteConfig";
-import { bgSidebar } from "../../data";
 import imgQr from '../images/qr.png';
 
 class AboutPage extends React.Component {
   render() {
     return (
       <div className="master">
-        <Helmet
-          title={config.siteTitle}
-          meta={[
-            {
-              name: "description",
-              content: `${config.siteTitle} ${config.siteTitleAlt}`
-            },
-            {
-              name: "keywords",
-              content:
-                "frontend,developer,wordpress,react,hochiminh,web-developer"
-            }
-          ]}
-        />
         <main className="inner">
           <div className="page-about">
             <div className="about-body">
@@ -44,15 +27,6 @@ class AboutPage extends React.Component {
             </div>
           </div>
         </main>
-        <div
-          className="aside"
-          style={{ backgroundImage: `url(${bgSidebar[7]})` }}
-        >
-          <div className="company-info">
-            <div className="company-name">{config.siteTitle}</div>
-            <div className="company-tagline">{config.siteTitleAlt}</div>
-          </div>
-        </div>
       </div>
     );
   }

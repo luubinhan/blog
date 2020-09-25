@@ -52,25 +52,26 @@
             <Disqus shortname="luckyluu-blog" />
           </div>
 
-          <div class="related-posts">
-            <h4>Bài liên quan</h4>
-            <ul class="related-posts__container">
-              <li class="related-posts__media" v-for="(r, index) in $page.post.related" :key="r.id">
-                <div class="related-posts__index">{{ index + 1 }}.</div>
-                <div class="related-posts__content">
-                  <h4 class="related-posts__title">
-                    <g-link :to="r.path">{{ r.title }}</g-link>
-                  </h4>
-                  <p>{{ r.desc }}</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-
           <Author class="post-author" />
         </article>
       </div>
     </div>
+    <template #aside>
+      <div class="related-posts">
+        <h4>Bài liên quan</h4>
+        <ul class="related-posts__container">
+          <li class="related-posts__media" v-for="(r, index) in $page.post.related" :key="r.id">
+            <div class="related-posts__index">{{ index + 1 }}.</div>
+            <div class="related-posts__content">
+              <h4 class="related-posts__title">
+                <g-link :to="r.path">{{ r.title }}</g-link>
+              </h4>
+              <p>{{ r.desc }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </template>
   </Layout>
 </template>
 
@@ -172,10 +173,8 @@ query Post ($id: ID!) {
 
 <style lang="scss">
 .related-posts {
-  padding: 40px 75px 30px;
+  padding: 40px 35px 30px;
   background-color: #fafffe;
-  margin-left: -75px;
-  margin-right: -75px;
   &__container {
     margin-top: 20px;
   }
@@ -200,7 +199,7 @@ query Post ($id: ID!) {
     padding-top: 30px;
     a {
       cursor: pointer;
-      margin-right: 10px;
+      margin-right: 6px;
       color: white;
       padding: 2px 10px 2px 4px;
       border-radius: 15px;

@@ -1,25 +1,25 @@
 <template>
   <div class="search-wrapper">
     <div class="search__container">
-    <input
-      id="search"
-      v-model="searchTerm"
-      class="search__input"
-      type="text"
-      placeholder="Tìm bài viết">
-      </div>
+      <input
+        id="search"
+        v-model="searchTerm"
+        class="search__input"
+        type="text"
+        placeholder="Tìm bài viết..."
+      />
+    </div>
     <div class="search__list">
       <div v-if="searchResults.length === 0 && !!searchTerm">
         <div class="item-search">
-          Không có kết quả nào cho {{ searchTerm }}
+          Không có kết quả nào cho
+          <strong>{{ searchTerm }}</strong>
         </div>
       </div>
       <div v-if="searchResults.length > 0">
         <div class="item-search" v-for="(result, index) in searchResults" :key="index">
           <h4>
-            <g-link :to="result.path" class="link">
-              {{ result.title }}
-            </g-link>
+            <g-link :to="result.path" class="link">{{ result.title }}</g-link>
           </h4>
         </div>
       </div>
@@ -30,25 +30,20 @@
 <script>
 export default {
   data: () => ({
-    searchTerm: ''
+    searchTerm: "",
   }),
   computed: {
-    searchResults () {
-      const searchTerm = this.searchTerm
-      if (searchTerm.length < 3) return []
-      return this.$search.search({ query: searchTerm, limit: 5 })
-    }
-  }
-}
+    searchResults() {
+      const searchTerm = this.searchTerm;
+      if (searchTerm.length < 3) return [];
+      return this.$search.search({ query: searchTerm, limit: 5 });
+    },
+  },
+};
 </script>
 
 <style lang="scss">
-
 .search-wrapper {
-  position: absolute;
-  top: 15%;
-  right: 35px;
-  width: calc(100% - 1300px);
   z-index: 1;
   margin: 0;
 }
@@ -101,5 +96,4 @@ export default {
     color: $primary-color;
   }
 }
-
 </style>

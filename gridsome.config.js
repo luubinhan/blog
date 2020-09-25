@@ -95,8 +95,8 @@ module.exports = {
         relatedFieldName: 'related',
         minScore: 0.1,
         maxScore: 1,
-        minRelations:3,
-        maxRelations: 10,
+        minRelations: 3,
+        maxRelations: 4,
         fillWithRandom: true,
         debug: true
       }
