@@ -9,7 +9,20 @@
       placeholder="Tìm bài viết">
       </div>
     <div class="search__list">
-    {{ searchResults }}
+      <div v-if="searchResults.length === 0 && !!searchTerm">
+        <div class="item-search">
+          Không có kết quả nào cho {{ searchTerm }}
+        </div>
+      </div>
+      <div v-if="searchResults.length > 0">
+        <div class="item-search" v-for="(result, index) in searchResults" :key="index">
+          <h4>
+            <g-link :to="result.path" class="link">
+              {{ result.title }}
+            </g-link>
+          </h4>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -59,11 +72,12 @@ export default {
   box-sizing: border-box;
   z-index: 1;
   max-height: 300px;
+  min-height: 200px;
   overflow: auto;
-  /* @include scroll; */
+  @include scroll;
 }
 .item-search {
-  padding: 0 12px;
+  padding: 10px 12px 0;
   .link {
     &:hover,
     &:focus {
