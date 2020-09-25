@@ -31,7 +31,7 @@
                 :network="network.network"
                 :key="network.network"
                 :style="{backgroundColor: network.color}"
-                :url="$page.post.path"
+                :url="`https://vuilaptrinh.com${$page.post.path}`"
                 :title="$page.post.title"
                 :description="$page.post.desc"
                 hashtags="frontend,developer,javascript,wordpress,react,hochiminh,web-developer"
