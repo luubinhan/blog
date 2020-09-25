@@ -10,7 +10,7 @@
         blur="5"
       />
     </a>
-    <h1 v-if="showTitle" class="author__site-title">{{ $static.metadata.siteName }}</h1>
+    <h2 class="author__site-title">{{ $static.metadata.siteName }}</h2>
 
     <p
       class="author__intro"
