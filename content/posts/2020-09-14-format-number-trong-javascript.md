@@ -101,3 +101,5 @@ console.log(numberFormat.format(2345.67891));
 ```
 
 [Natively Format JavaScript Numbers](https://elijahmanor.com/blog/format-js-numbers)
+
+Happy coding 🎉🙌

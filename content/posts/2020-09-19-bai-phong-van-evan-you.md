@@ -55,3 +55,5 @@ Vấn đề là các dự án thực tế đủ phức tạp lại không phải
 Bài phỏng vấn của [evrone](https://evrone.com/evan-you-interview)
 
 > Users don’t like things being taken away. The takeaway is you need to understand what your users want — it’s not that easy and sometimes you will get that information the hard way, but you need to be willing to listen regardless.
+
+Happy coding 🎉🙌
