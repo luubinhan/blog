@@ -23,7 +23,7 @@ module.exports = {
   siteName: 'VuiLapTrinh.com',
   siteDescription: 'Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui',
 
-  icon: './src/assets/luckyluu.svg',
+  icon: './src/assets/images/luckyluu.svg',
 
   chainWebpack: config => {
     const svgRule = config.module.rule('svg')
