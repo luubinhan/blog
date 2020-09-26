@@ -1,5 +1,8 @@
 <template>
   <div class="search-wrapper">
+    <div class="mb-2">
+      <PostTags :post="post" />
+    </div>
     <div class="search__container">
       <input
         id="search"
@@ -28,9 +31,62 @@
 </template>
 
 <script>
+import PostTags from "~/components/PostTags";
+
+const LIST_TAGS = [
+  {
+    id: "javascript",
+    path: "tag/javascript",
+    title: "Javascript",
+  },
+  {
+    id: "dam-dao",
+    path: "tag/dam-dao",
+    title: "Đàm đạo chém gió chuyện nghề",
+  },
+  {
+    id: "css",
+    path: "tag/css",
+    title: "CSS từ căn bản tới nâng cao",
+  },
+  {
+    id: "thu-thuat",
+    path: "tag/thu-thuat",
+    title: "Thủ thuật",
+  },
+  {
+    id: "hoc-thuat",
+    path: "tag/hoc-thuat",
+    title: "Kiến thức nền tảng",
+  },
+  {
+    id: "react",
+    path: "tag/react",
+    title: "React",
+  },
+  {
+    id: "vuejs",
+    path: "tag/vuejs",
+    title: "Vue JS",
+  },
+  {
+    id: "chrome",
+    path: "tag/chrome",
+    title: "Chrome DevTools",
+  },
+  {
+    id: "javascript",
+    path: "tag/javascript",
+    title: "Javascript",
+  },
+];
+
 export default {
   data: () => ({
     searchTerm: "",
+    post: {
+      tags: LIST_TAGS,
+    },
   }),
   computed: {
     searchResults() {
@@ -38,6 +94,9 @@ export default {
       if (searchTerm.length < 3) return [];
       return this.$search.search({ query: searchTerm, limit: 5 });
     },
+  },
+  components: {
+    PostTags,
   },
 };
 </script>

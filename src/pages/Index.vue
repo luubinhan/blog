@@ -1,8 +1,7 @@
 <template>
   <Layout :show-logo="false">
-    
     <h1 style="display: none">
-      Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover - 
+      Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover -
       Nơi mình chia sẽ kiến thức frontend, css, html, javascript, các framework như React, Vuejs
     </h1>
 
@@ -16,7 +15,7 @@
 
 <page-query>
 query ($page: Int) {
-  posts: allPost(perPage: 10, page: $page) @paginate {
+  posts: allPost(perPage: 10, page: $page, filter: { hide: { ne: true } }) @paginate {
     pageInfo {
       totalPages
       currentPage
@@ -30,6 +29,7 @@ query ($page: Int) {
         desc
         cover_image
         path
+        hide
         tags {
           id
           title
@@ -50,11 +50,13 @@ export default {
   components: {
     Author,
     PostCard,
-    Pager
+    Pager,
   },
   metaInfo: {
-    title: "Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover",
-    description: "Nơi mình chia sẽ kiến thức frontend, css, html, javascript, các framework như React, Vuejs"
+    title:
+      "Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover",
+    description:
+      "Nơi mình chia sẽ kiến thức frontend, css, html, javascript, các framework như React, Vuejs",
   },
 };
 </script>

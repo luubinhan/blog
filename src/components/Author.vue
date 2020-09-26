@@ -14,7 +14,7 @@
 
     <p
       class="author__intro"
-    >Nếu đọc bài viết thấy hay, bạn xài bớt cái bọc ni lông, ra chợ mua dùm cô bác cái bánh cam, bánh ít là đã cảm ơn mình</p>
+    >Nếu đọc bài viết thấy hay, bạn xài bớt cái bọc ni lông, ra đường mua tờ vé số giúp các cô các bác là đã cảm ơn mình</p>
   </div>
 </template>
 
