@@ -11,6 +11,7 @@
         type="text"
         placeholder="Tìm bài viết..."
       />
+      <button v-if="searchTerm" class="search_clear" @click="clearSearch">X</button>
     </div>
     <div class="search__list">
       <div v-if="searchResults.length === 0 && !!searchTerm">
@@ -95,6 +96,11 @@ export default {
       return this.$search.search({ query: searchTerm, limit: 5 });
     },
   },
+  methods: {
+    clearSearch() {
+      this.searchTerm = "";
+    },
+  },
   components: {
     PostTags,
   },
@@ -125,13 +131,22 @@ export default {
 .search__list {
   box-sizing: border-box;
   z-index: 1;
-  max-height: 300px;
-  min-height: 200px;
+  height: 300px;
   overflow: auto;
   @include scroll;
+  @media (max-width: $breakpoint-sm) {
+    height: auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    background: #fff;
+  }
 }
 .item-search {
   padding: 10px 12px 0;
+  @media (max-width: $breakpoint-sm) {
+    padding: 12px;
+  }
   .link {
     &:hover,
     &:focus {

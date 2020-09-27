@@ -3,6 +3,9 @@
     <PrimaryNav />
     <div class="master">
       <main class="inner">
+        <div class="master__search">
+          <Search />
+        </div>
         <slot />
       </main>
     </div>
@@ -66,6 +69,7 @@ export default {
     position: relative;
     max-height: 100vh;
     overflow-y: auto;
+
     @media (max-width: 1400px) {
       min-width: 0;
     }
@@ -74,9 +78,18 @@ export default {
     }
     @media (max-width: $breakpoint-sm) {
       margin-left: 0;
+      max-height: none;
     }
     @media (max-width: $breakpoint-xs) {
       padding-top: 54px;
+    }
+    &__search {
+      display: none;
+      @media (max-width: $breakpoint-sm) {
+        display: block;
+        position: relative;
+        z-index: 7;
+      }
     }
     > .inner {
       background: #fff;

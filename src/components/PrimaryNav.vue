@@ -282,8 +282,8 @@ export default {
 }
 @media (max-width: $breakpoint-sm) {
   .sidebar {
-    position: relative;
-    top: auto;
+    position: sticky;
+    top: 0;
     bottom: auto;
     left: auto;
     width: auto;

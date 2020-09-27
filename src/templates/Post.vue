@@ -252,9 +252,12 @@ query Post ($id: ID!) {
     a {
       cursor: pointer;
       margin-right: 6px;
+      margin-bottom: 7px;
+      display: inline-block;
       color: white;
       padding: 2px 10px 2px 4px;
       border-radius: 15px;
+      white-space: nowrap;
       span {
         padding-left: 4px;
       }
