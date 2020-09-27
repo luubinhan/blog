@@ -4,13 +4,7 @@
       <PostTags :post="post" />
     </div>
     <div class="search__container">
-      <input
-        id="search"
-        v-model="searchTerm"
-        class="search__input"
-        type="text"
-        placeholder="Tìm bài viết..."
-      />
+      <input v-model="searchTerm" class="search__input" type="text" placeholder="Tìm bài viết..." />
       <button v-if="searchTerm" class="search_clear" @click="clearSearch">X</button>
     </div>
     <div class="search__list">
@@ -74,11 +68,6 @@ const LIST_TAGS = [
     id: "chrome",
     path: "tag/chrome",
     title: "Chrome DevTools",
-  },
-  {
-    id: "javascript",
-    path: "tag/javascript",
-    title: "Javascript",
   },
 ];
 

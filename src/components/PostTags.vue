@@ -28,6 +28,7 @@ export default {
     border-radius: var(--radius);
     display: inline-block;
     white-space: nowrap;
+    margin-bottom: 0.7em;
   }
 }
 </style>

@@ -89,6 +89,7 @@ export default {
         display: block;
         position: relative;
         z-index: 7;
+        margin-bottom: 1em;
       }
     }
     > .inner {

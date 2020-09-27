@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import { Pager } from 'gridsome';
+import { Pager } from "gridsome";
 
 export default {
   components: {
-    Pager
-  }
-}
+    Pager,
+  },
+};
 </script>
 
 <style lang="scss">
@@ -19,6 +19,10 @@ export default {
   padding-top: 135px;
   padding-bottom: 135px;
   text-align: center;
+  @media (max-width: $breakpoint-sm) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
   a {
     padding-left: 14px;
     padding-right: 14px;

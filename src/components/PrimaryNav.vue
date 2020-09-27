@@ -19,11 +19,11 @@
       <div class="navigation-component">
         <ul class="nav primary-menu" :class="collapsed && 'collapsed'">
           <li v-for="(m, index) in menus" :key="index" :class="camelCase(m.name)">
-            <g-link
+            <a
               :aria-label="`Kiến thức ${m.name}`"
               :title="`Kiến thức ${m.name}`"
-              :to="m.href"
-              exact-active-class="active"
+              @click="goTo(m.href)"
+              :class="m.href === activeHref ? 'active' : ''"
               :target="m.target || ''"
             >
               <span class="primary-menu__icon" v-if="m.icon === 'js'">
@@ -45,7 +45,7 @@
                 <Paint />
               </span>
               <span class="primary-menu__label">{{m.name}}</span>
-            </g-link>
+            </a>
           </li>
           <li class="about">
             <a href="https://luubinhan.github.io/" target="_blank">About</a>
@@ -89,6 +89,7 @@ import { camelCase } from "lodash";
 export default {
   data: () => ({
     collapsed: true,
+    activeHref: "",
     menus: [
       {
         name: "Javascript",
@@ -124,6 +125,11 @@ export default {
   }),
   methods: {
     camelCase,
+    goTo(url) {
+      this.collapsed = true;
+      this.activeHref = url;
+      this.$router.push(url);
+    },
     handleNavClick() {
       this.collapsed = !this.collapsed;
     },
