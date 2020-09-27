@@ -9,7 +9,7 @@ canonical_url: false
 
 Cách đây mười năm, nếu bạn hỏi mình có thể đặt biến trong CSS thì câu trả lời sẽ là KHÔNG, bạn cần viết bằng các ngôn ngữ như SCSS, LESS để có thể xài biến.
 
-> Còn trong năm 2020, thì cầu trả lời sẽ là CÓ.
+> Còn trong năm 2020, thì câu trả lời sẽ là CÓ.
 
 Tại sao chúng ta lại muốn đặt biến màu sắc kích thước? Để khi chúng ta muốn thay đổi bộ mặt một website từ xanh lá chuối sang đỏ rực lửa, chỉ cần "búng tay" là có liền.
 
