@@ -843,57 +843,6 @@ table.normal tr td {
   }
 }
 
-$backgroundSidebar: #252525;
-
-.fourzerofour {
-  margin-left: 320px;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: url("./images/yoann-boyer-156510.jpg") no-repeat;
-  background-size: cover;
-  color: #fff;
-  h1 {
-    font-size: 3rem;
-  }
-  p {
-    font-size: 2rem;
-    margin-bottom: 15px;
-  }
-  .btn {
-    font-size: 1.1rem;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    &:hover {
-      color: #fff;
-    }
-  }
-  > .inner {
-    text-align: center;
-  }
-}
-.tagsUl {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  li {
-    text-align: center;
-    font-size: 2rem;
-    text-transform: capitalize;
-  }
-}
-
-.pagination {
-  padding-top: 25px;
-  padding-bottom: 25px;
-  display: flex;
-  justify-content: space-between;
-}
 .table {
   display: table;
   border-collapse: separate;

@@ -1,5 +1,8 @@
 {
-  "name": "my-gridsome-site",
+  "name": "@luckyluu/luckyluu-blog",
+  "description": "luckyluu blog",
+  "version": "3.0.0",
+  "author": "An Luu <luubinhan1989@gmail.com>",
   "private": true,
   "scripts": {
     "predeploy": "npm run build",
