@@ -109,8 +109,11 @@ export default {
   &__aside {
     z-index: 1;
     flex-grow: 1;
-    max-width: 20vw;
-    @media (max-width: 980px) {
+    @media (max-width: $breakpoint-1400) {
+      max-width: 30vw;
+    }
+    @media (max-width: $breakpoint-980) {
+      max-width: 20vw;
       display: none;
     }
     &-inner {
