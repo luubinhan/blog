@@ -19,15 +19,34 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url("./images/yoann-boyer-156510.jpg") no-repeat;
+  background: url("../assets/images/404-image.jpg") no-repeat;
   background-size: cover;
   color: #fff;
+  @media (max-width: 1400px) {
+    margin-left: 200px;
+  }
+  @media (max-width: $breakpoint-sm) {
+    margin-left: 0;
+  }
+  @media (max-width: $breakpoint-xs) {
+    height: calc(100vh - 50px);
+    background-size: auto 100%;
+    background-position: center top;
+  }
   h1 {
     font-size: 3rem;
+    @media (max-width: $breakpoint-xs) {
+      font-size: 28px;
+    }
   }
   p {
     font-size: 2rem;
     margin-bottom: 15px;
+    @media (max-width: $breakpoint-xs) {
+      font-size: 18px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
   }
   .btn {
     font-size: 1.1rem;
@@ -39,6 +58,10 @@
   }
   > .inner {
     text-align: center;
+    @media (max-width: $breakpoint-xs) {
+      background: rgba(0, 0, 0, 0.5);
+      height: calc(100vh - 50px);
+    }
   }
 }
 </style>

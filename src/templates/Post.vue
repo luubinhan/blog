@@ -216,6 +216,13 @@ query Post ($id: ID!) {
   margin-left: -75px;
   margin-right: -75px;
   margin-top: 30px;
+
+  @media (max-width: $breakpoint-xs) {
+    margin-left: -30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-right: -30px;
+  }
 }
 .related-posts {
   padding: 40px 35px 30px;

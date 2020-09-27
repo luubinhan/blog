@@ -40,6 +40,9 @@ export default {
 .layout-blog {
   position: relative;
   display: flex;
+  @media (max-width: $breakpoint-sm) {
+    display: block;
+  }
   .go-home {
     display: block;
     width: 50px;
@@ -63,18 +66,14 @@ export default {
     position: relative;
     max-height: 100vh;
     overflow-y: auto;
-    @media (max-width: $breakpoint-sm) {
-      .master {
-        margin-left: 0;
-      }
+    @media (max-width: 1400px) {
+      min-width: 0;
     }
     @media (max-width: 980px) {
       width: auto;
     }
-    @media (max-width: 1400px) {
-      margin-left: 200px;
-      flex-basis: 700px;
-      min-width: 700px;
+    @media (max-width: $breakpoint-sm) {
+      margin-left: 0;
     }
     @media (max-width: $breakpoint-xs) {
       padding-top: 54px;
@@ -85,6 +84,7 @@ export default {
       min-height: 100vh;
       z-index: 2;
       position: relative;
+
       @media (max-width: $breakpoint-xs) {
         padding-left: 30px;
         padding-right: 30px;
@@ -94,6 +94,7 @@ export default {
   &__aside {
     z-index: 1;
     flex-grow: 1;
+    max-width: 20vw;
     @media (max-width: 980px) {
       display: none;
     }
@@ -107,66 +108,6 @@ export default {
     }
     &-footer {
       margin-top: auto;
-    }
-  }
-}
-
-@media (max-width: $breakpoint-xs) {
-  .gatsby-highlight {
-    margin-left: -30px;
-    margin-right: -30px;
-    pre {
-      padding-left: 30px;
-      padding-right: 30px;
-    }
-  }
-
-  .section-below-post {
-    margin-left: -30px;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-right: -30px;
-  }
-  .fourzerofour {
-    height: calc(100vh - 50px);
-    background-size: auto 100%;
-    background-position: center top;
-
-    > .inner {
-      background: rgba(0, 0, 0, 0.5);
-      height: calc(100vh - 50px);
-    }
-    h1 {
-      font-size: 28px;
-    }
-    p {
-      font-size: 18px;
-      padding-left: 30px;
-      padding-right: 30px;
-    }
-  }
-  .page-about {
-    .about-header {
-      padding-top: 0;
-      margin-left: -30px;
-      margin-right: -30px;
-    }
-  }
-}
-@media (max-width: $breakpoint-sm) {
-  .layout-blog {
-    .fourzerofour {
-      margin-left: 0;
-    }
-  }
-}
-@media (max-width: 1400px) {
-  .layout-blog {
-    .sidebar {
-      width: 200px;
-    }
-    .fourzerofour {
-      margin-left: 200px;
     }
   }
 }

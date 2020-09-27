@@ -2,6 +2,20 @@
   <div class="sidebar">
     <div class="sidebar__inner">
       <g-link to="/" class="go-home">VuiLapTrinh.com</g-link>
+      <button
+        type="button"
+        aria-expanded="false"
+        class="navbar-toggle"
+        :class="`${collapsed ? 'collapsed' : ''}`"
+        @click="handleNavClick"
+        aria-label="nav"
+      >
+        <div class="hamburger hamburger-1">
+          <span class="line" />
+          <span class="line" />
+          <span class="line" />
+        </div>
+      </button>
       <div class="navigation-component">
         <ul class="nav primary-menu" :class="collapsed && 'collapsed'">
           <li v-for="(m, index) in menus" :key="index" :class="camelCase(m.name)">
@@ -74,7 +88,7 @@ import { camelCase } from "lodash";
 
 export default {
   data: () => ({
-    collapsed: false,
+    collapsed: true,
     menus: [
       {
         name: "Javascript",
@@ -110,6 +124,9 @@ export default {
   }),
   methods: {
     camelCase,
+    handleNavClick() {
+      this.collapsed = !this.collapsed;
+    },
   },
   components: {
     IconJs,
@@ -243,6 +260,9 @@ export default {
   color: rgba(255, 255, 255, 0.65);
   &__inner {
     padding: 50px 30px 30px;
+    @media (max-width: $breakpoint-sm) {
+      padding: 15px;
+    }
   }
   .footer {
     position: absolute;
