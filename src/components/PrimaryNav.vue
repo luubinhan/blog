@@ -261,9 +261,12 @@ export default {
   top: 0;
   bottom: 0;
   z-index: 3;
-  width: 320px;
+  width: var(--sidebar-width-desktop);
   background: var(--sidebar-color);
   color: rgba(255, 255, 255, 0.65);
+  @media (max-width: $breakpoint-1400) {
+    width: var(--sidebar-width-tabled);
+  }
   &__inner {
     padding: 50px 30px 30px;
     @media (max-width: $breakpoint-sm) {
@@ -418,7 +421,7 @@ export default {
   bottom: 0;
   width: 100%;
   .footer-inner {
-    padding: $glutter 0;
+    padding: 10px 0;
     a {
       color: #f2f2f2;
     }

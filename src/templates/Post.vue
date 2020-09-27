@@ -227,6 +227,9 @@ query Post ($id: ID!) {
 .related-posts {
   padding: 40px 35px 30px;
   background-color: #fafffe;
+  @media (max-width: $breakpoint-1400) {
+    padding: 15px;
+  }
   &__container {
     margin-top: 20px;
   }
@@ -244,6 +247,9 @@ query Post ($id: ID!) {
     font-size: 1.5em;
     flex-basis: 50px;
     min-width: 50px;
+    @media (max-width: $breakpoint-1400) {
+      display: none;
+    }
   }
 }
 .single-post {

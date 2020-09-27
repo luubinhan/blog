@@ -61,19 +61,20 @@ export default {
   }
   .master {
     @include scroll;
-    flex-basis: $masterWidth;
-    min-width: $masterWidth;
-    margin-left: $sidebarWidth;
+    flex-basis: var(--master-width);
+    min-width: var(--master-width);
+    margin-left: var(--sidebar-width-desktop);
     background: #fff;
     z-index: 2;
     position: relative;
     max-height: 100vh;
     overflow-y: auto;
 
-    @media (max-width: 1400px) {
+    @media (max-width: $breakpoint-1400) {
+      margin-left: var(--sidebar-width-tabled);
       min-width: 0;
     }
-    @media (max-width: 980px) {
+    @media (max-width: $breakpoint-980) {
       width: auto;
     }
     @media (max-width: $breakpoint-sm) {
@@ -119,6 +120,9 @@ export default {
       height: 100vh;
       overflow-y: auto;
       @include scroll;
+      @media (max-width: $breakpoint-1400) {
+        padding: 15px;
+      }
     }
     &-footer {
       margin-top: auto;
