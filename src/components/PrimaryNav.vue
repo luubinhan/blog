@@ -100,11 +100,11 @@ export default {
         href: "/tag/react",
         icon: "nodejs",
       },
-      {
+      /* {
         name: "React native",
         href: "/tag/react-native",
         icon: "react-native",
-      },
+      }, */
       {
         name: "Vue",
         href: "/tag/vuejs",
