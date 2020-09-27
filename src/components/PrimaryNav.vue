@@ -235,6 +235,7 @@ export default {
       font-size: $font-size-base;
       position: relative;
       z-index: 1;
+      cursor: pointer;
       -webkit-transition: all 0.1s ease-in-out;
       -moz-transition: all 0.1s ease-in-out;
       -ms-transition: all 0.1s ease-in-out;
