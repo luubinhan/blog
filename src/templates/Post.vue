@@ -5,7 +5,9 @@
         <article>
           <header>
             <div class="post-title">
-              <h1 class="post-title__text single-post-title">{{ $page.post.title }}</h1>
+              <h1 class="post-title__text single-post-title">
+                {{ $page.post.title }}
+              </h1>
 
               <PostMeta :post="$page.post" />
             </div>
@@ -30,7 +32,7 @@
                 v-for="network in networks"
                 :network="network.network"
                 :key="network.network"
-                :style="{backgroundColor: network.color}"
+                :style="{ backgroundColor: network.color }"
                 :url="`https://vuilaptrinh.com${$page.post.path}`"
                 :title="$page.post.title"
                 :description="$page.post.desc"
@@ -52,27 +54,28 @@
             ></div>
             <Disqus shortname="luckyluu-blog" />
           </div>
-
+          <div class="related-posts">
+            <h4>Bài liên quan</h4>
+            <ul class="related-posts__container">
+              <li
+                class="related-posts__media"
+                v-for="(r, index) in $page.post.related"
+                :key="r.id"
+              >
+                <div class="related-posts__index">{{ index + 1 }}.</div>
+                <div class="related-posts__content">
+                  <h4 class="related-posts__title">
+                    <g-link :to="r.path">{{ r.title }}</g-link>
+                  </h4>
+                  <p>{{ r.desc }}</p>
+                </div>
+              </li>
+            </ul>
+          </div>
           <Author class="post-author" />
         </div>
       </div>
     </div>
-    <template #aside>
-      <div class="related-posts">
-        <h4>Bài liên quan</h4>
-        <ul class="related-posts__container">
-          <li class="related-posts__media" v-for="(r, index) in $page.post.related" :key="r.id">
-            <div class="related-posts__index">{{ index + 1 }}.</div>
-            <div class="related-posts__content">
-              <h4 class="related-posts__title">
-                <g-link :to="r.path">{{ r.title }}</g-link>
-              </h4>
-              <p>{{ r.desc }}</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </template>
   </Layout>
 </template>
 

@@ -12,6 +12,15 @@
     <div class="layout-blog__aside">
       <div class="layout-blog__aside-inner">
         <Search />
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSc9aBtUUlr6A3GO2JfAMBP6p1r_qcftzJ2sUqRzTQ2-PHIwGA/viewform?embedded=true"
+          width="380"
+          height="500"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          >Loading…</iframe
+        >
         <div class="layout-blog__aside-footer">
           <slot name="aside" />
         </div>
