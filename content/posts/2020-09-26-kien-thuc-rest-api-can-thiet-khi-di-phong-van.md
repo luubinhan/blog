@@ -15,6 +15,11 @@ hide: true
 - **URI**: viết tắt của _Uniform Resource Identifier_, một một resource trong kiến trúc REST sẽ xác định bằng một và chỉ một URI. Theo định dạng như sau
   `<protocol>://<service-name>/<ResourceType>/<ResourceID>`
 
+## Phân biệt giữa API và Web Service
+
+- Tất cả web service đều là API, nhưng không phải tất cả API đều là web service
+- Web service sử dụng 3 kiểu sau: SOAP, REST, XML-RPC, trong khi API có nhiều cách hơn
+
 ## Phân biệt giữa REST và RESTFUL
 
 REST ám chỉ **kiểu kiến trúc** để xây dựng các ứng dụng có thể truy cập thông qua mạng của ông chú viettel, vnpt, fpt,...
@@ -46,6 +51,14 @@ _RESTful_ ám chỉ một **web service** hiện thực cái kiến trúc REST
 
 ## Điểm khác nhau giữa `PUT` và `POST`
 
-`PUT` dùng để **xử lý** một resource tại một URI cụ thể **đã tồn tại trước đó**, nếu chưa có tạo mới, đã có thì ghi đè. Ko phụ thuộc số lần gửi, số lượng resource sẽ không đổi sau khi gọi `PUT`
+`PUT` dùng để **xử lý** một resource tại một URI cụ thể **đã tồn tại trước đó**, nếu chưa có tạo mới, đã có thì ghi đè. Ko phụ thuộc số lần gửi, số lượng resource sẽ không đổi sau khi gọi `PUT`, có thể cache lại response
 
-`POST` **gửi dữ liệu** đến một URI, resource tại URI đó sẽ xử lý dữ liệu được gởi. Việc gửi lên càng nhiều, đồng nghĩa với việc số lượng resource phía server cũng tăng theo
+`POST` **gửi dữ liệu** đến một URI, resource tại URI đó sẽ xử lý dữ liệu được gởi. Việc gửi lên càng nhiều, đồng nghĩa với việc số lượng resource phía server cũng tăng theo, không thể cache response
+
+## Mục tiêu của phương thức OPTIONS trong RESTful web service
+
+Phương thức này dùng để liệt kê tất cả các thao tác mà web service hổ trợ. Tạo một request readonly đến server
+
+## Limit của payload trong phước thức POST
+
+Nếu <GET> gửi dữ liệu thông qua URL, nó ko được vượt quá chiều dài tối đa cho phép của URL. <POST> lại không có limit, có thể gửi lên bao nhiều tùy thích, trong thực tế sử dụng thì không nên gửi payload quá lớn, vì sẽ tốn rất nhiều thời gian xử lý.
