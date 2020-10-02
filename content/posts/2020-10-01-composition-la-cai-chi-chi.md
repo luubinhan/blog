@@ -1,10 +1,14 @@
-# Composition là cái chi chi
+---
+slug: "2020-10-01-composition-la-cai-chi-chi"
+date: "2020-10-01"
+title: "Composition là cái chi chi"
+desc: "Nhớ về 5 anh em siêu nhân kết hợp thành một con robot mãnh thú"
+tags: ["javascript", "hoc-thuat"]
+canonical_url: false
 
+---
 
-
-Composition một cách trừa tượng mà nói là việc đưa hai (hoặc nhiều) thứ khác nhau vào một chổ để nhận được một loại kết quả
-
-(hãy nhớ về 5 anh em siêu nhân kết hợp thành một con robot mãnh thú to hơn)
+Composition một cách trừu tượng mà nói là việc đưa hai (hoặc nhiều) thứ khác nhau vào một chỗ để nhận được một loại kết quả
 
 ## Composition trong toán học
 
@@ -25,7 +29,7 @@ let label = createLabel(text);
 showLabel(label);
 ```
 
-Code này có vài đoạn *na ná* nhau, chúng ta có nhận lấy một input, covert nó sang một loại khác, rồi lại lấy kết quả đó, convert tiếp.
+Code này có vài đoạn *na ná* nhau, chúng ta có nhận lấy một input, convert nó sang một loại khác, rồi lại lấy kết quả đó, convert tiếp.
 
 Làm sao để lượt bỏ hết sự *na ná* đó?
 
@@ -63,7 +67,7 @@ runSteps([
 ])
 ```
 
-Nếu tổng số code bước phải làm là cố định, chúng ta muốn chạy y chang như vậy trên nhiều chổ khác nhau, chúng ta tiếp tục đưa nó vào một function
+Nếu tổng số code bước phải làm là cố định, chúng ta muốn chạy y chang như vậy trên nhiều chỗ khác nhau, chúng ta tiếp tục đưa nó vào một function
 
 ```js
 function showDateLabel() {
@@ -195,7 +199,7 @@ React sẽ không đặt hẳn một khái niệm riêng cho slot vì bạn có 
 
 Một cách cụ thể, nếu viết code theo kiểu `class`, bạn sẽ có xu hướng dùng lại các behavior từ một class khác bằng cách `extend` nó (kế thừa). Tuy nhiên, làm vậy cũng có hạn chế là rất khó tùy chỉnh các behavior sau này. Ví dụ như tình huống muốn `extend` không chỉ một mà nhiều `class`
 
-Đôi khi, *miệng đời* cũng đồn đại rằng việc dùng class khiến "bạn bị khóa cứng" trong thiết kế ban đầu vì việc thay đổi kiến trúc của các class thì rất chi là tốn công. Với việc dùng composition, thay vì entend, bạn dữ nguyên hiện trạng của một instance, sử dụng trực tiếp từ instance này và cũng có thể làm gì đó kết hợp với nhiều thứ khác, có nhiều đất diễn hơn.
+Đôi khi, *miệng đời* cũng đồn đại rằng việc dùng class khiến "bạn bị khóa cứng" trong thiết kế ban đầu vì việc thay đổi kiến trúc của các class thì rất chi là tốn công. Với việc dùng composition, thay vì extend, bạn dữ nguyên hiện trạng của một instance, sử dụng trực tiếp từ instance này và cũng có thể làm gì đó kết hợp với nhiều thứ khác, có nhiều đất diễn hơn.
 
 Nói chung, ngành phần mềm đã bỏ việc model các UI component như một dạng kế thừa nhiều tầng nhiều cấp.
 
@@ -203,6 +207,6 @@ Không có nói inheritance lúc nào cũng "tệ", nó chỉ không đủ "bén
 
 > If you write your code in a style that composes functions in some way before calling them, and there are other humans on your team, make sure that you’re getting concrete benefits from this approach. It is not “cleaner” or “better”, and there is a price to pay for “beautiful” but indirect code.
 
-Tạm kết: Nếu bạn làm việc trong team, hãy đảm bảo mọi người nhất trí với nhau lợi ích mà nó mang lại từ cách làm này. Nó không liên quan vì tới việc "cleaner-better", nó luôn có cái giá phải trả cho "beautiful" nhưng mà code không trực quan
+Tạm kết: Nếu bạn làm việc trong team, hãy đảm bảo mọi người nhất trí với nhau lợi ích mà nó mang lại từ cách làm này. Nó không liên quan gì tới việc "cleaner-better", nó luôn có cái giá phải trả cho "beautiful" nhưng mà code không trực quan
 
 [composition - *Dan’s JavaScript Glossary*](https://whatthefuck.is/composition)
