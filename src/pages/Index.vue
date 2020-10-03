@@ -1,13 +1,18 @@
 <template>
   <Layout>
     <h1 style="display: none">
-      Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover -
-      Nơi mình chia sẽ kiến thức frontend, css, html, javascript, các framework như React, Vuejs
+      Frontend Developer live in Ho Chi Minh City, a photography geek, and a
+      music lover - Nơi mình chia sẽ kiến thức frontend, css, html, javascript,
+      các framework như React, Vuejs
     </h1>
 
     <!-- List posts -->
     <div class="posts-list">
-      <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
+      <PostCard
+        v-for="edge in $page.posts.edges"
+        :key="edge.node.id"
+        :post="edge.node"
+      />
       <Pager :info="$page.posts.pageInfo" />
     </div>
   </Layout>
@@ -24,6 +29,7 @@ query ($page: Int) {
       node {
         id
         title
+        slug
         date (format: "YYYY-MM-DD")
         timeToRead
         desc
