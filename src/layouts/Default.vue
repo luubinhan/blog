@@ -9,10 +9,10 @@
         <slot />
       </main>
     </div>
-    <div class="layout-blog__aside">
+    <div v-if="showSidebar" class="layout-blog__aside">
       <div class="layout-blog__aside-inner">
         <Search />
-       
+
         <div class="layout-blog__aside-footer">
           <slot name="aside" />
         </div>
@@ -29,7 +29,7 @@ import Search from "~/components/Search";
 
 export default {
   props: {
-    showLogo: { default: true },
+    showSidebar: { default: true },
   },
   components: {
     Logo,

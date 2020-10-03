@@ -3,14 +3,13 @@
     <div class="inner">
       <h1>404. Whoops!</h1>
       <p>Internet quá rộng lớn, đừng để lạc mất nhau!</p>
-      <g-link to="/" class="btn btn-light">Quay lại trang chủ</g-link>
+      <g-link to="/" class="btn btn-primary">Quay lại trang chủ</g-link>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .fourzerofour {
-  margin-left: 320px;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -22,16 +21,21 @@
   background: url("../assets/images/404-image.jpg") no-repeat;
   background-size: cover;
   color: #fff;
-  @media (max-width: 1400px) {
-    margin-left: 200px;
-  }
-  @media (max-width: $breakpoint-sm) {
-    margin-left: 0;
-  }
+  flex-direction: column;
   @media (max-width: $breakpoint-xs) {
-    height: calc(100vh - 50px);
     background-size: auto 100%;
     background-position: center top;
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.5);
   }
   h1 {
     font-size: 3rem;
@@ -58,9 +62,9 @@
   }
   > .inner {
     text-align: center;
+    position: relative;
+    z-index: 1;
     @media (max-width: $breakpoint-xs) {
-      background: rgba(0, 0, 0, 0.5);
-      height: calc(100vh - 50px);
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <Layout :show-logo="false">
+  <Layout>
     <h1 style="display: none">
       Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover -
       Nơi mình chia sẽ kiến thức frontend, css, html, javascript, các framework như React, Vuejs
