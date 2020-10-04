@@ -2,6 +2,13 @@ Bài viết không phù hợp cho các bạn đã là cao thủ javascript, nh�
 
 ## Kiểm tra số nguyên tố (prime number)
 
+```js
+> isPrime(137);
+  = true
+> isPrime(237);
+  = false
+```
+
 > Số nguyên tố là số **chỉ** chia hết cho một và chính nó
 
 ```js
@@ -16,11 +23,6 @@ function isPrime(n) {
     }
 	return true;
 }
-
-> isPrime(137);
-  = true
-> isPrime(237);
-  = false
 ```
 
 *Có thể cải thiện nó tốt hơn không?*
@@ -28,6 +30,11 @@ function isPrime(n) {
 Có,  lúc đầu chúng ta tăng giá trị divisor lên 1, sau lần thứ 3, chúng ta có thể tăng divisor lên 2. Lý do? Tất cả những số nào chia hết cho số chẵn thì nó cũng chia hết cho 2
 
 ## Tìm hệ số nguyên tố (Prime factor)
+
+```js
+> primeFactors(69);
+  = [3, 23]
+```
 
 > Hệ số nguyên tố của một số x, là số mà khi nhân với x sẽ cho ra một số nguyên tố
 
@@ -47,9 +54,6 @@ function primeFactors(n) {
     
     return factors;
 }
-
-> primeFactors(69);
-  = [3, 23]
 ```
 
 *Độ phức tạp là bao nhiêu? Làm tốt hơn được ko*
@@ -57,6 +61,11 @@ function primeFactors(n) {
 Độ phức tạp O(n). Có thể tăng giá trị `divisor` từ 2 sang 3. Tương tự số đã chia hết cho số chẵn thì chia hết cho 2. Ngoài ra nếu là số chẵn thì không cần tính làm gì. Tiếp nữa là chúng ta sẽ không bao giờ có hệ số nguyên tố nào lớn hơn n/2 (n là input cần tìm)
 
 ## Fibonacci
+
+```js
+> fibonacci(12);
+  = 144
+```
 
 > Fibonacci là dãy các số, mà tổng 2 số bên trái bằng số liền kề bên phải
 
@@ -85,16 +94,21 @@ function fibonacci(n) {
     } else {
         return fibonacci(n-1) + fibonacci(n-2);
     }
-}
-
-> fibonacci(12);
-  = 144
-         
+}         
 ```
 
 http://www.thatjsdude.com/interview/js1.html
 
 ## Tìm bội số chung lớn nhất
+
+```js
+> greatestCommonDivisor(14, 21);
+  = 7 
+> greatestCommonDivisor(69, 169);
+  = 1
+```
+
+
 
 > Bội số chung là số mà cả 2 cùng chia hết
 
@@ -114,11 +128,6 @@ function greatestCommonDivisor(a, b) {
     }
     return greatestDivisor;
 }
-
-> greatestCommonDivisor(14, 21);
-  = 7 
-> greatestCommonDivisor(69, 169);
-  = 1
 ```
 
 Áp dụng thuật toán *fancy*, cái này mình không thể giải thích được, vì chưa hiểu, giải thuật này là của thầy hướng dẫn chỉ, học sinh ngoan chăm chỉ sẽ biết copy nội dung thầy dạy
@@ -131,6 +140,13 @@ function greatestCommonDivisor(a,b) {
 ```
 
 ## Xóa các phần tử lặp lại trong mảng
+
+```js
+> removeDuplicate([1,3,3,3,1,5,6,7,8,1]);
+  = [1, 3, 5, 6, 7, 8]
+```
+
+
 
 Tất nhiên giờ đây bạn đã có `Set` trong javascript, mọi việc vô cùng thuận tiện, nếu không bạn phải hiện thực nó như sau
 
@@ -147,11 +163,9 @@ function removeDuplicate(arr){
       exists[elm] = true;
    }
   }
+    
   return outArr;
 }
-
-> removeDuplicate([1,3,3,3,1,5,6,7,8,1]);
-  = [1, 3, 5, 6, 7, 8]
 ```
 
 Dùng `Set`
@@ -163,6 +177,13 @@ function removeDuplicate(arr) {
 ```
 
 ## Merge 2 mạng đã sắp xếp
+
+```js
+> mergeSortedArray([2,5,6,9], [1,2,3,29]);
+ = [1, 2, 2, 3, 5, 6, 9, 29]
+```
+
+
 
 ```js
 function mergeSortedArray(a,b) {
@@ -190,9 +211,6 @@ function mergeSortedArray(a,b) {
     }
     return merged;
 }
-
-> mergeSortedArray([2,5,6,9], [1,2,3,29]);
- = [1, 2, 2, 3, 5, 6, 9, 29]
 ```
 
 Chúng ta duyệt qua từng phần tử một trong cả 2 mảng, lấy phần tử nhỏ hơn chèn vào trước, tiếp tục lặp lại cho tới khi đã duyệt qua tất cả các phần của 2 mảng.
@@ -214,6 +232,13 @@ function swapNumb(a,b) {
 
 ## Reverse string
 
+```js
+> reverse('you are a nice dude');
+  = "edud ecin a era uoy"
+```
+
+
+
 Tất nhiên là đã có prototype `.reverse`, nhưng nếu bạn không có thì sao
 
 ```js
@@ -224,9 +249,6 @@ function reverse(str) {
     }
     return returnString;
 }
-
-> reverse('you are a nice dude');
-  = "edud ecin a era uoy"
 ```
 
 Việc nối chuỗi `returnString += str[i];` sẽ không có tốc độ tốt trên một số trình duyệt cũ như IE8, đây là cách khác tối ưu hơn
@@ -322,6 +344,13 @@ function reverseInPlace(str) {
 
 ## Tìm ký tự đầu tiên không lặp lại
 
+```js
+> firstNonRepeatChar('the quick brown fox jumps then quickly blow air');
+ = "f"
+```
+
+
+
 Tìm trong một ký tự (đầu tiên) trong string không bị lặp lại
 
 - Nên quan tâm có phân biệt hoa thường hay không
@@ -347,15 +376,14 @@ function firstNonRepeatChar(str) {
     }
 }
 
->firstNonRepeatChar('the quick brown fox jumps then quickly blow air');
- = "f"
+
 ```
 
 ## Xóa các ký tự lặp lại trong chuỗi
 
 ```js
-input: 'Learn more javascript dude'
-output: 'Lnmojvsciptu'
+> removeDuplicateChar('Learn more javascript dude');
+  = 'Lnmojvsciptu'
 ```
 
 
