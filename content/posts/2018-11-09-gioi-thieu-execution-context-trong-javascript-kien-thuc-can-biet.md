@@ -34,12 +34,12 @@ Có 2 loại Execution Context:
 
 Được tạo khi javascript chạy code của chúng ta, bình thường nó sẽ tạo ra 2 thứ: 1 global object và một biến gọi là `this`. `this` sẽ trỏ tới global object là window nếu chạy trên trình duyệt, trỏ tới `global` nếu chạy trên Node
 
-![Execution context, Hoisting, Scopes, Closures trong Javascript](https://tylermcginnis.com/images/posts/advanced-javascript/no-code.png)
+![Execution context, Hoisting, Scopes, Closures trong Javascript](https://ui.dev/post-images/no-code.png)
 
 Khi chúng ta khai báo thêm biến
 
-![Execution context, Hoisting, Scopes, Closures trong Javascript](https://tylermcginnis.com/images/posts/advanced-javascript/global-variables-in-creation-phase.png)
-![Execution context, Hoisting, Scopes, Closures trong Javascript](https://tylermcginnis.com/images/posts/advanced-javascript/global-variables-in-execution-phase.png)
+![Globals variables in the creation phase](https://ui.dev/post-images/global-variables-in-creation-phase.png)
+![Global variables in the execution phase](https://ui.dev/post-images/global-variables-in-execution-phase.png)
 
 Creation phase của Global Execution context sẽ có các bước
 
@@ -50,7 +50,7 @@ Creation phase của Global Execution context sẽ có các bước
 
 Thử log giá trị sau creation phase và trước execution phase
 
-![Thử log giá trị sau creation phase và trước execution phase](https://tylermcginnis.com/images/posts/advanced-javascript/global-execution-context-gif.gif)
+![Animated GIF showing flow from creation phase to execution phase](https://ui.dev/post-images/global-execution-context-gif.gif)
 
 Trước khi javascript thực sự chạy các dòng code, *creation phase* xảy ra trước, nên giá trị log ra sẽ là `undefined`, function sẽ trỏ tới một vùng nhớ.
 
@@ -83,18 +83,18 @@ function getUser () {
 3. Setup vùng nhớ tạm thời cho biến và function
 4. Gắn giá trị `undefined` cho biến, trỏ từng function đến vùng nhớ.
 
-![Function execution context](https://tylermcginnis.com/images/posts/advanced-javascript/function-execution-context-gif.gif)
+![GIF showing how a new execution context is created when a function is invoked](https://ui.dev/post-images/function-execution-context-gif.gif)
 
 Bạn có thấy cái ô màu hồng hồng trên hình nó xuất hiện khi function được thực thi, sau đó bị remove sau khi chạy xong. Khi tạo một execution context, javascript đưa vào một hàng đợi gọi là **Call Stack**, sau khi đã chạy xong 2 phase nó remove khỏi Call Stack
 
 ![sau khi đã chạy xong 2 phase nó remove khỏi Call Stack
-](https://tylermcginnis.com/images/posts/advanced-javascript/javascript-execution-stack.gif)
+](https://ui.dev/post-images/javascript-execution-stack.gif)
 
 [Chạy thử](https://goo.gl/vjmnTa)
 
 Với một function có khai báo biến bên trong
 
-![Với một function có khai báo biến bên trong](https://tylermcginnis.com/images/posts/advanced-javascript/local-variables.gif)
+![Với một function có khai báo biến bên trong](https://ui.dev/post-images/local-variables.gif)
 
 Quá hiển nhiên là biến `handle` nằm trong Global Execution Context, nên bên trong function chúng ta có thể access đến nó, trong khi biến `twitterURL` được khởi tạo ở trong function, nó chỉ có trong Function Execution Context khi hàm được thực thi. Đây chính là nền tảng của khái niệm **SCOPE**
 
@@ -122,7 +122,7 @@ second()
 console.log(name)
 ```
 
-![Execution context, Hoisting, Scopes, Closures](https://tylermcginnis.com/images/posts/advanced-javascript/unique-scopes.gif)
+![Execution context, Hoisting, Scopes, Closures](https://ui.dev/post-images/unique-scopes.gif)
 
 Chúng ta sẽ có thứ tự log ra: `undefined`, `Jordyn`, `Jake`, `Tyler`
 
@@ -139,13 +139,13 @@ logName()
 
 ```
 
-![Trong trường hợp biến không tồn tại trong execution context của function](https://tylermcginnis.com/images/posts/advanced-javascript/parent-lookup.gif)
+![Trong trường hợp biến không tồn tại trong execution context của function](https://ui.dev/post-images/parent-lookup.gif)
 
 Kết quả log ra là "Tyler", dù bên trong execution context của hàm không có biến, nó sẽ tìm đến thằng context cha xem có giá trị của biến này chưa, cho đến khi global execution context nó sẽ dừng.
 
 <div class="note">Đặc điểm này trọng javascript được gọi là Scope chain</div>
 
-![Đặc điểm này trọng javascript được gọi là Scope chain](https://tylermcginnis.com/images/posts/advanced-javascript/closure-scope.gif)
+![Đặc điểm này trọng javascript được gọi là Scope chain](https://ui.dev/post-images/closure-scope.gif)
 
 <div class="note">Khi chúng ta lồng một function bên trong 1 function như vậy, nó sẽ tạo ra một cái gọi là <b>Closure Scope</b></div>
 
