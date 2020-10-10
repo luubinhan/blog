@@ -9,3 +9,160 @@
 .mb-2 {
   margin-bottom: 2em;
 }
+.muted {
+  color: $muted;
+}
+.link {
+  color: $link-color;
+}
+
+ul.style1 {
+  padding: 0;
+  margin: 0;
+}
+ul.style1 li {
+  list-style-type: none;
+  margin: 0;
+  font-size: 18px;
+  a {
+    line-height: 2.2em;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  i {
+    padding-right: 7px;
+  }
+}
+ul.style2 {
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+ul.style2 li {
+  list-style-type: none;
+  margin: 0;
+  padding: 4px 4px 4px 20px;
+}
+hr.line {
+  border-top: 1px solid #ccc;
+}
+hr.dashed {
+  border-top: 1px dashed #ccc;
+}
+img.align-left {
+  float: left;
+  margin: 8px 20px 10px 0;
+}
+img.align-right {
+  float: right;
+}
+img.align-center {
+  margin: 0px auto;
+}
+.align-left {
+  text-align: left !important;
+}
+.align-right {
+  text-align: right !important;
+}
+.align-center {
+  text-align: center !important;
+}
+.pl-10 {
+  padding-left: 10px;
+}
+.pl-20 {
+  padding-left: 20px;
+}
+.pl-30 {
+  padding-left: 30px;
+}
+.pl-40 {
+  padding-left: 40px;
+}
+.pr-10 {
+  padding-right: 10px;
+}
+.pr-20 {
+  padding-right: 20px;
+}
+.pr-30 {
+  padding-right: 30px;
+}
+.pr-40 {
+  padding-right: 40px;
+}
+.pt-10 {
+  padding-top: 10px;
+}
+.pt-20 {
+  padding-top: 20px;
+}
+.pt-30 {
+  padding-top: 30px;
+}
+.pt-40 {
+  padding-top: 40px;
+}
+.p-10 {
+  padding: 10px;
+}
+.p-20 {
+  padding: 20px;
+}
+.p-30 {
+  padding: 30px;
+}
+.p-40 {
+  padding: 40px;
+}
+.p-50 {
+  padding: 50px;
+}
+.p-60 {
+  padding: 60px;
+}
+.p-0 {
+  padding: 0px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.mb-40 {
+  margin-bottom: 40px;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.mt-40 {
+  margin-top: 40px;
+}
+.banner img,
+figure img {
+  display: block;
+}
+.reset {
+  margin-bottom: 0;
+}
+.reset td {
+  padding: 0;
+}
+.inline {
+  width: auto;
+}
+.relative {
+  position: relative;
+}
