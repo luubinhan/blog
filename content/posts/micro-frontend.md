@@ -45,7 +45,106 @@ Tựa chung, chúng ta không share state, mà chỉ share dữ liệu trong dat
 
 #### Styling
 
-#### Cách cách để integrate
+#### Các cách để integrate
 
+Để hiện thực hóa ý tưởng của micro frontend, cũng có nhiều cách làm, cách nào cũng có đánh đổi. Tựu chung, nếu xét theo hướng giao diện, chúng ta có thể tổ chức nó theo dạng một ứng dụng dạng **container**, bao gồm những thành phần chung như *header*, *menu*, và các *micro frontend* sẽ nhúng vào phần **ruột** của trang
 
+![A web page with boxes drawn around different sections. One box wraps the whole page, labelling it as the 'container application'. Another box wraps the main content (but not the global page title and navigation), labelling it as the 'browse micro frontend'](https://martinfowler.com/articles/micro-frontends/composition.png)
 
+##### Cách 1: composition dùng server side template
+
+Với một cách *không chính thống lắm* cho việc phát triển code FE, chúng ta render HTML ở phía server, với nhiều bộ template khác nhau. Chúng ta có một file `index.html` với các phần tử chung, server sẽ quyết định phần *ruột* trả về cho từng trang
+
+```html
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Feed me</title>
+  </head>
+  <body>
+    <h1>🍽 Feed me</h1>
+    <!--# include file="$PAGE.html" -->
+  </body>
+</html>
+```
+
+Ở ví dụ này đang dùng với Ngĩn, biến `$PAGE` sẽ ứng với URL đang được request
+
+```nginx
+server {
+    listen 8080;
+    server_name localhost;
+
+    root /usr/share/nginx/html;
+    index index.html;
+    ssi on;
+
+    # Redirect / to /browse
+    rewrite ^/$ http://localhost:8080/browse redirect;
+
+    # Decide which HTML fragment to insert based on the URL
+    location /browse {
+      set $PAGE 'browse';
+    }
+    location /order {
+      set $PAGE 'order';
+    }
+    location /profile {
+      set $PAGE 'profile'
+    }
+
+    # All locations should render through index.html
+    error_page 404 /index.html;
+}
+```
+
+Kỹ thuật này mình không nắm lắm, nên cũng chỉ để đây cho các bạn tham khảo, trong thực tế mình gặp và làm việc với những cách làm bên dưới nhiều hơn.
+
+#### Integrate lúc build
+
+Cách này sẽ publish cái micro frontend ở dạng package, container sẽ khai báo những micro frontend này ở dạng dependency. File `package.json` nó sẽ trông như thế này:
+
+```json
+{
+  "name": "@feed-me/container",
+  "version": "1.0.0",
+  "description": "A food delivery web app",
+  "dependencies": {
+    "@feed-me/browse-restaurants": "^1.2.3",
+    "@feed-me/order-food": "^4.5.6",
+    "@feed-me/user-profile": "^7.8.9"
+  }
+}
+```
+
+Thoạt nhìn, cũng khá hợp lý, tuy nhiên nếu để ý, bạn sẽ thấy chúng ta phải re-compile và release trên từng cục dependency, rồi sao đó lại phải release tiếp container. Đây vẫn không phải là cách làm được khuyến khích.
+
+##### Integrate lúc run-time bằng iframe
+
+Đây cũng là cách mà dự án mình đang dùng, một cách tiếp cận đơn giản nhất để compose nhiều ứng dụng với nhau trong trình duyệt đã có từ rất rất lâu. Lợi ích có thể kể thêm của cách làm này là phần styling và biến global đều độc lập và không bị đụng độ lẫn nhau
+
+```html
+<html>
+  <head>
+    <title>Feed me!</title>
+  </head>
+  <body>
+    <h1>Welcome to Feed me!</h1>
+
+    <iframe id="micro-frontend-container"></iframe>
+
+    <script type="text/javascript">
+      const microFrontendsByRoute = {
+        '/': 'https://browse.example.com/index.html',
+        '/order-food': 'https://order.example.com/index.html',
+        '/user-profile': 'https://profile.example.com/index.html',
+      };
+
+      const iframe = document.getElementById('micro-frontend-container');
+      iframe.src = microFrontendsByRoute[window.location.pathname];
+    </script>
+  </body>
+</html>
+```
+
+Nhược điểm của cách này là việc tích hợp giữa các phần của ứng dụng, như route, history, deep-link sẽ rất phức tạp, responsive cũng là mà vấn đề phải quan tâm.
