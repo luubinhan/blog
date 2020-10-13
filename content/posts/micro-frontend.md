@@ -7,6 +7,7 @@ Vấn đề cần giải quyết:
 - Ứng dụng càng lúc càng phình ra về quy mô, cũng như độ phức tạp
 - **Một codebase FE** duy nhất mà muốn maintain thì chỉ có *gặp ác mộng hằng đêm*
 - Bạn có nhiều team FE khác nhau, mỗi team chỉ làm việc chính trên một phần tính năng nào đó rất cụ thể, chỉ 1 codebase mà hơn 5 team vào làm việc trên đó thì thôi xong
+- Bạn muốn có 1 codebase viết bằng typescript, một codebase viết js, một feature được build bằng React, feature khác được build Vue
 
 ## Micro frontend là cái gì
 
@@ -17,6 +18,8 @@ Có thể xem một ứng dụng web là một bộ kết hợp của nhiều t�
 ![A flow diagram showing 3         independent deployment pipelines for 3 different micro frontends, which         are then composed into a single app after deployment](https://microfrontends.com/img/deployment.png)
 
 Thuật ngữ này được giới thiệu lần đầu vào 2016 bởi [Thourghtworks Tech Radar](https://www.thoughtworks.com/radar/techniques/micro-frontends)
+
+> An architectural style where independently deliverable frontend applications are composed into a greater whole
 
 ![Micro frontends on the ThoughtWorks tech radar](https://microfrontends.com/img/radar.png)
 
@@ -39,4 +42,10 @@ Nhưng việc trao đổi giữa các ứng dụng với nhau là không tránh 
 Tựa chung, chúng ta không share state, mà chỉ share dữ liệu trong database  như microservice.
 
 #### Thư viện component dùng chung
+
+#### Styling
+
+#### Cách cách để integrate
+
+
 
