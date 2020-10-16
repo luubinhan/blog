@@ -1,25 +1,44 @@
 ---
-slug: "2020-10-15-micro-frontend-giai-thich-huong-dan"
-date: "2020-10-15"
-title: "Micro frontend tại sao và như thế nào"
-desc: "Lướt qua một vài điểm về Micro Frontend, ý tưởng chính và các vấn đề được quan tâm"
-tags: ["dam-dao", "hoc-thuat"]
+slug: '2020-10-15-micro-frontend-giai-thich-huong-dan'
+date: '2020-10-15'
+title: 'Micro frontend tại sao và như thế nào'
+desc: 'Lướt qua một vài điểm về Micro Frontend, ý tưởng chính và các vấn đề được quan tâm'
+tags: ['dam-dao', 'hoc-thuat']
 canonical_url: false
 ---
 
+<!-- TOC -->
+
+- [Tại sao bạn cần biết đến Micro frontend](#tại-sao-bạn-cần-biết-đến-micro-frontend)
+- [Micro frontend là cái gì](#micro-frontend-là-cái-gì)
+- [Hiện thực hóa như thế nào](#hiện-thực-hóa-như-thế-nào)
+  - [Tương tác giữa các ứng dụng](#tương-tác-giữa-các-ứng-dụng)
+  - [Thư viện component dùng chung](#thư-viện-component-dùng-chung)
+  - [Styling](#styling)
+  - [Các cách để integrate](#các-cách-để-integrate)
+    - [Cách 1: composition dùng server side template](#cách-1-composition-dùng-server-side-template)
+  - [Integrate lúc build](#integrate-lúc-build)
+    - [Integrate lúc run-time bằng iframe](#integrate-lúc-run-time-bằng-iframe)
+  - [Integrate lúc run-time bằng JavaScript](#integrate-lúc-run-time-bằng-javascript)
+  - [Integrate lúc run-time bằng Web Component](#integrate-lúc-run-time-bằng-web-component)
+  - [Trao đổi giữa Backend](#trao-đổi-giữa-backend)
+- [Kết](#kết)
+
+<!-- /TOC -->
 
 ## Tại sao bạn cần biết đến Micro frontend
 
 Vấn đề cần giải quyết:
 
 - Ứng dụng càng lúc càng phình ra về quy mô, cũng như độ phức tạp
-- **Một codebase FE** duy nhất mà muốn maintain thì chỉ có *gặp ác mộng hằng đêm*
-- Bạn có nhiều team FE khác nhau, mỗi team chỉ làm việc chính trên một phần tính năng nào đó rất cụ thể, chỉ 1 codebase mà hơn 5 team vào làm việc trên đó thì thôi xong
-- Bạn muốn có 1 codebase viết bằng typescript, một codebase viết js, một feature được build bằng React, feature khác được build Vue
+- **Một codebase FE** duy nhất mà muốn maintain thì chỉ có _gặp ác mộng hằng đêm_
+- Nhiều team FE, mỗi team chỉ làm việc trên một phần tính năng nào đó rất cụ thể, chỉ 1 codebase mà hơn 5 team vào làm việc trên đó thì thôi xong
+- Bạn muốn có 1 codebase viết bằng typescript, một codebase viết js, một feature được build bằng React, feature khác được build Vue. Nếu bạn có thắc mắc tại sao lại có nhu cầu này? Câu trả lời là vì bạn ko ràng buộc team vào một technical nào cả, team có thể tự quyết định
+- Nâng cấp từng project sẽ dễ hơn nhiều
 
 ## Micro frontend là cái gì
 
-Đây là cách tiếp cận cũng *na ná* như microservice, thay vì 1, chúng ta có nhiều codebase, và trên từng codebase chỉ quản lý một tính năng cụ thể mà thôi.
+Đây là cách tiếp cận cũng _na ná_ như microservice, thay vì 1, chúng ta có nhiều codebase, và trên từng codebase chỉ quản lý một tính năng cụ thể mà thôi.
 
 Có thể xem một ứng dụng web là một bộ kết hợp của nhiều tính năng, mỗi một tính năng như vậy được quản lý bởi một team
 
@@ -41,19 +60,19 @@ Còn đây là demo của trang microfrontends.com [https://demo.microfrontends.
 
 Để có thể hiện thực hóa hoàn chỉnh micro frontend sẽ bao gồm rất nhiều thứ, ở đây chỉ tóm tắt một số vấn đề cơ bản cần giải quyết
 
-####  Tương tác giữa các ứng dụng
+#### Tương tác giữa các ứng dụng
 
 Một câu hỏi được đặt ra đầu tiên là nếu tách ra thành nhiều bộ source như vậy, làm sao chúng có thể nói chuyện được với nhau? Một cách tổng quát, **nên hạn chế việc trao đổi thông tin qua lại ít chừng nào tốt chừng đó**, bởi vì nếu bạn làm ngược lại, nghĩa là bạn đang lặp lại vấn đề chúng ta muốn giải quyết ngay từ đâu: **decoupling** các tính năng với nhau.
 
 Nhưng việc trao đổi giữa các ứng dụng với nhau là không tránh khỏi và cần thiết, chúng ta chỉ tiết chế chứ không loại bỏ hết, [Custom event](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events) là một cách, cách khác, lấy mô hình truyền callback và data từ trên xuống trong React để làm **kênh** trao đổi thông tin, làm như thế nó sẽ rất tường minh, cách thứ 3 là thông qua thanh đường dẫn trên trình duyệt, chút nữa nói kỹ hơn.
 
-Tựa chung, chúng ta không share state, mà chỉ share dữ liệu trong database  như microservice.
+Tựa chung, chúng ta không share state, mà chỉ share dữ liệu trong database như microservice.
 
 #### Thư viện component dùng chung
 
 Nó chung, ý tưởng **re-use** lại những component UI không có gì mới, nghe cũng rất hợp lý, mặc dù ai cũng biết việc đó khó làm.
 
-Sai lầm thường thấy là việc tạo các component như vậy quá sớm, việc *hào hứng* quá mức vào xây dựng một Framework UI chuẩn không cần chỉnh, viết một lần xài mãi mãi, thống nhất giao diện trên mọi mặt trận là điều thường thấy ở mọi team. Tuy nhiên, trong thực tế, kinh nghiệm cho biết rằng việc đó rất khó, nếu không muốn nói là không thể, không thể ngồi nghĩ ra một bộ Framework với tất cả các API cần thiết rồi đưa cho tất cả các team xài, chắc gì API đó đã đáp ứng đúng nhu cầu cho tất cả các team? Lời khuyên là các team cứ tạo ra những component riêng trong codebase nếu họ thấy cần, dù cho nó có bị duplicate đây nữa cũng chẳng sao. Và khi đã chín mùi, những API nào cần thiết sẽ hiện nguyên hình, chúng ta đưa những cho đang bị duplicate vào trong thư viện dùng chung.
+Sai lầm thường thấy là việc tạo các component như vậy quá sớm, việc _hào hứng_ quá mức vào xây dựng một Framework UI chuẩn không cần chỉnh, viết một lần xài mãi mãi, thống nhất giao diện trên mọi mặt trận là điều thường thấy ở mọi team. Tuy nhiên, trong thực tế, kinh nghiệm cho biết rằng việc đó rất khó, nếu không muốn nói là không thể, không thể ngồi nghĩ ra một bộ Framework với tất cả các API cần thiết rồi đưa cho tất cả các team xài, chắc gì API đó đã đáp ứng đúng nhu cầu cho tất cả các team? Lời khuyên là các team cứ tạo ra những component riêng trong codebase nếu họ thấy cần, dù cho nó có bị duplicate đây nữa cũng chẳng sao. Và khi đã chín mùi, những API nào cần thiết sẽ hiện nguyên hình, chúng ta đưa những cho đang bị duplicate vào trong thư viện dùng chung.
 
 Tất nhiên cũng có những ngoại lệ, những component mà nhìn vào chúng ta biết ngay là cần đưa vào share component, như icon, label, button, autocomplete, drop-down, search, table. Và nhớ là chỉ đưa đúng UI logic, đừng đưa bất kỳ business logic và domain logic vào đây. Ví dụ như một component `ProductTable` cho riêng cái domain Product là không nên, chỉ nên làm một cái component `Table`.
 
@@ -65,18 +84,18 @@ Styling 2020 là một câu chuyện dài, như mình đã kể trong một [bà
 
 #### Các cách để integrate
 
-Để hiện thực hóa ý tưởng của micro frontend, cũng có nhiều cách làm, cách nào cũng có đánh đổi. Tựu chung, nếu xét theo hướng giao diện, chúng ta có thể tổ chức nó theo dạng một ứng dụng dạng **container**, bao gồm những thành phần chung như *header*, *menu*, và các *micro frontend* sẽ nhúng vào phần **ruột** của trang
+Để hiện thực hóa ý tưởng của micro frontend, cũng có nhiều cách làm, cách nào cũng có đánh đổi. Tựu chung, nếu xét theo hướng giao diện, chúng ta có thể tổ chức nó theo dạng một ứng dụng dạng **container**, bao gồm những thành phần chung như _header_, _menu_, và các _micro frontend_ sẽ nhúng vào phần **ruột** của trang
 
 ![A web page with boxes drawn around different sections. One box wraps the whole page, labelling it as the 'container application'. Another box wraps the main content (but not the global page title and navigation), labelling it as the 'browse micro frontend'](https://martinfowler.com/articles/micro-frontends/composition.png)
 
 ##### Cách 1: composition dùng server side template
 
-Với một cách *không chính thống lắm* cho việc phát triển code FE, chúng ta render HTML ở phía server, với nhiều bộ template khác nhau. Chúng ta có một file `index.html` với các phần tử chung, server sẽ quyết định phần *ruột* trả về cho từng trang
+Với một cách _không chính thống lắm_ cho việc phát triển code FE, chúng ta render HTML ở phía server, với nhiều bộ template khác nhau. Chúng ta có một file `index.html` với các phần tử chung, server sẽ quyết định phần _ruột_ trả về cho từng trang
 
 ```html
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Feed me</title>
   </head>
   <body>
@@ -155,7 +174,7 @@ Thoạt nhìn, cũng khá hợp lý, tuy nhiên nếu để ý, bạn sẽ thấ
       const microFrontendsByRoute = {
         '/': 'https://browse.example.com/index.html',
         '/order-food': 'https://order.example.com/index.html',
-        '/user-profile': 'https://profile.example.com/index.html',
+        '/user-profile': 'https://profile.example.com/index.html'
       };
 
       const iframe = document.getElementById('micro-frontend-container');
@@ -192,7 +211,7 @@ Nhược điểm của cách này là việc tích hợp giữa các phần củ
       const microFrontendsByRoute = {
         '/': window.renderBrowseRestaurants,
         '/order-food': window.renderOrderFood,
-        '/user-profile': window.renderUserProfile,
+        '/user-profile': window.renderUserProfile
       };
       const renderFunction = microFrontendsByRoute[window.location.pathname];
 
@@ -208,9 +227,9 @@ Trên đây chỉ là ví dụ cơ bản nhất để mô tả kỹ thuật sẽ
 
 Nếu có hứng thú với cách làm này, có thể tham khảo thêm [ví dụ chi tiết hơn](https://martinfowler.com/articles/micro-frontends.html#TheExampleInDetail)
 
-####  Integrate lúc run-time bằng Web Component
+#### Integrate lúc run-time bằng Web Component
 
-Một lựa chọn khác cũng tương tự như cách làm trên, mỗi một micro frontend sẽ được link với element 
+Một lựa chọn khác cũng tương tự như cách làm trên, mỗi một micro frontend sẽ được link với element
 
 ```html
 <html>
@@ -232,7 +251,7 @@ Một lựa chọn khác cũng tương tự như cách làm trên, mỗi một m
       const webComponentsByRoute = {
         '/': 'micro-frontend-browse-restaurants',
         '/order-food': 'micro-frontend-order-food',
-        '/user-profile': 'micro-frontend-user-profile',
+        '/user-profile': 'micro-frontend-user-profile'
       };
       const webComponentType = webComponentsByRoute[window.location.pathname];
 
@@ -245,7 +264,7 @@ Một lựa chọn khác cũng tương tự như cách làm trên, mỗi một m
 </html>
 ```
 
-Khác nhau duy nhất so với cách trên có lẽ chỉ là việc dùng *web component* thay vì một interface chúng ta tự định nghĩa.
+Khác nhau duy nhất so với cách trên có lẽ chỉ là việc dùng _web component_ thay vì một interface chúng ta tự định nghĩa.
 
 #### Trao đổi giữa Backend
 
@@ -256,8 +275,6 @@ Cái này chưa biết, không dám chém.
 Micro frontend có thể không lạ với một số người và khá mới với số còn lại, thực tế mà nói đã có rất nhiều dự án đang áp dụng kiến trúc này (dự án mình đang làm).
 
 Cùng hy vọng với bài viết này bạn đã thấy công việc của những lập trình viên frontend không còn đơn thuần là việc làm sao cho trang web bay, lượn, responsive mượt mà, nếu bạn muốn tiến xa hơn, giới hạn là chân trời.
-
-
 
 **Các bài viết đã tham khảo**
 
