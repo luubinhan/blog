@@ -17,11 +17,11 @@ canonical_url: false
   - [Styling](#styling)
   - [Các cách để integrate](#các-cách-để-integrate)
     - [Cách 1: composition dùng server side template](#cách-1-composition-dùng-server-side-template)
-  - [Integrate lúc build](#integrate-lúc-build)
-    - [Integrate lúc run-time bằng iframe](#integrate-lúc-run-time-bằng-iframe)
-  - [Integrate lúc run-time bằng JavaScript](#integrate-lúc-run-time-bằng-javascript)
-  - [Integrate lúc run-time bằng Web Component](#integrate-lúc-run-time-bằng-web-component)
-  - [Trao đổi giữa Backend](#trao-đổi-giữa-backend)
+    - [Cách 2: Integrate lúc build](#cách-2-integrate-lúc-build)
+    - [Cách 3: Integrate lúc run-time bằng iframe](#cách-3-integrate-lúc-run-time-bằng-iframe)
+    - [Cách 4: Integrate lúc run-time bằng JavaScript](#cách-4-integrate-lúc-run-time-bằng-javascript)
+    - [Cách 5: Integrate lúc run-time bằng Web Component](#cách-5-integrate-lúc-run-time-bằng-web-component)
+  - [Tương tác với Backend](#tương-tác-với-backend)
 - [Kết](#kết)
 
 <!-- /TOC -->
@@ -137,7 +137,7 @@ server {
 
 Kỹ thuật này mình không nắm lắm, nên cũng chỉ để đây cho các bạn tham khảo, trong thực tế mình gặp và làm việc với những cách làm bên dưới nhiều hơn.
 
-#### Integrate lúc build
+##### Cách 2: Integrate lúc build
 
 Cách này sẽ publish cái micro frontend ở dạng package, container sẽ khai báo những micro frontend này ở dạng dependency. File `package.json` nó sẽ trông như thế này:
 
@@ -156,7 +156,7 @@ Cách này sẽ publish cái micro frontend ở dạng package, container sẽ k
 
 Thoạt nhìn, cũng khá hợp lý, tuy nhiên nếu để ý, bạn sẽ thấy chúng ta phải re-compile và release trên từng cục dependency, rồi sao đó lại phải release tiếp container. Đây vẫn không phải là cách làm được khuyến khích.
 
-##### Integrate lúc run-time bằng iframe
+##### Cách 3: Integrate lúc run-time bằng iframe
 
 Đây cũng là cách mà dự án mình đang dùng, một cách tiếp cận đơn giản nhất để compose nhiều ứng dụng với nhau trong trình duyệt đã có từ rất rất lâu. Lợi ích có thể kể thêm của cách làm này là phần styling và biến global đều độc lập và không bị đụng độ lẫn nhau
 
@@ -186,7 +186,7 @@ Thoạt nhìn, cũng khá hợp lý, tuy nhiên nếu để ý, bạn sẽ thấ
 
 Nhược điểm của cách này là việc tích hợp giữa các phần của ứng dụng, như route, history, deep-link sẽ rất phức tạp, responsive cũng sẽ gặp nhiều vấn đề cần xử lý hơn.
 
-#### Integrate lúc run-time bằng JavaScript
+##### Cách 4: Integrate lúc run-time bằng JavaScript
 
 Đây là cách linh hoạt nhất, và được nhiều team chọn làm. Mỗi một micro frontend sẽ được nhét vào trong trang bằng thẻ `<script />`. Container sẽ làm nhiệm vụ cho mount micro frontend nào và thực thi các hàm liên quan để báo cho các micro frontend sẽ render ở đâu và khi nào.
 
@@ -227,7 +227,7 @@ Trên đây chỉ là ví dụ cơ bản nhất để mô tả kỹ thuật sẽ
 
 Nếu có hứng thú với cách làm này, có thể tham khảo thêm [ví dụ chi tiết hơn](https://martinfowler.com/articles/micro-frontends.html#TheExampleInDetail)
 
-#### Integrate lúc run-time bằng Web Component
+##### Cách 5: Integrate lúc run-time bằng Web Component
 
 Một lựa chọn khác cũng tương tự như cách làm trên, mỗi một micro frontend sẽ được link với element
 
@@ -266,7 +266,7 @@ Một lựa chọn khác cũng tương tự như cách làm trên, mỗi một m
 
 Khác nhau duy nhất so với cách trên có lẽ chỉ là việc dùng _web component_ thay vì một interface chúng ta tự định nghĩa.
 
-#### Trao đổi giữa Backend
+#### Tương tác với Backend
 
 Cái này chưa biết, không dám chém.
 
