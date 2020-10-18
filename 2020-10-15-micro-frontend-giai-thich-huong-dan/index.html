@@ -69,14 +69,45 @@
   <time dateTime="2020-10-15" itemprop="dateModified" content="2020-10-15">2020-10-15</time>.
   
     Mất khoảng
-    <strong>9 phút</strong> để đọc.
-  </div></div></header><div class="post content-box"><div class="post__header"><!----></div><div class="blog-post"><div class="post-content"><h2 id="tại-sao-bạn-cần-biết-đến-micro-frontend"><a href="#t%E1%BA%A1i-sao-b%E1%BA%A1n-c%E1%BA%A7n-bi%E1%BA%BFt-%C4%91%E1%BA%BFn-micro-frontend" aria-hidden="true"><span class="icon icon-link"></span></a>Tại sao bạn cần biết đến Micro frontend</h2>
+    <strong>10 phút</strong> để đọc.
+  </div></div></header><div class="post content-box"><div class="post__header"><!----></div><div class="blog-post"><div class="post-content"><!-- TOC -->
+<ul>
+<li><a href="#t%E1%BA%A1i-sao-b%E1%BA%A1n-c%E1%BA%A7n-bi%E1%BA%BFt-%C4%91%E1%BA%BFn-micro-frontend">Tại sao bạn cần biết đến Micro frontend</a></li>
+<li><a href="#micro-frontend-l%C3%A0-c%C3%A1i-g%C3%AC">Micro frontend là cái gì</a></li>
+<li>
+<p><a href="#hi%E1%BB%87n-th%E1%BB%B1c-h%C3%B3a-nh%C6%B0-th%E1%BA%BF-n%C3%A0o">Hiện thực hóa như thế nào</a></p>
+<ul>
+<li><a href="#t%C6%B0%C6%A1ng-t%C3%A1c-gi%E1%BB%AFa-c%C3%A1c-%E1%BB%A9ng-d%E1%BB%A5ng">Tương tác giữa các ứng dụng</a></li>
+<li><a href="#th%C6%B0-vi%E1%BB%87n-component-d%C3%B9ng-chung">Thư viện component dùng chung</a></li>
+<li><a href="#styling">Styling</a></li>
+<li>
+<p><a href="#c%C3%A1c-c%C3%A1ch-%C4%91%E1%BB%83-integrate">Các cách để integrate</a></p>
+<ul>
+<li><a href="#c%C3%A1ch-1-composition-d%C3%B9ng-server-side-template">Cách 1: composition dùng server side template</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#integrate-l%C3%BAc-build">Integrate lúc build</a></p>
+<ul>
+<li><a href="#integrate-l%C3%BAc-run-time-b%E1%BA%B1ng-iframe">Integrate lúc run-time bằng iframe</a></li>
+</ul>
+</li>
+<li><a href="#integrate-l%C3%BAc-run-time-b%E1%BA%B1ng-javascript">Integrate lúc run-time bằng JavaScript</a></li>
+<li><a href="#integrate-l%C3%BAc-run-time-b%E1%BA%B1ng-web-component">Integrate lúc run-time bằng Web Component</a></li>
+<li><a href="#trao-%C4%91%E1%BB%95i-gi%E1%BB%AFa-backend">Trao đổi giữa Backend</a></li>
+</ul>
+</li>
+<li><a href="#k%E1%BA%BFt">Kết</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="tại-sao-bạn-cần-biết-đến-micro-frontend"><a href="#t%E1%BA%A1i-sao-b%E1%BA%A1n-c%E1%BA%A7n-bi%E1%BA%BFt-%C4%91%E1%BA%BFn-micro-frontend" aria-hidden="true"><span class="icon icon-link"></span></a>Tại sao bạn cần biết đến Micro frontend</h2>
 <p>Vấn đề cần giải quyết:</p>
 <ul>
 <li>Ứng dụng càng lúc càng phình ra về quy mô, cũng như độ phức tạp</li>
 <li><strong>Một codebase FE</strong> duy nhất mà muốn maintain thì chỉ có <em>gặp ác mộng hằng đêm</em></li>
-<li>Bạn có nhiều team FE khác nhau, mỗi team chỉ làm việc chính trên một phần tính năng nào đó rất cụ thể, chỉ 1 codebase mà hơn 5 team vào làm việc trên đó thì thôi xong</li>
-<li>Bạn muốn có 1 codebase viết bằng typescript, một codebase viết js, một feature được build bằng React, feature khác được build Vue</li>
+<li>Nhiều team FE, mỗi team chỉ làm việc trên một phần tính năng nào đó rất cụ thể, chỉ 1 codebase mà hơn 5 team vào làm việc trên đó thì thôi xong</li>
+<li>Bạn muốn có 1 codebase viết bằng typescript, một codebase viết js, một feature được build bằng React, feature khác được build Vue. Nếu bạn có thắc mắc tại sao lại có nhu cầu này? Câu trả lời là vì bạn ko ràng buộc team vào một technical nào cả, team có thể tự quyết định</li>
+<li>Nâng cấp từng project sẽ dễ hơn nhiều</li>
 </ul>
 <h2 id="micro-frontend-là-cái-gì"><a href="#micro-frontend-l%C3%A0-c%C3%A1i-g%C3%AC" aria-hidden="true"><span class="icon icon-link"></span></a>Micro frontend là cái gì</h2>
 <p>Đây là cách tiếp cận cũng <em>na ná</em> như microservice, thay vì 1, chúng ta có nhiều codebase, và trên từng codebase chỉ quản lý một tính năng cụ thể mà thôi.</p>
@@ -95,7 +126,7 @@
 <h4 id="tương-tác-giữa-các-ứng-dụng"><a href="#t%C6%B0%C6%A1ng-t%C3%A1c-gi%E1%BB%AFa-c%C3%A1c-%E1%BB%A9ng-d%E1%BB%A5ng" aria-hidden="true"><span class="icon icon-link"></span></a>Tương tác giữa các ứng dụng</h4>
 <p>Một câu hỏi được đặt ra đầu tiên là nếu tách ra thành nhiều bộ source như vậy, làm sao chúng có thể nói chuyện được với nhau? Một cách tổng quát, <strong>nên hạn chế việc trao đổi thông tin qua lại ít chừng nào tốt chừng đó</strong>, bởi vì nếu bạn làm ngược lại, nghĩa là bạn đang lặp lại vấn đề chúng ta muốn giải quyết ngay từ đâu: <strong>decoupling</strong> các tính năng với nhau.</p>
 <p>Nhưng việc trao đổi giữa các ứng dụng với nhau là không tránh khỏi và cần thiết, chúng ta chỉ tiết chế chứ không loại bỏ hết, <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events" target="_blank" rel="nofollow noopener noreferrer">Custom event</a> là một cách, cách khác, lấy mô hình truyền callback và data từ trên xuống trong React để làm <strong>kênh</strong> trao đổi thông tin, làm như thế nó sẽ rất tường minh, cách thứ 3 là thông qua thanh đường dẫn trên trình duyệt, chút nữa nói kỹ hơn.</p>
-<p>Tựa chung, chúng ta không share state, mà chỉ share dữ liệu trong database  như microservice.</p>
+<p>Tựa chung, chúng ta không share state, mà chỉ share dữ liệu trong database như microservice.</p>
 <h4 id="thư-viện-component-dùng-chung"><a href="#th%C6%B0-vi%E1%BB%87n-component-d%C3%B9ng-chung" aria-hidden="true"><span class="icon icon-link"></span></a>Thư viện component dùng chung</h4>
 <p>Nó chung, ý tưởng <strong>re-use</strong> lại những component UI không có gì mới, nghe cũng rất hợp lý, mặc dù ai cũng biết việc đó khó làm.</p>
 <p>Sai lầm thường thấy là việc tạo các component như vậy quá sớm, việc <em>hào hứng</em> quá mức vào xây dựng một Framework UI chuẩn không cần chỉnh, viết một lần xài mãi mãi, thống nhất giao diện trên mọi mặt trận là điều thường thấy ở mọi team. Tuy nhiên, trong thực tế, kinh nghiệm cho biết rằng việc đó rất khó, nếu không muốn nói là không thể, không thể ngồi nghĩ ra một bộ Framework với tất cả các API cần thiết rồi đưa cho tất cả các team xài, chắc gì API đó đã đáp ứng đúng nhu cầu cho tất cả các team? Lời khuyên là các team cứ tạo ra những component riêng trong codebase nếu họ thấy cần, dù cho nó có bị duplicate đây nữa cũng chẳng sao. Và khi đã chín mùi, những API nào cần thiết sẽ hiện nguyên hình, chúng ta đưa những cho đang bị duplicate vào trong thư viện dùng chung.</p>
@@ -110,7 +141,7 @@
 <p>Với một cách <em>không chính thống lắm</em> cho việc phát triển code FE, chúng ta render HTML ở phía server, với nhiều bộ template khác nhau. Chúng ta có một file <code class="language-text">index.html</code> với các phần tử chung, server sẽ quyết định phần <em>ruột</em> trả về cho từng trang</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span> <span class="token attr-name">dir</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ltr<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Feed me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
@@ -173,7 +204,7 @@
       <span class="token keyword">const</span> microFrontendsByRoute <span class="token operator">=</span> <span class="token punctuation">{</span>
         <span class="token string">'/'</span><span class="token operator">:</span> <span class="token string">'https://browse.example.com/index.html'</span><span class="token punctuation">,</span>
         <span class="token string">'/order-food'</span><span class="token operator">:</span> <span class="token string">'https://order.example.com/index.html'</span><span class="token punctuation">,</span>
-        <span class="token string">'/user-profile'</span><span class="token operator">:</span> <span class="token string">'https://profile.example.com/index.html'</span><span class="token punctuation">,</span>
+        <span class="token string">'/user-profile'</span><span class="token operator">:</span> <span class="token string">'https://profile.example.com/index.html'</span>
       <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
       <span class="token keyword">const</span> iframe <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">'micro-frontend-container'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -204,7 +235,7 @@
       <span class="token keyword">const</span> microFrontendsByRoute <span class="token operator">=</span> <span class="token punctuation">{</span>
         <span class="token string">'/'</span><span class="token operator">:</span> <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access">renderBrowseRestaurants</span><span class="token punctuation">,</span>
         <span class="token string">'/order-food'</span><span class="token operator">:</span> <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access">renderOrderFood</span><span class="token punctuation">,</span>
-        <span class="token string">'/user-profile'</span><span class="token operator">:</span> <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access">renderUserProfile</span><span class="token punctuation">,</span>
+        <span class="token string">'/user-profile'</span><span class="token operator">:</span> <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access">renderUserProfile</span>
       <span class="token punctuation">}</span><span class="token punctuation">;</span>
       <span class="token keyword">const</span> renderFunction <span class="token operator">=</span> microFrontendsByRoute<span class="token punctuation">[</span><span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access">location</span><span class="token punctuation">.</span><span class="token property-access">pathname</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
@@ -217,7 +248,7 @@
 <p>Trên đây chỉ là ví dụ cơ bản nhất để mô tả kỹ thuật sẽ làm, thật tế có thể phải thêm thắt một số thứ khác. Không giống với cách integrate lúc build, <code class="language-text">bundle.js</code> có thể được deploy một cách độc lập. Và khác iframe, chúng ta có thể linh động chọn lựa việc render micro frontend nào chúng ta thích.</p>
 <p>Nếu có hứng thú với cách làm này, có thể tham khảo thêm <a href="https://martinfowler.com/articles/micro-frontends.html#TheExampleInDetail" target="_blank" rel="nofollow noopener noreferrer">ví dụ chi tiết hơn</a></p>
 <h4 id="integrate-lúc-run-time-bằng-web-component"><a href="#integrate-l%C3%BAc-run-time-b%E1%BA%B1ng-web-component" aria-hidden="true"><span class="icon icon-link"></span></a>Integrate lúc run-time bằng Web Component</h4>
-<p>Một lựa chọn khác cũng tương tự như cách làm trên, mỗi một micro frontend sẽ được link với element </p>
+<p>Một lựa chọn khác cũng tương tự như cách làm trên, mỗi một micro frontend sẽ được link với element</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Feed me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
@@ -237,7 +268,7 @@
       <span class="token keyword">const</span> webComponentsByRoute <span class="token operator">=</span> <span class="token punctuation">{</span>
         <span class="token string">'/'</span><span class="token operator">:</span> <span class="token string">'micro-frontend-browse-restaurants'</span><span class="token punctuation">,</span>
         <span class="token string">'/order-food'</span><span class="token operator">:</span> <span class="token string">'micro-frontend-order-food'</span><span class="token punctuation">,</span>
-        <span class="token string">'/user-profile'</span><span class="token operator">:</span> <span class="token string">'micro-frontend-user-profile'</span><span class="token punctuation">,</span>
+        <span class="token string">'/user-profile'</span><span class="token operator">:</span> <span class="token string">'micro-frontend-user-profile'</span>
       <span class="token punctuation">}</span><span class="token punctuation">;</span>
       <span class="token keyword">const</span> webComponentType <span class="token operator">=</span> webComponentsByRoute<span class="token punctuation">[</span><span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access">location</span><span class="token punctuation">.</span><span class="token property-access">pathname</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
