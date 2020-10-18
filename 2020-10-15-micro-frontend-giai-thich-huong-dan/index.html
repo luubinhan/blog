@@ -84,17 +84,13 @@
 <p><a href="#c%C3%A1c-c%C3%A1ch-%C4%91%E1%BB%83-integrate">Các cách để integrate</a></p>
 <ul>
 <li><a href="#c%C3%A1ch-1-composition-d%C3%B9ng-server-side-template">Cách 1: composition dùng server side template</a></li>
+<li><a href="#c%C3%A1ch-2-integrate-l%C3%BAc-build">Cách 2: Integrate lúc build</a></li>
+<li><a href="#c%C3%A1ch-3-integrate-l%C3%BAc-run-time-b%E1%BA%B1ng-iframe">Cách 3: Integrate lúc run-time bằng iframe</a></li>
+<li><a href="#c%C3%A1ch-4-integrate-l%C3%BAc-run-time-b%E1%BA%B1ng-javascript">Cách 4: Integrate lúc run-time bằng JavaScript</a></li>
+<li><a href="#c%C3%A1ch-5-integrate-l%C3%BAc-run-time-b%E1%BA%B1ng-web-component">Cách 5: Integrate lúc run-time bằng Web Component</a></li>
 </ul>
 </li>
-<li>
-<p><a href="#integrate-l%C3%BAc-build">Integrate lúc build</a></p>
-<ul>
-<li><a href="#integrate-l%C3%BAc-run-time-b%E1%BA%B1ng-iframe">Integrate lúc run-time bằng iframe</a></li>
-</ul>
-</li>
-<li><a href="#integrate-l%C3%BAc-run-time-b%E1%BA%B1ng-javascript">Integrate lúc run-time bằng JavaScript</a></li>
-<li><a href="#integrate-l%C3%BAc-run-time-b%E1%BA%B1ng-web-component">Integrate lúc run-time bằng Web Component</a></li>
-<li><a href="#trao-%C4%91%E1%BB%95i-gi%E1%BB%AFa-backend">Trao đổi giữa Backend</a></li>
+<li><a href="#t%C6%B0%C6%A1ng-t%C3%A1c-v%E1%BB%9Bi-backend">Tương tác với Backend</a></li>
 </ul>
 </li>
 <li><a href="#k%E1%BA%BFt">Kết</a></li>
@@ -176,7 +172,7 @@
     <span class="token keyword">error_page</span> <span class="token number">404</span> <span class="token operator">/</span><span class="token keyword">index</span><span class="token punctuation">.</span>html<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <p>Kỹ thuật này mình không nắm lắm, nên cũng chỉ để đây cho các bạn tham khảo, trong thực tế mình gặp và làm việc với những cách làm bên dưới nhiều hơn.</p>
-<h4 id="integrate-lúc-build"><a href="#integrate-l%C3%BAc-build" aria-hidden="true"><span class="icon icon-link"></span></a>Integrate lúc build</h4>
+<h5 id="cách-2-integrate-lúc-build"><a href="#c%C3%A1ch-2-integrate-l%C3%BAc-build" aria-hidden="true"><span class="icon icon-link"></span></a>Cách 2: Integrate lúc build</h5>
 <p>Cách này sẽ publish cái micro frontend ở dạng package, container sẽ khai báo những micro frontend này ở dạng dependency. File <code class="language-text">package.json</code> nó sẽ trông như thế này:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"@feed-me/container"</span><span class="token punctuation">,</span>
@@ -189,7 +185,7 @@
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <p>Thoạt nhìn, cũng khá hợp lý, tuy nhiên nếu để ý, bạn sẽ thấy chúng ta phải re-compile và release trên từng cục dependency, rồi sao đó lại phải release tiếp container. Đây vẫn không phải là cách làm được khuyến khích.</p>
-<h5 id="integrate-lúc-run-time-bằng-iframe"><a href="#integrate-l%C3%BAc-run-time-b%E1%BA%B1ng-iframe" aria-hidden="true"><span class="icon icon-link"></span></a>Integrate lúc run-time bằng iframe</h5>
+<h5 id="cách-3-integrate-lúc-run-time-bằng-iframe"><a href="#c%C3%A1ch-3-integrate-l%C3%BAc-run-time-b%E1%BA%B1ng-iframe" aria-hidden="true"><span class="icon icon-link"></span></a>Cách 3: Integrate lúc run-time bằng iframe</h5>
 <p>Đây cũng là cách mà dự án mình đang dùng, một cách tiếp cận đơn giản nhất để compose nhiều ứng dụng với nhau trong trình duyệt đã có từ rất rất lâu. Lợi ích có thể kể thêm của cách làm này là phần styling và biến global đều độc lập và không bị đụng độ lẫn nhau</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
@@ -213,7 +209,7 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
 <p>Nhược điểm của cách này là việc tích hợp giữa các phần của ứng dụng, như route, history, deep-link sẽ rất phức tạp, responsive cũng sẽ gặp nhiều vấn đề cần xử lý hơn.</p>
-<h4 id="integrate-lúc-run-time-bằng-javascript"><a href="#integrate-l%C3%BAc-run-time-b%E1%BA%B1ng-javascript" aria-hidden="true"><span class="icon icon-link"></span></a>Integrate lúc run-time bằng JavaScript</h4>
+<h5 id="cách-4-integrate-lúc-run-time-bằng-javascript"><a href="#c%C3%A1ch-4-integrate-l%C3%BAc-run-time-b%E1%BA%B1ng-javascript" aria-hidden="true"><span class="icon icon-link"></span></a>Cách 4: Integrate lúc run-time bằng JavaScript</h5>
 <p>Đây là cách linh hoạt nhất, và được nhiều team chọn làm. Mỗi một micro frontend sẽ được nhét vào trong trang bằng thẻ <code class="language-text">&lt;script /&gt;</code>. Container sẽ làm nhiệm vụ cho mount micro frontend nào và thực thi các hàm liên quan để báo cho các micro frontend sẽ render ở đâu và khi nào.</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
@@ -247,7 +243,7 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
 <p>Trên đây chỉ là ví dụ cơ bản nhất để mô tả kỹ thuật sẽ làm, thật tế có thể phải thêm thắt một số thứ khác. Không giống với cách integrate lúc build, <code class="language-text">bundle.js</code> có thể được deploy một cách độc lập. Và khác iframe, chúng ta có thể linh động chọn lựa việc render micro frontend nào chúng ta thích.</p>
 <p>Nếu có hứng thú với cách làm này, có thể tham khảo thêm <a href="https://martinfowler.com/articles/micro-frontends.html#TheExampleInDetail" target="_blank" rel="nofollow noopener noreferrer">ví dụ chi tiết hơn</a></p>
-<h4 id="integrate-lúc-run-time-bằng-web-component"><a href="#integrate-l%C3%BAc-run-time-b%E1%BA%B1ng-web-component" aria-hidden="true"><span class="icon icon-link"></span></a>Integrate lúc run-time bằng Web Component</h4>
+<h5 id="cách-5-integrate-lúc-run-time-bằng-web-component"><a href="#c%C3%A1ch-5-integrate-l%C3%BAc-run-time-b%E1%BA%B1ng-web-component" aria-hidden="true"><span class="icon icon-link"></span></a>Cách 5: Integrate lúc run-time bằng Web Component</h5>
 <p>Một lựa chọn khác cũng tương tự như cách làm trên, mỗi một micro frontend sẽ được link với element</p>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
@@ -280,7 +276,7 @@
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
 <p>Khác nhau duy nhất so với cách trên có lẽ chỉ là việc dùng <em>web component</em> thay vì một interface chúng ta tự định nghĩa.</p>
-<h4 id="trao-đổi-giữa-backend"><a href="#trao-%C4%91%E1%BB%95i-gi%E1%BB%AFa-backend" aria-hidden="true"><span class="icon icon-link"></span></a>Trao đổi giữa Backend</h4>
+<h4 id="tương-tác-với-backend"><a href="#t%C6%B0%C6%A1ng-t%C3%A1c-v%E1%BB%9Bi-backend" aria-hidden="true"><span class="icon icon-link"></span></a>Tương tác với Backend</h4>
 <p>Cái này chưa biết, không dám chém.</p>
 <h2 id="kết"><a href="#k%E1%BA%BFt" aria-hidden="true"><span class="icon icon-link"></span></a>Kết</h2>
 <p>Micro frontend có thể không lạ với một số người và khá mới với số còn lại, thực tế mà nói đã có rất nhiều dự án đang áp dụng kiến trúc này (dự án mình đang làm).</p>
