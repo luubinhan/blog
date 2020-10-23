@@ -16,12 +16,6 @@ canonical_url: false
   - [Thư viện component dùng chung](#thư-viện-component-dùng-chung)
   - [Styling](#styling)
   - [Các cách để integrate](#các-cách-để-integrate)
-    - [Cách 1: composition dùng server side template](#cách-1-composition-dùng-server-side-template)
-    - [Cách 2: Integrate lúc build](#cách-2-integrate-lúc-build)
-    - [Cách 3: Integrate lúc run-time bằng iframe](#cách-3-integrate-lúc-run-time-bằng-iframe)
-    - [Cách 4: Integrate lúc run-time bằng JavaScript](#cách-4-integrate-lúc-run-time-bằng-javascript)
-    - [Cách 5: Integrate lúc run-time bằng Web Component](#cách-5-integrate-lúc-run-time-bằng-web-component)
-  - [Tương tác với Backend](#tương-tác-với-backend)
 - [Kết](#kết)
 
 <!-- /TOC -->
@@ -60,7 +54,7 @@ Còn đây là demo của trang microfrontends.com [https://demo.microfrontends.
 
 Để có thể hiện thực hóa hoàn chỉnh micro frontend sẽ bao gồm rất nhiều thứ, ở đây chỉ tóm tắt một số vấn đề cơ bản cần giải quyết
 
-#### Tương tác giữa các ứng dụng
+### Tương tác giữa các ứng dụng
 
 Một câu hỏi được đặt ra đầu tiên là nếu tách ra thành nhiều bộ source như vậy, làm sao chúng có thể nói chuyện được với nhau? Một cách tổng quát, **nên hạn chế việc trao đổi thông tin qua lại ít chừng nào tốt chừng đó**, bởi vì nếu bạn làm ngược lại, nghĩa là bạn đang lặp lại vấn đề chúng ta muốn giải quyết ngay từ đâu: **decoupling** các tính năng với nhau.
 
@@ -68,7 +62,7 @@ Nhưng việc trao đổi giữa các ứng dụng với nhau là không tránh 
 
 Tựa chung, chúng ta không share state, mà chỉ share dữ liệu trong database như microservice.
 
-#### Thư viện component dùng chung
+### Thư viện component dùng chung
 
 Nó chung, ý tưởng **re-use** lại những component UI không có gì mới, nghe cũng rất hợp lý, mặc dù ai cũng biết việc đó khó làm.
 
@@ -78,17 +72,17 @@ Tất nhiên cũng có những ngoại lệ, những component mà nhìn vào ch
 
 Thoạt nghe làm một share component có vẻ đơn giản, nhưng nó lại là công việc đòi hỏi kỹ thuật phải rất cứng tay, và người có nhúng tay vào tất cả các team.
 
-#### Styling
+### Styling
 
 Styling 2020 là một câu chuyện dài, như mình đã kể trong một [bài viết](https://vuilaptrinh.com/2020-05-22-cam-giac-viet-css-nam-2020/), tựa chung mà nói bạn có thể dùng BEM, dùng SASS, dùng CSS module, dùng CSS-in-JS, dùng Styled Component, dùng Tailwind, kiểu gì cũng được, miễn đảm bảo được style không chồng chéo lên nhau, thằng nào độc lập thằng đó, và tự tin đoạn code nó sẽ chạy như **đúng như lường trước**.
 
-#### Các cách để integrate
+### Các cách để integrate
 
 Để hiện thực hóa ý tưởng của micro frontend, cũng có nhiều cách làm, cách nào cũng có đánh đổi. Tựu chung, nếu xét theo hướng giao diện, chúng ta có thể tổ chức nó theo dạng một ứng dụng dạng **container**, bao gồm những thành phần chung như _header_, _menu_, và các _micro frontend_ sẽ nhúng vào phần **ruột** của trang
 
 ![A web page with boxes drawn around different sections. One box wraps the whole page, labelling it as the 'container application'. Another box wraps the main content (but not the global page title and navigation), labelling it as the 'browse micro frontend'](https://martinfowler.com/articles/micro-frontends/composition.png)
 
-##### Cách 1: composition dùng server side template
+**Cách 1: composition dùng server side template**
 
 Với một cách _không chính thống lắm_ cho việc phát triển code FE, chúng ta render HTML ở phía server, với nhiều bộ template khác nhau. Chúng ta có một file `index.html` với các phần tử chung, server sẽ quyết định phần _ruột_ trả về cho từng trang
 
@@ -137,7 +131,7 @@ server {
 
 Kỹ thuật này mình không nắm lắm, nên cũng chỉ để đây cho các bạn tham khảo, trong thực tế mình gặp và làm việc với những cách làm bên dưới nhiều hơn.
 
-##### Cách 2: Integrate lúc build
+**Cách 2: Integrate lúc build**
 
 Cách này sẽ publish cái micro frontend ở dạng package, container sẽ khai báo những micro frontend này ở dạng dependency. File `package.json` nó sẽ trông như thế này:
 
@@ -156,7 +150,7 @@ Cách này sẽ publish cái micro frontend ở dạng package, container sẽ k
 
 Thoạt nhìn, cũng khá hợp lý, tuy nhiên nếu để ý, bạn sẽ thấy chúng ta phải re-compile và release trên từng cục dependency, rồi sao đó lại phải release tiếp container. Đây vẫn không phải là cách làm được khuyến khích.
 
-##### Cách 3: Integrate lúc run-time bằng iframe
+**Cách 3: Integrate lúc run-time bằng iframe**
 
 Đây cũng là cách mà dự án mình đang dùng, một cách tiếp cận đơn giản nhất để compose nhiều ứng dụng với nhau trong trình duyệt đã có từ rất rất lâu. Lợi ích có thể kể thêm của cách làm này là phần styling và biến global đều độc lập và không bị đụng độ lẫn nhau
 
@@ -186,7 +180,7 @@ Thoạt nhìn, cũng khá hợp lý, tuy nhiên nếu để ý, bạn sẽ thấ
 
 Nhược điểm của cách này là việc tích hợp giữa các phần của ứng dụng, như route, history, deep-link sẽ rất phức tạp, responsive cũng sẽ gặp nhiều vấn đề cần xử lý hơn.
 
-##### Cách 4: Integrate lúc run-time bằng JavaScript
+**Cách 4: Integrate lúc run-time bằng JavaScript**
 
 Đây là cách linh hoạt nhất, và được nhiều team chọn làm. Mỗi một micro frontend sẽ được nhét vào trong trang bằng thẻ `<script />`. Container sẽ làm nhiệm vụ cho mount micro frontend nào và thực thi các hàm liên quan để báo cho các micro frontend sẽ render ở đâu và khi nào.
 
@@ -227,7 +221,7 @@ Trên đây chỉ là ví dụ cơ bản nhất để mô tả kỹ thuật sẽ
 
 Nếu có hứng thú với cách làm này, có thể tham khảo thêm [ví dụ chi tiết hơn](https://martinfowler.com/articles/micro-frontends.html#TheExampleInDetail)
 
-##### Cách 5: Integrate lúc run-time bằng Web Component
+**Cách 5: Integrate lúc run-time bằng Web Component**
 
 Một lựa chọn khác cũng tương tự như cách làm trên, mỗi một micro frontend sẽ được link với element
 
@@ -266,7 +260,7 @@ Một lựa chọn khác cũng tương tự như cách làm trên, mỗi một m
 
 Khác nhau duy nhất so với cách trên có lẽ chỉ là việc dùng _web component_ thay vì một interface chúng ta tự định nghĩa.
 
-#### Tương tác với Backend
+**Tương tác với Backend**
 
 Cái này chưa biết, không dám chém.
 
