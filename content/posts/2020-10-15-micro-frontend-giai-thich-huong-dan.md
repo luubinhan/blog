@@ -274,7 +274,7 @@ Cái này chưa biết, không dám chém.
 
 Micro frontend có thể không lạ với một số người và khá mới với số còn lại, thực tế mà nói đã có rất nhiều dự án đang áp dụng kiến trúc này (dự án mình đang làm).
 
-Cùng hy vọng với bài viết này bạn đã thấy công việc của những lập trình viên frontend không còn đơn thuần là việc làm sao cho trang web bay, lượn, responsive mượt mà, nếu bạn muốn tiến xa hơn, giới hạn là chân trời.
+Hy vọng với bài viết này bạn đã thấy công việc của những lập trình viên frontend không còn đơn thuần là việc làm sao cho trang web bay, lượn, responsive mượt mà, nếu bạn muốn tiến xa hơn, giới hạn là chân trời.
 
 **Các bài viết đã tham khảo**
 
