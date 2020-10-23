@@ -5,7 +5,6 @@ title: '3 cách xóa phần tử bị duplicate trong mảng'
 desc: 'Nâng cao kỹ năng xử lý mảng và object không bao giờ là dư thừa'
 tags: ['thuat-thuat', 'javascript']
 canonical_url: false
-
 ---
 
 
