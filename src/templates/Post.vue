@@ -560,7 +560,7 @@ query Post ($id: ID!) {
       }
     }
     pre a {
-      color: #fff;
+      color: #FF9800;
     }
     a {
       color: #000;
