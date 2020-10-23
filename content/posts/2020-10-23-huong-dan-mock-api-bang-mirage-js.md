@@ -11,9 +11,9 @@ canonical_url: false
 
 - [Tại sao bạn cần giả lập (mock) API](#tại-sao-bạn-cần-giả-lập-mock-api)
 - [Làm như thế nào](#làm-như-thế-nào)
-- [Cần nội thêm nội dung động?](#cần-nội-thêm-nội-dung-động)
-- [Cần route động?](#cần-route-động)
-- [Chỉ giả lập những route chỉ định?](#chỉ-giả-lập-những-route-chỉ-định)
+- [Thêm nội dung động](#thêm-nội-dung-động)
+- [Thêm route động](#thêm-route-động)
+- [Giả lập những route chỉ định](#giả-lập-những-route-chỉ-định)
 - [Kết](#kết)
 
 <!-- /TOC -->
@@ -116,7 +116,7 @@ Nếu mọi thứ *êm đẹp* bạn sẽ được thông báo trên cửa sổ 
 
 ![Screenshot of a Mirage response in the console showing data for two task objects with IDs 1 and 2.](https://i1.wp.com/css-tricks.com/wp-content/uploads/2020/07/image-32.png?resize=1208%2C296&ssl=1)
 
-## Cần nội thêm nội dung động?
+## Thêm nội dung động
 
 Bạn có thể dùng [fakerjs](https://github.com/marak/Faker.js/) để chèn thêm dữ liệu một cách ngẫu nhiên.
 
@@ -147,7 +147,7 @@ export default function ({ environment = 'development' } = {}) {
 }
 ```
 
-## Cần route động?
+## Thêm route động
 
 Route động là gì, ví dụ như bạn dùng phương thức delete hay update bằng một route như thế này
 
@@ -180,7 +180,7 @@ routes() {
 }
 ```
 
-## Chỉ giả lập những route chỉ định?
+## Giả lập những route chỉ định
 
 Nếu như bạn đã có một số API, một số BE đang implement, tất nhiên chúng ta chỉ mock những API chưa làm, còn cái nào làm rồi thì cứ xài cái thật luôn
 
