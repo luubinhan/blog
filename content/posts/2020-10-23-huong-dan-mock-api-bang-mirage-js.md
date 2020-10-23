@@ -7,6 +7,17 @@ tags: ['thuat-thuat', 'javascript']
 canonical_url: false
 ---
 
+<!-- TOC -->
+
+- [Tại sao bạn cần giả lập (mock) API](#tại-sao-bạn-cần-giả-lập-mock-api)
+- [Làm như thế nào](#làm-như-thế-nào)
+- [Cần nội thêm nội dung động?](#cần-nội-thêm-nội-dung-động)
+- [Cần route động?](#cần-route-động)
+- [Chỉ giả lập những route chỉ định?](#chỉ-giả-lập-những-route-chỉ-định)
+- [Kết](#kết)
+
+<!-- /TOC -->
+
 ## Tại sao bạn cần giả lập (mock) API
 
 FE sẽ **ko phải đợi** đến khi BE làm xong API mới có thể bắt đầu integrate, nếu bạn có thể mock những API sẽ được trả về dựa trên *contract* đã thống nhất, thì *gần như* là không còn quá nhiều việc phải làm khi API làm xong.
