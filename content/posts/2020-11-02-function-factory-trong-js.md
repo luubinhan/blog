@@ -49,9 +49,9 @@ Về tính năng, thì cả 3 là như nhau, và có thể dùng thay thế cho 
 
 ## Vài so sánh giữa Factory và Constructor
 
->  Constructor bắt buột phải khởi tạo bằng keyword `new`. Factory thì không.
+>  Constructor bắt buộc phải khởi tạo bằng keyword `new`. Factory thì không.
 
-Vậy thì keyword `new` của Contructor và Class nó làm gì?
+Vậy thì keyword `new` của Constructor và Class nó làm gì?
 
 1. Khởi tạo một object mới và `bind` giá trị cho từ khóa `this`
 2. Bind `instance.__proto__` vào `Constructor.prototype`
@@ -60,14 +60,14 @@ Vậy thì keyword `new` của Contructor và Class nó làm gì?
 
 **Về mặt lợi ích khi sử dụng Constructor và Class**
 
-- Dễ tiếp cận với những người có xuất phát điểm từ những ngôn ngữ lập trình có hổ trợ `class`
+- Dễ tiếp cận với những người có xuất phát điểm từ những ngôn ngữ lập trình có hỗ trợ `class`
 - `this` luôn prefer đến một object mới
 - Nhiều người thích cách viết `myFoo = new Foo()`
 
 **Nhược điểm của Constructor và Class**
 
-- Bắt buột phải dùng từ khóa `new` để khởi tạo
-- Tất cả những thằng sử dụng đều dùng chung một constructor, rất khó nếu muốn thay đổi hiện thực biên trong constructor từ bên ngoài.
+- Bắt buộc phải dùng từ khóa `new` để khởi tạo
+- Tất cả những thằng sử dụng đều dùng chung một constructor, rất khó nếu muốn thay đổi hiện thực bên trong constructor từ bên ngoài.
 - Không đáp ứng dụng nguyên tắc `open/closed`: API chỉ cho phép *extend*, nhưng không cho phép *modify*
 - Kết thừa `class` và các vấn đề mà nó sinh ra là câu chuyện không mới khi các bạn viết object oriented (có thể tra cứu google bằng các từ khóa sau: **the fragile base class problem, the gorilla banana problem, the duplication by necessity problem**)
 
@@ -143,7 +143,7 @@ jeff.sayName() //my name is jeff
 jeff.doSomethingNerdy() // nerd stuff
 ```
 
-Với cách trên bạn chỉ định rất cụ thể hàm nào sẽ được trả về, còn nếu muốn trả tất cả những gì của Person, đơn giản là merge object
+Với cách trên, chỉ định rất cụ thể hàm nào sẽ được trả về, còn nếu muốn trả tất cả những gì của Person, đơn giản là merge object
 
 ```js
 const Nerd = (name) => {
@@ -153,8 +153,10 @@ const Nerd = (name) => {
 }
 ```
 
-Nghe có vẻ hơi trái tai, mặc dù JS đã có hổ trợ class, nhưng các bạn đừng nên dùng nó.
+Nghe có vẻ hơi trái tai, mặc dù JS đã có hỗ trợ class, nhưng các bạn đừng nên dùng nó.
 
 [JavaScript Factory Functions vs Constructor Functions vs Classes](https://medium.com/javascript-scene/javascript-factory-functions-vs-constructor-functions-vs-classes-2f22ceddf33e)
 
 [FACTORY FUNCTIONS AND THE MODULE PATTERN](https://www.theodinproject.com/courses/javascript/lessons/factory-functions-and-the-module-pattern)
+
+
