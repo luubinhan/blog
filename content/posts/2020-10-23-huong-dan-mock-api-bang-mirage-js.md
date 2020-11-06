@@ -64,7 +64,7 @@ export default function ({ environment = 'development' } = {}) {
 }
 ```
 
-4. Mở file dùng để bootstrap app của chúng ta, đang dùng Vue nó sẽ là `src/main.js` (`src/index.js` nếu bạn dùng với React)
+4. Mở file dùng để bootstrap app của chúng ta, nếu dùng Vue nó sẽ là `src/main.js` (`src/index.js` nếu bạn dùng với React)
 
 ```js
 import createServer from './api/mock';
