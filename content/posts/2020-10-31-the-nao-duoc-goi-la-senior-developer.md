@@ -21,7 +21,7 @@ Như thế nào là một Senior dev, có rất nhiều *chuẩn mực* được
 **Nên**
 
 - Khi tiếp nhận từ đồng nghiệp, hãy suy nghĩ, dù là bất cứ câu hỏi nào, nó vẫn là câu đáng để hỏi, không có câu hỏi nào vô lý, hỏi vậy cũng hỏi. Luôn luôn lắng nghe, lâu lâu trả lời :D
-- Không đưa ra bất kỳ nhận cá nhân trên code review, thảo luận mang mục đỉnh giải quyết vấn đề chứ không phán xét.
+- Không đưa ra bất kỳ đánh giá cá nhân trên code review, thảo luận mang mục đỉnh giải quyết vấn đề chứ không phán xét.
 - Khi review code, luôn luôn tìm ít nhất một điểm gì đó để đóng góp, trên tinh thần thảo luận, đặt câu hỏi, không đưa ra **chỉ thị** phải làm như thế nào
 - Sẵn sàng giải thích, một cách kiên trì, tìm ra giải pháp cho những vấn đề mà team đang vướng phải.
 - Tự thân tìm hiểu học hỏi những kỹ năng nâng cao nghề nghiệp
