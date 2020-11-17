@@ -1,4 +1,11 @@
-Nếu vỗ ngực xưng tên là một javascript developer sành sỏi, mà không giải thích được prototype inheritance thì thật là kỳ
+---
+slug: "2020-11-16-gioi-thieu-javascript-prototype"
+date: "2020-11-09"
+title: "Nếu vỗ ngực xưng tên là một javascript developer sành sỏi, mà không giải thích được prototype inheritance thì thật là kỳ"
+desc: ""
+tags: ["javascript", "hoc-thuat"]
+canonical_url: false
+---
 
 Khởi tạo một object trong JS bằng *object literal*
 
@@ -6,7 +13,7 @@ Khởi tạo một object trong JS bằng *object literal*
 const cat = { sound: 'Meow!', legs: 4 };
 ```
 
-Nếu muốn re-use thuộc tính `legs` trên các object khác, chúng ta đưa `legs` vào một object *đặc biệt* `pet`
+Nếu muốn sử dụng lại thuộc tính `legs` trên các object khác, chúng ta đưa `legs` vào một object *đặc biệt* `pet`
 
 ```js
 const pet = { legs: 4 }
@@ -38,9 +45,9 @@ cat.hasOwnProperty('legs'); // false
 
 ![Inherited property from the prototype in JavaScript](https://dmitripavlutin.com/static/9d6c9ba5235b280e315068f7c98bc16a/360ab/Selection_013.png)
 
-> Bạn có thể sẽ thắc mắc, tại sao lại sinh ra `inheritance` trong JS lằn nhằn thế ?
+> Bạn có thể sẽ thắc mắc, tại sao lại sinh ra `inheritance` trong JS lằng nhằng thế ?
 
-Vì bản chất JS ngày xưa không hổ trợ `class`.
+Vì bản chất JS ngày xưa không hỗ trợ `class`.
 
 ```js
 const pet = { legs: 4 };
@@ -95,6 +102,6 @@ cat.legs;                 // => 4
 cat instanceof CreatePet; // => true
 ```
 
-Bạn có thể sẽ thấy hơi bối rối, nếu bạn có nền tảng từ những ngôn ngữ có hổ trợ class *ngay trong trứng* như Java hay PHP, không sao cả, ai cũng cần thời gian để tiếp thu những kiến thức mới.
+Bạn có thể sẽ thấy hơi bối rối, nếu bạn có nền tảng từ những ngôn ngữ có hỗ trợ class *ngay trong trứng* như Java hay PHP, không sao cả, ai cũng cần thời gian để tiếp thu những kiến thức mới.
 
 [What Makes JavaScript JavaScript? Prototypal Inheritance](https://dmitripavlutin.com/javascript-prototypal-inheritance/)
