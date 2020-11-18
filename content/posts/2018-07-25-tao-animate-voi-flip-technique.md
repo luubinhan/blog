@@ -1,7 +1,7 @@
 ---
 slug: "/2018-07-25-huong-dan-tao-animate-voi-flip-technique"
 date: "2018-07-25"
-title: "Tạo animation với flip technique"
+title: "Tạo animation với kỹ thuật FLIP"
 desc: "Trong bài này chúng ta sẽ tìm hiểu kỹ thuật FLIP có thể sử dụng để animate position và kích thước của bất kỳ DOM element nào"
 cover: ""
 type: "post"
@@ -10,18 +10,18 @@ chapter: 0
 tags: ["css"]
 ---
 
-# Tại sao sử dụng FLIP technique
+## Tại sao sử dụng kỹ thuật FLIP
 
-Đã bao lần bạn cần làm animate cho các property `height`, `width`, `top`, `left`? Bạn có để ý là những animate như vậy thường sẽ hơi khực khực. Lý do? những property này trigger **layout change**, trình duyệt sẽ xem xét các element khác có cần thay đổi gì không, việc này sẽ tiêu tốn công sức của trình duyệt khá nhiều trong đa số các trường hợp. Trong bài viết [Pixel are Expensive](https://aerotwist.com/blog/pixels-are-expensive/) tác giả Paul Lewis sẽ nói rõ hơn.
+Đã bao lần bạn cần làm animate cho các property `height`, `width`, `top`, `left`? Bạn có để ý là những animate như vậy thường sẽ hơi khực khực. Lý do? những property này trigger **layout change**, trình duyệt sẽ xem xét các element khác có cần thay đổi gì không, việc này sẽ tiêu tốn *sức người, tiền bạc* của trình duyệt. Xem thêm bài viết [Pixel are Expensive](https://aerotwist.com/blog/pixels-are-expensive/) tác giả Paul Lewis sẽ nói rõ hơn.
 
 Nói một cách khác, chúng ta muốn việc tính toán này hạn chế ở mức tối đa, nhanh nhất có thể. Mục tiêu là chúng ta chỉ animate trên `transform` và `opacity`. FLIP giải thích làm sao để chúng ta có thể đạt được layout change với chỉ property `transform`
 
-# FLIP là gì
+## FLIP là gì
 
 FLIP là viết tắt của **First, Last, Invert, Play**
 
-- **First** trước khi mọi thứ bắt đầu, lưu lại giá trị position và kích thước của element muốn transition. Có thể sử dụng `element.getBoundingClientRect()`
-- **Last** thực thi đoạn code sẽ gây ra transition trong khoản thời gian gần như là tức thì, lưu lại giá trị position và kích thước của element lúc đó.
+- **First** trước khi mọi thứ bắt đầu, lưu lại giá trị *position* và kích thước của element muốn *transition*. Có thể sử dụng `element.getBoundingClientRect()`
+- **Last** thực thi đoạn code sẽ gây ra *transition* trong khoản thời gian gần như là tức thì, lưu lại giá trị *position* và kích thước của element lúc đó.
 - **Invert** do element đang ở vị trí cuối cùng, chúng ta muốn user nghĩ đó là ví trí đầu tiên, bằng cách sử dụng `transform` để thay đổi lại position và kích thước. Tính toán xíu, nhưng không thành vấn đề.
 - **Play** với element đã bị *invert*, chúng ta lại move nó lại vào vị trí cuối một lần nữa bằng `transform: none`
 
@@ -73,7 +73,7 @@ Có 2 điểm quan trọng cần lưu ý
 
 #  Shared element transition
 
-Một trường hợp trong transition là element giữa các view hoặc giữa các trạng thái của trang, không phải lúc nào element ở lúc cuối cũng giống như element lúc khởi tạo.
+Một trường hợp trong transition là element giữa các view hoặc giữa các trạng thái của trang, không phải lúc nào element ở vị trí cuối cũng giống như element lúc bắt đầu.
 
 ```js
 const firstElm = document.querySelector('.first-element');
