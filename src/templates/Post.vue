@@ -45,13 +45,17 @@
           </div>
         </article>
         <div class="section-below-post">
-          <div class="post-comments">
-            <div
-              class="fb-comments"
-              :data-href="`https://vuilaptrinh.com${$page.post.path}`"
-              data-numposts="10"
-              data-width="100%"
-            ></div>
+          <div class="post-comments">         
+            <facebook-comments
+              :settings="{
+                href:
+                  `https://vuilaptrinh.com${$page.post.path}`,
+                num_posts: 10,
+                order_by: 'time',
+                width: 600,
+                // other settings...
+              }"
+            />
             <Disqus shortname="luckyluu-blog" />
           </div>
           <div class="related-posts">
@@ -560,7 +564,7 @@ query Post ($id: ID!) {
       }
     }
     pre a {
-      color: #FF9800;
+      color: #ff9800;
     }
     a {
       color: #000;
