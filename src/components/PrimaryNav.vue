@@ -50,6 +50,9 @@
           <li class="about">
             <a href="https://luubinhan.github.io/" target="_blank">About</a>
           </li>
+          <li>
+            <g-link to="/gop-y">Góp ý</g-link>
+          </li>
         </ul>
       </div>
     </div>
@@ -62,6 +65,7 @@
               href="https://www.youtube.com/channel/UC0Te8s0b0aplS1ZoVLfjKHA"
               target="_blank"
               rel="noopener noreferrer"
+              style="display: none;"
             >
               <span class="link-youtube__icon">
                 <Youtube />
