@@ -12,9 +12,9 @@ canonical_url: false
 ```js
 // class
 class ClassCar {
-    drive() {
-        console.log('GOOO');
-    }
+	drive() {
+		console.log('GOOO');
+	}
 }
 
 const car1 = new ClassCar();
@@ -23,18 +23,18 @@ console.log(car1.drive());
 // constructor function
 function ConstructorCar() {}
 
-ConstructorCar.prototype.drive = function() {
-    console.log('GOOO');
-}
+ConstructorCar.prototype.drive = function () {
+	console.log('GOOO');
+};
 
 const car2 = new ConstructorCar();
 console.log(car2.drive());
 
 // factory
 const proto = {
-    drive() {
-        console.log('GOOO');
-    }
+	drive() {
+		console.log('GOOO');
+	},
 };
 
 const factoryCar = () => Object.create(proto);
@@ -92,29 +92,29 @@ Một ví dụ tương đối đầy đủ về factory function
 
 ```js
 const Player = (name, level) => {
-  let health = level * 2;
-  const getLevel = () => level;
-  const getName  = () => name;
-  const die = () => {
-    // uh oh
-  };
-  const damage = x => {
-    health -= x;
-    if (health <= 0) {
-      die();
-    }
-  };
-  const attack = enemy => {
-    if (level < enemy.getLevel()) {
-      damage(1);
-      console.log(`${enemy.getName()} has damaged ${name}`);
-    }
-    if (level >= enemy.getLevel()) {
-      enemy.damage(1);
-      console.log(`${name} has damaged ${enemy.getName()}`);
-    }
-  };
-  return {attack, damage, getLevel, getName}
+	let health = level * 2;
+	const getLevel = () => level;
+	const getName = () => name;
+	const die = () => {
+		// uh oh
+	};
+	const damage = (x) => {
+		health -= x;
+		if (health <= 0) {
+			die();
+		}
+	};
+	const attack = (enemy) => {
+		if (level < enemy.getLevel()) {
+			damage(1);
+			console.log(`${enemy.getName()} has damaged ${name}`);
+		}
+		if (level >= enemy.getLevel()) {
+			enemy.damage(1);
+			console.log(`${name} has damaged ${enemy.getName()}`);
+		}
+	};
+	return { attack, damage, getLevel, getName };
 };
 
 const jimmie = Player('jim', 10);
@@ -126,31 +126,32 @@ jimmie.attack(badGuy);
 
 ```js
 const Person = (name) => {
-  const sayName = () => console.log(`my name is ${name}`)
-  return {sayName}
-}
+	const sayName = () => console.log(`Tôi là ${name}`);
+	return { sayName };
+};
 
 const Nerd = (name) => {
-  // tạo Person, sau đó trả về hàm sayName
-  const {sayName} = Person(name)
-  const doSomethingNerdy = () => console.log('nerd stuff')
-  return {sayName, doSomethingNerdy}
-}
+	// tạo Person, sau đó trả về hàm sayName
+	const { sayName } = Person(name);
+	const doSomethingNerdy = () => console.log('tôi tài giỏi');
+	return { sayName, doSomethingNerdy };
+};
 
-const jeff = Nerd('jeff')
+const jeff = Nerd('luckyluu');
 
-jeff.sayName() //my name is jeff
-jeff.doSomethingNerdy() // nerd stuff
+jeff.sayName(); // Tôi là luckyluu
+jeff.doSomethingNerdy(); // tôi tài giỏi
+
 ```
 
 Với cách trên, chỉ định rất cụ thể hàm nào sẽ được trả về, còn nếu muốn trả tất cả những gì của Person, đơn giản là merge object
 
 ```js
 const Nerd = (name) => {
-  const prototype = Person(name)
-  const doSomethingNerdy = () => console.log('nerd stuff')
-  return Object.assign({}, prototype, {doSomethingNerdy})
-}
+	const prototype = Person(name);
+	const doSomethingNerdy = () => console.log('tôi tài giỏi');
+	return Object.assign({}, prototype, { doSomethingNerdy });
+};
 ```
 
 Nghe có vẻ hơi trái tai, mặc dù JS đã có hỗ trợ class, nhưng các bạn đừng nên dùng nó.

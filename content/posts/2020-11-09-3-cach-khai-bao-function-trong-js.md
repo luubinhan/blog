@@ -13,7 +13,7 @@ Cách khai báo function “vở lòng” mà ai cũng phải biết, sau từ k
 
 ```js
 function foo() {
-	console.log(‘vui lap trinh’)
+	console.log("vui lap trinh")
 }
 ```
 ## Gán function vào một biến
@@ -22,7 +22,7 @@ Chúng ta khai báo một biến, gán giá trị của biến này là một fu
 
 ```js
 const foo = function () {
-	console.log(‘vui lap trinh’)
+	console.log("vui lap trinh")
 }
 ```
 
@@ -32,7 +32,7 @@ Với cách này, lưu ý là **không dùng function trước khi khai báo**, 
 foo(); // Uncaught ReferenceError: foo is not defined
 
 const foo = function() {
-   console.log(‘vui lap trinh’)
+   console.log("vui lap trinh")
 
 }
 ```
@@ -40,10 +40,10 @@ const foo = function() {
 ## Arrow function
 Khai báo function bằng dấu `=>` mũi tên, bên trái là params của function, bên phải là phần *ruột* function
 ```js
-() => console.log(‘vui lap trinh’)
+() => console.log("vui lap trinh")
 
 // hoặc bỏ luôn ngoặc kép
-[‘An’, ‘luckyluu’, ‘vui’, ‘laptrinh’]
+['An', 'luckyluu', 'vui', 'laptrinh']
   .filter(name => name.length > 5)
   .map(name => name.toLowerCase())
 ```
