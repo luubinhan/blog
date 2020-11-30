@@ -24,7 +24,13 @@ Scrum bao gồm
 - Team tự chọn cách làm tốt nhất, không bị điều khiển bởi người ngoài
 - Năng lực tự hoàn thành công việc, không cần sự giúp đỡ từ bên ngoài
 
+56 - 5 giá trị của Scrum
 
+- Commitment
+- Openness
+- Courage
+- Focus
+- Respect
 
 ## Đúng sai
 
@@ -61,6 +67,30 @@ Tất cả Dev Team làm việc trên một sản phẩm, nên sử dùng cùng 
 **Đúng**
 
 41 - Nếu không có gì quan trọng có thể bỏ qua Daily
+
+**Sai**
+
+47 - PO và Scrum master có thể đưa vào một phần của Dev team
+
+**Có**
+
+48 - Scrum master tập trung cho scrum team và không quan tâm đến những phần bên ngoài của Scrum Team
+
+**Sai**
+
+49 - Chỉ có PO và Dev team có mặt trong Sprint plan, Scrum master không cần tham gia
+
+**Sai**
+
+51 - Thời gian daily phụ thuộc vào team lớn hay nhỏ
+
+**Sai**
+
+52 - Trong **Sprint planning**, những người nằm ngoài scrum team vẫn có thể tham gia để hổ trợ kỹ thuật
+
+**Đúng**
+
+59 - Scrum không cho phép các buổi meeting không được định nghĩa trong Scrum
 
 **Sai**
 
@@ -120,7 +150,7 @@ Ai tham gia **sprint plan**
 - Hôm nay này làm gì
 - Có blocker gì không
 
-37 - Ai được phép thay đổi product backlog
+37 - Ai được phép thay đổi **product backlog**
 
 - PO
 - Dev (với sự cho phép của PO)
@@ -133,6 +163,21 @@ Ai tham gia **sprint plan**
 
 Toàn team (không gồm scrum master - Scrum team)
 
+54 - Ai them gia Sprint Review
+
+- Dev team
+- Key stakeholder
+- PO
+- Scrum master
+
+58 - Ai tạo ra sự nâng cấp
+
+Dev team
+
+64 - Ai có trách nhiệm theo dõi quá trình đạt được mục tiêu của sprint
+
+**PO**
+
 ## Như thế nào
 
 Scrum master làm gì cho dev team
@@ -140,6 +185,12 @@ Scrum master làm gì cho dev team
 - Giúp Dev tạo ra một sản phẩm chất lượng
 - Hướng dẫn Dev tự tổ chức công việc trong ngoài
 - Gỡ các blocker của dev trong quá trình làm việc
+
+Scrum master giúp tổ chức như thế nào
+
+- Tổ chức, vận hành Scrum cho doanh nghiệp
+- Dẫn dắt và chỉ dẫn tổ chức áp dụng scrum
+- Làm việc với các scrum master khác để cải thiện hiệu quả của việc ứng dụng scrum trong doanh nghiệp
 
 ## Cái gì
 
@@ -219,4 +270,50 @@ Sự kiện nào Stake holder được phép tham gia
 A framework within which people can address complex adaptive problems, while delivering valuable products.
 
 45 - Scrum master giúp PO bằng cách nào
+
+- Hổ trợ planning
+- Kỹ thuật quản lý Product Backlog tối ưu
+- Thực hiện các buổi họp cần thiết theo yêu cầu
+
+46 - Nếu Sprint cancel thì làm gì
+
+- Những cái nào trong sprint backlog chưa xong thì estimate lại và đưa về product backlog
+- Những phần nào có thể release thì release
+- Phần nào đã *Done* thì chuyển sang *reviewed*
+
+50 - Nếu bạn làm Scrum master cho một tổ chức nhỏ, bạn muốn apply Scrum thì làm gì
+
+- 2 team từ 4 đến 6 người
+- 3 team từ 3 đến 4 người mỗi team
+
+53 - Cái gì chỉ thuộc về Dev team
+
+Sprint backlog
+
+55 - Product backlog bao gồm
+
+- Thứ tự các công việc sếp theo độ ưu tiên để đạt mục tiêu của sprint
+- Product backlog minh bạch, trực quan với toàn bộ mọi người
+- Tối ưu cho giá trị công việc của dev team
+
+57 - Nếu thấy có điều vượt khỏi giới hạn có thể chấp nhận, cần làm gì?
+
+Hạn chế sự lệch hướng (**deviation**) ngay và luôn
+
+61 - Đặc điểm của product backlog
+
+- Không bao giờ hết
+- Khi nào sản phẩm còn, thì còn product backlog
+- Linh hoạt
+
+62 - Đặc điểm của Dev team
+
+- Không có chức vụ (title) trong dev team
+- Không có team con (sub team) trong dev team
+- Dev team được tính là một tổng thể duy nhất
+
+65 - Định nghĩa "Done" được tính như thế nào
+
+- Dựa trên định nghĩa **Done** của các team khác cùng sản phẩm
+- Quy ước chung của một tổ chức
 
