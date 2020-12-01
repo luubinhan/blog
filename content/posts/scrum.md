@@ -1,30 +1,30 @@
-## Nguyên tắc
+## Nguyên tắc chính của Scrum
 
-Scrum đề cao 3 yếu tố cốt lỗi nào
+**pillars that uphold**
 
 - Adaptation
 - Inspection
 - Transparency
 
-3 điểm mà scrum đem đến cho team
+**Quanlities designed to optimized**
 
 - Creative
 - Productivity
 - Flexibility
 
-Scrum bao gồm
+**Comprises** 
 
 - Roles
 - Artifact
 - Events
 - Rules
 
-2 tính năng mà scrum team theo đuổi
+**2 tính năng** mà scrum team theo đuổi
 
 - Team tự chọn cách làm tốt nhất, không bị điều khiển bởi người ngoài
 - Năng lực tự hoàn thành công việc, không cần sự giúp đỡ từ bên ngoài
 
-56 - 5 giá trị của Scrum
+**Values**
 
 - Commitment
 - Openness
@@ -34,43 +34,39 @@ Scrum bao gồm
 
 ## Đúng sai
 
-Scrum **không phải process hay technique**
+*Scrum **không phải process hay technique***
 
 - Đúng
 
-Best practice là lâu lâu nên có một sprint chỉ để làm những task kỹ thuật để trả nợ và không làm các tính năng mới
+Lâu lâu nên có một sprint chỉ để làm những task kỹ thuật để **trả nợ và không làm các tính năng mới**
 
 - Sai
 
-Chỉ sử dụng các phần và quy tắc scrum phù hợp nhất cho một dự án cụ thể
+*Chỉ sử dụng các phần và quy tắc scrum phù hợp nhất cho một dự án cụ thể*
 
 - Sai
 
-Mục đích của Sprint retro là
-- Tạo một kế hoạch cải thiện cho Scrum team làm việc
-- Liệt kê danh sách những điểm tốt và cải thiện nếu có
-
-Nếu một công việc trong Sprint backlog không thể hoàn thành, cancel sprint?
+*Nếu một công việc trong Sprint backlog không thể hoàn thành, cancel sprint?*
 
 - Sai
 
-Tất cả team làm việc trên một sản phẩm, đều áp dụng một độ dài sprint
+*Tất cả team làm việc trên một sản phẩm, đều áp dụng một độ dài sprint*
 
 - Sai
 
-Nên có 2 PO trên những sản phẩm lớn
+*Nên có 2 PO trên những sản phẩm lớn*
 
 **Sai**
 
-Tất cả Dev Team làm việc trên một sản phẩm, nên sử dùng cùng một product backlog
+*Tất cả Dev Team làm việc trên một sản phẩm, nên sử dùng cùng một product backlog*
 
 **Đúng**
 
-41 - Nếu không có gì quan trọng có thể bỏ qua Daily
+*Nếu không có gì quan trọng có thể bỏ qua Daily*
 
 **Sai**
 
-47 - PO và Scrum master có thể đưa vào một phần của Dev team
+*PO và Scrum master có thể đưa vào một phần của Dev team*
 
 **Có**
 
@@ -93,6 +89,30 @@ Tất cả Dev Team làm việc trên một sản phẩm, nên sử dùng cùng 
 59 - Scrum không cho phép các buổi meeting không được định nghĩa trong Scrum
 
 **Sai**
+
+66 - Dev team có thể giải thích với Scrum master và PO cách mình sẽ quản lý công việc như thế nào
+
+Đúng
+
+67 - PO và Scrum master có thể là một phần của dev team
+
+Đúng
+
+69 - Khái niệm "Done" không đổi trong sprint đầu tiên và giữ nguyên như vậy đến khi release
+
+Sai
+
+74 - Sprint backlog đã có, Dev team không được phép đưa thêm việc vào sau khi đã sprint planning
+
+Sai
+
+75 - Khái niệm của Done có thể thay đổi theo từng lần Sprint retro
+
+Đúng
+
+83 - Daily bắt buộc phải là 15 phút, nếu không đủ chém gió thêm
+
+Sai
 
 ## Thời gian
 
@@ -178,6 +198,28 @@ Dev team
 
 **PO**
 
+68 - Ai quản lý Product Backlog
+
+PO
+
+70 - Ai có trách nhiệm copy những phần chưa làm (artifact)
+
+Scrum master
+
+76 - Scrum team bao gồm
+
+- PO
+- Scrum master
+- Dev team
+
+Ai cho phép tham gia daily
+
+Dev team
+
+84 - Ai tạo ra khái niệm "Done"
+
+Dev team
+
 ## Như thế nào
 
 Scrum master làm gì cho dev team
@@ -193,6 +235,11 @@ Scrum master giúp tổ chức như thế nào
 - Làm việc với các scrum master khác để cải thiện hiệu quả của việc ứng dụng scrum trong doanh nghiệp
 
 ## Cái gì
+
+**Mục đích của Sprint retro** là
+
+- Tạo một kế hoạch cải thiện cho Scrum team làm việc
+- Liệt kê danh sách những điểm tốt và cải thiện nếu có
 
 Sprint retro là cái gì
 
@@ -317,3 +364,58 @@ Hạn chế sự lệch hướng (**deviation**) ngay và luôn
 - Dựa trên định nghĩa **Done** của các team khác cùng sản phẩm
 - Quy ước chung của một tổ chức
 
+71 - Việc sàn lọc Product Backlog tiêu tốn bao nhiêu thời gian của dev team
+
+Không quá 10%
+
+72 - Trong Sprint retro, team xác định được một số item có thể cải thiện, team nên làm gì
+
+Đảm bảo trong sprint backlog có ít nhất một item có thể cải thiện có ưu tiên cao nhất
+
+73 - Hai meeting nào mà người ngoài team có thể tham gia
+
+Sprint review
+
+Sprint Planning
+
+77 - Những sự kiện nào trong sprint để inspect và adapt
+
+Sprint review
+
+Sprint Retro
+
+Daily
+
+Sprint Planning
+
+78 - Development được hiểu là gì trong scrum
+
+Công việc phức tạp, có thể có nhiều lựa chọn khác nhau
+
+(Complex work that can include all the suggested options and even more)
+
+79 - Sprint planning có thể kết thúc không, khi chỉ có một công việc được plan cho ngày đầu tiên của sprint
+
+Được, phần còn lại có thể estimate sau
+
+80 - Bản chất của Scrum?
+
+Team nhỏ với khả năng linh hoạt và thay đổi
+
+82 - Scrum dựa trên
+
+Kinh nghiệm (Empiricism)
+
+85 - Done giúp gì cho Dev team
+
+- chỉ dẫn dev team cần chọn bao nhiêu item trong Product Backlog và Sprint planning
+- Đánh giá công việc đã hoàn tất chưa
+- Đảm bảo tính minh bạch
+
+86 - Increment là gì
+
+Tổng tất cả Product Backlog đã hoàn thành trong sprint và giá trị của tất cả sprint trước
+
+87 - Burn down chart thể hiện gì
+
+Còn bao nhiêu công việc còn lại trong sprint
