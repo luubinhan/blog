@@ -421,3 +421,12 @@ Tổng tất cả Product Backlog đã hoàn thành trong sprint và giá trị 
 ### Burn down chart thể hiện gì
 
 Còn bao nhiêu công việc còn lại trong sprint
+
+### a shared understanding by the Product Owner and the Development Team regarding the preferred level of description of Product Backlog items introduced at Sprint Planning.
+
+Definition of Ready
+
+### **What are three ways Scrum promotes self-organization?**
+
+Scrum Teams are self-organizing and cross-functional. Self-organizing teams choose how best to accomplish their work, rather than being directed by others outside the team. So development team selects what needs to be worked in a sprint. They have only one role Developer & they bring a light weight framework e.g. Scrum.
+
