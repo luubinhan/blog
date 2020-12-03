@@ -38,6 +38,32 @@ Sau khi đã có được source file css "trong tay", trình duyệt làm tiế
 
 ## 4 - Execute JS
 
+Các trình duyệt khác nhau, quá trình parse-compile-execute sẽ khác nhau, cũng cần nhớ thêm việc parse JS rất tốn kém tài nguyên của máy.
 
+Ngay sau khi **JS đã load xong** và **DOM đã parse xong**, sự kiện `document.DOMContentLoaded` sẽ được *emit*
+
+```js
+document.addEventListener('DOMContentLoaded', event => {})
+```
+
+Sau khi các async JS, image load xong, sự kiện `window.load` sẽ được emit
+
+```js
+window.addEventListener('load', (event) => {});
+```
+
+[![Timeline of executing JavaScript in a web browser](https://res.cloudinary.com/practicaldev/image/fetch/s--fu8vnHfk--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://www.jstar.mx/images/blog/how-a-browser-renders-a-web-page/step-4-1000.png)](https://www.jstar.mx/images/blog/how-a-browser-renders-a-web-page/step-4.png)
+
+## 5 - Merge DOM và CSSOM để tạo render tree
+
+Hợp thể giữa DOM và CSSOM sẽ cho ra **render tree**, là toàn bộ những gì sẽ hiển thị trên trình duyệt
+
+[![Merging the DOM and CSSOM to create a render tree in a web browser](https://res.cloudinary.com/practicaldev/image/fetch/s--ay06Rl9_--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://www.jstar.mx/images/blog/how-a-browser-renders-a-web-page/step-5-1000.png)](https://www.jstar.mx/images/blog/how-a-browser-renders-a-web-page/step-5.png)
+
+## 6 - Calculate layout và paint
+
+Sau khi đã nhận được **render tree**, trình duyệt đã có đủ thông tin để tính toán những phần tử nào, đặt ở đâu, kích thước ra làm sao, qua trình đó gọi là calculate layout, kết thúc quá trình tính toán này, trình duyệt sẽ bắt đầu quá trình **paint**, là những gì user sẽ thấy trên trình duyệt, đây cũng là bước cuối cùng.
+
+[![Calculating the layout and paint of a web page in a browser](https://res.cloudinary.com/practicaldev/image/fetch/s--MBpASwvG--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://www.jstar.mx/images/blog/how-a-browser-renders-a-web-page/step-6-1000.png)](https://www.jstar.mx/images/blog/how-a-browser-renders-a-web-page/step-6.png)
 
 [](https://dev.to/jstarmx/how-the-browser-renders-a-web-page-1ahc)
