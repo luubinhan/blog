@@ -1,3 +1,12 @@
+---
+slug: "2020-12-03-browser-render-website-nhu-the-nao"
+date: "2020-12-03"
+title: "Tóm tắt quá trình render của trình duyệt"
+desc: "Tóm lược các bước chính trình duyệt cần thực hiện để render một trang web"
+tags: ["hoc-thuat", "web"]
+canonical_url: false
+---
+
 ## Parse HTML
 
 Khi trình duyệt nhận một dữ liệu HTML, nó sẽ **parse** qua DOM node
