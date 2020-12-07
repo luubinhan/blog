@@ -7,8 +7,6 @@ tags: ["hoc-thuat", "web", "javascript"]
 canonical_url: false
 ---
 
-
-
 ## Cơ bản, cần nắm
 
 JWT có thể nhớ nôm na là một JSON đã **encrypt** => gọi là *token*, chứa thông tin giúp backend có thể định danh bạn là ai, bạn có quyền gì
@@ -24,7 +22,7 @@ Nguyên nhân ra đời của JWT là để giải quyết bài toán **định 
 1. Tạo như thế nào
 2. Validate ra làm sao
 
-Việc tạo, thật ra sử dụng những thư viện có sẵn ([jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) nếu bạn đang dùng Node.js), bạn chỉ cần quan tâm những giá trị *đã*  hoặc *muốn* nhét thêm trong JSON
+Việc tạo, sử dụng những thư viện có sẵn ([jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) nếu bạn đang dùng Node.js), Ưchỉ cần quan tâm những giá trị *đã*  hoặc *muốn* nhét thêm trong JSON
 
 Một trường tối quan trong trong JSON là `expiresIn`, cho phép token sẽ expire sau bao lâu.
 
@@ -60,9 +58,9 @@ Cookie thật ra không phải là không dùng được, nhưng dùng thì ph�
 - Dùng `httpOnly` để cookie không thể được truy cập thông qua JS
 - Dùng `SameSite` để hạn chế  cấp phát cookie đi các domain chỉ định. Nếu phải đưa qua nhiều domain khác nhau, dùng *Lax*, nó cho phép gọi truyền cookie khác domain nếu là `GET`
 
-Nếu muốn 100% an toàn tuyệt đối, một số cái giá phải trả, như tắt cross-domain request.
+Nếu muốn 100% an toàn tuyệt đối, phải trả một cái giá không rẻ, như tắt cross-domain request.
 
-Nếu sử dụng axios, và backend tạo cookie đúng chuẩn, để axios lo phần đó cho an toàn, không cần lo việc xử lý token, cookie một cách thủ công, thiếu chuyên nghiệp.
+Nếu sử dụng `axios`, và backend tạo cookie đúng chuẩn, để axios lo phần đó cho an toàn, không cần lo việc xử lý token, cookie một cách thủ công, thiếu chuyên nghiệp.
 
 ```js
 axios.defaults.withCredentials = true;
@@ -74,7 +72,7 @@ axios.defaults.withCredentials = true;
 
 HTTPS có đảm bảo an toàn tuyệt đối cho site, là yêu cầu bắt buộc khi sử dụng JWT?
 
-100% bảo mật là con số chưa ai giám nhận, hay nói tẹc ra là không thể. Sẽ luôn có đâu đó một con người tài giỏi, thông minh hơn bạn, họ sẽ tìm được cách tấn công phù hợp. May mắn thay những người xuất chúng như vậy họ cũng có đạo đức cao và không rảnh để làm những việc quá tầm thường. Đừng có lên mạng mà "Anh đố chú hack được site anh!"
+100% bảo mật là con số chưa ai dám nhận, hay nói toẹt ra là không thể. Sẽ luôn có đâu đó một con người tài giỏi, thông minh hơn bạn, họ sẽ tìm được cách tấn công phù hợp. May mắn thay những người xuất chúng như vậy họ cũng có đạo đức cao và không rảnh để làm những việc quá tầm thường. Đừng có lên mạng mà "Anh đố chú hack được site anh!"
 
 HTTPS là cơ chế **encrypt** thông tin đi-về giữa client và server, đảm bảo không có người ngoài nào có thể dòm ngó và đọc được bạn đang gửi gì, nhưng nếu nó đã chui được vào nhà bạn rồi thì thành thật mà nói HTTPS cũng không phải là cánh cửa chỉ có bạn mở được.
 
