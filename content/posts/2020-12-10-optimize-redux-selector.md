@@ -1,9 +1,9 @@
-Khác nhau giữa `useSelector` và `mapState`
+## Khác nhau giữa `useSelector` và `mapState`
 
-- Khi một action được `dispatch`, `useSelector` sẽ thực hiện một phép so sánh giữa kết quả trước đó và kết quả hiện tại, nếu khác, component bị force để re-render.
-- `useSelector` sử dụng phép so sánh `===` chứ không dùng phương pháp so sánh **shallow** (dịch vui là so sánh "nhẹ")
+- Khi một *action* được *dispatch*, `useSelector` sẽ thực hiện so sánh giữa kết quả trước đó và kết quả hiện tại, *nếu khác*, component bị force để re-render.
+- `useSelector` sử dụng so sánh `===` chứ không dùng phương pháp so sánh **shallow** (dịch vui là so sánh "nhẹ")
 
-Lý do sử dụng selector
+## Lý do sử dụng selector
 
 - Sử dụng lại, một selector có thể sử dụng ở nhiều nơi, nhiều component khác nhau
 - Tinh gọn, ví dụ chúng ta có *entity* `user`  chứa `lastname`, `fullname`, `email`, nhưng chúng ta chỉ muốn lấy `email`, một selector `getUserEmail` sẽ rất rõ ràng tinh gọn
@@ -32,8 +32,6 @@ export const getVisibleTodos = createSelector(
 const visibleTodos = useSelector(getVisibleTodos)
 ...
 ```
-
-
 
 ## Sử dụng sao cho tối ưu?
 
@@ -80,18 +78,81 @@ export const UsersCounter = () => {
 }
 ```
 
-**Thận trọng với `props` là object**
+### Selector phụ thuộc vào giá trị prop của component
 
-Nếu selector nhận `props` của component làm input, nếu props này là một `object`, thì cơ chế **cache** không hoạt động vì input luôn là khác nhau
+Trong trường hợp một hàm selector có nhận input là prop của component, phải đảm bảo hàm selector được khai bao bên ngoài component.
 
-```js
-getVisibleTodos(state, props);
-// props là dạng object { id: 1 }
+```jsx
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { createSelector } from 'reselect';
 
-// nên viết lại
-getVisibleTodos(state, props.id);
+const selectUser = (state, userId) => users.find(user => user.id === userId);
+
+const selectUserById = createSelector(
+  [selectUser],
+  user => expensiveTransformation(user)
+);
+
+export const UserDetails = ({ userId }) => {
+  const user = useSelector(state => selectUserById(state,userId));
+  return <div>{user.name}</div>
+};
+
+export const App = () => {
+  return (
+    <>
+      <span>User Details:</span>
+      <UserDetails userId={1} />
+    </>
+  )
+};
 ```
 
+### Nhiều instance của một component
 
+Khi một hàm selector được dùng trong nhiều *instance* của một component và cũng phụ thuộc vào `prop`, như 2 *instance* của `UserDetails` ở trên
+
+```jsx
+<UserDetails userId={1} />
+<UserDetails userId={2} />
+```
+
+Chúng ta cần chắc chắn, **mỗi `instance` của `UserDetails` sẽ ứng với một instance của hàm selector,** nếu chỉ viết như ví dụ ở trên là không được, cả 2 instance của `UserDetails` chỉ trỏ về một selector.
+
+Sử dụng kết hợp với `useMemo` của React để đạt được kết quả mong muốn
+
+```jsx
+import React, { useMemo } from 'react';
+import { useSelector } from 'react-redux';
+import { createSelector } from 'reselect';
+
+const selectUser = (state, userId) => users.find(user => user.id === userId);
+
+const makeSelectUserById = () => 
+  createSelector(
+    [selectUser],
+    user => expensiveTransformation(user)
+  );
+
+export const UserDetails = ({ userId }) => {
+  const selectUserMemo = useMemo(makeSelectUserById, []);
+  const user = useSelector(state => selectUserMemo(state, userId));
+  return <div>{user.name}</div>
+};
+
+export const App = () => {
+  return (
+    <>
+      <span>User Details:</span>
+      <UserDetails userId={1} />
+	  <UserDetails userId={2} />
+    </>
+  )
+};
+```
+
+Với cách này `const selectUserMemo = useMemo(makeSelectUserById, []);` chúng ta tạo một instance của hàm selector trên từng instance của component.
 
 https://programmerden.com/2020/04/06/optimize-your-redux-selectors-with-useselector-hook-and-memoize-them-with-reselect/
+
