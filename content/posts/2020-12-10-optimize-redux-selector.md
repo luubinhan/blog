@@ -1,3 +1,24 @@
+## Selector
+
+> Selector là một hàm nhận input là 'state' của store và trả về một giá trị mong muốn
+
+```js
+const selectEntities = state => state.entities;
+
+function selectItemIds(state) {
+    return state.items.map(item => item.id);
+}
+
+const selectSomeSpecificField = state => state.some.deeply.nested.field;
+
+function selectItemsWhoseNamesStartWith(items, namePrefix) {
+     const filteredItems = items.filter(item => item.name.startsWith(namePrefix));
+     return filteredItems;
+}
+```
+
+Về cách đặt tên, không bắt buộc, nhưng đa phần sẽ đặt với *prefix* `select` hoặc `get`
+
 ## Khác nhau giữa `useSelector` và `mapState`
 
 - Khi một *action* được *dispatch*, `useSelector` sẽ thực hiện so sánh giữa kết quả trước đó và kết quả hiện tại, *nếu khác*, component bị force để re-render.
@@ -7,6 +28,7 @@
 
 - Sử dụng lại, một selector có thể sử dụng ở nhiều nơi, nhiều component khác nhau
 - Tinh gọn, ví dụ chúng ta có *entity* `user`  chứa `lastname`, `fullname`, `email`, nhưng chúng ta chỉ muốn lấy `email`, một selector `getUserEmail` sẽ rất rõ ràng tinh gọn
+- Lý tưởng nhất, chỉ có *reducer* và *selector* mới biết được structure của redux store, như vậy một khi structure này có thay đổi, chúng ta chỉ việc cập nhập lại ở 2 chổ này.
 
 ```js
 import { createSelector } from 'reselect'
@@ -155,4 +177,6 @@ export const App = () => {
 Với cách này `const selectUserMemo = useMemo(makeSelectUserById, []);` chúng ta tạo một instance của hàm selector trên từng instance của component.
 
 https://programmerden.com/2020/04/06/optimize-your-redux-selectors-with-useselector-hook-and-memoize-them-with-reselect/
+
+https://blog.isquaredsoftware.com/2017/12/idiomatic-redux-using-reselect-selectors/
 
