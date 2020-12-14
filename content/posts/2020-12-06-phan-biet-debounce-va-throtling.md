@@ -7,7 +7,7 @@ tags: ["hoc-thuat", "web", "javascript"]
 canonical_url: false
 ---
 
-##### `debounce`
+### `debounce`
 
 Được sử dụng để **delay** việc thực thi một hàm nào đó. Ví dụ khi user nhập vào ô search, chúng ta **không thực thi ngay** câu lệnh tìm kiếm **mà đợi** một khoảng thời gian sau khi user đã ngừng việc nhập.
 
@@ -20,7 +20,7 @@ Có thể hình dung cái thang máy, cửa chuẩn bị đóng, nếu có ngư�
   (<a href='https://codepen.io/dcorb'>@dcorb</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-##### throttle
+### throttle
 
 **Trong khoản thời gian đã chỉ định, chỉ thực thi hàm 1 lần duy nhất**, bỏ qua mọi lần gọi khác. Ví dụ như user click liên tục vào nút **search** để gọi API, chúng ta chỉ thực thì đúng lần đầu, các lần click tiếp theo chúng ta cho qua và không gọi API.
 
@@ -37,7 +37,7 @@ Ví dụ với sự kiện scroll, nếu chúng ta bắt `onScroll` để thực
 
 > Nên sử dụng thư viện có sẵn nếu cần, như `lodash`, đừng tự viết lại.
 
-##### `requestAnimationFrame`
+### `requestAnimationFrame`
 
 Là một API của trình duyệt, tương tự như `_.throttle(doSomething, 16)`
 
