@@ -1,6 +1,15 @@
+---
+slug: "2020-12-10-optimize-redux-selector"
+date: "2020-12-10"
+title: "Redux selector và vấn đề sử dụng sao cho hiệu quả"
+desc: "Nếu đang sử dụng redux, và bạn có thắc mắc, viết selector sao cho hiệu quả về tốc độ và dễ maintain thì đây là bài viết bạn nên đọc"
+tags: ["react", "javascript"]
+canonical_url: false
+---
+
 ## Selector
 
-> Selector là một hàm nhận input là 'state' của store và trả về một giá trị mong muốn
+> Selector là một hàm với input là 'state' của store và trả về một giá trị mong muốn
 
 ```js
 const selectEntities = state => state.entities;
@@ -28,7 +37,7 @@ Về cách đặt tên, không bắt buộc, nhưng đa phần sẽ đặt với
 
 - Sử dụng lại, một selector có thể sử dụng ở nhiều nơi, nhiều component khác nhau
 - Tinh gọn, ví dụ chúng ta có *entity* `user`  chứa `lastname`, `fullname`, `email`, nhưng chúng ta chỉ muốn lấy `email`, một selector `getUserEmail` sẽ rất rõ ràng tinh gọn
-- Lý tưởng nhất, chỉ có *reducer* và *selector* mới biết được structure của redux store, như vậy một khi structure này có thay đổi, chúng ta chỉ việc cập nhập lại ở 2 chổ này.
+- Lý tưởng nhất, chỉ có *reducer* và *selector* mới biết được structure của redux store, như vậy một khi structure này có thay đổi, chúng ta chỉ việc cập nhập lại ở 2 chỗ này.
 
 ```js
 import { createSelector } from 'reselect'
@@ -176,7 +185,13 @@ export const App = () => {
 
 Với cách này `const selectUserMemo = useMemo(makeSelectUserById, []);` chúng ta tạo một instance của hàm selector trên từng instance của component.
 
+
+
+**Tài liệu tham khảo**
+
 https://programmerden.com/2020/04/06/optimize-your-redux-selectors-with-useselector-hook-and-memoize-them-with-reselect/
 
 https://blog.isquaredsoftware.com/2017/12/idiomatic-redux-using-reselect-selectors/
+
+
 

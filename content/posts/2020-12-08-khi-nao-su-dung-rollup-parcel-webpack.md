@@ -63,7 +63,7 @@ Khả năng tùy chỉnh của webpack sẽ cao hơn Rollup và Parcel.
 
 ### Module transform
 
-Các bundler chỉ hổ trợ file JS, với các file khác chúng ta cần thêm plugin
+Các bundler chỉ hỗ trợ file JS, với các file khác chúng ta cần thêm plugin
 
 ![](https://miro.medium.com/max/300/1*fQYPJhmQuHA93GWcChKBTw.png)
 

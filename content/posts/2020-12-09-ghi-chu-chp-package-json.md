@@ -1,3 +1,12 @@
+---
+slug: "2020-12-09-ghi-chu-chp-package-json"
+date: "2020-12-09"
+title: "Ghi chú file package.json của node module"
+desc: ""
+tags: ["hoc-thuat", "javascript"]
+canonical_url: false
+---
+
 Tạo file `package.json` (đồng thời khởi tạo một npm package)
 
 ```bash
