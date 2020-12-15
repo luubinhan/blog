@@ -1,8 +1,8 @@
 ---
 slug: "2020-11-23-10-kinh-nghiem-trong-react-voi-van-de-bao-mat"
 date: "2020-11-23"
-title: "Vài lưu trong React để tránh các vấn đề với bảo mật"
-desc: "Một vài điểm nhắc nhớ các bạn khi đang viết React, để tránh bị dính injection"
+title: "Vài lưu ý trong React để tránh các vấn đề với bảo mật"
+desc: "Một vài điểm nhắc nhẹ các bạn khi đang viết React, để tránh bị dính injection"
 tags: ["thu-thuat", "react"]
 canonical_url: false
 ---
