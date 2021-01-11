@@ -48,7 +48,7 @@ Trong 99% các trường hợp, sử dụng `useEffect`  sẽ là cách tốt nh
 
 Ví dụ như fetch dữ liệu sẽ không cần có kết quả ngay lập tức, hay đặt để các event handler
 
-Nếu thấy UI bị `flickering` (giống như xuất hiện sọc sọc trên màn hình tivi) khi cập nhập, nguyên nhân do nó đã render khi *vừa cos* state, sau đó lại re-render lại với state nhận được sau cùng. Đó là lúc bạn dùng `useLayoutEffect`
+Nếu thấy UI bị `flickering` (giống như xuất hiện sọc sọc trên màn hình tivi) khi cập nhập, nguyên nhân do nó đã render khi *vừa có* state, sau đó lại re-render lại với state nhận được sau cùng. Đó là lúc bạn dùng `useLayoutEffect`
 
 Ví dụ nhé, bạn cho user click để thay đổi state `value`, nó sẽ re-render component, sau đó effect chạy, nó lại set giá trị `value` thành một con số ngẫu nhiên => lại re-render component.
 
