@@ -1,11 +1,10 @@
 ---
 slug: "2021-01-13-webpack-faq-hoi-nhanh-dap-gon-voi-webpack"
 date: "2021-01-13"
-title: "Hỏi nhanh đáp gọn với webpack"
+title: "Hỏi nhanh đáp gọn về webpack"
 desc: "Chuyên mục hỏi nhanh - đáp gọn, nếu bạn chưa biết gì về webpack"
-tags: ["webpack", "beginner", "hard"]
+tags: ["webpack", "beginner", "medium", "hard"]
 canonical_url: false
-
 ---
 
 *🐸 Những module pattern nào webpack hỗ trợ?*
