@@ -1,7 +1,7 @@
 ---
 slug: "2021-02-21-lam-theme-bang-css-hay-react-context"
 date: "2021-02-21"
-title: "Nói làm tính năng Theme bằng dùng cách nào trong React?"
+title: "Làm tính năng Theme trong React?"
 desc: "Sẽ có nhiều tiếp cận để làm theme cho trang web, mổ xẻ 2 cách phổ biến hiện nay trong React, chọn cách nào cho nó đơn giản nhưng mang lại hiệu quả cao"
 tags: ["js","react","css", "medium"]
 canonical_url: false
