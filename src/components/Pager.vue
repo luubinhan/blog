@@ -1,6 +1,6 @@
 <template>
   <div class="mst-pager">
-    <Pager :info="$page.posts.pageInfo" />
+    <Pager @click="click" :info="$page.posts.pageInfo" />
   </div>
 </template>
 
@@ -11,6 +11,11 @@ export default {
   components: {
     Pager,
   },
+  methods: {
+    click() {
+      location.href = "#scrollTop";
+    }
+  }
 };
 </script>
 

@@ -2,6 +2,7 @@
   <div id="app" class="layout-blog">
     <PrimaryNav />
     <div class="master">
+      <div id="scrollTop"></div>
       <main class="inner">
         <div class="master__search">
           <Search />

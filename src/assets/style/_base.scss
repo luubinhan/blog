@@ -2,7 +2,7 @@
 * {
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  	-moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -10,9 +10,10 @@ body {
  	color: var(--body-color);
  	transition: color .6s, background-color .6s;
  	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
+	margin:0;
+	padding:0;
+	line-height: 1.5;
+	scroll-behavior: smooth;
 }
 
 a:not(.button) {
