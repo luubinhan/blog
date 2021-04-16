@@ -1,6 +1,6 @@
 <template>
   <div class="mst-pager">
-    <Pager @click="click" :info="$page.posts.pageInfo" />
+    <Pager ariaCurrentLabel="current" :info="$page.posts.pageInfo" />
   </div>
 </template>
 
@@ -10,11 +10,6 @@ import { Pager } from "gridsome";
 export default {
   components: {
     Pager,
-  },
-  methods: {
-    click() {
-      location.href = "#scrollTop";
-    }
   }
 };
 </script>
@@ -37,9 +32,15 @@ export default {
     &.active--exact {
       pointer-events: none;
       color: rgba(0, 0, 0, 0.2);
+     
     }
     &:hover {
       color: var(--primary-color);
+    }
+    &[aria-label="current"] {
+      background: var(--primary-color);
+      color: white;
+      border-radius: 3px;
     }
   }
 }

@@ -38,6 +38,9 @@ export default {
     PrimaryNav,
     Search,
   },
+  updated: function() {
+    location.href = "#scrollTop";
+  }
 };
 </script>
 
