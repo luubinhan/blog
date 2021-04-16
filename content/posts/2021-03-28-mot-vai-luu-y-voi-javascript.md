@@ -5,7 +5,6 @@ title: "Một vài điều cần lưu ý khi bạn làm việc với JS"
 desc: "Khi bạn làm việc với JS đủ lâu và ăn hành đủ nhiều bạn sẽ cần biết đến những đặc điểm rất riêng của JS"
 tags: ["js"]
 canonical_url: false
-
 ---
 
 ## `Array.sort()` cho kết quả khác nhau trên các trình duyệt khác nhau
