@@ -50,9 +50,6 @@
           <li class="about">
             <a href="https://luubinhan.github.io/" target="_blank">About</a>
           </li>
-          <li>
-            <g-link to="/gop-y">Góp ý</g-link>
-          </li>
         </ul>
       </div>
     </div>
