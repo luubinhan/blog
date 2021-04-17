@@ -1,3 +1,12 @@
+---
+slug: "2021-04-17-chrome-90-co-gi-moi"
+date: "2021-04-17"
+title: "Một vài thay đổi đáng chú ý của Chrome 90"
+desc: "Một vài thay đổi đáng chú ý trong DevTools của Chrome 90 sắp tới"
+tags: ["chrome"]
+canonical_url: false
+---
+
 ## Công cụ debug CSS Flexbox xịn xò hơn
 
 ![Công cụ debug CSS Flexbox xịn xò hơn](https://developer-chrome-com.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/hbg2toNQJqIWB30Mo2xt.png?auto=format&w=846)
@@ -41,3 +50,19 @@ Chuỗi trong console sẽ được định dạng theo chuẩn JS string litera
 ![Định dạng lại chuỗi trong console](https://developer-chrome-com.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/4OPajz8MHz5lPMhPpzg5.png?auto=format&w=846)
 
 ## Trust token panel trong Application
+
+Bên trong tab **Application**, có thêm mục mới **Trust Tokens**
+
+**Trust Token** là một API mới giúp chống gian lận, phân biệt người thật với bot, [tìm hiểu thêm](https://web.dev/trust-tokens/)
+
+![New Trust Tokens pane](https://developer-chrome-com.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/j5idcrmLOWTIcd6vG0q9.png?auto=format)
+
+## Ngưng support `fn.displayName`
+
+![Example usage of displayName](https://developer-chrome-com.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/oXk5CGKAAPyJIQeecS0I.png?auto=format)
+
+Trước đây Chrome vẫn cho phép sử dụng `fn.displayName` để có dễ trace lỗi lúc debug. Giờ sẽ được thay thế bằng `fn.name`
+
+
+
+[Xem toàn bộ các thay đổi khác](https://developer.chrome.com/blog/new-in-devtools-90)
