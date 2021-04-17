@@ -13,7 +13,7 @@
     <div v-if="showSidebar" class="layout-blog__aside">
       <div class="layout-blog__aside-inner">
         <Search />
-
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc2vHEFz9Un-BsJDvZ6-j5fyDZCYahvssIU15Dwp8M2WU7vyA/viewform?embedded=true" width="640" height="641" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         <div class="layout-blog__aside-footer">
           <slot name="aside" />
         </div>

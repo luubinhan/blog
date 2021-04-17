@@ -3,7 +3,7 @@ slug: "2021-04-16-css-clamp-giai-thich-va-ung-dung"
 date: "2021-04-16"
 title: "CSS Clamp giải thích và ứng dụng"
 desc: "hàm clamp() của CSS rất hữu dụng khi xử lý các vấn đề liên quan đến responsive, là một tính năng mới hay ho bạn cũng nên biết đế áp dụng"
-tags: ["js"]
+tags: ["css"]
 canonical_url: false
 ---
 
