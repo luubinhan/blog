@@ -1,19 +1,28 @@
 <template>
   <Layout>
     <div class="single-post">
-      <div class="single-post-container">
+      <div class="single-post-container">        
         <article>
           <header>
             <div class="post-title">
               <h1 class="post-title__text single-post-title">
                 {{ $page.post.title }}
               </h1>
-
               <PostMeta :post="$page.post" />
+              <a 
+                :href="$page.post.slug | editLink"
+                rel="noopener noreferrer"
+                target="_blank"
+                aria-label="Connect Facebook"
+                class="link"
+              >
+                Sửa bài viết này
+              </a>
             </div>
           </header>
 
           <div class="post content-box">
+            
             <div class="post__header">
               <g-image
                 alt="Cover image"
@@ -140,6 +149,11 @@ export default {
     ShareNetwork,
     Disqus,
   },
+  filters: {
+    editLink: (link) => {
+      return `https://github.com/luubinhan/blog/edit/master/content/posts/${link}.md`
+    }
+  },
   metaInfo() {
     return {
       title: this.$page.post.title,
@@ -193,6 +207,7 @@ query Post ($id: ID!) {
   post: post (id: $id) {
     title
     path
+    slug
     date (format: "YYYY-MM-DD")
     timeToRead
     tags {
@@ -279,6 +294,10 @@ query Post ($id: ID!) {
   .post-comments {
     padding-top: 20px;
   }
+}
+a.link {
+  color: var(--primary-color);
+  text-decoration: underline;
 }
 .post-content {
   > ul:first-child {

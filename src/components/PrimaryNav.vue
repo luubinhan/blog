@@ -70,7 +70,7 @@
               Youtube
             </a>
           </div>
-          <div class="credit">Copyright © 2019. luckyluu</div>
+          <div class="credit">Since 2016. luckyluu</div>
         </section>
       </footer>
     </div>
