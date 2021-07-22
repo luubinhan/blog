@@ -7,26 +7,26 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript"]
+tags: ["javascript","senior"]
 ---
 
-<!-- TOC -->
 
-- [Thế nào gọi là Carrying?](#thế-nào-gọi-là-carrying)
-- [Currying có hữu dụng không?](#currying-có-hữu-dụng-không)
-- [Chuyển bất cứ hàm nào thành hàm Currying](#chuyển-bất-cứ-hàm-nào-thành-hàm-currying)
 
-<!-- /TOC -->
+> **Currying function** là một function có thể xử lý việc chúng ta truyền *lắc nhắc* từng tham số, thay vì truyền tất cả tham số cùng một lúc. Mỗi lần gọi function chúng ta lại truyền tiếp một tham số
 
-Bạn sẽ gặp kiểu lập trình truyền vào **function như một argument** (callback) cho một function khác không chỉ trong Javascript mà còn có thể thấy ở Haskell, Clojure, Erlang và Scala
+Truyền cùng lúc
 
-Việc sử dụng function như một argument đẻ ra thêm một số khái niệm khác: **Pure function*, **Currying**, **Higher-Order Function**
+```js
+normal(a, b, c)
+```
 
-## Thế nào gọi là Carrying?
+Truyền *lắc nhắc*
 
-Thay vì truyền vào cho function 1 lúc nhiều argument, chúng ta lại chuyển kiểu viết đó thành 1 function chỉ nhận 1 argument, nhưng bên trong đó chúng ta lòng các function con bên trong, và return về function con này.
+```js
+carrying(a)(b)(c)
+```
 
-Ví dụ cho dễ hiểu hé. Đây là kiểu viết truyền nhiều argument ai cũng biết.
+Một function **thông thường**
 
 ```js
 function multiply(a, b, c) {
@@ -35,7 +35,7 @@ function multiply(a, b, c) {
 multiply(1,2,3); // 6
 ```
 
-Đây là phiên bản *cà-ry* của function `multiply` ở trên, kết quả cuối cùng cũng ko thay đổi.
+Đây là phiên bản *cà-ry* của function `multiply` ở trên
 
 ```js
 function multiply(a) {
@@ -46,10 +46,10 @@ function multiply(a) {
     }
 }
 
-log(multiply(1)(2)(3)) // 6
+multiply(1)(2)(3) // 6
 ```
 
-Bạn có thể chửi viết chi mà phức con mẹ nó tạp vậy, callback hell. Nhưng lợi ích của nó là giúp chúng ta gọi được hàm multiply theo kiểu `multiply(1)(2)(3)` thay vì `multiply(1,2,3). Vẫn chưa thấy lợi ích? Hy vọng viết thế này bạn sẽ thấy được công năng của nó
+Bạn có thể chửi viết chi mà phức con mẹ nó tạp vậy, callback hell. Nhưng lợi ích của nó là giúp chúng ta gọi được hàm `multiply` theo kiểu `multiply(1)(2)(3)` thay vì `multiply(1,2,3)`. *Vẫn chưa thấy lợi ích?* Viết tách ra cho dễ nhìn nè
 
 ```js
 const mul1 = multiply(1);
@@ -58,30 +58,18 @@ const result = mul2(3);
 // result : 6
 ```
 
-Tận dụng scope mà `mul2` có thể truy xuất đến kết quả của `mul1`. Dù đã được gọi nhưng kết quả của `multiply` sẽ ko *chết liền* mà vẫn tồn tại cho đến khi chạy đến lần gọi sau cùng.
+Vẫn chưa thấy lợi ích luôn? Xem tiếp ví dụ để tính giảm giá theo hóa đơn
 
-Bạn cũng có thể viết Currying function theo kiểu sau
 
-```js
-function volume(a) {
-    return (b, c) => {
-        return a * b * c
-    }
-}
-volume(70)(90,30);
-volume(70)(390,320);
-volume(70)(940,340);
-```
+## Currying function để làm gì?
 
-## Currying có hữu dụng không?
-
-Thí dụ bạn có một hàm để tính giá trị discount, giảm ngay 10% cho khách hàng thân thiết.
+Thí dụ bạn có một hàm để tính giá trị *discount*, giảm ngay 10% cho khách hàng thân thiết.
 
 ```js
 function discount(price, discount) {
     return price * discount
 }
-// Giảm ngay 50 đồng khi khách hàng đã tiêu 500 đồng.
+// Giảm ngay giảm 10% trên hóa đơn
 const price = discount(500,0.10); // $50 
 // $500  - $50 = $450
 ```
@@ -99,7 +87,7 @@ const price = discount(5000,0.10); // $500
 const price = discount(300,0.10); // $30
 // $300 - $30 = $270
 ```
-Chúng ta có thể đưa vào giá trị discount ở lần đầu tiên, đến các lần gọi tiếp theo, chúng ta ko cần truyền giá trị 10% này nữa
+Curry function sẽ giúp được gì trong tình huống này đây? Chúng ta vẫn cho phép truyền % `discount` và cho phép việc giá trị truyền này một lần thôi
 
 ```js
 function discount(discount) {
@@ -118,7 +106,7 @@ twentyPercentDiscount(1000000); // 200000
 // $1,000,000 - $200,000 = $600,000
 ```
 
-Nói một cách ngắn gọn, khi cần truyền vào 1 argument ít thay đổi, cố định trong đa số các trường hợp, nghĩ đến carrying.
+> Khi cần truyền vào 1 argument ít thay đổi, cố định trong đa số các trường hợp, nghĩ đến carrying.
 
 ## Chuyển bất cứ hàm nào thành hàm Currying
 
@@ -144,4 +132,5 @@ multiplyCurrying(4);
 multiplyCurrying(6);
 ```
 
-<a target="_blank" rel="noopener noreferrer" href="https://blog.bitsrc.io/understanding-currying-in-javascript-ceb2188c339">Understanding currying in javascript</a>
+Hoặc dùng `lodash.curry`, `lodash.curryRight` nếu bàn thích sự hoàn hảo :D
+
