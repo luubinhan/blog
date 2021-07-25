@@ -12,13 +12,16 @@
 		</div>
 		<div v-if="showSidebar" class="layout-blog__aside">
 			<div class="layout-blog__aside-inner">
-				<div class="toggle-theme">
-					☀️
-					<toggle-button
-						@change="toggleTheme"
-						:value="colorScheme === 'dark'"
-						color="#000"
-						:labels="{ checked: 'Tối', unchecked: 'Sáng' }"
+				<div class="toggle-theme">					
+					<span class="icon" v-if="isDarkMode">
+						☽
+					</span>
+					<span class="icon" v-else>
+						☀️
+					</span>
+					<Toggle
+						@input="toggleTheme"
+						:value="isDarkMode"
 					/>
 				</div>
 				<Search />
@@ -40,51 +43,45 @@
 </template>
 
 <script>
-import { ToggleButton } from 'vue-js-toggle-button';
 import Logo from '~/components/Logo.vue';
 import ToggleTheme from '~/components/ToggleTheme.vue';
 import PrimaryNav from '~/components/PrimaryNav.vue';
 import Search from '~/components/Search';
+import Toggle from '~/components/Toggle';
 
 export default {
+	data: () => ({
+		isDarkMode: false
+	}),
 	props: {
 		showSidebar: { default: true },
-	},
-	computed: {
-		colorScheme: {
-			get: function() {
-				if (localStorage.getItem("theme") === 'dark') {
-					return 'dark';
-				}
-
-				return 'light'
-			},
-			set: function(newValue) {
-				localStorage.setItem("theme", newValue);
-			}
-		} 
 	},
 	components: {
 		Logo,
 		ToggleTheme,
 		PrimaryNav,
 		Search,
-		ToggleButton,
+		Toggle
 	},
 	methods: {
-		toggleTheme: function({ value }) {
+		toggleTheme: function(value) {
 			if (value) {
 				document.body.setAttribute("data-theme", 'dark');
 				localStorage.setItem("theme", "dark");
+				this.isDarkMode = true;
 			} else {
 				document.body.setAttribute("data-theme", 'light');
 				localStorage.setItem("theme", "light");
+				this.isDarkMode = false;
 			}
 		},
 	},
 	updated: function() {
 		location.href = '#scrollTop';
 	},
+	mounted: function() {
+ 		this.isDarkMode = localStorage.getItem("theme") === 'dark' ? true : false;
+	}
 };
 </script>
 
@@ -92,6 +89,14 @@ export default {
 .toggle-theme {
 	margin-bottom: 40px;
 	text-align: right;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	.icon {
+		font-size: 20px;
+		padding-right: 5px;
+	}
 }
 
 .master {

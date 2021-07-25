@@ -55,6 +55,7 @@
         <div class="section-below-post">
           <div class="post-comments">         
             <facebook-comments
+              v-if="isMounted"
               :settings="{
                 href:
                   `https://vuilaptrinh.com${$page.post.path}`,
@@ -85,6 +86,7 @@ import RelatedPosts from "~/components/RelatedPosts";
 export default {
   data() {
     return {
+      isMounted: false,
       networks: [
         {
           network: "email",
@@ -124,6 +126,9 @@ export default {
         },
       ],
     };
+  },
+  mounted: function() {
+    this.isMounted = true;
   },
   components: {
     Author,
