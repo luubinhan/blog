@@ -7,6 +7,8 @@ tags: ["chrome"]
 canonical_url: false
 ---
 
+[TOC]
+
 ## Công cụ debug CSS Flexbox xịn xò hơn
 
 ![Công cụ debug CSS Flexbox xịn xò hơn](https://developer-chrome-com.imgix.net/image/BrQidfK9jaQyIHwdw91aVpkPiib2/hbg2toNQJqIWB30Mo2xt.png?auto=format&w=846)

@@ -7,6 +7,8 @@ tags: ["js","react","hard"]
 canonical_url: false
 ---
 
+[TOC]
+
 ## compound component
 
 Khi gặp tình huống một component không thể đứng độc lập, mà nó buộc phải kết hợp với một component khác và cùng chia sẻ một bộ state và phương thức. Đó là lúc chúng ta cân nhắc cách viết compound component.

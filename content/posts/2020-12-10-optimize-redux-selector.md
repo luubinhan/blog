@@ -7,6 +7,8 @@ tags: ["react", "javascript"]
 canonical_url: false
 ---
 
+[TOC]
+
 ## Selector
 
 > Selector là một hàm với input là 'state' của store và trả về một giá trị mong muốn

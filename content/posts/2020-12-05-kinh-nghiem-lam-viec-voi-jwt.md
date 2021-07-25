@@ -7,6 +7,8 @@ tags: ["hoc-thuat", "web", "javascript"]
 canonical_url: false
 ---
 
+[TOC]
+
 ## Cơ bản, cần nắm
 
 JWT có thể nhớ nôm na là một JSON đã **encrypt** => gọi là *token*, chứa thông tin giúp backend có thể định danh bạn là ai, bạn có quyền gì
@@ -15,7 +17,7 @@ JWT có thể nhớ nôm na là một JSON đã **encrypt** => gọi là *token*
 
 Nguyên nhân ra đời của JWT là để giải quyết bài toán **định danh** trong *microservice*
 
-## Phía Back end
+## Phía Backend
 
 Ở phía Backend có 2 vấn đề chính cần quan tâm
 

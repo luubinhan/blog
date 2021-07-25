@@ -7,6 +7,8 @@ tags: ["hoc-thuat", "web"]
 canonical_url: false
 ---
 
+[TOC]
+
 ## Parse HTML
 
 Khi trình duyệt nhận một dữ liệu HTML, nó sẽ **parse** qua DOM node

@@ -7,6 +7,8 @@ tags: ["thu-thuat", "react"]
 canonical_url: false
 ---
 
+[TOC]
+
 ## Dùng data binding mặc định để có XSS protection
 
 Khi render một nội dung dạng `text` bằng kiểu **data binding mặc định** (đặt trong dấu `{}`), React sẽ **mặc định** xử lý để tránh các vấn đề về XSS. Lưu ý một điều là nếu truyền vào cho `attribute` của element thì sẽ không có được tính năng này.

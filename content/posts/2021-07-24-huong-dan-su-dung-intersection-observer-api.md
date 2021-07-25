@@ -7,6 +7,8 @@ tags: ["js"]
 canonical_url: false
 ---
 
+[TOC]
+
 Chúng ta thường phải đặt `listener` trên sự kiện `window.scroll` thực hiện một số thao tác tính toán, so sánh với thanh *scroll* để biết được khi nào element bắt đầu xuất hiện.
 
 Cách làm này gây nhiều vấn đề hiệu năng và tương đối rườm rà. Giờ các trình duyệt đã đồng loạt hỗ trợ **Intersection Observer API**, chúng ta có một cách hoàn toàn *gọn gàng, sạch sẽ* mà lại tối ưu hiệu năng hơn nhiều.
@@ -172,5 +174,4 @@ Tham khảo
 - https://css-tricks.com/a-few-functional-uses-for-intersection-observer-to-know-when-an-element-is-in-view/
 
 - https://www.smashingmagazine.com/2021/07/dynamic-header-intersection-observer/
-
 
