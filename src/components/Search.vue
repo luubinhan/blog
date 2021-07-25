@@ -110,11 +110,11 @@ export default {
   padding: 10px 12px;
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid $border-color;
+  border: 1px solid var(--border-color);
   &:hover,
   &:focus {
     outline: none;
-    border-color: $primary-color;
+    border-color: var(--primary-color);
   }
 }
 .search__list {
@@ -140,7 +140,7 @@ export default {
     &:hover,
     &:focus {
       outline: none;
-      color: $primary-color;
+      color: var(--primary-color);
     }
   }
 }
@@ -156,7 +156,7 @@ export default {
   &:hover,
   &:focus {
     outline: none;
-    color: $primary-color;
+    color: var(--primary-color);
   }
 }
 </style>

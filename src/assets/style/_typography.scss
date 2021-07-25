@@ -96,7 +96,7 @@
 # [MIXIN]
 ----------------------------- */
 @mixin link() {
-  color: $link-color;
+  color: var(--link-color);
   text-decoration: none;
   outline: none;
 }
@@ -162,7 +162,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 14px;
-  color: $primary-text-color;
+  color: var(--primary-text-color);
   line-height: 1.6;
   font-family: $serif;
   text-rendering: optimizelegibility;
@@ -171,12 +171,12 @@ body {
   @include scroll;
 }
 a {
-  color: $link-color;
+  color: var(--link-color);
   text-decoration: none;
   outline: none;
 }
 a:hover {
-  color: $link-color-hover;
+  color: var(--link-color-hover);
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
   -ms-transition: all 0.1s ease-in-out;
@@ -265,13 +265,13 @@ dd {
 hr {
   margin: 20px 0;
   border: 0;
-  border-top: 1px solid $border-color;
-  border-bottom: 1px solid #ffffff;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid #fff;
 }
 blockquote {
   padding: 0 0 0 15px;
   margin: 0 0 20px;
-  border-left: 5px solid $border-color;
+  border-left: 5px solid var(--border-color);
 }
 blockquote p {
   margin-bottom: 0;
@@ -282,7 +282,7 @@ blockquote p {
 blockquote small {
   display: block;
   line-height: 20px;
-  color: $muted;
+  color: var(--muted);
 }
 blockquote small:before {
   content: "\2014 \00A0";
@@ -291,7 +291,7 @@ blockquote.pull-right {
   float: right;
   padding-right: 15px;
   padding-left: 0;
-  border-right: 5px solid $border-color;
+  border-right: 5px solid var(--border-color);
   border-left: 0;
 }
 blockquote.pull-right p,
@@ -353,7 +353,7 @@ code,
 pre {
   padding: 0 3px 2px;
   font-family: $monospace;
-  color: $primary-text-color;
+  color: var(--primary-text-color);
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -363,10 +363,10 @@ pre code {
 }
 code {
   padding: 2px 4px;
-  color: $red;
+  color: var(--red);
   font-size: $font-size-small;
-  background-color: $bg-gray;
-  border: 1px solid $border-color;
+  background-color: var(--bg-gray);
+  border: 1px solid var(--border-color);
 }
 pre {
   display: block;
@@ -378,8 +378,8 @@ pre {
   word-wrap: break-word;
   white-space: pre;
   white-space: pre-wrap;
-  background-color: $bg-gray;
-  border: 1px solid $border-color;
+  background-color: var(--bg-gray);
+  border: 1px solid var(--border-color);
   font-size: 16px;
 }
 pre code {
@@ -393,7 +393,7 @@ input[type="password"],
 input[type="number"],
 input[type="tel"],
 input[type="email"] {
-  border-color: $input-border-color;
+  border-color: var(--input-border-color);
   font-size: $font-size-base;
 }
 input[type="text"],
@@ -496,8 +496,8 @@ table.normal tr td {
   text-align: left;
 }
 .mystyle-highlight {
-  color: #ffffff;
-  background-color: $yellow;
+  color: #fff;
+  background-color: var(--yellow);
 }
 .link-flex {
   display: flex;
@@ -523,30 +523,30 @@ table.normal tr td {
   display: inline-block;
 }
 .btn-primary {
-  background-color: $primary-color;
-  border-color: $primary-color;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
   color: #fff !important;
   &:hover,
   &:focus {
-    background-color: darken($primary-color, 5%);
-    border-color: darken($primary-color, 5%);
+    background-color: var(--primary-color-hover);
+    border-color: var(--primary-color-hover);
   }
 }
 .btn-light {
-  border: 1px solid $primary-color;
+  border: 1px solid var(--primary-color);
   font-weight: bold;
   text-transform: uppercase;
   font-family: $san-serif;
-  color: $primary-color;
+  color: var(--primary-color);
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   &:hover {
-    background: $secondary-color;
+    background-color: var(--secondary-color);
     color: #fff;
-    border-color: $secondary-color;
+    border-color: var(--secondary-color);
   }
   &.disabled {
     border-color: #eee;
@@ -572,17 +572,17 @@ table.normal tr td {
       margin-left: 0;
     }
     .nav-pills {
-      border-top: 1px solid $border-color;
+      border-top: 1px solid var(--border-color);
 
       li {
         a {
-          color: $muted;
+          color: var(--muted);
           font-size: 16px;
 
           &:hover,
           &:focus {
             background: #fff;
-            color: $primary-color;
+            color: var(--primary-color);
           }
         }
         &.active {

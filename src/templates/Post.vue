@@ -216,7 +216,7 @@ query Post ($id: ID!) {
 
 <style lang="scss">
 .section-below-post {
-  background: $bg-gray;
+  background: var(--bg-gray);
   padding-top: 30px;
   padding-bottom: 40px;
   padding-left: 75px;
@@ -259,7 +259,7 @@ a.link {
 }
 .post-content {
   > ul:first-child {
-    background: $bg-gray;
+    background: var(--bg-gray);
     margin: 0;
     padding: 15px;
     counter-reset: my-counter;
@@ -302,7 +302,7 @@ a.link {
           position: relative;
           padding-left: 1.7em;
           &:before {
-            color: $muted;
+            color: var(--muted);
             display: block;
             position: absolute;
             left: 0;
@@ -505,7 +505,7 @@ a.link {
       border-top: none;
       border-left: none;
       border-right: none;
-      color: $primary-text-color;
+      color: var(--primary-text-color);
       font-family: $serif;
       border-bottom: 2px solid rgba(236, 198, 48, 0.3);
       font-style: normal;
@@ -552,7 +552,7 @@ a.link {
         display: block;
         height: 1px;
         width: 100%;
-        background: $muted;
+        background: var(--muted);
         position: absolute;
         bottom: 2px;
       }
@@ -562,12 +562,8 @@ a.link {
         display: block;
         height: 1px;
         width: 0;
-        background: $primary-color;
+        background: var(--primary-color);
         bottom: 2px;
-        -webkit-transition: all 0.3s ease-in-out;
-        -moz-transition: all 0.3s ease-in-out;
-        -ms-transition: all 0.3s ease-in-out;
-        -o-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
       }
       &:hover {

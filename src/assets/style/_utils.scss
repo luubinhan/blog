@@ -10,10 +10,10 @@
   margin-bottom: 2em;
 }
 .muted {
-  color: $muted;
+  color: var(--muted);
 }
 .link {
-  color: $link-color;
+  color: var(--link-color);
 }
 
 ul.style1 {

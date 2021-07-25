@@ -4,15 +4,6 @@
   --sidebar-width-tabled: 200px;
   --master-width: 870px;
   --primary-color: hsl(185, 99%, 35%);
-}
-
-// Default variables
-html {
-  --base-font-size: 20px;
-}
-
-// Light default theme
-body {
   --bg-color: #f3f7f9;
   --bg-content-color: #fff;
   --bg-code: #fffbf3;
@@ -24,56 +15,36 @@ body {
   --content-width: 860px;
   --header-height: 80px;
   --radius: 5px;
-}
+  --base-font-size: 20px;
+  --primary-color: #01a1b1;
+  --primary-color-hover: #0093a0;
+  --secondary-color: #acbd01;
+  --link-color: #222;
+  --link-color-hover: #000;
+  --blue: #43a5de;
+  --cyan: #27c5c3;
+  --yellow: #ffce02;
+  --orange: #f47631;
+  --red: #e41919;
+  --input-border-color: #e5e5e5;
+  --border-color: #e1e3ea;
+  --muted: #464646;
+  --bg-gray: #f2f2f2;
+  --primary-text-color: #333;
 
-// Make  things smaller for mobile
-@media screen and (max-width: 650px) {
-  html {
-    --base-font-size: 17px;
+  @media screen and (max-width: 650px) {
+      --base-font-size: 17px;
+      --space: 1.5rem;
+      --header-height: 60px;
   }
-  body {
-    --space: 1.5rem;
-    --header-height: 60px;
-  }
-}
-
-// Override variables for Dark theme
-body[data-theme="dark"] {
-  --bg-color: #0d2538;
-  --bg-content-color: #0f2d44;
-  --bg-code: rgba(0, 0, 0, 0.3);
-  --border-color: rgba(255, 255, 255, 0.1);
-  --body-color: #ced8de;
-  --title-color: #fff;
-  --link-color: #af9cef;
 }
 
 /*-----------------------------
 # [Color codes]
 ----------------------------- */
-$primary-color: #01a1b1;
-$secondary-color: #acbd01;
-$link-color: #222;
-$link-color-hover: #000;
-$primary-text-color: rgba(0, 0, 0, 0.8);
-$bg-dark: #252525;
-$bg-gray: #f2f2f2;
-$bg-lighter: #f8f8f8;
-$muted: #464646;
-$border-color: #e1e3ea;
-$input-border-color: #e5e5e5;
-$red: #e41919;
-$black: #000;
-$orange: #f47631;
-$yellow: #ffce02;
-$cyan: #27c5c3;
-$blue: #43a5de;
-$green: #d6e9c6;
-
 $facebook: #3f5c99;
 $twitter: #1da0f2;
 $google: #dc4a38;
-$instagram: #a4785b;
 
 /*-----------------------------
 # [Size]
@@ -88,104 +59,6 @@ $header-height: 50px;
 /*-----------------------------
 # [Typography]
 ----------------------------- */
-
-$font-size-base: 1.2em;
-$font-size-large: $font-size-base * 2;
-$font-size-small: 0.9em;
-$san-serif: "avo", arial, sans-serif;
-$serif: "Lora", "Times New Roman", Times, serif;
-$monospace: "Lucida Console", "Courier", monospace;
-:root {
-  --sidebar-color: #252525;
-  --sidebar-width-desktop: 320px;
-  --sidebar-width-tabled: 200px;
-  --master-width: 870px;
-  --global--color-primary: #27c5c3;
-}
-
-// Default variables
-html {
-  --base-font-size: 20px;
-}
-
-// Light default theme
-body {
-  --bg-color: #f3f7f9;
-  --bg-content-color: #fff;
-  --bg-code: #fffbf3;
-  --body-color: #444;
-  --title-color: #111;
-  --link-color: #111;
-  --border-color: rgba(0, 0, 0, 0.1);
-  --space: 3.5rem;
-  --content-width: 860px;
-  --header-height: 80px;
-  --radius: 5px;
-}
-
-// Make  things smaller for mobile
-@media screen and (max-width: 650px) {
-  html {
-    --base-font-size: 17px;
-  }
-  body {
-    --space: 1.5rem;
-    --header-height: 60px;
-  }
-}
-
-// Override variables for Dark theme
-body[data-theme="dark"] {
-  --bg-color: #0d2538;
-  --bg-content-color: #0f2d44;
-  --bg-code: rgba(0, 0, 0, 0.3);
-  --border-color: rgba(255, 255, 255, 0.1);
-  --body-color: #ced8de;
-  --title-color: #fff;
-  --link-color: #af9cef;
-}
-
-/*-----------------------------
-# [Color codes]
------------------------------ */
-$primary-color: #01a1b1;
-$secondary-color: #acbd01;
-$link-color: #222;
-$link-color-hover: #000;
-$primary-text-color: rgba(0, 0, 0, 0.8);
-$bg-dark: #252525;
-$bg-gray: #f2f2f2;
-$bg-lighter: #f8f8f8;
-$muted: #464646;
-$border-color: #e1e3ea;
-$input-border-color: #e5e5e5;
-$red: #e41919;
-$black: #000;
-$orange: #f47631;
-$yellow: #ffce02;
-$cyan: #27c5c3;
-$blue: #43a5de;
-$green: #d6e9c6;
-
-$facebook: #3f5c99;
-$twitter: #1da0f2;
-$google: #dc4a38;
-$instagram: #a4785b;
-
-/*-----------------------------
-# [Size]
------------------------------ */
-$breakpoint-1400: 1400px;
-$breakpoint-980: 980px;
-$breakpoint-sm: 768px;
-$breakpoint-xs: 560px;
-$footer-height: 40px;
-$header-height: 50px;
-
-/*-----------------------------
-# [Typography]
------------------------------ */
-
 $font-size-base: 1.2em;
 $font-size-large: $font-size-base * 2;
 $font-size-small: 0.9em;

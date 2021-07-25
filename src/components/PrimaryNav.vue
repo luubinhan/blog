@@ -172,34 +172,34 @@ export default {
     }
     &.javascript {
       svg {
-        fill: $yellow;
+        fill: var(--yellow);
       }
       a:hover {
-        color: $yellow;
+        color: var(--yellow);
       }
     }
     &.react {
       svg {
-        fill: $cyan;
+        fill: var(--cyan);
       }
       a:hover {
-        color: $cyan;
+        color: var(--cyan);
       }
     }
     &.wordpress {
       svg {
-        fill: $blue;
+        fill: var(--blue);
       }
       a:hover {
-        color: $blue;
+        color: var(--blue);
       }
     }
     &.htmlCss {
       svg {
-        fill: $orange;
+        fill: var(--orange);
       }
       a:hover {
-        color: $orange;
+        color: var(--orange);
       }
     }
     &.uxUi {
@@ -230,7 +230,7 @@ export default {
         padding-right: 7px;
       }
       &.active {
-        color: $primary-color;
+        color: var(--primary-color);
       }
     }
     a:hover,
