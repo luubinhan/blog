@@ -22,7 +22,7 @@ export default {
     font-size: 0.8em;
     color: currentColor;
     text-decoration: none;
-    background-color: var(--bg-color);
+    background-color: var(--bg-tag);
     color: currentColor !important; //Todo: remove important;
     padding: 0.5em;
     border-radius: var(--radius);

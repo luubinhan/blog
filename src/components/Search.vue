@@ -123,7 +123,7 @@ export default {
   height: 300px;
   overflow: auto;
   @include scroll;
-  @media (max-width: $breakpoint-sm) {
+  @include tablet {
     height: auto;
     position: absolute;
     right: 0;
@@ -133,7 +133,7 @@ export default {
 }
 .item-search {
   padding: 10px 12px 0;
-  @media (max-width: $breakpoint-sm) {
+  @include tablet {
     padding: 12px;
   }
   .link {

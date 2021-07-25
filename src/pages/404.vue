@@ -22,7 +22,7 @@
   background-size: cover;
   color: #fff;
   flex-direction: column;
-  @media (max-width: $breakpoint-xs) {
+  @include mobile {
     background-size: auto 100%;
     background-position: center top;
   }
@@ -39,14 +39,14 @@
   }
   h1 {
     font-size: 3rem;
-    @media (max-width: $breakpoint-xs) {
+    @include mobile {
       font-size: 28px;
     }
   }
   p {
     font-size: 2rem;
     margin-bottom: 15px;
-    @media (max-width: $breakpoint-xs) {
+    @include mobile {
       font-size: 18px;
       padding-left: 30px;
       padding-right: 30px;
@@ -64,8 +64,6 @@
     text-align: center;
     position: relative;
     z-index: 1;
-    @media (max-width: $breakpoint-xs) {
-    }
   }
 }
 </style>

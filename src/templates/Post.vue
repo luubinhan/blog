@@ -225,7 +225,7 @@ query Post ($id: ID!) {
   margin-right: -75px;
   margin-top: 30px;
 
-  @media (max-width: $breakpoint-xs) {
+  @include mobile {
     margin-left: -30px;
     padding-left: 30px;
     padding-right: 30px;
@@ -267,8 +267,8 @@ a.link {
     &:before {
       content: "Nội dung";
       display: block;
-      background: rgba(0, 0, 0, 0.2);
-      margin-left: -15px;
+      background: var(--bg-toc);
+      margin-left: -20px;
       margin-right: -15px;
       margin-top: -15px;
       margin-bottom: 30px;
@@ -341,9 +341,15 @@ a.link {
     line-height: 1.2;
     letter-spacing: -0.028em;
     text-align: center;
-    color: #000;
+    color: var(--heading-post);
     margin: 0 30px 0;
     padding-bottom: 30px;
+
+    @include mobile {
+      font-size: 1.6rem;
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
   .post-excert {
     font-size: 1.2rem;
@@ -430,10 +436,13 @@ a.link {
   .blog-post {
     padding-top: 50px;
     position: relative;
+    @include mobile {
+      padding-top: 20px;
+    }
     &:before {
       content: "...";
       display: inline-block;
-      color: rgba(0, 0, 0, 0.6);
+      color: var(--dotted);
       position: relative;
       top: -30px;
       left: 46%;
@@ -442,6 +451,9 @@ a.link {
       font-weight: 400;
       font-size: 28px;
       letter-spacing: 0.6em;
+      @include mobile {
+         display: none;
+       }
     }
     table {
       border-collapse: collapse;
@@ -498,7 +510,7 @@ a.link {
       }
     }
     p code.language-text {
-      background: rgba(236, 198, 48, 0.1);
+      background: var(--language-text);
       line-height: inherit;
       padding: 5px 7px 0;
       white-space: pre-wrap;
@@ -544,7 +556,7 @@ a.link {
       color: #ff9800;
     }
     a {
-      color: #000;
+      color: var(--link-color);
       display: inline-block;
       position: relative;
       &:before {
@@ -620,14 +632,7 @@ a.link {
   }
 }
 
-@media (max-width: $breakpoint-sm) {
-  .single-post-container {
-    blockquote {
-      max-width: none;
-    }
-  }
-}
-@media (max-width: $breakpoint-xs) {
+@include mobile {
   .single-post-container {
     padding-top: 30px;
     .post-content {
@@ -646,17 +651,6 @@ a.link {
           padding-bottom: 0;
         }
       }
-    }
-    .blog-post {
-      padding-top: 20px;
-      &:before {
-        display: none;
-      }
-    }
-    .single-post-title {
-      font-size: 1.6rem;
-      margin-left: 0;
-      margin-right: 0;
     }
     .post-excert {
       font-size: 1rem;

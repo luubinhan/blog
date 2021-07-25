@@ -19,16 +19,18 @@ export default {
   padding-top: 135px;
   padding-bottom: 135px;
   text-align: center;
-  @media (max-width: $breakpoint-sm) {
+
+  @include tablet {
     padding-top: 25px;
     padding-bottom: 25px;
   }
+
   a {
     padding-left: 14px;
     padding-right: 14px;
     font-size: 24px;
     line-height: 32px;
-    color: #000;
+    color: var(--link-pager);
     &.active--exact {
       pointer-events: none;
       color: rgba(0, 0, 0, 0.2);

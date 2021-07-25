@@ -59,7 +59,6 @@
 
 <script>
 import IconJs from "~/assets/images/js.svg";
-import Youtube from "~/assets/images/youtube.svg";
 import React from "~/assets/images/react.svg";
 import Native from "~/assets/images/native.svg";
 import Html from "~/assets/images/html.svg";
@@ -120,7 +119,6 @@ export default {
   components: {
     Brand,
     IconJs,
-    Youtube,
     React,
     Html,
     Native,
@@ -248,19 +246,19 @@ export default {
   bottom: 0;
   z-index: 3;
   width: var(--sidebar-width-desktop);
-  background: var(--sidebar-color);
+  background-color: var(--sidebar-color);
   color: rgba(255, 255, 255, 0.65);
-  @media (max-width: $breakpoint-1400) {
+  @media (max-width: var(--breakpoint-1400)) {
     width: var(--sidebar-width-tabled);
   }
   &__inner {
     padding: 50px 30px 30px;
-    @media (max-width: $breakpoint-sm) {
+    @include tablet {
       padding: 15px;
     }
   }  
 }
-@media (max-width: $breakpoint-sm) {
+@include tablet{
   .sidebar {
     position: sticky;
     top: 0;
@@ -354,7 +352,7 @@ export default {
     
   }
 }
-@media (max-width: $breakpoint-xs) {
+@include mobile {
   .sidebar {
     position: fixed;
     left: 0;

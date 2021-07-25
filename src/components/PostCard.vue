@@ -62,12 +62,16 @@ $innerGlutter: 40px;
 		padding-bottom: 20px;
 		font-size: 30px;
 		line-height: 1.2em;
-		color: rgba(0, 0, 0, 0.9);
+		color: var(--heading-post);
 		font-family: 'avo_bold', $serif;
 		a:hover,
 		a:focus {
 			text-decoration: none;
 			color: var(--primary-color);
+		}
+
+		@include mobile {
+			font-size: 18px;
 		}
 	}
 	.the-post-thumbnail {
@@ -81,16 +85,13 @@ $innerGlutter: 40px;
 		padding-bottom: 20px;
 	}
 }
-@media (max-width: $breakpoint-xs) {
+@include mobile {
 	.item-post {
 		margin-bottom: 15px;
 		padding-bottom: 15px;
 		padding-top: 0;
 		.post-excert {
 			display: none;
-		}
-		.heading-post {
-			font-size: 18px;
 		}
 	}
 }

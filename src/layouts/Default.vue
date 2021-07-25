@@ -12,6 +12,12 @@
 		</div>
 		<div v-if="showSidebar" class="layout-blog__aside">
 			<div class="layout-blog__aside-inner">
+				<toggle-button
+					@change="toggleTheme"
+					:value="darkTheme"
+					color="#000"
+					:labels="{ checked: 'Tối', unchecked: 'Sáng' }"
+				/>
 				<Search />
 				<iframe
 					src="https://docs.google.com/forms/d/e/1FAIpQLSc2vHEFz9Un-BsJDvZ6-j5fyDZCYahvssIU15Dwp8M2WU7vyA/viewform?embedded=true"
@@ -31,20 +37,44 @@
 </template>
 
 <script>
+import { ToggleButton } from 'vue-js-toggle-button';
 import Logo from '~/components/Logo.vue';
 import ToggleTheme from '~/components/ToggleTheme.vue';
 import PrimaryNav from '~/components/PrimaryNav.vue';
 import Search from '~/components/Search';
 
 export default {
+	data: () => ({
+		preferDark: false
+	}),
 	props: {
 		showSidebar: { default: true },
+	},
+	computed: {
+		darkTheme: function() {
+			if ( localStorage.getItem("theme") === 'dark') {
+				return true;
+			}
+
+			return false
+		}
 	},
 	components: {
 		Logo,
 		ToggleTheme,
 		PrimaryNav,
 		Search,
+		ToggleButton,
+	},
+	methods: {
+		toggleTheme: function() {
+			this.preferDark = !this.preferDark;
+			if (this.preferDark) {
+				window.__setPreferredTheme('dark');
+			} else {
+				window.__setPreferredTheme('light');
+			}
+		},
 	},
 	updated: function() {
 		location.href = '#scrollTop';
@@ -58,29 +88,29 @@ export default {
 	flex-basis: var(--master-width);
 	min-width: var(--master-width);
 	margin-left: var(--sidebar-width-desktop);
-	background: #fff;
+	background-color: var(--bg-master);
 	z-index: 2;
 	position: relative;
 	max-height: 100vh;
 	overflow-y: auto;
 
-	@media (max-width: $breakpoint-1400) {
+	@media (max-width: var(--breakpoint-1400)) {
 		margin-left: var(--sidebar-width-tabled);
 		min-width: 0;
 	}
-	@media (max-width: $breakpoint-980) {
+	@media (max-width: var(--breakpoint-980)) {
 		width: auto;
 	}
-	@media (max-width: $breakpoint-sm) {
+	@include tablet {
 		margin-left: 0;
 		max-height: none;
 	}
-	@media (max-width: $breakpoint-xs) {
+	@include mobile {
 		padding-top: 54px;
 	}
 	&__search {
 		display: none;
-		@media (max-width: $breakpoint-sm) {
+		@include tablet {
 			display: block;
 			position: relative;
 			z-index: 7;
@@ -88,13 +118,12 @@ export default {
 		}
 	}
 	> .inner {
-		background: #fff;
 		padding: 15px 75px 0;
 		min-height: 100vh;
 		z-index: 2;
 		position: relative;
 
-		@media (max-width: $breakpoint-xs) {
+		@include mobile {
 			padding-left: 30px;
 			padding-right: 30px;
 		}
@@ -103,17 +132,18 @@ export default {
 .layout-blog {
 	position: relative;
 	display: flex;
-	@media (max-width: $breakpoint-sm) {
+	@include tablet {
 		display: block;
 	}
 
 	&__aside {
 		z-index: 1;
 		flex-grow: 1;
-		@media (max-width: $breakpoint-1400) {
+		background-color: var(--bg-aside);
+		@media (max-width: var(--breakpoint-1400)) {
 			max-width: 30vw;
 		}
-		@media (max-width: $breakpoint-980) {
+		@media (max-width: var(--breakpoint-980)) {
 			max-width: 20vw;
 			display: none;
 		}
@@ -124,7 +154,7 @@ export default {
 			height: 100vh;
 			overflow-y: auto;
 			@include scroll;
-			@media (max-width: $breakpoint-1400) {
+			@media (max-width: var(--breakpoint-1400)) {
 				padding: 15px;
 			}
 		}

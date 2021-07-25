@@ -24,8 +24,8 @@ export default {
 <style lang="scss" scoped>
 .related-posts {
   padding: 40px 35px 30px;
-  background-color: #fafffe;
-  @media (max-width: $breakpoint-1400) {
+  background-color: var(--related-post);
+  @media (max-width: var(--breakpoint-1400)) {
     padding: 15px;
   }
   &__container {
@@ -45,7 +45,7 @@ export default {
     font-size: 1.5em;
     flex-basis: 50px;
     min-width: 50px;
-    @media (max-width: $breakpoint-1400) {
+    @media (max-width: var(--breakpoint-1400)) {
       display: none;
     }
   }
