@@ -10,6 +10,17 @@ chapter: 0
 tags: ["javascript", "hoc-thuat"]
 ---
 
+<!-- TOC -->
+
+- [Bubble Sort](#bubble-sort)
+- [Selection Sort](#selection-sort)
+- [Insertion Sort](#insertion-sort)
+- [Merge Sort](#merge-sort)
+- [Quick sort](#quick-sort)
+- [Bucket Sort](#bucket-sort)
+
+<!-- /TOC -->
+
 Chúng ta sẽ hiện thực các thuật toán này bằng JavaScript.
 
 Hàm helper để swap giá trị

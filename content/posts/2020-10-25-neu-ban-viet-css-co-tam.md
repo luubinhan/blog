@@ -7,6 +7,16 @@ tags: ['thuat-thuat', 'css']
 canonical_url: false
 ---
 
+<!-- TOC -->
+
+- [Khoảng cách giữa title và icon](#khoảng-cách-giữa-title-và-icon)
+- [2 button nằm kề nhau](#2-button-nằm-kề-nhau)
+- [Tag và Category](#tag-và-category)
+- [Không load được image](#không-load-được-image)
+- [Hình Avatar](#hình-avatar)
+
+<!-- /TOC -->
+
 ## Khoảng cách giữa title và icon
 
 ![img](https://ishadeed.com/assets/just-in-case/just-in-case-1.png)

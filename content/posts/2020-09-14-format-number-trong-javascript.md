@@ -10,7 +10,14 @@ chapter: 0
 tags: ["javascript", "thu-thuat"]
 ---
 
+<!-- TOC -->
 
+- [Number.prototype.toLocaleString()](#numberprototypetolocalestring)
+- [Định dạng tiền tệ](#định-dạng-tiền-tệ)
+- [Phần trăm](#phần-trăm)
+- [Intl.NumberFormat](#intlnumberformat)
+
+<!-- /TOC -->
 ## Number.prototype.toLocaleString()
 
 ```js

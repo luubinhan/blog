@@ -7,8 +7,6 @@ tags: ["thu-thuat", "react"]
 canonical_url: false
 ---
 
-
-
 Trước đây mình đã có một bài về FLIP animation, các bạn có thể đọc lại [ở đây](https://vuilaptrinh.com/2018-07-25-huong-dan-tao-animate-voi-flip-technique/) để biết kỹ thuật này là gì và tại sao nó lại giúp tối ưu tốc độ.
 
 Có thể tóm tắt kỹ thuật FLIP bằng hình minh họa bên dưới

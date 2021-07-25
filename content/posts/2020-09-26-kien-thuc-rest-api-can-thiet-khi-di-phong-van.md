@@ -8,6 +8,19 @@ canonical_url: false
 hide: true
 ---
 
+<!-- TOC -->
+
+- [Phân biệt giữa API và Web Service](#phân-biệt-giữa-api-và-web-service)
+- [Phân biệt giữa REST và RESTFUL](#phân-biệt-giữa-rest-và-restful)
+- [Những phương thức HTTP được hổ trợ trong REST](#những-phương-thức-http-được-hổ-trợ-trong-rest)
+- [Sự khác nhau giữa AJAX và REST](#sự-khác-nhau-giữa-ajax-và-rest)
+- [Điểm mấu chốt cần nhớ trong REST](#điểm-mấu-chốt-cần-nhớ-trong-rest)
+- [Điểm khác nhau giữa `PUT` và `POST`](#điểm-khác-nhau-giữa-put-và-post)
+- [Mục tiêu của phương thức OPTIONS trong RESTful web service](#mục-tiêu-của-phương-thức-options-trong-restful-web-service)
+- [Limit của payload trong phước thức POST](#limit-của-payload-trong-phước-thức-post)
+
+<!-- /TOC -->
+
 Để cho dễ hiểu chúng ta đi qua một số thuật ngữ trước
 
 - **Resource** (tài nguyên) có thể hình dung nôm na nó là một _cái gì đó đó_ ở phía server nắm dữ, có thể là một dữ liệu trong database, một file html, css, js, svg,...

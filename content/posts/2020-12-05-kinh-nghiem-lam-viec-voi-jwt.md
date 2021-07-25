@@ -7,7 +7,18 @@ tags: ["hoc-thuat", "web", "javascript"]
 canonical_url: false
 ---
 
-[TOC]
+<!-- TOC -->
+
+- [Cơ bản, cần nắm](#cơ-bản-cần-nắm)
+- [Phía Backend](#phía-backend)
+- [Phía client dùng SPA](#phía-client-dùng-spa)
+    - [So sánh định danh bằng Session và Token](#so-sánh-định-danh-bằng-session-và-token)
+    - [Vấn đề với XSS và CSRF khi dùng JWT](#vấn-đề-với-xss-và-csrf-khi-dùng-jwt)
+    - [Có cần HTTPS với JWT?](#có-cần-https-với-jwt)
+    - [Khi nào không nên dùng JWT](#khi-nào-không-nên-dùng-jwt)
+    - [Thư viện ngon](#thư-viện-ngon)
+
+<!-- /TOC -->
 
 ## Cơ bản, cần nắm
 

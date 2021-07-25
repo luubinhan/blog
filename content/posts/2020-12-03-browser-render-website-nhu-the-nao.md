@@ -7,7 +7,16 @@ tags: ["hoc-thuat", "web"]
 canonical_url: false
 ---
 
-[TOC]
+<!-- TOC -->
+
+- [Parse HTML](#parse-html)
+- [2 - External Resource](#2---external-resource)
+- [3 - Parse CSS](#3---parse-css)
+- [4 - Execute JS](#4---execute-js)
+- [5 - Merge DOM và CSSOM để tạo render tree](#5---merge-dom-và-cssom-để-tạo-render-tree)
+- [6 - Calculate layout và paint](#6---calculate-layout-và-paint)
+
+<!-- /TOC -->
 
 ## Parse HTML
 

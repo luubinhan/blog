@@ -7,6 +7,14 @@ tags: ["css", "hoc-thuat"]
 canonical_url: false
 ---
 
+<!-- TOC -->
+
+- [Chuyện gì xảy ra nếu chúng ta dùng `var()` với một biến undefined](#chuyện-gì-xảy-ra-nếu-chúng-ta-dùng-var-với-một-biến-undefined)
+- [Fallback value khi giá trị biến không tìm thấy](#fallback-value-khi-giá-trị-biến-không-tìm-thấy)
+- [DevTool của trình duyệt giúp được gì](#devtool-của-trình-duyệt-giúp-được-gì)
+
+<!-- /TOC -->
+
 ## Chuyện gì xảy ra nếu chúng ta dùng `var()` với một biến undefined
 
 Trước hết phải nói CSS và HTML là ngôn ngữ không quá strictly, một vài lỗi nhỏ không làm làm chết nguyên trang, nếu dùng `var()` với một biến không tồn tại, không gây ra ảnh hưởng parsing.

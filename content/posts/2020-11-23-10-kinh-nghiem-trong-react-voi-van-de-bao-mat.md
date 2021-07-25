@@ -7,7 +7,16 @@ tags: ["thu-thuat", "react"]
 canonical_url: false
 ---
 
-[TOC]
+<!-- TOC -->
+
+- [Dùng data binding mặc định để có XSS protection](#dùng-data-binding-mặc-định-để-có-xss-protection)
+- [Validate URLs trước khi sử dụng](#validate-urls-trước-khi-sử-dụng)
+- [Render HTML](#render-html)
+- [Truy cập trực tiếp đến DOM](#truy-cập-trực-tiếp-đến-dom)
+- [Kiểm tra thư viện dependency](#kiểm-tra-thư-viện-dependency)
+- [JSON](#json)
+
+<!-- /TOC -->
 
 ## Dùng data binding mặc định để có XSS protection
 

@@ -7,6 +7,13 @@ tags: ['thuat-thuat', 'javascript']
 canonical_url: false
 ---
 
+<!-- TOC -->
+
+- [Cách 1: tạo mảng mới ko chứa phần tử bị trùng](#cách-1-tạo-mảng-mới-ko-chứa-phần-tử-bị-trùng)
+- [Cách 2: dùng `filter()`](#cách-2-dùng-filter)
+- [Cách 3: sử dụng Map](#cách-3-sử-dụng-map)
+
+<!-- /TOC -->
 
 Nếu phần tử trong mảng chỉ là kiểu *primitive* thì rất đơn giản nếu muốn xóa tất cả phần tự bị trùng
 

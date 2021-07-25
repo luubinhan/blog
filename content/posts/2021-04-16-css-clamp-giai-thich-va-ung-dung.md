@@ -6,7 +6,6 @@ desc: "hàm clamp() của CSS rất hữu dụng khi xử lý các vấn đề l
 tags: ["css","hard"]
 canonical_url: false
 ---
-
 ## Diễn giải
 
 > Lưu ý: hàm clamp không chạy trên IE

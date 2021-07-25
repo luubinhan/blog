@@ -7,7 +7,16 @@ tags: ["chrome"]
 canonical_url: false
 ---
 
-[TOC]
+<!-- TOC -->
+
+- [Công cụ debug CSS Flexbox xịn xò hơn](#công-cụ-debug-css-flexbox-xịn-xò-hơn)
+- [Đo performance bằng Core Web Vitals](#đo-performance-bằng-core-web-vitals)
+- [Tab Issue](#tab-issue)
+- [Định dạng lại chuỗi trong console](#định-dạng-lại-chuỗi-trong-console)
+- [Trust token panel trong Application](#trust-token-panel-trong-application)
+- [Ngưng support `fn.displayName`](#ngưng-support-fndisplayname)
+
+<!-- /TOC -->
 
 ## Công cụ debug CSS Flexbox xịn xò hơn
 

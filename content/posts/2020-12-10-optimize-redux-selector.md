@@ -7,7 +7,16 @@ tags: ["react", "javascript"]
 canonical_url: false
 ---
 
-[TOC]
+<!-- TOC -->
+
+- [Selector](#selector)
+- [Khác nhau giữa `useSelector` và `mapState`](#khác-nhau-giữa-useselector-và-mapstate)
+- [Lý do sử dụng selector](#lý-do-sử-dụng-selector)
+- [Sử dụng sao cho tối ưu?](#sử-dụng-sao-cho-tối-ưu)
+    - [Selector phụ thuộc vào giá trị prop của component](#selector-phụ-thuộc-vào-giá-trị-prop-của-component)
+    - [Nhiều instance của một component](#nhiều-instance-của-một-component)
+
+<!-- /TOC -->
 
 ## Selector
 

@@ -7,7 +7,13 @@ tags: ["js"]
 canonical_url: false
 ---
 
-[TOC]
+<!-- TOC -->
+
+- [Ứng dụng 1: lazy load image](#ứng-dụng-1-lazy-load-image)
+- [Ứng dụng 2: Tự động pause video khi ra khỏi màn hình](#ứng-dụng-2-tự-động-pause-video-khi-ra-khỏi-màn-hình)
+- [Ứng dụng 3: Toggle class khi header sticky](#ứng-dụng-3-toggle-class-khi-header-sticky)
+
+<!-- /TOC -->
 
 Chúng ta thường phải đặt `listener` trên sự kiện `window.scroll` thực hiện một số thao tác tính toán, so sánh với thanh *scroll* để biết được khi nào element bắt đầu xuất hiện.
 

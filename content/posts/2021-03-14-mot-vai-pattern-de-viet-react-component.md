@@ -7,7 +7,14 @@ tags: ["js","react","hard"]
 canonical_url: false
 ---
 
-[TOC]
+<!-- TOC -->
+
+- [compound component](#compound-component)
+    - [Hạn chế](#hạn-chế)
+- [Flexible compound component](#flexible-compound-component)
+- [Provider Pattern](#provider-pattern)
+
+<!-- /TOC -->[TOC]
 
 ## compound component
 

@@ -7,6 +7,17 @@ tags: ['dam-dao', 'hoc-thuat']
 canonical_url: false
 ---
 
+<!-- TOC -->
+
+- [Cách 1](#cách-1)
+- [Cách 2](#cách-2)
+- [Cách 3](#cách-3)
+- [Dùng lodash babel plugin](#dùng-lodash-babel-plugin)
+- [Dùng Lodash webpack plugin](#dùng-lodash-webpack-plugin)
+- [Kết luận](#kết-luận)
+
+<!-- /TOC -->
+
 Mình đã từng nghe một bạn Principle FE trong công ty phát biểu là
 
 > Đã 2020 rồi mà còn xài lodash là sao, lodash đã tối cổ, chả ai xài nữa đâu

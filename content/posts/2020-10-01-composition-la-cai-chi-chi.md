@@ -5,8 +5,16 @@ title: "Composition là cái chi chi"
 desc: "Nhớ về 5 anh em siêu nhân kết hợp thành một con robot mãnh thú"
 tags: ["javascript", "hoc-thuat"]
 canonical_url: false
-
 ---
+
+<!-- TOC -->
+
+- [Composition trong toán học](#composition-trong-toán-học)
+- [Function composition](#function-composition)
+- [Component Composition](#component-composition)
+- [Composition vs inheritance](#composition-vs-inheritance)
+
+<!-- /TOC -->
 
 Composition một cách trừu tượng mà nói là việc đưa hai (hoặc nhiều) thứ khác nhau vào một chỗ để nhận được một loại kết quả
 
