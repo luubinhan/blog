@@ -22,6 +22,16 @@
 	</div>
 </template>
 
+<script>
+import Youtube from "~/assets/images/youtube.svg";
+
+export default {
+	components: {
+		Youtube
+	}	
+}
+</script>
+
 <style lang="scss" scoped>
 .footer {
 	position: absolute;
@@ -37,7 +47,7 @@
 	bottom: 0;
 	width: 100%;
 
-	@media (max-width: $breakpoint-sm) {
+	@include tablet {
 		display: none;
 	}
 

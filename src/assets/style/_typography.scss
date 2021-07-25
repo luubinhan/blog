@@ -27,7 +27,7 @@
     display: none;
   }
 }
-@media (max-width: $breakpoint-sm) {
+@include tablet {
   .layout-component {
     padding-top: $header-height;
   }

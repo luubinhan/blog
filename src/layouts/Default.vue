@@ -12,14 +12,17 @@
 		</div>
 		<div v-if="showSidebar" class="layout-blog__aside">
 			<div class="layout-blog__aside-inner">
-				<toggle-button
-					@change="toggleTheme"
-					:value="darkTheme"
-					color="#000"
-					:labels="{ checked: 'Tối', unchecked: 'Sáng' }"
-				/>
+				<div class="toggle-theme">
+					☀️
+					<toggle-button
+						@change="toggleTheme"
+						:value="colorScheme === 'dark'"
+						color="#000"
+						:labels="{ checked: 'Tối', unchecked: 'Sáng' }"
+					/>
+				</div>
 				<Search />
-				<iframe
+				<!-- <iframe
 					src="https://docs.google.com/forms/d/e/1FAIpQLSc2vHEFz9Un-BsJDvZ6-j5fyDZCYahvssIU15Dwp8M2WU7vyA/viewform?embedded=true"
 					width="640"
 					height="641"
@@ -27,7 +30,7 @@
 					marginheight="0"
 					marginwidth="0"
 					>Loading…</iframe
-				>
+				> -->
 				<div class="layout-blog__aside-footer">
 					<slot name="aside" />
 				</div>
@@ -44,20 +47,22 @@ import PrimaryNav from '~/components/PrimaryNav.vue';
 import Search from '~/components/Search';
 
 export default {
-	data: () => ({
-		preferDark: false
-	}),
 	props: {
 		showSidebar: { default: true },
 	},
 	computed: {
-		darkTheme: function() {
-			if ( localStorage.getItem("theme") === 'dark') {
-				return true;
-			}
+		colorScheme: {
+			get: function() {
+				if (localStorage.getItem("theme") === 'dark') {
+					return 'dark';
+				}
 
-			return false
-		}
+				return 'light'
+			},
+			set: function(newValue) {
+				localStorage.setItem("theme", newValue);
+			}
+		} 
 	},
 	components: {
 		Logo,
@@ -67,12 +72,13 @@ export default {
 		ToggleButton,
 	},
 	methods: {
-		toggleTheme: function() {
-			this.preferDark = !this.preferDark;
-			if (this.preferDark) {
-				window.__setPreferredTheme('dark');
+		toggleTheme: function({ value }) {
+			if (value) {
+				document.body.setAttribute("data-theme", 'dark');
+				localStorage.setItem("theme", "dark");
 			} else {
-				window.__setPreferredTheme('light');
+				document.body.setAttribute("data-theme", 'light');
+				localStorage.setItem("theme", "light");
 			}
 		},
 	},
@@ -83,11 +89,16 @@ export default {
 </script>
 
 <style lang="scss">
+.toggle-theme {
+	margin-bottom: 40px;
+	text-align: right;
+}
+
 .master {
 	@include scroll;
 	flex-basis: var(--master-width);
 	min-width: var(--master-width);
-	margin-left: var(--sidebar-width-desktop);
+	margin-left: var(--sidebar-width);
 	background-color: var(--bg-master);
 	z-index: 2;
 	position: relative;
@@ -95,7 +106,6 @@ export default {
 	overflow-y: auto;
 
 	@media (max-width: var(--breakpoint-1400)) {
-		margin-left: var(--sidebar-width-tabled);
 		min-width: 0;
 	}
 	@media (max-width: var(--breakpoint-980)) {

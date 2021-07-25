@@ -26,7 +26,7 @@ https://prismjs.com/download.html#themes=prism-coy&languages=markup+css+clike+ja
 }
 code[class*="language-"],
 pre[class*="language-"] {
-	color: black;
+	color: var(--code-color);
 	background: none;
 	font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 	text-align: left;
@@ -55,8 +55,8 @@ pre[class*="language-"] {
 }
 pre[class*="language-"] > code {
 	position: relative;
-	box-shadow: 0px 0px 0px 1px #dfdfdf;
-	background-color: #fdfdfd;
+	box-shadow: 0px 0px 0px 1px var(--code-shadow);
+	background-color: var(--bg-code);
 	background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
 	background-size: 70px 70px;
 	background-origin: content-box;
@@ -75,9 +75,7 @@ code[class*="language"] {
 /* Margin bottom to accommodate shadow */
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background-color: #fdfdfd;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
+	background-color: var(--bg-code);
 	box-sizing: border-box;
 	margin-bottom: 1em;
 }
@@ -129,7 +127,6 @@ pre[class*="language-"] {
 .token.url,
 .token.variable {
 	color: #a67f59;
-	background: rgba(255, 255, 255, 0.5);
 }
 
 .token.atrule,

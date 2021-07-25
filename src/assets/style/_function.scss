@@ -12,10 +12,25 @@
     background: rgba(0, 0, 0, 0.05);
   }
   &::-webkit-scrollbar-thumb {
-    background: rgba(#01a1b1, 0.1);
+    background: var(--scrollbar-thumb);
   }
   &:hover::-webkit-scrollbar-thumb {
     transition: all 0.2ms ease-in-out;
-    background: rgba(#01a1b1, 0.3);
+    background: var(--scrollbar-thumb-hover);
   }
+}
+
+@mixin mobile { @media (max-width: var(--breakpoint-xs)) {     
+  @content;   
+ } 
+}  
+
+@mixin tablet { @media (max-width: var(--breakpoint-sm)) {       
+   @content;   
+ } 
+}  
+
+@mixin desktop { @media (min-width: var(--breakpoint-980)) {     
+  @content;  
+ } 
 }

@@ -22,7 +22,6 @@
           </header>
 
           <div class="post content-box">
-            
             <div class="post__header">
               <g-image
                 alt="Cover image"
@@ -69,7 +68,6 @@
           </div>
           <RelatedPosts :posts="$page.post.related" />
           <Author class="post-author" />
-          <Vssue :title="$page.post.title" />
         </div>
       </div>
     </div>
@@ -596,6 +594,7 @@ a.link {
       font-size: 1.5rem;
       line-height: 1.2;
       margin-top: 0 !important;
+      color: #000;
     }
   }
 }

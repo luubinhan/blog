@@ -21,6 +21,7 @@
         } catch (err) {}
 
         window.__setPreferredTheme = function(newTheme) {
+          console.log(newTheme);
           setTheme(newTheme);
           try {
             localStorage.setItem("theme", newTheme);
