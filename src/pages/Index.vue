@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <div id="scrollTop"></div>
     <h1 style="display: none">
       Frontend Developer live in Ho Chi Minh City, a photography geek, and a
       music lover - Nơi mình chia sẽ kiến thức frontend, css, html, javascript,
@@ -58,6 +59,14 @@ export default {
     PostCard,
     Pager,
   },
+  mounted: function() {
+    document.getElementById("scrollTop").scrollIntoView();
+		// location.href = '#scrollTop';
+	},
+  updated: function() {
+    document.getElementById("scrollTop").scrollIntoView();
+		location.href = '#scrollTop';
+	},
   metaInfo: {
     title:
       "Frontend Developer live in Ho Chi Minh City, a photography geek, and a music lover",

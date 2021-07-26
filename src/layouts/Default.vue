@@ -1,8 +1,7 @@
 <template>
 	<div id="app" class="layout-blog">
 		<PrimaryNav />
-		<div class="master">
-			<div id="scrollTop"></div>
+		<div class="master">			
 			<main class="inner">
 				<div class="master__search">
 					<Search />
@@ -12,13 +11,7 @@
 		</div>
 		<div v-if="showSidebar" class="layout-blog__aside">
 			<div class="layout-blog__aside-inner">
-				<div class="toggle-theme">					
-					<span class="icon" v-if="isDarkMode">
-						☽
-					</span>
-					<span class="icon" v-else>
-						☀️
-					</span>
+				<div class="toggle-theme">
 					<Toggle
 						@input="toggleTheme"
 						:value="isDarkMode"
@@ -77,7 +70,7 @@ export default {
 		},
 	},
 	updated: function() {
-		location.href = '#scrollTop';
+		// location.href = '#scrollTop';
 	},
 	mounted: function() {
  		this.isDarkMode = localStorage.getItem("theme") === 'dark' ? true : false;
@@ -91,12 +84,7 @@ export default {
 	text-align: right;
 	display: flex;
 	align-items: center;
-	justify-content: flex-end;
-
-	.icon {
-		font-size: 20px;
-		padding-right: 5px;
-	}
+	justify-content: flex-end;	
 }
 
 .master {

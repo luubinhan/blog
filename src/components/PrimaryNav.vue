@@ -23,13 +23,7 @@
 						:key="index"
 						:class="camelCase(m.name)"
 					>
-						<a
-							:aria-label="`Kiến thức ${m.name}`"
-							:title="`Kiến thức ${m.name}`"
-							@click="goTo(m.href)"
-							:class="m.href === activeHref ? 'active' : ''"
-							:target="m.target || ''"
-						>
+						<g-link :to="m.href">
 							<span class="primary-menu__icon" v-if="m.icon === 'js'">
 								<IconJs />
 							</span>
@@ -49,7 +43,7 @@
 								<Paint />
 							</span>
 							<span class="primary-menu__label">{{ m.name }}</span>
-						</a>
+						</g-link>
 					</li>
 					<li class="about">
 						<a href="https://luubinhan.github.io/" target="_blank">About</a>

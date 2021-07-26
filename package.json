@@ -17,7 +17,7 @@
     "@gridsome/remark-prismjs": "^0.2.0",
     "@gridsome/source-filesystem": "^0.6.0",
     "@gridsome/transformer-remark": "^0.3.0",
-    "@p803/vue-facebook": "^2.0.15",
+    "@p803/vue-facebook": "^2.1.0",
     "buefy": "^0.9.3",
     "gh-pages": "^3.1.0",
     "gridsome": "^0.7.0",
