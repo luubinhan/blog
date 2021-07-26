@@ -3,101 +3,80 @@ slug: "/2018-09-18-merging-va-rebase-trong-git"
 date: "2018-09-18"
 title: "Merge vs Rebase trong Git"
 desc: "Trong bài viết này, chúng ta sẽ so sánh giữa lệnh git rebase với git merge, những trường hợp ta có thể áp dụng rebase trong quá trình làm việc với git"
-cover: "https://wac-cdn.atlassian.com/dam/jcr:15447956-9d33-4817-9dc6-fd6c86f24240/hero.svg"
+cover: "https://res.cloudinary.com/hilnmyskv/image/upload/q_auto,f_auto/v1624638022/Algolia_com_Blog_assets/Featured_images/engineering/master-git-rebase/qeawha3q6bhrfec1ohs3.png"
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript"]
+tags: ["git"]
+
 ---
 
-<!-- TOC -->
+**Merge** và **Rebase** là 2 công cụ để *trộn* 2 *branch* trong Git, mục đích sử dụng cho những tính huống khác nhau.
 
-- [Ý tưởng chính](#ý-tưởng-chính)
-  - [Merge](#merge)
-  - [Rebase](#rebase)
-- [Nguyên tắc vàng của Rebase](#nguyên-tắc-vàng-của-rebase)
-- [Quy trình làm việc](#quy-trình-làm-việc)
+Một tình huống phổ biến khi sử dụng *merge*
 
-<!-- /TOC -->
+- Tạo nhánh `my-new-feature` từ nhánh `master`
+- Commit nhánh `my-new-feature` với một số thay đổi
+- Tạo Pull Request: `my-new-feature` vào `master`
 
-# Ý tưởng chính
+Sau khi `my-new-feature` được `merge` vào `master`, chúng ta sẽ có
 
-Điều đầu tiên cần hiểu về `git rebase` là nó giải quyết cùng một vấn đề như `git merge`. Cả 2 lệnh này được dùng để đưa các thay đổi từ một branch sang 1 branch khác, chỉ khác nhau ở cách làm.
+![](https://blog-api.algolia.com/wp-content/uploads/2017/12/image5.png)
 
-Hãy hình dung chuyện sẽ xảy ra khi chúng ta bắt đầu làm việc trên một tính năng mới, trên feature branch, sau đó team khác commit code mới lên master branch.
+Đó là trường hợp lý tưởng rất ít khi xảy ra, 99.999999% là `my-new-feature` có vài điểm cần bổ sung sau khi review code, bug chẳng hạn, sai chính tả chẳng hạn.
 
-![](https://wac-cdn.atlassian.com/dam/jcr:01b0b04e-64f3-4659-af21-c4d86bc7cb0b/01.svg)
+- Chúng ta bổ sung 2 commit **C6** và **C7** vào nhánh `my-new-feature`
+- Trong lúc đó, `master` cũng có thêm 2 commit **C8**, **C9** được `merge` vào bởi 2 bạn đồng nghiệp
+- Cuối cùng PR của chúng ta cũng được `merge`
 
-Cái commit mới trong **master** liên quan đến feature chúng ta đang làm. Để lấy commit mới này từ **master** và đưa về feature branch đang làm, chúng ta có 2 lựa chọn: **merge** hoặc **rebase**
+Cái history lúc này (vẫn ok chứ không vấn đề gì)
 
-## Merge
+![](https://blog-api.algolia.com/wp-content/uploads/2017/12/image3-720x158.png)
 
-```git
-git checkout feature
-git merge master
+Tuy nhiên, cũng là một tính huống rất hay gặp luôn, chúng ta *ôm* nhánh `my-new-feature` gần một tuần mà chưa xong, và chúng ta muốn có **C8**, **C9** đã được merge, và một cách chủ quan duy ý chí, dân dev chúng ta muốn có một cái history thật sạch đẹp, theo kiểu từng commit C4, C5, C6, C7,... là từng công việc rất cụ thể và độc lập, chúng ta không muốn gom hết một lượt đến cuối sprint rồi commit toàn bộ file là điều khiến người review code vô cùng mệt não.
 
-// hoặc viết bằng một dòng luôn
-git merge master feature
-```
+![](https://blog-api.algolia.com/wp-content/uploads/2017/12/image2-720x239.png)
 
-Kết quả là nó sẽ tạo ra một **merge commit** mới trên feature branch, Chúng ta có một cấu trúc như sau
+*Rebase giúp được gì ở tình huống này?*
 
-![](https://wac-cdn.atlassian.com/dam/jcr:e229fef6-2c2f-4a4f-b270-e1e1baa94055/02.svg)
+Năm 2016 Github giới thiệu một cách merge PR mới: **Rebase and merge** (Gitlab sẽ là **Rebase front door**). Nó cho phép chúng ta thực hiện một thao tác **rebase** trên commit PR rồi mới thực hiện việc merge. 2 thao tác này hoàn toàn độc lập và luôn đúng theo thứ tự rebase trước, merge sau, chứ ko có ngược lại.
 
-Nói một cách khác, **feature branch** sẽ có **thêm** một state cần commit. Nếu **master** bị thay đổi thường xuyên, liên tục, cái history của feature branch  có thể sẽ rất lộn xộn, mặc dù có thể xử lý bằng `git log`, tuy nhiên các bạn developer khác sẽ rất khó mà hiểu được history của project
+Tương tự như nút `Rebase and merge`, nếu dùng command
 
-## Rebase
-
-Một lựa chọn khác với merge, là dùng `rebase`
-
-```git
-git checkout feature
+```bash
+git checkout my-new-feature
 git rebase master
+git checkout master
+git merge my-new-feature --ff
 ```
 
-Nó sẽ đưa toàn bộ **feature** branch lên trên cùng của **master**.
+Bằng cách đó, history lúc này là một đường thẳng tắp
 
-![](https://wac-cdn.atlassian.com/dam/jcr:5b153a22-38be-40d0-aec8-5f2fffc771e5/03.svg)
+![](https://blog-api.algolia.com/wp-content/uploads/2017/12/image4-720x136.png)
 
-Lợi ích của dùng `rebase` là chúng ta có history của project sạch sẽ hơn. Sẽ không có những merge commit dư thừa như trong lệnh `merge`.
+> Rebase không phải để thay thế merge, `rebase` dùng để thực hiện trên nhánh feature - private branch của chúng ta, merge thực hiện trên master - share branch với đồng nghiệp
 
-# Nguyên tắc vàng của Rebase
+Việc `rebase` -> `merge` như thế sẽ tránh mất đi những commit C4, C5, C6, C7 trên history của nhánh `master`, như khi chỉ dùng một lệnh `merge`. Chúng ta bê nguyên cái history của nhánh `my-new-feature` lên luôn.
 
-Một khi đã hiểu được cách làm của **rebase**, điều quan trọng nhất đã học được là **đừng bao giờ xài nó**.
+Vấn đề thứ 2, làm sao để **sync** nhánh `my-new-feature` với `master` (có C8, C9)?
 
-Ví dụ, đoán xem chuyện gì xảy ra nếu chúng ta **rebase** master vào feature branch
-
-![](https://wac-cdn.atlassian.com/dam/jcr:1d22f018-b2c7-4096-9db1-c54940cf4f4e/05.svg)
-
-Lệnh `rebase` sẽ đưa toàn bộ commit của master xuống feature. Vấn đề là cái này chỉ nằm trên local repository của chúng ta. Tất cả những dev khác sẽ tiếp tục làm việc trên master gốc. Git lúc này sẽ hiểu history master của chúng ta không phụ thuộc vào những người khác.
-
-Cách duy nhất để sync lại 2 master branch là merge chúng lại. Bạn đã thấy sự rắc rối chưa? Khi cả 2 branch master sẽ có cùng các commit changes. Nói cách khác, đố ai biết được chúng ta chọn được cái này trong 2 cái để merge.
-
-Trước khi chạy lệnh `git rebase`, luôn hỏi chính mình "Có đứa nào đang làm việc trên branch này?" Nếu câu trả lời là có, rút tay khỏi bàn phím và nghĩ đến giải pháp an toàn hơn như `git revert`
-
-# Quy trình làm việc
-
-Chúng ta cùng bàn quan những lợi ích của `rebase` trong quá trình phát triển feature
-
-Bước đầu tiên để làm việc với `git rebase` là phải đảm bảo mỗi feature có một branch tương ứng. Như vậy chúng ta có một cấu trúc an toàn để có thể rebase
-
-![](https://wac-cdn.atlassian.com/dam/jcr:6af9de07-088b-4f8b-97a7-b66569a9e4ac/06.svg)
-
-Khi gọi `git rebase` chúng ta có 2 lựa chọn: **thằng cha của feature branch** (có thể là developmennt hoặc master tùy thuộc vào cái flow đang dùng) hoặc một thời điểm commit trước đó của feature. Lựa chọn thứ 2 là ta dùng Rebase kèm với options, ví dụ rebase lại trước đó 3 commit
-
-```git
-git checkout feature
-git rebase -i HEAD~3
+```bash
+/* lấy những thay đổi mới */
+git fetch
+/* checkout nhánh chúng ta muốn sync với master */
+git checkout my-new-feature
+/* thực hiện sync với master */
+git rebase origin/master
 ```
 
-Bằng cách chỉ định `HEAD~3`, chúng ta không tạo thêm state mới của branch, chúng ta chỉ viết lại cho 3 commit trước đó.
+![](https://blog-api.algolia.com/wp-content/uploads/2017/12/image1.png)
 
-![](https://wac-cdn.atlassian.com/dam/jcr:079532c4-2594-40ed-a5c4-0e3621b9edff/07.svg)
+> Giữ nhánh `my-new-feature` cập nhập với những thay đổi mới nhất ở nhánh `master` để tránh quá nhiều conflict xảy ra khi tạo PR
 
-Nếu muốn viết lại toạn bộ cái feature sử dụng cách này, dùng lệnh `git merge-base` để tìm đến gốc của feature branch
+Nút **Rebase and merge** không được yêu thích lắm, vì nó tạo quá nhiều conflict, nên chúng ta vẫn thường ưu ái merge hơn.
 
-```git
-git merge-base feature master
-```
+Để có một history thẳng hàng, đầy đủ tốn khá nhiều mồ hôi chứ không dễ như ăn bánh.
 
-[Link bài gốc](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
+*Bài viết được bổ sung chỉnh sửa theo góp ý của bạn Nguyễn Thanh Nhân*
+
+https://www.algolia.com/blog/engineering/master-git-rebase/
