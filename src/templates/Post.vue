@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <div id="scrollTop"></div>
     <div class="single-post">
       <div class="single-post-container">        
         <article>
@@ -130,6 +131,9 @@ export default {
   mounted: function() {
     this.isMounted = true;
   },
+  updated: function() {
+		location.href = '#scrollTop';
+	},
   components: {
     Author,
     PostMeta,
