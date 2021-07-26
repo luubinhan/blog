@@ -1,6 +1,6 @@
 <template>
 	<div id="app" class="layout-blog">
-		<div class="toggle-theme">
+		<div class="toggle-theme toggle-theme--mobile">
 			<Toggle
 				@input="toggleTheme"
 				:value="isDarkMode"
@@ -92,10 +92,15 @@ export default {
 	align-items: center;
 	justify-content: flex-end;
 
+	&--mobile {
+		display: none;
+	}
+
 	@include desktop {
+		display: block;
 		position: fixed;
 		z-index: 7;
-		right: 100px;
+		right: 81px;
 		top: 13px;
 	}
 }
@@ -148,6 +153,7 @@ export default {
 .layout-blog {
 	position: relative;
 	display: flex;
+	background-color: var(--bg-aside);
 	@include tablet {
 		display: block;
 	}
