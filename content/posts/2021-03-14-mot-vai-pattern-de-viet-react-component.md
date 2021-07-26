@@ -3,7 +3,7 @@ slug: "2021-03-14-mot-vai-pattern-de-viet-react-component"
 date: "2021-03-14"
 title: "Một vài pattern để viết component của React cần dùng chung state"
 desc: "Câu chuyện chia sẽ state và phương thức giữa các component chưa bao giờ là cũ trong React"
-tags: ["js","react","hard"]
+tags: ["javascript","react","hard"]
 canonical_url: false
 ---
 

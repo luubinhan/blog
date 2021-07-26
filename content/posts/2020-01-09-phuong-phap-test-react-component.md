@@ -115,7 +115,7 @@ export default function Hello(props) {
 
 Chúng ta có thể viết test cho component:
 
-```jsx{24-27}
+```jsx
 // hello.test.js
 
 import React from "react";
@@ -196,7 +196,7 @@ export default function User(props) {
 
 Bạn có thể viết test cho nó:
 
-```jsx{23-33,44-45}
+```jsx
 // user.test.js
 
 import React from "react";
@@ -292,7 +292,7 @@ function Contact(props) {
 
 Nếu không muốn load component `GoogleMap` trong test của chúng ta, giả lập bằng một dummy component và chạy test:
 
-```jsx{10-18}
+```jsx
 // contact.test.js
 
 import React from "react";
@@ -383,7 +383,7 @@ export default function Toggle(props) {
 
 Chúng ta có thể viết test cho nó:
 
-```jsx{13-14,35,43}
+```jsx
 // toggle.test.js
 
 import React from "react";
@@ -476,7 +476,7 @@ export default function Card(props) {
 
 Chúng ta có thể viết test cho component bằng cách dùng [Jest's timer mocks](https://jestjs.io/docs/en/timer-mocks) và test sự khác nhau của state.
 
-```jsx{7,31,37,49,59}
+```jsx
 // card.test.js
 
 import React from "react";
@@ -566,7 +566,7 @@ Framework như Jest cho chúng ta lưu "ảnh" với [`toMatchSnapshot` / `toMat
 
 Trong ví dụ, chúng ta render một component và định dạng HTML đã render với thư viện [`pretty`](https://www.npmjs.com/package/pretty), trước khi lưu nó như một snapshot inline:
 
-```jsx{29-31}
+```jsx
 // hello.test.js, again
 
 import React from "react";

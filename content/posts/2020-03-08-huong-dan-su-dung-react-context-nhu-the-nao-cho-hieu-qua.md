@@ -127,7 +127,7 @@ function YourComponent() {
 
 Để có thể dùng `useSomething()` như bên trên, chúng ta sẽ cần viết lại context như sau
 
-```jsx{32-38,40-46,48}
+```jsx
 // src/count-context.js
 import React from "react";
 

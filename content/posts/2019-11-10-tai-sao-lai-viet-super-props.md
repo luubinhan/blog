@@ -21,7 +21,7 @@ Nghe nói [Hook](https://reactjs.org/docs/hooks-intro.html) đang là trend. Tr�
 
 Chúng ta đã viết `super(props)` không biết bao nhiêu lần trong đời:
 
-```jsx{3}
+```jsx
 class Checkbox extends React.Component {
   constructor(props) {
     super(props);
@@ -44,7 +44,7 @@ Cú pháp này [đã  được hoạch định](https://reactjs.org/blog/2015/01
 
 Quay về ví dụ,  chỉ sử dụng các tính năng của ES2015:
 
-```jsx{3}
+```jsx
 class Checkbox extends React.Component {
   constructor(props) {
     super(props);
@@ -151,7 +151,7 @@ Vậy có nghĩa là bạn có thể gọi `super()` thay vì `super(props)`?
 
 **Không. Như vậy rất khó hiểu.** Chắc chắn, React sẽ gán `this.props` *sau khi*  constructor chạy. Nhưng `this.props` vẫn  là `undefined` *giữa* lúc gọi `super` và kết thúc constructor:
 
-```jsx{14}
+```jsx
 // Bên trong React
 class Component {
   constructor(props) {

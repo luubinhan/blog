@@ -24,7 +24,7 @@ tags: ["react", "hoc-thuat"]
 
 Trước khi bắt đầu nói về `useEffect` chúng ta cần nhắc lại quá trình render
 
-```jsx{6}
+```jsx
 function Counter() {
   const [count, setCount] = useState(0);
 
@@ -47,7 +47,7 @@ const count = 42;
 
 Đầu tiên giá trị khởi tạo của `count` sẽ =0. Khi chúng ta gọi `setCount(1)`, React sẽ gọi lại component một lần nữa, với giá trị `count` lúc này là `1`. Cứ vậy
 
-```jsx{3,10,17}
+```jsx
 // Lần đầu render
 function Counter() {
   const count = 0; // trả về bởi useState()  // ...
@@ -408,7 +408,7 @@ Rõ ràng là 2 thằng dependency không khác nhau, nên nó sẽ không chạ
 
 Trong tình huống này, vấn đề khá là hiển nhiên, nhưng trực giác có thể đánh lừa bạn trong các tình huống khác, lấy ví dụ, chúng ta muốn giá trị `counter` tăng đều sau mỗi giây. Với một class, trực giác sẽ mách bảo: "Set up cái interval một lần, rồi dứt tình vứt áo một lần", kiểu như [thế này](https://codesandbox.io/s/n5mjzjy9kl), khi chuyển qua dùng `useEffect` bạn sẽ nghĩ đến dùng `[]` cho mảng phụ thuộc "Tao chỉ muốn tình một đêm", đúng không?
 
-```jsx{9}
+```jsx
 function Counter() {
   const [count, setCount] = useState(0);
 
@@ -429,7 +429,7 @@ Chúng ta đang muốn effect này chỉ chạy lần đầu tiên mà thôi, đ
 
 Ở lần render đầu tiên, `count` = 0, vì thế `setCount(count + 1)` ở lần render đầu tiên nghĩa là `setCount(0+1)`, nhưng vì không re-run effect thêm lần nào nữa, chúng ta cứ gọi mãi `setCount(0+1)` ở những lần tiếp theo
 
-```jsx{8,11}
+```jsx
 // state = 0
 function Counter() {
   // ...
@@ -489,7 +489,7 @@ Chúng ta không nói xạo, chúng ta giảm bớt số lượng những thứ 
 
 Để làm được việc này, chúng ta phải hỏi bản thân: **chúng ta dùng count để làm gì?** Có vẻ như chúng ta chỉ dùng nó cho việc gọi hàm `setCount`, chúng ta không thực sự cần giá trị `count` nếu chúng ta biết được giá trị trước đó, trường hợp trên, chúng ta có thể không cần dùng đến giá trị `count` mà dùng _previous state_
 
-```jsx{3}
+```jsx
 useEffect(() => {
   const id = setInterval(() => {
     setCount(c => c + 1);
@@ -510,7 +510,7 @@ Khi nói về effect, định hướng lập trình chúng ta là **đồng bộ
 
 Tuy nhiên không phải lúc nào cuộc sống cũng đơn giản với bạn như vậy, nếu chúng ta muốn tính toán giá trị của state mới dựa trên một prop, 2 giá trị state phụ thuộc lẫn nhau, `setState` là không đủ. Chúng ta có người chị em hàng xóm tên `useReducer`
 
-```jsx{6}
+```jsx
 function Counter({ step }) {
   const [count, dispatch] = useReducer(reducer, 0);
 
@@ -529,7 +529,7 @@ function Counter({ step }) {
     return () => clearInterval(id);
   }, [dispatch]);
 
-  return <h1>{count}</h1>;
+  return {count};
 }
 ```
 

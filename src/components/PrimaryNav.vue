@@ -138,7 +138,7 @@ export default {
 		display: block;
 		position: absolute;
 		top: 50px;
-		background: lighten(#252525, 2%);
+		background: var(--sidebar-color);
 		left: 0;
 		right: 0;
 		padding-left: 30px;

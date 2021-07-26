@@ -20,17 +20,20 @@
   }
 }
 
-@mixin mobile { @media (max-width: var(--breakpoint-xs)) {     
-  @content;   
- } 
+@mixin mobile {
+  @media (max-width: 560px) {     
+    @content;   
+  } 
 }  
 
-@mixin tablet { @media (max-width: var(--breakpoint-sm)) {       
-   @content;   
- } 
+@mixin tablet {
+  @media (max-width: 768px) {       
+    @content;   
+  } 
 }  
 
-@mixin desktop { @media (min-width: var(--breakpoint-980)) {     
-  @content;  
- } 
-}
+@mixin desktop {
+  @media (max-width: 980px) {
+    @content;  
+  } 
+}  

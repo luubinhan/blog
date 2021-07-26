@@ -1,5 +1,11 @@
 <template>
 	<div id="app" class="layout-blog">
+		<div class="toggle-theme">
+			<Toggle
+				@input="toggleTheme"
+				:value="isDarkMode"
+			/>
+		</div>
 		<PrimaryNav />
 		<div class="master">			
 			<main class="inner">
@@ -84,7 +90,14 @@ export default {
 	text-align: right;
 	display: flex;
 	align-items: center;
-	justify-content: flex-end;	
+	justify-content: flex-end;
+
+	@include desktop {
+		position: fixed;
+		z-index: 7;
+		right: 100px;
+		top: 13px;
+	}
 }
 
 .master {
@@ -109,7 +122,7 @@ export default {
 		max-height: none;
 	}
 	@include mobile {
-		padding-top: 54px;
+		padding-top: 10px;
 	}
 	&__search {
 		display: none;
@@ -146,7 +159,7 @@ export default {
 		@media (max-width: var(--breakpoint-1400)) {
 			max-width: 30vw;
 		}
-		@media (max-width: var(--breakpoint-980)) {
+		@include desktop {
 			max-width: 20vw;
 			display: none;
 		}

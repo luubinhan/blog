@@ -3,7 +3,7 @@ slug: "2021-03-28-mot-vai-luu-y-voi-javascript"
 date: "2021-03-28"
 title: "Một vài điều cần lưu ý khi bạn làm việc với JS"
 desc: "Khi bạn làm việc với JS đủ lâu và ăn hành đủ nhiều bạn sẽ cần biết đến những đặc điểm rất riêng của JS"
-tags: ["js", "hard"]
+tags: ["javascript", "hard"]
 canonical_url: false
 ---
 

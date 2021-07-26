@@ -12,13 +12,13 @@ tags: ["hoc-thuat", "react"]
 
 <!-- TOC -->
 
-- [Gọi hook thủ công/bằng code](#g%e1%bb%8di-hook-th%e1%bb%a7-c%c3%b4ngb%e1%ba%b1ng-code)
+- [Gọi hook thủ công/bằng code](#gọi-hook-thủ-côngbằng-code)
 - [Loading indicator](#loading-indicator)
 - [Handle Error](#handle-error)
-- [Fetch data với Form](#fetch-data-v%e1%bb%9bi-form)
-- [Custom hook để Fetch data](#custom-hook-%c4%91%e1%bb%83-fetch-data)
+- [Fetch data với Form](#fetch-data-với-form)
+- [Custom hook để Fetch data](#custom-hook-để-fetch-data)
 - [Reducer hook](#reducer-hook)
-- [Bỏ qua việc fetch data](#b%e1%bb%8f-qua-vi%e1%bb%87c-fetch-data)
+- [Bỏ qua việc fetch data](#bỏ-qua-việc-fetch-data)
 
 <!-- /TOC -->
 
@@ -46,7 +46,7 @@ export default App;
 
 Chúng ta sẽ sử dụng axios để fetch dữ liệu, bạn thích xài cái khác thì cứ vô tư
 
-```jsx{7-12}
+```jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -196,7 +196,7 @@ useEffect(() => {
 
 Có một vấn đề khác, user cứ nhập một ký tự, câu `fetchData` lại được gọi, gọi liên tục như vậy không hay, thêm vào một nút để user click vào mới thực hiện search thì sao
 
-```jsx{4,23,24,25}
+```jsx
 function App() {
   const [data, setData] = useState({ hits: [] });
   const [query, setQuery] = useState('redux');
@@ -260,7 +260,7 @@ function App() {
 
 Nhưng nếu sửa như vậy, trường hợp component được mount lần đầu, nó sẽ không có hiển thị kết quả cho từ khóa `redux` nữa. Nếu dùng thềm một `useEffect` khác cho trường hợp chạy lúc đầu sẽ gây nhầm lẫn, không rõ ràng, thay vào đó nếu chúng ta xem search state là nguyên cái `url` sẽ đơn giản hơn
 
-```jsx{4,5,6,10,16,28}
+```jsx
 function App() {
   const [data, setData] = useState({ hits: [] });
   const [query, setQuery] = useState('redux');
@@ -309,7 +309,7 @@ function App() {
 
 Một nhu cầu khác cũng hay gặp là trong lúc fetch data từ API, chúng ta cần biết trạng thái loading tới đâu rồi, chúng ta sẽ bổ sung thêm state `isLoading`
 
-```jsx{7,11,16}
+```jsx
 function App() {
   const [data, setData] = useState({ hits: [] });
   const [query, setQuery] = useState('redux');
@@ -366,7 +366,7 @@ export default App;
 
 Cũng tương tự như loading, chúng ta sẽ bổ sung thêm state `isError` để xác định việc fetch dữ liệu có bị lỗi không
 
-```jsx{8,12,20}
+```jsx
 function App() {
   const [data, setData] = useState({ hits: [] });
   const [query, setQuery] = useState('redux');
@@ -429,7 +429,7 @@ function App() {
 
 Nãy giờ chúng ta chỉ fetch data với bằng input và button. Khi có nhiều element hơn, chúng ta sẽ đưa nó vào `form` để có thể trigger form submit bằng cách nhấn Enter
 
-```jsx{5,6,7,8,9,10,16,17}
+```jsx
 function App() {
   ...
   return (
@@ -489,7 +489,7 @@ const useHackerNewsApi = () => {
 
 Sử dụng bên trong App Component
 
-```jsx{3,8}
+```jsx
 function App() {
   const [query, setQuery] = useState('redux');
   const [{ data, isLoading, isError }, doFetch] = useHackerNewsApi();
@@ -515,7 +515,7 @@ function App() {
 
 Giá trị state lúc khởi tạo của thể đưa vào như một tham số truyền vào cho custom hook luôn
 
-```jsx{5,6}
+```jsx
 import React, { Fragment, useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -590,7 +590,7 @@ export default App;
 
 Với cái custom hook để fetch data như ở trên, chúng ta thấy có 2 state `isLoading`, `isError` quan hệ khá *mật thiết* với nhau, có thể hợp nhất 2 đứa nó lại bằng `React.useReducer`
 
-```jsx{5,9,10,11,16,17,18,19}
+```jsx
 import React, {
   Fragment,
   useState,
@@ -652,7 +652,7 @@ Mình đã bảo rồi, nó sẽ giống như cái reducer trong redux thôi, ch
 
 Cuối cùng chúng ta cập nhập lại giá trị trả về của custom hook nữa
 
-```jsx{12}
+```jsx
 const useDataApi = (initialUrl, initialData) => {
   const [url, setUrl] = useState(initialUrl);
   
@@ -702,7 +702,7 @@ const dataFetchReducer = (state, action) => {
 
 Tình huống là khi user chuyển qua một route khác, khi đang fetch data, việc gọi fetch ko cần thiết và có thể bỏ qua
 
-```jsx{11,17,21,29}
+```jsx
 const useDataApi = (initialUrl, initialData) => {
   const [url, setUrl] = useState(initialUrl);
   

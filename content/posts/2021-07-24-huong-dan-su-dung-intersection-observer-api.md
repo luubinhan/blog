@@ -3,7 +3,7 @@ slug: "2021-07-24-huong-dan-su-dung-intersection-observer-api"
 date: "2021-07-24"
 title: "Intersection Observer API"
 desc: "Làm sao để chạy một hàm khi element bắt đầu xuất hiện trên màn hình?"
-tags: ["js"]
+tags: ["javascript"]
 canonical_url: false
 ---
 

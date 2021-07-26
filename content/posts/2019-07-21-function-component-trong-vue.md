@@ -12,10 +12,10 @@ tags: ["vuejs", "hoc-thuat"]
 
 <!-- TOC -->
 
-- [Function Component trong Vue là gì](#Function-Component-trong-Vue-l%C3%A0-g%C3%AC)
-- [Truy xuất dữ liệu](#Truy-xu%E1%BA%A5t-d%E1%BB%AF-li%E1%BB%87u)
-- [Attribute](#Attribute)
-- [Kết](#K%E1%BA%BFt)
+- [Function Component trong Vue là gì](#function-component-trong-vue-là-gì)
+- [Truy xuất dữ liệu](#truy-xuất-dữ-liệu)
+- [Attribute](#attribute)
+- [Kết](#kết)
 
 <!-- /TOC -->
 
@@ -23,14 +23,14 @@ tags: ["vuejs", "hoc-thuat"]
 
 Component **không** chứa `state` và không có `instance`, không thể tham chiếu đến chính nó bằng từ khóa `this`
 
-```jsx{2}
+```jsx
 // dùng vue template
 <template functional>
 	<div>...</div>
 </template>
 ```
 
-```jsx{4}
+```jsx
 // dùng render function
 <script>
 export default {
@@ -47,7 +47,7 @@ export default {
 
 Nếu không có `state` hay `instance` vậy làm sao chúng ta có thể tham chiếu đến dữ liệu và phương thức? Vue cung cấp tham số `context` bên dưới hàm render để chúng ta truy xuất: **prop, children, slot, scopedSlot, data, parent, listener, injection**
 
-```jsx{3}
+```jsx
 <template functional>
 	<div>
 		{{ props.someProp }}
@@ -109,7 +109,7 @@ export default {
 
 Hên là có cách giải quyết, nếu bạn đã viết function component thì bạn phải chịu trách nhiệm bổ sung cách giải quyết cho nó
 
-```jsx{3,4}
+```jsx
 <template functional>
 	<h1
 		v-bind="data.attrs"
@@ -132,7 +132,7 @@ Bạn phải thông qua `data.class`/ `data.staticClass` và `data.style`/`data.
 <UiHeadline class="my-class"/>
 ```
 
-```jsx{3,4}
+```jsx
 <template functional>
 	<h1
 		:class="[data.class, data.staticClass]"

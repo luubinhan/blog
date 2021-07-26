@@ -3,7 +3,7 @@ slug: "2021-05-31-huong-dan-viet-boolean"
 date: "2021-05-31"
 title: "Quản lý state: nhận định boolean tốt và không tốt"
 desc: ""
-tags: ["js"]
+tags: ["javascript"]
 canonical_url: false
 ---
 
