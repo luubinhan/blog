@@ -20,6 +20,7 @@
     "@p803/vue-facebook": "^2.1.0",
     "gridsome": "^0.7.0",
     "gridsome-plugin-flexsearch": "^2.0.1",
+    "gridsome-plugin-recommender": "^1.1.5",
     "gridsome-plugin-rss": "^1.2.0",
     "lodash": "^4.17.20",
     "vue-disqus": "^4.0.1",
