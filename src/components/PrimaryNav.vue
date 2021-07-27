@@ -1,7 +1,9 @@
 <template>
 	<div class="sidebar">
 		<div class="sidebar__inner">
-			<Brand />
+			<keep-alive>
+				<Brand />
+			</keep-alive>
 			<button
 				type="button"
 				aria-expanded="false"
@@ -17,41 +19,49 @@
 				</div>
 			</button>
 			<div class="navigation-component">
-				<ul class="nav primary-menu" :class="collapsed && 'collapsed'">
-					<li
-						v-for="(m, index) in menus"
-						:key="index"
-						:class="camelCase(m.name)"
-					>
-						<g-link :to="m.href">
-							<span class="primary-menu__icon" v-if="m.icon === 'js'">
-								<IconJs />
-							</span>
-							<span class="primary-menu__icon" v-if="m.icon === 'nodejs'">
-								<React />
-							</span>
-							<span class="primary-menu__icon" v-if="m.icon === 'react-native'">
-								<Native />
-							</span>
-							<span class="primary-menu__icon" v-if="m.icon === 'html5'">
-								<Html />
-							</span>
-							<span class="primary-menu__icon" v-if="m.icon === 'vue'">
-								<Vue />
-							</span>
-							<span class="primary-menu__icon" v-if="m.icon === 'paint'">
-								<Paint />
-							</span>
-							<span class="primary-menu__label">{{ m.name }}</span>
-						</g-link>
-					</li>
-					<li class="about">
-						<a href="https://luubinhan.github.io/" target="_blank">About</a>
-					</li>
-				</ul>
+				<keep-alive>
+					<ul class="nav primary-menu" :class="collapsed && 'collapsed'">
+						<li
+							v-for="(m, index) in menus"
+							:key="index"
+							:class="camelCase(m.name)"
+						>
+							<g-link :to="m.href">
+								<span class="primary-menu__icon" v-if="m.icon === 'js'">
+									<IconJs />
+								</span>
+								<span class="primary-menu__icon" v-if="m.icon === 'nodejs'">
+									<React />
+								</span>
+								<span
+									class="primary-menu__icon"
+									v-if="m.icon === 'react-native'"
+								>
+									<Native />
+								</span>
+								<span class="primary-menu__icon" v-if="m.icon === 'html5'">
+									<Html />
+								</span>
+								<span class="primary-menu__icon" v-if="m.icon === 'vue'">
+									<Vue />
+								</span>
+								<span class="primary-menu__icon" v-if="m.icon === 'paint'">
+									<Paint />
+								</span>
+								<span class="primary-menu__label">{{ m.name }}</span>
+							</g-link>
+						</li>
+						<li class="about">
+							<a href="https://luubinhan.github.io/" target="_blank" rel="noopener noreferrer">About</a>
+						</li>
+					</ul>
+				</keep-alive>
 			</div>
 		</div>
-		<Footer />
+
+		<keep-alive>
+			<Footer />
+		</keep-alive>
 	</div>
 </template>
 
@@ -66,42 +76,39 @@ import { camelCase } from 'lodash';
 import Brand from '~/components/Brand';
 import Footer from '~/components/Footer';
 
+const MENU = [
+	{
+		name: 'Javascript',
+		href: '/tag/javascript',
+		icon: 'js',
+	},
+	{
+		name: 'React',
+		href: '/tag/react',
+		icon: 'nodejs',
+	},
+	{
+		name: 'Vue',
+		href: '/tag/vuejs',
+		icon: 'vue',
+	},
+	{
+		name: 'HTML/CSS',
+		href: '/tag/css',
+		icon: 'html5',
+	},
+	{
+		name: 'UX/UI',
+		href: '/tag/ux-ui',
+		icon: 'paint',
+	},
+];
+
 export default {
 	data: () => ({
 		collapsed: true,
 		activeHref: '',
-		menus: [
-			{
-				name: 'Javascript',
-				href: '/tag/javascript',
-				icon: 'js',
-			},
-			{
-				name: 'React',
-				href: '/tag/react',
-				icon: 'nodejs',
-			},
-			/* {
-        name: "React native",
-        href: "/tag/react-native",
-        icon: "react-native",
-      }, */
-			{
-				name: 'Vue',
-				href: '/tag/vuejs',
-				icon: 'vue',
-			},
-			{
-				name: 'HTML/CSS',
-				href: '/tag/css',
-				icon: 'html5',
-			},
-			{
-				name: 'UX/UI',
-				href: '/tag/ux-ui',
-				icon: 'paint',
-			},
-		],
+		menus: MENU,
 	}),
 	methods: {
 		camelCase,

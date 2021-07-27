@@ -18,12 +18,16 @@
 		<div v-if="showSidebar" class="layout-blog__aside">
 			<div class="layout-blog__aside-inner">
 				<div class="toggle-theme">
-					<Toggle
-						@input="toggleTheme"
-						:value="isDarkMode"
-					/>
+					<keep-alive>
+						<Toggle
+							@input="toggleTheme"
+							:value="isDarkMode"
+						/>
+					</keep-alive>
 				</div>
-				<Search />
+				<keep-alive>
+					<Search />
+				</keep-alive>
 				<!-- <iframe
 					src="https://docs.google.com/forms/d/e/1FAIpQLSc2vHEFz9Un-BsJDvZ6-j5fyDZCYahvssIU15Dwp8M2WU7vyA/viewform?embedded=true"
 					width="640"

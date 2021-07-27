@@ -48,6 +48,17 @@ module.exports = {
 
   plugins: [
     {
+      use: "gridsome-plugin-manifest",
+      options: {
+        background_color: "#000000",
+        icon_path: "./src/assets/images/author.jpg",
+        name: "vuilaptrinh",
+        short_name: "LuckyLuu",
+        theme_color: "#01A1B1",
+        lang: "vi",
+      },
+    },    
+    {
       use: '@gridsome/plugin-sitemap',
       options: {
         exclude: ['/exclude-me'],
@@ -98,7 +109,7 @@ module.exports = {
         minRelations: 3,
         maxRelations: 4,
         fillWithRandom: true,
-        debug: true
+        debug: false
       }
     },
     /* {
