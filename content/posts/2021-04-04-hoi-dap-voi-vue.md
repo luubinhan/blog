@@ -322,7 +322,7 @@ renderError(h, err) {
 
 ## `nextTick` là gì
 
-Hàm `nextTick()` cho phép chạy một hàm khác sau khi dữ liệu được set và DOM đã cập nhập. Như ví dụ sau, nó giống như khi gọi setTimeout
+Hàm `nextTick()` cho phép chạy một hàm khác sau khi dữ liệu có thay đổi và DOM đã cập nhập.
 
 ```js
 // thay đổi dữ liệu
@@ -332,6 +332,7 @@ Vue.nextTick(function () {
 	// DOM đã update
 })
 
+// Có thể dùng như `.then` như Promise
 Vue.nextTick()
 	.then(function () {
 		// DOM đã update
