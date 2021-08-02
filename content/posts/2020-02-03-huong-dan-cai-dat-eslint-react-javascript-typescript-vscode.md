@@ -1,7 +1,7 @@
 ---
 slug: "/2020-02-03-huong-dan-cai-dat-eslint-react-javascript-typescript-vscode"
 date: "2020-02-03"
-title: "Chỉ dẫn thiết đặt ESLint trong nhiều tình huống sử dụng Javascript, Typescript, React"
+title: "Thiết đặt ESLint khi sử dụng với Javascript, Typescript, React"
 desc: "Chúng ta bắt đầu với Javascript trước, sau đó sẽ là TypeScript, và React. Mục tiêu là làm đúng, tránh trường hợp cài package không cần thiết hoặc copy/paste các config tới khi nó chạy được thì thôi."
 cover: ""
 type: "post"
@@ -18,8 +18,8 @@ tags: ["hoc-thuat", "javascript", "typescript", "react"]
 - [Javascript thuần](#javascript-thuần)
 - [Thiết đặt TypeScript](#thiết-đặt-typescript)
 - [Thiết đặt cho React](#thiết-đặt-cho-react)
-  - [React Javascript](#react-javascript)
-  - [React TypeScript](#react-typescript)
+    - [React Javascript](#react-javascript)
+    - [React TypeScript](#react-typescript)
 - [Cài đặt cho VSCode](#cài-đặt-cho-vscode)
 
 <!-- /TOC -->
