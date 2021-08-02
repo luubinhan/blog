@@ -6,6 +6,12 @@ https://prismjs.com/download.html#themes=prism-coy&languages=markup+css+clike+ja
  * @author Tim  Shedor
  */ 
 
+ 
+.gridsome-highlight-code-line {
+	background: var(--color-highlight-code-line) !important;
+	display: block;
+}
+
 body[data-theme='light'] {
 	.gridsome-highlight {
 		margin-top: 25px;
@@ -21,14 +27,7 @@ body[data-theme='light'] {
 				text-decoration: none !important;
 			}
 		}
-	}
-	
-	.gridsome-highlight-code-line {
-		background: var(--color-highlight-code-line) !important;
-		display: block;
-		margin-left: -75px;
-		padding-left: 75px;
-	}
+	}	
 
 	code[class*='language-'],
 	pre[class*='language-'] {
@@ -361,7 +360,7 @@ body[data-theme='dark'] {
 
 	:not(pre) > code[class*='language-'],
 	pre[class*='language-'] {
-		background: #1d1f21;
+		background: #04101b;
 	}
 
 	/* Inline code */

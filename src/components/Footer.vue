@@ -33,19 +33,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.footer {
-	position: absolute;
-	bottom: 15px;
-	left: 30px;
-	right: 30px;
+#footer {
+	margin-top: auto;
+}
+.footer {	
 	width: auto;
     color: #f2f2f2;
 	font-family: $monospace;
 	line-height: 20px;
-	position: absolute;
-	font-size: $font-size-base;
-	bottom: 0;
-	width: 100%;
+	font-size: $font-size-small;
+	text-align: center;
 
 	@include tablet {
 		display: none;

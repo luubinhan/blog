@@ -57,11 +57,8 @@
 					</ul>
 				</keep-alive>
 			</div>
-		</div>
-
-		<keep-alive>
 			<Footer />
-		</keep-alive>
+		</div>
 	</div>
 </template>
 
@@ -266,6 +263,8 @@ export default {
 	width: var(--sidebar-width);
 	background-color: var(--sidebar-color);
 	color: rgba(255, 255, 255, 0.65);
+	;
+
 	@include mobile {
 		position: fixed;
 		left: 0;
@@ -273,6 +272,10 @@ export default {
 	}
 	&__inner {
 		padding: 50px 30px 30px;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		
 		@include tablet {
 			padding: 15px;
 		}
