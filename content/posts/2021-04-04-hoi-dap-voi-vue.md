@@ -15,22 +15,21 @@ tags: ["vuejs", "hoc-thuat"]
 - [Function component là gì?](#function-component-là-gì)
 - [Tại sao data trong Vue component phải là 1 function](#tại-sao-data-trong-vue-component-phải-là-1-function)
 - [`v-if` và `v-show` khác nhau như thế nào](#v-if-và-v-show-khác-nhau-như-thế-nào)
-- [Default value của prop là array hoặc object](#default-value-của-prop-là-array-hoặc-object)
+- [Khai báo default value của `prop` là `array` hoặc `object`](#khai-báo-default-value-của-prop-là-array-hoặc-object)
 - [Mục đích của `key` trong Vue Component](#mục-đích-của-key-trong-vue-component)
-- [10. Vì sao không sử dụng `v-if` và `v-for` cùng lúc?](#10-vì-sao-không-sử-dụng-v-if-và-v-for-cùng-lúc)
-- [19. Các event modifier cung cấp bởi Vue](#19-các-event-modifier-cung-cấp-bởi-vue)
-- [20. Một số key modifier cung cấp sẵn](#20-một-số-key-modifier-cung-cấp-sẵn)
-- [25. Modifier trên model](#25-modifier-trên-model)
-- [54 Plugin trong Vue là gì và dùng để làm gì](#54-plugin-trong-vue-là-gì-và-dùng-để-làm-gì)
-- [68 trường hợp nên sử dụng render function mà không dùng kiểu viết template](#68-trường-hợp-nên-sử-dụng-render-function-mà-không-dùng-kiểu-viết-template)
-- [80. Mục đích của thẻ `keep-alive`](#80-mục-đích-của-thẻ-keep-alive)
+- [Vì sao không sử dụng `v-if` và `v-for` cùng lúc?](#vì-sao-không-sử-dụng-v-if-và-v-for-cùng-lúc)
+- [Các `event modifier` cung cấp bởi Vue](#các-event-modifier-cung-cấp-bởi-vue)
+- [Một số key modifier cung cấp sẵn](#một-số-key-modifier-cung-cấp-sẵn)
+- [Modifier trên model](#modifier-trên-model)
+- [Plugin trong Vue là gì và dùng để làm gì](#plugin-trong-vue-là-gì-và-dùng-để-làm-gì)
+- [Trường hợp nên sử dụng render function mà không dùng kiểu viết template](#trường-hợp-nên-sử-dụng-render-function-mà-không-dùng-kiểu-viết-template)
+- [Mục đích của thẻ `keep-alive`](#mục-đích-của-thẻ-keep-alive)
 - [82. Cấu trúc một async component](#82-cấu-trúc-một-async-component)
-- [83 inline template](#83-inline-template)
-- [84 x template](#84-x-template)
-- [96. Mục đích của `once`](#96-mục-đích-của-once)
-- [99. Mục đích của `renderError`](#99-mục-đích-của-rendererror)
-- [200 nextTick là gì](#200-nexttick-là-gì)
-- [95 Làm sao để force update](#95-làm-sao-để-force-update)
+- [x template](#x-template)
+- [Mục đích của `once`](#mục-đích-của-once)
+- [Mục đích của `renderError`](#mục-đích-của-rendererror)
+- [`nextTick` là gì](#nexttick-là-gì)
+- [Làm sao để force update](#làm-sao-để-force-update)
 
 <!-- /TOC -->
 
@@ -43,13 +42,17 @@ Function component là một component với đặc điểm:
 
 ## Tại sao data trong Vue component phải là 1 function
 
-```jsx title="Tại sao không thể viết?"
+Tại sao không thể khai báo như thế này
+
+```jsx
 data: {
 	message: 'here data' 😠
 }
 ```
 
-```jsx title="bắt buộc phải là function return data"
+bắt buộc phải là function return data
+
+```jsx
 data() {
 	return {
 		message: 'here data' 👍
@@ -85,7 +88,9 @@ props: {
 Tất cả ``instance` sẽ cùng *reference* tới một prop `arr`
 
 
-```js title="Cách viết đúng"
+Cách viết đúng
+
+```js
 props: {
   arr: {
     type: Array,
@@ -120,7 +125,7 @@ props: {
 
 Nếu không có `key`, Vue không tạo ra 2 `<input/>`, mà dùng cùng 1 `<input/>`, khi giá trị `toggle` chuyển từ `true` sang `false` và ngược lại, nếu input này đang có giá trị nó sẽ không bị thay đổi.
 
-```jsx title="Viết lại cho đúng"
+```jsx
 <template v-if="toggle">
 	<input placeholder="Enter your name" key="toggle-true" />
 </template>
