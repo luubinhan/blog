@@ -34,6 +34,7 @@ Và function trên sẽ trả về cho chúng ta một `object`, *người đờ
     },
     key: null,
     ref: null,
+    // highlight-next-line
     $$typeof: Symbol.for('react.element'), // ai đây ta?
 }
 ```

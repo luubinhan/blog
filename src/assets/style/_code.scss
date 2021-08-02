@@ -5,7 +5,7 @@ https://prismjs.com/download.html#themes=prism-coy&languages=markup+css+clike+ja
  * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);
  * @author Tim  Shedor
  */
-.gatsby-highlight {
+.gridsome-highlight {
 	margin-top: 25px;
 	margin-bottom: 25px;
 	margin-left: -75px;
@@ -18,8 +18,8 @@ https://prismjs.com/download.html#themes=prism-coy&languages=markup+css+clike+ja
 		}
 	}
 }
-.gatsby-highlight-code-line {
-	background: #ffe740 !important;
+.gridsome-highlight-code-line {
+	background: var(--color-highlight-code-line)!important;
 	display: block;
 	margin-left: -75px;
 	padding-left: 75px;

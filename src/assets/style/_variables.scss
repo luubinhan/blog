@@ -36,6 +36,8 @@
   --bg-code: #fdfdfd;
   --code-color: #000;
   --code-shadow: #dfdfdf;
+  --color-highlight-code-line: #ffe740;
+  --inline-code: #c92c2c;
 
   --space: 3.5rem;
   --content-width: 860px;
@@ -85,6 +87,9 @@
     --primary-text-color: #fff;
     --related-post: #1c1b29;
     --sidebar-color: #2f3042;
+    --muted: #adadad;
+    --color-highlight-code-line: #191c30;
+    --inline-code: #84ab00;
   }
 }
 
@@ -108,6 +113,8 @@ body[data-theme='dark'] {
   --related-post: #1c1b29;
   --sidebar-color: #2f3042;
   --muted: #adadad;
+  --color-highlight-code-line: #191c30;
+  --inline-code: #84ab00;
 }
 
 /*-----------------------------

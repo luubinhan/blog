@@ -132,7 +132,7 @@ export default {
     this.isMounted = true;
   },
   updated: function() {
-		location.href = '#scrollTop';
+		// location.href = '#scrollTop';
 	},
   components: {
     Author,
@@ -498,6 +498,9 @@ a.link {
     font-size: 21px;
     line-height: 1.58;
     letter-spacing: -0.003em;
+    counter-reset: heading2;
+    counter-reset: heading3;
+
     em {
       font-style: italic;
     }
@@ -530,8 +533,33 @@ a.link {
       font-style: normal;
       border-radius: 4px;
     }
-    h2,
-    h1 {
+    h2 {
+      position: relative;
+      padding-left: 30px;
+      counter-increment: heading2;
+
+      &::before {
+        display: block;
+        position: absolute;
+        left: 0;
+        content: counter(heading2) ". ";
+      }
+    }
+    h3 {
+      padding-top: 60px;
+      position: relative;
+      padding-left: 45px;
+      counter-increment: heading3;
+
+      &::before {
+        display: block;
+        position: absolute;
+        left: 0;
+        content: counter(heading2) "."  counter(heading3) ". ";
+      }
+    }
+    h1,
+    h2 {
       margin-top: 56px;
       --x-height-multiplier: 0.363;
       --baseline-multiplier: 0.157;
@@ -597,6 +625,7 @@ a.link {
     padding: 20px;
     background: #fff9c4;
     border-left: 2px solid #ffeb8e;
+    font-weight: 400;
     padding: 20px;
     margin: 20px 0;
     p {

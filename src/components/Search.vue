@@ -17,7 +17,7 @@
       <div v-if="searchResults.length > 0">
         <div class="item-search" v-for="(result, index) in searchResults" :key="index">
           <h4>
-            <g-link :to="result.path" class="link">{{ result.title }}</g-link>
+            <g-link :to="result.node.path" class="link">{{ result.title }}</g-link>
           </h4>
         </div>
       </div>

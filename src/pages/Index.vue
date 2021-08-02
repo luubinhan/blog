@@ -58,14 +58,9 @@ export default {
     Author,
     PostCard,
     Pager,
-  },
-  mounted: function() {
-    document.getElementById("scrollTop").scrollIntoView();
-		// location.href = '#scrollTop';
-	},
+  },  
   updated: function() {
-    document.getElementById("scrollTop").scrollIntoView();
-		location.href = '#scrollTop';
+		// location.href = '#scrollTop';
 	},
   metaInfo: {
     title:
