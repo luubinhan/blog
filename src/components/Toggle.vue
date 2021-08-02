@@ -9,10 +9,10 @@
 	>
 		<span class="toggle-background" :style="backgroundStyles">
 			<span class="icon" v-if="value">
-				☽
+				🌜
 			</span>
 			<span class="icon" v-else>
-				☀️
+				🌞
 			</span>
 		</span>
 		<span class="toggle-indicator" :style="indicatorStyles"></span>

@@ -23,10 +23,12 @@ tags: ["javascript"]
 Function _thường_ là những function được khai báo ở 2 dạng sau
 
 ```js
+// function expression
 function hello() {
   return "hello";
 }
 
+// function declaration
 const hello = function() {
   return "hello";
 };
@@ -66,7 +68,7 @@ myObject.method();
 // => "myObject"
 ```
 
-Với arrow function, `this` sẽ luôn bằng với giá trị của function ở ngoài, arrow function không khai báo thêm vùng _tự trị_ riêng (execution context), mà dùng chung với thằng cha
+Với *arrow function*, `this` sẽ luôn bằng với giá trị của function ở ngoài, arrow function không khai báo thêm vùng _tự trị_ riêng (execution context), mà dùng chung với thằng cha
 
 ```js
 const myObject = {
