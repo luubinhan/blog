@@ -14,7 +14,7 @@
           <strong>{{ searchTerm }}</strong>
         </div>
       </div>
-      <div v-if="searchResults.length > 0">
+      <div class="search-results" v-if="searchResults.length > 0">
         <div class="item-search" v-for="(result, index) in searchResults" :key="index">
           <h4>
             <g-link :to="result.node.path" class="link">{{ result.title }}</g-link>
@@ -81,7 +81,6 @@ export default {
   computed: {
     searchResults() {
       const searchTerm = this.searchTerm;
-      if (searchTerm.length < 3) return [];
       return this.$search.search({ query: searchTerm, limit: 5 });
     },
   },
@@ -95,10 +94,10 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
+<style scoped lang="scss">
 .search-wrapper {
-  z-index: 1;
+  @include z-index(search-component);
+
   margin: 0;
 }
 .search__container {
@@ -118,18 +117,26 @@ export default {
   }
 }
 .search__list {
+  @include z-index(search-results);
+  @include scroll;
+
   box-sizing: border-box;
-  z-index: 1;
   height: 300px;
   overflow: auto;
-  @include scroll;
+  color: #111;
+
   @include tablet {
     height: auto;
     position: absolute;
-    right: 0;
-    left: 0;
+    right: 15px;
+    left: 15px;
     background: #fff;
   }
+}
+
+.search-results {
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06), 0 3px 6px rgba(0, 0, 0, 0.04);
 }
 .item-search {
   padding: 10px 12px 0;

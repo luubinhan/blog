@@ -1,9 +1,7 @@
 <template>
 	<div class="sidebar">
 		<div class="sidebar__inner">
-			<keep-alive>
-				<Brand />
-			</keep-alive>
+			<Brand />
 			<button
 				type="button"
 				aria-expanded="false"
@@ -19,43 +17,41 @@
 				</div>
 			</button>
 			<div class="navigation-component">
-				<keep-alive>
-					<ul class="nav primary-menu" :class="collapsed && 'collapsed'">
-						<li
-							v-for="(m, index) in menus"
-							:key="index"
-							:class="camelCase(m.name)"
-						>
-							<g-link :to="m.href">
-								<span class="primary-menu__icon" v-if="m.icon === 'js'">
-									<IconJs />
-								</span>
-								<span class="primary-menu__icon" v-if="m.icon === 'nodejs'">
-									<React />
-								</span>
-								<span
-									class="primary-menu__icon"
-									v-if="m.icon === 'react-native'"
-								>
-									<Native />
-								</span>
-								<span class="primary-menu__icon" v-if="m.icon === 'html5'">
-									<Html />
-								</span>
-								<span class="primary-menu__icon" v-if="m.icon === 'vue'">
-									<Vue />
-								</span>
-								<span class="primary-menu__icon" v-if="m.icon === 'paint'">
-									<Paint />
-								</span>
-								<span class="primary-menu__label">{{ m.name }}</span>
-							</g-link>
-						</li>
-						<li class="about">
-							<a href="https://luubinhan.github.io/" target="_blank" rel="noopener noreferrer">About</a>
-						</li>
-					</ul>
-				</keep-alive>
+				<ul class="nav primary-menu" :class="collapsed && 'collapsed'">
+					<li
+						v-for="(m, index) in menus"
+						:key="index"
+						:class="camelCase(m.name)"
+					>
+						<g-link :to="m.href">
+							<span class="primary-menu__icon" v-if="m.icon === 'js'">
+								<IconJs />
+							</span>
+							<span class="primary-menu__icon" v-if="m.icon === 'nodejs'">
+								<React />
+							</span>
+							<span
+								class="primary-menu__icon"
+								v-if="m.icon === 'react-native'"
+							>
+								<Native />
+							</span>
+							<span class="primary-menu__icon" v-if="m.icon === 'html5'">
+								<Html />
+							</span>
+							<span class="primary-menu__icon" v-if="m.icon === 'vue'">
+								<Vue />
+							</span>
+							<span class="primary-menu__icon" v-if="m.icon === 'paint'">
+								<Paint />
+							</span>
+							<span class="primary-menu__label">{{ m.name }}</span>
+						</g-link>
+					</li>
+					<li class="about">
+						<a href="https://luubinhan.github.io/" target="_blank" rel="noopener noreferrer">About</a>
+					</li>
+				</ul>
 			</div>
 			<Footer />
 		</div>
@@ -234,10 +230,6 @@ export default {
 			position: relative;
 			z-index: 1;
 			cursor: pointer;
-			-webkit-transition: all 0.1s ease-in-out;
-			-moz-transition: all 0.1s ease-in-out;
-			-ms-transition: all 0.1s ease-in-out;
-			-o-transition: all 0.1s ease-in-out;
 			transition: all 0.1s ease-in-out;
 			svg {
 				padding-right: 7px;
@@ -254,117 +246,86 @@ export default {
 	}
 }
 
-.sidebar {
-	position: fixed;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	z-index: 3;
-	width: var(--sidebar-width);
-	background-color: var(--sidebar-color);
-	color: rgba(255, 255, 255, 0.65);
-	;
-
-	@include mobile {
-		position: fixed;
-		left: 0;
-		right: 0;
-	}
-	&__inner {
-		padding: 50px 30px 30px;
-		height: 100vh;
-		display: flex;
-		flex-direction: column;
-		
-		@include tablet {
-			padding: 15px;
-		}
-	}
-}
 @include tablet {
-	.sidebar {
-		position: sticky;
-		top: 0;
-		bottom: auto;
-		left: auto;
-		width: auto;
-		.collapsed {
-			.hamburger {
-				.line:nth-child(2) {
-					opacity: 1;
-				}
-				.line:nth-child(1) {
-					-webkit-transform: translateY(0px) rotate(0deg);
-					-ms-transform: translateY(0px) rotate(0deg);
-					-o-transform: translateY(0px) rotate(0deg);
-					transform: translateY(0px) rotate(0deg);
-				}
-				.line:nth-child(3) {
-					-webkit-transform: translateY(0px) rotate(0deg);
-					-ms-transform: translateY(0px) rotate(0deg);
-					-o-transform: translateY(0px) rotate(0deg);
-					transform: translateY(0px) rotate(0deg);
-				}
-			}
-		}
-		.navbar-toggle {
-			position: absolute;
-			top: 11px;
-			right: 20px;
-			z-index: 999;
-			padding: 2px 0;
-			background: transparent;
-			border: none;
-			cursor: pointer;
-			&:hover {
-				background: transparent;
-			}
-		}
+	.collapsed {
 		.hamburger {
-			.line {
-				width: 30px;
-				height: 3px;
-				background-color: #a6a6a6;
-				display: block;
-				margin: 5px auto;
-				-webkit-transition: all 0.3s ease-in-out;
-				-o-transition: all 0.3s ease-in-out;
-				transition: all 0.3s ease-in-out;
-			}
 			.line:nth-child(2) {
-				opacity: 0;
+				opacity: 1;
 			}
 			.line:nth-child(1) {
-				-webkit-transform: translateY(8px) rotate(45deg);
-				-ms-transform: translateY(8px) rotate(45deg);
-				-o-transform: translateY(8px) rotate(45deg);
-				transform: translateY(8px) rotate(45deg);
+				transform: translateY(0px) rotate(0deg);
 			}
 			.line:nth-child(3) {
-				-webkit-transform: translateY(-8px) rotate(-45deg);
-				-ms-transform: translateY(-8px) rotate(-45deg);
-				-o-transform: translateY(-8px) rotate(-45deg);
-				transform: translateY(-8px) rotate(-45deg);
+				transform: translateY(0px) rotate(0deg);
 			}
 		}
 	}
+	
+	.hamburger {
+		.line {
+			width: 30px;
+			height: 3px;
+			background-color: #a6a6a6;
+			display: block;
+			margin: 5px auto;
+			transition: all 0.3s ease-in-out;
+		}
+		.line:nth-child(2) {
+			opacity: 0;
+		}
+		.line:nth-child(1) {
+			transform: translateY(8px) rotate(45deg);
+		}
+		.line:nth-child(3) {
+			transform: translateY(-8px) rotate(-45deg);
+		}
+	}
 }
+</style>
 
-.social-links {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	margin: 15px 0;
+<style scoped lang="scss">
+.navbar-toggle {
+	@include z-index(navbar-toggle);
+	position: absolute;
+	top: 11px;
+	right: 20px;
+	padding: 2px 0;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	display: none;
+
+	&:hover {
+		background: transparent;
+	}
+
+	@include tablet {
+		display: block;
+	}
 }
+.sidebar {	
+	@include z-index(sidebar);
+	flex-basis: var(--sidebar-width);
+	min-width: var(--sidebar-width);
+	background-color: var(--sidebar-color);
+	color: rgba(255, 255, 255, 0.65);
 
-.social-links > div {
-	margin: 5px 15px;
-}
+	@include tablet {
+		left: 0;
+		right: 0;
+		position: fixed;
+		min-width: 0;
+	}
 
-.share-count {
-	text-align: center;
+	&__inner {
+		height: 100vh;
+		position: fixed;
+
+		@include tablet {
+			position: relative;
+			height: auto;
+			height: 56px;
+		}
+	}
 }
 </style>

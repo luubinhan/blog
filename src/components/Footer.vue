@@ -1,5 +1,5 @@
 <template>
-	<div id="footer">
+	<div id="footer" v-once>
 		<footer class="footer">
 			<section class="footer-inner">
 				<div class="social-links">
@@ -35,6 +35,9 @@ export default {
 <style lang="scss" scoped>
 #footer {
 	margin-top: auto;
+	@include tablet {
+		display: none;
+	}
 }
 .footer {	
 	width: auto;
@@ -42,11 +45,7 @@ export default {
 	font-family: $monospace;
 	line-height: 20px;
 	font-size: $font-size-small;
-	text-align: center;
-
-	@include tablet {
-		display: none;
-	}
+	text-align: center;	
 
     .footer-inner {
 		padding: 10px 0;

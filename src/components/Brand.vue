@@ -1,5 +1,5 @@
 <template>
-	<g-link to="/" class="go-home">VuiLapTrinh.com</g-link>
+	<g-link v-once to="/" class="go-home">VuiLapTrinh.com</g-link>
 </template>
 
 <style lang="scss" scoped>
@@ -12,7 +12,9 @@
 	font-size: 1.1rem;
 
 	@include tablet {
-		width: 34px;
+		padding-top: 12px;
+		padding-left: 15px;
+		width: 180px;
 		padding-bottom: 0;
 		color: #fff;
 		font-family: 'avo_bold', $san-serif;

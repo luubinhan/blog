@@ -26,7 +26,10 @@ hide: true
 - **Resource** (tài nguyên) có thể hình dung nôm na nó là một _cái gì đó đó_ ở phía server nắm dữ, có thể là một dữ liệu trong database, một file html, css, js, svg,...
 - **Web Service**: nhiều cách định nghĩa, có thể hiểu _bình dân_, nếu internet là một cái chợ, dữ liệu là những gì có thể buôn bán trao đổi, thì web service là những gì có thể đem ra chợ trao đổi buôn bán
 - **URI**: viết tắt của _Uniform Resource Identifier_, một một resource trong kiến trúc REST sẽ xác định bằng một và chỉ một URI. Theo định dạng như sau
-  `<protocol>://<service-name>/<ResourceType>/<ResourceID>`
+
+```bash
+<protocol>://<service-name>/<ResourceType>/<ResourceID>
+```
 
 ## Phân biệt giữa API và Web Service
 
@@ -64,9 +67,9 @@ _RESTful_ ám chỉ một **web service** hiện thực cái kiến trúc REST
 
 ## Điểm khác nhau giữa `PUT` và `POST`
 
-`PUT` dùng để **xử lý** một resource tại một URI cụ thể **đã tồn tại trước đó**, nếu chưa có tạo mới, đã có thì ghi đè. Ko phụ thuộc số lần gửi, số lượng resource sẽ không đổi sau khi gọi `PUT`, có thể cache lại response
+- `PUT` dùng để **xử lý** một resource tại một URI cụ thể **đã tồn tại trước đó**, nếu chưa có tạo mới, đã có thì ghi đè. Ko phụ thuộc số lần gửi, số lượng resource sẽ không đổi sau khi gọi `PUT`
 
-`POST` **gửi dữ liệu** đến một URI, resource tại URI đó sẽ xử lý dữ liệu được gởi. Việc gửi lên càng nhiều, đồng nghĩa với việc số lượng resource phía server cũng tăng theo, không thể cache response
+- `POST` **gửi dữ liệu** đến một URI, resource tại URI đó sẽ xử lý dữ liệu được gởi. Việc gửi lên càng nhiều, đồng nghĩa với việc số lượng resource phía server cũng tăng theo
 
 ## Mục tiêu của phương thức OPTIONS trong RESTful web service
 

@@ -22,44 +22,6 @@
   font-display: swap;
 }
 
-@media (min-width: 768px) {
-  .navbar-toggle {
-    display: none;
-  }
-}
-@include tablet {
-  .layout-component {
-    padding-top: $header-height;
-  }
-  .header {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 89;
-    height: $header-height;
-    top: 0;
-    box-shadow: 0 3px 5px rgba(150, 157, 174, 0.2), 0 1px 0 #fff;
-    border-bottom: none;
-    .navbar-form.search-box {
-      position: relative;
-      .form-group {
-        margin-right: 36px;
-      }
-      .btn {
-        position: absolute;
-        right: 15px;
-        top: 10px;
-      }
-    }
-  }
-  .navbar-default .navbar-collapse {
-    position: fixed;
-    z-index: 78;
-    background: #fff;
-    left: 0;
-    right: 0;
-  }
-}
 .nav {
   padding-left: 0;
   margin-bottom: 0;

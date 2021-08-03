@@ -49,15 +49,13 @@
   --breakpoint-sm: 768px;
   --breakpoint-xs: 560px;
   --sidebar-width: 320px;  
-  --master-width: 870px;
+  --master-width: 60vw;
 
   @media screen and (max-width: 1540px) { 
     --sidebar-width: 250px;
   }
 
   @media screen and (max-width: 980px) { 
-    --sidebar-width: 250px;
-    --master-width: 100%;
   }
 
   @media screen and (max-width: 650px) {

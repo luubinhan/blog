@@ -16,12 +16,8 @@ body[data-theme='light'] {
 	.gridsome-highlight {
 		margin-top: 25px;
 		margin-bottom: 25px;
-		margin-left: -75px;
-		margin-right: -75px;
 	
-		code[class*='language-'] {
-			padding-left: 75px;
-	
+		code[class*='language-'] {	
 			a {
 				color: #000;
 				text-decoration: none !important;
