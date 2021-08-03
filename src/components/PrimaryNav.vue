@@ -305,6 +305,7 @@ export default {
 }
 .sidebar {	
 	@include z-index(sidebar);
+
 	flex-basis: var(--sidebar-width);
 	min-width: var(--sidebar-width);
 	background-color: var(--sidebar-color);
@@ -318,13 +319,21 @@ export default {
 	}
 
 	&__inner {
-		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		height: 95vh;
 		position: fixed;
+		left: 20px;
+		top: 20px;
+		bottom: 0;
+		width: calc(var(--sidebar-width) - 40px);
 
 		@include tablet {
 			position: relative;
-			height: auto;
 			height: 56px;
+			top: 0;
+			left: 0;
+			width: 100%;
 		}
 	}
 }
