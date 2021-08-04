@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Làm Progressive Web App cho người mới - VuiLapTrinh.com</title><meta name="gridsome:hash" content="f369d0891f41e5bd2c583b3c06d1d5fffc1c6b45"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.23"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" name="theme-color" content="#01A1B1"><meta data-vue-tag="ssr" data-key="description" name="description" content="Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui"><meta data-vue-tag="ssr" name="description" content="Cùng mình đú trend, dựng một Progressive Web App theo chỉ dẫn của Google"><meta data-vue-tag="ssr" property="og:type" content="article"><meta data-vue-tag="ssr" property="og:title" content="Làm Progressive Web App cho người mới"><meta data-vue-tag="ssr" property="og:description" cotent="Cùng mình đú trend, dựng một Progressive Web App theo chỉ dẫn của Google"><meta data-vue-tag="ssr" property="og:image" content=""><meta data-vue-tag="ssr" property="image" content=""><meta data-vue-tag="ssr" name="twitter:card" content="summary"><meta data-vue-tag="ssr" name="twitter:creator" content="@luubinhan"><meta data-vue-tag="ssr" name="fb:app_id" content="445556375516928"><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/svg+xml" sizes="16x16" href="/assets/static/luckyluu.ce0531f.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="icon" type="image/svg+xml" sizes="32x32" href="/assets/static/luckyluu.ac8d93a.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="icon" type="image/svg+xml" sizes="96x96" href="/assets/static/luckyluu.b9532cc.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/svg+xml" sizes="76x76" href="/assets/static/luckyluu.f22e9f3.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/svg+xml" sizes="152x152" href="/assets/static/luckyluu.62d22cb.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/svg+xml" sizes="120x120" href="/assets/static/luckyluu.1539b60.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/svg+xml" sizes="167x167" href="/assets/static/luckyluu.dc0cdc5.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/svg+xml" sizes="180x180" href="/assets/static/luckyluu.7b22250.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="manifest" type="application/manifest+json" href="/manifest.json"><link rel="preload" href="/assets/css/0.styles.35afcad5.css" as="style"><link rel="preload" href="/assets/js/app.74d15cfd.js" as="script"><link rel="preload" href="/assets/js/page--src-templates-post-vue.c76ee95a.js" as="script"><link rel="prefetch" href="/assets/js/page--src-pages-404-vue.7a134a53.js"><link rel="prefetch" href="/assets/js/page--src-pages-cheat-sheet-vue.9e7df976.js"><link rel="prefetch" href="/assets/js/page--src-pages-index-vue.b3ef9070.js"><link rel="prefetch" href="/assets/js/page--src-templates-tag-vue.5e1608d8.js"><link rel="stylesheet" href="/assets/css/0.styles.35afcad5.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute("data-theme", newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem("theme");
+        } catch (err) {}
+
+        window.__setPreferredTheme = function(newTheme) {
+          console.log(newTheme);
+          setTheme(newTheme);
+          try {
+            localStorage.setItem("theme", newTheme);
+          } catch (err) {}
+        };
+
+        var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? "dark" : "light");
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? "dark" : "light"));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true" class="layout-blog" data-v-a7470da2><div class="sidebar" data-v-732b59ce data-v-a7470da2><div class="sidebar__inner" data-v-732b59ce><a href="/" class="go-home active" data-v-0e210c24 data-v-732b59ce>VuiLapTrinh.com</a><button type="button" aria-expanded="false" aria-label="nav" class="navbar-toggle collapsed" data-v-732b59ce><div class="hamburger hamburger-1" data-v-732b59ce><span class="line" data-v-732b59ce></span><span class="line" data-v-732b59ce></span><span class="line" data-v-732b59ce></span></div></button><div class="navigation-component" data-v-732b59ce><ul class="nav primary-menu collapsed" data-v-732b59ce><li class="javascript" data-v-732b59ce><a href="/tag/javascript" data-v-732b59ce><span class="primary-menu__icon" data-v-732b59ce><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" data-v-732b59ce><path d="M255.908 485.999c-6.116 0-12.323-1.642-17.708-4.746l-56.319-33.316c-8.397-4.747-4.29-6.389-1.551-7.303 11.226-3.925 13.508-4.745 25.465-11.592 1.279-.729 2.922-.457 4.199.366l43.266 25.648c1.552.912 3.741.912 5.202 0l168.592-97.304c1.553-.913 2.555-2.738 2.555-4.563V158.583c0-1.917-1.002-3.651-2.645-4.654L258.463 56.716c-1.551-.913-3.65-.913-5.202 0L84.852 154.019c-1.644.913-2.647 2.738-2.647 4.655v194.515c0 1.825 1.003 3.65 2.647 4.473l46.188 26.653c25.102 12.504 40.436-2.191 40.436-17.068V175.195c0-2.738 2.19-4.837 4.93-4.837h21.359c2.647 0 4.928 2.099 4.928 4.837v192.143c0 33.407-18.256 52.576-49.928 52.576-9.768 0-17.435 0-38.794-10.588l-44.179-25.467c-10.954-6.299-17.708-18.074-17.708-30.76V158.583c0-12.596 6.754-24.462 17.708-30.76L238.2 30.519c10.679-6.024 24.828-6.024 35.416 0l168.594 97.394c10.953 6.298 17.707 18.073 17.707 30.761v194.515c0 12.596-6.754 24.371-17.707 30.761l-168.594 97.303a35.5 35.5 0 01-17.708 4.746zm136.098-191.775c0-36.421-24.646-46.096-76.4-52.941-52.396-6.938-57.689-10.498-57.689-22.729 0-10.131 4.473-23.641 43.266-23.641 34.596 0 47.375 7.485 52.668 30.853.457 2.19 2.467 3.833 4.746 3.833h21.91c1.367 0 2.645-.547 3.559-1.552.914-1.003 1.369-2.373 1.275-3.743-3.375-40.252-30.121-58.965-84.158-58.965-48.103 0-76.764 20.264-76.764 54.311 0 36.876 28.569 47.101 74.664 51.662 55.225 5.387 59.514 13.511 59.514 24.373 0 18.805-15.15 26.835-50.658 26.835-44.635 0-54.403-11.227-57.689-33.406-.365-2.373-2.374-4.107-4.837-4.107h-21.817a4.81 4.81 0 00-4.836 4.836c0 28.39 15.426 62.254 89.271 62.254 53.305-.092 83.975-21.181 83.975-57.873z" fill="#539e43" data-v-732b59ce></path></svg></span><!----><!----><!----><!----><!----><span class="primary-menu__label" data-v-732b59ce>Javascript</span></a></li><li class="react" data-v-732b59ce><a href="/tag/react" data-v-732b59ce><!----><span class="primary-menu__icon" data-v-732b59ce><svg id="Layer_2" version="1.1" viewBox="0 0 600 600" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" data-v-732b59ce><circle cx="299.5" cy="299.6" r="50.2" class="st0" data-v-732b59ce></circle><path d="M299.5 414.6c-70.5 0-132.1-8.3-178.2-24.1-29.9-10.2-55.3-23.8-73.4-39.3-19.2-16.4-29.4-34.3-29.4-51.6 0-33.2 36.4-65.7 97.5-86.9 50-17.4 115.2-27.1 183.4-27.1 67 0 131.3 9.4 181 26.6 29.1 10 53.6 23 71 37.4 18.9 15.8 28.9 33.1 28.9 50 0 34.5-40.7 69.4-106.3 91.1-46.4 15.4-108.4 23.9-174.5 23.9zm0-205c-64.7 0-128.7 9.4-175.5 25.7-56.2 19.6-81.4 46.4-81.4 64.3 0 18.6 27.1 47.9 86.5 68.2 43.6 14.9 102.6 22.8 170.4 22.8 63.6 0 122.9-8 167-22.7 61.7-20.5 89.9-49.8 89.9-68.3 0-9.5-7.2-20.7-20.3-31.6-15.1-12.6-37.1-24.1-63.4-33.2-47.3-16.2-108.8-25.2-173.2-25.2z" class="st0" data-v-732b59ce></path><path d="M185.6 549.8c-10.2 0-19.2-2.2-26.8-6.6-28.7-16.6-38.7-64.4-26.6-127.9 9.9-52.1 34.1-113.3 68.2-172.4 33.5-58 73.7-109 113.4-143.5 23.2-20.2 46.7-35 67.9-42.8 23.1-8.5 43.1-8.5 57.7-.1 29.9 17.2 39.8 70 25.8 137.6-9.9 48-33.5 105.9-66.5 163.2-35.2 61-73.2 110.2-109.9 142.3-23.8 20.8-48.3 36-70.7 43.9-11.7 4.2-22.7 6.3-32.5 6.3zm25.1-300.9l10.4 6c-32.3 56-56.2 116.1-65.4 164.9-11.1 58.5-.4 93.7 15 102.6 3.8 2.2 8.8 3.4 14.9 3.4 19.9 0 51.2-12.6 87.4-44.2 34.7-30.3 71-77.5 104.9-136.2 31.8-55.1 54.4-110.5 63.8-156 13.1-63.7 1.8-102.7-14.3-112-8.2-4.7-21.5-4.1-37.5 1.8-18.5 6.8-39.4 20.1-60.4 38.4-37.7 32.8-76.2 81.6-108.4 137.4l-10.4-6.1z" class="st0" data-v-732b59ce></path><path d="M413.4 550.1c-27.2 0-61.7-16.4-97.7-47.4-40.2-34.6-81.1-86.1-115.3-145.2-33.6-58-57.6-118.3-67.7-170-5.9-30.2-7-57.9-3.2-80.2 4.2-24.3 14.1-41.6 28.8-50.1 29.8-17.3 80.5.5 132.1 46.4 36.6 32.5 75 81.9 108.1 139.1 35.3 61 59 118.5 68.4 166.3 6.1 31 7.1 59.8 2.8 83.2-4.6 24.9-15 42.6-30 51.3-7.5 4.4-16.4 6.6-26.3 6.6zM221.2 345.5c32.4 56 72.6 106.7 110.2 139 45.1 38.8 80.9 47.2 96.4 38.2 16.1-9.3 27.9-47.4 15.7-109-9-45.2-31.7-100.2-65.7-158.9-31.9-55.1-68.6-102.4-103.3-133.2-48.6-43.2-88-52.9-104.1-43.6-8.2 4.7-14.3 16.6-17.2 33.4-3.3 19.4-2.3 44.2 3.1 71.5 9.6 49.1 32.6 106.8 64.9 162.6z" class="st0" data-v-732b59ce></path></svg></span><!----><!----><!----><!----><span class="primary-menu__label" data-v-732b59ce>React</span></a></li><li class="vue" data-v-732b59ce><a href="/tag/vuejs" data-v-732b59ce><!----><!----><!----><!----><span class="primary-menu__icon" data-v-732b59ce><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" data-v-732b59ce><path fill="#41b883" d="M392.46 59.011H313.5l-57.499 90.972-49.285-90.972H26.001l230 393.978L485.999 59.011z" data-v-732b59ce></path><path fill="#35495e" d="M83.192 91.867h55.241l117.568 203.511L373.464 91.867h55.241l-172.704 295.92L83.192 91.867z" data-v-732b59ce></path></svg></span><!----><span class="primary-menu__label" data-v-732b59ce>Vue</span></a></li><li class="htmlCss" data-v-732b59ce><a href="/tag/css" data-v-732b59ce><!----><!----><!----><span class="primary-menu__icon" data-v-732b59ce><svg version="1.0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" data-v-732b59ce><path fill="#E44D26" d="M27.377 28.889L16.001 32 4.625 28.889 2 0h28.002z" data-v-732b59ce></path><path fill="#FF6C39" d="M16 2v27.75l9.232-2.742L27.688 2z" data-v-732b59ce></path><path fill="#FFF" d="M24.363 6H7.607L8 10l.619 7h10.884l-.355 3.984L16 21.99l-3.143-1.006L12.648 19H8.803l.459 4.987L16 25.99l6.728-2.004.99-10.986H12.252l-.25-3H24z" data-v-732b59ce></path></svg></span><!----><!----><span class="primary-menu__label" data-v-732b59ce>HTML/CSS</span></a></li><li class="uxUi" data-v-732b59ce><a href="/tag/ux-ui" data-v-732b59ce><!----><!----><!----><!----><!----><span class="primary-menu__icon" data-v-732b59ce><svg viewBox="0 0 512 454.633" xmlns="http://www.w3.org/2000/svg" data-v-732b59ce><path d="M202.271 243.812c-9.741 10.73-12.13 18.428-24.884 38.588 8.237 5.752 24.104 19.055 35.095 41.959 21.953-12.592 32.188-14.514 43.821-24.309C332.24 236.092 518.244 6.836 511.839.204c-6.766-7.05-242.704 170.268-309.568 243.608zM155.442 300.209c-32.998-5.832-65.547 15.028-87.288 67.147C46.382 419.471 7.532 440.337.001 439.061c40.553 14.67 164.202 52.194 194.939-90.655-13.037-34.26-39.498-48.197-39.498-48.197z" data-v-732b59ce></path></svg></span><span class="primary-menu__label" data-v-732b59ce>UX/UI</span></a></li><li class="about" data-v-732b59ce><a href="https://luubinhan.github.io/" target="_blank" rel="noopener noreferrer" data-v-732b59ce>About</a></li></ul></div><div id="footer" data-v-7f12727f data-v-732b59ce><footer class="footer" data-v-7f12727f><section class="footer-inner" data-v-7f12727f><div class="social-links" data-v-7f12727f><a href="https://www.youtube.com/channel/UC0Te8s0b0aplS1ZoVLfjKHA" target="_blank" rel="noopener noreferrer" class="link-youtube" style="display: none;" data-v-7f12727f><span class="link-youtube__icon" data-v-7f12727f><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" data-v-7f12727f data-v-7f12727f><path d="M512 256c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256z" fill="#CD201F" data-v-7f12727f data-v-7f12727f></path><path d="M391.1 194.6c-2.3-19.9-7.1-25.7-10.5-28.4-5.4-4.2-15.2-5.7-28.3-6.6-21-1.4-56.7-2.3-95.2-2.3-38.6 0-74.2.8-95.2 2.3-13.1.9-22.9 2.4-28.3 6.6-3.4 2.7-8.1 8.5-10.5 28.4-3.4 28.7-3.4 94.1 0 122.8 2.4 19.9 7.1 25.7 10.5 28.4 5.4 4.2 15.2 5.7 28.3 6.6 21 1.4 56.6 2.3 95.2 2.3s74.2-.9 95.2-2.3c13.1-.9 22.9-2.4 28.3-6.6 3.4-2.6 8.1-8.5 10.5-28.4 3.4-28.7 3.4-94.1 0-122.8zm-167 104.3V213l82.4 42.9-82.4 43z" fill="#FFF" data-v-7f12727f data-v-7f12727f></path></svg></span>
+					Youtube
+				</a></div><div class="credit" data-v-7f12727f>Since 2016. luckyluu</div></section></footer></div></div></div><div class="master-container" data-v-a7470da2><div class="aside" data-v-a7470da2><div class="aside__inner" data-v-a7470da2><div class="toggle-theme" data-v-a7470da2><span role="checkbox" aria-checked="false" tabindex="0" class="toggle-wrapper" data-v-4df809e2 data-v-a7470da2><span class="toggle-background" style="background-color:#dae1e7;" data-v-4df809e2><span class="icon" data-v-4df809e2>
+			🌞
+		</span></span><span class="toggle-indicator" style="transform:translateX(0);" data-v-4df809e2></span></span></div><div class="search-wrapper" data-v-f0de593c data-v-a7470da2><div class="mb-2" data-v-f0de593c><div class="post-tags" data-v-f0de593c><a href="/tag/javascript" class="post-tags__link"><span>#</span>
+    Javascript
+  </a><a href="/tag/dam-dao" class="post-tags__link"><span>#</span>
+    Đàm đạo chém gió chuyện nghề
+  </a><a href="/tag/css" class="post-tags__link"><span>#</span>
+    CSS từ căn bản tới nâng cao
+  </a><a href="/tag/thu-thuat" class="post-tags__link"><span>#</span>
+    Thủ thuật
+  </a><a href="/tag/hoc-thuat" class="post-tags__link"><span>#</span>
+    Kiến thức nền tảng
+  </a><a href="/tag/react" class="post-tags__link"><span>#</span>
+    React
+  </a><a href="/tag/vuejs" class="post-tags__link"><span>#</span>
+    Vue JS
+  </a><a href="/tag/chrome" class="post-tags__link"><span>#</span>
+    Chrome DevTools
+  </a></div></div><div class="search__container" data-v-f0de593c><input type="text" placeholder="Tìm bài viết..." value="" class="search__input" data-v-f0de593c><!----></div><div class="search__list" data-v-f0de593c><!----><!----></div></div><div class="layout-blog__aside-footer" data-v-a7470da2></div></div></div><div class="master" data-v-a7470da2><main class="inner" data-v-a7470da2><div id="scrollTop" data-v-a7470da2></div><div class="single-post" data-v-a7470da2><div class="single-post-container" data-v-a7470da2><article data-v-a7470da2><header data-v-a7470da2><div class="post-title" data-v-a7470da2><h1 class="post-title__text single-post-title" data-v-a7470da2>
+							Làm Progressive Web App cho người mới
+						</h1><div class="post-meta">
+  Đăng ngày
+  <time dateTime="2018-10-16" itemprop="dateModified" content="2018-10-16">2018-10-16</time>.
+  
+    Mất khoảng
+    <strong>13 phút</strong> để đọc.
+  </div><a href="https://github.com/luubinhan/blog/edit/master/content/posts//2018-10-16-huong-dan-progressive-web-app-cho-nguoi-moi-bat-dau.md" rel="noopener noreferrer" target="_blank" aria-label="Connect Facebook" class="link" data-v-a7470da2>
+							Sửa bài viết này
+						</a></div></header><div class="post content-box" data-v-a7470da2><div class="post__header" data-v-a7470da2><!----></div><div class="blog-post" data-v-a7470da2><div class="post-content" data-v-a7470da2><!-- TOC -->
+<ul>
+<li><a href="#gi%e1%bb%9bi-thi%e1%bb%87u">Giới thiệu</a></li>
+<li><a href="#%c4%90%c3%a1nh-gi%c3%a1-b%e1%ba%b1ng-lighthouse">Đánh giá bằng Lighthouse</a></li>
+<li><a href="#th%c3%aam-web-app-manifest">Thêm web app manifest</a></li>
+<li>
+<p><a href="#offline-m%e1%bb%a9c-c%c4%83n-b%e1%ba%a3n">Offline mức căn bản</a></p>
+<ul>
+<li><a href="#%c4%90%c4%83ng-k%c3%bd-service-worker">Đăng ký service worker</a></li>
+<li><a href="#x%e1%bb%ad-l%c3%bd-network-request-b%e1%bb%8b-fail">Xử lý network request bị fail</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#service-worker-life-cycle">Service worker life cycle</a></p>
+<ul>
+<li><a href="#install"><code class="language-inline-text">install</code></a></li>
+<li><a href="#activate"><code class="language-inline-text">activate</code></a></li>
+<li><a href="#fetch"><code class="language-inline-text">fetch</code></a></li>
+</ul>
+</li>
+<li><a href="#offline-m%e1%bb%a9c-cao-c%e1%ba%a5p-h%c6%a1n-m%e1%bb%99t-ch%c3%bat">Offline mức cao cấp hơn một chút</a></li>
+<li><a href="#th%c3%aam-ph%e1%ba%a7n-c%c3%a0i-%c4%91%e1%ba%b7t">Thêm phần cài đặt</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="giới-thiệu"><a href="#gi%E1%BB%9Bi-thi%E1%BB%87u" aria-hidden="true"><span class="icon icon-link"></span></a>Giới thiệu</h2>
+<p>Trong lúc lầm Progressive Web App (PWA), chúng ta cần nhớ những điều sau</p>
+<ul>
+<li>Không quan trọng user đang dùng trình duyệt gì</li>
+<li>Hỗ trợ tốt trên nhiều loại thiết bị desktop, mobile, tablet bằng responsive</li>
+<li>Sử dụng service worker để có thể làm việc offline hoặc khi mạng chậm</li>
+<li>Có khả năng cài đặt, sử dụng web app manifest và sự kiện <code class="language-inline-text">beforeinstallprompt</code> để báo user biết có thể install</li>
+</ul>
+<p>Ứng dụng sẽ thực hành là trang dự báo thời tiết</p>
+<p><img src="https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/img/95fe6f7fbeee5bb1.png" alt="Ứng dụng thông báo thời tiết."></p>
+<p>Chúng ta sẽ tìm hiểu các vấn đề
+Làm sao để tạo và thêm file web app manifest
+Cung cấp một trải nghiệm cơ bản khi không có mạng
+Làm sao để làm cho app có thể install
+Bạn cần gì để follow tuts này</p>
+<ul>
+<li>Phiên bản mới nhất của Chrome</li>
+<li>Kiến thức căn bản HTML/CSS/Javascript và Chrome DevTools</li>
+<li>Đăng ký <a href="https://darksky.net/dev" target="_blank" rel="nofollow noopener noreferrer">Dark Sky API</a> để có 1 API key, dữ liệu thời tiết sẽ do API này cung cấp</li>
+</ul>
+<p>Sao khi đã có 1 API key, chúng ta có thể kiểm tra xem nó có hoạt động hay không bằng cách mở URL này trên trình duyệt</p>
+<div class="gridsome-highlight" data-language="text"><pre class="language-text"><code class="language-text">https://api.darksky.net/forecast/DARKSKY_API_KEY/40.7720232,-73.9732319</code></pre></div>
+<p><a href="https://github.com/googlecodelabs/your-first-pwapp/archive/master.zip" target="_blank" rel="nofollow noopener noreferrer">Download Source code ví dụ</a></p>
+<p>Vì chúng ta sử dụng Glitch để làm, nên không cần download bộ source về làm gì</p>
+<ol>
+<li>Trước hết mở trang <a href="https://glitch.com/" target="_blank" rel="nofollow noopener noreferrer">https://glitch.com/</a>, đăng ký 1 tài khoản trên đây</li>
+<li>Chọn <strong>New Project</strong>, sau đó chọn vào <strong>Clone from Git Repo</strong></li>
+<li>Paste đường dẫn <code class="language-inline-text">https://github.com/googlecodelabs/your-first-pwapp.git</code> vào trong hộp thoại popup rồi click OK</li>
+<li>Sau khi repo đã được load về, mở file <code class="language-inline-text">.env</code> lên và điền vào API key đã đăng ký</li>
+<li>Click vào nút <strong>Show</strong> > <strong>In a new window</strong> để xem kết quả, nó sẽ theo cấu trúc là &#x3C;tên project>.glitch.me</li>
+</ol>
+<h2 id="đánh-giá-bằng-lighthouse"><a href="#%C4%91%C3%A1nh-gi%C3%A1-b%E1%BA%B1ng-lighthouse" aria-hidden="true"><span class="icon icon-link"></span></a>Đánh giá bằng Lighthouse</h2>
+<p>Trước tiên chúng ta đánh giá sơ bộ trang hiện tại bằng công cụ Lighthouse có sẵn của Chrome. Trên DevTool sẽ có một tab là Audit ở cuối. Nó sẽ cho kết quả đánh giá performance, accessibility, PWA và một số thứ linh tinh khác nữa</p>
+<p><img src="https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/img/b112675caafccef0.png" alt="Trước tiên chúng ta đánh giá sơ bộ trang hiện tại bằng công cụ Lighthouse có sẵn của Chrome."></p>
+<p>Để chạy đánh giá
+1. Mở DevTool lên, chọn vào <strong>Audits</strong> tab
+2. Dùng tất cả các thiết đặt mặc định nếu ko có ý kiến gì khác
+3. Click <strong>Run audit</strong>, đợi chút nó sẽ cho kết quả</p>
+<p><img src="https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/img/af1a64a13725428e.png" alt="Làm Progressive Web App cho người mới"></p>
+<p>Chúng ta tập trung fix mấy cái bị báo đỏ</p>
+<h2 id="thêm-web-app-manifest"><a href="#th%C3%AAm-web-app-manifest" aria-hidden="true"><span class="icon icon-link"></span></a>Thêm web app manifest</h2>
+<p>Nó là một file JSON cho phép chúng ta config một số thứ khi xuất hiện trên thiết bị của user</p>
+<ul>
+<li>Mở cửa sổ mới hay không <code class="language-inline-text">display</code></li>
+<li>Trang mặc định sẽ mở (nếu bạn không muốn là trang index) <code class="language-inline-text">start_url</code></li>
+<li>Icon sẽ hiển thị <code class="language-inline-text">icons</code></li>
+<li>Tên <code class="language-inline-text">short_name</code></li>
+<li>Splash screen <code class="language-inline-text">name</code>, <code class="language-inline-text">icons</code>, <code class="language-inline-text">colors</code></li>
+<li>Mở ngang hay dọc <code class="language-inline-text">orientation</code></li>
+<li>Tạo một file <code class="language-inline-text">public/manifest.json</code> rồi copy nội dung sau vào đó</li>
+</ul>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token punctuation">{</span>
+  <span class="token string">"name"</span><span class="token operator">:</span> <span class="token string">"Weather"</span><span class="token punctuation">,</span>
+  <span class="token string">"short_name"</span><span class="token operator">:</span> <span class="token string">"Weather"</span><span class="token punctuation">,</span>
+  <span class="token string">"icons"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token string">"src"</span><span class="token operator">:</span> <span class="token string">"/images/icons/icon-128x128.png"</span><span class="token punctuation">,</span>
+      <span class="token string">"sizes"</span><span class="token operator">:</span> <span class="token string">"128x128"</span><span class="token punctuation">,</span>
+      <span class="token string">"type"</span><span class="token operator">:</span> <span class="token string">"image/png"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token string">"src"</span><span class="token operator">:</span> <span class="token string">"/images/icons/icon-144x144.png"</span><span class="token punctuation">,</span>
+      <span class="token string">"sizes"</span><span class="token operator">:</span> <span class="token string">"144x144"</span><span class="token punctuation">,</span>
+      <span class="token string">"type"</span><span class="token operator">:</span> <span class="token string">"image/png"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token string">"src"</span><span class="token operator">:</span> <span class="token string">"/images/icons/icon-152x152.png"</span><span class="token punctuation">,</span>
+      <span class="token string">"sizes"</span><span class="token operator">:</span> <span class="token string">"152x152"</span><span class="token punctuation">,</span>
+      <span class="token string">"type"</span><span class="token operator">:</span> <span class="token string">"image/png"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token string">"src"</span><span class="token operator">:</span> <span class="token string">"/images/icons/icon-192x192.png"</span><span class="token punctuation">,</span>
+      <span class="token string">"sizes"</span><span class="token operator">:</span> <span class="token string">"192x192"</span><span class="token punctuation">,</span>
+      <span class="token string">"type"</span><span class="token operator">:</span> <span class="token string">"image/png"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token string">"src"</span><span class="token operator">:</span> <span class="token string">"/images/icons/icon-256x256.png"</span><span class="token punctuation">,</span>
+      <span class="token string">"sizes"</span><span class="token operator">:</span> <span class="token string">"256x256"</span><span class="token punctuation">,</span>
+      <span class="token string">"type"</span><span class="token operator">:</span> <span class="token string">"image/png"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token string">"src"</span><span class="token operator">:</span> <span class="token string">"/images/icons/icon-512x512.png"</span><span class="token punctuation">,</span>
+      <span class="token string">"sizes"</span><span class="token operator">:</span> <span class="token string">"512x512"</span><span class="token punctuation">,</span>
+      <span class="token string">"type"</span><span class="token operator">:</span> <span class="token string">"image/png"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">"start_url"</span><span class="token operator">:</span> <span class="token string">"/index.html"</span><span class="token punctuation">,</span>
+  <span class="token string">"display"</span><span class="token operator">:</span> <span class="token string">"standalone"</span><span class="token punctuation">,</span>
+  <span class="token string">"background_color"</span><span class="token operator">:</span> <span class="token string">"#3E4EB8"</span><span class="token punctuation">,</span>
+  <span class="token string">"theme_color"</span><span class="token operator">:</span> <span class="token string">"#2F3BA2"</span>
+<span class="token punctuation">}</span></code></pre></div>
+<blockquote>
+<p>Trình duyệt Chrome bắt buộc cung cấp ít nhất 2 icon kích thước 192x192px và 512x512px</p>
+</blockquote>
+<p>Bổ sung file này vào trong <code class="language-inline-text">public.index.html</code></p>
+<div class="gridsome-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>manifest<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/manifest.json<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre></div>
+<p>Trên cửa sổ DevTools, chọn tab <strong>Application</strong> có thể kiểm tra file manifest đã load thành công chưa</p>
+<p><img src="https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/img/c462743e1bc26958.png" alt="Làm Progressive Web App cho người mới"></p>
+<p>Trình duyệt Safari trên iOS chưa hỗ trợ file manifest này thì có thể bổ sung một số tag sau</p>
+<div class="gridsome-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>apple-mobile-web-app-capable<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>yes<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>apple-mobile-web-app-status-bar-style<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>black<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>apple-mobile-web-app-title<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Weather PWA<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>apple-touch-icon<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/images/icons/icon-152x152.png<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre></div>
+<p>Nếu cửa số Audit PWA có thông báo “Does not set an address-bar theme color”, chọn màu thanh address cho phù hợp với màu thương hiệu</p>
+<div class="gridsome-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>theme-color<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#2F3BA2<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre></div>
+<h2 id="offline-mức-căn-bản"><a href="#offline-m%E1%BB%A9c-c%C4%83n-b%E1%BA%A3n" aria-hidden="true"><span class="icon icon-link"></span></a>Offline mức căn bản</h2>
+<p>Bạn có thể tắt mạng, sau đó mở trang google drive, bạn sẽ thấy vẫn xem được danh sách file, folder trong drive, tất nhiên không mở xem chỉnh sửa mấy file này được, nhưng vẫn đảm bảo có những trải nghiệm “không quá tệ”</p>
+<blockquote>
+<p>Service worker chỉ chạy trên trang web truy cập qua giao thức <code class="language-inline-text">https</code></p>
+</blockquote>
+<p>Những tính năng mà service worker cung cấp, câng nhắc nó như một dạng “nice-to-have”, đừng quá đặt nặng và xem service worker như đấng cứu thế, và cũng đừng chém xuyên lục địa về những tính năng siêu việt của service worker.</p>
+<h3 id="đăng-ký-service-worker"><a href="#%C4%91%C4%83ng-k%C3%BD-service-worker" aria-hidden="true"><span class="icon icon-link"></span></a>Đăng ký service worker</h3>
+<p>public/index.html</p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'serviceWorker'</span> <span class="token keyword">in</span> navigator<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'load'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    navigator<span class="token punctuation">.</span>serviceWorker<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'/service-worker.js'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">reg</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Service worker registered.'</span><span class="token punctuation">,</span> reg<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Service worker có <code class="language-inline-text">scope</code> (phạm vi hoạt động) theo vị trí file, nghĩa là nếu nhét nó vào file rồi đưa file này trong thư mục con <code class="language-inline-text">scripts</code> nó sẽ không can thiệp được gì những đoạn script nằm ngoài thư mục gốc, nếu đặt ở thư mục gốc, toàn bộ thư mục con sẽ kế thừa được service worker đăng ký ở thư mục gốc</p>
+<p>Cache cái gì? Chúng ta có 1 file là <code class="language-inline-text">public/offline.html</code>, nếu không có mạng, chúng ta sẽ hiển thị file này, cache file này xuống trình duyệt là hợp lý.</p>
+<p><a href="https://github.com/googlecodelabs/your-first-pwapp/blob/master/public/service-worker.js#L23" target="_blank" rel="nofollow noopener noreferrer">public/service-worker.js</a></p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token constant">FILES_TO_CACHE</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token string">'/offline.html'</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span></code></pre></div>
+<p>Tiếp theo, trong sự kiện <code class="language-inline-text">install</code>, chúng ta đưa file này vào danh sách muốn cache</p>
+<p><a href="https://github.com/googlecodelabs/your-first-pwapp/blob/master/public/service-worker.js#L29" target="_blank" rel="nofollow noopener noreferrer">public/service-worker.js</a></p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">evt<span class="token punctuation">.</span><span class="token function">waitUntil</span><span class="token punctuation">(</span>
+  caches<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token constant">CACHE_NAME</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">cache</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'[ServiceWorker] Pre-caching offline page'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> cache<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span><span class="token constant">FILES_TO_CACHE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span></code></pre></div>
+<blockquote>
+<p>Toàn bộ các sự kiện của service worker sẽ được để cập ở phần sau</p>
+</blockquote>
+<p>Mở DevTools, trên tab <strong>Application</strong>, chọn vào service worker để xem những đứa nào đã đăng ký thành công, như hình bên dưới chưa đăng ký gì cả</p>
+<p><img src="https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/img/b3aa37b67863fd03.png" alt="Chưa đăng ký service worker nào cả"></p>
+<p>Với đoạn code đăng ký thành công, chúng ta có danh sách các service worker đã đăng ký được, không chỉ một mà có thể đăng ký nhiều nhé</p>
+<p><img src="https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/img/69808e4bf3aee41b.png" alt="Service worker đã đăng ký thành công"></p>
+<p>Chổ <strong>status</strong>, cái nút tròn xanh xanh cho biết nó đang hoạt động, con số kế bên (34251) sẽ tự động tăng khi update service worker mới</p>
+<p>Trên sự kiện <code class="language-inline-text">activate</code>, chúng ta sẽ thực hiện xóa các cache trước đó</p>
+<p><a href="https://github.com/googlecodelabs/your-first-pwapp/blob/master/public/service-worker.js#L36" target="_blank" rel="nofollow noopener noreferrer">public/service-worker.js</a></p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">evt<span class="token punctuation">.</span><span class="token function">waitUntil</span><span class="token punctuation">(</span>
+    caches<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">keyList</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span>keyList<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>key <span class="token operator">!==</span> <span class="token constant">CACHE_NAME</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'[ServiceWorker] Removing old cache'</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">return</span> caches<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Ấn F5 trên cửa sổ để refresh lại trang, con số bên cạnh status sẽ cho biết đã cập nhập mới</p>
+<p><img src="https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/img/1db827d76bc0b359.png" alt="Làm Progressive Web App cho người mới"></p>
+<h3 id="xử-lý-network-request-bị-fail"><a href="#x%E1%BB%AD-l%C3%BD-network-request-b%E1%BB%8B-fail" aria-hidden="true"><span class="icon icon-link"></span></a>Xử lý network request bị fail</h3>
+<p>Khi gọi <code class="language-inline-text">fetch</code>, service worker sẽ là thằng đứng giữa, nếu có mạng thì gọi lên server, còn không, thì gọi lại giá trị cache trước đó</p>
+<p><img src="https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/img/6302ad4ba8460944.png" alt="Làm Progressive Web App cho người mới"></p>
+<p><a href="https://github.com/googlecodelabs/your-first-pwapp/blob/master/public/service-worker.js#L43" target="_blank" rel="nofollow noopener noreferrer">public/service-worker.js</a></p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// thêm xử lý sự kiện fetch</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>evt<span class="token punctuation">.</span>request<span class="token punctuation">.</span>mode <span class="token operator">!==</span> <span class="token string">'navigate'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+evt<span class="token punctuation">.</span><span class="token function">respondWith</span><span class="token punctuation">(</span>
+    <span class="token function">fetch</span><span class="token punctuation">(</span>evt<span class="token punctuation">.</span>request<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> caches<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token constant">CACHE_NAME</span><span class="token punctuation">)</span>
+              <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">cache</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> cache<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token string">'offline.html'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Nó giống như khái niệm middleware, incepter của axios vậy thôi.</p>
+<blockquote>
+<p>Đưa đoạn <code class="language-inline-text">fetch</code> vào bên trong <code class="language-inline-text">evt.respondWith()</code> sẽ chặn trình duyệt tự ý đi mà không nói với ai, chúng ta sẽ dùng người trung gian để đi nói chuyện với thế giới. Nếu không sử dụng <code class="language-inline-text">evt.respondWith()</code> thì cache trước đó sẽ chẳng có tác dụng vì hết.</p>
+</blockquote>
+<p>Bên dưới của tab <strong>Application</strong>, sẽ cho biết những gì đã được cache lại bên dưới trình duyệt</p>
+<p><img src="https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/img/c80a2a2e93c1c3ee.png" alt="Làm Progressive Web App cho người mới"></p>
+<p>Để giả lập tình trạng mất mạng, quay lại <strong>Service workers</strong>, click chọn vào checkbox <strong>Offline</strong>. F5 nếu thấy hình em gấu này là coi như thành công.</p>
+<p><img src="https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/img/984b34dc2aa667a.png" alt="Làm Progressive Web App cho người mới"></p>
+<p>Trên cửa sổ <strong>Service Workers</strong> có một số option khác ngoài <strong>Offline</strong></p>
+<ul>
+<li><strong>Update on reload</strong> luôn luôn load lại service worker khi reload</li>
+<li><strong>Bypass for network</strong> bỏ qua service worker, chạy như không có</li>
+</ul>
+<p><img src="https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/img/c7ac93904f473a91.png" alt="Làm Progressive Web App cho người mới"></p>
+<p>Trên điện thoại có thể dùng chế độ máy bay để tắt mạng và xem trang web nó sẽ ra hình thù thế nào.</p>
+<h2 id="service-worker-life-cycle"><a href="#service-worker-life-cycle" aria-hidden="true"><span class="icon icon-link"></span></a>Service worker life cycle</h2>
+<h3 id="install"><a href="#install" aria-hidden="true"><span class="icon icon-link"></span></a><code class="language-inline-text">install</code></h3>
+<p>Sự kiện này sẽ bắn ra khi worker chạy, và chỉ được tạo ra một lần cho mỗi service worker</p>
+<p><img src="https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/img/72ed77b1720512da.png" alt="Làm Progressive Web App cho người mới"></p>
+<p>Thông thường nó được sử dụng để cache mọi thứ cho app</p>
+<h3 id="activate"><a href="#activate" aria-hidden="true"><span class="icon icon-link"></span></a><code class="language-inline-text">activate</code></h3>
+<p>Sau khi <code class="language-inline-text">install</code>, mỗi lần nó khởi động nó sẽ bắn ra sự kiện <code class="language-inline-text">activate</code>, tức là bạn truy cập lại trang web đã vào trước đó. Được dùng để xóa cache trước đó</p>
+<h3 id="fetch"><a href="#fetch" aria-hidden="true"><span class="icon icon-link"></span></a><code class="language-inline-text">fetch</code></h3>
+<p>Sự kiện này cho phép chúng ta can thiệp vào mọi network request, trước khi ra khỏi <em>nhà</em>, phải trình báo ở đây</p>
+<p>Xem <a href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/" target="_blank" rel="nofollow noopener noreferrer">các trường hợp sử dụng ở đây</a></p>
+<h2 id="offline-mức-cao-cấp-hơn-một-chút"><a href="#offline-m%E1%BB%A9c-cao-c%E1%BA%A5p-h%C6%A1n-m%E1%BB%99t-ch%C3%BAt" aria-hidden="true"><span class="icon icon-link"></span></a>Offline mức cao cấp hơn một chút</h2>
+<p>Ở trên chúng ta chỉ hiển một trang HTML, thông báo với user là mày đang offline, giờ chúng ta sẽ cho nó thấy cái như là có mạng luôn, giống như khi bạn vào Google Drive lúc ko có mạng đó.</p>
+<p>Quay lại với ví dụ, app chúng ta sử dụng object <code class="language-inline-text">caches</code> bên trong <code class="language-inline-text">window</code>, tuy nhiên không phải browser nào cũng hỗ trợ <code class="language-inline-text">window.caches</code>, chúng ta sẽ update hàm <code class="language-inline-text">getForecastFromCache</code> để rơi vào tình huống đó, vẫn ko ảnh hưởng gì tới app</p>
+<p><a href="https://github.com/googlecodelabs/your-first-pwapp/blob/master/public/scripts/app.js#L164" target="_blank" rel="nofollow noopener noreferrer">public/scripts/app.js</a></p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// kiểm tra trước khi thực hiện những việc tiếp theo</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span><span class="token string">'caches'</span> <span class="token keyword">in</span> window<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>origin<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/forecast/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>coords<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> caches<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'Error getting data from cache'</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Sửa tiếp <a href="https://github.com/googlecodelabs/your-first-pwapp/blob/master/public/scripts/app.js#L196" target="_blank" rel="nofollow noopener noreferrer">updateData()</a>
+<a href="https://github.com/googlecodelabs/your-first-pwapp/blob/master/public/scripts/app.js#L200" target="_blank" rel="nofollow noopener noreferrer">public/scripts/app.js</a></p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token function">getForecastFromCache</span><span class="token punctuation">(</span>location<span class="token punctuation">.</span>geo<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">forecast</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token function">renderForecast</span><span class="token punctuation">(</span>card<span class="token punctuation">,</span> forecast<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>App sẽ gọi lấy dữ liệu từ 1 trong 2 hàm, thông qua cache hoặc <code class="language-inline-text">fetch</code> từ API. Với dữ liệu trả về, chúng ta sẽ xử lý để render lại giao diện nếu cần thiết</p>
+<p><a href="https://github.com/googlecodelabs/your-first-pwapp/blob/master/public/scripts/app.js#L85" target="_blank" rel="nofollow noopener noreferrer">public/scripts/app.js</a></p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// nếu dữ liệu này đã mới rồi thì ko cần update làm gì</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>lastUpdated <span class="token operator">>=</span> data<span class="token punctuation">.</span>currently<span class="token punctuation">.</span>time<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Để App có <em>hình hài</em> lúc mất mạng như lúc có mạng, chúng ta phải cache lại toàn bộ những resource cần thiết khác, ngoài data get từ API</p>
+<p><a href="https://github.com/googlecodelabs/your-first-pwapp/blob/master/public/service-worker.js#L23" target="_blank" rel="nofollow noopener noreferrer">public/service-worker.js</a></p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token constant">FILES_TO_CACHE</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token string">'/'</span><span class="token punctuation">,</span>
+  <span class="token string">'/index.html'</span><span class="token punctuation">,</span>
+  <span class="token string">'/scripts/app.js'</span><span class="token punctuation">,</span>
+  <span class="token string">'/scripts/install.js'</span><span class="token punctuation">,</span>
+  <span class="token string">'/scripts/luxon-1.11.4.js'</span><span class="token punctuation">,</span>
+  <span class="token string">'/styles/inline.css'</span><span class="token punctuation">,</span>
+  <span class="token string">'/images/add.svg'</span><span class="token punctuation">,</span>
+  <span class="token string">'/images/clear-day.svg'</span><span class="token punctuation">,</span>
+  <span class="token string">'/images/clear-night.svg'</span><span class="token punctuation">,</span>
+  <span class="token string">'/images/cloudy.svg'</span><span class="token punctuation">,</span>
+  <span class="token string">'/images/fog.svg'</span><span class="token punctuation">,</span>
+  <span class="token string">'/images/hail.svg'</span><span class="token punctuation">,</span>
+  <span class="token string">'/images/install.svg'</span><span class="token punctuation">,</span>
+  <span class="token string">'/images/partly-cloudy-day.svg'</span><span class="token punctuation">,</span>
+  <span class="token string">'/images/partly-cloudy-night.svg'</span><span class="token punctuation">,</span>
+  <span class="token string">'/images/rain.svg'</span><span class="token punctuation">,</span>
+  <span class="token string">'/images/refresh.svg'</span><span class="token punctuation">,</span>
+  <span class="token string">'/images/sleet.svg'</span><span class="token punctuation">,</span>
+  <span class="token string">'/images/snow.svg'</span><span class="token punctuation">,</span>
+  <span class="token string">'/images/thunderstorm.svg'</span><span class="token punctuation">,</span>
+  <span class="token string">'/images/tornado.svg'</span><span class="token punctuation">,</span>
+  <span class="token string">'/images/wind.svg'</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre></div>
+<p>Vì danh sách mấy file này chúng ta thêm bằng tay, nếu sao này chúng ta thay đổi danh sách file này, phải sửa tay tên <code class="language-inline-text">CACHE_NAME</code>, ví dụ như từ  </p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token constant">CACHE_NAME</span> <span class="token operator">=</span> <span class="token string">'static-cache-v2'</span><span class="token punctuation">;</span>
+<span class="token comment">// đổi khi thay đổi danh sách file muốn cache</span>
+<span class="token keyword">const</span> <span class="token constant">CACHE_NAME</span> <span class="token operator">=</span> <span class="token string">'static-cache-v3'</span><span class="token punctuation">;</span></code></pre></div>
+<blockquote>
+<p>Nếu chỉ sửa mỗi cái tên file cũng phải đổi lại tên cache thì quá tốn công, chưa kể phía user phải down lại toàn bộ resource. <a href="https://developers.google.com/web/tools/workbox/" target="_blank" rel="nofollow noopener noreferrer">Workbox</a> do google phát triển sẽ giải quyết dùm chúng ta vấn đề này, trong quá trình build, chỉ những file nào đã thay đổi mới cần update phía người dùng</p>
+</blockquote>
+<p>Để đảm bảo trong quá trình <code class="language-inline-text">activate</code>, nó ko vô tình xóa dữ liệu của chúng ta, bên trong hàm bắt sự kiện <code class="language-inline-text">activate</code></p>
+<p>public/service-worker.js</p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span>key <span class="token operator">!==</span> <span class="token constant">CACHE_NAME</span> <span class="token operator">&amp;&amp;</span> key <span class="token operator">!==</span> <span class="token constant">DATA_CACHE_NAME</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></code></pre></div>
+<p>Trong sự kiện <code class="language-inline-text">fetch</code> của service worker, chúng ta cũng thực hiện cập nhập, chúng ta luôn ưu tiên lấy data từ API trước, chỉ khi ko thể gọi được API, chúng ta mới lôi thằng cache ra xài</p>
+<p><a href="https://github.com/googlecodelabs/your-first-pwapp/blob/master/public/service-worker.js#L42" target="_blank" rel="nofollow noopener noreferrer">public/service-worker.js</a></p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span>evt<span class="token punctuation">.</span>request<span class="token punctuation">.</span>url<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'/forecast/'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'[Service Worker] Fetch (data)'</span><span class="token punctuation">,</span> evt<span class="token punctuation">.</span>request<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  evt<span class="token punctuation">.</span><span class="token function">respondWith</span><span class="token punctuation">(</span>
+      caches<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token constant">DATA_CACHE_NAME</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">cache</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">fetch</span><span class="token punctuation">(</span>evt<span class="token punctuation">.</span>request<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+              <span class="token comment">// nếu lấy được data từ API, xài luôn và lưu xuống cache một bản</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                cache<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>evt<span class="token punctuation">.</span>request<span class="token punctuation">.</span>url<span class="token punctuation">,</span> response<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span>
+              <span class="token keyword">return</span> response<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+              <span class="token comment">// lỗi network thì đưa về cache</span>
+              <span class="token keyword">return</span> cache<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>evt<span class="token punctuation">.</span>request<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+evt<span class="token punctuation">.</span><span class="token function">respondWith</span><span class="token punctuation">(</span>
+    caches<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token constant">CACHE_NAME</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">cache</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> cache<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>evt<span class="token punctuation">.</span>request<span class="token punctuation">)</span>
+          <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> response <span class="token operator">||</span> <span class="token function">fetch</span><span class="token punctuation">(</span>evt<span class="token punctuation">.</span>request<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Chúng ta bỏ phần điều kiện <code class="language-inline-text">evt.request.mode !== 'navigate'</code> vì không chỉ muốn lấy cache cho network request, chúng ta muốn cache mọi thứ từ HTML, CSS, script, image,...</p>
+<p>Giờ gần như chúng ta đã đưa hết những gì cần thiết xuống cache, kiểm tra xem kết quả trên DevTool đã cache thành công chưa nhé</p>
+<p><img src="https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/img/731e91776cb6ef18.png" alt="xem kết quả trên DevTool đã cache thành công chưa nhé"></p>
+<h2 id="thêm-phần-cài-đặt"><a href="#th%C3%AAm-ph%E1%BA%A7n-c%C3%A0i-%C4%91%E1%BA%B7t" aria-hidden="true"><span class="icon icon-link"></span></a>Thêm phần cài đặt</h2>
+<p>App thì phải cài đặt được chứ, chúng ta sẽ thêm một nút cho phép user “Cài đặt” vào màn hình điện thoại luôn</p>
+<p><img src="https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/img/d824e1712e46a1cc.png" alt="Làm Progressive Web App cho người mới"></p>
+<p>User nào <em>thông minh</em> như mình thì sẽ biết cách vào menu của Chrome (hoặc Safari) rồi chọn <strong>Add to Homescreen</strong>, tuy nhiên đâu ai thông minh như mình đâu!</p>
+<p>Thêm file <code class="language-inline-text">install.js</code></p>
+<p><a href="https://github.com/googlecodelabs/your-first-pwapp/blob/master/public/index.html#L204" target="_blank" rel="nofollow noopener noreferrer">public/index.html</a></p>
+<div class="gridsome-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/scripts/install.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre></div>
+<p>Điều kiện để user có thể cài đặt được
+<img src="https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/img/b921f5583fcddf03.png" alt="Làm Progressive Web App cho người mới"></p>
+<p>Khi mấy điều kiện này đã có đủ, Chrome sẽ bắn ra sự kiện <code class="language-inline-text">beforeinstallprompt</code>, chúng ta nắm lấy sự kiện này </p>
+<p><a href="https://github.com/googlecodelabs/your-first-pwapp/blob/master/public/scripts/install.js#L24" target="_blank" rel="nofollow noopener noreferrer">public/scripts/install.js</a></p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'beforeinstallprompt'</span><span class="token punctuation">,</span> saveBeforeInstallPromptEvent<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Bên trong hàm <code class="language-inline-text">saveBeforeInstallPromptEvent</code> chúng ta cho hiện nút cài đặt, lưu tạm cái sự kiện <code class="language-inline-text">beforeinstallprompt</code> để dành xài</p>
+<p><a href="https://github.com/googlecodelabs/your-first-pwapp/blob/master/public/scripts/install.js#L34" target="_blank" rel="nofollow noopener noreferrer">public/scripts/install.js</a></p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">deferredInstallPrompt <span class="token operator">=</span> evt<span class="token punctuation">;</span>
+installButton<span class="token punctuation">.</span><span class="token function">removeAttribute</span><span class="token punctuation">(</span><span class="token string">'hidden'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Khi user click vào nút <strong>Install</strong>, chúng ta gọi lại thằng <code class="language-inline-text">beforeinstallprompt.prompt()</code>, rồi ẩn nút này đi</p>
+<p><a href="https://github.com/googlecodelabs/your-first-pwapp/blob/master/public/scripts/install.js#L45" target="_blank" rel="nofollow noopener noreferrer">public/scripts/install.js</a></p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">deferredInstallPrompt<span class="token punctuation">.</span><span class="token function">prompt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+evt<span class="token punctuation">.</span>srcElement<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'hidden'</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Cũng có thể bắt lấy lựa chọn mà user đã trả lời</p>
+<p><a href="https://github.com/googlecodelabs/your-first-pwapp/blob/master/public/scripts/install.js#L47" target="_blank" rel="nofollow noopener noreferrer">public/scripts/install.js</a></p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">deferredInstallPrompt<span class="token punctuation">.</span>userChoice
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">choice</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>choice<span class="token punctuation">.</span>outcome <span class="token operator">===</span> <span class="token string">'accepted'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'User accepted the A2HS prompt'</span><span class="token punctuation">,</span> choice<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'User dismissed the A2HS prompt'</span><span class="token punctuation">,</span> choice<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      deferredInstallPrompt <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Khi thêm vào màn hình chính thành công, hay gọi hoa mỹ là Cài đặt thành công, trình duyệt bắn tiếp một sự kiện khác, chúng ta có thể túm lấy sự kiện này và thông báo gì đó nếu thích</p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'appinstalled'</span><span class="token punctuation">,</span> logAppInstalled<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<blockquote>
+<p>Tips: để CSS riêng cho trường hợp web đang chạy dạng “App” như vậy ta dùng <code class="language-inline-text">display-mode</code></p>
+</blockquote>
+<p>Code đầy đủ nè</p>
+<div class="gridsome-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> all <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">display-mode</span><span class="token punctuation">:</span> standalone<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">body</span> <span class="token punctuation">{</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><a target="_blank" rel="noopener noreferrer" href="https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/">Your First Progressive Web App</a></p>
+</div></div><div class="post__footer" data-v-a7470da2><div class="post-tags"><a href="/tag/pwa/" class="post-tags__link"><span>#</span>
+    pwa
+  </a><a href="/tag/mobile-web-specialist/" class="post-tags__link"><span>#</span>
+    mobile-web-specialist
+  </a></div></div><div class="single-post__share" data-v-a7470da2><a href="javascript:void(0)" class="share-network-email" style="background-color:#333333;"><i class="mst-icon icon-mail"></i><span>Email</span></a><a href="javascript:void(0)" class="share-network-facebook" style="background-color:#1877f2;"><i class="mst-icon icon-facebook"></i><span>Facebook</span></a><a href="javascript:void(0)" class="share-network-linkedin" style="background-color:#007bb5;"><i class="mst-icon icon-linkedin"></i><span>LinkedIn</span></a><a href="javascript:void(0)" class="share-network-pocket" style="background-color:#ef4056;"><i class="mst-icon icon-get-pocket"></i><span>Pocket</span></a><a href="javascript:void(0)" class="share-network-skype" style="background-color:#00aff0;"><i class="mst-icon icon-skype"></i><span>Skype</span></a><a href="javascript:void(0)" class="share-network-twitter" style="background-color:#1da1f2;"><i class="mst-icon icon-twitter"></i><span>Twitter</span></a></div></div></article></div></div></main><div class="section-below-post" data-v-a7470da2><div class="post-comments" data-v-a7470da2><!----><div id="disqus_thread" style="min-height:200px;"></div></div><div class="related-posts" data-v-0ab71b42><h4 data-v-0ab71b42>Bài liên quan</h4><ul class="related-posts__container" data-v-0ab71b42><li class="related-posts__media" data-v-0ab71b42><div class="related-posts__index" data-v-0ab71b42>1.</div><div class="related-posts__content" data-v-0ab71b42><h4 class="related-posts__title" data-v-0ab71b42><a href="/2019-09-06-gioi-thieu-can-ban-ve-cors/" data-v-0ab71b42>Làm quen khái niệm CORS của Web</a></h4><p data-v-0ab71b42>Bài này khá căn bản và cần thiết cho bạn nào chưa biết gì về CORS, nghe ai đó nói về từ khóa ghê gớm này mà ko biết nó là gì, không để cập đến vấn đề setup làm sao để chạy CORS trên server - vì mình ko biết code phía server đâu</p></div></li><li class="related-posts__media" data-v-0ab71b42><div class="related-posts__index" data-v-0ab71b42>2.</div><div class="related-posts__content" data-v-0ab71b42><h4 class="related-posts__title" data-v-0ab71b42><a href="/2019-06-01-huong-dan-vo-long-su-dung-json-stringify/" data-v-0ab71b42>JSON.stringify vở lòng cho người mới</a></h4><p data-v-0ab71b42>Một trong hàm kinh điển bắt buộc phải biết của mội frontend developer</p></div></li><li class="related-posts__media" data-v-0ab71b42><div class="related-posts__index" data-v-0ab71b42>3.</div><div class="related-posts__content" data-v-0ab71b42><h4 class="related-posts__title" data-v-0ab71b42><a href="/2019-11-12-lam-video-fullscreen-voi-react/" data-v-0ab71b42>Gắn video làm background toàn màn hình</a></h4><p data-v-0ab71b42>Chia sẽ kỹ thuật làm background video để chạy full màn hình</p></div></li></ul></div><div class="author post-author"><a href="https://luubinhan.github.io/" target="_blank"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript></a><h2 class="author__site-title">VuiLapTrinh.com</h2><p class="author__intro">Nếu đọc bài viết thấy hay, bạn xài bớt cái bọc ni lông, ra đường mua tờ vé số giúp các cô các bác là đã cảm ơn mình</p></div></div></div></div></div> <script src="/assets/js/app.74d15cfd.js" defer></script><script src="/assets/js/page--src-templates-post-vue.c76ee95a.js" defer></script>
+  </body>
+</html>

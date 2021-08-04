@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Thiết đặt ESLint khi sử dụng với Javascript, Typescript, React - VuiLapTrinh.com</title><meta name="gridsome:hash" content="f369d0891f41e5bd2c583b3c06d1d5fffc1c6b45"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.23"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" name="theme-color" content="#01A1B1"><meta data-vue-tag="ssr" data-key="description" name="description" content="Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui"><meta data-vue-tag="ssr" name="description" content="Chúng ta bắt đầu với Javascript trước, sau đó sẽ là TypeScript, và React. Mục tiêu là làm đúng, tránh trường hợp cài package không cần thiết hoặc copy/paste các config tới khi nó chạy được thì thôi."><meta data-vue-tag="ssr" property="og:type" content="article"><meta data-vue-tag="ssr" property="og:title" content="Thiết đặt ESLint khi sử dụng với Javascript, Typescript, React"><meta data-vue-tag="ssr" property="og:description" cotent="Chúng ta bắt đầu với Javascript trước, sau đó sẽ là TypeScript, và React. Mục tiêu là làm đúng, tránh trường hợp cài package không cần thiết hoặc copy/paste các config tới khi nó chạy được thì thôi."><meta data-vue-tag="ssr" property="og:image" content=""><meta data-vue-tag="ssr" property="image" content=""><meta data-vue-tag="ssr" name="twitter:card" content="summary"><meta data-vue-tag="ssr" name="twitter:creator" content="@luubinhan"><meta data-vue-tag="ssr" name="fb:app_id" content="445556375516928"><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/svg+xml" sizes="16x16" href="/assets/static/luckyluu.ce0531f.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="icon" type="image/svg+xml" sizes="32x32" href="/assets/static/luckyluu.ac8d93a.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="icon" type="image/svg+xml" sizes="96x96" href="/assets/static/luckyluu.b9532cc.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/svg+xml" sizes="76x76" href="/assets/static/luckyluu.f22e9f3.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/svg+xml" sizes="152x152" href="/assets/static/luckyluu.62d22cb.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/svg+xml" sizes="120x120" href="/assets/static/luckyluu.1539b60.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/svg+xml" sizes="167x167" href="/assets/static/luckyluu.dc0cdc5.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/svg+xml" sizes="180x180" href="/assets/static/luckyluu.7b22250.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="manifest" type="application/manifest+json" href="/manifest.json"><link rel="preload" href="/assets/css/0.styles.35afcad5.css" as="style"><link rel="preload" href="/assets/js/app.74d15cfd.js" as="script"><link rel="preload" href="/assets/js/page--src-templates-post-vue.c76ee95a.js" as="script"><link rel="prefetch" href="/assets/js/page--src-pages-404-vue.7a134a53.js"><link rel="prefetch" href="/assets/js/page--src-pages-cheat-sheet-vue.9e7df976.js"><link rel="prefetch" href="/assets/js/page--src-pages-index-vue.b3ef9070.js"><link rel="prefetch" href="/assets/js/page--src-templates-tag-vue.5e1608d8.js"><link rel="stylesheet" href="/assets/css/0.styles.35afcad5.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute("data-theme", newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem("theme");
+        } catch (err) {}
+
+        window.__setPreferredTheme = function(newTheme) {
+          console.log(newTheme);
+          setTheme(newTheme);
+          try {
+            localStorage.setItem("theme", newTheme);
+          } catch (err) {}
+        };
+
+        var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? "dark" : "light");
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? "dark" : "light"));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true" class="layout-blog" data-v-a7470da2><div class="sidebar" data-v-732b59ce data-v-a7470da2><div class="sidebar__inner" data-v-732b59ce><a href="/" class="go-home active" data-v-0e210c24 data-v-732b59ce>VuiLapTrinh.com</a><button type="button" aria-expanded="false" aria-label="nav" class="navbar-toggle collapsed" data-v-732b59ce><div class="hamburger hamburger-1" data-v-732b59ce><span class="line" data-v-732b59ce></span><span class="line" data-v-732b59ce></span><span class="line" data-v-732b59ce></span></div></button><div class="navigation-component" data-v-732b59ce><ul class="nav primary-menu collapsed" data-v-732b59ce><li class="javascript" data-v-732b59ce><a href="/tag/javascript" data-v-732b59ce><span class="primary-menu__icon" data-v-732b59ce><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" data-v-732b59ce><path d="M255.908 485.999c-6.116 0-12.323-1.642-17.708-4.746l-56.319-33.316c-8.397-4.747-4.29-6.389-1.551-7.303 11.226-3.925 13.508-4.745 25.465-11.592 1.279-.729 2.922-.457 4.199.366l43.266 25.648c1.552.912 3.741.912 5.202 0l168.592-97.304c1.553-.913 2.555-2.738 2.555-4.563V158.583c0-1.917-1.002-3.651-2.645-4.654L258.463 56.716c-1.551-.913-3.65-.913-5.202 0L84.852 154.019c-1.644.913-2.647 2.738-2.647 4.655v194.515c0 1.825 1.003 3.65 2.647 4.473l46.188 26.653c25.102 12.504 40.436-2.191 40.436-17.068V175.195c0-2.738 2.19-4.837 4.93-4.837h21.359c2.647 0 4.928 2.099 4.928 4.837v192.143c0 33.407-18.256 52.576-49.928 52.576-9.768 0-17.435 0-38.794-10.588l-44.179-25.467c-10.954-6.299-17.708-18.074-17.708-30.76V158.583c0-12.596 6.754-24.462 17.708-30.76L238.2 30.519c10.679-6.024 24.828-6.024 35.416 0l168.594 97.394c10.953 6.298 17.707 18.073 17.707 30.761v194.515c0 12.596-6.754 24.371-17.707 30.761l-168.594 97.303a35.5 35.5 0 01-17.708 4.746zm136.098-191.775c0-36.421-24.646-46.096-76.4-52.941-52.396-6.938-57.689-10.498-57.689-22.729 0-10.131 4.473-23.641 43.266-23.641 34.596 0 47.375 7.485 52.668 30.853.457 2.19 2.467 3.833 4.746 3.833h21.91c1.367 0 2.645-.547 3.559-1.552.914-1.003 1.369-2.373 1.275-3.743-3.375-40.252-30.121-58.965-84.158-58.965-48.103 0-76.764 20.264-76.764 54.311 0 36.876 28.569 47.101 74.664 51.662 55.225 5.387 59.514 13.511 59.514 24.373 0 18.805-15.15 26.835-50.658 26.835-44.635 0-54.403-11.227-57.689-33.406-.365-2.373-2.374-4.107-4.837-4.107h-21.817a4.81 4.81 0 00-4.836 4.836c0 28.39 15.426 62.254 89.271 62.254 53.305-.092 83.975-21.181 83.975-57.873z" fill="#539e43" data-v-732b59ce></path></svg></span><!----><!----><!----><!----><!----><span class="primary-menu__label" data-v-732b59ce>Javascript</span></a></li><li class="react" data-v-732b59ce><a href="/tag/react" data-v-732b59ce><!----><span class="primary-menu__icon" data-v-732b59ce><svg id="Layer_2" version="1.1" viewBox="0 0 600 600" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" data-v-732b59ce><circle cx="299.5" cy="299.6" r="50.2" class="st0" data-v-732b59ce></circle><path d="M299.5 414.6c-70.5 0-132.1-8.3-178.2-24.1-29.9-10.2-55.3-23.8-73.4-39.3-19.2-16.4-29.4-34.3-29.4-51.6 0-33.2 36.4-65.7 97.5-86.9 50-17.4 115.2-27.1 183.4-27.1 67 0 131.3 9.4 181 26.6 29.1 10 53.6 23 71 37.4 18.9 15.8 28.9 33.1 28.9 50 0 34.5-40.7 69.4-106.3 91.1-46.4 15.4-108.4 23.9-174.5 23.9zm0-205c-64.7 0-128.7 9.4-175.5 25.7-56.2 19.6-81.4 46.4-81.4 64.3 0 18.6 27.1 47.9 86.5 68.2 43.6 14.9 102.6 22.8 170.4 22.8 63.6 0 122.9-8 167-22.7 61.7-20.5 89.9-49.8 89.9-68.3 0-9.5-7.2-20.7-20.3-31.6-15.1-12.6-37.1-24.1-63.4-33.2-47.3-16.2-108.8-25.2-173.2-25.2z" class="st0" data-v-732b59ce></path><path d="M185.6 549.8c-10.2 0-19.2-2.2-26.8-6.6-28.7-16.6-38.7-64.4-26.6-127.9 9.9-52.1 34.1-113.3 68.2-172.4 33.5-58 73.7-109 113.4-143.5 23.2-20.2 46.7-35 67.9-42.8 23.1-8.5 43.1-8.5 57.7-.1 29.9 17.2 39.8 70 25.8 137.6-9.9 48-33.5 105.9-66.5 163.2-35.2 61-73.2 110.2-109.9 142.3-23.8 20.8-48.3 36-70.7 43.9-11.7 4.2-22.7 6.3-32.5 6.3zm25.1-300.9l10.4 6c-32.3 56-56.2 116.1-65.4 164.9-11.1 58.5-.4 93.7 15 102.6 3.8 2.2 8.8 3.4 14.9 3.4 19.9 0 51.2-12.6 87.4-44.2 34.7-30.3 71-77.5 104.9-136.2 31.8-55.1 54.4-110.5 63.8-156 13.1-63.7 1.8-102.7-14.3-112-8.2-4.7-21.5-4.1-37.5 1.8-18.5 6.8-39.4 20.1-60.4 38.4-37.7 32.8-76.2 81.6-108.4 137.4l-10.4-6.1z" class="st0" data-v-732b59ce></path><path d="M413.4 550.1c-27.2 0-61.7-16.4-97.7-47.4-40.2-34.6-81.1-86.1-115.3-145.2-33.6-58-57.6-118.3-67.7-170-5.9-30.2-7-57.9-3.2-80.2 4.2-24.3 14.1-41.6 28.8-50.1 29.8-17.3 80.5.5 132.1 46.4 36.6 32.5 75 81.9 108.1 139.1 35.3 61 59 118.5 68.4 166.3 6.1 31 7.1 59.8 2.8 83.2-4.6 24.9-15 42.6-30 51.3-7.5 4.4-16.4 6.6-26.3 6.6zM221.2 345.5c32.4 56 72.6 106.7 110.2 139 45.1 38.8 80.9 47.2 96.4 38.2 16.1-9.3 27.9-47.4 15.7-109-9-45.2-31.7-100.2-65.7-158.9-31.9-55.1-68.6-102.4-103.3-133.2-48.6-43.2-88-52.9-104.1-43.6-8.2 4.7-14.3 16.6-17.2 33.4-3.3 19.4-2.3 44.2 3.1 71.5 9.6 49.1 32.6 106.8 64.9 162.6z" class="st0" data-v-732b59ce></path></svg></span><!----><!----><!----><!----><span class="primary-menu__label" data-v-732b59ce>React</span></a></li><li class="vue" data-v-732b59ce><a href="/tag/vuejs" data-v-732b59ce><!----><!----><!----><!----><span class="primary-menu__icon" data-v-732b59ce><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" data-v-732b59ce><path fill="#41b883" d="M392.46 59.011H313.5l-57.499 90.972-49.285-90.972H26.001l230 393.978L485.999 59.011z" data-v-732b59ce></path><path fill="#35495e" d="M83.192 91.867h55.241l117.568 203.511L373.464 91.867h55.241l-172.704 295.92L83.192 91.867z" data-v-732b59ce></path></svg></span><!----><span class="primary-menu__label" data-v-732b59ce>Vue</span></a></li><li class="htmlCss" data-v-732b59ce><a href="/tag/css" data-v-732b59ce><!----><!----><!----><span class="primary-menu__icon" data-v-732b59ce><svg version="1.0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" data-v-732b59ce><path fill="#E44D26" d="M27.377 28.889L16.001 32 4.625 28.889 2 0h28.002z" data-v-732b59ce></path><path fill="#FF6C39" d="M16 2v27.75l9.232-2.742L27.688 2z" data-v-732b59ce></path><path fill="#FFF" d="M24.363 6H7.607L8 10l.619 7h10.884l-.355 3.984L16 21.99l-3.143-1.006L12.648 19H8.803l.459 4.987L16 25.99l6.728-2.004.99-10.986H12.252l-.25-3H24z" data-v-732b59ce></path></svg></span><!----><!----><span class="primary-menu__label" data-v-732b59ce>HTML/CSS</span></a></li><li class="uxUi" data-v-732b59ce><a href="/tag/ux-ui" data-v-732b59ce><!----><!----><!----><!----><!----><span class="primary-menu__icon" data-v-732b59ce><svg viewBox="0 0 512 454.633" xmlns="http://www.w3.org/2000/svg" data-v-732b59ce><path d="M202.271 243.812c-9.741 10.73-12.13 18.428-24.884 38.588 8.237 5.752 24.104 19.055 35.095 41.959 21.953-12.592 32.188-14.514 43.821-24.309C332.24 236.092 518.244 6.836 511.839.204c-6.766-7.05-242.704 170.268-309.568 243.608zM155.442 300.209c-32.998-5.832-65.547 15.028-87.288 67.147C46.382 419.471 7.532 440.337.001 439.061c40.553 14.67 164.202 52.194 194.939-90.655-13.037-34.26-39.498-48.197-39.498-48.197z" data-v-732b59ce></path></svg></span><span class="primary-menu__label" data-v-732b59ce>UX/UI</span></a></li><li class="about" data-v-732b59ce><a href="https://luubinhan.github.io/" target="_blank" rel="noopener noreferrer" data-v-732b59ce>About</a></li></ul></div><div id="footer" data-v-7f12727f data-v-732b59ce><footer class="footer" data-v-7f12727f><section class="footer-inner" data-v-7f12727f><div class="social-links" data-v-7f12727f><a href="https://www.youtube.com/channel/UC0Te8s0b0aplS1ZoVLfjKHA" target="_blank" rel="noopener noreferrer" class="link-youtube" style="display: none;" data-v-7f12727f><span class="link-youtube__icon" data-v-7f12727f><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" data-v-7f12727f data-v-7f12727f><path d="M512 256c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256z" fill="#CD201F" data-v-7f12727f data-v-7f12727f></path><path d="M391.1 194.6c-2.3-19.9-7.1-25.7-10.5-28.4-5.4-4.2-15.2-5.7-28.3-6.6-21-1.4-56.7-2.3-95.2-2.3-38.6 0-74.2.8-95.2 2.3-13.1.9-22.9 2.4-28.3 6.6-3.4 2.7-8.1 8.5-10.5 28.4-3.4 28.7-3.4 94.1 0 122.8 2.4 19.9 7.1 25.7 10.5 28.4 5.4 4.2 15.2 5.7 28.3 6.6 21 1.4 56.6 2.3 95.2 2.3s74.2-.9 95.2-2.3c13.1-.9 22.9-2.4 28.3-6.6 3.4-2.6 8.1-8.5 10.5-28.4 3.4-28.7 3.4-94.1 0-122.8zm-167 104.3V213l82.4 42.9-82.4 43z" fill="#FFF" data-v-7f12727f data-v-7f12727f></path></svg></span>
+					Youtube
+				</a></div><div class="credit" data-v-7f12727f>Since 2016. luckyluu</div></section></footer></div></div></div><div class="master-container" data-v-a7470da2><div class="aside" data-v-a7470da2><div class="aside__inner" data-v-a7470da2><div class="toggle-theme" data-v-a7470da2><span role="checkbox" aria-checked="false" tabindex="0" class="toggle-wrapper" data-v-4df809e2 data-v-a7470da2><span class="toggle-background" style="background-color:#dae1e7;" data-v-4df809e2><span class="icon" data-v-4df809e2>
+			🌞
+		</span></span><span class="toggle-indicator" style="transform:translateX(0);" data-v-4df809e2></span></span></div><div class="search-wrapper" data-v-f0de593c data-v-a7470da2><div class="mb-2" data-v-f0de593c><div class="post-tags" data-v-f0de593c><a href="/tag/javascript" class="post-tags__link"><span>#</span>
+    Javascript
+  </a><a href="/tag/dam-dao" class="post-tags__link"><span>#</span>
+    Đàm đạo chém gió chuyện nghề
+  </a><a href="/tag/css" class="post-tags__link"><span>#</span>
+    CSS từ căn bản tới nâng cao
+  </a><a href="/tag/thu-thuat" class="post-tags__link"><span>#</span>
+    Thủ thuật
+  </a><a href="/tag/hoc-thuat" class="post-tags__link"><span>#</span>
+    Kiến thức nền tảng
+  </a><a href="/tag/react" class="post-tags__link"><span>#</span>
+    React
+  </a><a href="/tag/vuejs" class="post-tags__link"><span>#</span>
+    Vue JS
+  </a><a href="/tag/chrome" class="post-tags__link"><span>#</span>
+    Chrome DevTools
+  </a></div></div><div class="search__container" data-v-f0de593c><input type="text" placeholder="Tìm bài viết..." value="" class="search__input" data-v-f0de593c><!----></div><div class="search__list" data-v-f0de593c><!----><!----></div></div><div class="layout-blog__aside-footer" data-v-a7470da2></div></div></div><div class="master" data-v-a7470da2><main class="inner" data-v-a7470da2><div id="scrollTop" data-v-a7470da2></div><div class="single-post" data-v-a7470da2><div class="single-post-container" data-v-a7470da2><article data-v-a7470da2><header data-v-a7470da2><div class="post-title" data-v-a7470da2><h1 class="post-title__text single-post-title" data-v-a7470da2>
+							Thiết đặt ESLint khi sử dụng với Javascript, Typescript, React
+						</h1><div class="post-meta">
+  Đăng ngày
+  <time dateTime="2020-02-03" itemprop="dateModified" content="2020-02-03">2020-02-03</time>.
+  
+    Mất khoảng
+    <strong>8 phút</strong> để đọc.
+  </div><a href="https://github.com/luubinhan/blog/edit/master/content/posts//2020-02-03-huong-dan-cai-dat-eslint-react-javascript-typescript-vscode.md" rel="noopener noreferrer" target="_blank" aria-label="Connect Facebook" class="link" data-v-a7470da2>
+							Sửa bài viết này
+						</a></div></header><div class="post content-box" data-v-a7470da2><div class="post__header" data-v-a7470da2><!----></div><div class="blog-post" data-v-a7470da2><div class="post-content" data-v-a7470da2><!-- TOC -->
+<ul>
+<li><a href="#t%E1%BA%A1i-sao-d%C3%B9ng-eslint">Tại sao dùng ESLint</a></li>
+<li><a href="#c%C3%A0i-%C4%91%E1%BA%B7t-eslint">Cài đặt ESLint</a></li>
+<li><a href="#file-c%C3%A0i-%C4%91%E1%BA%B7t-c%E1%BB%A7a-eslint">File cài đặt của ESLint</a></li>
+<li><a href="#javascript-thu%E1%BA%A7n">Javascript thuần</a></li>
+<li><a href="#thi%E1%BA%BFt-%C4%91%E1%BA%B7t-typescript">Thiết đặt TypeScript</a></li>
+<li>
+<p><a href="#thi%E1%BA%BFt-%C4%91%E1%BA%B7t-cho-react">Thiết đặt cho React</a></p>
+<ul>
+<li><a href="#react-javascript">React Javascript</a></li>
+<li><a href="#react-typescript">React TypeScript</a></li>
+</ul>
+</li>
+<li><a href="#c%C3%A0i-%C4%91%E1%BA%B7t-cho-vscode">Cài đặt cho VSCode</a></li>
+</ul>
+<!-- /TOC -->
+<p>Nếu chưa rành, bạn cần đọc từ đầu tới cuối, nếu đã thành thạo, chỉ việc nhảy tới phần cuối rồi copy config về xài.</p>
+<p>Hướng dẫn này sử dụng bộ config của Airbnb, vì nó quá nổi tiếng và được sử dụng gần như là chuẩn. Tất nhiên, bạn có quyền thay đổi sao cho hợp <em>gu</em></p>
+<p>Nếu chưa bao giờ <em>nghe</em> đến hướng dẫn viết <em>code sao cho chuẩn</em> của Airbnb, tham khảo các bài viết sau</p>
+<ul>
+<li><a href="https://github.com/airbnb/javascript/blob/master/README.md" target="_blank" rel="nofollow noopener noreferrer">Airbnb JavaScript style guide</a></li>
+<li><a href="https://github.com/airbnb/javascript/tree/master/react" target="_blank" rel="nofollow noopener noreferrer">Airbnb React style guide</a></li>
+<li><a href="https://github.com/airbnb/javascript/tree/master/css-in-javascript" target="_blank" rel="nofollow noopener noreferrer">Airbnb CSS in JavaScript style guide</a></li>
+<li><a href="https://github.com/airbnb/css" target="_blank" rel="nofollow noopener noreferrer">Airbnb Sass style guide</a></li>
+</ul>
+<h2 id="tại-sao-dùng-eslint"><a href="#t%E1%BA%A1i-sao-d%C3%B9ng-eslint" aria-hidden="true"><span class="icon icon-link"></span></a>Tại sao dùng ESLint</h2>
+<p>Hiện tại không có bất cứ một đối thủ nào <em>xứng tầm</em> với ESLint, nó là dự án đã và đang được bảo trì bởi cộng đồng rất rộng lớn. Hầu hết các chương trình viết code đều hỗ trợ, chúng ta sẽ không gặp khó khăn trong việc sử dụng nó với VSCode, Vim, Emac, WebStorm, Sublime, Atom,...</p>
+<p>Túm lại, ESLint là <strong>nền tảng</strong> xịn sò nhất, bạn không cần lăng tăng tìm <em>người khác</em>.</p>
+<h2 id="cài-đặt-eslint"><a href="#c%C3%A0i-%C4%91%E1%BA%B7t-eslint" aria-hidden="true"><span class="icon icon-link"></span></a>Cài đặt ESLint</h2>
+<p>Giống như bất kỳ package nào khác, ESLint có thể được cài đặt ở 2 mức</p>
+<ul>
+<li><em>global</em>, cài luôn vào máy <code class="language-inline-text">npm -g</code></li>
+<li>đi theo từng project</li>
+</ul>
+<p>Việc cài đặt ESLint ở mức <em>global</em> khá là hợp lý vì chúng ta muốn dùng nó ở mọi project. Tuy nhiên cũng <em>hợp lý</em> nếu cài riêng trên từng project nếu bạn đang cần</p>
+<ul>
+<li>Các phiên bản ESLint khác nhau trên từng dự án</li>
+<li>Công khai bạn phụ thuộc vào ESLint cho project đó</li>
+<li>Đồng nghiệp và các công cụ tự động (như mấy thằng CI) có thể cài đặt ESlint như những package khác.</li>
+</ul>
+<p>Cài đặt ESLint trong thư mục project</p>
+<div class="gridsome-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> i eslint --save-dev</code></pre></div>
+<p>Chạy ESLint trong project</p>
+<div class="gridsome-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">npx eslint</code></pre></div>
+<p>Để tạo một <em>shortcut</em> cho câu lệnh chạy eslint. Bên trong file <code class="language-inline-text">package.json</code> thêm dòng sau</p>
+<div class="gridsome-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"lint"</span><span class="token operator">:</span> <span class="token string">"eslint ."</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Tham số <code class="language-inline-text">.</code> cho phép chạy ESLint bên trong thư mục hiện tại, chúng ta chạy lệnh thông qua shortcut</p>
+<div class="gridsome-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> run lint</code></pre></div>
+<h2 id="file-cài-đặt-của-eslint"><a href="#file-c%C3%A0i-%C4%91%E1%BA%B7t-c%E1%BB%A7a-eslint" aria-hidden="true"><span class="icon icon-link"></span></a>File cài đặt của ESLint</h2>
+<p>Có thể đặt file cài đặt ESLint ở <a href="https://eslint.org/docs/user-guide/configuring#configuration-cascading-and-hierarchy" target="_blank" rel="nofollow noopener noreferrer">nhiều vị trí</a>. Nếu không có nhu cầu quá đặt biệt, 1 file duy nhất ở thư mục ngoài cùng ( <code class="language-inline-text">root</code> ) là đủ.</p>
+<p>ESLint cho phép sử dụng nhiều kiểu file</p>
+<ul>
+<li>Javascript</li>
+<li>JSON</li>
+<li>YAML</li>
+</ul>
+<p>Xài YAML trong ví dụ này. Tạo file tên <code class="language-inline-text">.eslintrc.yaml</code>, cái này nếu bạn chạy <code class="language-inline-text">eslint init</code> trong thư mục <code class="language-inline-text">src/</code> của dự án nó sẽ hỏi bạn có muốn tạo không, nó tạo dùm cho.</p>
+<div class="gridsome-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">eslint --init</code></pre></div>
+<blockquote>
+<p>Nếu muốn thêm <em>logic</em> bằng code, bạn cần dùng kiểu javascript</p>
+</blockquote>
+<p>Điều cần quan tâm trước hết là thông báo cho ESLint chúng ta đang viết ngôn ngữ gì, phiên bản nào, môi trường mà code sẽ chạy. Nếu không có các thông tin, ESLint sẽ không chạy được.</p>
+<div class="gridsome-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">parserOptions:
+  ecmaVersion: <span class="token number">6</span>
+env:
+  node: <span class="token boolean">true</span></code></pre></div>
+<h2 id="javascript-thuần"><a href="#javascript-thu%E1%BA%A7n" aria-hidden="true"><span class="icon icon-link"></span></a>Javascript thuần</h2>
+<p>Với project là javascript thuần, toàn bộ file là <code class="language-inline-text">.js</code>, có thể tự định nghĩa từ đầu hết, nhưng như vậy khá mất thời gian, khó bảo trì, chưa chắc chuẩn vì nó phụ thuộc vào sự hiểu biết của bạn về javascript</p>
+<p>Rất nhiều các công ty lớn như <a href="https://github.com/google/eslint-config-google" target="_blank" rel="nofollow noopener noreferrer">Google</a>, <a href="https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb" target="_blank" rel="nofollow noopener noreferrer">Airbnb</a>, <a href="https://github.com/facebook/fbjs/tree/master/packages/eslint-config-fbjs-opensource" target="_blank" rel="nofollow noopener noreferrer">Facebook</a> bỏ ra cả tỉ tỉ thời gian để bảo trì và cập nhập mấy cài đặt này</p>
+<p>Sử dụng cài đặt vạn người yêu thích, Airbnb</p>
+<div class="gridsome-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">npx install-peerdeps --dev eslint-config-airbnb-base</code></pre></div>
+<p>Các bài viết trên mạng sẽ kêu bạn cài <code class="language-inline-text">eslint-config-airbnb</code>, nó có bao gồm luôn phần cài đặt cho React, React Hooks, ... . Không cần thiết trong trường hợp project chỉ là javascript thông thường.</p>
+<p>Để ý chúng ta <strong>KHÔNG</strong> dùng <code class="language-inline-text">npm</code> để cài đặt, mà dùng <code class="language-inline-text">npx install-peerdeps</code>. Nó sẽ cài luôn mấy package nào mà <code class="language-inline-text">eslint-config-airbnb-base</code> phụ thuộc. Trường hợp sử dụng ESLint chúng ta sẽ gặp hoài, vì hầu như nó đều phụ thuộc một vài package khác.</p>
+<p>Cài xong, khai báo sẽ kế thừa bộ cài đặt của Airbnb</p>
+<div class="gridsome-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">extends</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> airbnb<span class="token punctuation">-</span>base</code></pre></div>
+<p>Những thiết đặt của airbnb có thể nói là rất phổ biến và được tin dùng bởi nhiều dự án lớn nhỏ khác nhau. Chúng ta có thể yên tâm sử dụng nó mà không cần thay đổi gì nhiều.</p>
+<p>Tổng kết</p>
+<div class="gridsome-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"eslint"</span><span class="token operator">:</span> <span class="token string">"^6.1.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"eslint-config-airbnb-base"</span><span class="token operator">:</span> <span class="token string">"^14.0.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"eslint-plugin-import"</span><span class="token operator">:</span> <span class="token string">"^2.20.0"</span> (peer dependency)
+<span class="token punctuation">}</span></code></pre></div>
+<div class="gridsome-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">parserOptions</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ecmaVersion</span><span class="token punctuation">:</span> <span class="token number">6</span>
+
+<span class="token key atrule">env</span><span class="token punctuation">:</span>
+  <span class="token key atrule">node</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token key atrule">extends</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> eslint<span class="token punctuation">:</span>recommended
+  <span class="token punctuation">-</span> airbnb<span class="token punctuation">-</span>base</code></pre></div>
+<h2 id="thiết-đặt-typescript"><a href="#thi%E1%BA%BFt-%C4%91%E1%BA%B7t-typescript" aria-hidden="true"><span class="icon icon-link"></span></a>Thiết đặt TypeScript</h2>
+<p>Vấn đề chính của TypeScript là ESLint không thể tự động mà <code class="language-inline-text">parse</code> được, chúng ta phải thêm một parser <a href="https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser" target="_blank" rel="nofollow noopener noreferrer">@typescript-eslint/parser</a>.</p>
+<p>Cài đặt</p>
+<div class="gridsome-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> @typescript-eslint/parser --save-dev</code></pre></div>
+<blockquote>
+<p>Parse làm nhiệm vụ đọc cài file input và tạo ra một <em>phiên bản</em> mà ESLint hiểu được.</p>
+</blockquote>
+<p>Khai báo dùng parser này</p>
+<div class="gridsome-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">parser</span><span class="token punctuation">:</span> <span class="token string">"@typescript-eslint/parser"</span></code></pre></div>
+<p>Đồng thời cập nhập luôn <code class="language-inline-text">package.json</code> và báo với ESLint đừng kiểm tra file <code class="language-inline-text">.js</code> mà kiểm tra file <code class="language-inline-text">.ts</code></p>
+<div class="gridsome-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"lint"</span><span class="token operator">:</span> <span class="token string">"eslint . --ext .ts"</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Tương tự như javascript, chúng ta dùng bộ thiết đặt của Airbnb</p>
+<div class="gridsome-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">npx install-peerdeps --dev eslint-config-airbnb-typescript
+<span class="token function">npm</span> i eslint-plugin-import --save-dev</code></pre></div>
+<p><code class="language-inline-text">eslint-plugin-import</code> phải được cài đặt riêng, thủ công, không rõ lý do tại sao luôn.</p>
+<p>Cập nhập lại file config ESLint</p>
+<div class="gridsome-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">extends</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> airbnb<span class="token punctuation">-</span>typescript/base
+  <span class="token punctuation">-</span> plugin<span class="token punctuation">:</span>@typescript<span class="token punctuation">-</span>eslint/recommended</code></pre></div>
+<p>Bạn có thể thắc mắc, tại sao chưa cài <code class="language-inline-text">@typescript-eslint</code> mà có thể sử dụng, thật ra lúc cài <code class="language-inline-text">eslint-config-airbnb-typescript</code> chúng ta đã cài luôn nó bằng <code class="language-inline-text">npx install-peerdeps</code></p>
+<p>Có thể rule khác nữa có thể tham khảo <a href="https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin" target="_blank" rel="nofollow noopener noreferrer">trực tiếp từ tài liệu trên github</a></p>
+<p>Cuối cùng, bạn sẽ thấy có rất nhiều bài viết trên mạng, chỉ bạn thiết đặt</p>
+<div class="gridsome-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">plugins</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token string">"@typescript-eslint"</span></code></pre></div>
+<p>Nếu không sử dụng các thiết ESLint được đề nghị, cái này không cần thiết. Lý do là Airbnb đã bật luôn các rule như vậy.</p>
+<p>Tổng kết</p>
+<p><strong>package.json</strong></p>
+<div class="gridsome-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"@typescript-eslint/eslint-plugin"</span><span class="token operator">:</span> <span class="token string">"^2.17.0"</span><span class="token punctuation">,</span> (peer dependency)
+  <span class="token property">"@typescript-eslint/parser"</span><span class="token operator">:</span> <span class="token string">"^2.17.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"eslint"</span><span class="token operator">:</span> <span class="token string">"^6.8.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"eslint-config-airbnb-typescript"</span><span class="token operator">:</span> <span class="token string">"^6.3.1"</span><span class="token punctuation">,</span>
+  <span class="token property">"eslint-plugin-import"</span><span class="token operator">:</span> <span class="token string">"^2.20.0"</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p><strong>.eslintrc.yaml</strong></p>
+<div class="gridsome-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">parserOptions</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ecmaVersion</span><span class="token punctuation">:</span> <span class="token number">6</span>
+
+<span class="token key atrule">env</span><span class="token punctuation">:</span>
+  <span class="token key atrule">node</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token key atrule">extends</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> airbnb<span class="token punctuation">-</span>typescript/base
+  <span class="token punctuation">-</span> plugin<span class="token punctuation">:</span>@typescript<span class="token punctuation">-</span>eslint/recommended</code></pre></div>
+<h2 id="thiết-đặt-cho-react"><a href="#thi%E1%BA%BFt-%C4%91%E1%BA%B7t-cho-react" aria-hidden="true"><span class="icon icon-link"></span></a>Thiết đặt cho React</h2>
+<p>Thêm các thiết đặt ESLint cho React vô cùng đơn giản, mọi thứ đã có Airbnb lo.</p>
+<p>Một trong những sai lầm phổ biến là cho rằng viết như bên dưới sẽ bật hỗ trợ React</p>
+<p><strong>.eslintrc.yaml</strong></p>
+<div class="gridsome-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">parserOptions</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ecmaFeatures</span><span class="token punctuation">:</span>
+    <span class="token key atrule">jsx</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre></div>
+<p>React sử dụng JSX, nhưng theo cách mà ESLint không thể <strong>hiểu nổi</strong>. Để React và ESLint <em>nói chuyện</em> được với nhau, chúng ta phải sử dụng <code class="language-inline-text">eslint-plugin-react</code></p>
+<h3 id="react-javascript"><a href="#react-javascript" aria-hidden="true"><span class="icon icon-link"></span></a>React Javascript</h3>
+<p>Cài đặt package</p>
+<div class="gridsome-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">npx install-peerdeps --dev eslint-config-airbnb</code></pre></div>
+<p><strong>.eslintrc.yaml</strong></p>
+<div class="gridsome-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">extends</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> airbnb
+<span class="token key atrule">env</span><span class="token punctuation">:</span>
+  <span class="token key atrule">browser</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre></div>
+<p><strong>package.json</strong></p>
+<div class="gridsome-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"lint"</span><span class="token operator">:</span> <span class="token string">"eslint . --ext .js,.jsx"</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Nếu có sử dụng React Hook, bạn nên thêm phần cài đặt sau (có bỏ qua việc kiểm tra accessibility)</p>
+<p><strong>.eslintrc.yaml</strong></p>
+<div class="gridsome-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">extends</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> airbnb<span class="token punctuation">-</span>base
+  <span class="token punctuation">-</span> airbnb/rules/react
+  <span class="token punctuation">-</span> airbnb/hooks</code></pre></div>
+<p>Tổng kết</p>
+<p><strong>package.json</strong></p>
+<div class="gridsome-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"eslint"</span><span class="token operator">:</span> <span class="token string">"^6.1.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"eslint-config-airbnb"</span><span class="token operator">:</span> <span class="token string">"^18.0.1"</span><span class="token punctuation">,</span>
+  <span class="token property">"eslint-plugin-import"</span><span class="token operator">:</span> <span class="token string">"^2.20.0"</span><span class="token punctuation">,</span> (peer dependency)
+  <span class="token property">"eslint-plugin-jsx-a11y"</span><span class="token operator">:</span> <span class="token string">"^6.2.3"</span><span class="token punctuation">,</span> (peer dependency)
+  <span class="token property">"eslint-plugin-react"</span><span class="token operator">:</span> <span class="token string">"^7.18.0"</span><span class="token punctuation">,</span> (peer dependency)
+  <span class="token property">"eslint-plugin-react-hooks"</span><span class="token operator">:</span> <span class="token string">"^1.7.0"</span> (peer dependency)
+<span class="token punctuation">}</span></code></pre></div>
+<p><strong>.eslintrc.yaml</strong></p>
+<div class="gridsome-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">parserOptions</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ecmaVersion</span><span class="token punctuation">:</span> <span class="token number">6</span>
+
+<span class="token key atrule">env</span><span class="token punctuation">:</span>
+  <span class="token key atrule">browser</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token key atrule">extends</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> airbnb
+  <span class="token punctuation">-</span> airbnb/hooks
+
+<span class="token key atrule">rules</span><span class="token punctuation">:</span>
+  <span class="token key atrule">react/react-in-jsx-scope</span><span class="token punctuation">:</span> off</code></pre></div>
+<p><a href="https://github.com/yannickcr/eslint-plugin-react#list-of-supported-rules" target="_blank" rel="nofollow noopener noreferrer">Rảnh ngồi xem toàn bộ thiết đặt</a></p>
+<h3 id="react-typescript"><a href="#react-typescript" aria-hidden="true"><span class="icon icon-link"></span></a>React TypeScript</h3>
+<p>Nếu dùng TypeScript, chúng ta không thể cài theo kiểu <code class="language-inline-text">npx install-peerdeps</code>, mà phải cài độc lập</p>
+<div class="gridsome-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> eslint-config-airbnb-typescript <span class="token punctuation">\</span>
+            eslint-plugin-import <span class="token punctuation">\</span>
+            eslint-plugin-jsx-a11y <span class="token punctuation">\</span>
+            eslint-plugin-react <span class="token punctuation">\</span>
+            eslint-plugin-react-hooks <span class="token punctuation">\</span>
+            @typescript-eslint/eslint-plugin <span class="token punctuation">\</span>
+            --save-dev</code></pre></div>
+<p><strong>.eslintrc.yaml</strong></p>
+<div class="gridsome-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">parserOptions</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ecmaVersion</span><span class="token punctuation">:</span> <span class="token number">6</span>
+
+<span class="token key atrule">env</span><span class="token punctuation">:</span>
+  <span class="token key atrule">browser</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token key atrule">extends</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> airbnb<span class="token punctuation">-</span>typescript
+  <span class="token punctuation">-</span> airbnb/hooks
+  <span class="token punctuation">-</span> plugin<span class="token punctuation">:</span>@typescript<span class="token punctuation">-</span>eslint/recommended
+
+<span class="token key atrule">rules</span><span class="token punctuation">:</span>
+  <span class="token key atrule">react/react-in-jsx-scope</span><span class="token punctuation">:</span> off</code></pre></div>
+<p><strong>package.json</strong></p>
+<div class="gridsome-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"eslint"</span><span class="token operator">:</span> <span class="token string">"^6.8.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"@typescript-eslint/eslint-plugin"</span><span class="token operator">:</span> <span class="token string">"^2.17.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"eslint-config-airbnb-typescript"</span><span class="token operator">:</span> <span class="token string">"^6.3.1"</span><span class="token punctuation">,</span>
+  <span class="token property">"eslint-plugin-import"</span><span class="token operator">:</span> <span class="token string">"^2.20.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"eslint-plugin-jsx-a11y"</span><span class="token operator">:</span> <span class="token string">"^6.2.3"</span><span class="token punctuation">,</span>
+  <span class="token property">"eslint-plugin-react"</span><span class="token operator">:</span> <span class="token string">"^7.18.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"eslint-plugin-react-hooks"</span><span class="token operator">:</span> <span class="token string">"^2.3.0"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"lint"</span><span class="token operator">:</span> <span class="token string">"eslint . --ext .ts,.tsx"</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="cài-đặt-cho-vscode"><a href="#c%C3%A0i-%C4%91%E1%BA%B7t-cho-vscode" aria-hidden="true"><span class="icon icon-link"></span></a>Cài đặt cho VSCode</h2>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank" rel="nofollow noopener noreferrer">VSCode đã có plugin</a> khá thần thánh để hỗ trợ ESLint. Các thiết đặt yêu thích của mình</p>
+<p>Tự động chạy lint khi save</p>
+<div class="gridsome-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"eslint.run"</span><span class="token operator">:</span> <span class="token string">"onSave"</span></code></pre></div>
+<p>VSCode sẽ kiểm tra trên JS, JSX, TS, TSX</p>
+<div class="gridsome-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"eslint.validate"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string">"javascript"</span><span class="token punctuation">,</span>
+  <span class="token string">"javascriptreact"</span><span class="token punctuation">,</span>
+  <span class="token string">"typescript"</span><span class="token punctuation">,</span>
+  <span class="token string">"typescriptreact"</span>
+<span class="token punctuation">]</span></code></pre></div>
+<p>Chọn kiểu nháy đơn</p>
+<div class="gridsome-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"javascript.preferences.quoteStyle"</span><span class="token operator">:</span> <span class="token string">"single"</span><span class="token punctuation">,</span>
+<span class="token property">"typescript.preferences.quoteStyle"</span><span class="token operator">:</span> <span class="token string">"single"</span><span class="token punctuation">,</span></code></pre></div>
+<p>Tự động cập nhập vị trí file</p>
+<div class="gridsome-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"javascript.updateImportsOnFileMove.enabled"</span><span class="token operator">:</span> <span class="token string">"always"</span><span class="token punctuation">,</span>
+<span class="token property">"typescript.updateImportsOnFileMove.enabled"</span><span class="token operator">:</span> <span class="token string">"always"</span><span class="token punctuation">,</span></code></pre></div>
+<p><a href="https://blog.geographer.fr/eslint-guide" target="_blank" rel="nofollow noopener noreferrer">ESLint configuration and best practices</a></p>
+</div></div><div class="post__footer" data-v-a7470da2><div class="post-tags"><a href="/tag/hoc-thuat/" class="post-tags__link"><span>#</span>
+    hoc-thuat
+  </a><a href="/tag/javascript/" class="post-tags__link"><span>#</span>
+    javascript
+  </a><a href="/tag/typescript/" class="post-tags__link"><span>#</span>
+    typescript
+  </a><a href="/tag/react/" class="post-tags__link"><span>#</span>
+    react
+  </a></div></div><div class="single-post__share" data-v-a7470da2><a href="javascript:void(0)" class="share-network-email" style="background-color:#333333;"><i class="mst-icon icon-mail"></i><span>Email</span></a><a href="javascript:void(0)" class="share-network-facebook" style="background-color:#1877f2;"><i class="mst-icon icon-facebook"></i><span>Facebook</span></a><a href="javascript:void(0)" class="share-network-linkedin" style="background-color:#007bb5;"><i class="mst-icon icon-linkedin"></i><span>LinkedIn</span></a><a href="javascript:void(0)" class="share-network-pocket" style="background-color:#ef4056;"><i class="mst-icon icon-get-pocket"></i><span>Pocket</span></a><a href="javascript:void(0)" class="share-network-skype" style="background-color:#00aff0;"><i class="mst-icon icon-skype"></i><span>Skype</span></a><a href="javascript:void(0)" class="share-network-twitter" style="background-color:#1da1f2;"><i class="mst-icon icon-twitter"></i><span>Twitter</span></a></div></div></article></div></div></main><div class="section-below-post" data-v-a7470da2><div class="post-comments" data-v-a7470da2><!----><div id="disqus_thread" style="min-height:200px;"></div></div><div class="related-posts" data-v-0ab71b42><h4 data-v-0ab71b42>Bài liên quan</h4><ul class="related-posts__container" data-v-0ab71b42><li class="related-posts__media" data-v-0ab71b42><div class="related-posts__index" data-v-0ab71b42>1.</div><div class="related-posts__content" data-v-0ab71b42><h4 class="related-posts__title" data-v-0ab71b42><a href="/2019-11-23-thiet-dat-eslint/" data-v-0ab71b42>Thiết đặt ESLint cho dự án React</a></h4><p data-v-0ab71b42>Các thiết đặt và công cụ cần thiết để eslint hoạt động tốt trong dự án React</p></div></li><li class="related-posts__media" data-v-0ab71b42><div class="related-posts__index" data-v-0ab71b42>2.</div><div class="related-posts__content" data-v-0ab71b42><h4 class="related-posts__title" data-v-0ab71b42><a href="/2019-12-10-huong-dan-su-dung-v-model-tren-component-long-nhau/" data-v-0ab71b42>Sử dụng v-model trên component lồng nhau</a></h4><p data-v-0ab71b42>Cách viết dùng v-model để tự đồng bộ giá trị khi lồng các component</p></div></li><li class="related-posts__media" data-v-0ab71b42><div class="related-posts__index" data-v-0ab71b42>3.</div><div class="related-posts__content" data-v-0ab71b42><h4 class="related-posts__title" data-v-0ab71b42><a href="/2018-10-02-huong-dan-su-dung-tabindex-de-di-chuyen/" data-v-0ab71b42>Sử dụng tabindex</a></h4><p data-v-0ab71b42>Mặc định thứ tự tab theo vị trí của DOM rất hữu dụng, tuy nhiên có trường hợp chúng ta sẽ muốn thay đổi thứ tự tab này. Cùng nghiên cứu tabindex để set thứ tự tab</p></div></li><li class="related-posts__media" data-v-0ab71b42><div class="related-posts__index" data-v-0ab71b42>4.</div><div class="related-posts__content" data-v-0ab71b42><h4 class="related-posts__title" data-v-0ab71b42><a href="/2020-02-15-7-ly-do-chinh-dang-khuyen-ban-khong-nen-dung-typescript/" data-v-0ab71b42>7 lý do bạn không nên sử dụng TypeScript</a></h4><p data-v-0ab71b42>TypeScript có phải là con ác chủ bài, ngôn ngữ của tương lai, viết TypeScript thì mọi thứ sẽ không thể nào còn lỗi, những lý do khiến bạn phải suy nghĩ lại những nhận định trên</p></div></li></ul></div><div class="author post-author"><a href="https://luubinhan.github.io/" target="_blank"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript></a><h2 class="author__site-title">VuiLapTrinh.com</h2><p class="author__intro">Nếu đọc bài viết thấy hay, bạn xài bớt cái bọc ni lông, ra đường mua tờ vé số giúp các cô các bác là đã cảm ơn mình</p></div></div></div></div></div> <script src="/assets/js/app.74d15cfd.js" defer></script><script src="/assets/js/page--src-templates-post-vue.c76ee95a.js" defer></script>
+  </body>
+</html>

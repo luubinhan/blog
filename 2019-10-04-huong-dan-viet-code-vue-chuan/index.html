@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html data-html-server-rendered="true" lang="en" data-vue-tag="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+  <head>
+    <title>Bộ guide để viết code sạch dành riêng cho Vue - VuiLapTrinh.com</title><meta name="gridsome:hash" content="f369d0891f41e5bd2c583b3c06d1d5fffc1c6b45"><meta data-vue-tag="ssr" charset="utf-8"><meta data-vue-tag="ssr" name="generator" content="Gridsome v0.7.23"><meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta data-vue-tag="ssr" data-key="format-detection" name="format-detection" content="telephone=no"><meta data-vue-tag="ssr" name="theme-color" content="#01A1B1"><meta data-vue-tag="ssr" data-key="description" name="description" content="Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui"><meta data-vue-tag="ssr" name="description" content="Được đề xuất chính thức bởi Vue team"><meta data-vue-tag="ssr" property="og:type" content="article"><meta data-vue-tag="ssr" property="og:title" content="Bộ guide để viết code sạch dành riêng cho Vue"><meta data-vue-tag="ssr" property="og:description" cotent="Được đề xuất chính thức bởi Vue team"><meta data-vue-tag="ssr" property="og:image" content=""><meta data-vue-tag="ssr" property="image" content=""><meta data-vue-tag="ssr" name="twitter:card" content="summary"><meta data-vue-tag="ssr" name="twitter:creator" content="@luubinhan"><meta data-vue-tag="ssr" name="fb:app_id" content="445556375516928"><link data-vue-tag="ssr" rel="icon" href="data:,"><link data-vue-tag="ssr" rel="icon" type="image/svg+xml" sizes="16x16" href="/assets/static/luckyluu.ce0531f.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="icon" type="image/svg+xml" sizes="32x32" href="/assets/static/luckyluu.ac8d93a.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="icon" type="image/svg+xml" sizes="96x96" href="/assets/static/luckyluu.b9532cc.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/svg+xml" sizes="76x76" href="/assets/static/luckyluu.f22e9f3.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/svg+xml" sizes="152x152" href="/assets/static/luckyluu.62d22cb.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/svg+xml" sizes="120x120" href="/assets/static/luckyluu.1539b60.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/svg+xml" sizes="167x167" href="/assets/static/luckyluu.dc0cdc5.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="apple-touch-icon" type="image/svg+xml" sizes="180x180" href="/assets/static/luckyluu.7b22250.735bb1a8acbae8ddedf73f03eb1579c3.svg"><link data-vue-tag="ssr" rel="manifest" type="application/manifest+json" href="/manifest.json"><link rel="preload" href="/assets/css/0.styles.35afcad5.css" as="style"><link rel="preload" href="/assets/js/app.74d15cfd.js" as="script"><link rel="preload" href="/assets/js/page--src-templates-post-vue.c76ee95a.js" as="script"><link rel="prefetch" href="/assets/js/page--src-pages-404-vue.7a134a53.js"><link rel="prefetch" href="/assets/js/page--src-pages-cheat-sheet-vue.9e7df976.js"><link rel="prefetch" href="/assets/js/page--src-pages-index-vue.b3ef9070.js"><link rel="prefetch" href="/assets/js/page--src-templates-tag-vue.5e1608d8.js"><link rel="stylesheet" href="/assets/css/0.styles.35afcad5.css"><noscript data-vue-tag="ssr"><style>.g-image--loading{display:none;}</style></noscript>
+  </head>
+  <body >
+    <script>
+      // Add dark / light detection that runs before Vue.js load. Borrowed from overreacted.io
+      (function() {
+        window.__onThemeChange = function() {};
+        function setTheme(newTheme) {
+          window.__theme = newTheme;
+          preferredTheme = newTheme;
+          document.body.setAttribute("data-theme", newTheme);
+          window.__onThemeChange(newTheme);
+        }
+
+        var preferredTheme;
+        try {
+          preferredTheme = localStorage.getItem("theme");
+        } catch (err) {}
+
+        window.__setPreferredTheme = function(newTheme) {
+          console.log(newTheme);
+          setTheme(newTheme);
+          try {
+            localStorage.setItem("theme", newTheme);
+          } catch (err) {}
+        };
+
+        var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        darkQuery.addListener(function(e) {
+          window.__setPreferredTheme(e.matches ? "dark" : "light");
+        });
+
+        setTheme(preferredTheme || (darkQuery.matches ? "dark" : "light"));
+      })();
+    </script>
+
+    <div id="app" data-server-rendered="true" class="layout-blog" data-v-a7470da2><div class="sidebar" data-v-732b59ce data-v-a7470da2><div class="sidebar__inner" data-v-732b59ce><a href="/" class="go-home active" data-v-0e210c24 data-v-732b59ce>VuiLapTrinh.com</a><button type="button" aria-expanded="false" aria-label="nav" class="navbar-toggle collapsed" data-v-732b59ce><div class="hamburger hamburger-1" data-v-732b59ce><span class="line" data-v-732b59ce></span><span class="line" data-v-732b59ce></span><span class="line" data-v-732b59ce></span></div></button><div class="navigation-component" data-v-732b59ce><ul class="nav primary-menu collapsed" data-v-732b59ce><li class="javascript" data-v-732b59ce><a href="/tag/javascript" data-v-732b59ce><span class="primary-menu__icon" data-v-732b59ce><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" data-v-732b59ce><path d="M255.908 485.999c-6.116 0-12.323-1.642-17.708-4.746l-56.319-33.316c-8.397-4.747-4.29-6.389-1.551-7.303 11.226-3.925 13.508-4.745 25.465-11.592 1.279-.729 2.922-.457 4.199.366l43.266 25.648c1.552.912 3.741.912 5.202 0l168.592-97.304c1.553-.913 2.555-2.738 2.555-4.563V158.583c0-1.917-1.002-3.651-2.645-4.654L258.463 56.716c-1.551-.913-3.65-.913-5.202 0L84.852 154.019c-1.644.913-2.647 2.738-2.647 4.655v194.515c0 1.825 1.003 3.65 2.647 4.473l46.188 26.653c25.102 12.504 40.436-2.191 40.436-17.068V175.195c0-2.738 2.19-4.837 4.93-4.837h21.359c2.647 0 4.928 2.099 4.928 4.837v192.143c0 33.407-18.256 52.576-49.928 52.576-9.768 0-17.435 0-38.794-10.588l-44.179-25.467c-10.954-6.299-17.708-18.074-17.708-30.76V158.583c0-12.596 6.754-24.462 17.708-30.76L238.2 30.519c10.679-6.024 24.828-6.024 35.416 0l168.594 97.394c10.953 6.298 17.707 18.073 17.707 30.761v194.515c0 12.596-6.754 24.371-17.707 30.761l-168.594 97.303a35.5 35.5 0 01-17.708 4.746zm136.098-191.775c0-36.421-24.646-46.096-76.4-52.941-52.396-6.938-57.689-10.498-57.689-22.729 0-10.131 4.473-23.641 43.266-23.641 34.596 0 47.375 7.485 52.668 30.853.457 2.19 2.467 3.833 4.746 3.833h21.91c1.367 0 2.645-.547 3.559-1.552.914-1.003 1.369-2.373 1.275-3.743-3.375-40.252-30.121-58.965-84.158-58.965-48.103 0-76.764 20.264-76.764 54.311 0 36.876 28.569 47.101 74.664 51.662 55.225 5.387 59.514 13.511 59.514 24.373 0 18.805-15.15 26.835-50.658 26.835-44.635 0-54.403-11.227-57.689-33.406-.365-2.373-2.374-4.107-4.837-4.107h-21.817a4.81 4.81 0 00-4.836 4.836c0 28.39 15.426 62.254 89.271 62.254 53.305-.092 83.975-21.181 83.975-57.873z" fill="#539e43" data-v-732b59ce></path></svg></span><!----><!----><!----><!----><!----><span class="primary-menu__label" data-v-732b59ce>Javascript</span></a></li><li class="react" data-v-732b59ce><a href="/tag/react" data-v-732b59ce><!----><span class="primary-menu__icon" data-v-732b59ce><svg id="Layer_2" version="1.1" viewBox="0 0 600 600" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" data-v-732b59ce><circle cx="299.5" cy="299.6" r="50.2" class="st0" data-v-732b59ce></circle><path d="M299.5 414.6c-70.5 0-132.1-8.3-178.2-24.1-29.9-10.2-55.3-23.8-73.4-39.3-19.2-16.4-29.4-34.3-29.4-51.6 0-33.2 36.4-65.7 97.5-86.9 50-17.4 115.2-27.1 183.4-27.1 67 0 131.3 9.4 181 26.6 29.1 10 53.6 23 71 37.4 18.9 15.8 28.9 33.1 28.9 50 0 34.5-40.7 69.4-106.3 91.1-46.4 15.4-108.4 23.9-174.5 23.9zm0-205c-64.7 0-128.7 9.4-175.5 25.7-56.2 19.6-81.4 46.4-81.4 64.3 0 18.6 27.1 47.9 86.5 68.2 43.6 14.9 102.6 22.8 170.4 22.8 63.6 0 122.9-8 167-22.7 61.7-20.5 89.9-49.8 89.9-68.3 0-9.5-7.2-20.7-20.3-31.6-15.1-12.6-37.1-24.1-63.4-33.2-47.3-16.2-108.8-25.2-173.2-25.2z" class="st0" data-v-732b59ce></path><path d="M185.6 549.8c-10.2 0-19.2-2.2-26.8-6.6-28.7-16.6-38.7-64.4-26.6-127.9 9.9-52.1 34.1-113.3 68.2-172.4 33.5-58 73.7-109 113.4-143.5 23.2-20.2 46.7-35 67.9-42.8 23.1-8.5 43.1-8.5 57.7-.1 29.9 17.2 39.8 70 25.8 137.6-9.9 48-33.5 105.9-66.5 163.2-35.2 61-73.2 110.2-109.9 142.3-23.8 20.8-48.3 36-70.7 43.9-11.7 4.2-22.7 6.3-32.5 6.3zm25.1-300.9l10.4 6c-32.3 56-56.2 116.1-65.4 164.9-11.1 58.5-.4 93.7 15 102.6 3.8 2.2 8.8 3.4 14.9 3.4 19.9 0 51.2-12.6 87.4-44.2 34.7-30.3 71-77.5 104.9-136.2 31.8-55.1 54.4-110.5 63.8-156 13.1-63.7 1.8-102.7-14.3-112-8.2-4.7-21.5-4.1-37.5 1.8-18.5 6.8-39.4 20.1-60.4 38.4-37.7 32.8-76.2 81.6-108.4 137.4l-10.4-6.1z" class="st0" data-v-732b59ce></path><path d="M413.4 550.1c-27.2 0-61.7-16.4-97.7-47.4-40.2-34.6-81.1-86.1-115.3-145.2-33.6-58-57.6-118.3-67.7-170-5.9-30.2-7-57.9-3.2-80.2 4.2-24.3 14.1-41.6 28.8-50.1 29.8-17.3 80.5.5 132.1 46.4 36.6 32.5 75 81.9 108.1 139.1 35.3 61 59 118.5 68.4 166.3 6.1 31 7.1 59.8 2.8 83.2-4.6 24.9-15 42.6-30 51.3-7.5 4.4-16.4 6.6-26.3 6.6zM221.2 345.5c32.4 56 72.6 106.7 110.2 139 45.1 38.8 80.9 47.2 96.4 38.2 16.1-9.3 27.9-47.4 15.7-109-9-45.2-31.7-100.2-65.7-158.9-31.9-55.1-68.6-102.4-103.3-133.2-48.6-43.2-88-52.9-104.1-43.6-8.2 4.7-14.3 16.6-17.2 33.4-3.3 19.4-2.3 44.2 3.1 71.5 9.6 49.1 32.6 106.8 64.9 162.6z" class="st0" data-v-732b59ce></path></svg></span><!----><!----><!----><!----><span class="primary-menu__label" data-v-732b59ce>React</span></a></li><li class="vue" data-v-732b59ce><a href="/tag/vuejs" data-v-732b59ce><!----><!----><!----><!----><span class="primary-menu__icon" data-v-732b59ce><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" data-v-732b59ce><path fill="#41b883" d="M392.46 59.011H313.5l-57.499 90.972-49.285-90.972H26.001l230 393.978L485.999 59.011z" data-v-732b59ce></path><path fill="#35495e" d="M83.192 91.867h55.241l117.568 203.511L373.464 91.867h55.241l-172.704 295.92L83.192 91.867z" data-v-732b59ce></path></svg></span><!----><span class="primary-menu__label" data-v-732b59ce>Vue</span></a></li><li class="htmlCss" data-v-732b59ce><a href="/tag/css" data-v-732b59ce><!----><!----><!----><span class="primary-menu__icon" data-v-732b59ce><svg version="1.0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" data-v-732b59ce><path fill="#E44D26" d="M27.377 28.889L16.001 32 4.625 28.889 2 0h28.002z" data-v-732b59ce></path><path fill="#FF6C39" d="M16 2v27.75l9.232-2.742L27.688 2z" data-v-732b59ce></path><path fill="#FFF" d="M24.363 6H7.607L8 10l.619 7h10.884l-.355 3.984L16 21.99l-3.143-1.006L12.648 19H8.803l.459 4.987L16 25.99l6.728-2.004.99-10.986H12.252l-.25-3H24z" data-v-732b59ce></path></svg></span><!----><!----><span class="primary-menu__label" data-v-732b59ce>HTML/CSS</span></a></li><li class="uxUi" data-v-732b59ce><a href="/tag/ux-ui" data-v-732b59ce><!----><!----><!----><!----><!----><span class="primary-menu__icon" data-v-732b59ce><svg viewBox="0 0 512 454.633" xmlns="http://www.w3.org/2000/svg" data-v-732b59ce><path d="M202.271 243.812c-9.741 10.73-12.13 18.428-24.884 38.588 8.237 5.752 24.104 19.055 35.095 41.959 21.953-12.592 32.188-14.514 43.821-24.309C332.24 236.092 518.244 6.836 511.839.204c-6.766-7.05-242.704 170.268-309.568 243.608zM155.442 300.209c-32.998-5.832-65.547 15.028-87.288 67.147C46.382 419.471 7.532 440.337.001 439.061c40.553 14.67 164.202 52.194 194.939-90.655-13.037-34.26-39.498-48.197-39.498-48.197z" data-v-732b59ce></path></svg></span><span class="primary-menu__label" data-v-732b59ce>UX/UI</span></a></li><li class="about" data-v-732b59ce><a href="https://luubinhan.github.io/" target="_blank" rel="noopener noreferrer" data-v-732b59ce>About</a></li></ul></div><div id="footer" data-v-7f12727f data-v-732b59ce><footer class="footer" data-v-7f12727f><section class="footer-inner" data-v-7f12727f><div class="social-links" data-v-7f12727f><a href="https://www.youtube.com/channel/UC0Te8s0b0aplS1ZoVLfjKHA" target="_blank" rel="noopener noreferrer" class="link-youtube" style="display: none;" data-v-7f12727f><span class="link-youtube__icon" data-v-7f12727f><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" data-v-7f12727f data-v-7f12727f><path d="M512 256c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256z" fill="#CD201F" data-v-7f12727f data-v-7f12727f></path><path d="M391.1 194.6c-2.3-19.9-7.1-25.7-10.5-28.4-5.4-4.2-15.2-5.7-28.3-6.6-21-1.4-56.7-2.3-95.2-2.3-38.6 0-74.2.8-95.2 2.3-13.1.9-22.9 2.4-28.3 6.6-3.4 2.7-8.1 8.5-10.5 28.4-3.4 28.7-3.4 94.1 0 122.8 2.4 19.9 7.1 25.7 10.5 28.4 5.4 4.2 15.2 5.7 28.3 6.6 21 1.4 56.6 2.3 95.2 2.3s74.2-.9 95.2-2.3c13.1-.9 22.9-2.4 28.3-6.6 3.4-2.6 8.1-8.5 10.5-28.4 3.4-28.7 3.4-94.1 0-122.8zm-167 104.3V213l82.4 42.9-82.4 43z" fill="#FFF" data-v-7f12727f data-v-7f12727f></path></svg></span>
+					Youtube
+				</a></div><div class="credit" data-v-7f12727f>Since 2016. luckyluu</div></section></footer></div></div></div><div class="master-container" data-v-a7470da2><div class="aside" data-v-a7470da2><div class="aside__inner" data-v-a7470da2><div class="toggle-theme" data-v-a7470da2><span role="checkbox" aria-checked="false" tabindex="0" class="toggle-wrapper" data-v-4df809e2 data-v-a7470da2><span class="toggle-background" style="background-color:#dae1e7;" data-v-4df809e2><span class="icon" data-v-4df809e2>
+			🌞
+		</span></span><span class="toggle-indicator" style="transform:translateX(0);" data-v-4df809e2></span></span></div><div class="search-wrapper" data-v-f0de593c data-v-a7470da2><div class="mb-2" data-v-f0de593c><div class="post-tags" data-v-f0de593c><a href="/tag/javascript" class="post-tags__link"><span>#</span>
+    Javascript
+  </a><a href="/tag/dam-dao" class="post-tags__link"><span>#</span>
+    Đàm đạo chém gió chuyện nghề
+  </a><a href="/tag/css" class="post-tags__link"><span>#</span>
+    CSS từ căn bản tới nâng cao
+  </a><a href="/tag/thu-thuat" class="post-tags__link"><span>#</span>
+    Thủ thuật
+  </a><a href="/tag/hoc-thuat" class="post-tags__link"><span>#</span>
+    Kiến thức nền tảng
+  </a><a href="/tag/react" class="post-tags__link"><span>#</span>
+    React
+  </a><a href="/tag/vuejs" class="post-tags__link"><span>#</span>
+    Vue JS
+  </a><a href="/tag/chrome" class="post-tags__link"><span>#</span>
+    Chrome DevTools
+  </a></div></div><div class="search__container" data-v-f0de593c><input type="text" placeholder="Tìm bài viết..." value="" class="search__input" data-v-f0de593c><!----></div><div class="search__list" data-v-f0de593c><!----><!----></div></div><div class="layout-blog__aside-footer" data-v-a7470da2></div></div></div><div class="master" data-v-a7470da2><main class="inner" data-v-a7470da2><div id="scrollTop" data-v-a7470da2></div><div class="single-post" data-v-a7470da2><div class="single-post-container" data-v-a7470da2><article data-v-a7470da2><header data-v-a7470da2><div class="post-title" data-v-a7470da2><h1 class="post-title__text single-post-title" data-v-a7470da2>
+							Bộ guide để viết code sạch dành riêng cho Vue
+						</h1><div class="post-meta">
+  Đăng ngày
+  <time dateTime="2019-10-04" itemprop="dateModified" content="2019-10-04">2019-10-04</time>.
+  
+    Mất khoảng
+    <strong>7 phút</strong> để đọc.
+  </div><a href="https://github.com/luubinhan/blog/edit/master/content/posts//2019-10-04-huong-dan-viet-code-vue-chuan.md" rel="noopener noreferrer" target="_blank" aria-label="Connect Facebook" class="link" data-v-a7470da2>
+							Sửa bài viết này
+						</a></div></header><div class="post content-box" data-v-a7470da2><div class="post__header" data-v-a7470da2><!----></div><div class="blog-post" data-v-a7470da2><div class="post-content" data-v-a7470da2><!-- TOC -->
+<ul>
+<li><a href="#c%e1%ba%a5p-%c4%91%e1%bb%99-si%c3%aau-c%e1%ba%a7n-thi%e1%ba%bft-gi%c3%bap-tr%c3%a1nh-%c4%91%c6%b0%e1%bb%a3c-nhi%e1%bb%81u-l%e1%bb%97i">Cấp độ: Siêu cần thiết, giúp tránh được nhiều lỗi</a>
+- <a href="#t%c3%aan-component-n%c3%aan-l%c3%a0-2-ch%e1%bb%af">Tên component nên là 2 chữ</a>
+- <a href="#data-ph%e1%ba%a3i-l%c3%a0-m%e1%bb%99t-function"><code class="language-inline-text">data</code> phải là một function</a>
+- <a href="#khai-b%c3%a1o-prop-c%c3%a0ng-chi-ti%e1%ba%bft-c%c3%a0ng-t%e1%bb%91t">Khai báo prop càng chi tiết càng tốt</a>
+- <a href="#lu%c3%b4n-cung-c%e1%ba%a5p-key-cho-v-for">Luôn cung cấp <code class="language-inline-text">key</code> cho <code class="language-inline-text">v-for</code></a>
+- <a href="#kh%c3%b4ng-bao-gi%e1%bb%9d-d%c3%b9ng-v-for-chung-v%e1%bb%9bi-v-if">Không bao giờ dùng <code class="language-inline-text">v-for</code> chung với <code class="language-inline-text">v-if</code></a>
+- <a href="#css-scoped-tr%c3%aan-t%e1%bb%abng-component">CSS scoped trên từng component</a>
+- <a href="#private">Private</a></li>
+<li><a href="#c%e1%ba%a5p-%c4%91%e1%bb%99-c%e1%bb%b1c-k%e1%bb%b3-khuy%e1%ba%bfn-kh%c3%adch">Cấp độ: Cực kỳ khuyến khích</a>
+- <a href="#file-name-lu%c3%b4n-l%c3%a0-m%e1%bb%99t-trong-2-d%e1%ba%a1ng-pascalcase-ho%e1%ba%b7c-kebab-case">File name luôn là một trong 2 dạng PascalCase hoặc kebab-case</a>
+- <a href="#base-component">Base component</a>
+- <a href="#component-ch%e1%bb%89-c%c3%b3-m%e1%bb%99t-instance-duy-nh%e1%ba%a5t">Component chỉ có một instance duy nhất</a>
+- <a href="#component-lu%c3%b4n-g%e1%ba%afn-ch%e1%ba%b7t-v%c3%a0o-m%e1%bb%99t-component-cha">Component luôn gắn chặt vào một component cha</a>
+- <a href="#s%e1%bb%ad-d%e1%bb%a5ng-kebab-case-trong-dom-template">Sử dụng kebab-case trong DOM template</a>
+- <a href="#%c4%90%e1%ba%b7t-t%c3%aan-prop">Đặt tên prop</a></li>
+</ul>
+<!-- /TOC -->
+<p>Trước tiên cần thống nhất quan điểm thế này, <strong>ko phải guide nào cũng phù hợp cho mọi team</strong>, mọi dự án, nến không nhất thiết phải áp dụng một cách <em>cứng nhắc</em> trong mọi trường hợp</p>
+<h2 id="cấp-độ-siêu-cần-thiết-giúp-tránh-được-nhiều-lỗi"><a href="#c%E1%BA%A5p-%C4%91%E1%BB%99-si%C3%AAu-c%E1%BA%A7n-thi%E1%BA%BFt-gi%C3%BAp-tr%C3%A1nh-%C4%91%C6%B0%E1%BB%A3c-nhi%E1%BB%81u-l%E1%BB%97i" aria-hidden="true"><span class="icon icon-link"></span></a>Cấp độ: Siêu cần thiết, giúp tránh được nhiều lỗi</h2>
+<h3 id="tên-component-nên-là-2-chữ"><a href="#t%C3%AAn-component-n%C3%AAn-l%C3%A0-2-ch%E1%BB%AF" aria-hidden="true"><span class="icon icon-link"></span></a>Tên component nên là 2 chữ</h3>
+<p>Trừ <code class="language-inline-text">App</code> component và các component có sẵn trong Vue như <code class="language-inline-text">&lt;transition/></code>, <code class="language-inline-text">&lt;component /></code>  </p>
+<p>Để tránh trùng các thẻ html, có thể sau này, HTML sẽ bổ sung thêm nhiều thẻ mới, thẻ HTML sẽ là 1 chữ  </p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">❌ Không ngon
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'todo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	<span class="token comment">//...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+	name<span class="token operator">:</span> <span class="token string">'Todo'</span>
+<span class="token punctuation">}</span>
+
+✅ Chuẩn cơm mẹ nấu
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'todo-item'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	<span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+	name<span class="token operator">:</span> <span class="token string">'TodoItem'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="data-phải-là-một-function"><a href="#data-ph%E1%BA%A3i-l%C3%A0-m%E1%BB%99t-function" aria-hidden="true"><span class="icon icon-link"></span></a><code class="language-inline-text">data</code> phải là một function</h3>
+<p><code class="language-inline-text">data</code> phải là function trả về object. Nếu là một object, tất cả các instance component sẽ cùng trỏ tới một dữ liệu <code class="language-inline-text">data</code>.</p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">❌ Không ngon
+<span class="token keyword">export</span> <span class="token keyword">default</span><span class="token punctuation">{</span>
+	data<span class="token operator">:</span> <span class="token punctuation">{</span>
+		foo<span class="token operator">:</span> <span class="token string">'bar'</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>  
+
+✅ Chuẩn cơm mẹ nấu
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+	<span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		foo<span class="token operator">:</span> <span class="token string">'bar'</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Riêng với thằng <code class="language-inline-text">root</code> component, nó chỉ có một, nên có thể là object</p>
+<h3 id="khai-báo-prop-càng-chi-tiết-càng-tốt"><a href="#khai-b%C3%A1o-prop-c%C3%A0ng-chi-ti%E1%BA%BFt-c%C3%A0ng-t%E1%BB%91t" aria-hidden="true"><span class="icon icon-link"></span></a>Khai báo prop càng chi tiết càng tốt</h3>
+<p>Ít nhất là có <code class="language-inline-text">type</code>, nếu được càng chi tiết chừng nào tốt chừng đó</p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">❌ Không ngon
+props<span class="token operator">:</span> <span class="token punctuation">{</span>
+	status<span class="token operator">:</span> String
+<span class="token punctuation">}</span>
+
+✅ Chuẩn cơm mẹ nấu
+props<span class="token operator">:</span> <span class="token punctuation">{</span>
+	status<span class="token operator">:</span> <span class="token punctuation">{</span>
+		type<span class="token operator">:</span> String<span class="token punctuation">,</span>
+		required<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+		<span class="token function-variable function">validator</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> <span class="token punctuation">[</span>
+				<span class="token string">'syncing'</span><span class="token punctuation">,</span>
+				<span class="token string">'synced'</span><span class="token punctuation">,</span>
+				<span class="token string">'version-conflict'</span><span class="token punctuation">,</span>
+				<span class="token string">'error'</span>
+			<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="luôn-cung-cấp-key-cho-v-for"><a href="#lu%C3%B4n-cung-c%E1%BA%A5p-key-cho-v-for" aria-hidden="true"><span class="icon icon-link"></span></a>Luôn cung cấp <code class="language-inline-text">key</code> cho <code class="language-inline-text">v-for</code></h3>
+<p>Có luôn cái video này rồi, bạn <a href="">xem ở đây</a>  </p>
+<div class="gridsome-highlight" data-language="html"><pre class="language-html"><code class="language-html">❌ Không ngon
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>todo in todos<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+		{{ todo.text }}
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span> 
+
+✅ Chuẩn cơm mẹ nấu
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span>
+		<span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>todo in todos<span class="token punctuation">"</span></span>
+		<span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>todo.id<span class="token punctuation">"</span></span>
+	<span class="token punctuation">></span></span>
+		{{ todo.text }}
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></code></pre></div>
+<h3 id="không-bao-giờ-dùng-v-for-chung-với-v-if"><a href="#kh%C3%B4ng-bao-gi%E1%BB%9D-d%C3%B9ng-v-for-chung-v%E1%BB%9Bi-v-if" aria-hidden="true"><span class="icon icon-link"></span></a>Không bao giờ dùng <code class="language-inline-text">v-for</code> chung với <code class="language-inline-text">v-if</code></h3>
+<p>Vì <code class="language-inline-text">v-for</code> được ưu tiên cao hơn <code class="language-inline-text">v-if</code>, nghĩa là nếu viết</p>
+<div class="gridsome-highlight" data-language="html"><pre class="language-html"><code class="language-html">❌ Không ngon
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span>
+		<span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user in users<span class="token punctuation">"</span></span>
+		<span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user.isActive<span class="token punctuation">"</span></span>
+		<span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>user.id<span class="token punctuation">"</span></span>
+	<span class="token punctuation">></span></span>
+		{{ user.name }}
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></code></pre></div>
+<p>Nó sẽ chạy như thế này  </p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">this</span><span class="token punctuation">.</span>users<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">user</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>user<span class="token punctuation">.</span>isActive<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> user<span class="token punctuation">.</span>name
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<p>Nghĩa là cứ mỗi lần re-render chúng ta đều loop qua tất cả các phần tử trong mảng, trong khi giá trị <code class="language-inline-text">isActive</code> này không đổi, nó ko tối ưu</p>
+<p>Nên filter trước các user có giá trị <code class="language-inline-text">isActive = true</code> trước </p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">✅ Chuẩn cơm mẹ nấu
+computed<span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token function-variable function">activeUsers</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>users<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">user</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> user<span class="token punctuation">.</span>isActive
+		<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="css-scoped-trên-từng-component"><a href="#css-scoped-tr%C3%AAn-t%E1%BB%ABng-component" aria-hidden="true"><span class="icon icon-link"></span></a>CSS scoped trên từng component</h3>
+<p>Những style nào dùng global có thể đưa vào <code class="language-inline-text">App</code> component, còn trong từng component, luôn dùng kiểu <code class="language-inline-text">scoped</code></p>
+<p>Tuy nhiên nếu bạn đang làm 1 thư viện component, để dùng tới dùng lui, hay đưa lên npm cho người khác xài, nên dùng cùng css class bình thường, không có scoped, người khác sử dụng có thể dễ override lại nếu cần</p>
+<div class="gridsome-highlight" data-language="html"><pre class="language-html"><code class="language-html">❌ Không ngon
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-close<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>X<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+	<span class="token selector">.btn-close</span> <span class="token punctuation">{</span>
+		<span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+
+✅ Chuẩn cơm mẹ nấu
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button button-close<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>X<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- Using the `scoped` attribute --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">scoped</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.button</span> <span class="token punctuation">{</span>
+	<span class="token property">border</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+	<span class="token property">border-radius</span><span class="token punctuation">:</span> 2px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+
+<span class="token selector">.button-close</span> <span class="token punctuation">{</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre></div>
+<p>Dùng BEM khi viết thư viện component</p>
+<div class="gridsome-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>c-Button c-Button--close<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>X<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- Using the BEM convention --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.c-Button</span> <span class="token punctuation">{</span>
+	<span class="token property">border</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+	<span class="token property">border-radius</span><span class="token punctuation">:</span> 2px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.c-Button--close</span> <span class="token punctuation">{</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre></div>
+<h3 id="private"><a href="#private" aria-hidden="true"><span class="icon icon-link"></span></a>Private</h3>
+<p>Sử dụng <code class="language-inline-text">module</code> scope cho các function muốn private. Nếu không thể, luôn dùng tiền tố <code class="language-inline-text">$_</code> trước các property private trong plugin, mixin,... và thêm luôn tên plugin để tránh bị conflict với các plugin khác ( <code class="language-inline-text">$_yourPluginName_</code>)</p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">❌ Không ngon
+<span class="token keyword">var</span> myMixin <span class="token operator">=</span> <span class="token punctuation">{</span>
+	<span class="token comment">// ...</span>
+	methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token function-variable function">update</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">// ...</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token function-variable function">_update</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">// ...</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token function-variable function">$update</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">// ...</span>
+		<span class="token punctuation">}</span>
+		<span class="token function-variable function">$_update</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">// ...</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+✅ Chuẩn cơm mẹ nấu
+<span class="token keyword">var</span> myMixin <span class="token operator">=</span> <span class="token punctuation">{</span>
+	methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token function-variable function">$_myMixin_update</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h2 id="cấp-độ-cực-kỳ-khuyến-khích"><a href="#c%E1%BA%A5p-%C4%91%E1%BB%99-c%E1%BB%B1c-k%E1%BB%B3-khuy%E1%BA%BFn-kh%C3%ADch" aria-hidden="true"><span class="icon icon-link"></span></a>Cấp độ: Cực kỳ khuyến khích</h2>
+<p>Một component là một file</p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">👎 Chuẩn cơm mẹ nấu
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'TodoList'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	<span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'TodoItem'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	<span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+✅ Chuẩn cơm mẹ nấu
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> TodoList<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> TodoItem<span class="token punctuation">.</span>vue</code></pre></div>
+<h3 id="file-name-luôn-là-một-trong-2-dạng-pascalcase-hoặc-kebab-case"><a href="#file-name-lu%C3%B4n-l%C3%A0-m%E1%BB%99t-trong-2-d%E1%BA%A1ng-pascalcase-ho%E1%BA%B7c-kebab-case" aria-hidden="true"><span class="icon icon-link"></span></a>File name luôn là một trong 2 dạng PascalCase hoặc kebab-case</h3>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">❌ Không ngon
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> mycomponent<span class="token punctuation">.</span>vue
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> myComponent<span class="token punctuation">.</span>vue  
+
+✅ Chuẩn cơm mẹ nấu
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> MyComponent<span class="token punctuation">.</span>vue
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> my<span class="token operator">-</span>component<span class="token punctuation">.</span>vue</code></pre></div>
+<h3 id="base-component"><a href="#base-component" aria-hidden="true"><span class="icon icon-link"></span></a>Base component</h3>
+<p>Những component được dùng với mục đích đồng nhất styling, layout được gọi là base component, nó có thể chỉ chứa</p>
+<ul>
+<li>HTML    </li>
+<li>UI component từ các thư viện khác    </li>
+<li>Các base component khác</li>
+</ul>
+<p>Và không được chứa <code class="language-inline-text">state</code> của Vuex store</p>
+<p>Tên nên được đặt theo kiểu <code class="language-inline-text">BaseButton</code>, <code class="language-inline-text">BaseTable</code>. Lợi ích của việc này</p>
+<ul>
+<li>Khi mở trong editor, nó được liệt kê gần nhau, dễ tìm, dễ phân loại </li>
+<li>Tên component sẽ luôn có 2 chữ như đã nói ở trên</li>
+<li>Các component này được sử dụng rất thường xuyên, nên có thể dùng prefix để đăng ký một lần một cho tất cả component</li>
+</ul>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> requireComponent <span class="token operator">=</span> require<span class="token punctuation">.</span><span class="token function">context</span><span class="token punctuation">(</span><span class="token string">"./src"</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^Base[A-Z]</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span>
+requireComponent<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">fileName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">var</span> baseComponentConfig <span class="token operator">=</span> <span class="token function">requireComponent</span><span class="token punctuation">(</span>fileName<span class="token punctuation">)</span>
+baseComponentConfig <span class="token operator">=</span> baseComponentConfig<span class="token punctuation">.</span>default <span class="token operator">||</span> baseComponentConfig
+<span class="token keyword">var</span> baseComponentName <span class="token operator">=</span> baseComponentConfig<span class="token punctuation">.</span>name <span class="token operator">||</span> <span class="token punctuation">(</span>
+	fileName
+	<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^.+\/</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+	<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.\w+$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span>baseComponentName<span class="token punctuation">,</span> baseComponentConfig<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">❌ Không ngon
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> MyButton<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> VueTable<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> Icon<span class="token punctuation">.</span>vue 
+
+✅ Chuẩn cơm mẹ nấu
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> BaseButton<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> BaseTable<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> BaseIcon<span class="token punctuation">.</span>vue  
+
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> AppButton<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> AppTable<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> AppIcon<span class="token punctuation">.</span>vue
+
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> VButton<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> VTable<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> VIcon<span class="token punctuation">.</span>vue</code></pre></div>
+<h3 id="component-chỉ-có-một-instance-duy-nhất"><a href="#component-ch%E1%BB%89-c%C3%B3-m%E1%BB%99t-instance-duy-nh%E1%BA%A5t" aria-hidden="true"><span class="icon icon-link"></span></a>Component chỉ có một instance duy nhất</h3>
+<p>Với những component chỉ xuất hiện một lần trên 1 trang, không bao giờ nhận prop. Chúng ta có một cách đặt tên riêng, thêm tiền tố <code class="language-inline-text">The</code></p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">❌ Không ngon
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> Heading<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> MySidebar<span class="token punctuation">.</span>vue
+
+✅ Chuẩn cơm mẹ nấu
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> TheHeading<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> TheSidebar<span class="token punctuation">.</span>vue</code></pre></div>
+<h3 id="component-luôn-gắn-chặt-vào-một-component-cha"><a href="#component-lu%C3%B4n-g%E1%BA%AFn-ch%E1%BA%B7t-v%C3%A0o-m%E1%BB%99t-component-cha" aria-hidden="true"><span class="icon icon-link"></span></a>Component luôn gắn chặt vào một component cha</h3>
+<p>Nếu một component con, luôn đi cùng một component cha nhất định, thêm tên component cha làm tiền tố</p>
+<p>Một số người sẽ dùng cách đưa các component này vào trong thư mục con</p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> TodoList<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> Item<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> index<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> Button<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> index<span class="token punctuation">.</span>vue
+
+hoặc 
+
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> TodoList<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> Item<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> Button<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> Item<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> TodoList<span class="token punctuation">.</span>vue</code></pre></div>
+<p>Cách này ko được khuyến khích, vì nó có quá nhiều trùng tên, việc chuyển qua lại giữa các file này trong editor rất khó chịu, vì ko biết đang mở file nào, nhiều thư mục như vậy, làm việc duyệt qua các component này cũng mệt</p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">❌ Không ngon
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> TodoList<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> TodoItem<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> TodoButton<span class="token punctuation">.</span>vue
+
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> SearchSidebar<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> NavigationForSearchSidebar<span class="token punctuation">.</span>vue  
+
+✅ Chuẩn cơm mẹ nấu
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> TodoList<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> TodoListItem<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> TodoListItemButton<span class="token punctuation">.</span>vue 
+
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> SearchSidebar<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> SearchSidebarNavigation<span class="token punctuation">.</span>vue</code></pre></div>
+<h3 id="sử-dụng-kebab-case-trong-dom-template"><a href="#s%E1%BB%AD-d%E1%BB%A5ng-kebab-case-trong-dom-template" aria-hidden="true"><span class="icon icon-link"></span></a>Sử dụng kebab-case trong DOM template</h3>
+<p>Tên file của component thì nên viết dạng PascalCase, còn trong template nên dùng kebab-case</p>
+<div class="gridsome-highlight" data-language="html"><pre class="language-html"><code class="language-html">❌ Không ngon
+<span class="token comment">&lt;!-- In single-file components and string templates --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mycomponent</span><span class="token punctuation">/></span></span>
+
+<span class="token comment">&lt;!-- In single-file components and string templates --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>myComponent</span><span class="token punctuation">/></span></span>  
+
+<span class="token comment">&lt;!-- In DOM templates --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>MyComponent</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>MyComponent</span><span class="token punctuation">></span></span>
+
+✅ Chuẩn cơm mẹ nấu
+components/
+<span class="token comment">&lt;!-- In single-file components and string templates --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>MyComponent</span><span class="token punctuation">/></span></span>
+
+<span class="token comment">&lt;!-- In DOM templates --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-component</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-component</span><span class="token punctuation">></span></span>
+ 
+OR 
+
+<span class="token comment">&lt;!-- Everywhere --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-component</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-component</span><span class="token punctuation">></span></span></code></pre></div>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">❌ Không ngon
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'myComponent'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	<span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">import</span> myComponent <span class="token keyword">from</span> <span class="token string">'./MyComponent.vue'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+	name<span class="token operator">:</span> <span class="token string">'myComponent'</span><span class="token punctuation">,</span>
+	<span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+	name<span class="token operator">:</span> <span class="token string">'my-component'</span><span class="token punctuation">,</span>
+	<span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+✅ Chuẩn cơm mẹ nấu
+components<span class="token operator">/</span>
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'MyComponent'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	<span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span> 
+
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'my-component'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	<span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">import</span> MyComponent <span class="token keyword">from</span> <span class="token string">'./MyComponent.vue'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+	name<span class="token operator">:</span> <span class="token string">'MyComponent'</span><span class="token punctuation">,</span>
+	<span class="token comment">// ...</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="đặt-tên-prop"><a href="#%C4%91%E1%BA%B7t-t%C3%AAn-prop" aria-hidden="true"><span class="icon icon-link"></span></a>Đặt tên prop</h3>
+<p>Dùng camelCase lúc khai báo, kebab-case trong template</p>
+<div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">❌ Không ngon
+props<span class="token operator">:</span> <span class="token punctuation">{</span>
+	<span class="token string">'greeting-text'</span><span class="token operator">:</span> String
+<span class="token punctuation">}</span>
+
+<span class="token operator">&lt;</span>WelcomeMessage greetingText<span class="token operator">=</span><span class="token string">"hi"</span><span class="token operator">/</span><span class="token operator">></span>
+
+✅ Chuẩn cơm mẹ nấu
+props<span class="token operator">:</span> <span class="token punctuation">{</span>
+	greetingText<span class="token operator">:</span> String
+<span class="token punctuation">}</span>
+	
+<span class="token operator">&lt;</span>WelcomeMessage greeting<span class="token operator">-</span>text<span class="token operator">=</span><span class="token string">"hi"</span><span class="token operator">/</span><span class="token operator">></span></code></pre></div>
+<p><a target="_blank" rel="noopener noreferrer" href="https://vuejs.org/v2/style-guide/">📜 Style Guide</a></p>
+</div></div><div class="post__footer" data-v-a7470da2><div class="post-tags"><a href="/tag/vuejs/" class="post-tags__link"><span>#</span>
+    vuejs
+  </a></div></div><div class="single-post__share" data-v-a7470da2><a href="javascript:void(0)" class="share-network-email" style="background-color:#333333;"><i class="mst-icon icon-mail"></i><span>Email</span></a><a href="javascript:void(0)" class="share-network-facebook" style="background-color:#1877f2;"><i class="mst-icon icon-facebook"></i><span>Facebook</span></a><a href="javascript:void(0)" class="share-network-linkedin" style="background-color:#007bb5;"><i class="mst-icon icon-linkedin"></i><span>LinkedIn</span></a><a href="javascript:void(0)" class="share-network-pocket" style="background-color:#ef4056;"><i class="mst-icon icon-get-pocket"></i><span>Pocket</span></a><a href="javascript:void(0)" class="share-network-skype" style="background-color:#00aff0;"><i class="mst-icon icon-skype"></i><span>Skype</span></a><a href="javascript:void(0)" class="share-network-twitter" style="background-color:#1da1f2;"><i class="mst-icon icon-twitter"></i><span>Twitter</span></a></div></div></article></div></div></main><div class="section-below-post" data-v-a7470da2><div class="post-comments" data-v-a7470da2><!----><div id="disqus_thread" style="min-height:200px;"></div></div><div class="related-posts" data-v-0ab71b42><h4 data-v-0ab71b42>Bài liên quan</h4><ul class="related-posts__container" data-v-0ab71b42><li class="related-posts__media" data-v-0ab71b42><div class="related-posts__index" data-v-0ab71b42>1.</div><div class="related-posts__content" data-v-0ab71b42><h4 class="related-posts__title" data-v-0ab71b42><a href="/2018-11-17-huong-dan-lam-animation-voi-vue-component/" data-v-0ab71b42>Viết animation cho Vue Component</a></h4><p data-v-0ab71b42>Làm một số animation đơn giản bằng công cụ có sẵn của Vue</p></div></li><li class="related-posts__media" data-v-0ab71b42><div class="related-posts__index" data-v-0ab71b42>2.</div><div class="related-posts__content" data-v-0ab71b42><h4 class="related-posts__title" data-v-0ab71b42><a href="/2019-10-05-viet-unit-test-cho-vue-component-cho-nguoi-moi-bat-dau/" data-v-0ab71b42>Viết Unit Test cho Vue component cho người mới bắt đầu</a></h4><p data-v-0ab71b42>Cái nhìn về unit test cho component, test cái gì, cái gì không test khi viết unit test</p></div></li><li class="related-posts__media" data-v-0ab71b42><div class="related-posts__index" data-v-0ab71b42>3.</div><div class="related-posts__content" data-v-0ab71b42><h4 class="related-posts__title" data-v-0ab71b42><a href="/2018-06-18-huong-dan-tim-hieu-middleware-va-redux/" data-v-0ab71b42>Sử dụng Middleware với Redux dành cho người mới bắt đầu</a></h4><p data-v-0ab71b42>Nếu đã nắm rõ redux, bước tiếp theo phải tìm hiểu là middleware</p></div></li><li class="related-posts__media" data-v-0ab71b42><div class="related-posts__index" data-v-0ab71b42>4.</div><div class="related-posts__content" data-v-0ab71b42><h4 class="related-posts__title" data-v-0ab71b42><a href="/2018-04-04-huong-dan-danh-sach-doi-choi-voi-react-native/" data-v-0ab71b42>Danh sách đồ chơi để bắt đầu với React Native</a></h4><p data-v-0ab71b42>Để bắt đầu và đào sâu vọc vạch với React Native, bạn sẽ cần đụng tới những món đồ chơi sau</p></div></li></ul></div><div class="author post-author"><a href="https://luubinhan.github.io/" target="_blank"><img alt="Author image" src="data:image/svg+xml,%3csvg fill='none' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdefs%3e%3cfilter id='__svg-blur-52311ff214b737f722259e901102d6b3'%3e%3cfeGaussianBlur in='SourceGraphic' stdDeviation='5'/%3e%3c/filter%3e%3c/defs%3e%3cimage x='0' y='0' filter='url(%23__svg-blur-52311ff214b737f722259e901102d6b3)' width='180' height='180' xlink:href='data:image/jpeg%3bbase64%2c/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABAAEADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAABwEDBAUGCAAC/8QAMxAAAQMCAwcBBgYDAAAAAAAAAQIDEQAEBRIhBhMxQVFhcQciIzJCgbEIFDORodEWgsH/xAAZAQEBAQEBAQAAAAAAAAAAAAAEAwUGAAH/xAAhEQABBAMAAgMBAAAAAAAAAAABAAIDEQQSISJBBRNRMf/aAAwDAQACEQMRAD8A6Pr1fOalmvLyUAk6AnxS5VROUx4oR%2bvmPXNjZYbhti48DcKUt9LRIJAHsgkaxMmO1ByzxnG8PeQ/a3d5bOIIUVJdUOHMifvWjB8c6aMP2q0CfPbC/TW119SVz9YetmOMLYRfWWH3TaSA4pKVNrWOuhgH6UYtkNrsK2stFvYU65nbjesOpyrbnhPIjuKhPhSwDZw4qw5kU5ph6r%2blpCYFNOLKflV5o1JSXMkDlS5xy1qtDo4mfrWe2/xhWEbJ3t400%2b6oZWyGpkBRiTGoSNJj/tVbEXEN/VMyAC1iPUTaS2xjG3bO3IS3ay2HNJc1lR6xPDx3oa4g0RvVlQcSfhFRLrEF3V0LpSAh10layOMzw7eKl3jqLhxsxLaRw4610MUYiAa1ZMxMosrPugpJJ0nlwiiJ%2bH69eZ28NulfuX7R0LTOhygKB8yKxWLaWoC0BJKpgfL2rdfh8sV3G1F9iBTLNnalGbkFuEADzAVVMpwOO6/xCx4izJaAuiSsT8UV8KKyBznmKih1J714OqIiCa5jVdJsqk4ggL9oRPSqDbty4/w/GnLVzKPyypBkaEif4p5N2RwA/anlPtvsrafAW0tJStChKVA8QR0p4ZqQQil1ilz5Y5nGloXKkcNev908G8iUoSCUiiHtVhFhhdou6wu2O6JyuNg/pzwUCdY5a8JrAXtwErWi3RmIEZwZE9utaccm/QEVzKVZjVrltN4JyJMqFdGemuz7OzmyFjbBGS5eQLm6PMuLAMf6iE/SgBavuMPNOON75wKC0tr4GDPtdqO%2bxm0i8ew0O3O7RfJnett6J4mCnXhH81DNDzGK/i%2b4/wBbZSb7S1xQ2IIVBHWvb2BAIioBcVxMCml3KgYFZQZadtSzAK460hCpkk%2bBTzahmmnXnRA0APmadsj0ol1uE2T6r5SEWgbO9K%2bARGs0H7stto3luczSyS3mEKUJIBI66VrvUnGWlJZwlKsuaHnjmgafCk/f9qwD6y%2b2pbjhKU%2bylWaJ8dabjxmtne0HInolrVcYThj18w5clKzl1KOZ/sVLRtJ%2bQbQ7akpum/01oEA9c3bvULB8WtGbRYuW1vvBOVtTivm48eVUt9Z3dwpKlIbaZIhJQZEdJq7fJxDxxHcdWgxnvtFbZz1ItsQCWMWyWb8hJcn3ZV3Pyz14eK2e9WpUBJoGYHhVpmCQyCtTZBMaHz1oq7DYxvmBh11IeZT7pR%2bZA5eR9vFCyoGs8owm4sz38kK//9k=' /%3e%3c/svg%3e" width="180" data-src="/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" data-srcset="/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg 180w" data-sizes="(max-width: 180px) 100vw, 180px" class="author__image g-image g-image--lazy g-image--loading"><noscript><img src="/assets/static/author.e6b6009.95c26cbf81b488daf3af4259c9393a66.jpg" class="author__image g-image g-image--loaded" width="180" alt="Author image"></noscript></a><h2 class="author__site-title">VuiLapTrinh.com</h2><p class="author__intro">Nếu đọc bài viết thấy hay, bạn xài bớt cái bọc ni lông, ra đường mua tờ vé số giúp các cô các bác là đã cảm ơn mình</p></div></div></div></div></div> <script src="/assets/js/app.74d15cfd.js" defer></script><script src="/assets/js/page--src-templates-post-vue.c76ee95a.js" defer></script>
+  </body>
+</html>
