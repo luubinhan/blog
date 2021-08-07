@@ -1,15 +1,33 @@
 <template>
-	<g-link v-once to="/" class="go-home">VuiLapTrinh.com</g-link>
+	<g-link v-once to="/" class="go-home">
+		<span>
+			<img src="../assets/images/logo-main.png" alt="vuilaptrinh.com" />
+		</span>
+	</g-link>
 </template>
+
+<script>
+import Logo from '~/assets/images/logo-main.png';
+
+export default {
+	components: {
+		Logo
+	}
+}
+</script>
+
 
 <style lang="scss" scoped>
 .go-home {
 	display: block;
-	width: 50px;
 	padding-bottom: 20px;
 	color: #fff;
 	font-family: 'avo_bold', $san-serif;
 	font-size: 1.1rem;
+
+	img {
+		height: 80px;
+	}
 
 	@include tablet {
 		padding-top: 12px;
@@ -19,7 +37,7 @@
 		color: #fff;
 		font-family: 'avo_bold', $san-serif;
 		img {
-			display: block;
+			height: 40px;
 		}
 	}
 }

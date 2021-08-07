@@ -81,6 +81,7 @@ export default {
   computed: {
     searchResults() {
       const searchTerm = this.searchTerm;
+      if (searchTerm.length < 2) return [];
       return this.$search.search({ query: searchTerm, limit: 5 });
     },
   },
@@ -140,6 +141,8 @@ export default {
 }
 .item-search {
   padding: 10px 12px 0;
+  color: var(--link-color);
+  
   @include tablet {
     padding: 12px;
   }
