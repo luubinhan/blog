@@ -3,7 +3,7 @@ slug: "2021-04-17-chrome-90-co-gi-moi"
 date: "2021-04-17"
 title: "Một vài thay đổi đáng chú ý của Chrome 90"
 desc: "Một vài thay đổi đáng chú ý trong DevTools của Chrome 90 sắp tới"
-tags: ["chrome"]
+tags: ["chrome","thu-thuat"]
 canonical_url: false
 ---
 

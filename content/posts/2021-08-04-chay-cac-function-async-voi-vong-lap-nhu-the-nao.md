@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript"]
+tags: ["javascript", "hard", "hoc-thuat"]
 ---
 
 Để chạy một chuỗi các async function theo thứ tự (tuần tự như chạy tiếp sức) cố định, nếu không để ý chúng ta sẽ có những kết quả không như mong đợi.

@@ -3,7 +3,7 @@ slug: "2021-07-26-giai-thich-typeof-cua-react-element-la-gi"
 date: "2021-07-26"
 title: "typeof của React element để làm gì?"
 desc: "Bài viết dành cho những bạn tò mò thích khám phá những gì diễn ra trong thế giới ngầm"
-tags: ["javascript", "hoc-thuat", "react"]
+tags: ["javascript", "hoc-thuat", "react", "hard"]
 canonical_url: false
 ---
 
