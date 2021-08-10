@@ -7,7 +7,7 @@ cover: ""
 type: "post"
 lesson: 0
 chapter: 0
-tags: ["javascript", "hoc-thuat"], "medium"]
+tags: ["javascript", "hoc-thuat", "medium"]
 ---
 
 <!-- TOC -->
