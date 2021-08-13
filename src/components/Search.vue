@@ -8,7 +8,7 @@
       <button v-if="searchTerm" class="search_clear" @click="clearSearch">X</button>
     </div>
     <div class="search__list">
-      <div v-if="searchResults.length === 0 && !!searchTerm">
+      <div class="search-results" v-if="searchResults.length === 0 && !!searchTerm">
         <div class="item-search">
           Không có kết quả nào cho
           <strong>{{ searchTerm }}</strong>
@@ -122,10 +122,9 @@ export default {
   @include scroll;
 
   box-sizing: border-box;
-  height: 300px;
+  max-height: 300px;
   overflow: auto;
   color: #111;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
   @include tablet {
     height: auto;
@@ -139,6 +138,7 @@ export default {
 .search-results {
   background: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06), 0 3px 6px rgba(0, 0, 0, 0.04);
+  padding-bottom: 20px;
 }
 .item-search {
   padding: 10px 12px 0;
