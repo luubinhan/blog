@@ -633,6 +633,10 @@ a.link {
 			color: #000;
 		}
 	}
+
+	img[src$="png"] {
+		background-color: #fff;
+	}
 }
 @media (max-width: 980px) {
 	.single-post-container {

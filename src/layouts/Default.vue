@@ -1,5 +1,10 @@
 <template>
 	<div id="app" class="layout-blog">
+		<div class="toggle-mobile">
+			<div class="toggle-theme">
+				<Toggle @input="toggleTheme" :value="isDarkMode" />
+			</div>
+		</div>
 		<PrimaryNav />
 		<div class="master-container">
 			<div v-if="showSidebar" class="aside">
@@ -88,6 +93,19 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+.toggle-mobile {
+
+	.toggle-theme {		
+		display: none;
+		@include desktop {
+			display: block;
+			position: fixed;
+			right: 81px;
+			top: 13px;
+		}
+	}
+	
+}
 .toggle-theme {
 	margin-bottom: 40px;
 	text-align: right;
@@ -98,10 +116,7 @@ export default {
 	@include z-index(toggle-theme);
 
 	@include desktop {
-		display: block;
-		position: fixed;
-		right: 81px;
-		top: 13px;
+		display: none;
 	}
 }
 .master-container {
@@ -154,7 +169,7 @@ export default {
 	}
 }
 .aside {
-	@include z-index(4);
+	@include z-index(aside);
 	
 	flex-grow: 1;
 	background-color: var(--bg-aside);

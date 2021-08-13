@@ -125,6 +125,7 @@ export default {
   height: 300px;
   overflow: auto;
   color: #111;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
   @include tablet {
     height: auto;
