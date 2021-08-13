@@ -10,6 +10,18 @@ chapter: 0
 tags: ["hoc-thuat", "vuejs"]
 ---
 
+<!-- TOC -->
+
+- [Biết người, biết ta, trăm trận trăm thắng](#biết-người-biết-ta-trăm-trận-trăm-thắng)
+- [Thử thách](#thử-thách)
+    - [Khả năng tiếp cận và mở rộng](#khả-năng-tiếp-cận-và-mở-rộng)
+    - [Typescript vs Javascript](#typescript-vs-javascript)
+    - [Template vs JSX](#template-vs-jsx)
+    - [Sức mạnh và Kích thước](#sức-mạnh-và-kích-thước)
+- [Tài liệu tham khảo](#tài-liệu-tham-khảo)
+
+<!-- /TOC -->
+
 
 *Một phút quảng cáo*
 

@@ -10,7 +10,13 @@ chapter: 0
 tags: ["netlify","thu-thuat"]
 ---
 
+<!-- TOC -->
 
+- [Lambda function là gì?](#lambda-function-là-gì)
+- [Chạy các function Lambda ở local](#chạy-các-function-lambda-ở-local)
+- [Deploy lên Netlify](#deploy-lên-netlify)
+
+<!-- /TOC -->
 ## Lambda function là gì?
 
 Giải thích về Serverless bạn đọc bài trước có đăng

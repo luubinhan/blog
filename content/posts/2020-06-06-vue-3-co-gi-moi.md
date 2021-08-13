@@ -10,6 +10,17 @@ chapter: 0
 tags: ["javascript", "vuejs"]
 ---
 
+<!-- TOC -->
+
+- [Breaking change](#breaking-change)
+- [Composition API (React Hook phiên bản Vue)](#composition-api-react-hook-phiên-bản-vue)
+- [Vue Fragment](#vue-fragment)
+- [Mét nhét component vào chỗ nào trong DOM cũng được](#mét-nhét-component-vào-chỗ-nào-trong-dom-cũng-được)
+- [Suspense (lại chôm của React)](#suspense-lại-chôm-của-react)
+- [Đa vũ trụ - à không đa v-model](#đa-vũ-trụ---à-không-đa-v-model)
+
+<!-- /TOC -->
+
 ## Breaking change
 
 Nếu đang dùng Vue 2 và muốn chuyển lên Vue 3 sử dụng, có một điểm breaking change (không sửa không được, chết hết)
