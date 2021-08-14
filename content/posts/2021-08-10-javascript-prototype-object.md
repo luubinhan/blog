@@ -131,12 +131,56 @@ Một điều thú vị, nếu để ý chúng ta không hề khai báo `rabbit.
 
 Đọc lại bài [decriptor](https://vuilaptrinh.com/2021-08-07-huong-dan-khoa-object-khong-cho-thay-doi/)
 
+## Object.prototype
+
+Xét qua ví dụ
+
+```js
+let obj = {}
+console.log( obj )
+// => "[object Object]"
+```
+
+Bạn có bao giờ thắc mắc tại sao lại có kết quả `[object Object]`? `obj` là một object rỗng mà?
+
+Thật ra, `obj = {}` sẽ tương đương với `obj = new Object()`, tức là, chúng ta khởi tạo một object thông qua việc gọi một constructor function, và nó sẽ kế thừa tất cả property, phương thức từ `Object`, như `toString`, `[[Prototype]]`
+
+Khi gọi `obj.toString()` có nghĩa là chúng ta đang gọi đến phương thức `Object.prototype.toString`
+
+```js
+let obj = {}
+
+console.log(obj.__proto__ === Object.prototype)
+// => true
+
+console.log(obj.toString === obj.__proto__.toString)
+// => true
+
+console.log(obj.toString === Object.prototype.toString)
+// => true
+```
+
+> Tất cả những object khác như `Array`, `Date`, `Function` đều kế thừa từ `Object`
+
+```js
+let arr = [1, 2, 3];
+
+alert( arr.__proto__ === Array.prototype );
+// true
+
+alert( arr.__proto__.__proto__ === Object.prototype );
+// true
+```
+
+![](https://javascript.info/article/native-prototypes/console_dir_array.png)
+
 ## Tóm tắt
 
 - Mỗi object sẽ chứa một property đặc biệt `[[Prototype]]`, giá trị là null, hoặc trỏ đến một object khác
 - Sử dụng `obj.__proto__` để truy cập
 - `this` luôn trỏ đến obj hiện tại thay vì prototype object
 - `for..in` sẽ chạy qua tất cả property chính chủ và property được kế thừa
+- Tất cả những object build-in (như Array, Object, Date) đều lưu các phương thức bên trong property `prototype` (Array.prototype, Object.prototype, Date.prototype)
 
 Javascript.info
 
