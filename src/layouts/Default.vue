@@ -112,15 +112,14 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-
-	@include z-index(toggle-theme);
+	z-index: var(--z-toggle-theme);
 
 	@include desktop {
 		display: none;
 	}
 }
 .master-container {
-	@include z-index(master-container);
+	z-index: var(--z-master-container);
 	display: flex;
 	flex-direction: row-reverse;
 	
@@ -169,8 +168,7 @@ export default {
 	}
 }
 .aside {
-	@include z-index(aside);
-	
+	z-index: var(--z-aside);	
 	flex-grow: 1;
 	background-color: var(--bg-aside);
 	position: relative;

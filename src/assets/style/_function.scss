@@ -37,21 +37,3 @@
 		@content;
 	}
 }
-
-$z-index: (
-	navbar-toggle: 999,
-	toggle-theme: 7,
-	search-results: 7,
-	sidebar: 6,
-	master-container: 6,
-	aside: 4,
-	search-component: 1,
-);
-
-@function z-index($key) {
-	@return map-get($z-index, $key);
-}
-
-@mixin z-index($key) {
-	z-index: z-index($key);
-}

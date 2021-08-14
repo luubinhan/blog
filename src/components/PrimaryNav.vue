@@ -285,7 +285,7 @@ export default {
 
 <style scoped lang="scss">
 .navbar-toggle {
-	@include z-index(navbar-toggle);
+	z-index: var(--z-navbar-toggle);
 	position: absolute;
 	top: 11px;
 	right: 20px;
@@ -304,7 +304,7 @@ export default {
 	}
 }
 .sidebar {	
-	@include z-index(sidebar);
+	z-index: var(--z-sidebar);
 
 	flex-basis: var(--sidebar-width);
 	min-width: var(--sidebar-width);

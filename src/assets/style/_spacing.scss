@@ -1,0 +1,57 @@
+$breakpoints: (
+	'xs': 600px,
+	's': 768px,
+	'm': 1024px,
+	'l': 1280px,
+	'xl': 1366px,
+	'xxl': 1440px,
+);
+
+$sizes: (
+	'xs': 0.5rem,
+	's': 1rem,
+	'm': 2rem,
+	'l': 3rem,
+	'xl': 4rem,
+	'xxl': 5rem,
+	'0': 0,
+);
+
+$spaces: (
+	'mt': margin-top,
+	'mr': margin-right,
+	'mb': margin-bottom,
+	'ml': margin-left,
+	'pt': padding-top,
+	'pr': padding-right,
+	'pb': padding-bottom,
+	'pl': padding-left,
+	'p': padding,
+	'm': margin,
+);
+
+@each $name, $property in $spaces {
+	.#{$name} {
+		@each $size_name, $size_value in $sizes {
+			&-#{$size_name} {
+				#{$property}: $size_value;
+			}
+		}
+	}
+}
+
+@each $name, $width in $breakpoints {
+	@media (min-width: #{$width}) {
+		.#{$name} {
+			@each $space_name, $space_property in $spaces {
+				&_#{$space_name} {
+					@each $size_name, $size_value in $sizes {
+						&-#{$size_name} {
+							#{$space_property}: $size_value;
+						}
+					}
+				}
+			}
+		}
+	}
+}

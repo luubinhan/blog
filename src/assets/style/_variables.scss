@@ -50,6 +50,15 @@
   --sidebar-width: 320px;  
   --master-width: 60vw;
 
+  /* Z-INDEX */
+  --z-navbar-toggle: 999;
+	--z-toggle-theme: 7;
+	--z-search-results: 7;
+	--z-sidebar: 6;
+	--z-master-container: 6;
+	--z-aside: 4;
+	--z-search-component: 1;
+
   @media screen and (max-width: 1540px) { 
     --sidebar-width: 250px;
   }

@@ -97,7 +97,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .search-wrapper {
-  @include z-index(search-component);
+  z-index: var(--z-search-component);
 
   margin: 0;
 }
@@ -118,9 +118,9 @@ export default {
   }
 }
 .search__list {
-  @include z-index(search-results);
   @include scroll;
 
+  z-index: var(--z-search-results);
   box-sizing: border-box;
   max-height: 300px;
   overflow: auto;
