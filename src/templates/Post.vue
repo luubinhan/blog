@@ -461,20 +461,25 @@ a.link {
 		}
 		table {
 			border-collapse: collapse;
+			margin-top: 18px;
+			margin-bottom: 18px;
 			tbody tr:nth-of-type(odd) {
 				background: rgba(0, 0, 0, 0.02);
 			}
 			td,
 			th {
 				text-align: left !important;
-				border-bottom: 1px solid #dee2e6;
-				border-top: 1px solid #dee2e6;
+				border-bottom: 1px solid var(--border-color);
+				border-top: 1px solid var(--border-color);
 				padding-bottom: 15px;
 				padding-top: 15px;
 				padding-right: 15px;
 				margin: 0;
 				border-collapse: inherit;
 				border-spacing: 0;
+			}
+			th {
+				font-size: 0.9rem;
 			}
 		}
 	}
@@ -567,6 +572,9 @@ a.link {
 			margin-left: -2px;
 			line-height: 1.15;
 			letter-spacing: -0.02em;
+		}
+		h2 {
+			margin-bottom: 20px;
 		}
 		h3 {
 			font-size: 1.3rem;
