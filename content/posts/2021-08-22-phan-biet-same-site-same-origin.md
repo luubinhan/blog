@@ -23,11 +23,11 @@ Vậy **same-origin** tức là những url có cùng scheme, host name, port, n
 
 | Origin A                    | Origin B                          |                                                              |
 | --------------------------- | --------------------------------- | ------------------------------------------------------------ |
-| https://www.example.com:443 | https://**example.com**:443       | cross-origin: khác subdomain                                 |
-|                             | https://**www.evil.com**:443      | cross-origin: khác domain                                    |
-|                             | https://**login**.example.com:443 | cross-origin: khác subdomain                                 |
-|                             | **http**://www.example.com:443    | cross-origin: khác scheme                                    |
-|                             | https://www.example.com:**80**    | cross-origin: khác port                                      |
+| https://www.example.com:443 | https://example.com:443       | cross-origin: khác subdomain                                 |
+|                             | https://www.evil.com:443      | cross-origin: khác domain                                    |
+|                             | https://login.example.com:443 | cross-origin: khác subdomain                                 |
+|                             | http://www.example.com:443    | cross-origin: khác scheme                                    |
+|                             | https://www.example.com:80    | cross-origin: khác port                                      |
 |                             | https://www.example.com           | same-origin:  ngầm hiểu cùng port 443 (port mặc định của web) |
 
 ## Site
@@ -50,11 +50,11 @@ Vậy **same-site** là những url có cùng site, ngược lại được gọ
 
 | URL A                       | URL B                             |                                     |
 | --------------------------- | --------------------------------- | ----------------------------------- |
-| https://www.example.com:443 | https://**www.evil.com**:443      | cross-site: khác domain             |
-|                             | https://**login**.example.com:443 | same-site: khác subdomain không sao |
-|                             | **http**://www.example.com:443    | same-site: khác scheme không sao    |
-|                             | https://www.example.com:**80**    | same-site: khác port không sao      |
-|                             | **https://www.example.com**       | same-site                           |
+| https://www.example.com:443 | https://www.evil.com:443      | cross-site: khác domain             |
+|                             | https://login.example.com:443 | same-site: khác subdomain không sao |
+|                             | http://www.example.com:443    | same-site: khác scheme không sao    |
+|                             | https://www.example.com:80    | same-site: khác port không sao      |
+|                             | https://www.example.com       | same-site                           |
 
 > Gần đây khái niệm same-site được mở rộng và bao gồm luôn scheme
 

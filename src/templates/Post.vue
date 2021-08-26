@@ -329,6 +329,9 @@ a.link {
 	ol {
 		list-style: decimal;
 	}
+	img {
+		background-color: #fff;
+	}
 }
 .single-post-container {
 	padding-top: 60px;
