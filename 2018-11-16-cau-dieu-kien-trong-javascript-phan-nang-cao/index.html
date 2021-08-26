@@ -80,7 +80,9 @@
 <!-- /TOC -->
 <h2 id="phân-biệt-expression-và-statement"><a href="#ph%C3%A2n-bi%E1%BB%87t-expression-v%C3%A0-statement" aria-hidden="true"><span class="icon icon-link"></span></a>Phân biệt Expression và Statement</h2>
 <p>Trước tiên chúng ta ôn lại expression và statement trong javascript.</p>
-<div class="note">An expression is any phrase that the JavaScript engine can evaluate to <strong>produce a value.</strong></div>
+<blockquote>
+<p>An expression is any phrase that the JavaScript engine can evaluate to <strong>produce a value</strong></p>
+</blockquote>
 <p>Expression là một đoạn code luôn trả về 1 giá trị.
 Bên dưới là expression</p>
 <div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// number</span>
@@ -118,17 +120,17 @@ x <span class="token operator">=</span> <span class="token string">'string'</spa
 
 <span class="token comment">// object property access</span>
 obj<span class="token punctuation">.</span>students<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name</code></pre></div>
-<div class="note">
-A statement is any sentence or command that the JavaScript engine can execute to make <strong>something happen</strong> or cause some <strong>side-effect</strong>.
-</div>
+<blockquote>
+<p>A statement is any sentence or command that the JavaScript engine can execute to make <strong>something happen</strong> or cause some <strong>side-effect</strong></p>
+</blockquote>
 <p>Statement là lệnh, tập lệnh thực hiện một hành động.</p>
 <p>Câu điều kiện, khai báo biến, khai báo hàm, loop, throw, try/catch/finally là  statement</p>
 <h2 id="phân-biệt-truefalse-truthyfalsy"><a href="#ph%C3%A2n-bi%E1%BB%87t-truefalse-truthyfalsy" aria-hidden="true"><span class="icon icon-link"></span></a>Phân biệt <code class="language-inline-text">true/false</code>, <code class="language-inline-text">truthy/falsy</code></h2>
 <p>Tất cả giá trị trong javascript đều có thể phân thành <strong>truthy</strong> hoặc <strong>falsy</strong> ( không phải true/false)</p>
 <p>Các giá trị sau được xếp vào <strong>falsy</strong></p>
-<div class="note">
-  '', "", ``, 0, -0, null, undefined, NaN, false
-</div>
+<blockquote>
+<p>'', "", <code class="language-inline-text"></code>, 0, -0, null, undefined, NaN, false</p>
+</blockquote>
 <p>Các giá trị còn lại được coi là <strong>truthy</strong>. Khi nào javascript cần giá trị là <code class="language-inline-text">Boolean</code>, nó sẽ tự động đưa những giá trị trong nhóm truthy thành <code class="language-inline-text">true</code>, nhóm falsy thành <code class="language-inline-text">false</code></p>
 <p>Nếu không tin, bạn có thể kiểm tra</p>
 <div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// null</span>
@@ -142,11 +144,15 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token boolean">false</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token boolean">true</span> <span class="token operator">||</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span></code></pre></div>
 <p>2 toán tử AND và OR có một đặc điểm: thằng đứng trước luôn được tính giá trị, thằng thứ 2 có thể sẽ không được đếm xỉa luôn. </p>
 <p><code class="language-inline-text">&amp;&amp;</code> và <code class="language-inline-text">||</code> <strong>không phải lúc nào cũng trả về kết quả boolean</strong> (true, false), nó thích trả về gì là nó trả thôi.</p>
-<div class="note">Nếu mệnh đề đầu của <code>&&</code> nó trả về <strong>truthy</strong> nó tính kết quả và trả về mệnh đề 2, nếu mệnh đề đầu là <strong>falsy</strong> thì bỏ qua mệnh đề 2. </div>
+<blockquote>
+<p>Nếu mệnh đề đầu của <code class="language-inline-text">&amp;&amp;</code> nó trả về <code class="language-inline-text">truthy</code>nó tính kết quả và trả về mệnh đề 2, nếu mệnh đề đầu là <code class="language-inline-text">falsy</code> thì bỏ qua mệnh đề 2.</p>
+</blockquote>
 <div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// 'a' là 'truthy', nên 'a' &amp;&amp; 'b' sẽ trả về 'b'</span>
 <span class="token punctuation">(</span><span class="token string">'a'</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'b'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'a'</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
 <span class="token punctuation">(</span><span class="token string">'a'</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'b'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'b'</span><span class="token punctuation">;</span> <span class="token comment">// true</span></code></pre></div>
-<div class="note">Nếu mệnh đề đầu của <code>||</code> trả về <strong>truthy</strong>, nó ko quan tâm đến mệnh đề 2, nếu mệnh đề đầu là <strong>falsy</strong> nó sẽ tính và trả về giá trị mệnh đề 2</div>
+<blockquote>
+<p>Nếu mệnh đề đầu của <code class="language-inline-text">||</code> trả về <code class="language-inline-text">truthy</code>, nó ko quan tâm đến mệnh đề 2, nếu mệnh đề đầu là <code class="language-inline-text">falsy</code> nó sẽ tính và trả về giá trị mệnh đề 2</p>
+</blockquote>
 <div class="gridsome-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token punctuation">(</span>a <span class="token operator">||</span> b<span class="token punctuation">)</span> <span class="token operator">===</span> a<span class="token punctuation">;</span> <span class="token comment">// true</span>
 <span class="token punctuation">(</span>a <span class="token operator">||</span> b<span class="token punctuation">)</span> <span class="token operator">===</span> b<span class="token punctuation">;</span> <span class="token comment">// false</span></code></pre></div>
 <h2 id="thay-statement-bằng-expression"><a href="#thay-statement-b%E1%BA%B1ng-expression" aria-hidden="true"><span class="icon icon-link"></span></a>Thay statement bằng expression</h2>
