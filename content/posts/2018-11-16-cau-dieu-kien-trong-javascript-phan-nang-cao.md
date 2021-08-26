@@ -24,7 +24,7 @@ tags: ["javascript"]
 
 Trước tiên chúng ta ôn lại expression và statement trong javascript.
 
-<div class="note">An expression is any phrase that the JavaScript engine can evaluate to <strong>produce a value.</strong></div>
+> An expression is any phrase that the JavaScript engine can evaluate to **produce a value**
 
 Expression là một đoạn code luôn trả về 1 giá trị.
 Bên dưới là expression
@@ -66,10 +66,7 @@ x(100)
 // object property access
 obj.students[0].name
 ```
-
-<div class="note">
-A statement is any sentence or command that the JavaScript engine can execute to make <strong>something happen</strong> or cause some <strong>side-effect</strong>.
-</div>
+> A statement is any sentence or command that the JavaScript engine can execute to make **something happen** or cause some **side-effect**
 
 Statement là lệnh, tập lệnh thực hiện một hành động.
 
@@ -81,9 +78,7 @@ Tất cả giá trị trong javascript đều có thể phân thành **truthy** 
 
 Các giá trị sau được xếp vào **falsy**
 
-<div class="note">
-  '', "", ``, 0, -0, null, undefined, NaN, false
-</div>
+> '', "", ``, 0, -0, null, undefined, NaN, false
 
 Các giá trị còn lại được coi là **truthy**. Khi nào javascript cần giá trị là `Boolean`, nó sẽ tự động đưa những giá trị trong nhóm truthy thành `true`, nhóm falsy thành `false`
 
@@ -114,7 +109,7 @@ false && (true || true); // false
 
 `&&` và `||` **không phải lúc nào cũng trả về kết quả boolean** (true, false), nó thích trả về gì là nó trả thôi.
 
-<div class="note">Nếu mệnh đề đầu của <code>&&</code> nó trả về <strong>truthy</strong> nó tính kết quả và trả về mệnh đề 2, nếu mệnh đề đầu là <strong>falsy</strong> thì bỏ qua mệnh đề 2. </div>
+> Nếu mệnh đề đầu của `&&` nó trả về `truthy`nó tính kết quả và trả về mệnh đề 2, nếu mệnh đề đầu là `falsy` thì bỏ qua mệnh đề 2.
 
 ```js
 // 'a' là 'truthy', nên 'a' && 'b' sẽ trả về 'b'
@@ -122,7 +117,7 @@ false && (true || true); // false
 ('a' && 'b') === 'b'; // true
 ```
 
-<div class="note">Nếu mệnh đề đầu của <code>||</code> trả về <strong>truthy</strong>, nó ko quan tâm đến mệnh đề 2, nếu mệnh đề đầu là <strong>falsy</strong> nó sẽ tính và trả về giá trị mệnh đề 2</div>
+> Nếu mệnh đề đầu của `||` trả về `truthy`, nó ko quan tâm đến mệnh đề 2, nếu mệnh đề đầu là `falsy` nó sẽ tính và trả về giá trị mệnh đề 2
 
 ```js
 (a || b) === a; // true
