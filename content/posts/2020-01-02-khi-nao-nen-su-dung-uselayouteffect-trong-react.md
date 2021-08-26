@@ -10,8 +10,6 @@ chapter: 0
 tags: ["thu-thuat", "react"]
 ---
 
-
-
 ```jsx
 useEffect(() => {
   // thực hiện side effect
