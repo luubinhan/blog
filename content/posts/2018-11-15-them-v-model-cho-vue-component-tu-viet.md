@@ -1,7 +1,7 @@
 ---
 slug: "/2018-11-15-them-v-model-cho-vue-component-tu-viet"
 date: "2018-11-15"
-title: "Hổ trợ v-model trên một custom Vue component"
+title: "Hỗ trợ v-model trên Vue component tùy biến"
 desc: "Hướng dẫn cách viết một component để có thể dùng v-model"
 cover: ""
 type: "post"
@@ -10,35 +10,58 @@ chapter: 0
 tags: ["vuejs"]
 ---
 
-Với Vue nó khác với React là data có thể binding two-way, không ràng buộc one-way data flow, đơn giản là khai báo `v-model` cho dữ liệu nào muốn đồng bộ hóa, còn nếu binding một chiều thì dùng `v-bind`.
+Với Vue nó khác với React là data có thể binding *two-way*, không ràng buộc *one-way data flow*, chỉ việc khai báo `v-model` cho dữ liệu nào muốn binding *two-way* là xong, còn nếu binding một chiều thì dùng `v-bind`.
 
 ```html
+<!--Binding two-way-->
 <input v-model="email" />
-// hoặc có thể viết
-<input :value="email" @input="e => email = e.target.balue" />
-```
 
-<div class="note">Nghĩa là để <code>v-model</code> có thể chạy được, element hoặc component gắn nó phải nhận vào một prop (mặc định là <code>value</code>) và emit một event (mặc định là <code>input</code>)</div>
-
-Tùy thuộc vào element, Vue sẽ dùng xử lý dữ liệu được emit, trên input type là radio , nó sẽ dùng prop checked và event là change.
-
-## Thêm `v-model` cho một component chúng ta tự viết
-
-Chúng ta sẽ làm một component sử dụng `<input />`
-
-```jsx
-<template>
-	<input @input=”handleInput” />
-</template>
 <script>
 export default {
-	name: "basic-input",
+  data() {
+    email: 'hello@vuilaptrinh.com'
+  }
+}
+</script>
+```
+
+Cách viết `v-model` có thể hiểu là một cách viết tắt của 2 xử lý
+
+1. Bind dữ liệu `:value`
+2. Gắn sự kiện xử lý khi `@input`
+
+Phiên bản đầy đủ không rút gọn được viết lại như sau
+
+```html
+<input :value="email" @input="e => email = e.target.value" />
+```
+
+Tùy theo element, Vue sẽ xử lý khác nhau trên giá trị được emit, nếu như `<input type="radio" />`
+
+```html
+<input v-model="email" type="radio" />
+
+Phiên bản đầy đủ
+<input :checked="email" @change="e => email = e.target.value" />
+```
+
+## `v-model` cho một component chúng ta tự viết
+
+```html
+<template>
+  <div class="my-custom">
+	  <input @input="handleInput" />
+  </div>
+</template>
+
+<script>
+export default {
 	props: {
 		value
   },
   data() {
     return {
-      Content: this.value
+      content: this.value
     }
   },
   methods: {
@@ -50,7 +73,7 @@ export default {
 </script>
 ```
 
-Chỉ cần thêm props `value` cho component là chúng ta có thể sử dụng `v-model` trên `basic-input`
+Thêm props `value`, và `emit` event input cho component là chúng ta có thể sử dụng `v-model`
 
 ```jsx
 <basic-input v-model="email" />
