@@ -1,7 +1,7 @@
 ---
 slug: "2022-03-04-bo-tui-6-doan-code-huu-ich-trong-js"
 date: "2022-03-04"
-title: "Bỏ túi 6 đoạn code chỉ với một dòng rất hữu ích trong JavaScript "
+title: "Bỏ túi 6 đoạn code chỉ với một dòng rất hữu ích trong JavaScript"
 desc: ""
 tags: ["javascript", "beginner", "thu-thuat"]
 ---
