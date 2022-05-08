@@ -6,9 +6,10 @@ desc: ""
 tags: ["javascript", "beginner", "thu-thuat", "react"]
 ---
 
-Tất cả những gì bạn cần biết khi làm user avatar trong React
 ## Tạo avatar mặc định
+
 Trong trường hợp user chưa upload avatar, chúng ta sẽ hiển thị một avatar mặc định, sử dụng [jdenticon](https://www.npmjs.com/package/jdenticon) nó sẽ cho chúng ta bộ hình sau
+
 ![](https://res.cloudinary.com/practicaldev/image/fetch/s--kYzqAMFa--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jrn6svy3k9b3qznrgkla.png)
 
 ```tsx

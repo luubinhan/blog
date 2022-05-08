@@ -2,11 +2,11 @@
 slug: "2022-05-07-cach-dung-usetransition-trong-react"
 date: "2022-05-07"
 title: "React Transition"
-desc: ""
+desc: "Một tính năng mới trong React 18, cho phép chúng ta đánh giấu một thay đổi là transition"
 tags: ["javascript", "beginner", "hoc-thuat", "react"]
 ---
 
-Một tính năng mới trong React 18, cho phép chúng ta đánh giấu một thay đổi là *transition*, React cho phép nó gián đoạn (không cập nhập những thay đổi đó ngay lập tức) và tránh việc hiển thị *Suspense fallback* component.
+React cho phép nó gián đoạn (không cập nhập những thay đổi đó ngay lập tức) và tránh việc hiển thị *Suspense fallback* component.
 
 React sẽ phân biệt việc cập nhập UI thành 2 loại: loại một cần thực hiện ngay (như nhập liệu input, chọn giá trị trong dropdown), và loại có ưu tiên thấp hơn, chậm chút không sao (như filter một danh sách)
 
@@ -86,7 +86,7 @@ export function FilterList({ names }) {
   const [query, setQuery] = useState('');
   const [highlight, setHighlight] = useState('');
   const [isPending, startTransition] = useTransition();
-  
+
   const changeHandler = ({ target: { value } }) => {
     setQuery(value);
     startTransition(() => setHighlight(value));
