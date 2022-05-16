@@ -6,9 +6,15 @@ desc: "Một tính năng mới trong React 18, cho phép chúng ta đánh giấu
 tags: ["javascript", "beginner", "hoc-thuat", "react"]
 ---
 
-React cho phép nó gián đoạn (không cập nhập những thay đổi đó ngay lập tức) và tránh việc hiển thị *Suspense fallback* component.
+## Tại sao?
 
-React sẽ phân biệt việc cập nhập UI thành 2 loại: loại một cần thực hiện ngay (như nhập liệu input, chọn giá trị trong dropdown), và loại có ưu tiên thấp hơn, chậm chút không sao (như filter một danh sách)
+Một vấn đề rất thực tế mà chúng ta hay gặp khi viết *search component*, chúng ta sẽ thêm cơ chế *debounce* khi gọi xuống API sau khi user nhập giá trị vào `input`, *debounce* tức là hổng đi làm liền mà đợi cho đến hết thời gian thì mới làm.
+
+Trước đây, React không có phân biệt giữa cái gì cần làm liền và cái gì có thể để sau rồi làm, dân tình gọi là sống vội. Giờ đây, thấy việc sống vội như thế là mà lối sống sai lầm, nên mở ra khái niệm *sống chậm*, thông thả mà làm. Như món nào cần gấp thì bạn bay ra tạp quá gần nhà mua liền, món nào chưa cần ngay thì đưa vào danh sách mua sắm cuối tháng đi siêu thị.
+
+![](https://res.cloudinary.com/practicaldev/image/fetch/s--6-YH79KT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/t359lpszuvb3k6dlm6q0.gif)
+
+Những công chuyện nào được coi là *sống chậm* React sẽ không làm liền và không hiển thị *Suspense fallback* component.
 
 2 API mới, một hook và một cái dùng trong trường hợp không thể dùng hook
 - React.startTransition
@@ -33,8 +39,6 @@ function App() {
 	)
 }
 ```
-
-Lấy một ví dụ để thấy rõ hơn ứng dụng của *transition*
 
 Chúng ta có một danh sách *employee name*, khi user nhập vào input, chúng ta thực hiện *filter* lại danh sách này.
 
