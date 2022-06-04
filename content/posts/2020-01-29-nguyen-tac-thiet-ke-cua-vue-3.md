@@ -114,7 +114,7 @@ Bạn đừng đi vào kết luận dùng TypeScript là đúng hay sai, nó là
 
 Lý do chúng tôi cung cấp cả 2 lựa chọn là vì muốn đáp ứng cho nhiều đối tượng người sử dụng khác nhau, những người quen với HTML, CSS sẽ thích template, thay vì phải lập trình lại suy nghĩ theo hướng javascript như JSX. Với template chúng tôi có thể tối ưu hiệu năng ở mức tốt nhất. Trong khi JSX lại cho phép linh động hơn trong lúc viết.
 
-Xem thêm bài [Lựa chọn framework frontend nào trong thời điểm hiện tại](http://vuilaptrinh.com/2019-11-24-huong-dan-chon-framework-frontend#c%C6%A1-ch%E1%BA%BF-render) có giải thích ưu và nhược của template và JSX
+Xem thêm bài [Lựa chọn framework frontend nào trong thời điểm hiện tại](https://luubinhan.github.io/blog/2019-11-24-huong-dan-chon-framework-frontend#c%C6%A1-ch%E1%BA%BF-render) có giải thích ưu và nhược của template và JSX
 
 > Chúng tôi muốn là một framework với tất cả các lựa chọn khác nhiều điều có, để tiếp cận được những người sử dụng từ nhiều background khác nhau.
 

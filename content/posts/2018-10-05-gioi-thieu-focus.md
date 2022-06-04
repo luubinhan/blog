@@ -66,7 +66,7 @@ Bài viết liên quan
 
 - [Ràng buộc dữ liệu input với HTML5](/2019-03-25-rang-buoc-du-lieu-voi-html-5/)
 - [Sử dụng aria trên site eCommerce, vấn đề accessibility cần quan tâm](/2018-10-08-huong-dan-aria-va-su-dung-voi-ecommerce-site)
-- [Sử dụng tabindex](http://vuilaptrinh.com/2018-10-02-huong-dan-su-dung-tabindex-de-di-chuyen/)
+- [Sử dụng tabindex](https://luubinhan.github.io/blog/2018-10-02-huong-dan-su-dung-tabindex-de-di-chuyen/)
 
 <a target="_blank" rel="noopener noreferrer" href="https://developers.google.com/web/fundamentals/accessibility/focus/">📜 Introduction to Focus</a>
 

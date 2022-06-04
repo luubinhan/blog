@@ -42,7 +42,7 @@
 								:network="network.network"
 								:key="network.network"
 								:style="{ backgroundColor: network.color }"
-								:url="`https://vuilaptrinh.com${$page.post.path}`"
+								:url="`https://luubinhan.github.io/blog${$page.post.path}`"
 								:title="$page.post.title"
 								:description="$page.post.desc"
 								hashtags="frontend,developer,javascript,wordpress,react,hochiminh,web-developer"
@@ -61,7 +61,7 @@
 					<facebook-comments
 						v-if="isMounted"
 						:settings="{
-							href: `https://vuilaptrinh.com${$page.post.path}`,
+							href: `https://luubinhan.github.io/blog${$page.post.path}`,
 							num_posts: 10,
 							order_by: 'time',
 							width: 600,

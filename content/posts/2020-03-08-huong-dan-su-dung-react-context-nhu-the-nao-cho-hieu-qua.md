@@ -268,7 +268,7 @@ Với cách viết này, ai cũng có thể sử dụng `useCountState` hoặc `
 
 ## Vậy còn dispatch `type`?
 
-Nếu bạn từng viết Redux, sẽ thắc mắc "vậy action creator đâu?". Nếu _thích_ bạn có thể tự viết nếu muốn. Nhưng mình không phải là _fan_ của action creator (cô thư ký xinh đẹp trong [bài giải thích về Flux Pattern của mình](http://vuilaptrinh.com/2019-05-28-giai-thich-pattern-flux-trong-react/). Mình luôn cảm thấy em này khá dư thừa, không cần thiết phải phức tạp thêm một tổ chức đã quá phức tạp như Flux (**hoàn hảo không phải là không còn gì để thêm nữa mà là ko còn gì có thể bỏ đi mà**). Nếu sử dụng TypeScript hoặc Flow, nó sẽ giúp chúng ta tự điền action type có thể điền
+Nếu bạn từng viết Redux, sẽ thắc mắc "vậy action creator đâu?". Nếu _thích_ bạn có thể tự viết nếu muốn. Nhưng mình không phải là _fan_ của action creator (cô thư ký xinh đẹp trong [bài giải thích về Flux Pattern của mình](https://luubinhan.github.io/blog/2019-05-28-giai-thich-pattern-flux-trong-react/). Mình luôn cảm thấy em này khá dư thừa, không cần thiết phải phức tạp thêm một tổ chức đã quá phức tạp như Flux (**hoàn hảo không phải là không còn gì để thêm nữa mà là ko còn gì có thể bỏ đi mà**). Nếu sử dụng TypeScript hoặc Flow, nó sẽ giúp chúng ta tự điền action type có thể điền
 
 ![Sử dụng React Context như thế nào cho hiệu quả](https://kentcdodds.com/static/d99d4329b1d7ebd2e63bf76471f540ab/e3189/auto-complete.png)
 

@@ -129,7 +129,7 @@ Một điều thú vị, nếu để ý chúng ta không hề khai báo `rabbit.
 
 Đây là một property kế thừa từ `Object` chúa, và nó đã được khai báo decriptor với giá trị `enumerable: false`
 
-Đọc lại bài [decriptor](https://vuilaptrinh.com/2021-08-07-huong-dan-khoa-object-khong-cho-thay-doi/)
+Đọc lại bài [decriptor](https://luubinhan.github.io/blog/2021-08-07-huong-dan-khoa-object-khong-cho-thay-doi/)
 
 ## Object.prototype
 

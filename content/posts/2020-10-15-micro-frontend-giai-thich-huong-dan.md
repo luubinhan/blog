@@ -12,10 +12,10 @@ canonical_url: false
 - [Tại sao bạn cần biết đến Micro frontend](#tại-sao-bạn-cần-biết-đến-micro-frontend)
 - [Micro frontend là cái gì](#micro-frontend-là-cái-gì)
 - [Hiện thực hóa như thế nào](#hiện-thực-hóa-như-thế-nào)
-  - [Tương tác giữa các ứng dụng](#tương-tác-giữa-các-ứng-dụng)
-  - [Thư viện component dùng chung](#thư-viện-component-dùng-chung)
-  - [Styling](#styling)
-  - [Các cách để integrate](#các-cách-để-integrate)
+    - [Tương tác giữa các ứng dụng](#tương-tác-giữa-các-ứng-dụng)
+    - [Thư viện component dùng chung](#thư-viện-component-dùng-chung)
+    - [Styling](#styling)
+    - [Các cách để integrate](#các-cách-để-integrate)
 - [Kết](#kết)
 
 <!-- /TOC -->
@@ -74,7 +74,7 @@ Thoạt nghe làm một share component có vẻ đơn giản, nhưng nó lại 
 
 ### Styling
 
-Styling 2020 là một câu chuyện dài, như mình đã kể trong một [bài viết](https://vuilaptrinh.com/2020-05-22-cam-giac-viet-css-nam-2020/), tựa chung mà nói bạn có thể dùng BEM, dùng SASS, dùng CSS module, dùng CSS-in-JS, dùng Styled Component, dùng Tailwind, kiểu gì cũng được, miễn đảm bảo được style không chồng chéo lên nhau, thằng nào độc lập thằng đó, và tự tin đoạn code nó sẽ chạy như **đúng như lường trước**.
+Styling 2020 là một câu chuyện dài, như mình đã kể trong một [bài viết](https://luubinhan.github.io/blog/2020-05-22-cam-giac-viet-css-nam-2020/), tựa chung mà nói bạn có thể dùng BEM, dùng SASS, dùng CSS module, dùng CSS-in-JS, dùng Styled Component, dùng Tailwind, kiểu gì cũng được, miễn đảm bảo được style không chồng chéo lên nhau, thằng nào độc lập thằng đó, và tự tin đoạn code nó sẽ chạy như **đúng như lường trước**.
 
 ### Các cách để integrate
 

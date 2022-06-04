@@ -291,7 +291,7 @@ Bài viết liên quan
 
 - [Ràng buộc dữ liệu input với HTML5](2019-03-25-rang-buoc-du-lieu-voi-html-5/)
 - [Giới thiệu focus trên web](/2018-10-05-gioi-thieu-focus)
-- [Sử dụng tabindex](http://vuilaptrinh.com/2018-10-02-huong-dan-su-dung-tabindex-de-di-chuyen/)
+- [Sử dụng tabindex](https://luubinhan.github.io/blog/2018-10-02-huong-dan-su-dung-tabindex-de-di-chuyen/)
 
 <a target="_blank" rel="noopener noreferrer" href="https://code.tutsplus.com/tutorials/hands-on-with-aria-ecommerce-implementations--cms-31890">📜 Hands-on With ARIA: Accessibility for eCommerce</a>
 

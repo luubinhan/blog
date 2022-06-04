@@ -184,7 +184,7 @@ function merge(left, right, compare) {
 
 Đây là thuật toán được sử dụng nhiều nhất, vẫn là phương pháp chia để trị
 
-Có thể xem lại bài [giới thiệu về Quick Sort của mình](http://vuilaptrinh.com/2019-11-02-gioi-thieu-thuat-toan-quicksort)
+Có thể xem lại bài [giới thiệu về Quick Sort của mình](https://luubinhan.github.io/blog/2019-11-02-gioi-thieu-thuat-toan-quicksort)
 
 ![Các thuật toán sắp xếp phổ biến và JavaScript](https://res.cloudinary.com/practicaldev/image/fetch/s--5nmg3LKx--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/vo2ltivrpucxtoamvdeb.gif)
 

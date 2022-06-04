@@ -18,9 +18,9 @@ function addStyleResource (rule) {
 
 
 module.exports = {
-  siteUrl: 'https://vuilaptrinh.com',
+  siteUrl: 'https://luubinhan.github.io/blog',
   pathPrefix: '/',
-  siteName: 'VuiLapTrinh.com',
+  siteName: 'VuiLapTrinh',
   siteDescription: 'Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui',
 
   icon: './src/assets/images/luckyluu.svg',

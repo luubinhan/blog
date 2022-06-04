@@ -113,9 +113,9 @@ Ngoài ra có khá nhiều thư viện/công cụ trong cộng đồng javascrip
 
 Mình đã có 2 bài viết cho chủ đề này, các bạn có thể đọc lại
 
-[Nguyên lý nền tảng của lập trình function](http://vuilaptrinh.com/2019-07-26-nguyen-ly-chung-cua-lap-trinh-huong-function)
+[Nguyên lý nền tảng của lập trình function](https://luubinhan.github.io/blog/2019-07-26-nguyen-ly-chung-cua-lap-trinh-huong-function)
 
-[Functional programing nên và không nên](http://vuilaptrinh.com/2020-05-17-functional-programing-nen-va-khong-nen/)
+[Functional programing nên và không nên](https://luubinhan.github.io/blog/2020-05-17-functional-programing-nen-va-khong-nen/)
 
 Một số thư viện để bạn viết FP một cách gọn gàn, sạch sẽ, thơm tho
 

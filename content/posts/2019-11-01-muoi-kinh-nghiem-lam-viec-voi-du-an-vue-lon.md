@@ -99,9 +99,9 @@ Hợp lý mà, một cách tiếp cận khác cũng hợp lý luôn là tổ ch�
 
 Vì là quan điểm nên không thể nói đúng sai, nhưng chúng ta phải **thống nhất một cách** tổ chức Vuex Store mà mọi người đều đồng ý là hợp lý. Người mới vào team cũng dễ follow hơn.
 
-[Xem Kinh nghiệm tổ chức Vuex cho ứng dụng lớn](http://vuilaptrinh.com/2018-11-10-huong-dan-to-chuc-vuex-store-tren-du-an-lon/)
+[Xem Kinh nghiệm tổ chức Vuex cho ứng dụng lớn](https://luubinhan.github.io/blog/2018-11-10-huong-dan-to-chuc-vuex-store-tren-du-an-lon/)
 
-[# Sử dụng flat state trong Vue Store](http://vuilaptrinh.com/2019-10-12-flat-state-trong-vue-store-de-toi-uu-toc-do/)
+[# Sử dụng flat state trong Vue Store](https://luubinhan.github.io/blog/2019-10-12-flat-state-trong-vue-store-de-toi-uu-toc-do/)
 
 ## Sử dụng action để lấy và gửi dữ liệu
 
@@ -189,7 +189,7 @@ git commit -am "docs(changelog): update changelog to beta.5"
 git commit -am "fix(release): need to depend on latest rxjs and zone.js"
 ```
 
-[Xem Bộ guide để viết code sạch dành riêng cho Vue](http://vuilaptrinh.com/2019-10-04-huong-dan-viet-code-vue-chuan)
+[Xem Bộ guide để viết code sạch dành riêng cho Vue](https://luubinhan.github.io/blog/2019-10-04-huong-dan-viet-code-vue-chuan)
 
 ## Khi lên production, fix luôn các package version đang xài
 

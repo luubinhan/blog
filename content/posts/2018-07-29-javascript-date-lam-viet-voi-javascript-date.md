@@ -117,7 +117,7 @@ new Date("July 22, 2018 07:22:13 (ICT)");
 
 Nếu truyền sai giá trị timezone, javascript sẽ dùng UTC, không quăng lỗi. Nếu giá trị date đưa đưa vào sai, quăng lỗi 'Invalid Date'
 
-Để tìm hiểu kỹ hơn timezone, đọc thêm bài này [http://vuilaptrinh.com/2019-04-12-huong-dan-tim-hieu-time-zone/](http://vuilaptrinh.com/2019-04-12-huong-dan-tim-hieu-time-zone/)
+Để tìm hiểu kỹ hơn timezone, đọc thêm bài này [https://luubinhan.github.io/blog/2019-04-12-huong-dan-tim-hieu-time-zone/](https://luubinhan.github.io/blog/2019-04-12-huong-dan-tim-hieu-time-zone/)
 
 ## Convert và Format kiểu Date
 

@@ -28,7 +28,7 @@ Trên là hình ông Tony Hoare trình làng thuật toán QuickSort năm 1960 t
 
 Độ phức tạp của nó là O(NlogN), trường hợp xấu nhất là O(N2). Đại khái nó là một trong những phương pháp sort mảng hiệu quả nhất.
 
-Để hiểu độ phức tạp của thuật toán, các bạn [đọc bài này](http://vuilaptrinh.com/2019-10-28-gioi-thieu-ve-do-phuc-tap-cua-thuat-toan)
+Để hiểu độ phức tạp của thuật toán, các bạn [đọc bài này](https://luubinhan.github.io/blog/2019-10-28-gioi-thieu-ve-do-phuc-tap-cua-thuat-toan)
 
 ## Hiện thực bằng Javascript
 
