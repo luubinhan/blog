@@ -18,8 +18,8 @@ function addStyleResource (rule) {
 
 
 module.exports = {
-  siteUrl: 'https://luubinhan.github.io/blog',
-  pathPrefix: '/',
+  siteUrl: 'https://luubinhan.github.io',
+  pathPrefix: '/blog',
   siteName: 'VuiLapTrinh',
   siteDescription: 'Tutorials, Blog, Hướng dẫn, chia sẽ kinh nghiệm về Frontend, react, vue, ux, ui',
 
