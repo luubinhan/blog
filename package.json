@@ -16,7 +16,6 @@
     "@gridsome/plugin-sitemap": "^0.4.0",
     "@gridsome/source-filesystem": "^0.6.0",
     "@gridsome/transformer-remark": "^0.6.4",
-    "@p803/vue-facebook": "^2.1.0",
     "@vssue/api-github-v3": "^1.4.7",
     "gridsome": "^0.7.0",
     "gridsome-plugin-flexsearch": "^2.0.1",

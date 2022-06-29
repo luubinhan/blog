@@ -19,12 +19,6 @@ export default function (Vue, { router, head, isClient }) {
     clientId: process.env.YOUR_CLIENT_ID,
     clientSecret: process.env.YOUR_CLIENT_SECRET,
   })
-  Vue.use(VueFacebook, {
-    appId: '445556375516928', // required
-    version: 'v8.0',   // required
-    xfbml: true,       // optional
-    // other params...
-  });
   /* head.link.push({
     rel: 'stylesheet',
     href: './fontello/css/down.css'

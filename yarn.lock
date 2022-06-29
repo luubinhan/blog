@@ -886,7 +886,7 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime@^7.11.0", "@babel/runtime@^7.12.5", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.6":
+"@babel/runtime@^7.11.0", "@babel/runtime@^7.8.4":
   version "7.17.9"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.9.tgz#d19fbf802d01a8cb6cf053a64e472d42c434ba72"
   integrity sha512-lSiBBvodq29uShpWGNbgFdKYNiFDo5/HIYsaCEY9ff4sb10x9jizo2+pRrSyF4jKZCXqgzuqBOQKbUm90gQwJg==
@@ -1101,30 +1101,6 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
-
-"@p803/facebook-sdk@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@p803/facebook-sdk/-/facebook-sdk-2.1.0.tgz#484741e3b5920eb5bfbac8481cb4716a84207757"
-  integrity sha512-gfdrKgj606VYtHkLfAZZLPAqGXgKG34clGyGqP5ZrshMk4xocqyPDv/eXUE+X5l6XcepWDHg7zlNAaFju48oLQ==
-  dependencies:
-    "@babel/runtime" "^7.12.5"
-    "@p803/script-loader" "^2.1.1"
-
-"@p803/script-loader@^2.1.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@p803/script-loader/-/script-loader-2.4.1.tgz#a77d6e83aec59581ca10c29158be5c7147c7dd0c"
-  integrity sha512-VhSvXMQjDfWuZ7Lsc+POBR4D2YYqbv07MzdnK3onBMDZmrzPeargd8PGWYTLhte0dPYimNzVXSWj+0EFCwpcUg==
-  dependencies:
-    tslib "^2.1.0"
-
-"@p803/vue-facebook@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@p803/vue-facebook/-/vue-facebook-2.1.0.tgz#c6632a4d4f2582ec593a569fe9be66e06b0b20b2"
-  integrity sha512-k39HtGwuMnc/McxM9iMt5i2aaBqxtb9MuPXHZ5L1/1CL9T9yRQgV7HvtOoaYI9hWitguQ8a8wCBoGkhv0/s3wQ==
-  dependencies:
-    "@babel/runtime" "^7.9.6"
-    "@p803/facebook-sdk" "^2.1.0"
-    core-js "^3.8.1"
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -2877,7 +2853,7 @@ core-js-compat@^3.21.0, core-js-compat@^3.22.1, core-js-compat@^3.6.5:
     browserslist "^4.20.3"
     semver "7.0.0"
 
-core-js@^3.12.1, core-js@^3.6.4, core-js@^3.6.5, core-js@^3.8.1:
+core-js@^3.12.1, core-js@^3.6.4, core-js@^3.6.5:
   version "3.22.3"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.22.3.tgz#498c41d997654cb00e81c7a54b44f0ab21ab01d5"
   integrity sha512-1t+2a/d2lppW1gkLXx3pKPVGbBdxXAkqztvWb1EJ8oF8O2gIGiytzflNiFEehYwVK/t2ryUsGBoOFFvNx95mbg==
@@ -9609,7 +9585,7 @@ trough@^1.0.0:
   dependencies:
     glob "^7.1.2"
 
-tslib@^2.1.0, tslib@^2.3.1:
+tslib@^2.3.1:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==

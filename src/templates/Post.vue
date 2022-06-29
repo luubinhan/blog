@@ -58,16 +58,6 @@
     <template slot="below-master">
       <div class="section-below-post">
         <div class="post-comments">
-          <facebook-comments
-            v-if="isMounted"
-            :settings="{
-              href: `https://luubinhan.github.io/blog${$page.post.path}`,
-              num_posts: 10,
-              order_by: 'time',
-              width: 600,
-              // other settings...
-            }"
-          />
           <Vssue :title="$page.post.title" />
           <Disqus shortname="luckyluu-blog" />
         </div>
