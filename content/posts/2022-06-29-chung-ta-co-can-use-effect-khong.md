@@ -2,17 +2,27 @@
 slug: "2022-06-29-chung-ta-co-can-use-effect-khong"
 date: "2022-06-29"
 title: "Chúng ta có cần useEffect không"
-desc: ""
+desc: "Một số trường hợp không cần effect hay bắt gặp"
 tags: ["react", "javascript"]
 canonical_url: false
 ---
 
 `useEffect` được thiết kế để phục vụ đồng bộ hóa component với *thế giới bên ngoài*, như network, DOM, nếu không có sự tham gia của các yếu tố *bên ngoài*, ví dụ như *state* cần thay đổi khi *prop* thay đổi, chúng ta không cần dùng đến useEffect. Hạn chế lỗi, code chạy nhanh hơn, dễ hiểu hơn là những ưu điểm khi có ít effect.
 
-## Bỏ những effect không cần thiết
-Một số trường hợp không cần effect hay bắt gặp
+<!-- TOC -->
 
-- **Transform data**, ví dụ chúng ta cần filter trên một danh sách, chúng ta sẽ có xu hướng đưa việc transform này vào trong một effect với dependency là `array`
+- [Transform data](#transform-data)
+- [User event](#user-event)
+- [Khởi chạy ứng dụng](#khởi-chạy-ứng-dụng)
+- [Subscrib trên những dữ liệu bên ngoài](#subscrib-trên-những-dữ-liệu-bên-ngoài)
+- [Fetch data](#fetch-data)
+- [Kết luận](#kết-luận)
+
+<!-- /TOC -->
+
+## Transform data
+
+Ví dụ chúng ta cần filter trên một danh sách, chúng ta sẽ có xu hướng đưa việc transform này vào trong một effect với dependency là `array`
 
 ```js{5}
 function TodoList({ todos, filter }) {
@@ -51,7 +61,9 @@ const [lastName, setLastName] = useState('laptrinh')
 const fullName = firstName + ' ' + lastName
 ```
 
-- **User event**, ví dụ chúng ta sẽ gọi `api/buy` khi user click vào nút *mua sản phẩm*, sau đó hiển thị một thông báo đến user, mặc dù việc gắn sự kiện `onClick` trên button rất hiển nhiên, nhưng có sẽ có người dùng effect
+## User event
+
+Ví dụ chúng ta sẽ gọi `api/buy` khi user click vào nút *mua sản phẩm*, sau đó hiển thị một thông báo đến user, mặc dù việc gắn sự kiện `onClick` trên button rất hiển nhiên, nhưng có sẽ có người dùng effect
 
 ```js{4}
 // 🔴 Tránh xa sử dụng cách này
@@ -113,7 +125,9 @@ function handleSubmit(e) {
 }
 ```
 
-- **Khởi chạy ứng dụng**, khi ứng dụng bắt đầu chạy, chúng ta muốn một số hàm chạy đúng 1 lần đầu tiên
+## Khởi chạy ứng dụng
+
+Khi ứng dụng bắt đầu chạy, chúng ta muốn một số hàm chạy đúng 1 lần đầu tiên
 
 ```jsx
 function App() {
@@ -156,7 +170,8 @@ if (typeof window !== 'undefined') {
 function App() { ... }
 ```
 
-- **Subscribe** trên những dữ liệu bên ngoài
+## Subscrib trên những dữ liệu bên ngoài
+
 Những dữ liệu bên ngoài một react component, như từ browser API, chúng ta vẫn thường dùng effect như ví dụ
 
 ```jsx
@@ -207,7 +222,9 @@ function useOnlineStatus() {
 
 [Đọc thêm về useSyncExternalStore](https://reactjs.org/docs/hooks-reference.html#usesyncexternalstore)
 
-- **Fetch data**, đây có thể là một trong những cách sử dụng effect phổ biến nhất hiện tại
+## Fetch data
+
+Đây có thể là một trong những cách sử dụng effect phổ biến nhất hiện tại
 
 ```jsx
 function SearchResults({ query }) {

@@ -6,6 +6,15 @@ desc: ""
 tags: ["javascript", "beginner", "thu-thuat", "react"]
 ---
 
+<!-- TOC -->
+
+- [Tạo avatar mặc định](#tạo-avatar-mặc-định)
+- [Cho user upload avatar](#cho-user-upload-avatar)
+- [Crop ảnh](#crop-ảnh)
+- [Toàn bộ source code](#toàn-bộ-source-code)
+
+<!-- /TOC -->
+
 ## Tạo avatar mặc định
 
 Trong trường hợp user chưa upload avatar, chúng ta sẽ hiển thị một avatar mặc định, sử dụng [jdenticon](https://www.npmjs.com/package/jdenticon) nó sẽ cho chúng ta bộ hình sau

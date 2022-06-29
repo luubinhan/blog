@@ -6,6 +6,17 @@ desc: ""
 tags: ["javascript", "beginner", "thu-thuat"]
 ---
 
+<!-- TOC -->
+
+- [Trộn ngẫu nhiên một mảng](#trộn-ngẫu-nhiên-một-mảng)
+- [Copy vào clipboard](#copy-vào-clipboard)
+- [Xác định window có đang chọn chế độ DarkMode](#xác-định-window-có-đang-chọn-chế-độ-darkmode)
+- [Scroll lên đầu trang](#scroll-lên-đầu-trang)
+- [Cuộn xuống cuối trang](#cuộn-xuống-cuối-trang)
+- [Tạo mã màu ngẫu nhiên](#tạo-mã-màu-ngẫu-nhiên)
+
+<!-- /TOC -->
+
 ## Trộn ngẫu nhiên một mảng
 
 ```js

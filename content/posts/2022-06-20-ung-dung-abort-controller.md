@@ -10,6 +10,13 @@ chapter: 0
 tags: ["javascript", "thu-thuat", "medium"]
 ---
 
+<!-- TOC -->
+
+- [Xóa Event Handler](#xóa-event-handler)
+- [Async trong React hook](#async-trong-react-hook)
+
+<!-- /TOC -->
+
 Món *đồ chơi* mới [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) (ý là thằng bạn trình duyệt cũ không chịu chơi chung) cho phép chúng ta hủy một tác vụ đang chạy, tác dụ hay gặp nhất là việc fetching data
 
 ```js

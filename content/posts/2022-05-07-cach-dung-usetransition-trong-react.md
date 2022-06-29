@@ -5,7 +5,6 @@ title: "React Transition"
 desc: "Một tính năng mới trong React 18, cho phép chúng ta đánh giấu một thay đổi là transition"
 tags: ["javascript", "beginner", "hoc-thuat", "react"]
 ---
-
 ## Tại sao?
 
 Một vấn đề rất thực tế mà chúng ta hay gặp khi viết *search component*, chúng ta sẽ thêm cơ chế *debounce* khi gọi xuống API sau khi user nhập giá trị vào `input`, *debounce* tức là hổng đi làm liền mà đợi cho đến hết thời gian thì mới làm.
