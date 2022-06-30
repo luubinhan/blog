@@ -1,20 +1,14 @@
 <template>
   <div class="author">
     <a href="https://luubinhan.github.io/" target="_blank">
-      <g-image
-        alt="Author image"
-        class="author__image"
-        src="~/assets/images/author.jpg"
-        width="180"
-        height="180"
-        blur="5"
-      />
+      <g-image alt="Author image" class="author__image" src="~/assets/images/author.jpg" width="180" height="180"
+        blur="5" />
     </a>
     <h2 class="author__site-title">{{ $static.metadata.siteName }}</h2>
 
-    <p
-      class="author__intro"
-    >Nếu đọc bài viết thấy hay, bạn xài bớt cái bọc ni lông, ra đường mua tờ vé số giúp các cô các bác là đã cảm ơn mình</p>
+    <p class="author__intro">
+      Đời cho ta quá nhiều thứ, ta chưa cho đời được nhiều
+    </p>
   </div>
 </template>
 
