@@ -58,7 +58,8 @@
     <template slot="below-master">
       <div class="section-below-post">
         <div class="post-comments">
-          <div class="doan-gioi-thieu">Mọi người thấy bài viết này có được ổn không, có chổ nào cần bổ sung không ?</div>
+          <div id="emojicom-widget-inline"></div>
+          <div hidden class="doan-gioi-thieu">Mọi người thấy bài viết này có được ổn không, có chổ nào cần bổ sung không ?</div>
           <Vssue :title="$page.post.title" />
           <Disqus shortname="luckyluu-blog" />
         </div>
