@@ -1,7 +1,6 @@
 // Import main css
 import '~/assets/style/index.scss'
 import '~/assets/fontello/css/down.css'
-import VueFacebook from '@p803/vue-facebook'
 import Vssue from 'vssue';
 import GithubV3 from '@vssue/api-github-v3';
 // Import default layout so we don't need to import it to every page
