@@ -1,0 +1,48 @@
+{
+    "background_color": "#000000",
+    "icon_path": "./src/assets/images/author.jpg",
+    "name": "vuilaptrinh",
+    "short_name": "LuckyLuu",
+    "theme_color": "#01A1B1",
+    "lang": "vi",
+    "display": "minimal-ui",
+    "file_name": "manifest.json",
+    "orientation": "any",
+    "scope": "/",
+    "start_url": "/",
+    "dir": "auto",
+    "prefer_related_applications": false,
+    "related_applications": [],
+    "icons": [
+        {
+            "src": "/assets/img/author-512.jpg",
+            "type": "image/jpeg",
+            "sizes": "512x512"
+        },
+        {
+            "src": "/assets/img/author-192.jpg",
+            "type": "image/jpeg",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/assets/img/author-144.jpg",
+            "type": "image/jpeg",
+            "sizes": "144x144"
+        },
+        {
+            "src": "/assets/img/author-96.jpg",
+            "type": "image/jpeg",
+            "sizes": "96x96"
+        },
+        {
+            "src": "/assets/img/author-72.jpg",
+            "type": "image/jpeg",
+            "sizes": "72x72"
+        },
+        {
+            "src": "/assets/img/author-48.jpg",
+            "type": "image/jpeg",
+            "sizes": "48x48"
+        }
+    ]
+}

@@ -1,0 +1,159 @@
+---
+slug: "/2019-07-21-function-component-trong-vue"
+date: "2019-07-21"
+title: "Function Component trong Vue"
+desc: "Không được xuất chúng như là function component của React, nên function component trong Vue không có nhiều người để ý. Cùng tìm hiểu xem nếu muốn viết function component trong Vue thì chúng ta phải làm sao"
+cover: ""
+type: "post"
+lesson: 0
+chapter: 0
+tags: ["vuejs", "hoc-thuat"]
+---
+
+<!-- TOC -->
+
+- [Function Component trong Vue là gì](#function-component-trong-vue-là-gì)
+- [Truy xuất dữ liệu](#truy-xuất-dữ-liệu)
+- [Attribute](#attribute)
+- [Kết](#kết)
+
+<!-- /TOC -->
+
+
+## Tại sao viết Function Component?
+
+Khi viết function component, chúng ta phải *tự xử* rất nhiều thứ (bên dưới sẽ có liệt kê), vậy câu tại sao chúng ta lại muốn dùng đến nó?
+
+Anh Austin Gil ảnh có đo, thì thấy [function component nó nhanh hơn so với một component có state](https://codesandbox.io/s/vue-stateful-vs-functional-yterr).
+
+## Function Component trong Vue là gì?
+
+Component **không** chứa `state` và không có `instance`, không thể truy xuất bằng từ khóa `this`
+
+```jsx
+// dùng vue template
+<template functional>
+	<div>...</div>
+</template>
+```
+
+```jsx
+// dùng render function
+<script>
+export default {
+	functional: true,
+
+	render(h) {
+		//...
+	}
+}
+</script>
+```
+
+## Truy xuất dữ liệu
+
+*Nếu không có `state` hay `instance` vậy làm sao chúng ta có thể tham chiếu đến dữ liệu và phương thức?*
+
+Vue cung cấp tham số `context` bên dưới hàm render để chúng ta truy xuất: **prop, children, slot, scopedSlot, data, parent, listener, injection**
+
+```jsx
+<template functional>
+	<div>
+		{{ props.someProp }}
+	</div>
+</template>
+
+<script>
+export default {
+	props: {
+		someProp: String
+	}
+}
+</script>
+```
+
+```jsx
+<script>
+export default {
+	functional: true,
+
+	props: {
+		someProp: String
+	},
+
+	render(h, ctx) {
+		const someProp = ctx.props.someProp
+	}
+}
+</script>
+```
+
+## Attribute
+
+**attribute không được truyền xuống tự động, ví dụ như `class` và `id` mặc định bị bỏ qua**
+
+```jsx
+<!-- src/components/ArticleTeaser.vue -->
+<template>
+	<UiHeadline
+		id="hyphenCase(article.title)"
+		class="ArticleTeaser__title"
+		@click="readMore"
+	>	
+		{{ article.title }}
+	</UiHeadline>
+</template>
+```
+
+```jsx
+<!-- src/components/UiHeadline.vue -->
+<template functional>
+	<h1>
+		<slot />
+	</h1>
+</template>
+```
+
+`id`, `class`, kể cả `@click` cũng không được truyền xuống. Nếu không mở source code đó ai mà biết được tại sao truyền các attribute này xuống mà nó không chạy.
+
+Hên là có cách giải quyết, nếu bạn đã viết function component thì bạn phải chịu trách nhiệm bổ sung cách giải quyết cho nó
+
+```jsx
+<template functional>
+	<h1
+		v-bind="data.attrs"
+		v-on="listeners"
+	>
+		<slot />
+	</h1>
+</template>
+```
+
+Tuy nhiên, chưa xong hết được, vì `class` nó lại không nằm trong `data.attrs`
+
+Bạn phải thông qua `data.class`/ `data.staticClass` và `data.style`/`data.staticStyle`
+
+```jsx
+<!-- Đưa vào `data.class` -->
+<UiHeadline :class="['my-class']"/>
+
+<!-- Đưa vào `data.staticClass` -->
+<UiHeadline class="my-class"/>
+```
+
+```jsx
+<template functional>
+	<h1
+		:class="[data.class, data.staticClass]"
+		:style="[data.style, data.staticStyle]"
+		v-bind="data.attrs"
+		v-on="listeners"
+	>
+		<slot />
+	</h1>
+</template>
+```
+
+<a target="_blank" rel="noopener noreferrer" href="https://stegosource.com/vue-js-functional-components-what-why-and-when/">Vue.js functional components: What, Why, and When?</a>
+
+<a target="_blank" rel="noopener noreferrer" href="https://markus.oberlehner.net/blog/working-with-functional-vue-components/">Working With Functional Vue.js Components</a>

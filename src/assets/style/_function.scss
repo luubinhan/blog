@@ -1,0 +1,39 @@
+@mixin scroll {
+	scroll-behavior: smooth;
+
+	&::-webkit-scrollbar {
+		width: 10px;
+		height: 10px;
+	}
+	&::-webkit-scrollbar-track {
+		background: rgba(0, 0, 0, 0.05);
+	}
+	&::-webkit-scrollbar-corner {
+		background: rgba(0, 0, 0, 0.05);
+	}
+	&::-webkit-scrollbar-thumb {
+		background: var(--scrollbar-thumb);
+	}
+	&:hover::-webkit-scrollbar-thumb {
+		transition: all 0.2ms ease-in-out;
+		background: var(--scrollbar-thumb-hover);
+	}
+}
+
+@mixin mobile {
+	@media (max-width: 560px) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (max-width: 980px) {
+		@content;
+	}
+}
