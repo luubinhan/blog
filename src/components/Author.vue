@@ -1,7 +1,7 @@
 <template>
   <div class="author">
     <a href="https://luubinhan.github.io/" target="_blank">
-      <g-image alt="Author image" class="author__image" src="~/assets/images/author.jpg" width="180" height="180"
+      <g-image alt="Luu Binh An" class="author__image" src="~/assets/images/author.jpg" width="180" height="180"
         blur="5" />
     </a>
     <h2 class="author__site-title">{{ $static.metadata.siteName }}</h2>

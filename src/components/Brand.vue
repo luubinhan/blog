@@ -1,7 +1,7 @@
 <template>
 	<g-link v-once to="/" class="go-home">
 		<span>
-			<img src="../assets/images/logo-main.png" alt="vuilaptrinh.com" />
+			<img src="../assets/images/logo-main.png" alt="vuilaptrinh" />
 		</span>
 	</g-link>
 </template>
