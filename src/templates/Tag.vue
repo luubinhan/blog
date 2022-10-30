@@ -1,11 +1,14 @@
 <template>
   <Layout>
-    <h1 class="tag-title text-center space-bottom"># {{ $page.tag.title }}</h1>
+    <div class="padding">
+      <h1 class="tag-title text-center space-bottom"># {{ $page.tag.title }}</h1>
 
-    <div class="posts-list">
-      <PostCard v-for="edge in $page.tag.belongsTo.edges" :key="edge.node.id" :post="edge.node" />
+      <div class="posts-list">
+        <PostCard v-for="edge in $page.tag.belongsTo.edges" :key="edge.node.id" :post="edge.node" />
+      </div>
+
+      <Author />
     </div>
-    <Author />
   </Layout>
 </template>
 
@@ -49,6 +52,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.padding {
+  padding: 15px 75px 0;
+}
 </style>
-

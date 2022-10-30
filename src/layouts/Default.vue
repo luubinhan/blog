@@ -32,6 +32,7 @@
 					<slot />
 				</main>
 				<slot name="below-master" />
+
 			</div>
 		</div>
 	</div>
@@ -59,7 +60,7 @@ export default {
 		Toggle,
 	},
 	methods: {
-		toggleTheme: function(value) {
+		toggleTheme: function (value) {
 			if (value) {
 				document.body.setAttribute('data-theme', 'dark');
 				localStorage.setItem('theme', 'dark');
@@ -71,10 +72,10 @@ export default {
 			}
 		},
 	},
-	updated: function() {
+	updated: function () {
 		// location.href = '#scrollTop';
 	},
-	mounted: function() {
+	mounted: function () {
 		this.isDarkMode = localStorage.getItem('theme') === 'dark' ? true : false;
 	},
 };
@@ -85,18 +86,19 @@ export default {
 	position: relative;
 	display: flex;
 	background-color: var(--bg-aside);
+
 	@include tablet {
 		display: block;
 	}
 }
-
 </style>
 
 <style lang="scss" scoped>
 .toggle-mobile {
 
-	.toggle-theme {		
+	.toggle-theme {
 		display: none;
+
 		@include desktop {
 			display: block;
 			position: fixed;
@@ -104,8 +106,9 @@ export default {
 			top: 13px;
 		}
 	}
-	
+
 }
+
 .toggle-theme {
 	margin-bottom: 40px;
 	text-align: right;
@@ -118,17 +121,20 @@ export default {
 		display: none;
 	}
 }
+
 .master-container {
 	z-index: var(--z-master-container);
 	display: flex;
 	flex-direction: row-reverse;
-	
 
 	@include tablet {
 		display: block;
 		padding-top: 56px;
 	}
 }
+
+
+
 .master {
 	@include scroll;
 
@@ -140,18 +146,22 @@ export default {
 	@media (max-width: var(--breakpoint-1400)) {
 		min-width: 0;
 	}
+
 	@media (max-width: var(--breakpoint-980)) {
 		width: auto;
 	}
+
 	@include tablet {
 		margin-left: 0;
 		max-height: none;
 	}
+
 	@include mobile {
 		padding-top: 10px;
 	}
+
 	> .inner {
-		padding: 15px 75px 0;
+		
 		min-height: 100vh;
 		z-index: 2;
 		position: relative;
@@ -167,15 +177,16 @@ export default {
 		}
 	}
 }
+
 .aside {
-	z-index: var(--z-aside);	
+	z-index: var(--z-aside);
 	flex-grow: 1;
 	background-color: var(--bg-aside);
 	position: relative;
 
 	@media (max-width: var(--breakpoint-1400)) {
 		max-width: 30vw;
-	}	
+	}
 
 	&__inner {
 		display: flex;

@@ -1,58 +1,60 @@
 <template>
   <Layout>
     <div id="scrollTop"></div>
-    <div class="single-post">
-      <div class="single-post-container">
-        <article>
-          <header>
-            <div class="post-title">
-              <h1 class="post-title__text single-post-title">
-                {{ $page.post.title }}
-              </h1>
-              <PostMeta :post="$page.post" />
-              <a
-                :href="$page.post.slug | editLink"
-                rel="noopener noreferrer"
-                target="_blank"
-                aria-label="Connect Facebook"
-                class="link"
-              >
-                Sửa bài viết này
-              </a>
-            </div>
-          </header>
+    <div class="scrolling-indicator">
+      <div class="single-post">
+        <div class="single-post-container">
+          <article>
+            <header>
+              <div class="post-title">
+                <h1 class="post-title__text single-post-title">
+                  {{ $page.post.title }}
+                </h1>
+                <PostMeta :post="$page.post" />
+                <a
+                  :href="$page.post.slug | editLink"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  aria-label="Connect Facebook"
+                  class="link"
+                >
+                  Sửa bài viết này
+                </a>
+              </div>
+            </header>
 
-          <div class="post content-box">
-            <div class="post__header">
-              <g-image
-                alt="Cover image"
-                v-if="$page.post.cover_image"
-                :src="$page.post.cover_image"
-              />
+            <div class="post content-box">
+              <div class="post__header">
+                <g-image
+                  alt="Cover image"
+                  v-if="$page.post.cover_image"
+                  :src="$page.post.cover_image"
+                />
+              </div>
+              <div class="blog-post">
+                <div class="post-content" v-html="$page.post.content" />
+              </div>
+              <div class="post__footer">
+                <PostTags :post="$page.post" />
+              </div>
+              <div class="single-post__share">
+                <ShareNetwork
+                  v-for="network in networks"
+                  :network="network.network"
+                  :key="network.network"
+                  :style="{ backgroundColor: network.color }"
+                  :url="`https://luubinhan.github.io/blog${$page.post.path}`"
+                  :title="$page.post.title"
+                  :description="$page.post.desc"
+                  hashtags="frontend,developer,javascript,wordpress,react,hochiminh,web-developer"
+                >
+                  <i :class="network.icon"></i>
+                  <span>{{ network.name }}</span>
+                </ShareNetwork>
+              </div>
             </div>
-            <div class="blog-post">
-              <div class="post-content" v-html="$page.post.content" />
-            </div>
-            <div class="post__footer">
-              <PostTags :post="$page.post" />
-            </div>
-            <div class="single-post__share">
-              <ShareNetwork
-                v-for="network in networks"
-                :network="network.network"
-                :key="network.network"
-                :style="{ backgroundColor: network.color }"
-                :url="`https://luubinhan.github.io/blog${$page.post.path}`"
-                :title="$page.post.title"
-                :description="$page.post.desc"
-                hashtags="frontend,developer,javascript,wordpress,react,hochiminh,web-developer"
-              >
-                <i :class="network.icon"></i>
-                <span>{{ network.name }}</span>
-              </ShareNetwork>
-            </div>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
     </div>
     <template slot="below-master">
@@ -223,19 +225,6 @@ query Post ($id: ID!) {
   color: var(--code-color);
 }
 
-.section-below-post {
-  background: var(--bg-gray);
-  padding-top: 30px;
-  padding-bottom: 40px;
-  margin-top: 30px;
-
-  @include tablet {
-    margin-left: 0px;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-right: 0px;
-  }
-}
 .single-post {
   &__share {
     padding-top: 30px;
@@ -715,4 +704,43 @@ a.link {
     }
   }
 }
+</style>
+
+<style lang="scss" scoped>
+.scrolling-indicator {
+	background-image: linear-gradient(to right top, #27c5c3 50%, #fff 50%);
+	background-repeat: no-repeat;
+	z-index: 1;
+	position: relative;
+	padding: 15px 75px 0;
+
+	&::after {
+		content: "";
+		position: fixed;
+		top: 5px;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background: #fff;
+		z-index: -1;
+	}
+}
+
+.section-below-post {
+  background: var(--bg-gray);
+  padding-top: 30px;
+  padding-bottom: 40px;
+  margin-top: 30px;
+  position: relative;
+  z-index: 6;
+  background: #fff;
+
+  @include tablet {
+    margin-left: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-right: 0px;
+  }
+}
+
 </style>

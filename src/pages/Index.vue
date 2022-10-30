@@ -6,15 +6,16 @@
       music lover - Nơi mình chia sẽ kiến thức frontend, css, html, javascript,
       các framework như React, Vuejs
     </h1>
-
-    <!-- List posts -->
-    <div class="posts-list">
-      <PostCard
-        v-for="edge in $page.posts.edges"
-        :key="edge.node.id"
-        :post="edge.node"
-      />
-      <Pager :info="$page.posts.pageInfo" />
+    <div class="padding">
+      <!-- List posts -->
+      <div class="posts-list">
+        <PostCard
+          v-for="edge in $page.posts.edges"
+          :key="edge.node.id"
+          :post="edge.node"
+        />
+        <Pager :info="$page.posts.pageInfo" />
+      </div>
     </div>
   </Layout>
 </template>
@@ -70,3 +71,10 @@ export default {
   },
 };
 </script>
+
+
+<style lang="scss" scoped>
+.padding {
+  padding: 15px 75px 0;
+}
+</style>
