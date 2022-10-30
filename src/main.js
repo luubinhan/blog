@@ -11,8 +11,8 @@ export default function (Vue, { router, head, isClient }) {
     api: GithubV3,
     owner: 'luubinhan',
     repo: 'blog',
-    clientId: '2f013a6e1a0440cf6dae',
-    clientSecret: 'd56cfab31cb810c7e66a6b7b6c3bbe850647e4b0',
+    clientId: '',
+    clientSecret: '',
   })
   /* head.link.push({
     rel: 'stylesheet',
