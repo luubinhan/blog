@@ -1,4 +1,5 @@
 :root {
+  --bg-scroll: #fff;
   --bg-aside: #f3f7f9;
   --bg-code: #fffbf3;
   --bg-color: #f3f7f9;
@@ -81,7 +82,7 @@
     --bg-master: #1c1b29;
     --bg-tag: #14131d;
     --bg-toc: #2b2c3e;
-    --body-color: #d4d4d4;
+    --body-color: #444;
     --border-color: #2b2c3e; 
     --code-color: #fff;  
     --code-shadow: #262626;
@@ -100,6 +101,8 @@
 }
 
 body[data-theme='dark'] {
+  --bg-scroll: #12141e;
+  --bg-scroll: #12141e;
   --bg-aside: #252736;
   --bg-code: #07070a;
   --bg-gray: #252736;

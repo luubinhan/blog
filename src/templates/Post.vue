@@ -708,7 +708,7 @@ a.link {
 
 <style lang="scss" scoped>
 .scrolling-indicator {
-	background-image: linear-gradient(to right top, #27c5c3 50%, #fff 50%);
+	background-image: linear-gradient(to right top, #27c5c3 50%, var(--bg-scroll) 50%);
 	background-repeat: no-repeat;
 	z-index: 1;
 	position: relative;
@@ -721,7 +721,7 @@ a.link {
 		left: 0;
 		bottom: 0;
 		right: 0;
-		background: #fff;
+		background: var(--bg-scroll);
 		z-index: -1;
 	}
 }
@@ -733,7 +733,7 @@ a.link {
   margin-top: 30px;
   position: relative;
   z-index: 6;
-  background: #fff;
+  background: var(--bg-scroll);
 
   @include tablet {
     margin-left: 0px;
