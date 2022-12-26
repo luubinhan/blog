@@ -51,6 +51,9 @@
 					<li class="about">
 						<a href="https://luubinhan.github.io/" target="_blank" rel="noopener noreferrer">About</a>
 					</li>
+					<li class="about">
+						<a href="https://luubinhan.github.io/behavior-style" target="_blank" rel="noopener noreferrer">Trắc nghiệm tính cách</a>
+					</li>
 				</ul>
 			</div>
 			<Footer />
