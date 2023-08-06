@@ -4,6 +4,9 @@
   "version": "3.0.0",
   "author": "An Luu <luubinhan1989@gmail.com>",
   "private": true,
+  "engines": {
+    "node": "12.19.0"
+  },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
