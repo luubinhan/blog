@@ -22,7 +22,18 @@
 						marginwidth="0"
 						>Loading…</iframe
 					> -->
+					
 					<div class="layout-blog__aside-footer">
+						<div class="pt-20">
+							<h3>
+								<a title="Khóa học HTML/CSS căn bản cho người mới bắt đầu" href="https://www.udemy.com/course/html-css-can-ban-danh-cho-nguoi-moi-bat-au-lap-trinh-web/">Khóa học HTML/CSS căn bản</a>
+							</h3>
+						</div>
+						<div class="pt-10">
+							<a title="Khóa học HTML/CSS căn bản cho người mới bắt đầu" href="https://www.udemy.com/course/html-css-can-ban-danh-cho-nguoi-moi-bat-au-lap-trinh-web/">
+								<img src="../assets/images/cover-khoa-hoc-html-css-can-ban-cho-nguoi-moi.jpg" alt="">
+							</a>
+						</div>
 						<slot name="aside" />
 					</div>
 				</div>
@@ -94,6 +105,13 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+
+.pt-20 {
+	padding-top: 2rem;
+}
+.pt-10 {
+	padding-top: 1rem;
+}
 .toggle-mobile {
 
 	.toggle-theme {
