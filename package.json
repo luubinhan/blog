@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist",
     "build": "gridsome build",
     "dev": "gridsome develop",
+    "publish": "npm run build && gh-pages -d dist",
     "explore": "gridsome explore"
   },
   "dependencies": {
