@@ -34,6 +34,16 @@
 								<img src="../assets/images/cover-khoa-hoc-html-css-can-ban-cho-nguoi-moi.jpg" alt="">
 							</a>
 						</div>
+						<div class="pt-20">
+							<h3>
+								<a title="Microfrontend dành cho React Developer" href="https://www.udemy.com/course/microfrontend-danh-cho-react-developer/">Microfrontend dành cho React Developer</a>
+							</h3>
+						</div>
+						<div class="pt-10">
+							<a title="Microfrontend dành cho React Developer" href="https://www.udemy.com/course/microfrontend-danh-cho-react-developer/">
+								<img src="../assets/images/banner-khoa-hoc-micro-frontend-cho-react-developer.jpg" alt="">
+							</a>
+						</div>
 						<slot name="aside" />
 					</div>
 				</div>
