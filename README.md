@@ -7,3 +7,11 @@ Lại ông đi qua, lại dì đi lại, nếu thấy blog mình hữu ích, ti�
 # Note
 
 Work with node@12.19.0
+
+## Nếu bị lỗi 
+
+> Error: 'darwin-x64' binaries cannot be used on the 'darwin-arm64v8' platform. Please remove the 'node_modules/sharp' directory and run 'npm install' on the 'darwin-arm64v8' platform.
+
+rm -rf node_modules/sharp
+npm cache clean --force
+npm install
