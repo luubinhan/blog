@@ -1,0 +1,25 @@
+.table {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: grey;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+.table td,
+.table th {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+.table thead th {
+  text-align: left;
+  font-weight: bold;
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}

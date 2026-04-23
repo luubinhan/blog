@@ -1,0 +1,22 @@
+- language
+	- javascript
+	- wordpress
+	- SEO
+	- css
+	- react
+	- ux-ui
+	- redux
+	- chrome
+	- performance
+	- mobile-web-specialist
+	- vuejs
+	- tool
+	- webpack
+- type
+	- hoc-thuat
+	- thu-thuat
+	- dam-dao
+- level
+	- beginner
+	- medium
+	- hard
